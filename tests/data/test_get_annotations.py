@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import pytest
+import shutil
 
 from pinder.core import get_metadata, PinderSystem
 from pinder.core.index.utils import MetadataEntry
@@ -71,6 +72,10 @@ def test_interface_gap_annotation(pinder_method_test_dir):
             assert getattr(entry, k) == v
 
 
+@pytest.mark.skipif(
+    shutil.which("prodigy_cryst") is None,
+    reason="could not find prodigy_cryst, install from https://github.com/yusuf1759/prodigy-cryst",
+)
 def test_crystal_contact_classification(pdb_5cq2):
     classification = get_crystal_contact_classification(pdb_5cq2)
     expected = [pdb_5cq2, "3", "1", "0", "2", "0", "0", "0", "1.00", "BIO", "0.516"]
