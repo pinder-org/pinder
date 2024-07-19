@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - publish-pypi
 jobs:
   pypi-publish:
     name: upload release to PyPI
@@ -35,25 +36,9 @@ jobs:
         shell: bash
         id: get-tag
         run: |
-            TAGS=$(git for-each-ref --sort=creatordate --format='%(refname:short)' refs/tags)
-            LATEST_TAG=$(echo "${TAGS}" | grep -v "-" | tail -n 1 | awk -F' ' '{print $NF}')
-            LATEST_VERSION=${LATEST_TAG/v/}
-            LATEST_TAG_COMMIT=$(git rev-parse "${LATEST_TAG}")
-            HEAD_COMMIT=$(git rev-parse HEAD)
-            if [[ "${LATEST_TAG_COMMIT}" == "${HEAD_COMMIT}" ]]; then
-                exit 0
-            fi
-            if [[ "${LATEST_VERSION}" == "" ]]; then
-                LATEST_VERSION=0.0.0
-            fi
-            BUMP=$(git log -n 1 | sed -n "/^.*bumpversion \(.*\)$/s//\1/p" | cut -f1 -d' ' | tail -n 1 | awk -F' ' '{print $NF}')
-            BUMP=$(python -c "print('${BUMP}'.lower() if '${BUMP}'.lower() in ['major', 'minor', 'patch', 'skip'] else 'patch')")
-            if [[ "${BUMP}" != "skip" ]]; then
-                NEW_VERSION=$(python -c "import semver; print(semver.bump_${BUMP}('${LATEST_VERSION}'))")
-                TAG=v${NEW_VERSION}
-            fi
-            echo "tag-name=${NEW_VERSION}" >> $GITHUB_OUTPUT
-            echo "tag-version=${NEW_VERSION/v/}" >> $GITHUB_OUTPUT
+            TAG=$(bash version.sh)
+            echo "tag-name=${TAG}" >> $GITHUB_OUTPUT
+            echo "tag-version=${TAG/v/}" >> $GITHUB_OUTPUT
 
       - name: Validate git tag
         shell: bash
@@ -69,9 +54,10 @@ jobs:
           python -m build
 
       - name: Publish package distributions to PyPI
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: pypa/gh-action-pypi-publish@release/v1
 
       - name: Persist tags
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         shell: bash
         run: git push --tags
