@@ -84,8 +84,11 @@ pygments_style = "sphinx"
 todo_include_todos = False
 
 # Prevents numpydoc from creating an autosummary which does not work
-# properly due to Biotite's import system
+# properly due to import system
 numpydoc_show_class_members = False
+
+napoleon_use_param = True
+napoleon_use_rtype = True
 
 # Prevent autosummary from using sphinx-autogen, since it would
 # overwrite the document structure given by apidoc.json
@@ -141,5 +144,5 @@ html_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"
 ]
 
-html_favicon = "_static/pinder_icon_thumb.png"
+html_favicon = "_static/favicon.ico"
 htmlhelp_basename = "PinderDoc"
