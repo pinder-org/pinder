@@ -36,7 +36,7 @@ jobs:
         shell: bash
         id: get-tag
         run: |
-            TAG=$(bash ${GITHUB_ACTION_PATH}/version.sh)
+            TAG=$(bash version.sh)
             echo "tag-name=${TAG}" >> $GITHUB_OUTPUT
             echo "tag-version=${TAG/v/}" >> $GITHUB_OUTPUT
 
