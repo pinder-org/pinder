@@ -13,7 +13,6 @@ Welcome to pinder's documentation!
    readme_link.md
    examples
    example_readme
-   methods_readme
    source/pinder
    changelog_link.md
    faq_link.md
