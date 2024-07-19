@@ -13,7 +13,7 @@ concurrency:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-22.04-4core
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
