@@ -85,7 +85,7 @@ docs = [
 ]
 
 leaderboard = [
-    "quarto_cli@git+https://github.com/quarto-dev/quarto-cli",
+    "quarto_cli",
     "itables",
     "matplotlib",
     "seaborn",
@@ -97,7 +97,6 @@ data = [
     "networkx",
     "scikit-learn <= 1.2.2",
     "python-graphql-client",
-    "prodigy-cryst @ git+https://github.com/yusuf1759/prodigy-cryst.git",
     "mpire",
     "matplotlib",
     "seaborn",
