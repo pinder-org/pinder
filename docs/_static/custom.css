@@ -91,3 +91,13 @@ div.cell_output table {
 div.document div.documentwrapper {
     max-width: 80rem;
 }
+
+
+div#top_nav nav h1 img {
+  height: 2.5rem;
+  width: auto;
+}
+
+.classifier {
+  padding-left: 0.5rem;
+}

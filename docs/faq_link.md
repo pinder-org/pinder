@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# Frequently asked questions
 
 ```{include} ../faq.md
 :heading-offset: 1

@@ -1,4 +1,4 @@
-![pinder](assets/pinder.png)
+![pinder](https://github.com/pinder-org/pinder/raw/main/assets/pinder.png)
 <div align="center">
     <h1>PINDER: The Protein INteraction Dataset and Evaluation Resource</h1>
 </div>
@@ -13,7 +13,7 @@
 
 # 📚 About
 
-**pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is 10x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
+**pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is ~500x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
 
 The dataset is large (~700Gb) and hosted on Google Cloud Storage (available at the `gs://pinder` bucket).
 
@@ -100,8 +100,35 @@ current environment (`pip install torch`), then run
 pip install torch-cluster
 ```
 
-Note that on Apple Silicon MacOS machines, installation from source is the only
-option.
+Note that on Apple Silicon MacOS machines, installation from source is the only option.
+
+### PRODIGY-cryst
+
+PRODIGY-cryst is used in the data ingestion pipeline to predict the probability that an interface is a biological interaction. While it is not needed to use `pinder.core`, it is an optional dependency of `pinder.data` and can be installed as a git-based installation. To install, run
+
+```bash
+pip install git+https://github.com/yusuf1759/prodigy-cryst.git
+```
+
+### Install pinder packages from PyPI
+
+To install with the minimal dependencies needed to use `pinder.core`
+```bash
+pip install pinder
+```
+
+Install optional extras, for instance to use the `pinder.eval` package
+
+```bash
+pip install pinder[eval]
+```
+
+Or, install all extras
+
+```bash
+pip install pinder[all]
+```
+
 
 # ⬇️ Getting the dataset
 
@@ -642,7 +669,7 @@ These are documented in greater detail in the [examples](examples/) section.
 
 ## 7. 📡 Future work
 
-While `pinder` makes significant strides, several limitations highlight areas for future improvement. Most evidently, `pinder` is currently focusing on biological dimers both to increase quality and since most methods currently work on dimer-based docking. As more methods expand beyond dimers, such as via co-folding approaches, `pinder` will be generalized to higher-order oligomers. Additionally, there are a few smaller methodological limitations - for instance, the reliance on single reference conformations and the inherent bias towards homodimers in the dataset can impact the accuracy and generalizability of the models.
+While `pinder` makes significant strides, several limitations highlight areas for future improvement. Most evidently, `pinder` is currently focusing on biological dimers. As more methods expand beyond dimers, such as via co-folding approaches, `pinder` will be generalized to higher-order oligomers. Additionally, there are a few smaller methodological limitations - for instance, the reliance on single reference conformations and the inherent bias towards homodimers in the dataset can impact the accuracy and generalizability of the models.
 
 Further, improvements in *apo* pairing and the integration of more advanced tools, such as `iAlign`, into the alignment methodology could enhance the dataset's precision. Addressing these limitations could lead to even larger datasets, better performance and evaluation in future iterations of `pinder`. We provide a more detailed discussion of the limitations of the `pinder` dataset and methodology in [limitations](limitations.md). Below we summarize some key areas of future work:
 
@@ -662,9 +689,9 @@ Further, improvements in *apo* pairing and the integration of more advanced tool
 This code is split into 4 subpackages
 
 - `pinder-core`: core data structures for interacting with and loading the dataset. includes a pytorch dataloader
+- `pinder-data`: core code for generating the dataset, starting with downloading from the RCSB NextGen rsync server.
 - `pinder-eval`: evaluation harness for the dataset that takes as an input predicted and ground truth structures in a pre-determined folder structure and returns a leaderboard-ready set of entries
 - `pinder-methods`: implementations of the methods in the leaderboard that leverage pinder-primitives for training & running
-- `pinder-data`: core code for generating the dataset, starting with downloading from the RCSB NextGen rsync server.
 
 # 💽 Dataset Generation
 
@@ -703,15 +730,15 @@ graph. This allows detection of structurally discontinuous domains
 ## 👥 Clustering
 
 The clustering works as follows
-
+- We first define all possible interacting pairs as holo systems by taking chain pair with any residues within a 10Å backbone atom distance threshold between the interacting chains
 - All-vs-all structural alignments of complete chains were performed using FoldSeek. Note that foldseek uses both sequence (blosum matrix) and structure (3di matrix) to define similar pairs
-- We chose to use >0.55 as the LDDT threshold to limit the hits to [structurally similar folds](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2913670/), minimizing any structural leakage
-- Interfaces were defined from these alignments by selecting all residues within a 10Å backbone atom distance threshold between the interacting chains
 - We start by construct a graph with chains as nodes
 - An edge is then added between any two nodes with over 50% foldseek-alignment coverage of the interface residues (as defined above)
 - This will connect any two chains where a substantial part of the interface is similar in either sequence or structure
-- Community clustering via asynchronous label propagation was then performed on this graph to obtain interface clusters
-- Note: when constructing splits from these clusters, we add a further filtering step to ensure no leakage between communities in train and test
+- Community clustering via asynchronous label propagation was then performed on this graph to obtain interface clusters. Clusters are used in three ways:
+    - Non-redundant sampling and weighing scheme during training
+    - Non-redundant test/val selection by selecting test as cluster representatives
+    - Deleaking by removal of other cluster members after a member of the cluster is chosen as test/val (Note: deleaking algorithm uses further steps to ensure no-leakage between test/val and train)
 - From the chain-graph clusters we create paired-interface clusters paired-interface cluster of each PPI as $\{c_{a}, c_{b}\}$, where $c_a$ and $c_b$ are the interface cluster identifiers for the two interacting chains.
 
 ## 🧭 Test filters
