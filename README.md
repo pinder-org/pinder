@@ -13,7 +13,7 @@
 
 # 📚 About
 
-**pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is 10x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
+**pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is ~500x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
 
 The dataset is large (~700Gb) and hosted on Google Cloud Storage (available at the `gs://pinder` bucket).
 
