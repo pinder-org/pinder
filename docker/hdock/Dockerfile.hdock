@@ -72,7 +72,7 @@ RUN python -m pip install \
 WORKDIR /root/workspace
 
 # Install pinder
-RUN git clone https://github.com/aivant/pinder.git; \
+RUN git clone https://github.com/pinder-org/pinder.git; \
     cd pinder && pip install .
 
 # Copy the hdock tool into the Docker image
