@@ -1,4 +1,4 @@
-![pinder](assets/pinder.png)
+![pinder](https://github.com/pinder-org/pinder/raw/main/assets/pinder.png)
 <div align="center">
     <h1>PINDER: The Protein INteraction Dataset and Evaluation Resource</h1>
 </div>
