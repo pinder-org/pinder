@@ -9,8 +9,7 @@
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/pinder-org/pinder/blob/master/LICENSE)
 [![GitHub Repo stars](https://img.shields.io/github/stars/pinder-org/pinder)](https://github.com/pinder-org/pinder/stargazers)
 [![test](https://github.com/pinder-org/pinder/actions/workflows/pr.yaml/badge.svg)](https://github.com/pinder-org/pinder/actions/workflows/pr.yaml)
-[![codecov](https://codecov.io/gh/pinder-org/pinder/graph/badge.svg?token=KXTN3R16HG)](https://codecov.io/gh/pinder-org/pinder)
-
+[![codecov](https://codecov.io/gh/pinder-org/pinder/graph/badge.svg?token=NPQAYW75OD)](https://codecov.io/gh/pinder-org/pinder)
 
 # 📚 About
 
