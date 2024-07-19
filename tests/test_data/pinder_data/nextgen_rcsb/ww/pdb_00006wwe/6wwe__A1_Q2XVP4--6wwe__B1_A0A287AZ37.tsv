@@ -1,0 +1,2 @@
+path	intermolecular_contacts	charged_charged_contacts	charged_polar_contacts	charged_apolar_contacts	polar_polar_contacts	apolar_polar_contacts	apolar_apolar_contacts	link_density	label	probability	number_of_components_1	number_of_components_2	planarity	max_var_1	max_var_2	length1	length2	num_atom_types	chain_id1	chain_id2	chain1_id	chain2_id
+6wwe__A1_Q2XVP4--6wwe__B1_A0A287AZ37.pdb	122	16	12	29	11	27	27	0.06	BIO	0.98	1	1	3.7920794	0.43082908499985306	0.44030537902707695	441	431	4	A1	B1	R	L

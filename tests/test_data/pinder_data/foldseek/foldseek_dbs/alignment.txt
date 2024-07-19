@@ -1,0 +1,10 @@
+4wwi_A.pdb	4wwi_A.pdb	1.000E+00	1	57	57	1	57	57	57
+7nsg_B.pdb	7nsg_B.pdb	1.000E+00	1	430	430	1	430	430	430
+7nsg_B.pdb	7nsg_A.pdb	1.000E+00	1	430	430	1	430	430	430
+7cma_A.pdb	7cma_A.pdb	1.000E+00	1	155	155	1	155	155	155
+6wwe_A.pdb	6wwe_A.pdb	1.000E+00	1	441	441	1	441	441	441
+6wwe_A.pdb	6wwe_B.pdb	7.971E-01	1	441	441	1	431	431	444
+7nsg_A.pdb	7nsg_A.pdb	1.000E+00	1	430	430	1	430	430	430
+7nsg_A.pdb	7nsg_B.pdb	1.000E+00	1	430	430	1	430	430	430
+6wwe_B.pdb	6wwe_B.pdb	1.000E+00	1	431	431	1	431	431	431
+6wwe_B.pdb	6wwe_A.pdb	8.034E-01	1	431	431	1	441	441	444

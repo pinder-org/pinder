@@ -1,0 +1,2 @@
+entry_id	chain_1	asym_id_1	pdb_strand_id_1	chain_2	asym_id_2	pdb_strand_id_2	n_residue_pairs	n_residues	buried_sasa	chain_1_residues	chain_2_residues
+7cma	A1	A	A	B2	B	C	90	38	951	2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20	2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
