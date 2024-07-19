@@ -13,13 +13,14 @@ concurrency:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
     if: |
         github.repository == 'pinder-org/pinder' &&
         ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
+    runs-on:
+      labels: ubuntu-22.04-4core
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
