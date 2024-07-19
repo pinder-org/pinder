@@ -1,0 +1,85 @@
+name: CI Workflow
+on:
+  pull_request:
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
+concurrency:
+  # canceling actions from older commits:
+  # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-concurrency-to-cancel-any-in-progress-job-or-run
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    name: Test
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+    if: |
+        github.repository == 'pinder-org/pinder' &&
+        ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
+    runs-on:
+      labels: ubuntu-22.04-4core
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: install foldseek
+        shell: bash
+        run: |
+            # install foldseek:
+            # https://github.com/steineggerlab/foldseek
+            wget https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz
+            tar xvzf foldseek-linux-avx2.tar.gz
+            # https://www.scivision.dev/github-actions-path-append/
+            echo $(pwd)/foldseek/bin/ >> $GITHUB_PATH
+
+      - name: install mmseq
+        shell: bash
+        run: |
+            wget https://mmseqs.com/latest/mmseqs-linux-avx2.tar.gz
+            tar xvfz mmseqs-linux-avx2.tar.gz
+            echo $(pwd)/mmseqs/bin/ >> $GITHUB_PATH
+
+      - name: install iAlign
+        shell: bash
+        run: |
+            # install iAlign:
+            # https://sites.gatech.edu/cssb/ialign/
+            wget http://cssb2.biology.gatech.edu/skolnick/files/iAlign/ialign_64_v1.1b2.tar.gz
+            tar xvzf ialign_64_v1.1b2.tar.gz
+            # https://www.scivision.dev/github-actions-path-append/
+            echo $(pwd)/ialign/bin/ >> $GITHUB_PATH
+
+      - name: Install tox
+        run: pip install tox
+
+      - name: Run python tests
+        run: python -m tox -- src tests --doctest-modules --doctest-glob='*md' --doctest-continue-on-failure --cov-config=tox.ini --color=yes --durations=10 --cov-report=xml
+
+      - name: Directory Cache
+        uses: actions/cache@v4
+        with:
+          path: .tox
+          key: tox-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('tox.ini') }}
+          restore-keys: |
+            tox-${{ runner.os }}-${{ matrix.python-version }}-
+
+      - name: Shim code coverage report
+        shell: bash
+        run: sed -i.tmp "s|<source>.*\.tox.*site-packages|<source>$(pwd)/src|" coverage.xml
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          env_vars: OS,PYTHON
+          # fail_ci_if_error: true
+          files: ./coverage.xml
+          # flags: unittests
+          # name: codecov-umbrella
+          verbose: true

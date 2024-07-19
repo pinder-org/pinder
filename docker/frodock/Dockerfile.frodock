@@ -1,0 +1,102 @@
+ARG BASE_TAG=1.5-jammy
+ARG BASE_IMAGE=mambaorg/micromamba
+ARG RUNTIME_USER=root
+ARG MAMBA_PYTHON_VERSION=3.10
+ARG GCP_PROJECT
+# Required to pass at build time. Points to local location of FroDock software archive.
+ARG FRODOCK_SOURCE_ARCHIVE=./frodock.tar.gz
+
+FROM --platform=linux/amd64 ${BASE_IMAGE}:${BASE_TAG}
+
+ARG MAMBA_PYTHON_VERSION
+ARG RUNTIME_USER
+ENV DEBIAN_FRONTEND=noninteractive
+
+USER root
+
+# Install OS dependencies
+RUN apt-get --allow-releaseinfo-change update \
+    && apt-get -y install --no-install-recommends \
+    apt-utils \
+    dialog 2>&1 \
+    && apt-get install -y --no-install-recommends \
+    git \
+    rsync \
+    ssh \
+    gpg \
+    wget \
+    man-db \
+    procps \
+    tree \
+    unzip \
+    gcc \
+    build-essential \
+    lsb-release \
+    curl \
+    vim \
+    exuberant-ctags \
+    apt-transport-https \
+    ca-certificates \
+    gnupg \
+    libgl1-mesa-glx  \
+    libopenblas-base \
+    libopenmpi-dev openmpi-common openmpi-bin libopenmpi3 \
+    libfftw3-3 libfftw3-dev libfftw3-mpi-dev \
+    libhdf5-openmpi-dev \
+    && apt-get autoclean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# Install conda env
+RUN micromamba install -y -n base -c conda-forge \
+    pyopenssl=23.2.0 \
+    python=${MAMBA_PYTHON_VERSION} \
+    requests=2.25.1 \
+    google-cloud-storage \
+    gcsfs \
+    keyrings.google-artifactregistry-auth \
+    && micromamba clean --all --yes
+
+
+ARG MAMBA_DOCKERFILE_ACTIVATE=1  # (otherwise python will not be found)
+ENV CLOUDSDK_PYTHON /opt/conda/bin/python
+ENV BASH_ENV=/usr/local/bin/_activate_current_env.sh
+ENV LD_LIBRARY_PATH=/opt/conda/lib/
+
+# Install gsutil without full gcloud sdk
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-cli -y
+RUN gcloud config set project ${MAMBA_PYTHON_VERSION}
+
+# GCP/GKE specifics
+RUN python -m pip install \
+    simple-gcp-object-downloader \
+    kubernetes \
+    pandas==1.5.3
+
+WORKDIR /root/workspace
+
+# Install pinder
+RUN git clone https://github.com/pinder-org/pinder.git; \
+    cd pinder && pip install .
+
+# Copy the FroDock tool into the Docker image
+COPY ${FRODOCK_SOURCE_ARCHIVE} /workspace/
+
+RUN tar -xf frodock.tar.gz && \
+    mv frodock3_linux64 frodock && \
+    rm frodock.tar.gz
+
+WORKDIR /workspace/frodock
+RUN ./compile_frodock.sh
+
+# Update PATH to include Frodock binaries
+ENV PATH="/app/frodock/bin:${PATH}"
+
+# Prepare user (could be $MAMBA_USER)
+USER ${RUNTIME_USER}
+
+WORKDIR /root/workspace
+
+ENTRYPOINT ["/usr/local/bin/_entrypoint.sh"]
+CMD ["/bin/bash"]

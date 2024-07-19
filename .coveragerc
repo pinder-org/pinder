@@ -1,0 +1,15 @@
+[run]
+branch = true
+parallel = true
+source =
+    pinder/
+    src/pinder-core/pinder/core/
+    src/pinder-data/pinder/data/
+    src/pinder-eval/pinder/eval/
+    src/pinder-methods/pinder/methods/
+
+
+[report]
+show_missing = true
+precision = 2
+include_namespace_packages = true

@@ -1,0 +1,2 @@
+path	intermolecular_contacts	charged_charged_contacts	charged_polar_contacts	charged_apolar_contacts	polar_polar_contacts	apolar_polar_contacts	apolar_apolar_contacts	link_density	label	probability	number_of_components_1	number_of_components_2	planarity	max_var_1	max_var_2	length1	length2	num_atom_types	chain_id1	chain_id2	chain1_id	chain2_id
+6wwe__B1_A0A287AZ37--6wwe__C1_L0N7N1.pdb	30	10	4	9	0	5	2	0.12	XTAL	0.004	1	1	4.067272	0.44030537902707695	0.46942352380350905	431	359	4	B1	C1	R	L

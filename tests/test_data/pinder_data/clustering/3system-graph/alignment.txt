@@ -1,0 +1,13 @@
+6wwi_A.pdb	6wwi_A.pdb	1.000E+00	1	441	441	1	441	441	441
+6wwi_A.pdb	6wwi_B.pdb	8.222E-01	1	436	441	1	426	428	438
+6wwi_B.pdb	6wwi_B.pdb	1.000E+00	1	428	428	1	428	428	428
+6wwi_B.pdb	6wwi_A.pdb	8.339E-01	1	425	428	1	435	441	437
+4znc_D.pdb	4znc_D.pdb	1.000E+00	1	207	207	1	207	207	207
+4znc_D.pdb	4wwi_D.pdb	9.624E-01	1	207	207	1	201	201	207
+4znc_A.pdb	4znc_A.pdb	1.000E+00	1	53	53	1	53	53	53
+4znc_A.pdb	4wwi_A.pdb	9.699E-01	1	53	53	4	56	57	53
+6wwi_C.pdb	6wwi_C.pdb	1.000E+00	1	360	360	1	360	360	360
+4wwi_D.pdb	4wwi_D.pdb	1.000E+00	1	201	201	1	201	201	201
+4wwi_D.pdb	4znc_D.pdb	9.763E-01	1	201	201	1	207	207	207
+4wwi_A.pdb	4wwi_A.pdb	1.000E+00	1	57	57	1	57	57	57
+4wwi_A.pdb	4znc_A.pdb	9.305E-01	4	56	57	1	53	53	53

@@ -1,0 +1,2 @@
+entry_id	method	date	resolution	assembly	assembly_details	oligomeric_details	oligomeric_count	biol_details	complex_type	status	n_chains
+1fa8	X-RAY DIFFRACTION	2000-07-12	1.70	1	author_and_software_defined_assembly	dimeric	2	The biological assembly is a homodimer in each asymmetric unit and the two monomers are related by non-crystallographic symmetry.	homomer	complete	2

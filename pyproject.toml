@@ -1,0 +1,142 @@
+[project]
+name = "pinder"
+dynamic = ["version"]
+dependencies = [
+    "biotite >= 0.40.0",
+    "fastpdb",
+    "numpy<2",
+    "pandas",
+    "pyarrow>=12.0",
+    "torch",
+    "torchtyping",
+    "typeguard==2.13.3",
+    "typing_extensions",
+    "pydantic>=2.0",
+    "tqdm",
+    "plotly",
+    "nbformat",
+    "google-cloud-storage",
+    "gcsfs",
+    "torch_geometric",
+    "tabulate",
+    "PyYAML",
+    "scikit-learn <= 1.2.2",
+]
+description = "PINDER: The Protein INteraction Dataset and Evaluation Resource"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/pinder-org/pinder"
+Issues = "https://github.com/pinder-org/pinder/issues"
+
+[project.scripts]
+pinder_data = "pinder.data.run:main"
+pinder_download = "pinder.core.index.utils:download_pinder_cmd"
+pinder_eval = "pinder.eval.run:main"
+pinder_create_submission = "pinder.eval.create_submission:main"
+pinder_methods = "pinder.methods.main:main"
+pinder_sync_data = "pinder.core.index.utils:sync_pinder_structure_data"
+pinder_update_index = "pinder.core.index.utils:update_index_cmd"
+pinder_qc = "pinder.data.qc.run:main"
+pinder_plot = "pinder.data.plot.run:main"
+
+[project.optional-dependencies]
+lint = [
+    "ruff == 0.4.9",
+    "pre-commit == 3.6.0",
+]
+test = [
+    "tox >= 4",
+    "pytest == 7.2.0",
+    "pytest-cov == 4.0.0",
+    "build == 0.9.0",
+    "setuptools_scm[toml] == 7.0.5",
+]
+type = [
+    "mypy==1.10.0",
+    # packages needed only to provide type info - leave these unpinned
+    "pydantic",
+    "types-PyYAML",
+    "types-requests",
+]
+
+docs = [
+  "jupyter-sphinx",
+  "sphinxcontrib-applehelp",
+  "sphinxcontrib-bibtex",
+  "sphinxcontrib-devhelp",
+  "sphinxcontrib-htmlhelp",
+  "sphinxcontrib-jquery",
+  "sphinxcontrib-jsmath",
+  "sphinxcontrib-qthelp",
+  "sphinxcontrib-serializinghtml",
+  "jupyterlab_myst",
+  "myst-nb",
+  "myst-parser[linkify]",
+  "jupytext",
+  "piccolo-theme",
+  "numpydoc",
+]
+
+leaderboard = [
+    "quarto_cli@git+https://github.com/quarto-dev/quarto-cli",
+    "itables",
+    "matplotlib",
+    "seaborn",
+]
+
+data = [
+    "fire",
+    "gemmi",
+    "networkx",
+    "scikit-learn <= 1.2.2",
+    "python-graphql-client",
+    "prodigy-cryst @ git+https://github.com/yusuf1759/prodigy-cryst.git",
+    "mpire",
+    "matplotlib",
+    "seaborn",
+    "colormath",
+]
+
+dev = [
+    "pinder[lint,test,type,leaderboard,data]",
+]
+
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "build == 0.10.0",
+    "setuptools >= 65.4.0",
+    "setuptools_scm[toml] >= 7.1.0",
+]
+
+[tool.setuptools_scm]
+root = "."
+
+[tool.setuptools.packages.find]
+where = [
+    "src/pinder-core",
+    "src/pinder-data",
+    "src/pinder-eval",
+    "src/pinder-methods",
+]
+include = ["pinder.*"]
+namespaces = true
+
+[tool.setuptools.package-data]
+pinder = ["**.yaml"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--doctest-modules --doctest-glob='*md' --doctest-continue-on-failure"
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+testpaths = [
+	"tests"
+]

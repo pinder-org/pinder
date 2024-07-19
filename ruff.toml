@@ -1,0 +1,19 @@
+force-exclude = true
+
+[lint]
+select = [
+    "F",
+    "I",
+]
+ignore = [
+    "E",
+    "W",
+]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.isort]
+known-first-party = [
+    "pinder",
+]
