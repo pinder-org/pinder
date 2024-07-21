@@ -92,8 +92,8 @@ def test_read_extra_metadata_from_bucket(
 
 
 def test_get_metadata_extra_data():
-    meta = get_metadata(extra_data=SupplementaryData.paired_neff)
+    meta = get_metadata(extra_data=(SupplementaryData.paired_neff), extra_glob="none")
     assert "neff" in meta.columns
-    modified_entry = meta.to_dict(orient="records")[0]
+    modified_entry = meta.head(1).to_dict(orient="records")[0]
     meta = MetadataEntry(**modified_entry)
     assert isinstance(meta, MetadataEntry)
