@@ -19,8 +19,7 @@ jobs:
     if: |
         github.repository == 'pinder-org/pinder' &&
         ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
-    runs-on:
-      labels: ubuntu-22.04-4core
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
