@@ -15,7 +15,7 @@ def uniprot_leakage_main(
         (pindex["split"].isin(all_splits))
         & ~(pindex["cluster_id"].str.contains("-1", regex=False))
         & ~(pindex["cluster_id"].str.contains("p_p", regex=False))
-    ]
+    ].reset_index(drop=True)
 
     uniprot_problems: tuple[pd.DataFrame, float] = get_paired_uniprot_intersection(
         pindex_all_splits, against=split
