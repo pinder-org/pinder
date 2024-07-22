@@ -9,7 +9,11 @@ from pinder.core.loader.utils import create_nx_radius_graph
 
 
 def get_num_connected_components(args: tuple[Path, float]) -> tuple[int, int, str]:
-    """Get number of connected components in CA-CA distance graph"""
+    """Get number of connected components in CA-CA distance graph.
+
+    Find detached structures for each chain separately by detecting connected components in CA-CA distance
+    graph with radius of 15 Angstroms (default)
+    """
     pdb_file, radius = args
     try:
         model = pdbfile.read(pdb_file.as_posix())
@@ -42,38 +46,3 @@ def get_num_connected_components(args: tuple[Path, float]) -> tuple[int, int, st
         if isinstance(e, KeyboardInterrupt):
             raise e
         return -1, -1, pdb_file.stem
-
-
-def find_detached_structures(
-    annotation_df: pd.DataFrame, radius: int = 15
-) -> pd.DataFrame:
-    """Find detached structures for each chain separately
-    by detecting connected components in CA-CA distance graph with radius of 15 Angstroms (default)
-    """
-    annotation_df["pdb_id_slim"] = annotation_df["pdb_id"].apply(
-        lambda x: x.split("_")[1].lstrip("0")
-    )
-    annotation_df["components"] = 0
-    components = []
-    inputs = []
-    for i, row in tqdm(annotation_df.iterrows(), total=len(annotation_df)):
-        inputs.append(
-            (
-                Path(row["path"])
-                / f"{row['pdb_id_slim']}_{row['chain1']}_{row['pdb_id_slim']}_{row['chain2']}.pdb",
-                radius,
-            )
-        )
-    with multiprocessing.get_context("spawn").Pool() as p:
-        components = list(
-            tqdm(p.imap(get_num_connected_components, inputs), total=len(inputs))
-        )
-    component_dict = {tuple(x[1].split("_")): x[0] for x in components}
-    annotation_df["components"] = [
-        component_dict[(x["pdb_id_slim"], x["chain1"], x["pdb_id_slim"], x["chain2"])]
-        if (x["pdb_id_slim"], x["chain1"], x["pdb_id_slim"], x["chain2"])
-        in component_dict
-        else -1
-        for _, x in annotation_df.iterrows()
-    ]
-    return annotation_df
