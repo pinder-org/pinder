@@ -64,7 +64,7 @@ def test_get_stratified_sample(feat, n_samples, n_bins, splits_data_cp):
     for f in feat:
         sampled_min, sampled_max = sampled[f].min(), sampled[f].max()
         df_med = np.median(df[f])
-        msg = f"Expected column {f} samples to span min-max range containing overall mean!, got {sampled_min}, {df_med}, {sampled_max}"
+        msg = f"Expected column {f} samples to span min-max range containing overall median!, got {sampled_min}, {df_med}, {sampled_max}"
         assert sampled_min < df_med <= sampled_max, msg
 
 
