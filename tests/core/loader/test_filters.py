@@ -91,10 +91,10 @@ def test_pinder_meta_filters_extrafields(pinder_data_copy, pinder_data_dir):
     meta_filters = [
         filters.FilterMetadataFields(is_true=("is", True)),
         filters.FilterMetadataFields(is_true=("is", False)),
-        filters.FilterMetadataFields(foo=("is not", None)),
+        filters.FilterMetadataFields(foo=("!=", None)),
         filters.FilterMetadataFields(foo=("==", "bar")),
         filters.FilterMetadataFields(foo=("==", "baz")),
-        filters.FilterMetadataFields(K_d=("is not", None)),
+        filters.FilterMetadataFields(K_d=("!=", None)),
         filters.FilterMetadataFields(K_d=("<", 25)),
         filters.FilterMetadataFields(K_d=(">", 0.01)),
     ]
