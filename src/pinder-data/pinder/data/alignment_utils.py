@@ -289,8 +289,8 @@ def get_foldseek_contacts(
 
     R_renum = R_arr.copy()
     L_renum = L_arr.copy()
-    R_renum = struc.renumber_res_ids(R_renum, start=1)
-    L_renum = struc.renumber_res_ids(L_renum, start=1)
+    R_renum.res_id = struc.create_continuous_res_ids(R_renum)
+    L_renum.res_id = struc.create_continuous_res_ids(L_renum)
 
     R_map = {at1.res_id: at2.res_id for at1, at2 in zip(R_arr, R_renum)}
     L_map = {at1.res_id: at2.res_id for at1, at2 in zip(L_arr, L_renum)}
