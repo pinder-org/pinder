@@ -85,6 +85,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     environment: release
+    if: |
+        github.repository == 'pinder-org/pinder' &&
+        ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
     permissions:
       id-token: write
       contents: write
