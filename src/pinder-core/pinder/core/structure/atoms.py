@@ -179,7 +179,7 @@ def standardize_atom_array(
         return arr
     std_order = struc.info.standardize_order(arr)
     arr = apply_mask(arr, std_order).copy()
-    arr = struc.renumber_res_ids(arr)
+    arr.res_id = struc.create_continuous_res_ids(arr)
     return arr
 
 
