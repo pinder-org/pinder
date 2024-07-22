@@ -28,7 +28,7 @@ def _get_version() -> str:
 
         try:
             # our second choice is to try to get the version from importlib
-            version = importlib_version("pinder_methods")
+            version = importlib_version("pinder")
         except PackageNotFoundError:
             # we will land here if our package isn't actually installed
             warnings.warn("Neither our package nor setuptools_scm are installed")
