@@ -25,10 +25,10 @@ def get_paired_uniprot_intersection(
     if against not in ["test", "val"]:
         raise ValueError("against must be either 'test' or 'val'")
 
-    # Using vectorized operations to create sorted pairs
-    split_index["uniprot_pairs"] = split_index.apply(
-        lambda row: tuple(sorted([row["uniprot_R"], row["uniprot_L"]])), axis=1
-    )
+    split_index["uniprot_pairs"] = [
+        tuple(sorted([R, L]))
+        for R, L in zip(split_index.uniprot_R, split_index.uniprot_L)
+    ]
 
     # Creating sets of uniprot pairs for 'train' and the chosen 'against' split
     uniprot_train_pairs = set(
