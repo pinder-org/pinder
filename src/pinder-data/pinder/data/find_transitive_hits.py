@@ -115,6 +115,7 @@ def get_proto_splits_pindex(
 
     _, cluster_to_test_systems = get_test_conversion_dicts(test_index, cluster_key)
 
+    filtered_pindex["split"] = ""
     filtered_pindex.loc[filtered_pindex["id"].isin(test_meta["id"]), "split"] = (
         "proto-test"
     )
