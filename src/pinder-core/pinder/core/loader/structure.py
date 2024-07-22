@@ -472,15 +472,12 @@ class Structure:
             prop = sorted(prop)
         return list(prop)
 
-    def __post_init_post_parse__(self) -> None:
+    def __post_init__(self) -> None:
+        # pydantic v2 renames this to dataclass post_init
         if self.atom_array is None:
             self.atom_array = self.read_pdb(self.filepath)
         if not self.pinder_id:
             self.pinder_id = self.filepath.stem
-
-    def __post_init__(self) -> None:
-        # pydantic v2 renames this to dataclass post_init
-        return self.__post_init_post_parse__()
 
 
 def find_potential_interchain_bonded_atoms(
