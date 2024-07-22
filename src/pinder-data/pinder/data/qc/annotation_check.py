@@ -249,6 +249,15 @@ def merge_annotated_interfaces_with_pindex(
     return pindex_with_RL
 
 
+def _safe_percentage(numerator: int | float, denom: int | float) -> float:
+    if denom != 0:
+        pct = 100 * numerator / denom
+    else:
+        log.debug("Total systems in denominator is 0, returning NaN")
+        pct = np.nan
+    return pct
+
+
 def get_ecod_paired_leakage(
     metadata: pd.DataFrame,
     pindex: pd.DataFrame,
@@ -331,7 +340,7 @@ def get_ecod_paired_leakage(
         & (pindex_nonpeptide["ecod_pair"].isin(problem_cases_test))
     ].shape[0]
     num_test_total = pindex_nonpeptide.query('split == "test"').shape[0]
-    pct_test_overlap = 100 * num_test_with_problems / num_test_total
+    pct_test_overlap = _safe_percentage(num_test_with_problems, num_test_total)
     log.info(
         (
             f"Percent of test set with same ECOD pair as train:"
@@ -344,7 +353,7 @@ def get_ecod_paired_leakage(
         & (pindex_with_RL["ecod_pair"].isin(problem_cases_af2))
     ].shape[0]
     num_af_total = pindex_with_RL.query("pinder_af2").shape[0]
-    pct_af_overlap = 100 * num_af_with_problems / num_af_total
+    pct_af_overlap = _safe_percentage(num_af_with_problems, num_af_total)
     log.info(
         (
             f"Percent of PINDER-AF2 set with same ECOD pair as AF2-train:"
@@ -358,7 +367,7 @@ def get_ecod_paired_leakage(
         & (pindex_nonpeptide["ecod_pair"].isin(problem_cases_val))
     ].shape[0]
     num_val_total = pindex_nonpeptide.query('split == "val"').shape[0]
-    pct_val_overlap = 100 * num_val_with_problems / num_val_total
+    pct_val_overlap = _safe_percentage(num_val_with_problems, num_val_total)
     log.info(
         (
             f"Percent of val set with same ECOD pair as train:"
@@ -498,16 +507,16 @@ def get_binding_leakage(
     log.info(
         (
             f"Percent of {against} set with <0, 1, 2> unique ECOD:\t "
-            f"<{100*no_unique_ecod/against_size:.2f}%, "
-            f"{100*one_unique_ecod/against_size:.2f}%, "
-            f"{100*both_unique_ecod/against_size:.2f}%>"
+            f"<{_safe_percentage(no_unique_ecod, against_size):.2f}%, "
+            f"{_safe_percentage(one_unique_ecod, against_size):.2f}%, "
+            f"{_safe_percentage(both_unique_ecod, against_size):.2f}%>"
         )
     )
-    pair_ecod_diversity = 100 * both_unique_ecod / against_size
+    pair_ecod_diversity = _safe_percentage(both_unique_ecod, against_size)
     log.info(
         (
             f"Percent of {against} set with at least 1 unique ECOD:\t "
-            f"{100*(one_unique_ecod + both_unique_ecod)/against_size:.2f}%"
+            f"{_safe_percentage(one_unique_ecod + both_unique_ecod, against_size):.2f}%"
         )
     )
 
@@ -549,21 +558,21 @@ def get_binding_leakage(
     log.info(
         (
             f"Percent of {against} set that are heterodimers: \t "
-            f"{100*num_het/against_size:.2f}%"
+            f"{_safe_percentage(num_het, against_size):.2f}%"
         )
     )
     log.info(
         (
             f"Percent of {against} set that are heterodimers with <0, 1, 2> unique ECOD:\t "
-            f"<{100*het_no_unique_ecod/against_size:.2f}%, "
-            f"{100*het_one_unique_ecod/against_size:.2f}%, "
-            f"{100*het_both_unique_ecod/against_size:.2f}%>"
+            f"<{_safe_percentage(het_no_unique_ecod, against_size):.2f}%, "
+            f"{_safe_percentage(het_one_unique_ecod, against_size):.2f}%, "
+            f"{_safe_percentage(het_both_unique_ecod, against_size):.2f}%>"
         )
     )
     log.info(
         (
             f"Percent of {against} set that are heterodimers with at least 1 unique ECOD:\t "
-            f"{100*(het_one_unique_ecod + het_both_unique_ecod)/against_size:.2f}%"
+            f"{_safe_percentage(het_one_unique_ecod + het_both_unique_ecod, against_size):.2f}%"
         )
     )
 
