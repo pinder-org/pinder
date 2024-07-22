@@ -13,7 +13,7 @@ log = setup_logger(__name__)
 
 def get_paired_uniprot_intersection(
     split_index: pd.DataFrame, against: str = "test"
-) -> tuple[set[tuple[str, str]], float]:
+) -> tuple[pd.DataFrame, float]:
     """
     Get the intersection of the uniprot pairs between the train and test/val splits
 
@@ -68,12 +68,10 @@ def get_paired_uniprot_intersection(
         )
     )
 
-    return (
-        problem_elements,
-        len(problem_elements_noUNDEF) / against_count
-        if against_count
-        else float("nan"),
+    frac_intersect = (
+        len(problem_elements_noUNDEF) / against_count if against_count else float("nan")
     )
+    return (problem_elements, frac_intersect)
 
 
 def metadata_to_ecod_pairs(

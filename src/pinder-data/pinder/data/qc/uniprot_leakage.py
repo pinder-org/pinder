@@ -8,7 +8,7 @@ from pinder.data.qc.utils import load_index
 def uniprot_leakage_main(
     index_path: str | None = None,
     split: str = "test",
-) -> pd.DataFrame:
+) -> tuple[pd.DataFrame, float]:
     pindex = load_index(index_path)
     all_splits = ["train", "test", "val"]
     pindex_all_splits = pindex[
@@ -17,7 +17,9 @@ def uniprot_leakage_main(
         & ~(pindex["cluster_id"].str.contains("p_p", regex=False))
     ]
 
-    uniprot_problems = get_paired_uniprot_intersection(pindex_all_splits, against=split)
+    uniprot_problems: tuple[pd.DataFrame, float] = get_paired_uniprot_intersection(
+        pindex_all_splits, against=split
+    )
     return uniprot_problems
 
 
