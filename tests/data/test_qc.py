@@ -8,12 +8,18 @@ import string
 
 from biotite.sequence import ProteinSequence
 import pytest
+import pandas as pd
 
 import pinder.data.qc.similarity_check as sc
 from pinder.data.qc.similarity_check import (
     align_sequences,
     generate_alignments,
 )
+from pinder.core.index.utils import IndexEntry
+import pinder.data.qc.annotation_check as ac
+import pinder.data.qc.pfam_diversity as pfam
+import pinder.data.qc.uniprot_leakage as ul
+
 
 random.seed(42)
 
@@ -136,3 +142,48 @@ def test_get_processed_alignments(splits_data_cp):
     alignments_path = cache_path / "alignments"
     alignments = sc.get_processed_alignments(alignments_path)
     assert len(alignments) == 30
+
+
+def test_binding_leakage_main(test_dir):
+    """Integration test for ECOD leakage and diversity calculations."""
+    pinder_dir = test_dir / "pinder_data/mini"
+    metadata_file = pinder_dir / "metadata_with_supplementary.parquet"
+    index_file = pinder_dir / "index.parquet"
+
+    dfs = ac.binding_leakage_main(index_file=index_file, metadata_file=metadata_file)
+    assert len(dfs) == 4
+    assert all(isinstance(df, pd.DataFrame) for df in dfs)
+    report = dfs[-1]
+    assert report.shape == (2, 4)
+
+
+def test_pfam_diversity_main(test_dir):
+    """Integration test for Pfam clan diversity calculations."""
+    pinder_dir = test_dir / "pinder_data/mini"
+    metadata_file = pinder_dir / "metadata_with_supplementary.parquet"
+    index_file = pinder_dir / "index.parquet"
+    pfam.pfam_diversity_main(
+        index_file=index_file,
+        metadata_file=metadata_file,
+        pfam_file=pinder_dir / "PDBfam.parquet",
+    )
+
+
+@pytest.mark.parametrize("split", ["test", "val"])
+def test_uniprot_leakage_main(test_dir, split):
+    """Integration test for uniprot pair leakage calculations."""
+    pinder_dir = test_dir / "pinder_data/mini"
+    index_file = pinder_dir / "index.parquet"
+    leakage_info = ul.uniprot_leakage_main(
+        index_path=index_file,
+        split=split,
+    )
+    assert isinstance(leakage_info, tuple)
+    leakage_df, percentage = leakage_info
+    assert isinstance(percentage, float)
+    assert isinstance(leakage_df, pd.DataFrame)
+    index_schema = IndexEntry.__annotations__
+    index_fields = index_schema.keys()
+    expected_columns = set(index_fields)
+    expected_columns.add("uniprot_pairs")
+    assert set(leakage_df.columns) == expected_columns
