@@ -673,15 +673,15 @@ While `pinder` makes significant strides, several limitations highlight areas fo
 
 Further, improvements in *apo* pairing and the integration of more advanced tools, such as `iAlign`, into the alignment methodology could enhance the dataset's precision. Addressing these limitations could lead to even larger datasets, better performance and evaluation in future iterations of `pinder`. We provide a more detailed discussion of the limitations of the `pinder` dataset and methodology in [limitations](limitations.md). Below we summarize some key areas of future work:
 
-[ ] Expansion to higher-order oligomers
-[ ] Homologous *apo* pairing via Foldseek and MMseqs2 monomer matching
-[ ] Rosetta-relaxed unbound structures & evaluation set for all structures in the dataset
-[ ] A complete evaluation harness for reference-free metrics to evaluate the quality of the predicted structures, such as VoroMQA, PISA, and more
-[ ] Confirmed negative pairs
-[ ] Addition of an antibody-focused benchmark test set `pinder-ab`
-[ ] Contact-conditioned benchmarks
-[ ] Additional information for multimeric training examples (e.g. restraints)
-[ ] Improved abstractions for pytorch-lightning data loaders
+- [ ] Expansion to higher-order oligomers
+- [ ] Homologous *apo* pairing via Foldseek and MMseqs2 monomer matching
+- [ ] Rosetta-relaxed unbound structures & evaluation set for all structures in the dataset
+- [ ] A complete evaluation harness for reference-free metrics to evaluate the quality of the predicted structures, such as VoroMQA, PISA, and more
+- [ ] Confirmed negative pairs
+- [ ] Addition of an antibody-focused benchmark test set `pinder-ab`
+- [ ] Contact-conditioned benchmarks
+- [ ] Additional information for multimeric training examples (e.g. restraints)
+- [ ] Improved abstractions for pytorch-lightning data loaders
 
 
 # 👨‍💻 Code organization
