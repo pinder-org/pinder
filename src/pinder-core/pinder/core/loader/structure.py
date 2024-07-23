@@ -314,6 +314,7 @@ class Structure:
 
     @property
     def uniprot_mapping(self) -> pd.DataFrame | None:
+        """ "pd.DataFrame | None: The uniprot mapping for the structure, if available."""
         if isinstance(self.uniprot_map, Path):
             df = pd.read_parquet(self.uniprot_map)
             df = set_mapping_column_types(df)
@@ -324,6 +325,7 @@ class Structure:
 
     @property
     def resolved_mapping(self) -> pd.DataFrame | None:
+        """ "pd.DataFrame | None: The uniprot mapping for the structure filtered to resolved residues, if available."""
         # Ensure mapping only contains those residues that are actually
         # present in the PDB file
         mapping = self.uniprot_mapping
@@ -335,6 +337,7 @@ class Structure:
 
     @property
     def resolved_pdb2uniprot(self) -> dict[int, int]:
+        """ "dict[int, int]: Dictionary mapping PDB residue ID number to UniProt numbering, where resolved and mapping is available."""
         # Ensure mapping only contains those residues that are actually
         # present in the PDB file
         mapping = self.resolved_mapping
@@ -349,17 +352,20 @@ class Structure:
 
     @property
     def resolved_uniprot2pdb(self) -> dict[int, int]:
+        """ "dict[int, int]: Dictionary mapping UniProt residue numbering to PDB numbering, where resolved and mapping is available."""
         # Ensure mapping only contains those residues that are actually
         # present in the PDB file
         return reverse_dict(self.resolved_pdb2uniprot)
 
     @property
     def coords(self) -> NDArray[np.double]:
+        """ndarray[np.double]: The coordinates of the atoms in the structure."""
         coord: NDArray[np.double] = self.atom_array.coord
         return coord
 
     @property
     def dataframe(self) -> pd.DataFrame:
+        """pd.DataFrame: The dataframe representation of the structure."""
         three_to_one = pc.three_to_one_noncanonical_mapping
         return pd.DataFrame(
             [
@@ -383,21 +389,25 @@ class Structure:
 
     @property
     def backbone_mask(self) -> NDArray[np.bool_]:
+        """ndarray[np.bool\_]: a logical mask for backbone atoms."""
         mask: NDArray[np.bool_] = struc.filter_peptide_backbone(self.atom_array)
         return mask
 
     @property
     def calpha_mask(self) -> NDArray[np.bool_]:
+        """ndarray[np.bool\_]: a logical mask for alpha carbon atoms."""
         mask: NDArray[np.bool_] = self.atom_array.atom_name == "CA"
         return mask
 
     @property
     def n_atoms(self) -> int:
+        """int: The number of atoms in the structure."""
         n: int = self.atom_array.shape[0]
         return n
 
     @property
     def chains(self) -> list[str]:
+        """list[str]: The list of chain IDs in the structure."""
         ch_list = self._attr_from_atom_array(
             self.atom_array, "chain_id", distinct=True, sort=True
         )
@@ -405,6 +415,7 @@ class Structure:
 
     @property
     def chain_sequence(self) -> dict[str, list[str]]:
+        """dict[str, list[str]]: The chain sequence dictionary, where keys are chain IDs and values are lists of residue codes."""
         ch_seq: dict[str, list[str]] = (
             self.dataframe[["chain_id", "res_code", "res_name", "res_id"]]
             .drop_duplicates()
@@ -416,17 +427,20 @@ class Structure:
 
     @property
     def sequence(self) -> str:
+        """str: The amino acid sequence of the structure."""
         numbering, resn = struc.get_residues(self.atom_array)
         seq: str = resn2seq(resn)
         return seq
 
     @property
     def fasta(self) -> str:
+        """str: The fasta representation of the structure sequence."""
         fasta_str: str = "\n".join([f">{self.filepath.stem}", self.sequence])
         return fasta_str
 
     @property
     def tokenized_sequence(self) -> "torch.Tensor":
+        """torch.Tensor: The tokenized sequence representation of the structure sequence."""
         import torch
 
         seq_encoding = torch.tensor([pc.AA_TO_INDEX[x] for x in self.sequence])
@@ -435,6 +449,7 @@ class Structure:
 
     @property
     def residue_names(self) -> list[str]:
+        """list[str]: The list of distinct residue names in the structure."""
         res_list = self._attr_from_atom_array(
             self.atom_array, "res_name", distinct=True, sort=True
         )
@@ -442,6 +457,7 @@ class Structure:
 
     @property
     def residues(self) -> list[int]:
+        """list[int]: The list of distinct residue IDs in the structure."""
         res_list = self._attr_from_atom_array(
             self.atom_array, "res_id", distinct=True, sort=True
         )
@@ -449,6 +465,7 @@ class Structure:
 
     @property
     def atom_names(self) -> list[str]:
+        """list[str]: The list of distinct atom names in the structure."""
         at_list = self._attr_from_atom_array(
             self.atom_array, "atom_name", distinct=True, sort=True
         )
@@ -456,6 +473,7 @@ class Structure:
 
     @property
     def b_factor(self) -> list[float]:
+        """list[float]: A list of B-factor values for each atom in the structure."""
         b_factor = self._attr_from_atom_array(
             self.atom_array, "b_factor", distinct=False, sort=False
         )

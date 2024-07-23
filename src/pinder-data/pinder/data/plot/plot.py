@@ -120,6 +120,7 @@ class Colors:
 
     @property
     def colors(self) -> list[str]:
+        """list[str]: The list of available colors."""
         colors: list[str] = [
             field.default
             for field in self.__dataclass_fields__.values()
@@ -129,10 +130,12 @@ class Colors:
 
     @property
     def light(self) -> list[str]:
+        """list[str]: The list of available light colors."""
         return [self.green, self.blue, self.pink]
 
     @property
     def dark(self) -> list[str]:
+        """list[str]: The list of available dark colors."""
         return [
             self.denim,
             self.navy,
@@ -144,6 +147,7 @@ class Colors:
 
     @property
     def colorblind_paired(self) -> list[str]:
+        """list[str]: The list of available colorblind-friendly paired colors."""
         return [
             self.bluish_green,
             self.redpurple,
@@ -156,6 +160,7 @@ class Colors:
 
     @property
     def blues(self) -> list[str]:
+        """list[str]: The list of available blue-hued colors."""
         return [
             self.blue,
             self.ice,
@@ -168,18 +173,22 @@ class Colors:
 
     @property
     def pinks(self) -> list[str]:
+        """list[str]: The list of available pink-hued colors."""
         return [self.pink, self.brightpink]
 
     @property
     def purples(self) -> list[str]:
+        """list[str]: The list of available purple-hued colors."""
         return [self.palepurple, self.purple]
 
     @property
     def neutral(self) -> list[str]:
+        """list[str]: The list of available neutral colors."""
         return [self.white, self.gray, self.midnight]
 
     @property
     def paired(self) -> list[str]:
+        """list[str]: paired color palette."""
         return [
             self.green,
             self.palegreen,
@@ -197,6 +206,7 @@ class Colors:
 
     @property
     def bright(self) -> list[str]:
+        """list[str]: bright color palette."""
         return [
             self.brightpink,
             self.teal,
@@ -208,6 +218,7 @@ class Colors:
 
     @property
     def pastel(self) -> list[str]:
+        """list[str]: pastel color palette."""
         return [self.green, self.blue, self.pink, self.palepurple, self.gray]
 
 
