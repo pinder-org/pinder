@@ -112,7 +112,7 @@ myst_enable_extensions = [
 ]
 
 myst_url_schemes = ("http", "https", "mailto")
-# nb_execution_mode = "force"
+
 
 # -- Options for HTML output -------------------------------------------------
 
