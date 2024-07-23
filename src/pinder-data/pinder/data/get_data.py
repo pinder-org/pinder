@@ -607,31 +607,32 @@ def process_mmcif(
 ) -> None:
     """Process a single mmCIF file from the next generation PDB archive.
 
-    Parameters
-    ----------
-    mmcif_file : Path
-        The mmCIF file to be processed.
-    config : PinderDataGenConfig
-        Configuration parameters for dataset generation.
-    use_cache : bool
-        Whether to skip processing if the metadata file exists and status is set
-        to one of the PROCESSED_STATUS_CODES
-        [
-            'complete', 'no metadata', 'assembly failed', 'entities failed',
-            'non-protein assembly', 'too many chains'
-        ]
+    Parameters:
+        mmcif_file : Path
+            The mmCIF file to be processed.
+        config : PinderDataGenConfig
+            Configuration parameters for dataset generation.
+        use_cache : bool
+            Whether to skip processing if the metadata file exists and status is set
+            to one of the PROCESSED_STATUS_CODES:
 
-    Returns
-    -------
-    None
+            - complete
+            - no metadata
+            - assembly failed
+            - entities failed
+            - non-protein assembly
+            - too many chains
 
-    Notes
-    -----
-    - Saves metadata as a text file.
-    - Saves biological assembly as an mmCIF file.
-    - Saves interacting chains along with the interface metrics as a text file.
-    - Saves all pairs of interacting chains as PDB files.
-    - Saves residue numbers of interacting chains as a text file along with Uniprot IDs and numbering.
+    Returns:
+        None
+
+    Note:
+        - Saves metadata as a text file.
+        - Saves biological assembly as an mmCIF file.
+        - Saves interacting chains along with the interface metrics as a text file.
+        - Saves all pairs of interacting chains as PDB files.
+        - Saves residue numbers of interacting chains as a text file along with Uniprot IDs and numbering.
+
     """
     log.info(mmcif_file.parent)
 

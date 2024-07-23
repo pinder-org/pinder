@@ -20,6 +20,12 @@ from pinder.core.utils import constants as pc
 
 log = setup_logger(__name__)
 
+_ignore_pydantic_fields = [
+    "model_config",
+    "model_fields",
+    "model_computed_fields",
+]
+
 
 def get_pinder_location() -> Path:
     """
@@ -160,13 +166,12 @@ def get_metadata(
 
     Parameters:
         csv_name (str): The name of the CSV file to load. Defaults to "metadata.parquet".
-        update (bool): Whether to force update index on disk even if it exists.
-            Default is False.
-        extra_glob (str): The pattern to match extra metadata CSV files. Defaults to
-            "metadata-*.csv.gz"
+        update (bool): Whether to force update index on disk even if it exists. Default is False.
+        extra_glob (str): The pattern to match extra metadata CSV files. Defaults to "metadata-\*.csv.gz"
 
     Returns:
         pd.DataFrame: The Pinder metadata as a DataFrame.
+
     """
     local_metadata = Path(get_index_location(csv_name))
     if local_metadata.suffix in [".csv", ".gz"]:
@@ -258,7 +263,7 @@ def get_extra_metadata(
         remote_location (str):
             The filepath to the remote location containing CSV files.
         glob_pattern (str): The pattern to match extra metadata CSV files. Defaults to
-            "metadata-*.csv.gz"
+            "metadata-\*.csv.gz"
         update (bool): Whether to force update index on disk even if it exists.
             Default is False.
 
@@ -584,7 +589,8 @@ class IndexEntry(BaseModel):
 
     Stores all associated metadata for a particular dataset entry as attributes.
 
-    Parameters:
+    Parameters
+    ----------
         split (str):
             The type of data split (e.g., 'train', 'test').
         id (str):
@@ -726,6 +732,7 @@ class IndexEntry(BaseModel):
 
     @property
     def pdb_paths(self) -> dict[str, str | list[str]]:
+        """dict[str, str | list[str]]: Dictionary containing the PDB type as key and PDB file name as value. Alternative apo monomers (if available) are returned as a list."""
         return {
             "native": self.pdb_path(self.pinder_pdb),
             "holo_R": self.pdb_path(self.holo_R_pdb),
@@ -744,6 +751,7 @@ class IndexEntry(BaseModel):
 
     @property
     def mapping_paths(self) -> dict[str, str | list[str]]:
+        """dict[str, str | list[str]]: Dictionary containing the PDB type as key and parquet file names corresponding to residue-level mapping information as value. are returned as a list."""
         return {
             "holo_R": self.mapping_path(self.holo_R_pdb),
             "holo_L": self.mapping_path(self.holo_L_pdb),
@@ -759,26 +767,32 @@ class IndexEntry(BaseModel):
 
     @property
     def pinder_id(self) -> str:
+        """str: PINDER identifier for the dimer."""
         return self.id
 
     @property
     def pinder_pdb(self) -> str:
+        """str: PINDER dimer PDB file name."""
         return self.id + ".pdb"
 
     @property
     def apo_R_alt(self) -> list[str] | list[None]:
+        """list[str]: list of alternative apo receptor PDBs associated with entry."""
         return [f for f in self.apo_R_pdbs.split(";") if f != self.apo_R_pdb]
 
     @property
     def apo_L_alt(self) -> list[str] | list[None]:
+        """list[str]: list of alternative apo ligand PDBs associated with entry."""
         return [f for f in self.apo_L_pdbs.split(";") if f != self.apo_L_pdb]
 
     @property
     def homodimer(self) -> bool:
+        """bool: loose definition of whether the entry is a homodimer (based on identical receptor and ligand UniProt IDs)."""
         return self.uniprot_R == self.uniprot_L
 
     @property
     def test_system(self) -> bool:
+        """bool: whether the system is part of the test split."""
         return self.split == "test"
 
 
@@ -971,6 +985,7 @@ class MetadataEntry(BaseModel):
 
     @property
     def pinder_id(self) -> str:
+        """str: PINDER identifier for the dimer."""
         return self.id
 
 
@@ -983,6 +998,9 @@ def fix_index(
         field_type = IndexEntry.__annotations__[field]
         if field in df_index.columns:
             df_index = _fill_missing_values(df_index, field, field_type, cast_types)
+        elif field in _ignore_pydantic_fields or field.startswith("__"):
+            log.debug(f"Ignoring field {field} with type {field_type}")
+            continue
         else:
             fill_val = _get_default_value(field_type)
             log.error(
@@ -1008,6 +1026,9 @@ def fix_metadata(
             df_metadata = _fill_missing_values(
                 df_metadata, field, field_type, cast_types
             )
+        elif field in _ignore_pydantic_fields or field.startswith("__"):
+            log.debug(f"Ignoring field {field} with type {field_type}")
+            continue
         else:
             fill_val = _get_default_value(field_type)
             log.error(

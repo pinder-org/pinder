@@ -577,17 +577,29 @@ def populate_entries(
 ) -> None:
     """Index PINDER dimers
 
-    Parameters:
-    data_dir (Path): The directory where the data is stored.
-    pinder_dir (Path): The directory where the PINDER data will be stored.
-    alphafold_path (str, optional): The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
-    google_cloud_project (str, optional): The name of the Google Cloud project that you have access to. Defaults to "".
-    entry_dirs (list[Path], optional): Optional subset of PDB entry directories to populate. Will populate all if not provided.
-    use_cache (bool): Whether to skip populating entries if they are already populated.
-    use_af_cache (bool): Whether to skip populating AF2 entries if they are already populated.
-    populate_alphafold (bool): Whether to populate AF2 entries after RCSB-derived PDBs.
-    parallel (bool): Whether to populate entries in parallel. Note: this part requires more memory than other steps.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    data_dir : Path
+        The directory where the data is stored.
+    pinder_dir : Path
+        The directory where the PINDER data will be stored.
+    alphafold_path : str, optional
+        The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
+    google_cloud_project : str, optional
+        The name of the Google Cloud project that you have access to. Defaults to "".
+    entry_dirs : list[Path], optional
+        Optional subset of PDB entry directories to populate. Will populate all if not provided.
+    use_cache : bool
+        Whether to skip populating entries if they are already populated.
+    use_af_cache : bool
+        Whether to skip populating AF2 entries if they are already populated.
+    populate_alphafold : bool
+        Whether to populate AF2 entries after RCSB-derived PDBs.
+    parallel : bool
+        Whether to populate entries in parallel. Note: this part requires more memory than other steps.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
+
     """
 
     if not entry_dirs:
@@ -696,13 +708,21 @@ def populate_predicted_from_monomers(
 ) -> None:
     """Populate predicted monomers after monomers and dimers have been populated.
 
-    Parameters:
-    data_dir (Path): The directory where the data is stored.
-    pinder_dir (Path): The directory where the PINDER data will be stored.
-    alphafold_path (str, optional): The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
-    google_cloud_project (str, optional): The name of the Google Cloud project that you have access to. Defaults to "".
-    entry_dirs (list[Path], optional): Optional subset of PDB entry directories to populate. Will populate all if not provided.
-    use_cache (bool): Whether to skip populating entries if they are already populated.
+    Parameters
+    ----------
+    data_dir : Path
+        The directory where the data is stored.
+    pinder_dir : Path
+        The directory where the PINDER data will be stored.
+    alphafold_path : str, optional
+        The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
+    google_cloud_project : str, optional
+        The name of the Google Cloud project that you have access to. Defaults to "".
+    entry_dirs : list[Path], optional
+        Optional subset of PDB entry directories to populate. Will populate all if not provided.
+    use_cache : bool
+        Whether to skip populating entries if they are already populated.
+
     """
 
     if not entry_dirs:
@@ -797,10 +817,16 @@ def get_matching_entry_files(
     """Find all files matching a glob pattern in parallel across a list of ingested
     PDB entry directories.
 
-    Parameters:
-    entry_dirs (list[Path]): PDB entry directories to search.
-    glob_pattern (str): The glob expression to use for matching files.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    entry_dirs : list[Path]
+        PDB entry directories to search.
+    glob_pattern : str
+        The glob expression to use for matching files.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
+    parallel : bool
+        Whether to search in parallel.
 
     """
     entry_file_lists: list[list[Path]] = process_starmap(
@@ -820,8 +846,10 @@ def split_monomer_dimer_mapping_pqts(
 ) -> tuple[list[Path], list[Path]]:
     """Split list of mapping parquet files into true monomers and split dimer monomers.
 
-    Parameters:
-    mapping_files (list[Path]): List of mapping files with parquet extension.
+    Parameters
+    ----------
+    mapping_files : list[Path]
+        List of mapping files with parquet extension.
 
     """
     monomer_mappings = []
@@ -841,8 +869,10 @@ def split_monomer_dimer_pdbs(
 ) -> tuple[list[Path], list[Path]]:
     """Split list of PDB files into true monomer PDBs and dimer + split-dimer PDBs.
 
-    Parameters:
-    pdb_files (list[Path]): List of pdb files to split into monomers and dimers.
+    Parameters
+    ----------
+    pdb_files : list[Path]
+        List of pdb files to split into monomers and dimers.
 
     """
     monomer_pdbs = []
@@ -864,9 +894,12 @@ def get_monomer_index_from_files(
     """Get index of monomers with valid parquet mapping and PDB file pair on disk.
     The monomer mapping and PDB files do not need to be in a paired order.
 
-    Parameters:
-    monomer_mappings (list[Path]): List of mapping files corresponding to true monomers.
-    monomer_pdbs (list[Path]): List of PDB files corresponding to true monomers.
+    Parameters
+    ----------
+    monomer_mappings : list[Path]
+        List of mapping files corresponding to true monomers.
+    monomer_pdbs : list[Path]
+        List of PDB files corresponding to true monomers.
 
     """
     monomer_pdb_df = []
@@ -893,11 +926,16 @@ def get_dimer_index_from_files(
 ) -> pd.DataFrame:
     """Get index of dimer files with valid parquet mappings and PDB file pairs on disk.
 
-    Parameters:
-    data_dir (Path): The directory where the data is stored.
-    pinder_dir (Path): The directory where the PINDER data will be stored.
-    dimer_mappings (list[Path]): List of mapping files corresponding to split-dimer monomers.
-    dimer_pdbs (list[Path]): List of PDB files corresponding to dimers and split-dimer monomers.
+    Parameters
+    ----------
+    data_dir : Path
+        The directory where the data is stored.
+    pinder_dir : Path
+        The directory where the PINDER data will be stored.
+    dimer_mappings : list[Path]
+        List of mapping files corresponding to split-dimer monomers.
+    dimer_pdbs : list[Path]
+        List of PDB files corresponding to dimers and split-dimer monomers.
 
     """
 
@@ -959,14 +997,26 @@ def get_populated_entries(
 ) -> None:
     """Index PINDER dimers
 
-    Parameters:
-    data_dir (Path): The directory where the data is stored.
-    pinder_dir (Path): The directory where the PINDER data will be stored.
-    alphafold_path (str, optional): The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
-    google_cloud_project (str, optional): The name of the Google Cloud project that you have access to. Defaults to "".
-    entry_dirs (list[Path], optional): Optional subset of PDB entry directories to populate. Will populate all if not provided.
-    transient_interface_config (TransientInterfaceConfig): Config object containing parameters used to label potentially transient interfaces.
-    use_cache (bool): Whether to skip populating entries if they are already populated.
+    Parameters
+    ----------
+    data_dir : Path
+        The directory where the data is stored.
+    pinder_dir : Path
+        The directory where the PINDER data will be stored.
+    alphafold_path : str, optional
+        The path to the AlphaFold models. Defaults to "gs://public-datasets-deepmind-alphafold-v4".
+    google_cloud_project : str, optional
+        The name of the Google Cloud project that you have access to. Defaults to "".
+    entry_dirs : list[Path], optional
+        Optional subset of PDB entry directories to populate. Will populate all if not provided.
+    transient_interface_config : TransientInterfaceConfig
+        Config object containing parameters used to label potentially transient interfaces.
+    use_cache : bool
+        Whether to skip populating entries if they are already populated.
+    parallel : bool
+        Whether to populate entries in parallel. Note: this part requires more memory than other steps.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
     """
 
     pdb_dir = Path(data_dir)

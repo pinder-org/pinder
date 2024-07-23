@@ -32,7 +32,7 @@ def superimpose_chain(
     conformational outliers.
 
     The method finds corresponding residues by sequence alignment and selects their
-    :math:`C_{\alpha}` atoms as superimposition *anchors*.
+    :math:`C_{\\alpha}` atoms as superimposition *anchors*.
     Then iteratively the anchor atoms are superimposed and outliers
     (in terms of high squared distance between matching anchor atoms) are removed, until
     either no outliers are left or the maximum number of iterations is reached.
@@ -52,8 +52,8 @@ def superimpose_chain(
         A single value indicates a linear penalty, while a tuple indicates an affine penalty.
     min_anchors: int, optional
         If less than `min_anchors` anchors are found by sequence alignment, the method ditches the
-        alignment and matches all :math:`C_{\alpha}` atoms.
-        If the number of :math:`C_{\alpha}` atoms does not match in this fallback case, an exception
+        alignment and matches all :math:`C_{\\alpha}` atoms.
+        If the number of :math:`C_{\\alpha}` atoms does not match in this fallback case, an exception
         is raised.
         Furthermore, the outlier removal is stopped, if less than `min_anchors` anchors would be
         left.
@@ -75,14 +75,14 @@ def superimpose_chain(
         :meth:`AffineTransformation.apply()` can be used to transform another AtomArray
         in the same way.
     fixed_anchor_indices, mobile_anchor_indices : ndarray, shape(k,), dtype=int
-        The indices of the anchor :math:`C_{\alpha}` atoms in the fixed and mobile
+        The indices of the anchor :math:`C_{\\alpha}` atoms in the fixed and mobile
         structure, respectively.
         These atoms were used for the superimposition.
 
-    Notes
-    -----
-    As this method relies on amino acid sequence alignment, it works only for proteins
-    with decent homology.
+    Note:
+        As this method relies on amino acid sequence alignment, it works only for proteins
+        with decent homology.
+
     """
     fixed_ca_indices = _get_ca_indices(fixed)
     mobile_ca_indices = _get_ca_indices(mobile)

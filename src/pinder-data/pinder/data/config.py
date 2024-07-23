@@ -110,17 +110,15 @@ class FoldseekConfig:
         Maximum results per query sequence allowed to pass the prefilter (affects sensitivity).
         Default is 1000.
     alignment_type: int
-        Which alignment type to use in generating alignments.
-        Main options are:
-        1. TMalign which is actually an optimized version of TM, Foldseek-TM
-            a. this option is global and slow
-            b. `--alignment-type 1`
-        2. 3Di+AA Gotoh-Smith-Waterman, which is the default
-            a. this option is local and fast
-            b. `--alignment-type 2`
+        Which alignment type to use in generating alignments. Main options are
+            1. TMalign which is actually an optimized version of TM, Foldseek-TM
+                a. this option is global and slow
+                b. `--alignment-type 1`
+            2. 3Di+AA Gotoh-Smith-Waterman, which is the default
+                a. this option is local and fast
+                b. `--alignment-type 2`
     alignment_filename: str
         Alignment output filename. Defaults to alignment.txt.
-
     """
 
     sensitivity: float = 11.0

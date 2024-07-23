@@ -558,7 +558,7 @@ def collect(data_dir: Path, pinder_dir: Path) -> None:
     # Can happen if the entry was a non-protein assembly or entity/assembly generation failed
     metadata_df.loc[metadata_df.n_chains.isna(), "n_chains"] = 0
     metadata_df["n_chains"] = metadata_df["n_chains"].astype(int)
-    metadata_df["resolution"] = metadata_df["resolution"].replace(".", 0.0)
+    metadata_df.loc[metadata_df.resolution == ".", "resolution"] = 0.0
     metadata_df["resolution"] = metadata_df["resolution"].astype(float)
 
     output_metadata_path = pinder_dir / "structural_metadata.parquet"

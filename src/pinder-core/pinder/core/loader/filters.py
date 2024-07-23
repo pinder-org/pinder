@@ -94,7 +94,17 @@ class FilterMetadataFields(PinderFilterBase):
         elif isinstance(val, str):
             expression = f"{model_val} {op} '{val}'"
         else:
-            expression = f"{model_val} {op} {val}"
+            if np.isnan(model_val) and np.isnan(val):
+                if op in ["!=", "is not"]:
+                    expression = f"not np.isnan({model_val})"
+                elif op in ["==", "is"]:
+                    expression = f"np.isnan({model_val})"
+                else:
+                    raise ValueError(
+                        f"Unsupported filter operator {op} with value {val} and metadata value {model_val}"
+                    )
+            else:
+                expression = f"{model_val} {op} {val}"
 
         code = compile(expression, "<string>", "eval")
         check: bool = eval(code)

@@ -115,6 +115,7 @@ def get_proto_splits_pindex(
 
     _, cluster_to_test_systems = get_test_conversion_dicts(test_index, cluster_key)
 
+    filtered_pindex["split"] = ""
     filtered_pindex.loc[filtered_pindex["id"].isin(test_meta["id"]), "split"] = (
         "proto-test"
     )
@@ -474,58 +475,65 @@ def find_split_leakage(
     potential_leaks_chkpt: Path | None = None,
     use_cache: bool = True,
 ) -> dict[str, set[str]]:
-    """For systems in pure_split, determine whether there are systems in
+    """
+    Find leakage between transitive neighbors of two putative splits.
+
+    For systems in pure_split, determine whether there are systems in
     corrupt_split that leak into the pure_split.
 
-    Note: leaking system <--> transitive hit
+    Parameters:
+        pure_split : Set[str]
+            The set of PINDER System IDs in the pure split (e.g., test).
+        corrupt_split : Set[str]
+            The set of PINDER System IDs in the corrupt split (e.g., train).
+        graph : nx.Graph
+            The foldseek-similarity monomer graph.
+        node_to_cluster : Dict[str, int]
+            The map from graph nodes to cluster IDs.
+        depth : int
+            The maximum path length to travel looking for leakage.
+        edge_threshold : float, optional
+            The threshold for considering edges in the graph. Default is 0.65.
+        max_node_degree : int, optional
+            The node degree at which we assume there is leakage. This is
+            to save compute. Default is 1000.
+        potential_leaks_chkpt : Path, optional
+            The path to checkpoint potential leaks. Default is None.
+        use_cache : bool, optional
+            Whether to use cached results. Default is True.
 
-    A system `c:= {u, v}` in `corrupt_split` is a leaking system for system
-    `p:= {s, t}` in `pure_split` iff any of the following are true:
-        1. All of the following are true:
-            - `u` and `s` are in different clusters
-            - There exists a path between `u` and `s` of length <= `depth`
-            - `v` and `t` are in different clusters
-            - There exists a path between `v` and `t` of length <= `depth`
-        2. All of the following are true:
-            - `u` and `t` are in different clusters
-            - There exists a path between `u` and `t` of length <= `depth`
-            - `v` and `s` are in different clusters
-            - There exists a path between `v` and `s` of length <= `depth`
+    Returns:
+        Dict[str, Set[str]]
+            The map from pure_split IDs to corrupt_split IDs, indicating leakage.
 
-    Method:
-        1. Create a map from test systems to graph node pairs
-        2. Do any filtering required on the graph
-        3. Find cluster_leaks for all nodes in these pairs
-        4. For train systems, create a nested map from graph node pairs
-            to sets of train systems
-        6. For each system x in test:
-            a: map x to a graph test pair
-            b: find all graph train pairs containing at least one member
-               of the graph test pair using the "adjacency map"
-            c: map from these graph train pair to train systems
-            d: these are the inter_split connections
-        7. Profit
+    Note:
+        A system `c:= {u, v}` in `corrupt_split` is a leaking system for system
+        `p:= {s, t}` in `pure_split` iff any of the following are true:
 
-    Parameters
-    ----------
-    pure_split: Set[str]
-        The set of PINDER System IDs in the pure split (e.g., test)
-    corrupt_split: Set[str]
-        The set of PINDER System IDs in the corrupt split (e.g., train)
-    graph: nx.Graph
-        The foldseek-similarity monomer graph
-    node_to_cluster: Dict[str, int]
-        The map from graph nodes to cluster IDs
-    depth: int
-        The maximum path length to travel looking for leakage.
-    max_node_degree: int
-        The node degree at which we assume there is leakage. This is
-        to save compute. Default: 1000
+            1. All of the following are true:
+                - `u` and `s` are in different clusters
+                - There exists a path between `u` and `s` of length <= `depth`
+                - `v` and `t` are in different clusters
+                - There exists a path between `v` and `t` of length <= `depth`
 
-    Returns
-    -------
-    Dict[str, Set[str]]
-        The map from pure_split IDs to corrupt_split IDs, indicating leakage.
+            2. All of the following are true:
+                - `u` and `t` are in different clusters
+                - There exists a path between `u` and `t` of length <= `depth`
+                - `v` and `s` are in different clusters
+                - There exists a path between `v` and `s` of length <= `depth`
+
+        Method sequence:
+
+            1. Create a map from test systems to graph node pairs
+            2. Do any filtering required on the graph
+            3. Find cluster_leaks for all nodes in these pairs
+            4. For train systems, create a nested map from graph node pairs to sets of train systems
+            5. For each system x in test:
+                a. Map x to a graph test pair
+                b. Find all graph train pairs containing at least one member of the graph test pair using the "adjacency map"
+                c. Map from these graph train pairs to train systems
+                d. These are the inter_split connections
+
     """
     ## We will need two maps. Ahoy!
     pure_map_forward = map_systems_to_fsid_pairs(pure_split)
@@ -665,33 +673,35 @@ def intersection_unordered_product(
 
 
 def unordered_set_product(A: set[str], B: set[str]) -> Iterable[tuple[str]]:
-    """Compute the unordered cartesian product of sets A and B.
+    """
+    Compute the unordered cartesian product of sets A and B.
 
-    We define the unordered set product U as a subset of P:=product(A, B), where if
-    x:=(a,b) is in U, then y:=(b,a) is not in U, even if y is in P.
+    We define the unordered set product :math:`U` as a subset of :math:`P := A \times B`,
+    where if :math:`x := (a, b)` is in :math:`U`, then :math:`y := (b, a)` is not in :math:`U`,
+    even if :math:`y` is in :math:`P`.
 
     The goal of this method is to compute the unordered set product of A and B
     in the most efficient way possible, ideally without computing the entire product.
 
-    Given two sets, A and B, with intersection |A∩B|:=I, where |A|=n, |B|=m, and
-    |I|=i. The cartesian product of A and B has size n*m, but the *unordered*
-    cartesian product may be smaller.
+    Given two sets, A and B, with intersection :math:`|A \cap B| := I`, where :math:`|A| = n`,
+    :math:`|B| = m`, and :math:`|I| = i`. The cartesian product of A and B has size :math:`n \\times m`,
+    but the *unordered* cartesian product may be smaller.
 
-    To compute the unordered cartesian product:
-        We want the union of:
-            combinations w repl., len 2 of I     (i+1C2 = (i+1)(i)/2)
-            product of A-I with I                ((n-i) * i))
-            product of B-I with I                ((m-i) * i))
-            product of A-I with B-I              ((n-i) * (m-i))
+    To compute the unordered cartesian product, we want the union of:
 
-    The size of this union is n*m - (i**2 - i)//2
+        - combinations with replacement, length 2 of :math:`I` :math:`\\left( \\binom{i+1}{2} = \\frac{(i+1) \\cdot i}{2} \\right)`
+        - product of :math:`A \setminus I` with :math:`I` :math:`\\left( (n-i) \cdot i \\right)`
+        - product of :math:`B \setminus I` with :math:`I` :math:`\\left( (m-i) \cdot i \\right)`
+        - product of :math:`A \setminus I` with :math:`B \setminus I` :math:`\\left( (n-i) \\cdot (m-i) \\right)`
+
+    The size of this union is :math:`n \\times m - \\frac{i^2 - i}{2}`.
 
     Parameters
     ----------
-    A: set[str]
-        The first product set
-    B: set[str]
-        The second product set
+    A : set[str]
+        The first product set.
+    B : set[str]
+        The second product set.
 
     Returns
     -------
@@ -717,18 +727,18 @@ def len_unordered_set_product(A: set[str], B: set[str]) -> int:
     We define the unordered set product U as a subset of P:=product(A, B), where if
     x:=(a,b) is in U, then y:=(b,a) is not in U, even if y is in P.
 
-    Given two sets, A and B, with intersection |A∩B|:=I, where |A|=n, |B|=m, and
-    |I|=i. The cartesian product of A and B has size n*m, but the *unordered*
+    Given two sets, A and B, with intersection :math:`|A \cap B| = I`, where :math:`|A| = n`,
+    :math:`|B| = m`, and :math:`|I| = i`. The cartesian product of A and B has size n*m, but the *unordered*
     cartesian product may be smaller.
 
-    To compute the unordered cartesian product:
-        We want the union of:
-            combinations w repl., len 2 of I     (i+1C2 = (i+1)(i)/2)
-            product of A-I with I                ((n-i) * i))
-            product of B-I with I                ((m-i) * i))
-            product of A-I with B-I              ((n-i) * (m-i))
+    To compute the unordered cartesian product, we want the union of:
 
-    The size of this union is n*m - (i**2 - i)//2. Note that (i**2 - i) is
+        - combinations with replacement, length 2 of :math:`I` :math:`\\left( \\binom{i+1}{2} = \\frac{(i+1) \\cdot i}{2} \\right)`
+        - product of :math:`A \setminus I` with :math:`I` :math:`\\left( (n-i) \cdot i \\right)`
+        - product of :math:`B \setminus I` with :math:`I` :math:`\\left( (m-i) \cdot i \\right)`
+        - product of :math:`A \setminus I` with :math:`B \setminus I` :math:`\\left( (n-i) \\cdot (m-i) \\right)`
+
+    The size of this union is :math:`n \\times m - \\frac{i^2 - i}{2}`. Note that :math:`(i**2 - i))` is
     always even for all integer i.
 
     Parameters

@@ -60,7 +60,7 @@ def detect_disulfide_bonds(
     The employed criteria for disulfide bonds are quite simple in this case:
     the :math:`S_\gamma` atoms of two cystein residues must be in a vicinity
     of :math:`2.05 \pm 0.05` Å and the dihedral angle of
-    :math:`C_\beta - S_\gamma - S^\prime_\gamma - C^\prime_\beta` must be
+    :math:`C_\\beta - S_\gamma - S^\prime_\gamma - C^\prime_\\beta` must be
     :math:`90 \pm 10 ^{\circ}`.
 
     Note:

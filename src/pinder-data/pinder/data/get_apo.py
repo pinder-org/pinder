@@ -403,7 +403,9 @@ def add_weighted_apo_score(
         pd.DataFrame: The DataFrame with an additional column representing the weighted score of each entry.
     """
     scored = (
-        potential_apo.groupby(["id", "unbound_body"], as_index=False)
+        potential_apo.groupby(["id", "unbound_body"], as_index=False)[
+            potential_apo.columns
+        ]
         .apply(
             lambda x: get_apo_monomer_weighted_score(
                 x.reset_index(drop=True), config=config

@@ -28,40 +28,37 @@ def get_alignment_graph_with_indices(alignment_pqt: Path) -> nx.DiGraph:
 
     This graph contains an edge between two given monomers (X, Y) if all of the
     following conditions are met:
-        0. X != Y (string equality on "{pdb_id}_{chain}")
-        1. Similarity score is greater than <score_thr>
-        2. Similarity score is less than <upper_threshold>
-        3. Alignment length is greater than <min_length
-    I will refer to this as a "valid" alignment.
+
+      0. X != Y (string equality on "{pdb_id}_{chain}")
+      1. Similarity score is greater than <score_thr>
+      2. Similarity score is less than <upper_threshold>
+      3. Alignment length is greater than <min_length>
+
+    The conditions constitute requirements for a "valid" alignment.
 
     This graph contains exactly one node for a monomer in <alignment_file>
     IFF the monomer has at least one valid alignment. This means that the output
     graph does not necessarily contain all monomers.
 
-    The edge score between X and Y is defined as the the score of the one valid
-    alignment between X and Y in the alignment file, but which one?
+    The edge score between X and Y is defined as the score of one valid
+    alignment between X and Y in the alignment file.
 
     Parameters
     ----------
-    alignment_file: Path
+    alignment_file : Path
         Path to a pre-filtered alignment parquet file converted from original alignment format
         to parquet via foldseek_utils.alignment_to_parquet. Expects specific formatting.
 
     Returns
     -------
-    nx.DiGraph:
+    nx.DiGraph
         Graph containing nodes (monomers) and integer-weighted edges.
 
+    Notes
+    -----
+    Possible issue arises from the fact that scores are not symmetric, but only one score is kept. Which
+    score this is depends on alignment file order.
 
-    ####################
-    # FLAG
-    ####################
-    Possible issue: scores are not symmetric, but only one score is kept. Which
-    score this is depends on alignment file order. This behavior seems to be
-    inconsistent in tests...
-
-    Possible issue: upper_threshold has potential to silently and completely
-    remove monomers from graph. Ensure that this is desirable.
     """
     aln_df = pd.read_parquet(alignment_pqt)
     score_col = "pident" if "pident" in set(aln_df.columns) else "lddt"
@@ -401,8 +398,10 @@ def construct_interface_graph(
     output_dir: Path = Path("/tmp/graphs"),
     graph_config: GraphConfig = GraphConfig(),
 ) -> None:
-    """Parameters:
-    -----------
+    """Filter existing Interface objects on minimum interface length in residues.
+
+    Parameters
+    ----------
     foldseek_output: Path
         Path to foldseek output folder from the previous step
     interface_pkl: Path

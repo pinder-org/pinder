@@ -17,7 +17,11 @@ from tqdm import tqdm
 
 from pinder.core.index.system import PinderSystem
 from pinder.core.structure.contacts import pairwise_contacts
-from pinder.core.structure.atoms import atom_array_from_pdb_file, backbone_mask
+from pinder.core.structure.atoms import (
+    atom_array_from_pdb_file,
+    backbone_mask,
+    renumber_res_ids,
+)
 from pinder.core.utils import setup_logger
 from pinder.core.utils.paths import empty_file
 from pinder.data.system import get_dev_systems
@@ -289,8 +293,8 @@ def get_foldseek_contacts(
 
     R_renum = R_arr.copy()
     L_renum = L_arr.copy()
-    R_renum = struc.renumber_res_ids(R_renum, start=1)
-    L_renum = struc.renumber_res_ids(L_renum, start=1)
+    R_renum = renumber_res_ids(R_renum)
+    L_renum = renumber_res_ids(L_renum)
 
     R_map = {at1.res_id: at2.res_id for at1, at2 in zip(R_arr, R_renum)}
     L_map = {at1.res_id: at2.res_id for at1, at2 in zip(L_arr, L_renum)}
@@ -331,7 +335,7 @@ def get_foldseek_contacts(
 
 def get_foldseek_numbering(arr: AtomArray) -> dict[int, int]:
     arr_renum = arr.copy()
-    arr_renum = struc.renumber_res_ids(arr_renum, start=1)
+    arr_renum = renumber_res_ids(arr_renum)
     res_map = {at1.res_id: at2.res_id for at1, at2 in zip(arr, arr_renum)}
     return res_map
 
@@ -449,11 +453,17 @@ def populate_foldseek_contacts(
 ) -> None:
     """Process batch of Dimer PDBs to store contacts with different configurations for foldseek.
 
-    Parameters:
-    dimer_pdbs (list[Path]): List of dimer PDBs to get contacts for.
-    use_cache (bool): Whether to skip generation of contacts if the contacts.json corresponding to the config hash exists.
-    parallel (bool): Whether to populate entries in parallel.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    dimer_pdbs : list[Path]
+        List of dimer PDBs to get contacts for.
+    use_cache : bool
+        Whether to skip generation of contacts if the contacts.json corresponding to the config hash exists.
+    parallel : bool
+        Whether to populate entries in parallel.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
+
     """
 
     log.info(f"Getting foldseek contacts for {len(dimer_pdbs)} dimer PDBs")

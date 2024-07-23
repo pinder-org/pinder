@@ -1,4 +1,4 @@
-Notebooks
+Examples
 -----------
 
 .. toctree::
@@ -8,3 +8,4 @@ Notebooks
    pinder-system
    pinder-loader
    pinder-eval
+   superposition

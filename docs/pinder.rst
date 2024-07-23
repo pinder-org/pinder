@@ -1,4 +1,4 @@
-pinder namespace
+API reference
 ================
 
 .. py:module:: pinder

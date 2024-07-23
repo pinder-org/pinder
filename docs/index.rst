@@ -12,11 +12,11 @@ Welcome to pinder's documentation!
 
    readme_link.md
    examples
-   example_readme
    source/pinder
-   changelog_link.md
+   example_readme
    faq_link.md
    limitations_link.md
+   changelog_link.md
 
 
 

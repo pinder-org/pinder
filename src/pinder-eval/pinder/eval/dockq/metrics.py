@@ -186,6 +186,7 @@ def calc_fnat(
     chains: ChainConfig,
 ) -> NDArray[np.double]:
     """Get fraction of native contacts.
+
     Parameters
     ----------
     decoy_stack : AtomArrayStack
@@ -210,7 +211,8 @@ def get_dockq_score(
     l_rmsd: NDArray[np.double] | float,
     fnat: NDArray[np.double] | float,
 ) -> NDArray[np.double] | float:
-    """Get DockQ scores
+    """Get DockQ scores.
+
     Parameters
     ----------
     i_rmsd : ndarray | float
@@ -219,6 +221,7 @@ def get_dockq_score(
         ligand rmsd
     fnat : ndarray | float
         fraction of native contact
+
     Returns
     -------
     ndarray | float

@@ -210,11 +210,16 @@ def parallel_copy_files(
     NFS errors cause stale file stat or any other issues are encountered, the
     copy operation is retried up to 10 times before silently exiting.
 
-    Parameters:
-    src_files (list[Path]): List of source files to copy. Assumes source is a valid file.
-    dest_files (list[Path]): List of fully-qualified destination filepaths. Assumes target directory exists.
-    use_cache (bool): Whether to skip copy if destination exists.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    src_files : list[Path]
+        List of source files to copy. Assumes source is a valid file.
+    dest_files : list[Path]
+        List of fully-qualified destination filepaths. Assumes target directory exists.
+    use_cache : bool
+        Whether to skip copy if destination exists.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
 
     """
     _ = process_starmap(

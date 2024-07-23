@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import pytest
 from pinder.data import get_alignment_similarity, get_splits, get_test_set
@@ -39,34 +40,32 @@ def test_create_transformed_holo_monomer(splits_data_cp):
 
 
 @pytest.mark.parametrize(
-    "feat,n_samples",
+    "feat,n_samples,n_bins",
     [
-        ("resolution", 20),
-        ("resolution", 50),
-        (["polar_polar_contacts", "apolar_apolar_contacts"], 20),
+        ("resolution", 20, 5),
+        ("resolution", 50, 10),
+        (["polar_polar_contacts", "apolar_apolar_contacts"], 20, 5),
     ],
 )
-def test_get_stratified_sample(feat, n_samples, splits_data_cp):
+def test_get_stratified_sample(feat, n_samples, n_bins, splits_data_cp):
     df = pd.read_csv(splits_data_cp / "metadata.2.csv.gz")
     sampled = get_test_set.get_stratified_sample(
         df,
         feat=feat,
         n_samples=n_samples,
+        n_bins=n_bins,
     )
     assert (
-        sampled.shape[0] == n_samples,
-        f"Expected {n_samples} samples, got {sampled.shape[0]}",
-    )
+        sampled.shape[0] == n_samples
+    ), f"Expected {n_samples} samples, got {sampled.shape[0]}"
     if not isinstance(feat, list):
         feat = [feat]
     df_mean = []
     for f in feat:
         sampled_min, sampled_max = sampled[f].min(), sampled[f].max()
-        df_mean = df[f].mean()
-        assert (
-            sampled_min < df_mean < sampled_max,
-            f"Expected column {f} samples to span min-max range containing overall mean!",
-        )
+        df_med = np.median(df[f])
+        msg = f"Expected column {f} samples to span min-max range containing overall median!, got {sampled_min}, {df_med}, {sampled_max}"
+        assert sampled_min < df_med <= sampled_max, msg
 
 
 def test_construct_sequence_database(splits_data_cp):

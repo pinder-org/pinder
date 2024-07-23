@@ -177,29 +177,29 @@ def test_get_apo_pairing_metrics_for_id(stateful_data_cp):
         "heavy_only": False,
         "unbound_body": "L",
         "monomer_name": "apo",
-        "Fnat": pytest.approx(0.7634408602150538),
-        "Fnonnat": pytest.approx(0.10353535353535354),
-        "common_contacts": 355,
-        "differing_contacts": 41,
+        "Fnat": pytest.approx(0.7698924731182796),
+        "Fnonnat": pytest.approx(0.11604938271604938),
+        "common_contacts": 358,
+        "differing_contacts": 47,
         "bound_contacts": 465,
-        "unbound_contacts": 396,
+        "unbound_contacts": 405,
         "fnonnat_R": pytest.approx(0.0392156862745098),
-        "fnonnat_L": pytest.approx(0.045454545454545456),
+        "fnonnat_L": pytest.approx(0.06153846153846154),
         "fnat_R": pytest.approx(0.8166666666666667),
-        "fnat_L": pytest.approx(0.8873239436619719),
+        "fnat_L": pytest.approx(0.8591549295774648),
         "difficulty": "Rigid-body",
-        "I-RMSD": pytest.approx(1.3053585290908813),
+        "I-RMSD": pytest.approx(1.2983976602554321),
         "matched_interface_chains": 2,
-        "refine_rmsd": pytest.approx(1.589128017425537),
+        "refine_rmsd": pytest.approx(0.9770869612693787),
         "raw_rmsd": pytest.approx(1.589128017425537),
-        "refine_aln_ats": 2419,
+        "refine_aln_ats": 1927,
         "raw_aln_ats": 2419,
         "aln_res": 320,
         "unbound_id": "6wwe__A1_Q2XVP4-R--4ozq__A1_L0N7N1",
         "holo_receptor_interface_res": 60,
         "holo_ligand_interface_res": 71,
         "apo_receptor_interface_res": 51,
-        "apo_ligand_interface_res": 66,
+        "apo_ligand_interface_res": 65,
         "holo_sequence": "SQVTVAVRVRPFSKREKTEKASQVVFTNGEEITVEHPDMKQVYSFIYDVSFWSFDECHPGYASQTTVYETLAAPLLDRAFEGYNTCLFAYGQTGSGKSYTMMGLNEEPGIIPRFCEDLFAQIAKKQTSEVSYHLEMSFFEVYNEKIHDLLVCKGENGQRKQPLRAREHPVSGPYVEGLSMNVVSSYSDIQSWLELGNKQRATAATGMNDKSSRSHSVFTLVMTQTKTEVVEGEEHDHRITSRINLVDLAGSERCSTAHSSGQRLKEGVSINKSLLTLGKVISALSEQANGKRVFIPYRESTLTWLLKESLGGNSKTAMIATVSPAASNIEETLSTLRYATQARLIVNIAKVNEDMNAKL",
         "apo_sequence": "WINGDKGYNGLAEVGKKFEKDTGIKVTVEHPDKLEEKFPQVAATGDGPDIIFWAHDRFGGYAQSGLLAEITPDKAFQDKLYPFTWDAVRYNGKLIAYPIAVEALSLIYNKDLLPNPPKTWEEIPALDKELKAKGKSALMFNLQEPYFTWPLIAADGGYAFKYENGKYDIKDVGVDNAGAKAGLTFLVDLIKNKHMNADTDYSIAEAAFNKGETAMTINGPWAWSNIDTSKVNYGVTVLPTFKGQPSKPFVGVLSAGINAASPNKELAKEFLENYLLTDEGLEAVNKDKPLGAVALKSYEEELAKDPRIAATMENAQKGEIMPNIPQMSAFWYAVRTAVINAASGRQTVDAALAAAQTNAAAENSQVTVAVRVRPFSKREKTEKASQVVFTNGEEITVEHPDMKQVYSFIYDVSFWSFDECHPGYASQTTVYETLAAPLLDRAFEGYNTCLFAYGQTGSGKSYTMMGLNEEPGIIPRFCEDLFAQIAKKQTSEVSYHLEMSFFEVYNEKIHDLLVKQPLRAREHPVSGPYVEGLSMNVVSSYSDIQSWLELGNKQRATAKSSRSHSVFTLVMTQTKTEHDHRITSRINLVDLAGSERCSTAGQRLKEGVSINKSLLTLGKVISALSEQANGKRVFIPYRESTLTWLLKESLGGNSKTAMIATVSPAASNIEETLSTLRYATQAR",
         "sequence_identity": pytest.approx(0.8913649025069638),
@@ -207,10 +207,7 @@ def test_get_apo_pairing_metrics_for_id(stateful_data_cp):
     assert metrics.shape == (1, 51)
     actual_dict = metrics.to_dict(orient="records")[0]
     for k, actual in actual_dict.items():
-        assert (
-            expected[k] == actual,
-            f"Expected {k} to be {expected[k]}, got {actual}",
-        )
+        assert expected[k] == actual, f"Expected {k} to be {expected[k]}, got {actual}"
 
 
 def test_get_apo_pairing_metrics(stateful_data_cp):

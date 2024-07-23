@@ -13,8 +13,7 @@ jobs:
     if: |
         github.repository == 'pinder-org/pinder' &&
         ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
-    runs-on:
-      labels: ubuntu-22.04-4core
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
@@ -78,6 +77,7 @@ jobs:
           env_vars: OS,PYTHON
           # fail_ci_if_error: true
           files: ./coverage.xml
+          codecov_yml_path: ./codecov.yml
           # flags: unittests
           # name: codecov-umbrella
           verbose: true
@@ -86,6 +86,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     environment: release
+    if: |
+        github.repository == 'pinder-org/pinder' &&
+        ! contains(toJSON(github.event.commits.*.message), '[skip ci]')
     permissions:
       id-token: write
       contents: write

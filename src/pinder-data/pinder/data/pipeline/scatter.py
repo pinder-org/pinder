@@ -15,22 +15,20 @@ def chunk_collection(
         1. the maximum number of items within a chunk
         2. the maximum total number of chunks
 
-    Note
-    ----
-    Does not guarantee even packing across individual chunks
+    Note:
+        Does not guarantee even packing across individual chunks.
 
-    Parameters
-    ----------
-    array : List
-        the iterable to be chunked
-    batch_size : Optional[int], default=None
-        the maximum number of items in a given chunk
-    num_batches : Optional[int], default=None
-        the maximum number of chunks to be produced
+    Parameters:
+        array : List
+            the iterable to be chunked
+        batch_size : Optional[int], default=None
+            the maximum number of items in a given chunk
+        num_batches : Optional[int], default=None
+            the maximum number of chunks to be produced
 
-    Returns
-    -------
-    chunks : Generator[List[Any], List[Any], None]
+    Returns:
+        chunks : Generator[List[Any], List[Any], None]
+
     """
 
     num_items = len(array)

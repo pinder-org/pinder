@@ -619,6 +619,8 @@ def get_train_noisy_apo(
 
     index_patched.reset_index(drop=True, inplace=True)
     # Anything that was "patched" is low quality
+    index_patched["apo_R_quality"] = index_patched["apo_R_quality"].fillna("")
+    index_patched["apo_L_quality"] = index_patched["apo_L_quality"].fillna("")
     index_patched.loc[index_patched.id.isin(R_patched_ids), "apo_R_quality"] = "low"
     index_patched.loc[index_patched.id.isin(L_patched_ids), "apo_L_quality"] = "low"
     # Everything else is high quality

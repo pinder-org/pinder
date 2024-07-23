@@ -36,7 +36,7 @@
     --fontColor: #252630;
     --linkColor: #2980b9;
     --mainBackgroundColor: white;
-    --mainNavColor: #242526;
+    --mainNavColor: #673ab7;
     --notificationBannerColor: #176bb0;
     --searchHighlightColor: #fff150;
     --sidebarColor: white;
@@ -54,6 +54,16 @@
     --mystnb-hide-prompt-opacity: 70%;
     --mystnb-source-border-radius: .4em;
     --mystnb-source-border-width: 1px;
+}
+
+
+:root[data-mode=dark] {
+  --mainBackgroundColor: #282c34;
+}
+
+
+:root[data-mode=darkest] {
+  --mainBackgroundColor: #101215;
 }
 
 
@@ -96,6 +106,10 @@ div.document div.documentwrapper {
 div#top_nav nav h1 img {
   height: 2.5rem;
   width: auto;
+}
+
+div#top_nav nav {
+  background-image: linear-gradient(90deg, #5E35B1 10%, #6f42c1 30%, #dc5da2);
 }
 
 .classifier {

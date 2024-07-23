@@ -16,7 +16,7 @@ def prepare_inference_inputs(
 ) -> list[dict[str, str | Path]]:
     mono_keys = (
         [pair.value for pair in SUPPORTED_PAIRS]
-        if pairs == SUPPORTED_PAIRS.ALL
+        if pairs == SUPPORTED_PAIRS.ALL.value
         else [pairs]
     )
     if subset:
