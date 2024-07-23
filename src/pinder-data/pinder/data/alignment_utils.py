@@ -17,7 +17,11 @@ from tqdm import tqdm
 
 from pinder.core.index.system import PinderSystem
 from pinder.core.structure.contacts import pairwise_contacts
-from pinder.core.structure.atoms import atom_array_from_pdb_file, backbone_mask
+from pinder.core.structure.atoms import (
+    atom_array_from_pdb_file,
+    backbone_mask,
+    renumber_res_ids,
+)
 from pinder.core.utils import setup_logger
 from pinder.core.utils.paths import empty_file
 from pinder.data.system import get_dev_systems
@@ -289,8 +293,8 @@ def get_foldseek_contacts(
 
     R_renum = R_arr.copy()
     L_renum = L_arr.copy()
-    R_renum.res_id = struc.create_continuous_res_ids(R_renum)
-    L_renum.res_id = struc.create_continuous_res_ids(L_renum)
+    R_renum = renumber_res_ids(R_renum)
+    L_renum = renumber_res_ids(L_renum)
 
     R_map = {at1.res_id: at2.res_id for at1, at2 in zip(R_arr, R_renum)}
     L_map = {at1.res_id: at2.res_id for at1, at2 in zip(L_arr, L_renum)}
@@ -331,7 +335,7 @@ def get_foldseek_contacts(
 
 def get_foldseek_numbering(arr: AtomArray) -> dict[int, int]:
     arr_renum = arr.copy()
-    arr_renum = struc.renumber_res_ids(arr_renum, start=1)
+    arr_renum = renumber_res_ids(arr_renum)
     res_map = {at1.res_id: at2.res_id for at1, at2 in zip(arr, arr_renum)}
     return res_map
 

@@ -177,6 +177,16 @@ def assign_receptor_ligand(
     return rec, lig
 
 
+def renumber_res_ids(arr: _AtomArrayOrStack) -> _AtomArrayOrStack:
+    try:
+        # biotite for py39 and below does not have this method
+        arr.res_id = struc.create_continuous_res_ids(arr)
+    except AttributeError:
+        # Deprecated in biotite 0.41.0, and py39 no longer supported
+        arr = struc.renumber_res_ids(arr, start=1)
+    return arr
+
+
 def standardize_atom_array(
     arr: _AtomArrayOrStack, standardize: bool = True
 ) -> _AtomArrayOrStack:
@@ -184,7 +194,7 @@ def standardize_atom_array(
         return arr
     std_order = struc.info.standardize_order(arr)
     arr = apply_mask(arr, std_order).copy()
-    arr.res_id = struc.create_continuous_res_ids(arr)
+    arr = renumber_res_ids(arr)
     return arr
 
 
