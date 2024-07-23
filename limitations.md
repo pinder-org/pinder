@@ -31,6 +31,24 @@ Foldseek is a tool designed for fast and sensitive alignment of protein structur
 For the `pinder` test, we selected protein complexes using multiple criteria to ensure quality, though each choice involved trade-offs. The threshold of 0.5 in the PRODIGY algorithm signifies a relatively low-quality interaction prediction, with scores between 0.5 and 0.6 falling into this category. Moreover, scores below 0.5 might still represent biologically relevant interfaces, potentially affecting the accuracy of interaction assessments.
 
 
+## Limitations of the data ingestion pipeline
+
+* NextGen mmCIF assemblies is a better alternative for storage to PDB chain pairs in terms of:
+  * Lower redundancy
+  * Consistent chain naming (no need to rename duplicate chains in higher-order assemblies with symmetry)
+
+### Limitations of the clustering / spliting algorithm
+
+Clustering (used in sampling train, test, val) is not at a domain-level granularity (i.e. we use OR to encapsulate all alterntive interactions in a given chain if it overlaps with any other interacting domain from any other chain).
+
+Test data has a different distribution in terms of multiple properties:
+* Planarity
+* Experimental method
+* Oligomeric state
+* Only dimers
+
+Although it is possible to reconstruct the original oligomeric complex with the files provided in `pinder`, it is not possible to load multi-chain data while maintaining the same splits and cluster IDs.
+
 ## Data types in the `pinder` index
 
 By default, the index and metadata has dtypes that have been optimized for reduced memory usage due to the large table sizes. While this should be a non-issue for most use-cases, there may be certain operations that require casting the column dtypes to their more commonly used variants. Some known issues:
