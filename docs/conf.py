@@ -89,10 +89,7 @@ numpydoc_show_class_members = False
 
 napoleon_use_param = True
 napoleon_use_rtype = True
-
-# Prevent autosummary from using sphinx-autogen, since it would
-# overwrite the document structure given by apidoc.json
-autosummary_generate = False
+autosummary_generate = True
 
 autodoc_member_order = "bysource"
 autodoc_default_options = {"ignore-module-all": True}
