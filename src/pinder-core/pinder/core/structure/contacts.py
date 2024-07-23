@@ -56,7 +56,7 @@ def get_atoms_within_coordinate(
 
     Returns
     -------
-    NDArray[np.int_]
+    NDArray[np.int\_]
         The contact indices.
     """
     cell_list = struc.CellList(atom_array, cell_size=cell_size)
@@ -91,7 +91,7 @@ def get_stack_contacts(
 
     Returns
     -------
-    NDArray[np.int_]
+    NDArray[np.int\_]
         The contact indices.
     """
     if not cell_size:

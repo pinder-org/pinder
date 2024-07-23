@@ -1,54 +1,60 @@
 """pinder_plot
 
-pinder_plot --help
-INFO: Showing help with the command 'pinder_plot -- --help'.
 
-NAME
-    pinder_plot
+.. code-block:: bash
 
-SYNOPSIS
-    pinder_plot COMMAND
+    INFO: Showing help with the command 'pinder_plot -- --help'.
 
-COMMANDS
-    COMMAND is one of the following:
+    NAME
+        pinder_plot
 
-     annotations
+    SYNOPSIS
+        pinder_plot COMMAND
 
-     categories
+    COMMANDS
+        COMMAND is one of the following:
 
-     datasets
+        annotations
 
-     difficulty
+        categories
 
-     families
+        datasets
 
-     leaderboards
+        difficulty
 
-     leakage
+        families
 
-     performance
+        leaderboards
 
-     validity
+        leakage
+
+        performance
+
+        validity
+
 
 pinder_plot annotations --help
-INFO: Showing help with the command 'pinder_plot annotations -- --help'.
 
-NAME
-    pinder_plot annotations
+.. code-block:: bash
 
-SYNOPSIS
-    pinder_plot annotations <flags>
+    INFO: Showing help with the command 'pinder_plot annotations -- --help'.
 
-FLAGS
-    -f, --fig_dir=FIG_DIR
-        Type: 'Path'
-        Default: PosixPath('~/.local/share/pinder/2024-02/publication_figures')
-    -o, --format=FORMAT
-        Type: 'str'
-        Default: 'pdf'
-    -t, --theme_name=THEME_NAME
-        Type: 'str'
-        Default: 'light'
+    NAME
+        pinder_plot annotations
+
+    SYNOPSIS
+        pinder_plot annotations <flags>
+
+    FLAGS
+        -f, --fig_dir=FIG_DIR
+            Type: 'Path'
+            Default: PosixPath('~/.local/share/pinder/2024-02/publication_figures')
+        -o, --format=FORMAT
+            Type: 'str'
+            Default: 'pdf'
+        -t, --theme_name=THEME_NAME
+            Type: 'str'
+            Default: 'light'
 
 """
 

@@ -576,6 +576,7 @@ class MethodMetrics:
 
     @property
     def metrics(self) -> pd.DataFrame:
+        """pd.Dataframe: The metrics table for the evaluation. If not yet computed, it is computed and cached."""
         if not isinstance(self._metrics, pd.DataFrame):
             self._metrics = self.get_metrics()
         return self._metrics

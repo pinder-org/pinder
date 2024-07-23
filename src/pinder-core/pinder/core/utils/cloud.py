@@ -742,8 +742,6 @@ class Gsutil:
             │   └── item.json
             └── ...
 
-        Advanced Examples
-        -----------------
         For downloading files using partial matches:
 
         .. code-block:: text

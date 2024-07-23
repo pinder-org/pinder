@@ -88,9 +88,14 @@ def parallel_extract_fasta(
     """Extract fasta-formatted sequences from a collection of PDB files in parallel.
     Operates in parallel and assumes that source files all exist.
 
-    Parameters:
-    pdb_files (list[Path]): List of PDB files to extract fasta strings for.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    pdb_files : list[Path]
+        List of PDB files to extract fasta strings for.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
+    parallel : bool
+        Whether to extract fasta in parallel.
 
     """
     fasta_seqs: list[str] = process_map(
@@ -181,11 +186,16 @@ def run_foldseek(
 ) -> None:
     """Run foldseek easy-search on a directory of PDB structures.
 
-    Parameters:
-    input_dir (Path): Input directory for foldseek targets.
-    output_dir (Path): The output directory to store foldseek alignments.
-    target_db_dir (Optional[Path]): Optional target DB input directory for foldseek. If not specified, defaults to input_dir.
-    config (FoldseekConfig): The configuration object containing foldseek parameters.
+    Parameters
+    ----------
+    input_dir : Path
+        Input directory for foldseek targets.
+    output_dir : Path
+        The output directory to store foldseek alignments.
+    target_db_dir : Optional[Path]
+        Optional target DB input directory for foldseek. If not specified, defaults to input_dir.
+    config : FoldseekConfig
+        The configuration object containing foldseek parameters.
 
     """
     out_folder = Path(output_dir)
@@ -551,11 +561,17 @@ def run_foldseek_on_pinder_chains(
 
     You may need to set your PINDER_DATA_DIR environment variable to the location of the development PINDER dataset.
 
-    Parameters:
-        pdb_dir (Path): Input directory containing pinder PDBs to use for populating foldseek inputs.
-        index (str): The Pinder index CSV file name.
-        foldseek_dir (Path): The directory for storing foldseek input PDBs. Defaults to /tmp/foldseek.
-        config (FoldseekConfig): The configuration object containing foldseek parameters.
+    Parameters
+    ----------
+    pdb_dir : Path
+        Input directory containing pinder PDBs to use for populating foldseek inputs.
+    index : str
+        The Pinder index CSV file name.
+    foldseek_dir : Path
+        The directory for storing foldseek input PDBs. Defaults to /tmp/foldseek.
+    config : FoldseekConfig
+        The configuration object containing foldseek parameters.
+
     """
     if not Path(pdb_dir).is_dir():
         log.error(f"Input PDB directory {pdb_dir} does not exist.")
@@ -580,11 +596,17 @@ def run_mmseqs_on_pinder_chains(
 
     You may need to set your PINDER_DATA_DIR environment variable to the location of the development PINDER dataset.
 
-    Parameters:
-        pdb_dir (Path): Input directory for foldseek
-        index (str): The Pinder index CSV file name.
-        output_dir (Path): The output directory containing foldseek input PDBs. Defaults to /tmp/foldseek.
-        config (MMSeqsConfig): The configuration object containing mmseqs parameters.
+    Parameters
+    ----------
+    pdb_dir : Path
+        Input directory for foldseek
+    index : str
+        The Pinder index CSV file name.
+    output_dir : Path
+        The output directory containing foldseek input PDBs. Defaults to /tmp/foldseek.
+    config : MMSeqsConfig
+        The configuration object containing mmseqs parameters.
+
     """
     if not Path(pdb_dir).is_dir():
         log.error(f"Input directory {pdb_dir} does not exist.")

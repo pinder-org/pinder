@@ -63,12 +63,18 @@ def generate_color_palette(
     """Generate a color palette with n_methods distinct colors,
     and for each color, generate a lighter/darker shade with better perceptual distinction.
 
-    Args:
-    - n_methods (int): Number of methods, defaults to 12.
-    - lightness_shift (float): Amount to lighten/darken for the paired color.
+    Parameters
+    ----------
+    n_methods : int, optional
+        Number of methods, by default 12.
+    lightness_shift : float, optional
+        Amount to lighten/darken for the paired color, by default 0.2.
 
-    Returns:
-    - dict: A dictionary of colors with keys as method numbers and values as hex codes.
+    Returns
+    -------
+    dict[int, str]
+        A dictionary of colors with keys as method numbers and values as hex codes.
+
     """
     base_colors = []
     paired_colors = []
@@ -114,13 +120,9 @@ def generate_color_palette(
 def generate_chimerax_native_pred_overlay(
     native: Path,
     models: list[dict[str, Path | str]],
-    png_file: Path,
     color_palette: dict[str, tuple[str, str]],
-    # label1: str,
-    # label2: str,
     native_R_chain: str = "R",
     native_L_chain: str = "L",
-    label_color: str = "#797979ff",
     pad: float = -0.6,
 ) -> str:
     script = f"""
@@ -193,10 +195,6 @@ graphics silhouettes width 5
         hide atoms
         save {model_png_file} width 2432 height 1462 supersample 4 transparentBackground true
         """
-        # 2dlab text '{label1}' color {label_color} size 48 x .03 y .92
-        # 2dlab text '{label2}' color {label_color} size 48 x .03 y .88
-        # hide #{label_idx}.{label_count-1}
-        # hide #{label_idx}.{label_count}
 
     pdb_id, method_n, mono_name = Path(model_png_file).stem.split("--")
     native_png = f"{pdb_id}--native--{mono_name}.png"
@@ -210,14 +208,6 @@ graphics silhouettes width 5
     hide atoms
     save {native_png_file} width 2432 height 1462 supersample 4 transparentBackground true
     """
-    # 2dlab text 'Ground truth (PDB ID: {pdb_id})' color {label_color} size 48 x .03 y .92
-    #     script += f"""
-    # select #1-2
-    # view sel orient pad -0.5
-    # zoom 1.5
-    # windowsize width 2432 height 1462
-    # save {png_file} width 2432 height 1462 supersample 4 transparentBackground true
-    # """
     return script
 
 
@@ -545,9 +535,9 @@ def generate_case_image_grids(
 
 
 def main(
+    gcs_model_root: str,
     fig_dir: Path = get_pinder_location() / "publication_figures",
     format: str = "pdf",
-    gcs_model_root: str = "gs://vantai-diffppi/pinder-2024-02-sandbox/eval/inference",
 ) -> None:
     dockq = get_dockq_metrics()
     cases = get_case_data(dockq)
@@ -555,8 +545,6 @@ def main(
     generate_case_scripts(
         cases=cases, color_pal=color_pal, gcs_model_root=gcs_model_root, fig_dir=fig_dir
     )
-    # Use mpqueue.py from vantaiqueue to multiprocess tasks in run_scripts.list
-    # mpqueue.py -c 10 run_scripts.list
     # Now collate the images into a single png/pdf in a grid
     generate_case_image_grids(
         cases,

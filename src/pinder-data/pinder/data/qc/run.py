@@ -1,39 +1,47 @@
 """pinder_qc
 
-NAME
-    pinder_qc
+.. code-block:: bash
 
-SYNOPSIS
-    pinder_qc COMMAND
+    NAME
+        pinder_qc
 
-COMMANDS
-    COMMAND is one of the following:
+    SYNOPSIS
+        pinder_qc COMMAND
 
-     uniprot_leakage
+    COMMANDS
+        COMMAND is one of the following:
 
-     binding_leakage
-       Extract ECOD paired binding site leakage for test and val splits.
+        uniprot_leakage
 
-     pfam_diversity
-       Extract PFAM clan diversity and generate visualizations.
+        binding_leakage
+        Extract ECOD paired binding site leakage for test and val splits.
 
-     sequence_leakage
-       Extract sequence similarity / leakage by subsampling members in train split.
+        pfam_diversity
+        Extract PFAM clan diversity and generate visualizations.
+
+        sequence_leakage
+        Extract sequence similarity / leakage by subsampling members in train split.
+
 
 pinder_qc uniprot_leakage --help
-NAME
-    pinder_qc uniprot_leakage
 
-SYNOPSIS
-    pinder_qc uniprot_leakage <flags>
+.. code-block:: bash
 
-FLAGS
-    -i, --index_path=INDEX_PATH
-        Type: Optional['str | None']
-        Default: None
-    -s, --split=SPLIT
-        Type: 'str'
-        Default: 'test'
+
+
+    NAME
+        pinder_qc uniprot_leakage
+
+    SYNOPSIS
+        pinder_qc uniprot_leakage <flags>
+
+    FLAGS
+        -i, --index_path=INDEX_PATH
+            Type: Optional['str | None']
+            Default: None
+        -s, --split=SPLIT
+            Type: 'str'
+            Default: 'test'
 
 """
 

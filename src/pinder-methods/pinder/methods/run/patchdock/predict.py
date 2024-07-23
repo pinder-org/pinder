@@ -125,28 +125,34 @@ def patchdock(
 def predict_patchdock(
     complex_config: dict[str, str | Path], params: dict[str, Any]
 ) -> None:
-    """Run PatchDock on a single receptor-ligand complex and generate `n_solutions` docking solutions.
-    Assume that all the specified paths are local and the files exist
-    Save results to the specified `results_dir`. Directory is created if needed
+    """
+    Run PatchDock on a single receptor-ligand complex and generate `n_solutions` docking solutions.
+    Assume that all the specified paths are local and the files exist.
+    Save results to the specified `results_dir`. Directory is created if needed.
 
     Parameters
     ----------
-    complex_config : dictionary
-        id: str
-            PINDER ID of the complex
-        kind: str
-            `holo`, `apo` or `predicted`
-        receptor: Path
-            All structures are expected to be pre-transformed and ready for docking
-        ligand: Path
-            All structures are expected to be pre-transformed and ready for docking
-    params : dictionary
-        'results_dir' : Path
-            Path to the docking dataset
-            resulting path will be: `{results_dir}/patchdock/{id}/{kind}_decoys/model_{i}.pdb`
+    complex_config : dict[str, str | Path]
+        Dictionary containing configuration for the complex.
+
+        id : str
+            PINDER ID of the complex.
+        kind : str
+            `holo`, `apo` or `predicted`.
+        receptor : Path
+            All structures are expected to be pre-transformed and ready for docking.
+        ligand : Path
+            All structures are expected to be pre-transformed and ready for docking.
+    params : dict[str, Any]
+        Dictionary containing additional parameters.
+
+        results_dir : Path
+            Path to the docking dataset.
+            Resulting path will be: `{results_dir}/patchdock/{id}/{kind}_decoys/model_{i}.pdb`.
         n_solutions : int
-            Number of solutions `i = {1..n_solutions}` to generate
-        force: bool Force re-running the docking even if the results already exist
+            Number of solutions `i = {1..n_solutions}` to generate.
+        force : bool
+            Force re-running the docking even if the results already exist.
     """
     complex_id = str(complex_config["id"])
     complex_kind = str(complex_config["kind"])

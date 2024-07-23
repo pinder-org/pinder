@@ -104,12 +104,17 @@ def mask_from_res_list(
 def apply_mask(atoms: _AtomArrayOrStack, mask: NDArray[np.bool_]) -> _AtomArrayOrStack:
     """Apply a boolean mask to an AtomArray or AtomArrayStack to filter atoms.
 
-    Parameters:
-    atoms (AtomArray | AtomArrayStack): The atoms to be filtered.
-    mask (NDArray[np.bool_]): The boolean mask that specifies which atoms to keep.
+    Parameters
+    ----------
+    atoms : (AtomArray | AtomArrayStack)
+        The atoms to be filtered.
+    mask : NDArray[np.bool\_]
+        The boolean mask that specifies which atoms to keep.
 
-    Returns:
-    AtomArray | AtomArrayStack: The filtered atoms.
+    Returns
+    -------
+        AtomArray | AtomArrayStack:
+            The filtered atoms.
     """
     if isinstance(atoms, AtomArray):
         return atoms[mask]
@@ -290,16 +295,22 @@ def get_seq_alignments(
 ) -> list[Alignment]:
     """Generate optimal global alignments between two sequences using BLOSUM62 matrix.
 
-    Parameters:
-    ref_seq (str): The reference sequence.
-    subject_seq (str): The subject sequence.
-    gap_penalty (tuple[float, float], optional): A tuple consisting of the gap open penalty and the gap extension penalty.
+    Parameters
+    ----------
+    ref_seq : (str)
+        The reference sequence.
+    subject_seq : (str)
+        The subject sequence.
+    gap_penalty : (tuple[float, float], optional)
+        A tuple consisting of the gap open penalty and the gap extension penalty.
 
-    Returns:
-    list[Alignment]: A list of `Alignment` objects that represent the optimal global alignment(s).
+    Returns
+    -------
+        list[Alignment]:
+            A list of `Alignment` objects that represent the optimal global alignment(s).
 
     Note:
-    The function uses the BLOSUM62 matrix by default for alignment scoring.
+       The function uses the BLOSUM62 matrix by default for alignment scoring.
     """
     ref_protein_seq = seq.ProteinSequence(ref_seq)
     subject_protein_seq = seq.ProteinSequence(subject_seq)
@@ -351,12 +362,13 @@ def calc_num_mismatches(alignments: list[Alignment]) -> tuple[int, int]:
 
     Parameters
     ----------
-    alignments
+    alignments : list[Alignment]
         sequence alignment(s)
 
     Returns
     -------
-    tuple[int, int]: A tuple containing number of mismatches and matches in sequence alignment, respectively.
+        tuple[int, int]:
+            A tuple containing number of mismatches and matches in sequence alignment, respectively.
     """
     n_matches = 0
     n_mismatches = 0
@@ -386,11 +398,16 @@ def align_sequences(
     """Aligns two sequences and returns a tuple containing the aligned sequences
     and their respective numbering.
 
-    Parameters:
-    ref_seq (str): The reference sequence to align to.
-    subject_seq (str): The subject sequence to be aligned.
-    ref_numbering (list[int], optional): List of residue numbers for the reference sequence.
-    subject_numbering (list[int], optional): List of residue numbers for the subject sequence.
+    Parameters
+    ----------
+    ref_seq : (str)
+        The reference sequence to align to.
+    subject_seq : (str)
+        The subject sequence to be aligned.
+    ref_numbering : (list[int], optional)
+        List of residue numbers for the reference sequence.
+    subject_numbering : (list[int], optional)
+        List of residue numbers for the subject sequence.
 
     Returns:
         tuple: A tuple containing:
@@ -399,8 +416,9 @@ def align_sequences(
             - Numbering of the aligned reference sequence (list[int])
             - Numbering of the aligned subject sequence (list[int])
 
-    Raises:
-    ValueError: If the sequences cannot be aligned.
+    Raises
+    ------
+        ValueError if the sequences cannot be aligned.
     """
     alignments = get_seq_alignments(ref_seq, subject_seq)
     get_seq_identity(alignments=alignments)
@@ -602,8 +620,8 @@ def get_seq_aligned_structures(
     ValueError
         If the reference and subject structures do not have the same number of chains or if the chains cannot be matched properly.
 
-    Example
-    -------
+    Examples
+    --------
     >>> from pinder.core import PinderSystem
     >>> ps = PinderSystem("8i2f__A1_O34841--8i2f__B1_P54421")
     >>> ref_structure = ps.holo_receptor.atom_array.copy()
@@ -673,8 +691,8 @@ def get_per_chain_seq_alignments(
     ValueError
         If the reference and subject structures do not have the same number of chains or if the chains cannot be matched properly.
 
-    Example
-    -------
+    Examples
+    --------
     >>> from pinder.core import PinderSystem
     >>> ps = PinderSystem("8i2f__A1_O34841--8i2f__B1_P54421")
     >>> ref_structure = ps.holo_receptor.atom_array.copy()

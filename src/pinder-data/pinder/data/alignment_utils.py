@@ -449,11 +449,17 @@ def populate_foldseek_contacts(
 ) -> None:
     """Process batch of Dimer PDBs to store contacts with different configurations for foldseek.
 
-    Parameters:
-    dimer_pdbs (list[Path]): List of dimer PDBs to get contacts for.
-    use_cache (bool): Whether to skip generation of contacts if the contacts.json corresponding to the config hash exists.
-    parallel (bool): Whether to populate entries in parallel.
-    max_workers (int, optional): Limit number of parallel processes spawned to `max_workers`.
+    Parameters
+    ----------
+    dimer_pdbs : list[Path]
+        List of dimer PDBs to get contacts for.
+    use_cache : bool
+        Whether to skip generation of contacts if the contacts.json corresponding to the config hash exists.
+    parallel : bool
+        Whether to populate entries in parallel.
+    max_workers : int, optional
+        Limit number of parallel processes spawned to `max_workers`.
+
     """
 
     log.info(f"Getting foldseek contacts for {len(dimer_pdbs)} dimer PDBs")
