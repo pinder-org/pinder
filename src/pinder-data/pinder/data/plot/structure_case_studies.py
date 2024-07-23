@@ -274,7 +274,6 @@ def generate_chimera_grid_scripts(
     script = generate_chimerax_native_pred_overlay(
         native,
         model_info,
-        png_file,
         color_pal,
         pad=padding,
     )
