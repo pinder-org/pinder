@@ -40,6 +40,7 @@ class PPIDataset(Dataset):  # type: ignore
         k: int = 10,
         parallel: bool = False,
         max_workers: int | None = None,
+        fallback_to_holo: bool = True,
     ) -> None:
         self.node_types = node_types
         self.split = split
@@ -57,6 +58,7 @@ class PPIDataset(Dataset):  # type: ignore
         self.k = k
         self.parallel = parallel
         self.max_workers = max_workers
+        self.fallback_to_holo = fallback_to_holo
         default_file_dir = Path(root) / "filenames"
         self.filenames_dir = default_file_dir
         if filenames_dir:
@@ -105,6 +107,7 @@ class PPIDataset(Dataset):  # type: ignore
         output_file: Path,
         add_edges: bool = True,
         k: int = 10,
+        fallback_to_holo: bool = True,
     ) -> bool:
         try:
             data = PairedPDB.from_pinder_system(
@@ -114,6 +117,7 @@ class PPIDataset(Dataset):  # type: ignore
                 node_types=node_types,
                 add_edges=add_edges,
                 k=k,
+                fallback_to_holo=fallback_to_holo,
             )
             torch.save(data, output_file)
             return True
@@ -134,6 +138,7 @@ class PPIDataset(Dataset):  # type: ignore
             bool,
             int,
             bool,
+            bool,
         ],
     ) -> str | None:
         (
@@ -147,6 +152,7 @@ class PPIDataset(Dataset):  # type: ignore
             add_edges,
             k,
             force_reload,
+            fallback_to_holo,
         ) = args
         if not hasattr(system, "entry"):
             return None
@@ -170,6 +176,7 @@ class PPIDataset(Dataset):  # type: ignore
             to_write,
             add_edges,
             k,
+            fallback_to_holo,
         )
         if processed:
             return pinder_id
@@ -189,6 +196,7 @@ class PPIDataset(Dataset):  # type: ignore
                     self.add_edges,
                     self.k,
                     self.force_reload,
+                    self.fallback_to_holo,
                 )
                 for dimer in self.loader.dimers
             )
@@ -238,6 +246,7 @@ class PPIDataset(Dataset):  # type: ignore
                     to_write,
                     self.add_edges,
                     self.k,
+                    self.fallback_to_holo,
                 )
                 if processed:
                     self.filenames.add(pinder_id)
