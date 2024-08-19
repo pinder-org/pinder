@@ -85,6 +85,7 @@ class PinderSystem:
         apo_ligand_pdb_code: str = "",
         metadata: MetadataEntry | None = None,
         dataset_path: Path | None = None,
+        pdb_engine: str = "fastpdb",
         **kwargs: dict[str, Any],
     ) -> None:
         """Initializes a PinderSystem instance.
@@ -108,36 +109,59 @@ class PinderSystem:
         self.pdbs_path = self.pinder_root / "pdbs"
         self.test_pdbs_path = self.pinder_root / "test_set_pdbs"
         self.mappings_path = self.pinder_root / "mappings"
+        self.pdb_engine = pdb_engine
         self.download_entry()
 
-        self.native = self.load_structure(self.pdbs_path / self.entry.pinder_pdb)
+        self.native = self.load_structure(
+            self.pdbs_path / self.entry.pinder_pdb, pdb_engine=self.pdb_engine
+        )
         holo_pdb_path = (
             self.test_pdbs_path if self.entry.test_system else self.pdbs_path
         )
-        self.holo_receptor = self.load_structure(holo_pdb_path / self.entry.holo_R_pdb)
-        self.holo_ligand = self.load_structure(holo_pdb_path / self.entry.holo_L_pdb)
+        self.holo_receptor = self.load_structure(
+            holo_pdb_path / self.entry.holo_R_pdb, pdb_engine=self.pdb_engine
+        )
+        self.holo_ligand = self.load_structure(
+            holo_pdb_path / self.entry.holo_L_pdb, pdb_engine=self.pdb_engine
+        )
         # Can be multiple apo, we grab canonical unless pdb codes provided
         self.apo_receptor = self.load_structure(
-            self.pdbs_path / self.entry.apo_R_pdb, chain_id="R"
+            self.pdbs_path / self.entry.apo_R_pdb,
+            chain_id="R",
+            pdb_engine=self.pdb_engine,
         )
         self.apo_ligand = self.load_structure(
-            self.pdbs_path / self.entry.apo_L_pdb, chain_id="L"
+            self.pdbs_path / self.entry.apo_L_pdb,
+            chain_id="L",
+            pdb_engine=self.pdb_engine,
         )
         canon_L = self.entry.apo_L_pdb.split("__")[0]
         canon_R = self.entry.apo_R_pdb.split("__")[0]
         alt_r = self.load_alt_apo_structure(
-            self.entry.apo_R_alt, apo_receptor_pdb_code, canon_R, chain_id="R"
+            self.entry.apo_R_alt,
+            apo_receptor_pdb_code,
+            canon_R,
+            chain_id="R",
+            pdb_engine=self.pdb_engine,
         )
         self.apo_receptor = alt_r or self.apo_receptor
         alt_l = self.load_alt_apo_structure(
-            self.entry.apo_L_alt, apo_ligand_pdb_code, canon_L, chain_id="L"
+            self.entry.apo_L_alt,
+            apo_ligand_pdb_code,
+            canon_L,
+            chain_id="L",
+            pdb_engine=self.pdb_engine,
         )
         self.apo_ligand = alt_l or self.apo_ligand
         self.pred_receptor = self.load_structure(
-            self.pdbs_path / self.entry.predicted_R_pdb, chain_id="R"
+            self.pdbs_path / self.entry.predicted_R_pdb,
+            chain_id="R",
+            pdb_engine=self.pdb_engine,
         )
         self.pred_ligand = self.load_structure(
-            self.pdbs_path / self.entry.predicted_L_pdb, chain_id="L"
+            self.pdbs_path / self.entry.predicted_L_pdb,
+            chain_id="L",
+            pdb_engine=self.pdb_engine,
         )
         # Create native-aligned holo receptor and ligand prior to filtering on
         # common uniprot indices. To be used when creating unbound complexes.
@@ -636,6 +660,7 @@ class PinderSystem:
         code: str,
         canon_code: str,
         chain_id: str | None = None,
+        pdb_engine: str = "fastpdb",
     ) -> Structure | None:
         """Loads an alternate apo structure based on the provided PDB codes, if available.
 
@@ -643,6 +668,8 @@ class PinderSystem:
             alt_pdbs (List[str]): A list of alternative PDB file paths.
             code (str): The specific code to identify the alternate apo structure.
             canon_code (str): The canonical code for the apo structure.
+            chain_id (str, optional): The chain ID to assign to the structure. Defaults to None (leave as is).
+            pdb_engine (str, optional): The PDB engine to use for reading the structure. Defaults to "fastpdb".
 
         Returns:
             Optional[Structure]: The loaded Structure object if found, otherwise None.
@@ -650,18 +677,24 @@ class PinderSystem:
         if (code != "") & (code != canon_code):
             apo = [f for f in alt_pdbs if f.split("__")[0] == code]
             if apo:
-                return self.load_structure(self.pdbs_path / apo[0], chain_id=chain_id)
+                return self.load_structure(
+                    self.pdbs_path / apo[0], chain_id=chain_id, pdb_engine=pdb_engine
+                )
             log.warning(f"Alternate apo PDB not found with code {code}")
         return None
 
     @staticmethod
     def load_structure(
-        pdb_file: Path | None, chain_id: str | None = None
+        pdb_file: Path | None,
+        chain_id: str | None = None,
+        pdb_engine: str = "fastpdb",
     ) -> Structure | None:
         """Loads a structure from a PDB file if it exists and is valid.
 
         Parameters:
-            pdb_file (Optional[Path]): The file path to the PDB file.
+            pdb_file (Path, optional): The file path to the PDB file.
+            chain_id (str, optional): The chain ID to assign to the structure. Defaults to None (leave as is).
+            pdb_engine (str, optional): The PDB engine to use for reading the structure. Defaults to "fastpdb".
 
         Returns:
             Optional[Structure]:
@@ -670,7 +703,7 @@ class PinderSystem:
         if not pdb_file or Path(pdb_file).suffix != ".pdb":
             return None
         map_pqt = PinderSystem._get_mapping_pqt(pdb_file)
-        loaded: Structure = Structure(pdb_file, map_pqt)
+        loaded: Structure = Structure(pdb_file, map_pqt, pdb_engine=pdb_engine)
         if chain_id:
             chain_arr = np.array([chain_id] * loaded.atom_array.shape[0])
             loaded.atom_array.set_annotation("chain_id", chain_arr)

@@ -45,6 +45,7 @@ class Structure:
     uniprot_map: Union[Optional[Path], Optional[pd.DataFrame]] = None
     pinder_id: Optional[str] = None
     atom_array: AtomArray = None
+    pdb_engine: str = "fastpdb"
 
     @staticmethod
     def read_pdb(path: Path, pdb_engine: str = "fastpdb") -> AtomArray:
@@ -107,7 +108,10 @@ class Structure:
             uniprot_map = None
 
         return Structure(
-            filepath=combined_pdb, uniprot_map=uniprot_map, atom_array=combined_arr
+            filepath=combined_pdb,
+            uniprot_map=uniprot_map,
+            atom_array=combined_arr,
+            pdb_engine=self.pdb_engine,
         )
 
     def filter(
@@ -127,6 +131,7 @@ class Structure:
                 uniprot_map=self.uniprot_mapping,
                 pinder_id=self.pinder_id,
                 atom_array=arr,
+                pdb_engine=self.pdb_engine,
             )
         self.atom_array = self.atom_array[atom_mask]
         return None
@@ -184,12 +189,14 @@ class Structure:
                 uniprot_map=self.uniprot_map,
                 pinder_id=self.pinder_id,
                 atom_array=target_at,
+                pdb_engine=self.pdb_engine,
             )
             other_struct = Structure(
                 filepath=other.filepath,
                 uniprot_map=other.uniprot_map,
                 pinder_id=other.pinder_id,
                 atom_array=ref_at,
+                pdb_engine=self.pdb_engine,
             )
             return self_struct, other_struct
         other.atom_array = ref_at
@@ -307,6 +314,7 @@ class Structure:
                 uniprot_map=self.uniprot_map,
                 pinder_id=self.pinder_id,
                 atom_array=superimposed,
+                pdb_engine=self.pdb_engine,
             ),
             raw_rmsd,
             refined_rmsd,
@@ -493,7 +501,7 @@ class Structure:
     def __post_init__(self) -> None:
         # pydantic v2 renames this to dataclass post_init
         if self.atom_array is None:
-            self.atom_array = self.read_pdb(self.filepath)
+            self.atom_array = self.read_pdb(self.filepath, pdb_engine=self.pdb_engine)
         if not self.pinder_id:
             self.pinder_id = self.filepath.stem
 
