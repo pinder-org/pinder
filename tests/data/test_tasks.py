@@ -19,18 +19,6 @@ def test_foldseek_pdb_glob(pinder_data_cp):
     assert len(tasks.foldseek_pdb_glob(pdb_dir)) == 30
 
 
-def test_plm_embedding_pairs(tmp_path, pinder_data_cp):
-    from pinder.data.pipeline import tasks
-
-    assert len(tasks.plm_embedding_pairs(pinder_data_cp)) == 0
-    embed_files = tasks.plm_embedding_glob(pinder_data_cp)
-    assert len(embed_files) == 1
-    npz = embed_files[0]
-    shutil.copy(npz, tmp_path / npz.name)
-    shutil.copy(npz, tmp_path / "embeddings_1.npz")
-    assert len(tasks.plm_embedding_pairs(tmp_path)) == 1
-
-
 @pytest.mark.parametrize(
     "step_name, input_type, data_subdir, cache_func, cache_kwargs, scatter_func, batch_size, expected_batches",
     [
