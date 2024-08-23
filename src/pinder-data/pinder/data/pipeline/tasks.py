@@ -51,30 +51,6 @@ def foldseek_pdb_glob(data_dir: Path) -> list[Path]:
     return list(data_dir.glob("*.pdb"))
 
 
-def plm_embedding_glob(data_dir: Path) -> list[Path]:
-    return list(data_dir.glob("embeddings_*.npz"))
-
-
-def plm_embedding_pairs(data_dir: Path) -> list[tuple[Path, Path]]:
-    npz_files = plm_embedding_glob(data_dir)
-    npz_pairs = []
-    for i in range(len(npz_files)):
-        for j in range(i + 1, len(npz_files)):
-            chunk1 = npz_files[i]
-            chunk2 = npz_files[j]
-            output_dir = chunk1.parent / "similarities"
-            output_file = output_dir / f"similarities_{chunk1.stem}_{chunk2.stem}.txt"
-            if output_file.is_file():
-                continue
-            npz_pairs.append((chunk1, chunk2))
-    return npz_pairs
-
-
-def plm_embedding_fasta(data_dir: Path) -> list[Path]:
-    fasta_file = list(data_dir.glob("*.fasta"))
-    return fasta_file
-
-
 def graph_type_glob(data_dir: Path) -> list[tuple[str, bool]]:
     graph_specs = []
     for g in data_dir.glob("cleaned_*_alignment_graph.pkl"):
@@ -115,9 +91,6 @@ DATA_GLOBS: dict[str, Callable[[Path], INPUT_TYPES]] = {
     "two_char_codes": two_char_code_rsync,
     "pdb_ids": pdb_id_glob,
     "foldseek": foldseek_pdb_glob,
-    "plm_fasta": plm_embedding_fasta,
-    "plm_embeddings": plm_embedding_glob,
-    "plm_embedding_pairs": plm_embedding_pairs,
     "graph_types": graph_type_glob,
     "putative_apo_pairings": putative_apo_pairings,
 }

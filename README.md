@@ -28,7 +28,7 @@ I/O operations. fastpdb is a dependency of pinder-core, and pip will attempt to
 install it for you during the installation of pinder. Pre-built wheels of
 fastpdb are available on PyPI for the following platforms:
 1. Linux with `glibc>=2.34` (e.g., Debian 12, Ubuntu 22.04, RHEL 9, etc.)
-2. Intel-based (x86, not Apple Silicon) MacOS Sierra (10.12) or newer
+2. MacOS Sierra (10.12) or newer
 3. Windows
 
 If your platform doesn't match these conditions, you will not get a wheel and
@@ -50,24 +50,12 @@ environment. This can be done using
 [`mamba`](https://github.com/mamba-org/mamba) or `conda` (you can swap `mamba`
 for `conda` for the same functionality):
 
-**Linux and Intel-based (x86-64) CPU architecture**
 
 ```bash
 mamba create --name pinder python=3.10
 mamba activate pinder
 ```
 
-**Apple Silicon-based (ARM) CPU architecture**
-
-Unfortunately, until all pinder dependencies have an ARM wheel on PyPi, we have to instruct conda to use an osx-64 target arch.
-
-```bash
-CONDA_SUBDIR=osx-64 mamba create --name pinder python=3.10
-mamba activate pinder
-mamba env config vars set CONDA_SUBDIR=osx-64
-mamba deactivate
-mamba activate pinder
-```
 
 or via `venv` from the Python standard library:
 
@@ -388,31 +376,7 @@ Each model decoy should have exactly two chains: {R, L} for {Receptor, Ligand}, 
 ```
 
 For more details on the implementations of the eval metrics, see the [eval docs](examples/eval/).
-
-
-### 📨 pinder_create_submission
-
-It is recommended to run through the `pinder_eval` script at least once to get familiar with the format and any common issues encountered with input validation. Once you are ready to submit your method to the leaderboard, use the `pinder_create_submission` CLI script to create a single archive to upload:
-
-```
-pinder_create_submission --help
-
-usage: pinder_create_submission [-h] --eval_dir eval_dir [--submission_name submission_name]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --eval_dir eval_dir, -f eval_dir
-                        Path to eval
-  --submission_name submission_name, -s submission_name, -n submission_name
-                        Optional name for submission
-
-```
-
-This will create a single archive which would be uploaded to a google drive that will be configured shortly.
-
-Leaderboards will be generated based on the valid submissions received.
-
-For more details on leaderboard generation, see the [Quarto dashboard](examples/eval/leaderboard/pinder-eval.qmd) and the [MethodMetrics](src/pinder-eval/pinder/eval/dockq/method.py) implementation.
+For more details on leaderboard generation, see the [MethodMetrics](src/pinder-eval/pinder/eval/dockq/method.py) implementation.
 
 
 ## 4. 🧪 Training set

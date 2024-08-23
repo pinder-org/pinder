@@ -79,10 +79,17 @@ class PairedPDB(HeteroData):  # type: ignore
         monomer2: str = "holo_ligand",
         add_edges: bool = True,
         k: int = 10,
+        fallback_to_holo: bool = True,
     ) -> PairedPDB:
         chain1_struc = getattr(system, monomer1)
+        if chain1_struc is None and fallback_to_holo:
+            log.debug(f"No {monomer1} found, falling back to holo_receptor")
+            chain1_struc = getattr(system, "holo_receptor")
         chain1_struc.filter("element", mask=["H"], negate=True, copy=False)
         chain2_struc = getattr(system, monomer2)
+        if chain2_struc is None and fallback_to_holo:
+            log.debug(f"No {monomer2} found, falling back to holo_ligand")
+            chain2_struc = getattr(system, "holo_ligand")
         chain2_struc.filter("element", mask=["H"], negate=True, copy=False)
         return cls.from_structure_pair(
             node_types=node_types,
