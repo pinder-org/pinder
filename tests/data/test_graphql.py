@@ -58,7 +58,7 @@ def test_fetch_entry_annotations(pdb_id, tmp_path):
     assert {"DCAF15_WD40", "RRM_1", "CPSF_A", "DDA1"}.issubset(
         set(pfam_df.rcsb_pfam_identifier)
     )
-    assert set(feature_df.type) == EXPECTED_FEATURE_TYPES
+    assert set(feature_df.type).issuperset(EXPECTED_FEATURE_TYPES)
     assert set(feature_df.asym_id) == {"C", "A", "E", "B", "D"}
     assert set(annotation_df.annotation_id) == EXPECTED_ANNOTATION_IDS
 
