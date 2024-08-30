@@ -53,13 +53,13 @@ def structure2tensor(
         property_dict["residue_types"] = torch.tensor(types_array_res).type(dtype)
 
     if atom_coordinates is not None:
-        property_dict["atom_coordinates"] = torch.tensor(atom_coordinates).type(dtype)
+        property_dict["atom_coordinates"] = torch.tensor(atom_coordinates, dtype=dtype)
     if residue_coordinates is not None:
-        property_dict["residue_coordinates"] = torch.tensor(residue_coordinates).type(
-            dtype
+        property_dict["residue_coordinates"] = torch.tensor(
+            residue_coordinates, dtype=dtype
         )
     if residue_ids is not None:
-        property_dict["residue_ids"] = torch.tensor(residue_ids).type(dtype)
+        property_dict["residue_ids"] = torch.tensor(residue_ids, dtype=dtype)
     return property_dict
 
 
