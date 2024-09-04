@@ -1,4 +1,4 @@
-# Dataset changelog
+# Changelog
 
 ```{include} ../changelog_data.md
 :heading-offset: 1
