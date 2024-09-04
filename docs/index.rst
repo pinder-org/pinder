@@ -10,13 +10,13 @@ PINDER: The Protein INteraction Dataset and Evaluation Resource
    :maxdepth: 4
    :caption: Contents:
 
-   readme.md
+   readme
    examples
    source/pinder
    example_readme
-   faq.md
-   limitations.md
-   changelog.md
+   faq
+   limitations
+   changelog
 
 
 
