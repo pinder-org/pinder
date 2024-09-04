@@ -1,3 +1,4 @@
+import pytest
 from pinder.core import PinderSystem
 
 from pinder.core.loader import filters
@@ -142,3 +143,21 @@ def test_pinder_meta_filters_transient():
             assert (
                 filter(ps) == result
             ), f"{ps.entry.id}: {filter.extra_meta_fields} did not pass"
+
+
+@pytest.mark.parametrize(
+    "min_atom_types, passes_filter",
+    [
+        (3, True),
+        (1, True),
+        (100, False),
+    ],
+)
+def test_min_atom_types_structure_filter(
+    min_atom_types, passes_filter, pinder_temp_dir
+):
+    pinder_id = "1df0__A1_Q07009--1df0__B1_Q64537"
+    dimer = PinderSystem(entry=pinder_id)
+    structure_filter = filters.MinAtomTypesFilter(min_atom_types=min_atom_types)
+    native = dimer.native
+    assert structure_filter(native) == passes_filter
