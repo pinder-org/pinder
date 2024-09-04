@@ -3,20 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pinder's documentation!
+PINDER: The Protein INteraction Dataset and Evaluation Resource
 =======================================
 
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
 
-   readme_link.md
+   readme.md
    examples
    source/pinder
    example_readme
-   faq_link.md
-   limitations_link.md
-   changelog_link.md
+   faq.md
+   limitations.md
+   changelog.md
 
 
 
