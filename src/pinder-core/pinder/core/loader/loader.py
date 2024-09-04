@@ -161,6 +161,7 @@ def _create_target_feature_complex(
     system: PinderSystem,
     selected_monomers: dict[str, str],
     crop_equal_monomer_shapes: bool = True,
+    fallback_to_holo: bool = True,
 ) -> tuple[Structure, Structure]:
     holo_R = system.aligned_holo_R
     holo_L = system.aligned_holo_L
@@ -175,6 +176,16 @@ def _create_target_feature_complex(
 
     decoy_R = getattr(system, selected_monomers["R"] + "_receptor")
     decoy_L = getattr(system, selected_monomers["L"] + "_ligand")
+    # Check to ensure that the monomer wasn't filtered out by a PinderFilterSubBase
+    if decoy_R is None and fallback_to_holo:
+        selected_monomers["R"] = "holo"
+    if decoy_L is None and fallback_to_holo:
+        selected_monomers["L"] = "holo"
+        decoy_L = getattr(system, selected_monomers["L"] + "_ligand")
+    if decoy_R is None or decoy_L is None:
+        raise ValueError(
+            f"No valid monomers found for {system.entry.id} with selected_monomers={selected_monomers}"
+        )
     both_holo = all([selection == "holo" for selection in selected_monomers.values()])
     # No need to crop since our target and feature complex is identical
     if crop_equal_monomer_shapes and not both_holo:
@@ -335,7 +346,10 @@ class PinderLoader:
                 self.use_canonical_apo,
             )
             target_complex, feature_complex = _create_target_feature_complex(
-                system, selected_monomers, self.crop_equal_monomer_shapes
+                system,
+                selected_monomers,
+                self.crop_equal_monomer_shapes,
+                self.fallback_to_holo,
             )
             valid_idx = self.apply_structure_filters(target_complex)
             if not valid_idx:
