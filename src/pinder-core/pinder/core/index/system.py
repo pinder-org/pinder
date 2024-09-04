@@ -56,8 +56,10 @@ class PinderSystem:
     structural data. It provides functionality to load, align, and analyze
     protein structures within the context of a Pinder index entry.
 
-    Upon initialization, the system prepares directories for different structure types
-    (holo, apo, predicted) and loads the respective protein structures.
+    Upon initialization, the system loads the ground-truth dimer and sets the PDB and mapping directories.
+
+    Individual monomers (holo, apo, predicted) are defined as `cached_property` properties which will
+    only initialize the Structure objects when they are requested.
 
     Methods include creating complexes, calculating RMSD, difficulty assessment,
     and updating substructure presence based on filtering criteria.
@@ -67,15 +69,6 @@ class PinderSystem:
         pdbs_path (Path): Path to the directory containing PDB files.
         mappings_path (Path): Path to the directory containing Parquet mapping files.
         native (Structure): The native (ground-truth) structure of the system.
-        holo_dir (Path): Directory for the holo structures.
-        apo_dir (Path): Directory for the apo structures.
-        pred_dir (Path): Directory for the predicted structures.
-        holo_receptor (Structure): The holo form of the receptor.
-        holo_ligand (Structure): The holo form of the ligand.
-        apo_receptor (Structure): The apo form of the receptor.
-        apo_ligand (Structure): The apo form of the ligand.
-        pred_receptor (Structure): The predicted structure of the receptor.
-        pred_ligand (Structure): The predicted structure of the ligand.
 
     """
 
@@ -134,6 +127,7 @@ class PinderSystem:
 
     @cached_property
     def holo_receptor(self) -> Structure:
+        """The holo form of the receptor."""
         holo_receptor = self.load_structure(
             self.holo_pdb_path / self.entry.holo_R_pdb, pdb_engine=self.pdb_engine
         )
@@ -141,6 +135,7 @@ class PinderSystem:
 
     @cached_property
     def holo_ligand(self) -> Structure:
+        """The holo form of the ligand."""
         holo_ligand = self.load_structure(
             self.holo_pdb_path / self.entry.holo_L_pdb, pdb_engine=self.pdb_engine
         )
@@ -148,6 +143,7 @@ class PinderSystem:
 
     @cached_property
     def aligned_holo_R(self) -> Structure:
+        """The holo form of the receptor, aligned to the coordinates of the respective chain in the native structure."""
         # Create native-aligned holo receptor prior to filtering on
         # common uniprot indices. To be used when creating unbound complexes.
         holo_R = self.holo_receptor
@@ -157,6 +153,7 @@ class PinderSystem:
 
     @cached_property
     def aligned_holo_L(self) -> Structure:
+        """The holo form of the ligand, aligned to the coordinates of the respective chain in the native structure."""
         # Create native-aligned holo ligand prior to filtering on
         # common uniprot indices. To be used when creating unbound complexes.
         holo_L = self.holo_ligand
@@ -166,6 +163,7 @@ class PinderSystem:
 
     @cached_property
     def apo_receptor(self) -> Structure:
+        """The apo form of the receptor."""
         # Can be multiple apo, we grab canonical unless pdb codes provided
         canon_R = self.entry.apo_R_pdb.split("__")[0]
         apo_R = None
@@ -187,6 +185,7 @@ class PinderSystem:
 
     @cached_property
     def apo_ligand(self) -> Structure:
+        """The apo form of the ligand."""
         # Can be multiple apo, we grab canonical unless pdb codes provided
         canon_L = self.entry.apo_L_pdb.split("__")[0]
         apo_L = None
@@ -208,6 +207,7 @@ class PinderSystem:
 
     @cached_property
     def pred_receptor(self) -> Structure:
+        """The predicted form of the receptor (currently alphafold2)."""
         pred_receptor = self.load_structure(
             self.pdbs_path / self.entry.predicted_R_pdb,
             chain_id="R",
@@ -217,6 +217,7 @@ class PinderSystem:
 
     @cached_property
     def pred_ligand(self) -> Structure:
+        """The predicted form of the ligand (currently alphafold2)."""
         pred_ligand = self.load_structure(
             self.pdbs_path / self.entry.predicted_L_pdb,
             chain_id="L",
