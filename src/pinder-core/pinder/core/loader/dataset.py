@@ -67,34 +67,26 @@ def pad_to_max_length(
     dims: Sequence[int],
     value: int | float | None = None,
 ) -> Tensor:
-    """
-    Takes a tensor and pads it to maximum length with right padding on the
-    specified dimensions
+    """Takes a tensor and pads it to maximum length with right padding on the specified dimensions.
 
-    Parameters
-    ----------
-    mat :
-        The tensor to pad. Can be of any shape
-    max_length :
-        The size of the tensor along specified dimensions after padding.
-    dims :
-        The dimensions to pad. Must have the same number of elements as `max_length`.
-    value : Optional[int], optional
-        The value to pad with, by default None
+    Parameters:
+        mat (Tensor): The tensor to pad. Can be of any shape
+        max_length (int | Sequence[int] | Tensor): The size of the tensor along specified dimensions after padding.
+        dims (Sequence[int]): The dimensions to pad. Must have the same number of elements as `max_length`.
+        value (int, optional): The value to pad with, by default None
 
-    Returns
-    -------
-    Tensor
-        The padded tensor. Below are examples of input and output shapes
-        Example 1:
-            input: (2, 3, 4), max_length: 5, dims: [0, 2]
-            output: (5, 3, 5)
-        Example 2:
-            input: (2, 3, 4), max_length: 5, dims: [0]
-            output: (5, 3, 4)
-        Example 3:
-            input: (2, 3, 4), max_length: [5, 7], dims: [0, 2]
-            output: (5, 3, 7)
+    Returns:
+        Tensor : The padded tensor. Below are examples of input and output shapes
+            Example 1:
+                input: (2, 3, 4), max_length: 5, dims: [0, 2]
+                output: (5, 3, 5)
+            Example 2:
+                input: (2, 3, 4), max_length: 5, dims: [0]
+                output: (5, 3, 4)
+            Example 3:
+                input: (2, 3, 4), max_length: [5, 7], dims: [0, 2]
+                output: (5, 3, 7)
+
     """
     if not isinstance(max_length, int):
         assert len(dims) == len(max_length)
@@ -128,30 +120,23 @@ def pad_and_stack(
     dims_to_pad: list[int] | None = None,
     value: int | float | None = None,
 ) -> Tensor:
-    """
-    Pads a list of tensors to the maximum length observed along each dimension
-    and then stacks them along a new dimension (given by `dim`).
+    """Pads a list of tensors to the maximum length observed along each dimension and then stacks them along a new dimension (given by `dim`).
 
-    Parameters
-    ----------
-    tensors : List[Tensor]
-        A list of tensors to pad and stack
-    dim: The new dimension to stack along.
-    dims_to_pad : List[int]
-        The dimensions to pad
-    value : Optional[int], optional
-        The value to pad with, by default None
+    Parameters:
+        tensors (list[Tensor]): A list of tensors to pad and stack
+        dim (int): The new dimension to stack along.
+        dims_to_pad (list[int] | None): The dimensions to pad
+        value (int | float | None, optional): The value to pad with, by default None
 
-    Returns
-    -------
-    Tensor
-        The padded and stacked tensor. Below are examples of input and output shapes
-        Example 1: Sequence features (although redundant with torch.rnn.utils.pad_sequence)
-            input: [(2,), (7,)], dim: 0
-            output: (2, 7)
-        Example 2: Pair features (e.g., pairwise coordinates)
-            input: [(4, 4, 3), (7, 7, 3)], dim: 0
-            output: (2, 7, 7, 3)
+    Returns:
+        Tensor: The padded and stacked tensor. Below are examples of input and output shapes
+            Example 1: Sequence features (although redundant with torch.rnn.utils.pad_sequence)
+                input: [(2,), (7,)], dim: 0
+                output: (2, 7)
+            Example 2: Pair features (e.g., pairwise coordinates)
+                input: [(4, 4, 3), (7, 7, 3)], dim: 0
+                output: (2, 7, 7, 3)
+
     """
     assert (
         len({t.ndim for t in tensors}) == 1
@@ -209,15 +194,12 @@ def collate_batch(
 
     Used as the default collate_fn for the torch DataLoader consuming PinderDataset.
 
-    Parameters
-    ----------
-    batch : list[dict[str, dict[str, Tensor] | str]]
-        A list of dictionaries containing the data for each item in the batch.
+    Parameters:
+        batch (list[dict[str, dict[str, Tensor] | str]]): A list of dictionaries containing the data for each item in the batch.
 
-    Returns
-    -------
-    dict[str, dict[str, Tensor] | list[str]]
-        A dictionary containing the merged Tensors for the batch.
+    Returns:
+        dict[str, dict[str, Tensor] | list[str]]: A dictionary containing the merged Tensors for the batch.
+
     """
     ids: list[str] = []
     sample_ids: list[str] = []
