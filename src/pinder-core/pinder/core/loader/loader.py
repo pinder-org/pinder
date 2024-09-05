@@ -215,6 +215,8 @@ class PinderLoader:
         fallback_to_holo: bool = True,
         use_canonical_apo: bool = True,
         crop_equal_monomer_shapes: bool = True,
+        max_load_attempts: int = 10,
+        pre_specified_monomers: dict[str, str] | pd.DataFrame | None = None,
     ) -> None:
         """Initialize a PinderLoader instance.
 
@@ -243,6 +245,15 @@ class PinderLoader:
                 Defaults to True. To sample non-canonical apo monomers, set this value to False.
             crop_equal_monomer_shapes (bool, optional): Whether to crop the holo and feature (decoy, potentially with apo/pred monomers) complexes to the same shape. Defaults to True.
                 See the tutorial on cropped superposition for more details: https://pinder-org.github.io/pinder/superposition.html.
+            max_load_attempts (int): Maximum number of times to try loading an item from the index in the __getitem__ call before raising an IndexError.
+                Default is 10. When a system is removed by one of the filters, the default behavior is to try another index selected at random.
+                This is done to prevent exceptions or NoneType objects being returned to the data loader.
+            pre_specified_monomers (dict[str, str], pd.DataFrame, optional): Optional pre-specified monomers to use for each pinder system ID.
+                This argument can either be a dictionary or a pandas DataFrame, specifying a mapping of system IDs to monomer types.
+                If a dictionary is provided, it should be in the format {"system_id": "monomer_type"}.
+                If a DataFrame is provided, it should have a "id" column and a "monomer" column.
+                The "id" column should contain the system IDs, and the "monomer" column should contain the monomer types (either "holo", "apo", or "pred").
+                Default is None, indicating that monomer_priority will be used to select monomers for each system.
 
         Note:
             The allowed values for `monomer_priority` are "apo", "holo", "pred", "random" or "random_mixed".
@@ -271,6 +282,7 @@ class PinderLoader:
         self.fallback_to_holo = fallback_to_holo
         self.use_canonical_apo = use_canonical_apo
         self.crop_equal_monomer_shapes = crop_equal_monomer_shapes
+        self.max_load_attempts = max_load_attempts
 
         # Optional structure filters to apply
         self.base_filters = base_filters
@@ -317,6 +329,27 @@ class PinderLoader:
                 f"No systems found matching split={split}, ids={ids}, subset={subset}"
             )
 
+        if isinstance(pre_specified_monomers, pd.DataFrame):
+            err_msg = f"pre_specified_monomers DataFrame must have columns 'id' and 'monomer', got {pre_specified_monomers.columns}"
+            assert {"id", "monomer"}.issubset(
+                set(pre_specified_monomers.columns)
+            ), err_msg
+            pre_specified_monomers = {
+                pid: monomer
+                for pid, monomer in zip(
+                    pre_specified_monomers["id"], pre_specified_monomers["monomer"]
+                )
+            }
+        if isinstance(pre_specified_monomers, dict):
+            monomer_names = set(pre_specified_monomers.values())
+            pre_specified_ids = set(pre_specified_monomers.keys())
+            err_msg = f"pre_specified_monomers dict must only contain values: 'holo', 'apo', or 'pred', got {monomer_names}"
+            assert monomer_names.issubset({"holo", "apo", "pred"}), err_msg
+            missing = len(set(self.index.id).difference(pre_specified_ids))
+            err_msg = f"pre_specified_monomers dict must map all IDs to be loaded to monomer types, missing {missing} IDs"
+            assert pre_specified_ids.issuperset(set(self.index.id)), err_msg
+        self.pre_specified_monomers = pre_specified_monomers
+
     def __len__(self) -> int:
         return len(self.index)
 
@@ -329,7 +362,7 @@ class PinderLoader:
     def __getitem__(self, idx: int) -> tuple[PinderSystem, Structure, Structure]:
         valid_idx = False
         attempts = 0
-        while not valid_idx and attempts < 10:
+        while not valid_idx and attempts < self.max_load_attempts:
             attempts += 1
             row = self.index.iloc[idx]
             system = PinderSystem(row.id)
@@ -339,12 +372,19 @@ class PinderLoader:
             if not isinstance(system, PinderSystem):
                 continue
 
-            selected_monomers = select_monomer(
-                row,
-                self.monomer_priority,
-                self.fallback_to_holo,
-                self.use_canonical_apo,
-            )
+            if self.pre_specified_monomers is not None:
+                pre_selected = self.pre_specified_monomers.get(
+                    system.entry.id,
+                    "holo" if self.fallback_to_holo else self.monomer_priority,
+                )
+                selected_monomers = {"R": pre_selected, "L": pre_selected}
+            else:
+                selected_monomers = select_monomer(
+                    row,
+                    self.monomer_priority,
+                    self.fallback_to_holo,
+                    self.use_canonical_apo,
+                )
             target_complex, feature_complex = _create_target_feature_complex(
                 system,
                 selected_monomers,
@@ -382,7 +422,14 @@ class PinderLoader:
     ) -> PinderSystem | bool:
         for sub_filter in sub_filters:
             if isinstance(sub_filter, PinderFilterSubBase):
-                dimer = sub_filter(dimer)
+                try:
+                    dimer = sub_filter(dimer)
+                except Exception as e:
+                    # Likely due to previous filter removing a holo Structure from the system
+                    log.error(
+                        f"Failed to apply sub_filter={sub_filter} on {dimer.entry.id}: {e}"
+                    )
+                    return False
         for base_filter in base_filters:
             if isinstance(base_filter, PinderFilterBase):
                 if not base_filter(dimer):
