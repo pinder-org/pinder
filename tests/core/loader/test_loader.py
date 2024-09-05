@@ -164,3 +164,31 @@ def test_monomer_selection(
     item = next(iter(loader))
     feature_complex = item[1]
     assert feature_complex.pinder_id == expected_sample_id
+
+
+def test_load_pre_specified_monomers(pinder_temp_dir):
+    import pandas as pd
+
+    ids = [
+        "1df0__A1_Q07009--1df0__B1_Q64537",
+        "7mbm__I1_P84233--7mbm__J1_P62799",
+        "3s9d__B1_P48551--3s9d__A1_P01563",
+    ]
+    pre_specified_df = pd.DataFrame([{"id": pid, "monomer": "pred"} for pid in ids])
+    loader = PinderLoader(
+        ids=ids,
+        monomer_priority="holo",  # verify that this gets ignored
+        pre_specified_monomers=pre_specified_df,
+    )
+    item = next(iter(loader))
+    feature_complex = item[1]
+    assert feature_complex.pinder_id.startswith("af__")
+    pre_specified_dict = {pid: "pred" for pid in ids}
+    loader = PinderLoader(
+        ids=ids,
+        monomer_priority="holo",  # verify that this gets ignored
+        pre_specified_monomers=pre_specified_dict,
+    )
+    item = next(iter(loader))
+    feature_complex = item[1]
+    assert feature_complex.pinder_id.startswith("af__")
