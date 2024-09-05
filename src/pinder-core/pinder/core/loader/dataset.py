@@ -251,6 +251,8 @@ class PinderDataset(Dataset):  # type: ignore
         crop_equal_monomer_shapes: bool = True,
         index_query: str | None = None,
         metadata_query: str | None = None,
+        pre_specified_monomers: dict[str, str] | pd.DataFrame | None = None,
+        **kwargs: Any,
     ) -> None:
         self.loader = PinderLoader(
             split=split,
@@ -267,6 +269,8 @@ class PinderDataset(Dataset):  # type: ignore
             fallback_to_holo=fallback_to_holo,
             use_canonical_apo=use_canonical_apo,
             crop_equal_monomer_shapes=crop_equal_monomer_shapes,
+            pre_specified_monomers=pre_specified_monomers,
+            **kwargs,
         )
         # Optional transform and target transform to apply
         self.transform = transform
