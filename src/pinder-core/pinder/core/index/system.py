@@ -1,4 +1,5 @@
 from __future__ import annotations
+from functools import cached_property
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -55,8 +56,10 @@ class PinderSystem:
     structural data. It provides functionality to load, align, and analyze
     protein structures within the context of a Pinder index entry.
 
-    Upon initialization, the system prepares directories for different structure types
-    (holo, apo, predicted) and loads the respective protein structures.
+    Upon initialization, the system loads the ground-truth dimer and sets the PDB and mapping directories.
+
+    Individual monomers (holo, apo, predicted) are defined as `cached_property` properties which will
+    only initialize the Structure objects when they are requested.
 
     Methods include creating complexes, calculating RMSD, difficulty assessment,
     and updating substructure presence based on filtering criteria.
@@ -66,15 +69,6 @@ class PinderSystem:
         pdbs_path (Path): Path to the directory containing PDB files.
         mappings_path (Path): Path to the directory containing Parquet mapping files.
         native (Structure): The native (ground-truth) structure of the system.
-        holo_dir (Path): Directory for the holo structures.
-        apo_dir (Path): Directory for the apo structures.
-        pred_dir (Path): Directory for the predicted structures.
-        holo_receptor (Structure): The holo form of the receptor.
-        holo_ligand (Structure): The holo form of the ligand.
-        apo_receptor (Structure): The apo form of the receptor.
-        apo_ligand (Structure): The apo form of the ligand.
-        pred_receptor (Structure): The predicted structure of the receptor.
-        pred_ligand (Structure): The predicted structure of the ligand.
 
     """
 
@@ -118,68 +112,118 @@ class PinderSystem:
         holo_pdb_path = (
             self.test_pdbs_path if self.entry.test_system else self.pdbs_path
         )
-        self.holo_receptor = self.load_structure(
-            holo_pdb_path / self.entry.holo_R_pdb, pdb_engine=self.pdb_engine
-        )
-        self.holo_ligand = self.load_structure(
-            holo_pdb_path / self.entry.holo_L_pdb, pdb_engine=self.pdb_engine
-        )
-        # Can be multiple apo, we grab canonical unless pdb codes provided
-        self.apo_receptor = self.load_structure(
-            self.pdbs_path / self.entry.apo_R_pdb,
-            chain_id="R",
-            pdb_engine=self.pdb_engine,
-        )
-        self.apo_ligand = self.load_structure(
-            self.pdbs_path / self.entry.apo_L_pdb,
-            chain_id="L",
-            pdb_engine=self.pdb_engine,
-        )
-        canon_L = self.entry.apo_L_pdb.split("__")[0]
-        canon_R = self.entry.apo_R_pdb.split("__")[0]
-        alt_r = self.load_alt_apo_structure(
-            self.entry.apo_R_alt,
-            apo_receptor_pdb_code,
-            canon_R,
-            chain_id="R",
-            pdb_engine=self.pdb_engine,
-        )
-        self.apo_receptor = alt_r or self.apo_receptor
-        alt_l = self.load_alt_apo_structure(
-            self.entry.apo_L_alt,
-            apo_ligand_pdb_code,
-            canon_L,
-            chain_id="L",
-            pdb_engine=self.pdb_engine,
-        )
-        self.apo_ligand = alt_l or self.apo_ligand
-        self.pred_receptor = self.load_structure(
-            self.pdbs_path / self.entry.predicted_R_pdb,
-            chain_id="R",
-            pdb_engine=self.pdb_engine,
-        )
-        self.pred_ligand = self.load_structure(
-            self.pdbs_path / self.entry.predicted_L_pdb,
-            chain_id="L",
-            pdb_engine=self.pdb_engine,
-        )
-        # Create native-aligned holo receptor and ligand prior to filtering on
-        # common uniprot indices. To be used when creating unbound complexes.
+        self.holo_pdb_path = holo_pdb_path
+        self.apo_receptor_pdb_code = apo_receptor_pdb_code
+        self.apo_ligand_pdb_code = apo_ligand_pdb_code
         assert isinstance(self.native, Structure)
         self.native_R = self.native.filter("chain_id", ["R"])
         self.native_L = self.native.filter("chain_id", ["L"])
-        holo_R = self.holo_receptor
-        holo_L = self.holo_ligand
-        assert isinstance(holo_R, Structure)
-        assert isinstance(holo_L, Structure)
-        self.aligned_holo_R, _, _ = holo_R.superimpose(self.native_R)
-        self.aligned_holo_L, _, _ = holo_L.superimpose(self.native_L)
         # save metadata if provided
         if isinstance(metadata, MetadataEntry):
             self._metadata = metadata
 
         for k, v in kwargs.items():
             setattr(self, k, v)
+
+    @cached_property
+    def holo_receptor(self) -> Structure:
+        """The holo form of the receptor."""
+        holo_receptor = self.load_structure(
+            self.holo_pdb_path / self.entry.holo_R_pdb, pdb_engine=self.pdb_engine
+        )
+        return holo_receptor
+
+    @cached_property
+    def holo_ligand(self) -> Structure:
+        """The holo form of the ligand."""
+        holo_ligand = self.load_structure(
+            self.holo_pdb_path / self.entry.holo_L_pdb, pdb_engine=self.pdb_engine
+        )
+        return holo_ligand
+
+    @cached_property
+    def aligned_holo_R(self) -> Structure:
+        """The holo form of the receptor, aligned to the coordinates of the respective chain in the native structure."""
+        # Create native-aligned holo receptor prior to filtering on
+        # common uniprot indices. To be used when creating unbound complexes.
+        holo_R = self.holo_receptor
+        assert isinstance(holo_R, Structure)
+        aligned_holo_R, _, _ = holo_R.superimpose(self.native_R)
+        return aligned_holo_R
+
+    @cached_property
+    def aligned_holo_L(self) -> Structure:
+        """The holo form of the ligand, aligned to the coordinates of the respective chain in the native structure."""
+        # Create native-aligned holo ligand prior to filtering on
+        # common uniprot indices. To be used when creating unbound complexes.
+        holo_L = self.holo_ligand
+        assert isinstance(holo_L, Structure)
+        aligned_holo_L, _, _ = holo_L.superimpose(self.native_L)
+        return aligned_holo_L
+
+    @cached_property
+    def apo_receptor(self) -> Structure:
+        """The apo form of the receptor."""
+        # Can be multiple apo, we grab canonical unless pdb codes provided
+        canon_R = self.entry.apo_R_pdb.split("__")[0]
+        apo_R = None
+        if self.apo_receptor_pdb_code != "" and self.apo_receptor_pdb_code != canon_R:
+            apo_R = self.load_alt_apo_structure(
+                self.entry.apo_R_alt,
+                self.apo_receptor_pdb_code,
+                canon_R,
+                chain_id="R",
+                pdb_engine=self.pdb_engine,
+            )
+        if apo_R is None:
+            apo_R = self.load_structure(
+                self.pdbs_path / self.entry.apo_R_pdb,
+                chain_id="R",
+                pdb_engine=self.pdb_engine,
+            )
+        return apo_R
+
+    @cached_property
+    def apo_ligand(self) -> Structure:
+        """The apo form of the ligand."""
+        # Can be multiple apo, we grab canonical unless pdb codes provided
+        canon_L = self.entry.apo_L_pdb.split("__")[0]
+        apo_L = None
+        if self.apo_ligand_pdb_code != "" and self.apo_ligand_pdb_code != canon_L:
+            apo_L = self.load_alt_apo_structure(
+                self.entry.apo_L_alt,
+                self.apo_ligand_pdb_code,
+                canon_L,
+                chain_id="L",
+                pdb_engine=self.pdb_engine,
+            )
+        if apo_L is None:
+            apo_L = self.load_structure(
+                self.pdbs_path / self.entry.apo_L_pdb,
+                chain_id="L",
+                pdb_engine=self.pdb_engine,
+            )
+        return apo_L
+
+    @cached_property
+    def pred_receptor(self) -> Structure:
+        """The predicted form of the receptor (currently alphafold2)."""
+        pred_receptor = self.load_structure(
+            self.pdbs_path / self.entry.predicted_R_pdb,
+            chain_id="R",
+            pdb_engine=self.pdb_engine,
+        )
+        return pred_receptor
+
+    @cached_property
+    def pred_ligand(self) -> Structure:
+        """The predicted form of the ligand (currently alphafold2)."""
+        pred_ligand = self.load_structure(
+            self.pdbs_path / self.entry.predicted_L_pdb,
+            chain_id="L",
+            pdb_engine=self.pdb_engine,
+        )
+        return pred_ligand
 
     def filter_common_uniprot_res(self) -> None:
         """Filters the loaded protein structures for common UniProt residues, ensuring that

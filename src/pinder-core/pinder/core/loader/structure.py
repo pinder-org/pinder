@@ -56,6 +56,11 @@ class Structure:
             arr = atom_array_from_pdb_file(path, pdb_engine)
             annotation_arr: NDArray[np.double | np.str_] = np.repeat(0.0, arr.shape[0])
             arr.set_annotation("b_factor", annotation_arr)
+        if "" in set(arr.element):
+            try:
+                arr.element = struc.infer_elements(arr)
+            except Exception:
+                log.debug(f"Found missing elements in {path} but failed to infer")
         return arr
 
     def to_pdb(self, filepath: Path | None = None) -> None:

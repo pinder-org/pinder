@@ -175,7 +175,7 @@ metrics = bdq.calculate()
 
 ## Do I have to use the `pinder` loader? How can I write my own loader?
 
-No! The `PPIDataset` torch-geometric dataset serves as an example implementation of a loader. The dataset wraps the abstract `PinderLoader` class under the hood, which is the primary interface for loading `PinderSystem` objects and applying filters and/or transforms.
+No! The `PinderDataset` torch dataset and `PPIDataset` torch-geometric dataset serve as example implementations of a loader. The dataset wraps the abstract `PinderLoader` class under the hood, which is the primary interface for loading `PinderSystem` objects and applying filters and/or transforms.
 
 While not required, it is recommended to use the `PinderLoader` class directly to implement your own loader.
 
@@ -199,44 +199,26 @@ sub_filters = [
     filters.FilterByElongation(max_var_contribution=0.92),
     filters.FilterDetachedSub(radius=12, max_components=2),
 ]
-loader = PinderLoader(
-    base_filters = base_filters,
-    sub_filters = sub_filters
-)
-
-print(loader)
->>> PinderLoader(
-    dimers=None,
-    base_filters=[
-        FilterByMissingHolo,
-        FilterSubByContacts,
-        FilterByHoloElongation,
-        FilterDetachedHolo,
-    ],
-    sub_filters=[
-        FilterSubByAtomTypes,
-        FilterByHoloOverlap(min_overlap=5),
-        FilterByHoloSeqIdentity(min_sequence_identity=0.8),
-        FilterSubLengths,
-        FilterSubRmsds,
-        FilterByElongation,
-        FilterDetachedSub,
-    ],
-    writer=None,
-)
 
 # Load a list of system IDs
 systems = [
     "1df0__A1_Q07009--1df0__B1_Q64537",
     "117e__A1_P00817--117e__B1_P00817",
 ]
-# This will construct a generator
-loader.load_systems(systems)
 
-# Iterate over loader.dimers to apply the filters and transforms. Systems that pass all filters will be yielded.
+loader = PinderLoader(
+    ids=systems,
+    base_filters = base_filters,
+    sub_filters = sub_filters
+)
+print(loader)
+>>> PinderLoader(split=None, monomers=holo, systems=2)
+
+# Iterate over loader to apply the filters and transforms. Systems that pass all filters will be yielded.
 passing_ids = []
-for dimer in loader.dimers:
-    passing_ids.append(dimer.entry.id)
+for item in loader:
+    system, feature_complex, target_complex = item
+    passing_ids.append(system.entry.id)
 
 # Each dimer object can now be used in your own loader to access any of the properties exposed by the PinderSystem class, the monomer `Structure` objects, or the underlying `biotite.structure.AtomArray` objects.
 ```

@@ -42,6 +42,25 @@ class PinderFilterBase:
         return self.__class__.__name__
 
 
+class StructureFilter:
+    def __call__(self, structure: Structure) -> bool:
+        return self.filter(structure)
+
+    def filter(self, structure: Structure) -> bool:
+        raise NotImplementedError
+
+    def __repr__(self) -> str:
+        return self.__class__.__name__
+
+
+class MinAtomTypesFilter(StructureFilter):
+    def __init__(self, min_atom_types: int = 3):
+        self.min_atom_types = min_atom_types
+
+    def filter(self, structure: Structure) -> bool:
+        return len(structure.atom_names) >= self.min_atom_types
+
+
 class FilterMetadataFields(PinderFilterBase):
     def __init__(
         self,

@@ -2,7 +2,7 @@
 name = "pinder"
 dynamic = ["version"]
 dependencies = [
-    "biotite >= 0.40.0",
+    "biotite < 1.0.0",
     "fastpdb",
     "numpy<2",
     "pandas",
@@ -76,11 +76,13 @@ docs = [
   "sphinxcontrib-jsmath",
   "sphinxcontrib-qthelp",
   "sphinxcontrib-serializinghtml",
+  "sphinx-copybutton",
+  "sphinx_design",
   "jupyterlab_myst",
   "myst-nb",
   "myst-parser[linkify]",
   "jupytext",
-  "piccolo-theme",
+  "pydata-sphinx-theme",
   "numpydoc",
 ]
 

@@ -109,6 +109,39 @@ class FilterMonomerAtomTypes(filters.PinderFilterSubBase):
 ```
 
 
+### StructureFilter
+
+This is a base class for implementing `Structure`-level filter sub-classes.
+
+Each sub-class must implement a `filter` method, which accepts a `Structure` as input, and return a boolean indicating whether the system passes the filter or not.
+
+For example, if we wanted to limit considered dimers to those with at least 50 residues, we could define a `MinStructureResidueCount` filter like so:
+
+```python
+from pinder.core.loader import filters
+from pinder.core.loader.structure import Structure
+
+class MinStructureResidueCount(filters.StructureFilter):
+    def __init__(self, min_residues: int = 50) -> None:
+        self.min_residues = min_residues
+
+    def filter(self, structure: Structure) -> bool:
+        return len(structure.residues) >= self.min_residues
+
+```
+
+This filter is now callable and would return True or False depending on the criteria:
+
+```python
+>> pinder_id = "1df0__A1_Q07009--1df0__B1_Q64537"
+>> ps = PinderSystem(pinder_id)
+>> native = ps.native
+>> res_filter = MinStructureResidueCount()
+>> res_filter(native)
+True
+```
+
+
 ### Filter implementation progress
 
 - [x] Filter by sequence length
@@ -244,34 +277,76 @@ sub_filters = [
     filters.FilterDetachedSub(radius=12, max_components=2),
 ]
 loader = PinderLoader(
+    split="train",
     base_filters = base_filters,
     sub_filters = sub_filters
 )
-loader.load_split("train")
-loader.load_split("test", "pinder_af2")
-loader.load_systems([pinder_id])
-
 passing_ids = []
-for dimer in loader.dimers:
-    print(dimer.entry.id)
-    passing_ids.append(dimer.entry.id)
+for item in loader:
+    passing_ids.append(item[0].entry.id)
 
-systems_removed_by_filters = set(systems) - set(passing_ids)
+systems_removed_by_filters = set(loader.index.id) - set(passing_ids)
 
 # If you want to explicitly write (potentially transformed) PDB files to a custom location:
 loader = PinderLoader(
+    ids=[pinder_id],
+    monomer_priority="pred",
     base_filters=base_filters,
     sub_filters=sub_filters,
     writer=PinderDefaultWriter(pinder_temp_dir)
 )
-loader.load_systems([pinder_id])
-loaded = loader.load(n_cpu=1, batch_size=1)
+loaded = loader[0]
 assert loader.writer.output_path.is_dir()
-assert len(list(loader.writer.output_path.glob("af_*.pdb"))) == 2
+assert len(list(loader.writer.output_path.glob("af_*.pdb"))) > 0
 
 ```
 
-## Create test dataset
+
+## Create train dataloader (torch)
+```python
+
+from pinder.core.loader import filters, transforms
+from pinder.core.loader.dataset import collate_batch, get_torch_loader, PinderDataset
+from torch.utils.data import DataLoader
+
+base_filters = [
+    filters.FilterByMissingHolo(),
+    filters.FilterSubByContacts(min_contacts=5, radius=10.0, calpha_only=True),
+    filters.FilterDetachedHolo(radius=12, max_components=2),
+]
+sub_filters = [
+    filters.FilterSubByAtomTypes(min_atom_types=4),
+    filters.FilterByHoloOverlap(min_overlap=5),
+    filters.FilterByHoloSeqIdentity(min_sequence_identity=0.8),
+    filters.FilterSubRmsds(rmsd_cutoff=7.5),
+    filters.FilterDetachedSub(radius=12, max_components=2),
+]
+# We can include Structure-level transforms (and filters) which will operate on the target and feature complexes
+structure_transforms = [
+    transforms.SelectAtomTypes(atom_types=["CA", "N", "C", "O"])
+]
+train_dataset = PinderDataset(
+    split="train",
+    # We can leverage holo, apo, pred, random and random_mixed monomer sampling strategies
+    monomer_priority="random_mixed",
+    base_filters = base_filters,
+    sub_filters = sub_filters,
+    structure_transforms=structure_transforms,
+)
+batch_size = 2
+train_dataloader = get_torch_loader(
+    train_dataset,
+    batch_size=batch_size,
+    shuffle=True,
+    collate_fn=collate_batch,
+    num_workers=0,
+)
+# Get a batch from the dataloader
+batch = next(iter(train_dataloader))
+```
+
+
+## Create test dataset (torch-geometric)
 ```python
 from pinder.core import get_index, PinderSystem
 from pinder.core.loader.geodata import PairedPDB, NodeRepresentation

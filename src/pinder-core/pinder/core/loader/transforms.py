@@ -1,4 +1,5 @@
 from pinder.core.index.system import PinderSystem
+from pinder.core.loader.structure import Structure
 
 
 class TransformBase:
@@ -10,6 +11,25 @@ class TransformBase:
 
     def transform(self, dimer: PinderSystem) -> PinderSystem:
         raise NotImplementedError
+
+
+class StructureTransform:
+    def __call__(self, structure: Structure) -> Structure:
+        return self.transform(structure)
+
+    def transform(self, structure: Structure) -> Structure:
+        raise NotImplementedError
+
+    def __repr__(self) -> str:
+        return self.__class__.__name__
+
+
+class SelectAtomTypes(StructureTransform):
+    def __init__(self, atom_types: list[str] = ["CA"]) -> None:
+        self.atom_types = atom_types
+
+    def transform(self, structure: Structure) -> Structure:
+        return structure.filter("atom_name", self.atom_types)
 
 
 class SuperposeToReference(TransformBase):
@@ -37,59 +57,3 @@ class SuperposeToReference(TransformBase):
                 unbound_super, _, _ = L_struc.superimpose(L_ref)
                 setattr(ppi, L_monomer, unbound_super)
         return ppi
-
-
-class AddNoise(TransformBase):
-    pass
-
-
-class AddEdges(TransformBase):
-    pass
-
-
-class Noise(TransformBase):
-    pass
-
-
-class CenterSystems(TransformBase):
-    pass
-
-
-class SampleContact(TransformBase):
-    pass
-
-
-class MarkContacts(TransformBase):
-    pass
-
-
-class CheckLength(TransformBase):
-    pass
-
-
-class CheckLengthPrody(TransformBase):
-    pass
-
-
-class CenterOnReceptor(TransformBase):
-    pass
-
-
-class RandomLigandPosition(TransformBase):
-    pass
-
-
-class SetTime(TransformBase):
-    pass
-
-
-class RandomSystemRotation(TransformBase):
-    pass
-
-
-class GetContacts(TransformBase):
-    pass
-
-
-class SampleContacts(TransformBase):
-    pass

@@ -1,31 +1,3 @@
-.wy-body-for-nav {
-  background-color: #eaeaeb;
-}
-.wy-nav-content {
-  max-width: 1050px !important;
-}
-
-.wy-side-nav-search {
-  background: url('background.png') no-repeat center center fixed !important;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
-}
-
-.wy-nav-side {
-  background: url('background.png') no-repeat center center fixed !important;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
-}
-
-.wy-nav-content {
-  background-color: #e3e3e3;
-}
-
-
 :root {
     --codeBackgroundColor: #f8f8f8;
     --inlineCodeBackgroundColor: #f8f8f8;
@@ -40,8 +12,6 @@
     --notificationBannerColor: #176bb0;
     --searchHighlightColor: #fff150;
     --sidebarColor: white;
-    --navbarHeight: 4rem;
-
     --mystnb-source-bg-color: #071222;
     --mystnb-stdout-bg-color: #29313d;
     --mystnb-stderr-bg-color: #0c061a;
@@ -54,16 +24,6 @@
     --mystnb-hide-prompt-opacity: 70%;
     --mystnb-source-border-radius: .4em;
     --mystnb-source-border-width: 1px;
-}
-
-
-:root[data-mode=dark] {
-  --mainBackgroundColor: #282c34;
-}
-
-
-:root[data-mode=darkest] {
-  --mainBackgroundColor: #101215;
 }
 
 
@@ -114,4 +74,63 @@ div#top_nav nav {
 
 .classifier {
   padding-left: 0.5rem;
+}
+
+
+html {
+  --pst-font-family-base: "Geologica", "Sans-Serif";
+  --pst-font-family-heading: "Montserrat", "Sans-Serif";
+  --pst-font-weight-heading: 700;
+}
+
+html[data-theme=light] {
+  --pst-color-primary: #da5da4;
+  --pst-color-primary-highlight: #da5da4;
+  --pst-color-secondary: #5c7ec0;
+  --pst-color-secondary-highlight: #5c7ec0;
+  --pst-color-accent: #a05ba4;
+  --pst-color-inline-code: #a05ba4;
+  --pst-color-inline-code-links: #a05ba4;
+  --pst-color-table-row-hover-bg: #dddad7;
+  --pst-color-text-muted: #dea7e0;
+}
+
+html[data-theme=dark] {
+  --pst-color-primary: #da5da4;
+  --pst-color-primary-highlight: #da5da4;
+  --pst-color-secondary: #5c7ec0;
+  --pst-color-secondary-highlight: #5c7ec0;
+  --pst-color-accent: #a05ba4;
+  --pst-color-inline-code: #a05ba4;
+  --pst-color-inline-code-links: #a05ba4;
+  --pst-color-table-row-hover-bg: #dddad7;
+}
+
+
+/* Separation between methods in the API reference */
+.py.method, .py.attribute{
+  border-top: 1px solid #cccccc;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* The tutorial buttons on the home page */
+.main-button {
+  padding-right: 20px;
+  align-self: center;
+}
+
+/* The tutorial button icons on the home page */
+svg.main-button-icon path {
+  fill: var(--pst-color-primary);
+}
+
+.bd-header {
+  background-image: linear-gradient(90deg, #5E35B1 10%, #6f42c1 30%, #dc5da2);
+}
+
+@media (min-width: 960px) {
+  .bd-page-width {
+      max-width: 100rem;
+  }
 }
