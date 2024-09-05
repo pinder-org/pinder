@@ -231,7 +231,7 @@ def collate_batch(
 class PinderDataset(Dataset):  # type: ignore
     def __init__(
         self,
-        split: str = "train",
+        split: str | None = None,
         index: pd.DataFrame | None = None,
         metadata: pd.DataFrame | None = None,
         monomer_priority: str = "holo",
