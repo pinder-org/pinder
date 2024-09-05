@@ -24,14 +24,6 @@ ALLOWED_MONOMER_PRIORITIES = ["apo", "holo", "pred", "random", "random_mixed"]
 log = setup_logger(__name__)
 
 
-def chunked_generator(
-    iterable: Iterable[PinderSystem], chunk_size: int = 10
-) -> Generator[chain[PinderSystem], chain[PinderSystem], None]:
-    iterator = iter(iterable)
-    for first in iterator:
-        yield chain([first], islice(iterator, chunk_size - 1))
-
-
 def get_systems(systems: list[str]) -> Generator[PinderSystem, PinderSystem, None]:
     for system in tqdm(systems):
         try:
