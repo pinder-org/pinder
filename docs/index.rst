@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 PINDER: The Protein INteraction Dataset and Evaluation Resource
-=======================================
+===============================================================
 
 .. toctree::
    :maxdepth: 4
