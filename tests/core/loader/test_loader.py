@@ -192,3 +192,27 @@ def test_load_pre_specified_monomers(pinder_temp_dir):
     item = next(iter(loader))
     feature_complex = item[1]
     assert feature_complex.pinder_id.startswith("af__")
+
+
+@pytest.mark.parametrize(
+    "index_query, metadata_query, expected_len",
+    [
+        # full test split is loaded
+        ("", "", 1955),
+        # test split where both apo are defined
+        ("(apo_R and apo_L)", "", 342),
+        # No test systems have resolution > 3.5
+        ("", "resolution <= 3.5", 1955),
+        # pinder_xl is a boolean column that should match split = "test"
+        ("pinder_xl", "resolution <= 3.5", 1955),
+    ],
+)
+def test_load_with_index_and_metadata_query(
+    index_query, metadata_query, expected_len, pinder_temp_dir
+):
+    loader = PinderLoader(
+        split="test",
+        index_query=index_query,
+        metadata_query=metadata_query,
+    )
+    assert len(loader) == expected_len
