@@ -9,3 +9,4 @@ Examples
    pinder-loader
    pinder-eval
    superposition
+   pinder-mlsb
