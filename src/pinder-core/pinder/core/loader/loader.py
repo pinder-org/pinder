@@ -362,6 +362,7 @@ class PinderLoader:
                 system, self.base_filters, self.sub_filters
             )
             if not isinstance(system, PinderSystem):
+                idx = random.choice(list(range(len(self))))
                 continue
 
             if self.pre_specified_monomers is not None:
