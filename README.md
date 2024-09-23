@@ -451,7 +451,8 @@ train_dataset = PinderDataset(
     base_filters: list[filters.PinderFilterBase] = [],
     sub_filters: list[filters.PinderFilterSubBase] = [],
     structure_filters: list[filters.StructureFilter] = [],
-    structure_transforms: list[transforms.StructureTransform] = [],
+    structure_transforms_target: list[transforms.StructureTransform] = [],
+    structure_transforms_feature: list[transforms.StructureTransform] = [],
 )
 
 train_loader = get_torch_loader(train_dataset, batch_size=2, shuffle=True)

@@ -321,7 +321,7 @@ sub_filters = [
     filters.FilterSubRmsds(rmsd_cutoff=7.5),
     filters.FilterDetachedSub(radius=12, max_components=2),
 ]
-# We can include Structure-level transforms (and filters) which will operate on the target and feature complexes
+# We can include Structure-level transforms (and filters) which will operate on the target and/or feature complexes
 structure_transforms = [
     transforms.SelectAtomTypes(atom_types=["CA", "N", "C", "O"])
 ]
@@ -331,7 +331,10 @@ train_dataset = PinderDataset(
     monomer_priority="random_mixed",
     base_filters = base_filters,
     sub_filters = sub_filters,
-    structure_transforms=structure_transforms,
+    # Apply to the target (ground-truth) complex
+    structure_transforms_target=structure_transforms,
+    # Apply to the feature complex
+    structure_transforms_feature=structure_transforms,
 )
 batch_size = 2
 train_dataloader = get_torch_loader(
