@@ -171,6 +171,7 @@ def _create_target_feature_complex(
     # Check to ensure that the monomer wasn't filtered out by a PinderFilterSubBase
     if decoy_R is None and fallback_to_holo:
         selected_monomers["R"] = "holo"
+        decoy_R = getattr(system, selected_monomers["R"] + "_receptor")
     if decoy_L is None and fallback_to_holo:
         selected_monomers["L"] = "holo"
         decoy_L = getattr(system, selected_monomers["L"] + "_ligand")
