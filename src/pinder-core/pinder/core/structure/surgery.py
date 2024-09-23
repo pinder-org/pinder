@@ -32,7 +32,7 @@ def remove_annotations(
 def fix_annotation_mismatch(
     ref: AtomArray,
     decoys: AtomArrayStack,
-    categories: list[str] = ["element", "ins_code"],
+    categories: list[str] = ["element", "ins_code", "b_factor"],
 ) -> tuple[AtomArray, AtomArrayStack]:
     for annot in ref.get_annotation_categories():
         ref_annot = ref.get_annotation(annot)
