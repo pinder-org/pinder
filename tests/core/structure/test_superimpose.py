@@ -1,6 +1,7 @@
 import pytest
 from pinder.core.loader.structure import Structure
 from pinder.core import PinderSystem
+from pinder.core.index.system import unbound_rmsd_with_mask_fallback
 
 
 @pytest.mark.parametrize(
@@ -104,3 +105,27 @@ def test_create_masked_bound_unbound_complexes(
     assert (
         holo_elements == expected_elem
     ), f"Expected element annotation category to be preserved! After masking elements are: {holo_elements}, expected {expected_elem}"
+
+
+@pytest.mark.parametrize(
+    ["pinder_id", "expected_rmsd"],
+    [
+        (
+            "4ag4__A1_Q08345--4ag4__C1_UNDEFINED",
+            pytest.approx(16.158762),
+        ),  # case where insufficient C-alpha anchors are found prior to cropping/masking
+        (
+            "5mb9__A1_G0RZX9--5mb9__D1_G0RYD6",
+            pytest.approx(0.67709655),
+        ),  # peptide cluster receptor case with paired apo
+    ],
+)
+def test_unbound_rmsd_with_mask_fallback(
+    pinder_id,
+    expected_rmsd,
+):
+    ps = PinderSystem(pinder_id)
+    holo_R = ps.aligned_holo_R
+    apo_R = ps.apo_receptor or ps.holo_receptor
+    rmsd = unbound_rmsd_with_mask_fallback(apo_R, holo_R)
+    assert rmsd == expected_rmsd
