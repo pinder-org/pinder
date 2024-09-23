@@ -199,7 +199,8 @@ class PinderLoader:
         base_filters: list[PinderFilterBase] = [],
         sub_filters: list[PinderFilterSubBase] = [],
         structure_filters: list[StructureFilter] = [],
-        structure_transforms: list[StructureTransform] = [],
+        structure_transforms_target: list[StructureTransform] = [],
+        structure_transforms_feature: list[StructureTransform] = [],
         index_query: str | None = None,
         metadata_query: str | None = None,
         writer: PinderWriterBase | None = None,
@@ -281,7 +282,8 @@ class PinderLoader:
         self.sub_filters = sub_filters
         self.structure_filters = structure_filters
         # Optional structure transforms to apply
-        self.structure_transforms = structure_transforms
+        self.structure_transforms_target = structure_transforms_target
+        self.structure_transforms_feature = structure_transforms_feature
         self.index_query = index_query
         self.metadata_query = metadata_query
         self.writer = writer
@@ -391,8 +393,9 @@ class PinderLoader:
             raise IndexError(
                 f"Unable to find a valid item in the dataset satisfying filters at {idx} after {attempts} attempts!"
             )
-        for transform in self.structure_transforms:
+        for transform in self.structure_transforms_target:
             target_complex = transform(target_complex)
+        for transform in self.structure_transforms_feature:
             feature_complex = transform(feature_complex)
         if self.writer:
             self.writer.write(system)

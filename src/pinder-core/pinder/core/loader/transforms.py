@@ -1,5 +1,9 @@
 from pinder.core.index.system import PinderSystem
 from pinder.core.loader.structure import Structure
+from scipy.spatial.transform import Rotation as R
+from biotite.structure import AtomArray
+import numpy as np
+from numpy.typing import NDArray
 
 
 class TransformBase:
@@ -57,3 +61,35 @@ class SuperposeToReference(TransformBase):
                 unbound_super, _, _ = L_struc.superimpose(L_ref)
                 setattr(ppi, L_monomer, unbound_super)
         return ppi
+
+
+class RandomLigandTransform(StructureTransform):
+    def __init__(self, max_translation: float = 10.0) -> None:
+        self.max_translation = max_translation
+
+    def transform(self, structure: Structure) -> Structure:
+        assert {"L", "R"}.intersection(set(structure.atom_array.chain_id)) == {"L", "R"}
+
+        ligand_atom_array = structure.atom_array[structure.atom_array.chain_id == "L"]
+        receptor_atom_array = structure.atom_array[structure.atom_array.chain_id == "R"]
+
+        ligand_atom_array = self.transform_struct(
+            ligand_atom_array,
+            R.random().as_matrix(),
+            np.random.randn(3) * self.max_translation,
+        )
+
+        structure.atom_array = receptor_atom_array + ligand_atom_array
+        return structure
+
+    @staticmethod
+    def transform_struct(
+        atom_array: AtomArray,
+        rotation_matrix: NDArray[np.float64],
+        translation_vector: NDArray[np.float64],
+    ) -> AtomArray:
+        centroid = atom_array.coord.mean(axis=0)
+        atom_array.coord = atom_array.coord - centroid
+        atom_array.coord = (rotation_matrix @ atom_array.coord.T).T
+        atom_array.coord = atom_array.coord + centroid + translation_vector
+        return atom_array

@@ -244,7 +244,8 @@ class PinderDataset(Dataset):  # type: ignore
         base_filters: list[PinderFilterBase] = [],
         sub_filters: list[PinderFilterSubBase] = [],
         structure_filters: list[StructureFilter] = [],
-        structure_transforms: list[StructureTransform] = [],
+        structure_transforms_target: list[StructureTransform] = [],
+        structure_transforms_feature: list[StructureTransform] = [],
         transform: Callable[
             [Structure], torch.Tensor | dict[str, torch.Tensor]
         ] = structure2tensor_transform,
@@ -268,7 +269,8 @@ class PinderDataset(Dataset):  # type: ignore
             base_filters=base_filters,
             sub_filters=sub_filters,
             structure_filters=structure_filters,
-            structure_transforms=structure_transforms,
+            structure_transforms_target=structure_transforms_target,
+            structure_transforms_feature=structure_transforms_feature,
             index_query=index_query,
             metadata_query=metadata_query,
             monomer_priority=monomer_priority,

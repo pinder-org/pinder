@@ -52,7 +52,7 @@ for `conda` for the same functionality):
 
 
 ```bash
-mamba create --name pinder python=3.10
+mamba create --name pinder python=3.11
 mamba activate pinder
 ```
 
@@ -451,7 +451,8 @@ train_dataset = PinderDataset(
     base_filters: list[filters.PinderFilterBase] = [],
     sub_filters: list[filters.PinderFilterSubBase] = [],
     structure_filters: list[filters.StructureFilter] = [],
-    structure_transforms: list[transforms.StructureTransform] = [],
+    structure_transforms_target: list[transforms.StructureTransform] = [],
+    structure_transforms_feature: list[transforms.StructureTransform] = [],
 )
 
 train_loader = get_torch_loader(train_dataset, batch_size=2, shuffle=True)
@@ -834,7 +835,7 @@ git clone git@github.com:pinder-org/pinder.git
 
 ```bash
 cd pinder
-mamba create --name pinder python=3.10
+mamba create --name pinder python=3.11
 mamba activate pinder
 ```
 
