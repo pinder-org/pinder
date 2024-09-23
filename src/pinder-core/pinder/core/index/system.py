@@ -69,6 +69,7 @@ def unbound_rmsd_with_mask_fallback(
         raw_rmsd (float): The RMSD between the mobile and fixed structure after superposition (without outlier rejection).
 
     """
+    raw_rmsd: float
     try:
         _, raw_rmsd, _ = mobile.superimpose(fixed)
     except ValueError as e:
