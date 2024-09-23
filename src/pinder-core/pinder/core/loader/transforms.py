@@ -3,6 +3,7 @@ from pinder.core.loader.structure import Structure
 from scipy.spatial.transform import Rotation as R
 from biotite.structure import AtomArray
 import numpy as np
+from numpy.typing import NDArray
 
 
 class TransformBase:
@@ -82,7 +83,11 @@ class RandomLigandTransform(StructureTransform):
         return structure
 
     @staticmethod
-    def transform_struct(atom_array: AtomArray, rotation_matrix, translation_vector):
+    def transform_struct(
+        atom_array: AtomArray,
+        rotation_matrix: NDArray[np.float64],
+        translation_vector: NDArray[np.float64],
+    ) -> AtomArray:
         centroid = atom_array.coord.mean(axis=0)
         atom_array.coord = atom_array.coord - centroid
         atom_array.coord = (rotation_matrix @ atom_array.coord.T).T
