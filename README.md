@@ -52,7 +52,7 @@ for `conda` for the same functionality):
 
 
 ```bash
-mamba create --name pinder python=3.10
+mamba create --name pinder python=3.11
 mamba activate pinder
 ```
 
@@ -835,7 +835,7 @@ git clone git@github.com:pinder-org/pinder.git
 
 ```bash
 cd pinder
-mamba create --name pinder python=3.10
+mamba create --name pinder python=3.11
 mamba activate pinder
 ```
 
