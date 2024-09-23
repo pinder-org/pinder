@@ -51,6 +51,40 @@ def _align_monomers_with_mask(
     return monomer1, monomer2
 
 
+def unbound_rmsd_with_mask_fallback(
+    mobile: Structure,
+    fixed: Structure,
+) -> float:
+    """Calculates the RMSD after superposition between two monomer structures.
+
+    The method wraps the `Structure.superimpose` method, initially trying to superimpose
+    without masking non-common atoms and annotations. If the initial alignment fails, this method
+    falls back to masked superposition where differing atoms are removed prior to superposition.
+
+    Parameters:
+        mobile (Structure): The unbound monomer to superimpose to the reference (fixed) structure.
+        fixed (Structure): The fixed reference monomer to superimpose the mobile structure to.
+
+    Returns:
+        raw_rmsd (float): The RMSD between the mobile and fixed structure after superposition (without outlier rejection).
+
+    """
+    try:
+        _, raw_rmsd, _ = mobile.superimpose(fixed)
+    except ValueError as e:
+        log.debug(
+            f"Failed to superimpose {mobile.pinder_id}->{fixed.pinder_id} without cropping, re-trying with atom masking..."
+        )
+        mobile, fixed = mobile.align_common_sequence(
+            fixed,
+            remove_differing_atoms=True,
+            renumber_residues=False,
+            remove_differing_annotations=False,
+        )
+        _, raw_rmsd, _ = mobile.superimpose(fixed)
+    return raw_rmsd
+
+
 class PinderSystem:
     """Represents a system within the Pinder framework designed to handle and process
     structural data. It provides functionality to load, align, and analyze
@@ -475,11 +509,10 @@ class PinderSystem:
         holo_R = self.aligned_holo_R
         holo_L = self.aligned_holo_L
 
-        # Even if atom counts are identical, annotation categories must be the same
         assert isinstance(apo_R, Structure)
         assert isinstance(apo_L, Structure)
-        _, rms_R, _ = apo_R.superimpose(holo_R)
-        _, rms_L, _ = apo_L.superimpose(holo_L)
+        rms_R = unbound_rmsd_with_mask_fallback(apo_R, holo_R)
+        rms_L = unbound_rmsd_with_mask_fallback(apo_L, holo_L)
         return {
             "monomer_name": monomer_name.value,
             "receptor_rmsd": rms_R,
