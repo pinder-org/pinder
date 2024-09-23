@@ -46,6 +46,7 @@ from pinder.core.utils.log import setup_logger
 RES_IDX_PAD_VALUE = -99
 COORDS_PAD_VALUE = -100
 ATOM_TYPE_PAD_VALUE = -1
+CHAIN_ID_PAD_VALUE = -1
 
 log = setup_logger(__name__)
 
@@ -57,6 +58,7 @@ def structure2tensor_transform(structure: Structure) -> dict[str, torch.Tensor]:
         residue_coordinates=structure.coords,
         residue_types=structure.atom_array.res_name,
         residue_ids=structure.atom_array.res_id,
+        chain_ids=structure.atom_array.chain_id,
     )
     return props
 
@@ -162,18 +164,21 @@ def collate_complex(
     coords_pad_value: int = COORDS_PAD_VALUE,
     atom_type_pad_value: int = ATOM_TYPE_PAD_VALUE,
     residue_id_pad_value: int = RES_IDX_PAD_VALUE,
+    chain_id_pad_value: int = CHAIN_ID_PAD_VALUE,
 ) -> dict[str, Tensor]:
     atom_types = []
     residue_types = []
     atom_coordinates = []
     residue_coordinates = []
     residue_ids = []
+    chain_ids = []
     for x in structures:
         atom_types.append(x["atom_types"])
         residue_types.append(x["residue_types"])
         atom_coordinates.append(x["atom_coordinates"])
         residue_coordinates.append(x["residue_coordinates"])
         residue_ids.append(x["residue_ids"])
+        chain_ids.append(x["chain_ids"])
     return {
         "atom_types": pad_and_stack(atom_types, dim=0, value=atom_type_pad_value),
         "residue_types": pad_and_stack(residue_types, dim=0, value=atom_type_pad_value),
@@ -184,6 +189,7 @@ def collate_complex(
             residue_coordinates, dim=0, value=coords_pad_value
         ),
         "residue_ids": pad_and_stack(residue_ids, dim=0, value=residue_id_pad_value),
+        "chain_ids": pad_and_stack(chain_ids, dim=0, value=chain_id_pad_value),
     }
 
 

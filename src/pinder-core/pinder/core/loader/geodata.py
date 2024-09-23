@@ -33,6 +33,7 @@ def structure2tensor(
     residue_coordinates: NDArray[np.double] | None = None,
     residue_ids: NDArray[np.int_] | None = None,
     residue_types: NDArray[np.str_] | None = None,
+    chain_ids: NDArray[np.str_] | None = None,
     dtype: torch.dtype = torch.float32,
 ) -> dict[str, torch.Tensor]:
     property_dict = {}
@@ -60,6 +61,9 @@ def structure2tensor(
         )
     if residue_ids is not None:
         property_dict["residue_ids"] = torch.tensor(residue_ids, dtype=dtype)
+    if chain_ids is not None:
+        property_dict["chain_ids"] = torch.zeros(len(chain_ids), dtype=dtype)
+        property_dict["chain_ids"][chain_ids == "L"] = 1
     return property_dict
 
 

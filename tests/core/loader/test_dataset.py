@@ -24,6 +24,7 @@ EXPECTED_STRUCTURE_KEYS = {
     "atom_coordinates",
     "residue_coordinates",
     "residue_ids",
+    "chain_ids",
 }
 
 
