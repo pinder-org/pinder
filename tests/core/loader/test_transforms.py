@@ -5,7 +5,61 @@ from pinder.core.loader.transforms import (
     SelectAtomTypes,
     SuperposeToReference,
     TransformBase,
+    RandomLigandTransform,
 )
+from pinder.core.loader.structure import Structure
+from biotite.structure import AtomArray
+import numpy as np
+
+
+@pytest.fixture
+def mock_structure():
+    # Create a mock structure with ligand and receptor chains
+    ligand_coords = np.array([[0, 0, 0], [1, 1, 1], [2, 2, 2]])
+    receptor_coords = np.array([[3, 3, 3], [4, 4, 4], [5, 5, 5]])
+
+    ligand_atom_array = AtomArray(3)
+    ligand_atom_array.coord = ligand_coords
+    ligand_atom_array.chain_id = np.array(["L", "L", "L"])
+
+    receptor_atom_array = AtomArray(3)
+    receptor_atom_array.coord = receptor_coords
+    receptor_atom_array.chain_id = np.array(["R", "R", "R"])
+
+    structure: Structure = Structure(
+        "", atom_array=ligand_atom_array + receptor_atom_array
+    )
+    return structure
+
+
+def test_random_ligand_transform(mock_structure):
+    original_ligand_coords = mock_structure.atom_array[
+        mock_structure.atom_array.chain_id == "L"
+    ].coord.copy()
+    original_receptor_coords = mock_structure.atom_array[
+        mock_structure.atom_array.chain_id == "R"
+    ].coord.copy()
+    transform = RandomLigandTransform(max_translation=5.0)
+    transformed_structure = transform.transform(mock_structure)
+
+    # Check if the structure still has both ligand and receptor chains
+    assert set(transformed_structure.atom_array.chain_id) == {"L", "R"}
+
+    # Check if the ligand coordinates have been transformed
+    ligand_coords = transformed_structure.atom_array[
+        transformed_structure.atom_array.chain_id == "L"
+    ].coord
+    assert not np.array_equal(original_ligand_coords, ligand_coords)
+    assert ligand_coords.shape == (
+        3,
+        3,
+    )  # Ensure the number of ligand atoms remains the same
+
+    # Check if the receptor coordinates remain unchanged
+    receptor_coords = transformed_structure.atom_array[
+        transformed_structure.atom_array.chain_id == "R"
+    ].coord
+    assert np.array_equal(original_receptor_coords, receptor_coords)
 
 
 def test_transform_abc():

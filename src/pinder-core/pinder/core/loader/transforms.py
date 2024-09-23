@@ -1,6 +1,7 @@
 from pinder.core.index.system import PinderSystem
 from pinder.core.loader.structure import Structure
 from scipy.spatial.transform import Rotation as R
+from biotite.structure import AtomArray
 import numpy as np
 
 
@@ -61,35 +62,29 @@ class SuperposeToReference(TransformBase):
         return ppi
 
 
-class RandomLigandTransform(TransformBase):
+class RandomLigandTransform(StructureTransform):
     def __init__(self, max_translation: float = 10.0) -> None:
         self.max_translation = max_translation
 
-    def transform(self, ppi: PinderSystem) -> PinderSystem:
-        assert ppi.entry.holo_L and ppi.entry.holo_L
-        ppi = self.transform_struct(
-            ppi, R.random().as_matrix(), np.random.randn(3) * self.max_translation
+    def transform(self, structure: Structure) -> Structure:
+        assert {"L", "R"}.intersection(set(structure.atom_array.chain_id)) == {"L", "R"}
+
+        ligand_atom_array = structure.atom_array[structure.atom_array.chain_id == "L"]
+        receptor_atom_array = structure.atom_array[structure.atom_array.chain_id == "R"]
+
+        ligand_atom_array = self.transform_struct(
+            ligand_atom_array,
+            R.random().as_matrix(),
+            np.random.randn(3) * self.max_translation,
         )
-        return ppi
+
+        structure.atom_array = receptor_atom_array + ligand_atom_array
+        return structure
 
     @staticmethod
-    def transform_struct(pinder_system, rotation_matrix, translation_vector):
-        centroid = pinder_system.atom_array.coord.mean(axis=0)
-        pinder_system.atom_array.coord = pinder_system.atom_array.coord - centroid
-        pinder_system.atom_array.coord = (
-            rotation_matrix @ pinder_system.atom_array.coord.T
-        ).T
-        pinder_system.atom_array.coord = (
-            pinder_system.atom_array.coord + centroid + translation_vector
-        )
-        for L_monomer in ["apo_ligand", "pred_ligand"]:
-            L_struc = getattr(pinder_system, L_monomer)
-            if L_struc:
-                L_struc.atom_array.coord = L_struc.atom_array.coord - centroid
-                L_struc.atom_array.coord = (
-                    rotation_matrix @ L_struc.atom_array.coord.T
-                ).T
-                L_struc.atom_array.coord = (
-                    L_struc.atom_array.coord + centroid + translation_vector
-                )
-        return pinder_system
+    def transform_struct(atom_array: AtomArray, rotation_matrix, translation_vector):
+        centroid = atom_array.coord.mean(axis=0)
+        atom_array.coord = atom_array.coord - centroid
+        atom_array.coord = (rotation_matrix @ atom_array.coord.T).T
+        atom_array.coord = atom_array.coord + centroid + translation_vector
+        return atom_array
