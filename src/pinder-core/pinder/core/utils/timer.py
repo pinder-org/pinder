@@ -20,7 +20,7 @@ def timeit(func: Callable[P, T]) -> Callable[P, T]:
         result = None
         try:
             result = func(*args, **kwargs)
-            log.info(f"runtime succeeded: {time() - ts:>9.2f}s")
+            log.debug(f"runtime succeeded: {time() - ts:>9.2f}s")
         except Exception:
             log.error(f"runtime failed: {time() - ts:>9.2f}s")
             raise
