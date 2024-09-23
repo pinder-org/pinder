@@ -657,9 +657,12 @@ def _superimpose_common_atoms(
         # Only run fallback if number of anchors is the issue
         if "anchor" not in str(error):
             raise
-        fixed_common_mask = struc.filter_intersection(fixed, mobile)
+        fixed_masked, mobile_masked = surgery.fix_annotation_mismatch(
+            fixed, mobile, ["element", "ins_code", "b_factor"]
+        )
+        fixed_common_mask = struc.filter_intersection(fixed_masked, mobile_masked)
         fixed_coord = fixed.coord[fixed_common_mask]
-        mobile_common_mask = struc.filter_intersection(mobile, fixed)
+        mobile_common_mask = struc.filter_intersection(mobile_masked, fixed_masked)
         mobile_coord = mobile.coord[mobile_common_mask]
         _, transformation = struc.superimpose(fixed_coord, mobile_coord)
         mobile_superimposed = transformation.apply(mobile)
