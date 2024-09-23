@@ -364,6 +364,8 @@ class PinderLoader:
                 system, self.base_filters, self.sub_filters
             )
             if not isinstance(system, PinderSystem):
+                # Select a new random system, previous one failed filters
+                idx = random.choice(list(range(len(self))))
                 continue
 
             if self.pre_specified_monomers is not None:

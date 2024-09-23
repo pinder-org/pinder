@@ -100,7 +100,9 @@ def superimpose_chain(
     if len(anchor_indices) < min_anchors:
         # Fallback: Match all CA atoms
         if len(fixed_ca_indices) != len(mobile_ca_indices):
-            raise ValueError("Tried fallback, but number of CA atoms does not match")
+            raise ValueError(
+                "Tried fallback, but number of CA atoms does not match and insufficient anchors were found"
+            )
         fixed_anchor_indices = fixed_ca_indices
         mobile_anchor_indices = mobile_ca_indices
     else:
