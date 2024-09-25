@@ -52,10 +52,12 @@ log = setup_logger(__name__)
 
 
 def structure2tensor_transform(structure: Structure) -> dict[str, torch.Tensor]:
+    calpha = structure.filter("atom_name", mask=["CA"])
     props: dict[str, torch.Tensor] = structure2tensor(
         atom_coordinates=structure.coords,
-        atom_types=structure.atom_array.element,
-        residue_coordinates=structure.coords,
+        atom_types=structure.atom_array.atom_name,
+        element_types=structure.atom_array.element,
+        residue_coordinates=calpha.coords,
         residue_types=structure.atom_array.res_name,
         residue_ids=structure.atom_array.res_id,
         chain_ids=structure.atom_array.chain_id,
