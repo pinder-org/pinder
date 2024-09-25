@@ -375,7 +375,8 @@ Each model decoy should have exactly two chains: {R, L} for {Receptor, Ligand}, 
 }
 ```
 
-For more details on the implementations of the eval metrics, see the [eval docs](examples/eval/).
+For more details on the implementations of the eval metrics, see the [eval tutorial](https://pinder-org.github.io/pinder/pinder-eval.html), [API docs](https://pinder-org.github.io/pinder/source/pinder.eval.dockq.html#) and [eval FAQ](https://pinder-org.github.io/pinder/faq.html#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context).
+
 For more details on leaderboard generation, see the [MethodMetrics](src/pinder-eval/pinder/eval/dockq/method.py) implementation.
 
 
