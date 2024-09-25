@@ -30,6 +30,7 @@ except ImportError as e:
 def structure2tensor(
     atom_coordinates: NDArray[np.double] | None = None,
     atom_types: NDArray[np.str_] | None = None,
+    element_types: NDArray[np.str_] | None = None,
     residue_coordinates: NDArray[np.double] | None = None,
     residue_ids: NDArray[np.int_] | None = None,
     residue_types: NDArray[np.str_] | None = None,
@@ -38,14 +39,16 @@ def structure2tensor(
 ) -> dict[str, torch.Tensor]:
     property_dict = {}
     if atom_types is not None:
-        types_array_ele = np.zeros(
-            (len(atom_types), len(set(list(pc.ELE2NUM.values()))))
-        )
+        unknown_name_idx = max(pc.ALL_ATOM_POSNS.values()) + 1
+        types_array_at = np.zeros((len(atom_types), 1))
         for i, name in enumerate(atom_types):
-            types_array_ele[i, pc.ELE2NUM.get(name, "C")] = 1.0
-
-        property_dict["atom_types"] = torch.tensor(types_array_ele).type(dtype)
-
+            types_array_at[i] = pc.ALL_ATOM_POSNS.get(name, unknown_name_idx)
+        property_dict["atom_types"] = torch.tensor(types_array_at).type(dtype)
+    if element_types is not None:
+        types_array_ele = np.zeros((len(element_types), 1))
+        for i, name in enumerate(element_types):
+            types_array_ele[i] = pc.ELE2NUM.get(name, pc.ELE2NUM["other"])
+        property_dict["element_types"] = torch.tensor(types_array_ele).type(dtype)
     if residue_types is not None:
         unknown_name_idx = max(pc.AA_TO_INDEX.values()) + 1
         types_array_res = np.zeros((len(residue_types), 1))
@@ -119,14 +122,16 @@ class PairedPDB(HeteroData):  # type: ignore
         lig_calpha = ligand.filter("atom_name", mask=["CA"])
         rec_props = structure2tensor(
             atom_coordinates=receptor.coords,
-            atom_types=receptor.atom_array.element,
+            atom_types=receptor.atom_array.atom_name,
+            element_types=receptor.atom_array.element,
             residue_coordinates=rec_calpha.coords,
             residue_types=rec_calpha.atom_array.res_name,
             residue_ids=rec_calpha.atom_array.res_id,
         )
         lig_props = structure2tensor(
             atom_coordinates=ligand.coords,
-            atom_types=ligand.atom_array.element,
+            atom_types=ligand.atom_array.atom_name,
+            element_types=ligand.atom_array.element,
             residue_coordinates=lig_calpha.coords,
             residue_types=lig_calpha.atom_array.res_name,
             residue_ids=lig_calpha.atom_array.res_id,
