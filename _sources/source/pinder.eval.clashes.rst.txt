@@ -1,0 +1,10 @@
+pinder.eval.clashes package
+===========================
+
+Module contents
+---------------
+
+.. automodule:: pinder.eval.clashes
+   :members:
+   :undoc-members:
+   :show-inheritance:

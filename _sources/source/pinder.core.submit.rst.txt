@@ -1,0 +1,10 @@
+pinder.core.submit package
+==========================
+
+Module contents
+---------------
+
+.. automodule:: pinder.core.submit
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,45 @@
+pinder.eval.dockq package
+=========================
+
+Submodules
+----------
+
+pinder.eval.dockq.biotite\_dockq module
+---------------------------------------
+
+.. automodule:: pinder.eval.dockq.biotite_dockq
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.eval.dockq.method module
+-------------------------------
+
+.. automodule:: pinder.eval.dockq.method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.eval.dockq.metrics module
+--------------------------------
+
+.. automodule:: pinder.eval.dockq.metrics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.eval.dockq.unbound module
+--------------------------------
+
+.. automodule:: pinder.eval.dockq.unbound
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.eval.dockq
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,168 @@
+pinder.data package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 10
+
+   pinder.data.annotation
+   pinder.data.pipeline
+   pinder.data.plot
+   pinder.data.qc
+
+Submodules
+----------
+
+pinder.data.alignment\_utils module
+-----------------------------------
+
+.. automodule:: pinder.data.alignment_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.apo\_utils module
+-----------------------------
+
+.. automodule:: pinder.data.apo_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.config module
+-------------------------
+
+.. automodule:: pinder.data.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.csv\_utils module
+-----------------------------
+
+.. automodule:: pinder.data.csv_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.find\_transitive\_hits module
+-----------------------------------------
+
+.. automodule:: pinder.data.find_transitive_hits
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.foldseek\_utils module
+----------------------------------
+
+.. automodule:: pinder.data.foldseek_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_alignment\_similarity module
+---------------------------------------------
+
+.. automodule:: pinder.data.get_alignment_similarity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_annotations module
+-----------------------------------
+
+.. automodule:: pinder.data.get_annotations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_apo module
+---------------------------
+
+.. automodule:: pinder.data.get_apo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_clusters module
+--------------------------------
+
+.. automodule:: pinder.data.get_clusters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_data module
+----------------------------
+
+.. automodule:: pinder.data.get_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_dimers module
+------------------------------
+
+.. automodule:: pinder.data.get_dimers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_splits module
+------------------------------
+
+.. automodule:: pinder.data.get_splits
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.get\_test\_set module
+---------------------------------
+
+.. automodule:: pinder.data.get_test_set
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.graph\_utils module
+-------------------------------
+
+.. automodule:: pinder.data.graph_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.rcsb\_rsync module
+------------------------------
+
+.. automodule:: pinder.data.rcsb_rsync
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.run module
+----------------------
+
+.. automodule:: pinder.data.run
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.system module
+-------------------------
+
+.. automodule:: pinder.data.system
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.data
+   :members:
+   :undoc-members:
+   :show-inheritance:

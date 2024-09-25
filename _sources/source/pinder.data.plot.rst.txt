@@ -1,0 +1,133 @@
+pinder.data.plot package
+========================
+
+Submodules
+----------
+
+pinder.data.plot.annotations module
+-----------------------------------
+
+.. automodule:: pinder.data.plot.annotations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.categories module
+----------------------------------
+
+.. automodule:: pinder.data.plot.categories
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.constants module
+---------------------------------
+
+.. automodule:: pinder.data.plot.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.datasets module
+--------------------------------
+
+.. automodule:: pinder.data.plot.datasets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.difficulty module
+----------------------------------
+
+.. automodule:: pinder.data.plot.difficulty
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.families module
+--------------------------------
+
+.. automodule:: pinder.data.plot.families
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.figure\_utils module
+-------------------------------------
+
+.. automodule:: pinder.data.plot.figure_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.image module
+-----------------------------
+
+.. automodule:: pinder.data.plot.image
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.leaderboards module
+------------------------------------
+
+.. automodule:: pinder.data.plot.leaderboards
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.leakage module
+-------------------------------
+
+.. automodule:: pinder.data.plot.leakage
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.performance module
+-----------------------------------
+
+.. automodule:: pinder.data.plot.performance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.plot module
+----------------------------
+
+.. automodule:: pinder.data.plot.plot
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.run module
+---------------------------
+
+.. automodule:: pinder.data.plot.run
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.structure\_case\_studies module
+------------------------------------------------
+
+.. automodule:: pinder.data.plot.structure_case_studies
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.plot.validity module
+--------------------------------
+
+.. automodule:: pinder.data.plot.validity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.data.plot
+   :members:
+   :undoc-members:
+   :show-inheritance:

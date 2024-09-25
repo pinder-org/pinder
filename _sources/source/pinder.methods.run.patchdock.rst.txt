@@ -1,0 +1,21 @@
+pinder.methods.run.patchdock package
+====================================
+
+Submodules
+----------
+
+pinder.methods.run.patchdock.predict module
+-------------------------------------------
+
+.. automodule:: pinder.methods.run.patchdock.predict
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.run.patchdock
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,53 @@
+pinder.core.structure package
+=============================
+
+Submodules
+----------
+
+pinder.core.structure.atoms module
+----------------------------------
+
+.. automodule:: pinder.core.structure.atoms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.structure.contacts module
+-------------------------------------
+
+.. automodule:: pinder.core.structure.contacts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.structure.models module
+-----------------------------------
+
+.. automodule:: pinder.core.structure.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.structure.superimpose module
+----------------------------------------
+
+.. automodule:: pinder.core.structure.superimpose
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.structure.surgery module
+------------------------------------
+
+.. automodule:: pinder.core.structure.surgery
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.core.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:

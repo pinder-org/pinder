@@ -1,0 +1,1180 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "ff224470-1c62-4bce-ad63-55c085d77972",
+   "metadata": {},
+   "source": [
+    "# FAQ: cropped monomer superposition\n",
+    "\n",
+    "**For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don't have the same atoms and/or sequence. How can I align monomer such that all have the same shape?**\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "9f58e7a1-13ce-4101-bfdd-3b499998e11d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "PinderSystem(\n",
+       "entry = IndexEntry(\n",
+       "    (\n",
+       "        'split',\n",
+       "        'train',\n",
+       "    ),\n",
+       "    (\n",
+       "        'id',\n",
+       "        '2gct__C1_P00766--2gct__A1_P00766',\n",
+       "    ),\n",
+       "    (\n",
+       "        'pdb_id',\n",
+       "        '2gct',\n",
+       "    ),\n",
+       "    (\n",
+       "        'cluster_id',\n",
+       "        'cluster_20329_p',\n",
+       "    ),\n",
+       "    (\n",
+       "        'cluster_id_R',\n",
+       "        'cluster_p',\n",
+       "    ),\n",
+       "    (\n",
+       "        'cluster_id_L',\n",
+       "        'cluster_20329',\n",
+       "    ),\n",
+       "    (\n",
+       "        'pinder_s',\n",
+       "        False,\n",
+       "    ),\n",
+       "    (\n",
+       "        'pinder_xl',\n",
+       "        False,\n",
+       "    ),\n",
+       "    (\n",
+       "        'pinder_af2',\n",
+       "        False,\n",
+       "    ),\n",
+       "    (\n",
+       "        'uniprot_R',\n",
+       "        'P00766',\n",
+       "    ),\n",
+       "    (\n",
+       "        'uniprot_L',\n",
+       "        'P00766',\n",
+       "    ),\n",
+       "    (\n",
+       "        'holo_R_pdb',\n",
+       "        '2gct__C1_P00766-R.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'holo_L_pdb',\n",
+       "        '2gct__A1_P00766-L.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'predicted_R_pdb',\n",
+       "        'af__P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'predicted_L_pdb',\n",
+       "        'af__P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_R_pdb',\n",
+       "        '1k2i__A1_P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_L_pdb',\n",
+       "        '1k2i__A1_P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_R_pdbs',\n",
+       "        '1k2i__A1_P00766.pdb;1ex3__A1_P00766.pdb;1chg__A1_P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_L_pdbs',\n",
+       "        '1k2i__A1_P00766.pdb;1ex3__A1_P00766.pdb;1chg__A1_P00766.pdb',\n",
+       "    ),\n",
+       "    (\n",
+       "        'holo_R',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'holo_L',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'predicted_R',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'predicted_L',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_R',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_L',\n",
+       "        True,\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_R_quality',\n",
+       "        'low',\n",
+       "    ),\n",
+       "    (\n",
+       "        'apo_L_quality',\n",
+       "        'low',\n",
+       "    ),\n",
+       "    (\n",
+       "        'chain1_neff',\n",
+       "        902.5,\n",
+       "    ),\n",
+       "    (\n",
+       "        'chain2_neff',\n",
+       "        902.5,\n",
+       "    ),\n",
+       "    (\n",
+       "        'chain_R',\n",
+       "        'C1',\n",
+       "    ),\n",
+       "    (\n",
+       "        'chain_L',\n",
+       "        'A1',\n",
+       "    ),\n",
+       "    (\n",
+       "        'contains_antibody',\n",
+       "        False,\n",
+       "    ),\n",
+       "    (\n",
+       "        'contains_antigen',\n",
+       "        False,\n",
+       "    ),\n",
+       "    (\n",
+       "        'contains_enzyme',\n",
+       "        True,\n",
+       "    ),\n",
+       ")\n",
+       "native=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/2gct__C1_P00766--2gct__A1_P00766.pdb,\n",
+       "    uniprot_map=None,\n",
+       "    pinder_id='2gct__C1_P00766--2gct__A1_P00766',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (758,),\n",
+       ")\n",
+       "holo_receptor=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/2gct__C1_P00766-R.pdb,\n",
+       "    uniprot_map=/Users/danielkovtun/.local/share/pinder/2024-02/mappings/2gct__C1_P00766-R.parquet,\n",
+       "    pinder_id='2gct__C1_P00766-R',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (689,),\n",
+       ")\n",
+       "holo_ligand=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/2gct__A1_P00766-L.pdb,\n",
+       "    uniprot_map=/Users/danielkovtun/.local/share/pinder/2024-02/mappings/2gct__A1_P00766-L.parquet,\n",
+       "    pinder_id='2gct__A1_P00766-L',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (69,),\n",
+       ")\n",
+       "apo_receptor=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/1k2i__A1_P00766.pdb,\n",
+       "    uniprot_map=/Users/danielkovtun/.local/share/pinder/2024-02/mappings/1k2i__A1_P00766.parquet,\n",
+       "    pinder_id='1k2i__A1_P00766',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (1735,),\n",
+       ")\n",
+       "apo_ligand=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/1k2i__A1_P00766.pdb,\n",
+       "    uniprot_map=/Users/danielkovtun/.local/share/pinder/2024-02/mappings/1k2i__A1_P00766.parquet,\n",
+       "    pinder_id='1k2i__A1_P00766',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (1735,),\n",
+       ")\n",
+       "pred_receptor=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/af__P00766.pdb,\n",
+       "    uniprot_map=None,\n",
+       "    pinder_id='af__P00766',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (1799,),\n",
+       ")\n",
+       "pred_ligand=Structure(\n",
+       "    filepath=/Users/danielkovtun/.local/share/pinder/2024-02/pdbs/af__P00766.pdb,\n",
+       "    uniprot_map=None,\n",
+       "    pinder_id='af__P00766',\n",
+       "    atom_array=<class 'biotite.structure.AtomArray'> with shape (1799,),\n",
+       ")\n",
+       ")"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from pinder.core import PinderSystem\n",
+    "\n",
+    "\n",
+    "pid = \"2gct__C1_P00766--2gct__A1_P00766\"\n",
+    "ps = PinderSystem(pid)\n",
+    "ps"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "61114161-389a-43ff-8ded-cddb70b32fff",
+   "metadata": {},
+   "source": [
+    "## Examine monomer shapes prior to cropping or superposition"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "5847409f-e1c9-4d34-b284-eebf9a3aa3dd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "apo_R = ps.apo_receptor\n",
+    "apo_L = ps.apo_ligand\n",
+    "pred_R = ps.pred_receptor\n",
+    "pred_L = ps.pred_ligand\n",
+    "holo_R = ps.aligned_holo_R\n",
+    "holo_L = ps.aligned_holo_L\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "03cf8499-a353-48c5-a11d-80740d5a62cf",
+   "metadata": {},
+   "source": [
+    "### Receptor monomers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "9d1b46f3-2748-43b0-b60e-13cbf08baad5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(1735, 689, 1799)"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(\n",
+    "    apo_R.atom_array.shape[0], \n",
+    "    holo_R.atom_array.shape[0],\n",
+    "    pred_R.atom_array.shape[0],\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fb0176b9-7658-4b5e-a1f5-bdf156b497c9",
+   "metadata": {},
+   "source": [
+    "### Ligand monomers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "c17d1b4d-fd37-4df8-afd6-a1b242018f12",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(1735, 69, 1799)"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "(\n",
+    "    apo_L.atom_array.shape[0],\n",
+    "    holo_L.atom_array.shape[0],\n",
+    "    pred_L.atom_array.shape[0],\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5a8107d2-4053-4666-8237-ef95b7fdfa1e",
+   "metadata": {},
+   "source": [
+    "## Single alternative monomer use-case without cropping"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "b3a317ae-cb27-482d-adc2-eea98ae64013",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(764, 758)"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "apo_RL = ps.create_apo_complex(remove_differing_atoms=False)\n",
+    "apo_RL.atom_array.shape[0], (holo_R + holo_L).atom_array.shape[0]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "102a699e-57b7-4cab-9330-9608d395467c",
+   "metadata": {},
+   "source": [
+    "## With cropping such that apo and holo have the same shapes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "7529a9a7-256c-486c-8a71-ed4579ee55ca",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(756, 758)"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "apo_RL = ps.create_apo_complex(remove_differing_atoms=True)\n",
+    "apo_RL.atom_array.shape[0], (holo_R + holo_L).atom_array.shape[0]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5462f7f-3fe8-4c0e-a91f-c5693bb9bf4f",
+   "metadata": {},
+   "source": [
+    "### Why are the shapes still off by 2 atoms?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "167bd2d7-1533-430b-a562-c177fede991e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "690"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "def add_atom_spec(df: pd.DataFrame) -> pd.DataFrame:\n",
+    "    df[\"atom_id\"] = [\n",
+    "        \".\".join([ch, resn, str(resi), atom]) \n",
+    "        for ch, resn, resi, atom in zip(df[\"chain_id\"], df[\"res_name\"], df[\"res_id\"], df[\"atom_name\"])\n",
+    "    ]\n",
+    "    return df\n",
+    "    \n",
+    "holo_RL = holo_R + holo_L\n",
+    "apo_df = apo_RL.dataframe\n",
+    "holo_df = holo_RL.dataframe\n",
+    "\n",
+    "apo_df = add_atom_spec(apo_df)\n",
+    "holo_df = add_atom_spec(holo_df)\n",
+    "len(set(holo_df.atom_id) - set(apo_df.atom_id))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e882f204-0e8d-4a9b-bd5d-20950b6882a2",
+   "metadata": {},
+   "source": [
+    "### The residues were not renumbered, so the number of differing atom specifications is larger than the shape mismatch of 2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "0b56a0f6-a6c2-4406-bfb5-cc3777cf0524",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "apo_RL = ps.create_apo_complex(remove_differing_atoms=True, renumber_residues=True)\n",
+    "\n",
+    "apo_df = apo_RL.dataframe\n",
+    "\n",
+    "apo_df = add_atom_spec(apo_df)\n",
+    "len(set(holo_df.atom_id) - set(apo_df.atom_id))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "a9f9d97d-c098-430c-817c-3c1463f7f5e6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'L.SER.11.N', 'R.ASN.97.OXT'}"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "set(holo_df.atom_id) - set(apo_df.atom_id)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bfb89b99-3651-45e8-89a4-ba0001e49271",
+   "metadata": {},
+   "source": [
+    "## Why are these atoms missing in the apo, but present in the holo structure? \n",
+    "\n",
+    "`PinderSystem.create_apo_complex` (which calls `PinderSystem.create_complex`) does not modify the *reference* structure, only the mobile structure being created. \n",
+    "\n",
+    "In the ground truth holo structure, chain L is a peptide stretch of 11 residues. The apo structure contains a larger segment of the original sequence; however, the apo structure has a residue gap between LEU 10 and ILE 16. \n",
+    "\n",
+    "In this case, the apo structure has been cropped to contain everything that can possibly match to the holo structure, but does not modify the holo structure for atoms that are not mappable to the apo structure.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "71350066-5974-4c6d-94e8-957b715e348c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>chain_id</th>\n",
+       "      <th>res_name</th>\n",
+       "      <th>res_code</th>\n",
+       "      <th>res_id</th>\n",
+       "      <th>atom_name</th>\n",
+       "      <th>b_factor</th>\n",
+       "      <th>ins_code</th>\n",
+       "      <th>hetero</th>\n",
+       "      <th>element</th>\n",
+       "      <th>x</th>\n",
+       "      <th>y</th>\n",
+       "      <th>z</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>N</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>N</td>\n",
+       "      <td>13.593000</td>\n",
+       "      <td>19.841999</td>\n",
+       "      <td>22.816999</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>CA</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>14.180000</td>\n",
+       "      <td>18.841000</td>\n",
+       "      <td>23.763000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>C</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>13.603000</td>\n",
+       "      <td>19.000999</td>\n",
+       "      <td>25.167000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>O</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>O</td>\n",
+       "      <td>12.993000</td>\n",
+       "      <td>20.021000</td>\n",
+       "      <td>25.489000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>CB</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>15.704000</td>\n",
+       "      <td>19.021000</td>\n",
+       "      <td>23.844000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>71</th>\n",
+       "      <td>L</td>\n",
+       "      <td>ILE</td>\n",
+       "      <td>I</td>\n",
+       "      <td>16</td>\n",
+       "      <td>O</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>O</td>\n",
+       "      <td>16.695999</td>\n",
+       "      <td>1.185000</td>\n",
+       "      <td>42.984001</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>72</th>\n",
+       "      <td>L</td>\n",
+       "      <td>ILE</td>\n",
+       "      <td>I</td>\n",
+       "      <td>16</td>\n",
+       "      <td>CB</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>17.202999</td>\n",
+       "      <td>3.622000</td>\n",
+       "      <td>41.284000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73</th>\n",
+       "      <td>L</td>\n",
+       "      <td>ILE</td>\n",
+       "      <td>I</td>\n",
+       "      <td>16</td>\n",
+       "      <td>CG1</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>17.778000</td>\n",
+       "      <td>4.372000</td>\n",
+       "      <td>40.077000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>74</th>\n",
+       "      <td>L</td>\n",
+       "      <td>ILE</td>\n",
+       "      <td>I</td>\n",
+       "      <td>16</td>\n",
+       "      <td>CG2</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>16.841999</td>\n",
+       "      <td>4.610000</td>\n",
+       "      <td>42.387001</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75</th>\n",
+       "      <td>L</td>\n",
+       "      <td>ILE</td>\n",
+       "      <td>I</td>\n",
+       "      <td>16</td>\n",
+       "      <td>CD1</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>16.794001</td>\n",
+       "      <td>5.321000</td>\n",
+       "      <td>39.415001</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>76 rows × 12 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   chain_id res_name res_code  res_id atom_name  b_factor ins_code  hetero  \\\n",
+       "0         L      CYS        C       1         N       0.0            False   \n",
+       "1         L      CYS        C       1        CA       0.0            False   \n",
+       "2         L      CYS        C       1         C       0.0            False   \n",
+       "3         L      CYS        C       1         O       0.0            False   \n",
+       "4         L      CYS        C       1        CB       0.0            False   \n",
+       "..      ...      ...      ...     ...       ...       ...      ...     ...   \n",
+       "71        L      ILE        I      16         O       0.0            False   \n",
+       "72        L      ILE        I      16        CB       0.0            False   \n",
+       "73        L      ILE        I      16       CG1       0.0            False   \n",
+       "74        L      ILE        I      16       CG2       0.0            False   \n",
+       "75        L      ILE        I      16       CD1       0.0            False   \n",
+       "\n",
+       "   element          x          y          z  \n",
+       "0        N  13.593000  19.841999  22.816999  \n",
+       "1        C  14.180000  18.841000  23.763000  \n",
+       "2        C  13.603000  19.000999  25.167000  \n",
+       "3        O  12.993000  20.021000  25.489000  \n",
+       "4        C  15.704000  19.021000  23.844000  \n",
+       "..     ...        ...        ...        ...  \n",
+       "71       O  16.695999   1.185000  42.984001  \n",
+       "72       C  17.202999   3.622000  41.284000  \n",
+       "73       C  17.778000   4.372000  40.077000  \n",
+       "74       C  16.841999   4.610000  42.387001  \n",
+       "75       C  16.794001   5.321000  39.415001  \n",
+       "\n",
+       "[76 rows x 12 columns]"
+      ]
+     },
+     "execution_count": 28,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "apo_L.dataframe.query('chain_id == \"L\" and res_id < 17')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "1b942fbc-790f-4485-9e0b-899b25b0651f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>chain_id</th>\n",
+       "      <th>res_name</th>\n",
+       "      <th>res_code</th>\n",
+       "      <th>res_id</th>\n",
+       "      <th>atom_name</th>\n",
+       "      <th>b_factor</th>\n",
+       "      <th>ins_code</th>\n",
+       "      <th>hetero</th>\n",
+       "      <th>element</th>\n",
+       "      <th>x</th>\n",
+       "      <th>y</th>\n",
+       "      <th>z</th>\n",
+       "      <th>atom_id</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>689</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>N</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>N</td>\n",
+       "      <td>13.446999</td>\n",
+       "      <td>19.493000</td>\n",
+       "      <td>23.142002</td>\n",
+       "      <td>L.CYS.1.N</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>690</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>CA</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>14.022000</td>\n",
+       "      <td>18.531000</td>\n",
+       "      <td>24.070999</td>\n",
+       "      <td>L.CYS.1.CA</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>691</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>C</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>13.412000</td>\n",
+       "      <td>18.750999</td>\n",
+       "      <td>25.443001</td>\n",
+       "      <td>L.CYS.1.C</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>692</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>O</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>O</td>\n",
+       "      <td>12.858999</td>\n",
+       "      <td>19.804001</td>\n",
+       "      <td>25.700001</td>\n",
+       "      <td>L.CYS.1.O</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>693</th>\n",
+       "      <td>L</td>\n",
+       "      <td>CYS</td>\n",
+       "      <td>C</td>\n",
+       "      <td>1</td>\n",
+       "      <td>CB</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>15.571000</td>\n",
+       "      <td>18.733999</td>\n",
+       "      <td>24.115002</td>\n",
+       "      <td>L.CYS.1.CB</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>753</th>\n",
+       "      <td>L</td>\n",
+       "      <td>LEU</td>\n",
+       "      <td>L</td>\n",
+       "      <td>10</td>\n",
+       "      <td>CB</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>7.542000</td>\n",
+       "      <td>13.080000</td>\n",
+       "      <td>40.904999</td>\n",
+       "      <td>L.LEU.10.CB</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>754</th>\n",
+       "      <td>L</td>\n",
+       "      <td>LEU</td>\n",
+       "      <td>L</td>\n",
+       "      <td>10</td>\n",
+       "      <td>CG</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>8.798000</td>\n",
+       "      <td>12.332000</td>\n",
+       "      <td>40.634998</td>\n",
+       "      <td>L.LEU.10.CG</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>755</th>\n",
+       "      <td>L</td>\n",
+       "      <td>LEU</td>\n",
+       "      <td>L</td>\n",
+       "      <td>10</td>\n",
+       "      <td>CD1</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>9.889000</td>\n",
+       "      <td>13.213000</td>\n",
+       "      <td>40.133999</td>\n",
+       "      <td>L.LEU.10.CD1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>756</th>\n",
+       "      <td>L</td>\n",
+       "      <td>LEU</td>\n",
+       "      <td>L</td>\n",
+       "      <td>10</td>\n",
+       "      <td>CD2</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>C</td>\n",
+       "      <td>9.232001</td>\n",
+       "      <td>11.339001</td>\n",
+       "      <td>41.716000</td>\n",
+       "      <td>L.LEU.10.CD2</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>757</th>\n",
+       "      <td>L</td>\n",
+       "      <td>SER</td>\n",
+       "      <td>S</td>\n",
+       "      <td>11</td>\n",
+       "      <td>N</td>\n",
+       "      <td>0.0</td>\n",
+       "      <td></td>\n",
+       "      <td>False</td>\n",
+       "      <td>N</td>\n",
+       "      <td>5.034000</td>\n",
+       "      <td>11.729001</td>\n",
+       "      <td>42.929001</td>\n",
+       "      <td>L.SER.11.N</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>69 rows × 13 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    chain_id res_name res_code  res_id atom_name  b_factor ins_code  hetero  \\\n",
+       "689        L      CYS        C       1         N       0.0            False   \n",
+       "690        L      CYS        C       1        CA       0.0            False   \n",
+       "691        L      CYS        C       1         C       0.0            False   \n",
+       "692        L      CYS        C       1         O       0.0            False   \n",
+       "693        L      CYS        C       1        CB       0.0            False   \n",
+       "..       ...      ...      ...     ...       ...       ...      ...     ...   \n",
+       "753        L      LEU        L      10        CB       0.0            False   \n",
+       "754        L      LEU        L      10        CG       0.0            False   \n",
+       "755        L      LEU        L      10       CD1       0.0            False   \n",
+       "756        L      LEU        L      10       CD2       0.0            False   \n",
+       "757        L      SER        S      11         N       0.0            False   \n",
+       "\n",
+       "    element          x          y          z       atom_id  \n",
+       "689       N  13.446999  19.493000  23.142002     L.CYS.1.N  \n",
+       "690       C  14.022000  18.531000  24.070999    L.CYS.1.CA  \n",
+       "691       C  13.412000  18.750999  25.443001     L.CYS.1.C  \n",
+       "692       O  12.858999  19.804001  25.700001     L.CYS.1.O  \n",
+       "693       C  15.571000  18.733999  24.115002    L.CYS.1.CB  \n",
+       "..      ...        ...        ...        ...           ...  \n",
+       "753       C   7.542000  13.080000  40.904999   L.LEU.10.CB  \n",
+       "754       C   8.798000  12.332000  40.634998   L.LEU.10.CG  \n",
+       "755       C   9.889000  13.213000  40.133999  L.LEU.10.CD1  \n",
+       "756       C   9.232001  11.339001  41.716000  L.LEU.10.CD2  \n",
+       "757       N   5.034000  11.729001  42.929001    L.SER.11.N  \n",
+       "\n",
+       "[69 rows x 13 columns]"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "holo_df.query('chain_id == \"L\" and res_id < 17')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "2a7a2663-77b0-4fc8-906d-ef2cd0110e5d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Local alignment\n",
+      "CGVPAIQPVL\n",
+      "CGVPAIQPVL\n",
+      "Global alignment\n",
+      "CGVPAIQPVLIVNGEEAVPG\n",
+      "CGVPAIQPVL--S-------\n",
+      "CGVPAIQPVLIVNGEEAVPG\n",
+      "CGVPAIQPVL------S---\n"
+     ]
+    }
+   ],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import numpy as np\n",
+    "\n",
+    "import biotite.sequence as seq\n",
+    "import biotite.sequence.align as align\n",
+    "import biotite.sequence.graphics as graphics\n",
+    "\n",
+    "\n",
+    "seq1 = seq.ProteinSequence(apo_L.sequence[0:20])\n",
+    "seq2 = seq.ProteinSequence(holo_L.sequence[0:20])\n",
+    "matrix = align.SubstitutionMatrix.std_protein_matrix()\n",
+    "print(\"\\nLocal alignment\")\n",
+    "alignments = align.align_optimal(seq1, seq2, matrix, local=True)\n",
+    "for ali in alignments:\n",
+    "    print(ali)\n",
+    "print(\"Global alignment\")\n",
+    "alignments = align.align_optimal(seq1, seq2, matrix, local=False)\n",
+    "for ali in alignments:\n",
+    "    print(ali)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "9ac42bb9-1123-4da0-b7d9-fb7e5bb9b5e4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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",
+      "text/plain": [
+       "<Figure size 200x80 with 2 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "fig, ax = plt.subplots(figsize=(2.0, 0.8))\n",
+    "graphics.plot_alignment_similarity_based(\n",
+    "    ax, alignments[0], matrix=matrix, symbols_per_line=len(alignments[0])\n",
+    ")\n",
+    "fig.tight_layout()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e6c5c5ac-a829-4e39-b166-498fbd6b8cd0",
+   "metadata": {},
+   "source": [
+    "## What if we need them to be identical shapes?\n",
+    "\n",
+    "Use `PinderSystem.create_masked_bound_unbound_complexes` to create pairwise-cropped structures with identical shapes.\n",
+    "\n",
+    "**Note: this can be destructive as illustrated above.** \n",
+    "\n",
+    "For instance, if the apo or predicted structures are low quality or contain very different atom annotations than the holo structure, it is very possible that the holo structure will be modified significantly and no longer accurately represent the original structure. \n",
+    "\n",
+    "This can be especially pronounced when using both apo and predicted, as any differences between apo and predicted will then propagate to the holo structure equally."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "67db748e-7931-41ef-abe1-b66f9cc6db62",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(756, 756, 3598)"
+      ]
+     },
+     "execution_count": 39,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "holo_cropped, apo_cropped, pred_cropped = ps.create_masked_bound_unbound_complexes(monomer_types=[\"apo\"], renumber_residues=True)\n",
+    "\n",
+    "(\n",
+    "    holo_cropped.atom_array.shape[0], \n",
+    "    apo_cropped.atom_array.shape[0], \n",
+    "    pred_cropped.atom_array.shape[0],\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f3f47219-7a29-46b7-b2bf-01281666ff38",
+   "metadata": {},
+   "source": [
+    "## We specified `monomer_types` apo, but got a tuple of structures that included the predicted complex, why? \n",
+    "\n",
+    "In order to address the concern outlined above, unless explicitly requested via monomer_types (default is `[\"apo\", \"predicted\"]`), the other monomer type will not be cropped. \n",
+    "\n",
+    "Now we have the apo structure and holo structure with identical shapes. What if we wanted to also include the predicted complex?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "4b6ea5ce-9ca0-4789-be0d-95b640c4d4bf",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(756, 756, 756)"
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "holo_cropped, apo_cropped, pred_cropped = ps.create_masked_bound_unbound_complexes(monomer_types=[\"apo\", \"predicted\"], renumber_residues=True)\n",
+    "\n",
+    "(\n",
+    "    holo_cropped.atom_array.shape[0], \n",
+    "    apo_cropped.atom_array.shape[0], \n",
+    "    pred_cropped.atom_array.shape[0],\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2ed78fc2-ad9c-4023-af6f-f05d6360995d",
+   "metadata": {},
+   "source": [
+    "**In this case, including the predicted monomer did not further mutate the holo or apo structures. In other systems, it may.**"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "pinder",
+   "language": "python",
+   "name": "pinder"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.14"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

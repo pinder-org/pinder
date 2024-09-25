@@ -1,0 +1,21 @@
+pinder.methods.run package
+==========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 10
+
+   pinder.methods.run.af2mm
+   pinder.methods.run.frodock
+   pinder.methods.run.hdock
+   pinder.methods.run.patchdock
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.run
+   :members:
+   :undoc-members:
+   :show-inheritance:

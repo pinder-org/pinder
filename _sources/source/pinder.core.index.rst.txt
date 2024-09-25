@@ -1,0 +1,37 @@
+pinder.core.index package
+=========================
+
+Submodules
+----------
+
+pinder.core.index.id module
+---------------------------
+
+.. automodule:: pinder.core.index.id
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.index.system module
+-------------------------------
+
+.. automodule:: pinder.core.index.system
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.index.utils module
+------------------------------
+
+.. automodule:: pinder.core.index.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.core.index
+   :members:
+   :undoc-members:
+   :show-inheritance:
