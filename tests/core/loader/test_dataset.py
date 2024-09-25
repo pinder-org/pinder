@@ -20,6 +20,7 @@ from pinder.core.loader.dataset import (
 
 EXPECTED_STRUCTURE_KEYS = {
     "atom_types",
+    "element_types",
     "residue_types",
     "atom_coordinates",
     "residue_coordinates",
@@ -31,7 +32,6 @@ EXPECTED_STRUCTURE_KEYS = {
 def test_pairedpdb_heterodata(pinder_temp_dir):
     pinder_id = "3s9d__B1_P48551--3s9d__A1_P01563"
     system = PinderSystem(pinder_id)
-
     nodes = {NodeRepresentation("atom"), NodeRepresentation("residue")}
     holo_data = PairedPDB.from_pinder_system(
         system=system,
@@ -53,8 +53,8 @@ def test_pairedpdb_heterodata(pinder_temp_dir):
     expected_num_feats = {
         "ligand_residue": 0,
         "receptor_residue": 0,
-        "ligand_atom": 12,
-        "receptor_atom": 12,
+        "ligand_atom": 1,
+        "receptor_atom": 1,
     }
     for k, v in expected_num_feats.items():
         assert holo_data.num_node_features[k] == v
@@ -75,8 +75,8 @@ def test_pairedpdb_heterodata(pinder_temp_dir):
     expected_num_feats = {
         "ligand_residue": 0,
         "receptor_residue": 0,
-        "ligand_atom": 12,
-        "receptor_atom": 12,
+        "ligand_atom": 1,
+        "receptor_atom": 1,
     }
     for k, v in expected_num_feats.items():
         assert apo_data.num_node_features[k] == v
@@ -127,8 +127,8 @@ def test_ppi_dataset(split, ids, parallel, limit_by, pinder_temp_dir, capfd):
     expected_num_feats = {
         "ligand_residue": 0,
         "receptor_residue": 0,
-        "ligand_atom": 12,
-        "receptor_atom": 12,
+        "ligand_atom": 1,
+        "receptor_atom": 1,
         "pdb": 0,
     }
     for k, v in expected_num_feats.items():
