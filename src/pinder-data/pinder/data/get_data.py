@@ -13,7 +13,7 @@ import pandas as pd
 import os
 import re
 from biotite.structure.io.pdb import PDBFile
-from biotite.structure.io.pdbx import PDBxFile, get_structure
+from biotite.structure.io.pdbx import CIFFile, get_structure
 from tqdm import tqdm
 
 from pinder.core.index.id import Dimer, Monomer, Protein
@@ -188,13 +188,13 @@ def generate_bio_assembly(mmcif_filename: Path) -> tuple[Any, pd.DataFrame]:
     return bio_asm, entity_chain_map
 
 
-def read_mmcif_file(mmcif_filename: Path) -> PDBxFile:
+def read_mmcif_file(mmcif_filename: Path) -> CIFFile:
     """Read a PDBx/mmCIF file."""
     if mmcif_filename.suffix == ".gz":
         with gzip.open(mmcif_filename, "rt") as mmcif_file:
-            pdbx_file = PDBxFile.read(mmcif_file)
+            pdbx_file = CIFFile.read(mmcif_file)
     else:
-        pdbx_file = PDBxFile.read(mmcif_filename)
+        pdbx_file = CIFFile.read(mmcif_filename)
     return pdbx_file
 
 
@@ -209,7 +209,7 @@ def convert_category(
         for i in range(len(category[list(category.keys())[0]])):
             category_dict[i] = {}
             for key, value in category.items():
-                category_dict[i][key] = value[i]
+                category_dict[i][key] = value.data.array[i]
     return category_dict
 
 
@@ -220,10 +220,12 @@ def replace_with_nan(value: Any) -> Any:
 
 
 def get_mmcif_category(
-    pdbx_file: PDBxFile, category_name: str
+    pdbx_file: CIFFile, category_name: str
 ) -> dict[int, dict[str, Any]]:
     """Get a PDBx/mmCIF category as a dictionary"""
-    cat = convert_category(pdbx_file.get_category(category_name, expect_looped=True))
+    block = pdbx_file.block
+    cat = convert_category(block.get(category_name))
+    # cat = convert_category(pdbx_file.get_category(category_name, expect_looped=True))
     return cat
 
 
@@ -245,9 +247,7 @@ def infer_uniprot_from_mapping(mapping_df: pd.DataFrame) -> str:
     return uniprot
 
 
-def sequence_mapping(
-    pdbx_file: PDBxFile, entry_id: str, entity_id: str
-) -> pd.DataFrame:
+def sequence_mapping(pdbx_file: CIFFile, entry_id: str, entity_id: str) -> pd.DataFrame:
     """Get sequence mapping from a PDBx/mmCIF file for all chains."""
     f = pdbx_file
     cat = get_mmcif_category(f, "entity_poly")
@@ -322,7 +322,7 @@ def sequence_mapping(
     return df
 
 
-def get_entities(pdbx_file: PDBxFile, entry_id: str) -> pd.DataFrame | None:
+def get_entities(pdbx_file: CIFFile, entry_id: str) -> pd.DataFrame | None:
     """Get entities from a PDBx/mmCIF file."""
     f = pdbx_file
     protein_entities = []
@@ -414,20 +414,23 @@ def get_entities(pdbx_file: PDBxFile, entry_id: str) -> pd.DataFrame | None:
         return None
 
 
-def get_metadata(pdbx_file: PDBxFile) -> pd.DataFrame | None:
+def get_metadata(pdbx_file: CIFFile) -> pd.DataFrame | None:
     """Get metadata from a PDBx/mmCIF file.
 
     Beware of special cases,
     e.g. who would have thought there are entries with multiple methods? https://www.rcsb.org/structure/7a0l
     """
     f = pdbx_file
+    block = pdbx_file.block
     meta: dict[str, float | str | int | None] = {}
 
     meta["entry_id"] = None
     meta["method"] = None
-    meta["date"] = f["pdbx_database_status"]["recvd_initial_deposition_date"]
+    meta["date"] = block["pdbx_database_status"][
+        "recvd_initial_deposition_date"
+    ].as_item()
     try:
-        revisions = f["pdbx_audit_revision_history"]["revision_date"]
+        revisions = block["pdbx_audit_revision_history"]["revision_date"].as_array()
         if isinstance(revisions, np.ndarray):
             # Take the earliest release date
             meta["release_date"] = revisions[0]

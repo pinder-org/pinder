@@ -2,7 +2,7 @@
 name = "pinder"
 dynamic = ["version"]
 dependencies = [
-    "biotite < 1.0.0",
+    "biotite >= 1.0",
     "fastpdb",
     "numpy<2",
     "pandas",
