@@ -33,7 +33,7 @@ jobs:
         run: |
             # install foldseek:
             # https://github.com/steineggerlab/foldseek
-            wget https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz
+            wget --secure-protocol=TLSv1_2 https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz
             tar xvzf foldseek-linux-avx2.tar.gz
             # https://www.scivision.dev/github-actions-path-append/
             echo $(pwd)/foldseek/bin/ >> $GITHUB_PATH
@@ -41,7 +41,7 @@ jobs:
       - name: install mmseq
         shell: bash
         run: |
-            wget https://mmseqs.com/latest/mmseqs-linux-avx2.tar.gz
+            wget --secure-protocol=TLSv1_2 https://mmseqs.com/latest/mmseqs-linux-avx2.tar.gz
             tar xvfz mmseqs-linux-avx2.tar.gz
             echo $(pwd)/mmseqs/bin/ >> $GITHUB_PATH
 
@@ -50,7 +50,7 @@ jobs:
         run: |
             # install iAlign:
             # https://sites.gatech.edu/cssb/ialign/
-            wget http://cssb2.biology.gatech.edu/skolnick/files/iAlign/ialign_64_v1.1b2.tar.gz
+            wget --secure-protocol=TLSv1_2 http://cssb2.biology.gatech.edu/skolnick/files/iAlign/ialign_64_v1.1b2.tar.gz
             tar xvzf ialign_64_v1.1b2.tar.gz
             # https://www.scivision.dev/github-actions-path-append/
             echo $(pwd)/ialign/bin/ >> $GITHUB_PATH
