@@ -33,7 +33,7 @@ jobs:
         run: |
             # install foldseek:
             # https://github.com/steineggerlab/foldseek
-            curl -LO https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz
+            curl -LO https://github.com/steineggerlab/foldseek/releases/download/9-427df8a/foldseek-linux-avx2.tar.gz
             tar xvzf foldseek-linux-avx2.tar.gz
             # https://www.scivision.dev/github-actions-path-append/
             echo $(pwd)/foldseek/bin/ >> $GITHUB_PATH
@@ -41,7 +41,7 @@ jobs:
       - name: install mmseq
         shell: bash
         run: |
-            curl -LO https://mmseqs.com/latest/mmseqs-linux-avx2.tar.gz
+            curl -LO https://github.com/soedinglab/MMseqs2/releases/download/15-6f452/mmseqs-linux-avx2.tar.gz
             tar xvfz mmseqs-linux-avx2.tar.gz
             echo $(pwd)/mmseqs/bin/ >> $GITHUB_PATH
 
