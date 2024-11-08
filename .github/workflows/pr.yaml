@@ -15,7 +15,7 @@ jobs:
     name: Test
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.10", "3.11", "3.12"]
     if: |
         github.repository == 'pinder-org/pinder' &&
         ! contains(toJSON(github.event.commits.*.message), '[skip ci]')

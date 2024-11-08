@@ -24,7 +24,7 @@ dependencies = [
 ]
 description = "PINDER: The Protein INteraction Dataset and Evaluation Resource"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
