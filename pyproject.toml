@@ -105,6 +105,20 @@ data = [
     "colormath",
 ]
 
+# sklearn 1.2.2 doesn't ship wheels for py312. The old sklearn version is only required for PRODIGY-cryst.
+datapy312 = [
+    "fire",
+    "gemmi",
+    "networkx",
+    "scikit-learn",
+    "python-graphql-client",
+    "mpire",
+    "matplotlib",
+    "seaborn",
+    "colormath",
+]
+
+
 dev = [
     "pinder[lint,test,type,leaderboard,data]",
 ]
