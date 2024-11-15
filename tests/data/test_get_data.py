@@ -104,7 +104,7 @@ def test_get_interacting_chains(pdb_5cq2):
 def test_interacting_chains_method_regression(
     test_mmcif, radius, backbone_only, expect_equal, pinder_data_cp
 ):
-    from biotite.structure.io.pdbx import PDBxFile, get_structure
+    from biotite.structure.io.pdbx import CIFFile, get_structure
     import biotite.structure as struc
 
     next_gen = pinder_data_cp / "nextgen_rcsb"
