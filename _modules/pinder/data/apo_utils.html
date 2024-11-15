@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.apo_utils &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/apo_utils';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/apo_utils.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.apo_utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.apo_utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">biotite.structure</span> <span class="k">as</span> <span class="nn">struc</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">NDArray</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.structure.atoms</span> <span class="kn">import</span> <span class="n">get_seq_alignments</span><span class="p">,</span> <span class="n">get_seq_identity</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.superimpose</span> <span class="kn">import</span> <span class="n">superimpose_chain</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">reverse_dict</span><span class="p">,</span> <span class="n">Structure</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span><span class="p">,</span> <span class="n">unbound</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">ApoPairingConfig</span>
+
+
+<span class="n">UNIPROT_UNDEFINED</span> <span class="o">=</span> <span class="s2">&quot;UNDEFINED&quot;</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="sufficient_atom_types">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.sufficient_atom_types">[docs]</a>
+<span class="k">def</span> <span class="nf">sufficient_atom_types</span><span class="p">(</span><span class="n">struct</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">min_atom_types</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if the given structure contains at least a minimum number of unique atom types.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        struct (Structure): The structure to be evaluated.</span>
+<span class="sd">        min_atom_types (int, optional): The minimum number of unique atom types required. Default is 3.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the structure contains at least the specified number of unique atom types, including &#39;CA&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">atom_tys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">atom_name</span><span class="p">)</span>
+    <span class="c1"># Require at least 3 atom types to consider as apo monomer</span>
+    <span class="n">sufficient</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atom_tys</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">min_atom_types</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;CA&quot;</span> <span class="ow">in</span> <span class="n">atom_tys</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sufficient</span></div>
+
+
+
+<div class="viewcode-block" id="sufficient_residues">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.sufficient_residues">[docs]</a>
+<span class="k">def</span> <span class="nf">sufficient_residues</span><span class="p">(</span><span class="n">struct</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">min_residues</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determines if a structure contains at least a specified minimum number of residues.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        struct (Structure): The structure to be evaluated.</span>
+<span class="sd">        min_residues (int, optional): The minimum number of residues required. Default is 5.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the structure has at least the specified number of residues.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Require at least 5 residues to consider as apo monomer</span>
+    <span class="n">n_res</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="n">residues</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n_res</span> <span class="o">&gt;=</span> <span class="n">min_residues</span></div>
+
+
+
+<div class="viewcode-block" id="valid_structure">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.valid_structure">[docs]</a>
+<span class="k">def</span> <span class="nf">valid_structure</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Structure</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Attempts to create a Structure instance from a PDB file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pdb_file (Path): The path to the PDB file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Structure | None: The loaded Structure object if successful, None if an error occurs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">apo_struct</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to load </span><span class="si">{</span><span class="n">pdb_file</span><span class="si">}</span><span class="s2"> structure&quot;</span><span class="p">)</span>
+        <span class="n">apo_struct</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">apo_struct</span></div>
+
+
+
+<div class="viewcode-block" id="validate_apo_monomer">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.validate_apo_monomer">[docs]</a>
+<span class="k">def</span> <span class="nf">validate_apo_monomer</span><span class="p">(</span>
+    <span class="n">apo_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">pdb_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validates an apo monomer by checking atom types and residue count against configuration thresholds.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        apo_id (str): The identifier for the apo monomer.</span>
+<span class="sd">        pdb_dir (Path): The directory containing PDB files.</span>
+<span class="sd">        config (ApoPairingConfig, optional): Configuration settings with thresholds for validation.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, str | bool]: A dictionary containing the monomer ID and its validation status.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pdb_file</span> <span class="o">=</span> <span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">apo_id</span><span class="si">}</span><span class="s2">.pdb&quot;</span>
+    <span class="n">struct</span> <span class="o">=</span> <span class="n">valid_structure</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span>
+    <span class="n">apo_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">apo_id</span><span class="p">}</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">Structure</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sufficient_atom_types</span><span class="p">(</span><span class="n">struct</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">min_atom_types</span><span class="p">)</span> <span class="ow">and</span> <span class="n">sufficient_residues</span><span class="p">(</span>
+            <span class="n">struct</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">min_residues</span>
+        <span class="p">):</span>
+            <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">apo_info</span><span class="p">[</span><span class="s2">&quot;valid_as_apo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid</span>
+    <span class="k">return</span> <span class="n">apo_info</span></div>
+
+
+
+<div class="viewcode-block" id="holo_apo_seq_identity">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.holo_apo_seq_identity">[docs]</a>
+<span class="k">def</span> <span class="nf">holo_apo_seq_identity</span><span class="p">(</span><span class="n">holo_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">apo_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the sequence identity between a holo sequence and an apo sequence.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        holo_seq (str): The sequence of the holo structure.</span>
+<span class="sd">        apo_seq (str): The sequence of the apo structure.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, str | float]: A dictionary containing the holo sequence, apo sequence, and their sequence identity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">seq_id</span> <span class="o">=</span> <span class="n">get_seq_identity</span><span class="p">(</span><span class="n">ref_seq</span><span class="o">=</span><span class="n">holo_seq</span><span class="p">,</span> <span class="n">subject_seq</span><span class="o">=</span><span class="n">apo_seq</span><span class="p">)</span>
+    <span class="n">identity_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;holo_sequence&quot;</span><span class="p">:</span> <span class="n">holo_seq</span><span class="p">,</span>
+        <span class="s2">&quot;apo_sequence&quot;</span><span class="p">:</span> <span class="n">apo_seq</span><span class="p">,</span>
+        <span class="s2">&quot;sequence_identity&quot;</span><span class="p">:</span> <span class="n">seq_id</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">identity_info</span></div>
+
+
+
+<div class="viewcode-block" id="chain_instance_from_chain">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.chain_instance_from_chain">[docs]</a>
+<span class="k">def</span> <span class="nf">chain_instance_from_chain</span><span class="p">(</span><span class="n">ch</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extracts the instance/copy number from a chain identifier.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ch (str): The chain identifier, which may contain digits representing the instance number.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        int: The extracted instance number, defaulting to 1 if no digits are found.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">re_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">re_match</span><span class="p">:</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">re_match</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">instance</span></div>
+
+
+
+<div class="viewcode-block" id="remove_apo_chain_copies">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.remove_apo_chain_copies">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_apo_chain_copies</span><span class="p">(</span><span class="n">monomer_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes duplicate chain entries from a DataFrame based on chain instance numbers.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        monomer_df (pd.DataFrame): The DataFrame containing monomer data with a &#39;chain&#39; column.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: A DataFrame filtered to include only the first instance of each chain.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">monomer_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;chain_instance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">monomer_df</span><span class="p">[</span><span class="s2">&quot;chain&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">chain_instance_from_chain</span>
+    <span class="p">)</span>
+    <span class="n">monomer_df</span> <span class="o">=</span> <span class="n">monomer_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain_instance == 1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">monomer_df</span></div>
+
+
+
+<div class="viewcode-block" id="remove_dimer_chain_copies">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.remove_dimer_chain_copies">[docs]</a>
+<span class="k">def</span> <span class="nf">remove_dimer_chain_copies</span><span class="p">(</span><span class="n">dimer_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Filters out dimer chains that are duplicates based on their instance numbers.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dimer_df (pd.DataFrame): A DataFrame containing data for dimers with columns for &#39;chain_R&#39; and &#39;chain_L&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The DataFrame filtered to exclude entries where both chains are copies.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dimer_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;chain_instance_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dimer_df</span><span class="o">.</span><span class="n">chain_R</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">chain_instance_from_chain</span>
+    <span class="p">)</span>
+    <span class="n">dimer_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;chain_instance_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dimer_df</span><span class="o">.</span><span class="n">chain_L</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">chain_instance_from_chain</span>
+    <span class="p">)</span>
+    <span class="c1"># Copy if and only if both interacting chains are asymmetric unit assembly copies</span>
+    <span class="n">dimer_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;chain_instance_copy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">min</span><span class="p">([</span><span class="n">inst1</span><span class="p">,</span> <span class="n">inst2</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">inst1</span><span class="p">,</span> <span class="n">inst2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">dimer_df</span><span class="p">[</span><span class="s2">&quot;chain_instance_1&quot;</span><span class="p">],</span> <span class="n">dimer_df</span><span class="p">[</span><span class="s2">&quot;chain_instance_2&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">dimer_df</span> <span class="o">=</span> <span class="n">dimer_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain_instance_copy == False&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dimer_df</span></div>
+
+
+
+<div class="viewcode-block" id="hybrid_align">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.hybrid_align">[docs]</a>
+<span class="k">def</span> <span class="nf">hybrid_align</span><span class="p">(</span>
+    <span class="n">apo_monomer</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">holo_monomer</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">align_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pymol&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Structure</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Performs structural alignment between an apo monomer and a holo monomer using specified alignment methods.</span>
+
+<span class="sd">    The function supports alignment using either PyMOL or Biotite libraries, depending on the &#39;align_method&#39; specified.</span>
+<span class="sd">    The alignment results include the aligned structure and metrics such as RMSD and the number of aligned atoms.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        apo_monomer (Structure): The apo monomer structure to align.</span>
+<span class="sd">        holo_monomer (Structure): The holo monomer structure as the reference.</span>
+<span class="sd">        align_method (str): The alignment method to use; defaults to &quot;pymol&quot;. Options include &quot;pymol&quot; and &quot;biotite&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple[Structure, dict[str, int | float]]: A tuple containing the aligned apo monomer structure and</span>
+<span class="sd">                                                  a dictionary with alignment metrics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_pymol_align</span><span class="p">(</span>
+        <span class="n">apo_monomer</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+        <span class="n">holo_monomer</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">]]:</span>
+        <span class="kn">from</span> <span class="nn">pymol</span> <span class="kn">import</span> <span class="n">cmd</span>
+
+        <span class="n">cmd</span><span class="o">.</span><span class="n">reinitialize</span><span class="p">()</span>
+        <span class="n">cmd</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">apo_monomer</span><span class="o">.</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;apo_mono&quot;</span><span class="p">)</span>
+        <span class="n">cmd</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">holo_monomer</span><span class="o">.</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;holo_ref&quot;</span><span class="p">)</span>
+        <span class="n">aln_info</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="s2">&quot;apo_mono&quot;</span><span class="p">,</span> <span class="s2">&quot;holo_ref&quot;</span><span class="p">)</span>
+        <span class="n">super_coord</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">get_coords</span><span class="p">(</span><span class="s2">&quot;apo_mono&quot;</span><span class="p">)</span>
+        <span class="c1"># RMSD after refinement</span>
+        <span class="n">refine_rmsd</span> <span class="o">=</span> <span class="n">aln_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># Number of aligned atoms after refinement</span>
+        <span class="n">refine_ats</span> <span class="o">=</span> <span class="n">aln_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># RMSD before refinement</span>
+        <span class="n">raw_rmsd</span> <span class="o">=</span> <span class="n">aln_info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="c1"># Number of aligned atoms before refinement</span>
+        <span class="n">raw_ats</span> <span class="o">=</span> <span class="n">aln_info</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="c1"># Number of residues aligned</span>
+        <span class="n">aln_res</span> <span class="o">=</span> <span class="n">aln_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">aln</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">raw_rmsd</span><span class="p">,</span>
+            <span class="n">refine_rmsd</span><span class="p">,</span>
+            <span class="n">raw_ats</span><span class="p">,</span>
+            <span class="n">refine_ats</span><span class="p">,</span>
+            <span class="n">aln_res</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">aln</span><span class="p">,</span> <span class="n">super_coord</span>
+
+    <span class="k">def</span> <span class="nf">_biotite_align</span><span class="p">(</span>
+        <span class="n">apo_monomer</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">holo_monomer</span><span class="p">:</span> <span class="n">Structure</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">double</span><span class="p">]]:</span>
+        <span class="c1"># max_iterations=1 -&gt; no outlier removal</span>
+        <span class="n">apo_superimposed</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">holo_anchors</span><span class="p">,</span> <span class="n">apo_anchors</span> <span class="o">=</span> <span class="n">superimpose_chain</span><span class="p">(</span>
+            <span class="n">holo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="p">,</span> <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="p">,</span> <span class="n">max_iterations</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="n">raw_rmsd</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">rmsd</span><span class="p">(</span>
+            <span class="n">holo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">coord</span><span class="p">[</span><span class="n">holo_anchors</span><span class="p">],</span>
+            <span class="n">apo_superimposed</span><span class="o">.</span><span class="n">coord</span><span class="p">[</span><span class="n">apo_anchors</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">raw_atom_number</span> <span class="o">=</span> <span class="n">_atom_number_in_anchor_residues</span><span class="p">(</span>
+            <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="p">,</span> <span class="n">apo_anchors</span>
+        <span class="p">)</span>
+        <span class="c1"># Aligned C-alpha residues prior to refinement</span>
+        <span class="n">aligned_residues</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_anchors</span><span class="p">)</span>
+
+        <span class="c1"># Now we refine the alignment by removing outliers</span>
+        <span class="n">apo_superimposed</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">holo_anchors</span><span class="p">,</span> <span class="n">apo_anchors</span> <span class="o">=</span> <span class="n">superimpose_chain</span><span class="p">(</span>
+            <span class="n">holo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="p">,</span> <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span>
+        <span class="p">)</span>
+        <span class="n">refine_rmsd</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">rmsd</span><span class="p">(</span>
+            <span class="n">holo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">coord</span><span class="p">[</span><span class="n">holo_anchors</span><span class="p">],</span>
+            <span class="n">apo_superimposed</span><span class="o">.</span><span class="n">coord</span><span class="p">[</span><span class="n">apo_anchors</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">refine_atom_number</span> <span class="o">=</span> <span class="n">_atom_number_in_anchor_residues</span><span class="p">(</span>
+            <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="p">,</span> <span class="n">apo_anchors</span>
+        <span class="p">)</span>
+
+        <span class="n">metrics_tuple</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">raw_rmsd</span><span class="p">,</span>
+            <span class="n">refine_rmsd</span><span class="p">,</span>
+            <span class="n">raw_atom_number</span><span class="p">,</span>
+            <span class="n">refine_atom_number</span><span class="p">,</span>
+            <span class="n">aligned_residues</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">metrics_tuple</span><span class="p">,</span> <span class="n">apo_superimposed</span><span class="o">.</span><span class="n">coord</span>
+
+    <span class="n">apo_mono_at</span> <span class="o">=</span> <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">aln_func</span> <span class="o">=</span> <span class="n">_pymol_align</span> <span class="k">if</span> <span class="n">align_method</span> <span class="o">==</span> <span class="s2">&quot;pymol&quot;</span> <span class="k">else</span> <span class="n">_biotite_align</span>
+    <span class="k">if</span> <span class="n">align_method</span> <span class="o">==</span> <span class="s2">&quot;pymol&quot;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">pymol</span> <span class="kn">import</span> <span class="n">cmd</span>
+        <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Requested </span><span class="si">{</span><span class="n">align_method</span><span class="si">}</span><span class="s2"> but pymol not installed. Falling back to biotite method...&quot;</span>
+            <span class="p">)</span>
+            <span class="n">aln_func</span> <span class="o">=</span> <span class="n">_biotite_align</span>
+    <span class="n">aln</span><span class="p">,</span> <span class="n">super_coord</span> <span class="o">=</span> <span class="n">aln_func</span><span class="p">(</span><span class="n">apo_monomer</span><span class="p">,</span> <span class="n">holo_monomer</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">raw_rmsd</span><span class="p">,</span> <span class="n">refine_rmsd</span><span class="p">,</span> <span class="n">raw_ats</span><span class="p">,</span> <span class="n">refine_ats</span><span class="p">,</span> <span class="n">aln_res</span><span class="p">)</span> <span class="o">=</span> <span class="n">aln</span>
+    <span class="n">metrics</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;raw_rmsd&quot;</span><span class="p">:</span> <span class="n">raw_rmsd</span><span class="p">,</span>
+        <span class="s2">&quot;refine_rmsd&quot;</span><span class="p">:</span> <span class="n">refine_rmsd</span><span class="p">,</span>
+        <span class="s2">&quot;raw_aln_ats&quot;</span><span class="p">:</span> <span class="n">raw_ats</span><span class="p">,</span>
+        <span class="s2">&quot;refine_aln_ats&quot;</span><span class="p">:</span> <span class="n">refine_ats</span><span class="p">,</span>
+        <span class="s2">&quot;aln_res&quot;</span><span class="p">:</span> <span class="n">aln_res</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">apo_mono_at</span><span class="o">.</span><span class="n">coord</span> <span class="o">=</span> <span class="n">super_coord</span>
+    <span class="n">apo_monomer</span><span class="o">.</span><span class="n">atom_array</span> <span class="o">=</span> <span class="n">apo_mono_at</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">apo_monomer</span><span class="p">,</span> <span class="n">metrics</span></div>
+
+
+
+<div class="viewcode-block" id="get_superimposed_metrics">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.get_superimposed_metrics">[docs]</a>
+<span class="k">def</span> <span class="nf">get_superimposed_metrics</span><span class="p">(</span>
+    <span class="n">holo_ref</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">apo_mono</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">unbound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">holo_R</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">holo_L</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">rec_res</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">lig_res</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">bound_contacts</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+    <span class="n">holo2apo_seq</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+    <span class="n">apo2holo_seq</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates and returns various metrics after superimposing the apo monomer onto the holo reference.</span>
+
+<span class="sd">    This function assesses interface contacts, sequence identity, and structural alignment quality between</span>
+<span class="sd">    an apo and a holo structure, providing metrics that aid in evaluating the apo-holo pairing suitability.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        holo_ref (Structure): The holo reference structure used for alignment.</span>
+<span class="sd">        apo_mono (Structure): The apo structure to align and analyze.</span>
+<span class="sd">        body (str): Indicates whether the structure represents the &#39;receptor&#39; or &#39;ligand&#39; side.</span>
+<span class="sd">        unbound_id (str): A unique identifier for the pairing, typically combining IDs of involved structures.</span>
+<span class="sd">        holo_R (Structure): The holo structure of the receptor side.</span>
+<span class="sd">        holo_L (Structure): The holo structure of the ligand side.</span>
+<span class="sd">        rec_res (list[int]): List of receptor residues involved in holo interface contacts.</span>
+<span class="sd">        lig_res (list[int]): List of ligand residues involved in holo interface contacts.</span>
+<span class="sd">        bound_contacts (set[tuple[str, str, int, int]]): Set of tuples detailing contacts in the bound state.</span>
+<span class="sd">        holo2apo_seq (dict[str, dict[int, int]]): Mapping of holo to apo sequences by residue numbers.</span>
+<span class="sd">        apo2holo_seq (dict[str, dict[int, int]]): Mapping of apo to holo sequences by residue numbers.</span>
+<span class="sd">        config (ApoPairingConfig): Configuration object with parameters like contact radius and alignment method.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, str | float | int]: Dictionary of calculated metrics including interface residues, RMSD,</span>
+<span class="sd">                                      sequence identity, and alignment scores.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fnat_metrics</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="n">FAILED_METRICS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Fnat&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;Fnonnat&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;common_contacts&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;differing_contacts&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;bound_contacts&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">bound_contacts</span><span class="p">),</span>
+        <span class="s2">&quot;unbound_contacts&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;fnonnat_R&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;fnonnat_L&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;fnat_R&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;fnat_L&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;difficulty&quot;</span><span class="p">:</span> <span class="s2">&quot;not determined&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;I-RMSD&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;matched_interface_chains&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;refine_rmsd&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;raw_rmsd&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="s2">&quot;refine_aln_ats&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;raw_aln_ats&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;aln_res&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;unbound_id&quot;</span><span class="p">:</span> <span class="n">unbound_id</span><span class="p">,</span>
+        <span class="s2">&quot;holo_receptor_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">rec_res</span><span class="p">),</span>
+        <span class="s2">&quot;holo_ligand_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">lig_res</span><span class="p">),</span>
+        <span class="s2">&quot;apo_receptor_interface_res&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;apo_ligand_interface_res&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">R_chain</span> <span class="o">=</span> <span class="n">holo_R</span><span class="o">.</span><span class="n">chains</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">L_chain</span> <span class="o">=</span> <span class="n">holo_L</span><span class="o">.</span><span class="n">chains</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">holo_complex</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span>
+        <span class="n">holo_at</span> <span class="o">=</span> <span class="n">holo_complex</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="c1"># Align apo_mono to holo_ref</span>
+        <span class="n">apo_mono</span><span class="p">,</span> <span class="n">aln_metrics</span> <span class="o">=</span> <span class="n">hybrid_align</span><span class="p">(</span>
+            <span class="n">apo_mono</span><span class="p">,</span> <span class="n">holo_ref</span><span class="p">,</span> <span class="n">align_method</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">align_method</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span><span class="p">:</span>
+            <span class="n">apo_RL</span> <span class="o">=</span> <span class="n">apo_mono</span> <span class="o">+</span> <span class="n">holo_L</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">apo_RL</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">apo_mono</span>
+
+        <span class="n">apo_complex</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">atom_array</span>
+
+        <span class="c1"># Get contacts in unbound superimposed structure</span>
+        <span class="n">unbound_contacts</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">get_contacts</span><span class="p">(</span>
+            <span class="n">radius</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">contact_rad</span><span class="p">,</span>
+            <span class="n">backbone_only</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">backbone_only</span><span class="p">,</span>
+            <span class="n">heavy_only</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">heavy_only</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">apo_interface_res</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">get_interface_residues</span><span class="p">(</span><span class="n">unbound_contacts</span><span class="p">)</span>
+        <span class="n">interface_count</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;holo_receptor_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">rec_res</span><span class="p">),</span>
+            <span class="s2">&quot;holo_ligand_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">lig_res</span><span class="p">),</span>
+            <span class="s2">&quot;apo_receptor_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_interface_res</span><span class="p">[</span><span class="n">R_chain</span><span class="p">]),</span>
+            <span class="s2">&quot;apo_ligand_interface_res&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_interface_res</span><span class="p">[</span><span class="n">L_chain</span><span class="p">]),</span>
+        <span class="p">}</span>
+        <span class="n">renumbered_contacts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">unbound_contacts</span><span class="p">:</span>
+            <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">cp</span>
+            <span class="n">r1_renum</span> <span class="o">=</span> <span class="n">apo2holo_seq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="p">{</span><span class="n">r1</span><span class="p">:</span> <span class="n">r1</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r1</span> <span class="o">*</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+            <span class="n">r2_renum</span> <span class="o">=</span> <span class="n">apo2holo_seq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c2</span><span class="p">,</span> <span class="p">{</span><span class="n">r2</span><span class="p">:</span> <span class="n">r2</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">r2</span> <span class="o">*</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+            <span class="n">renumbered_contacts</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">r1_renum</span><span class="p">,</span> <span class="n">r2_renum</span><span class="p">))</span>
+
+        <span class="c1"># Remove holo interface residues not in mapping and get corresponding apo</span>
+        <span class="n">mapped_rec_res</span><span class="p">,</span> <span class="n">apo_rec_res</span> <span class="o">=</span> <span class="n">unbound</span><span class="o">.</span><span class="n">get_corresponding_residues</span><span class="p">(</span>
+            <span class="n">rec_res</span><span class="p">,</span> <span class="n">R_chain</span><span class="p">,</span> <span class="n">holo2apo_seq</span>
+        <span class="p">)</span>
+        <span class="n">mapped_lig_res</span><span class="p">,</span> <span class="n">apo_lig_res</span> <span class="o">=</span> <span class="n">unbound</span><span class="o">.</span><span class="n">get_corresponding_residues</span><span class="p">(</span>
+            <span class="n">lig_res</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">,</span> <span class="n">holo2apo_seq</span>
+        <span class="p">)</span>
+
+        <span class="n">interface_res</span> <span class="o">=</span> <span class="p">{</span><span class="n">R_chain</span><span class="p">:</span> <span class="n">mapped_rec_res</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">:</span> <span class="n">mapped_lig_res</span><span class="p">}</span>
+        <span class="n">holo_interface_mask</span> <span class="o">=</span> <span class="n">holo_complex</span><span class="o">.</span><span class="n">get_interface_mask</span><span class="p">(</span><span class="n">interface_res</span><span class="p">)</span>
+
+        <span class="c1"># get atom mask for Calpha atoms of residues in the unbound structure</span>
+        <span class="c1"># corresponding to their equivalents in the bound structure</span>
+        <span class="n">apo_interface_res</span> <span class="o">=</span> <span class="p">{</span><span class="n">R_chain</span><span class="p">:</span> <span class="n">apo_rec_res</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">:</span> <span class="n">apo_lig_res</span><span class="p">}</span>
+        <span class="n">apo_interface_mask</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">get_interface_mask</span><span class="p">(</span><span class="n">apo_interface_res</span><span class="p">)</span>
+
+        <span class="n">holo_interface</span> <span class="o">=</span> <span class="n">holo_at</span><span class="p">[</span><span class="n">holo_interface_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">apo_interface</span> <span class="o">=</span> <span class="n">apo_complex</span><span class="p">[</span><span class="n">apo_interface_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">holo_interface</span><span class="p">,</span> <span class="n">apo_interface</span> <span class="o">=</span> <span class="n">unbound</span><span class="o">.</span><span class="n">filter_interface_intersect</span><span class="p">(</span>
+            <span class="n">holo_interface</span><span class="p">,</span>
+            <span class="n">apo_interface</span><span class="p">,</span>
+            <span class="n">holo2apo_seq</span><span class="p">,</span>
+            <span class="n">apo2holo_seq</span><span class="p">,</span>
+            <span class="n">R_chain</span><span class="p">,</span>
+            <span class="n">L_chain</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fitted</span><span class="p">,</span> <span class="n">transformation</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span>
+            <span class="n">holo_interface</span><span class="p">,</span>
+            <span class="n">apo_interface</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># We should probably perform this check and say that iRMSD is &gt;&gt; 2.5</span>
+        <span class="c1"># if there is only one chain in common in the interface.</span>
+        <span class="c1"># It would indicate an invalid apo-holo mapping / structure</span>
+        <span class="k">if</span> <span class="n">fitted</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">n_apo_ch</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">struc</span><span class="o">.</span><span class="n">get_chains</span><span class="p">(</span><span class="n">fitted</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_apo_ch</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># assert n_apo_ch &gt; 1</span>
+
+        <span class="c1"># Get RMSD of the interface-Calpha atoms after superposition</span>
+        <span class="n">irmsd</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">rmsd</span><span class="p">(</span><span class="n">fitted</span><span class="p">,</span> <span class="n">holo_interface</span><span class="p">)</span>
+
+        <span class="c1"># Calculate fnat + fnonnat</span>
+        <span class="c1"># https://pubmed.ncbi.nlm.nih.gov/12784368/</span>
+        <span class="n">fnat_metrics</span> <span class="o">=</span> <span class="n">unbound</span><span class="o">.</span><span class="n">fnat_unbound_summary</span><span class="p">(</span><span class="n">bound_contacts</span><span class="p">,</span> <span class="n">renumbered_contacts</span><span class="p">)</span>
+        <span class="n">fnonnat</span> <span class="o">=</span> <span class="n">fnat_metrics</span><span class="p">[</span><span class="s2">&quot;Fnonnat&quot;</span><span class="p">]</span>
+        <span class="n">difficulty</span> <span class="o">=</span> <span class="n">unbound</span><span class="o">.</span><span class="n">get_db4_difficulty</span><span class="p">(</span><span class="n">irmsd</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">fnonnat</span><span class="p">))</span>
+        <span class="n">fnat_metrics</span><span class="p">[</span><span class="s2">&quot;difficulty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">difficulty</span>
+        <span class="n">fnat_metrics</span><span class="p">[</span><span class="s2">&quot;I-RMSD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">irmsd</span>
+        <span class="n">fnat_metrics</span><span class="p">[</span><span class="s2">&quot;matched_interface_chains&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">n_apo_ch</span>
+        <span class="n">fnat_metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">aln_metrics</span><span class="p">)</span>
+        <span class="n">fnat_metrics</span><span class="p">[</span><span class="s2">&quot;unbound_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unbound_id</span>
+        <span class="n">fnat_metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">interface_count</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to superimpose or get unbound metrics for </span><span class="si">{</span><span class="n">unbound_id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">fnat_metrics</span> <span class="o">=</span> <span class="n">FAILED_METRICS</span>
+    <span class="k">return</span> <span class="n">fnat_metrics</span></div>
+
+
+
+<div class="viewcode-block" id="get_sequence_based_metrics">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.get_sequence_based_metrics">[docs]</a>
+<span class="k">def</span> <span class="nf">get_sequence_based_metrics</span><span class="p">(</span>
+    <span class="n">apo_monomer_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">apo_complex</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">apo_R</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">apo_L</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">R_chain</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">L_chain</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">rec_res</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">lig_res</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">holo2apo_seq</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gathers sequence-based metrics for an apo monomer pairing based on sequence alignment and structural data.</span>
+<span class="sd">    Metrics calculated here do not require any structural superposition.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        apo_monomer_id (str): Identifier for the apo monomer.</span>
+<span class="sd">        body (str): Designates whether the monomer is treated as &#39;receptor&#39; or &#39;ligand&#39;.</span>
+<span class="sd">        apo_complex (Structure): Combined structure of apo monomer and holo counterpart body.</span>
+<span class="sd">        apo_R (Structure): Structure of the apo monomer acting as the receptor.</span>
+<span class="sd">        apo_L (Structure): Structure of the apo monomer acting as the ligand.</span>
+<span class="sd">        R_chain (str): Chain identifier for the receptor.</span>
+<span class="sd">        L_chain (str): Chain identifier for the ligand.</span>
+<span class="sd">        rec_res (list[int]): List of holo receptor interface residues.</span>
+<span class="sd">        lig_res (list[int]): List of holo ligand interface residues.</span>
+<span class="sd">        holo2apo_seq (dict[str, dict[int, int]]): Mapping from holo to apo residues.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, str | float | int]: Metrics related to sequence alignment and interface composition.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">apoL_res</span><span class="p">,</span> <span class="n">apoL_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_L</span><span class="o">.</span><span class="n">residues</span><span class="p">),</span> <span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">apoR_res</span><span class="p">,</span> <span class="n">apoR_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_R</span><span class="o">.</span><span class="n">residues</span><span class="p">),</span> <span class="n">apo_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Seq align apo_mono to holo_ref</span>
+    <span class="n">apoR_missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rec_res</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">holo2apo_seq</span><span class="p">[</span><span class="n">R_chain</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span>
+    <span class="n">apoL_missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">lig_res</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">holo2apo_seq</span><span class="p">[</span><span class="n">L_chain</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)]</span>
+    <span class="n">R_miss</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apoR_missing</span><span class="p">)</span>
+    <span class="n">L_miss</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apoL_missing</span><span class="p">)</span>
+    <span class="n">apo_R_code</span> <span class="o">=</span> <span class="n">apo_monomer_id</span> <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span> <span class="k">else</span> <span class="s2">&quot;holo&quot;</span>
+    <span class="n">apo_L_code</span> <span class="o">=</span> <span class="n">apo_monomer_id</span> <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;ligand&quot;</span> <span class="k">else</span> <span class="s2">&quot;holo&quot;</span>
+    <span class="n">R_nat</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rec_res</span><span class="p">)</span>
+    <span class="n">L_nat</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lig_res</span><span class="p">)</span>
+    <span class="n">Fmiss_R</span> <span class="o">=</span> <span class="n">R_miss</span> <span class="o">/</span> <span class="n">R_nat</span> <span class="k">if</span> <span class="n">R_nat</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">Fmiss_L</span> <span class="o">=</span> <span class="n">L_miss</span> <span class="o">/</span> <span class="n">L_nat</span> <span class="k">if</span> <span class="n">L_nat</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mf">1.0</span>
+
+    <span class="n">sequence_metrics</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;receptor_residues&quot;</span><span class="p">:</span> <span class="n">apoR_res</span><span class="p">,</span>
+        <span class="s2">&quot;ligand_residues&quot;</span><span class="p">:</span> <span class="n">apoL_res</span><span class="p">,</span>
+        <span class="s2">&quot;receptor_atoms&quot;</span><span class="p">:</span> <span class="n">apoR_atoms</span><span class="p">,</span>
+        <span class="s2">&quot;ligand_atoms&quot;</span><span class="p">:</span> <span class="n">apoL_atoms</span><span class="p">,</span>
+        <span class="s2">&quot;complex_residues&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_complex</span><span class="o">.</span><span class="n">residues</span><span class="p">),</span>
+        <span class="s2">&quot;complex_atoms&quot;</span><span class="p">:</span> <span class="n">apo_complex</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="s2">&quot;receptor_missing&quot;</span><span class="p">:</span> <span class="n">R_miss</span><span class="p">,</span>
+        <span class="s2">&quot;receptor_native&quot;</span><span class="p">:</span> <span class="n">R_nat</span><span class="p">,</span>
+        <span class="s2">&quot;ligand_missing&quot;</span><span class="p">:</span> <span class="n">L_miss</span><span class="p">,</span>
+        <span class="s2">&quot;ligand_native&quot;</span><span class="p">:</span> <span class="n">L_nat</span><span class="p">,</span>
+        <span class="s2">&quot;Fmiss_R&quot;</span><span class="p">:</span> <span class="n">Fmiss_R</span><span class="p">,</span>
+        <span class="s2">&quot;Fmiss_L&quot;</span><span class="p">:</span> <span class="n">Fmiss_L</span><span class="p">,</span>
+        <span class="s2">&quot;apo_R_code&quot;</span><span class="p">:</span> <span class="n">apo_R_code</span><span class="p">,</span>
+        <span class="s2">&quot;apo_L_code&quot;</span><span class="p">:</span> <span class="n">apo_L_code</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sequence_metrics</span></div>
+
+
+
+<div class="viewcode-block" id="get_unbound_id">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.get_unbound_id">[docs]</a>
+<span class="k">def</span> <span class="nf">get_unbound_id</span><span class="p">(</span>
+    <span class="n">holo_R</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">holo_L</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">apo_R</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">apo_L</span><span class="p">:</span> <span class="n">Structure</span><span class="p">,</span>
+    <span class="n">body</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">apo_R</span><span class="o">.</span><span class="n">pinder_id</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">holo_L</span><span class="o">.</span><span class="n">pinder_id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">holo_R</span><span class="o">.</span><span class="n">pinder_id</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">apo_L</span><span class="o">.</span><span class="n">pinder_id</span>
+    <span class="n">unbound_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">R</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">L</span>
+    <span class="k">return</span> <span class="n">unbound_id</span></div>
+
+
+
+<div class="viewcode-block" id="get_apo_pairing_metrics_for_id">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.get_apo_pairing_metrics_for_id">[docs]</a>
+<span class="k">def</span> <span class="nf">get_apo_pairing_metrics_for_id</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">pdb_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes various structural and sequence-based metrics for apo-holo pairings for a given dataset of identifiers.</span>
+
+<span class="sd">    This function loads structures, performs alignments, and computes interface and sequence identity metrics</span>
+<span class="sd">    for a set of potential apo-holo pairs specified in a DataFrame.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): DataFrame containing identifiers and other data for apo-holo pairings.</span>
+<span class="sd">        pdb_dir (Path): Path to the directory containing PDB files of the structures.</span>
+<span class="sd">        config (ApoPairingConfig): Configuration object specifying parameters for alignment and analysis.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame | None: DataFrame containing computed metrics for each pairing, or None if an error occurs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">holo_R_pdb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">holo_R_pdb</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">holo_L_pdb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">holo_L_pdb</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">holo_R</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">holo_R_pdb</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">holo_L</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">holo_L_pdb</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ERROR: failed to load holo monomers </span><span class="si">{</span><span class="n">holo_R_pdb</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">holo_L_pdb</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">holo_complex</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span>
+    <span class="n">holoR_res</span><span class="p">,</span> <span class="n">holoR_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">holo_R</span><span class="o">.</span><span class="n">residues</span><span class="p">),</span> <span class="n">holo_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">holoL_res</span><span class="p">,</span> <span class="n">holoL_atoms</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">holo_L</span><span class="o">.</span><span class="n">residues</span><span class="p">),</span> <span class="n">holo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">holoR_seq</span><span class="p">,</span> <span class="n">holoL_seq</span> <span class="o">=</span> <span class="n">holo_R</span><span class="o">.</span><span class="n">sequence</span><span class="p">,</span> <span class="n">holo_L</span><span class="o">.</span><span class="n">sequence</span>
+    <span class="n">R_chain</span> <span class="o">=</span> <span class="n">holo_R</span><span class="o">.</span><span class="n">chains</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">L_chain</span> <span class="o">=</span> <span class="n">holo_L</span><span class="o">.</span><span class="n">chains</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">bound_contacts</span> <span class="o">=</span> <span class="n">holo_complex</span><span class="o">.</span><span class="n">get_contacts</span><span class="p">(</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">contact_rad</span><span class="p">,</span>
+        <span class="n">backbone_only</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">backbone_only</span><span class="p">,</span>
+        <span class="n">heavy_only</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">heavy_only</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">interface_res</span> <span class="o">=</span> <span class="n">holo_complex</span><span class="o">.</span><span class="n">get_interface_residues</span><span class="p">(</span><span class="n">bound_contacts</span><span class="p">)</span>
+    <span class="n">rec_res</span> <span class="o">=</span> <span class="n">interface_res</span><span class="p">[</span><span class="n">R_chain</span><span class="p">]</span>
+    <span class="n">lig_res</span> <span class="o">=</span> <span class="n">interface_res</span><span class="p">[</span><span class="n">L_chain</span><span class="p">]</span>
+    <span class="n">apo_metrics</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">apo_eval_struct</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">apo_monomer_id</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">metrics</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">&quot;apo_monomer_id&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">apo_monomer_id</span><span class="p">,</span>
+            <span class="s2">&quot;holo_R_residues&quot;</span><span class="p">:</span> <span class="n">holoR_res</span><span class="p">,</span>
+            <span class="s2">&quot;holo_R_atoms&quot;</span><span class="p">:</span> <span class="n">holoR_atoms</span><span class="p">,</span>
+            <span class="s2">&quot;holo_L_residues&quot;</span><span class="p">:</span> <span class="n">holoL_res</span><span class="p">,</span>
+            <span class="s2">&quot;holo_L_atoms&quot;</span><span class="p">:</span> <span class="n">holoL_atoms</span><span class="p">,</span>
+            <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">contact_rad</span><span class="p">,</span>
+            <span class="s2">&quot;backbone_only&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">backbone_only</span><span class="p">,</span>
+            <span class="s2">&quot;heavy_only&quot;</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">heavy_only</span><span class="p">,</span>
+            <span class="s2">&quot;unbound_body&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+            <span class="s2">&quot;monomer_name&quot;</span><span class="p">:</span> <span class="s2">&quot;apo&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span><span class="p">:</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;receptor&quot;</span>
+            <span class="n">apo_eval_chain</span> <span class="o">=</span> <span class="n">R_chain</span>
+            <span class="n">apo_ref_struct</span> <span class="o">=</span> <span class="n">holo_L</span>
+            <span class="n">holo_counterpart_res</span> <span class="o">=</span> <span class="n">holoR_res</span>
+            <span class="n">holo_counterpart_seq</span> <span class="o">=</span> <span class="n">holoR_seq</span>
+
+        <span class="k">elif</span> <span class="n">r</span><span class="o">.</span><span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;L&quot;</span><span class="p">:</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;ligand&quot;</span>
+            <span class="n">apo_eval_chain</span> <span class="o">=</span> <span class="n">L_chain</span>
+            <span class="n">apo_ref_struct</span> <span class="o">=</span> <span class="n">holo_R</span>
+            <span class="n">holo_counterpart_res</span> <span class="o">=</span> <span class="n">holoL_res</span>
+            <span class="n">holo_counterpart_seq</span> <span class="o">=</span> <span class="n">holoL_seq</span>
+
+        <span class="c1"># require apo to have at least min_holo_resolved_frac fraction of holo residues resolved</span>
+        <span class="c1"># might want to also set a max on fraction of &quot;extra&quot; residues</span>
+        <span class="n">apo_res_frac</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_eval_struct</span><span class="o">.</span><span class="n">residues</span><span class="p">)</span> <span class="o">/</span> <span class="n">holo_counterpart_res</span>
+        <span class="k">if</span> <span class="n">apo_res_frac</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_holo_resolved_frac</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">identity_info</span> <span class="o">=</span> <span class="n">holo_apo_seq_identity</span><span class="p">(</span>
+            <span class="n">holo_seq</span><span class="o">=</span><span class="n">holo_counterpart_seq</span><span class="p">,</span> <span class="n">apo_seq</span><span class="o">=</span><span class="n">apo_eval_struct</span><span class="o">.</span><span class="n">sequence</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">identity_info</span><span class="p">[</span><span class="s2">&quot;sequence_identity&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_seq_identity</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">apo_eval_struct</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span>
+            <span class="n">apo_eval_struct</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">config</span><span class="o">.</span><span class="n">apo_chain</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="n">apo_eval_chain</span>
+
+        <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span><span class="p">:</span>
+            <span class="n">apo_R</span> <span class="o">=</span> <span class="n">apo_eval_struct</span>
+            <span class="n">apo_L</span> <span class="o">=</span> <span class="n">apo_ref_struct</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">apo_R</span> <span class="o">=</span> <span class="n">apo_ref_struct</span>
+            <span class="n">apo_L</span> <span class="o">=</span> <span class="n">apo_eval_struct</span>
+
+        <span class="n">apo_complex</span> <span class="o">=</span> <span class="n">apo_R</span> <span class="o">+</span> <span class="n">apo_L</span>
+        <span class="c1"># Seq align apo_mono to holo_ref</span>
+        <span class="n">apo2holo_seq</span> <span class="o">=</span> <span class="n">apo_complex</span><span class="o">.</span><span class="n">get_per_chain_seq_alignments</span><span class="p">(</span><span class="n">holo_complex</span><span class="p">)</span>
+        <span class="n">holo2apo_seq</span> <span class="o">=</span> <span class="p">{</span><span class="n">ch</span><span class="p">:</span> <span class="n">reverse_dict</span><span class="p">(</span><span class="n">rmap</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">rmap</span> <span class="ow">in</span> <span class="n">apo2holo_seq</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+        <span class="n">sequence_metrics</span> <span class="o">=</span> <span class="n">get_sequence_based_metrics</span><span class="p">(</span>
+            <span class="n">apo_monomer_id</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">apo_monomer_id</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+            <span class="n">apo_complex</span><span class="o">=</span><span class="n">apo_complex</span><span class="p">,</span>
+            <span class="n">apo_R</span><span class="o">=</span><span class="n">apo_R</span><span class="p">,</span>
+            <span class="n">apo_L</span><span class="o">=</span><span class="n">apo_L</span><span class="p">,</span>
+            <span class="n">R_chain</span><span class="o">=</span><span class="n">R_chain</span><span class="p">,</span>
+            <span class="n">L_chain</span><span class="o">=</span><span class="n">L_chain</span><span class="p">,</span>
+            <span class="n">rec_res</span><span class="o">=</span><span class="n">rec_res</span><span class="p">,</span>
+            <span class="n">lig_res</span><span class="o">=</span><span class="n">lig_res</span><span class="p">,</span>
+            <span class="n">holo2apo_seq</span><span class="o">=</span><span class="n">holo2apo_seq</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">sequence_metrics</span><span class="p">)</span>
+
+        <span class="c1"># Calculate metrics after swapping the apo monomer for the holo monomer after superposition.</span>
+        <span class="n">fnat_metrics</span> <span class="o">=</span> <span class="n">get_superimposed_metrics</span><span class="p">(</span>
+            <span class="n">holo_ref</span><span class="o">=</span><span class="n">holo_R</span> <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span> <span class="k">else</span> <span class="n">holo_L</span><span class="p">,</span>
+            <span class="n">apo_mono</span><span class="o">=</span><span class="n">apo_R</span> <span class="k">if</span> <span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;receptor&quot;</span> <span class="k">else</span> <span class="n">apo_L</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+            <span class="n">unbound_id</span><span class="o">=</span><span class="n">get_unbound_id</span><span class="p">(</span><span class="n">holo_R</span><span class="p">,</span> <span class="n">holo_L</span><span class="p">,</span> <span class="n">apo_R</span><span class="p">,</span> <span class="n">apo_L</span><span class="p">,</span> <span class="n">body</span><span class="p">),</span>
+            <span class="n">holo_R</span><span class="o">=</span><span class="n">holo_R</span><span class="p">,</span>
+            <span class="n">holo_L</span><span class="o">=</span><span class="n">holo_L</span><span class="p">,</span>
+            <span class="n">rec_res</span><span class="o">=</span><span class="n">rec_res</span><span class="p">,</span>
+            <span class="n">lig_res</span><span class="o">=</span><span class="n">lig_res</span><span class="p">,</span>
+            <span class="n">bound_contacts</span><span class="o">=</span><span class="n">bound_contacts</span><span class="p">,</span>
+            <span class="n">holo2apo_seq</span><span class="o">=</span><span class="n">holo2apo_seq</span><span class="p">,</span>
+            <span class="n">apo2holo_seq</span><span class="o">=</span><span class="n">apo2holo_seq</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fnat_metrics</span><span class="p">)</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">identity_info</span><span class="p">)</span>
+        <span class="n">apo_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">apo_metrics</span><span class="p">):</span>
+        <span class="n">metric_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">apo_metrics</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">metric_df</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">metric_df</span></div>
+
+
+
+<div class="viewcode-block" id="calculate_frac_monomer_dimer_overlap">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.apo_utils.calculate_frac_monomer_dimer_overlap">[docs]</a>
+<span class="k">def</span> <span class="nf">calculate_frac_monomer_dimer_overlap</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">pdb_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates the fractional overlap of residues between apo monomers and their corresponding holo forms in the dimer.</span>
+<span class="sd">    This method attempts to capture metrics for cases where a single apo monomer contains all or most of the full dimer complex,</span>
+<span class="sd">    thereby making it impossible to predicted holo starting from apo.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        df (pd.DataFrame): DataFrame containing data for which overlap metrics need to be calculated.</span>
+<span class="sd">        pdb_dir (Path): Directory where PDB files are located.</span>
+<span class="sd">        config (ApoPairingConfig): Configuration parameters used in the calculation, such as sequence alignment settings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: Updated DataFrame with calculated overlap metrics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dimer_id</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">R</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">dimer_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">rename_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">,</span> <span class="s2">&quot;resi&quot;</span><span class="p">,</span> <span class="s2">&quot;resn&quot;</span><span class="p">,</span> <span class="s2">&quot;one_letter_code_uniprot&quot;</span><span class="p">]</span>
+    <span class="n">R_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pdb_dir</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;mappings/</span><span class="si">{</span><span class="n">R</span><span class="si">}</span><span class="s2">-R.parquet&quot;</span><span class="p">)</span>
+    <span class="n">L_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pdb_dir</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;mappings/</span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s2">-L.parquet&quot;</span><span class="p">)</span>
+    <span class="n">dimer_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">R_map</span><span class="p">,</span> <span class="n">L_map</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dimer_map</span> <span class="o">=</span> <span class="n">dimer_map</span><span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;resi&quot;</span><span class="p">,</span> <span class="s2">&quot;asym_id&quot;</span><span class="p">,</span> <span class="s2">&quot;resn&quot;</span><span class="p">,</span> <span class="s2">&quot;resi_uniprot&quot;</span><span class="p">,</span> <span class="s2">&quot;one_letter_code_uniprot&quot;</span><span class="p">]</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">dimer_map</span> <span class="o">=</span> <span class="n">dimer_map</span><span class="p">[</span><span class="o">~</span><span class="n">dimer_map</span><span class="o">.</span><span class="n">resi_uniprot</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dimer_map</span><span class="o">.</span><span class="n">resi_uniprot</span> <span class="o">=</span> <span class="n">dimer_map</span><span class="o">.</span><span class="n">resi_uniprot</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="n">dimer_pdb</span> <span class="o">=</span> <span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dimer_id</span><span class="si">}</span><span class="s2">.pdb&quot;</span>
+    <span class="n">dimer</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">dimer_pdb</span><span class="p">)</span>
+    <span class="n">dimer_R</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">)</span>
+    <span class="n">dimer_L</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span>
+    <span class="n">dimer_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">dimer_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">apo_chain</span>
+    <span class="n">dimer_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">dimer_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">apo_chain</span>
+    <span class="n">dimer_A</span> <span class="o">=</span> <span class="n">dimer_R</span> <span class="o">+</span> <span class="n">dimer_L</span>
+    <span class="n">dimer_seq</span> <span class="o">=</span> <span class="n">dimer_A</span><span class="o">.</span><span class="n">sequence</span>
+    <span class="n">dimer_seq_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dimer_seq</span><span class="p">)</span>
+    <span class="n">metrics</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">apo_id</span><span class="p">,</span> <span class="n">body</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;apo_monomer_id&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;unbound_body&quot;</span><span class="p">]):</span>
+        <span class="n">apo_map_pqt</span> <span class="o">=</span> <span class="n">pdb_dir</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;mappings/</span><span class="si">{</span><span class="n">apo_id</span><span class="si">}</span><span class="s2">.parquet&quot;</span>
+        <span class="k">if</span> <span class="n">apo_map_pqt</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="n">apo_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">apo_map_pqt</span><span class="p">)</span>
+            <span class="n">apo_map</span> <span class="o">=</span> <span class="n">apo_map</span><span class="p">[[</span><span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rename_cols</span><span class="p">]</span>
+            <span class="n">apo_map</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="n">c</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">rename_cols</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">apo_map</span> <span class="o">=</span> <span class="n">apo_map</span><span class="p">[</span><span class="o">~</span><span class="n">apo_map</span><span class="o">.</span><span class="n">resi_uniprot</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">apo_map</span><span class="o">.</span><span class="n">resi_uniprot</span> <span class="o">=</span> <span class="n">apo_map</span><span class="o">.</span><span class="n">resi_uniprot</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="n">apo_dimer_coverage</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                    <span class="n">apo_map</span><span class="p">,</span> <span class="n">dimer_map</span><span class="p">[[</span><span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">rename_cols</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span>
+                <span class="p">)</span>
+                <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;resi_uniprot&quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">frac_monomer_dimer_map</span> <span class="o">=</span> <span class="n">apo_dimer_coverage</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">dimer_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">apo_map_pqt</span><span class="si">}</span><span class="s2"> mapping is missing!&quot;</span><span class="p">)</span>
+            <span class="n">frac_monomer_dimer_map</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+        <span class="n">apo_struct</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">apo_id</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">)</span>
+        <span class="n">alignments</span> <span class="o">=</span> <span class="n">get_seq_alignments</span><span class="p">(</span><span class="n">dimer_seq</span><span class="p">,</span> <span class="n">apo_struct</span><span class="o">.</span><span class="n">sequence</span><span class="p">)</span>
+        <span class="n">aln</span> <span class="o">=</span> <span class="n">alignments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">gap_seq1</span><span class="p">,</span> <span class="n">gap_seq2</span> <span class="o">=</span> <span class="n">aln</span><span class="o">.</span><span class="n">get_gapped_sequences</span><span class="p">()</span>
+        <span class="n">apo_aln_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">gap_seq1</span> <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">])</span>
+        <span class="c1"># dimer_aln_len = len([s for s in gap_seq2 if s != &#39;-&#39;])</span>
+        <span class="n">frac_monomer_dimer</span> <span class="o">=</span> <span class="n">apo_aln_len</span> <span class="o">/</span> <span class="n">dimer_seq_len</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">dimer_id</span><span class="p">,</span>
+                <span class="s2">&quot;apo_monomer_id&quot;</span><span class="p">:</span> <span class="n">apo_id</span><span class="p">,</span>
+                <span class="s2">&quot;unbound_body&quot;</span><span class="p">:</span> <span class="n">body</span><span class="p">,</span>
+                <span class="s2">&quot;frac_monomer_dimer&quot;</span><span class="p">:</span> <span class="n">frac_monomer_dimer</span><span class="p">,</span>
+                <span class="s2">&quot;frac_monomer_dimer_uniprot&quot;</span><span class="p">:</span> <span class="n">frac_monomer_dimer_map</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">metric_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">metric_df</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_atom_number_in_anchor_residues</span><span class="p">(</span>
+    <span class="n">atoms</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArray</span><span class="p">,</span> <span class="n">anchor_indices</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the total number of atoms in the residues indicated by `anchor_indices`.</span>
+<span class="sd">    `anchor_indices` themselves point to CA atoms inside the residues.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">struc</span><span class="o">.</span><span class="n">get_residue_masks</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">anchor_indices</span><span class="p">)))</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

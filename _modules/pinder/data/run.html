@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.run &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/run';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/run.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.run</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.run</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Examples for running via CLI:</span>
+
+<span class="sd">Full pipeline</span>
+
+<span class="sd">.. code-block:: bash</span>
+
+<span class="sd">    pinder_data run</span>
+
+<span class="sd">Specify a custom pinder root directory/mount point</span>
+
+<span class="sd">.. code-block:: bash</span>
+
+<span class="sd">    pinder_data --pinder_mount_point ./pinder-data-pipeline run</span>
+
+
+<span class="sd">Run specific stage (download RCSB files associated with two-character code `bo`)</span>
+
+<span class="sd">.. code-block:: bash</span>
+
+<span class="sd">    pinder_data --two_char_code bo run_stage download_rcsb_files</span>
+<span class="sd">    # OR</span>
+<span class="sd">    pinder_data --t bo run_stage download_rcsb_files</span>
+
+<span class="sd">Example PDB ingest data directory structure:</span>
+
+<span class="sd">.. code-block:: text</span>
+
+<span class="sd">    ./pinder-data-pipeline/data/bo/pdb_00006boo/</span>
+<span class="sd">    ├── 6boo-assembly.cif</span>
+<span class="sd">    ├── 6boo-entities.parquet</span>
+<span class="sd">    ├── 6boo-interacting_chains.tsv</span>
+<span class="sd">    ├── 6boo-metadata.tsv</span>
+<span class="sd">    ├── 6boo-pisa-lite-assembly.json</span>
+<span class="sd">    ├── 6boo-pisa-lite-interfaces.json</span>
+<span class="sd">    ├── 6boo__A1_B0YD89--6boo__C1_B0YD89.pdb</span>
+<span class="sd">    ├── 6boo__A1_B0YD89--6boo__C1_B0YD89.tsv</span>
+<span class="sd">    ├── 6boo__A1_B0YD89-R.parquet</span>
+<span class="sd">    ├── 6boo__A1_B0YD89-R.pdb</span>
+<span class="sd">    ├── 6boo__C1_B0YD89-L.parquet</span>
+<span class="sd">    ├── 6boo__C1_B0YD89-L.pdb</span>
+<span class="sd">    ├── checkpoint-mapping.txt</span>
+<span class="sd">    ├── checkpoint-pisa.txt</span>
+<span class="sd">    ├── foldseek_contacts</span>
+<span class="sd">    │   └── 2f2691f67bd6fde5ba4ad0152799dc95</span>
+<span class="sd">    │       └── 6boo__A1_B0YD89--6boo__C1_B0YD89.json</span>
+<span class="sd">    └── pdb_00006boo_xyz-enrich.cif.gz</span>
+
+
+<span class="sd">and the resulting PINDER dataset directory structure:</span>
+
+<span class="sd">.. code-block:: text</span>
+
+<span class="sd">    ./pinder-data-pipeline/2024-02/</span>
+<span class="sd">    ├── apo_metrics</span>
+<span class="sd">    │   ├── pair_eval</span>
+<span class="sd">    │   │   └── metrics_0.parquet</span>
+<span class="sd">    │   ├── scored_noisy_train_apo_pairings.parquet</span>
+<span class="sd">    │   └── two_sided_apo_monomer_metrics.parquet</span>
+<span class="sd">    ├── chain_metadata.parquet</span>
+<span class="sd">    ├── cluster</span>
+<span class="sd">    │   └── f6e35584321f647887eacb8ee369305f</span>
+<span class="sd">    │       ├── af2_lddt070_test_sys_table.csv</span>
+<span class="sd">    │       ├── af2_lddt070_transitive_hits_mapping.csv</span>
+<span class="sd">    │       ├── af2_lldt070_test_sys_table.csv</span>
+<span class="sd">    │       ├── af2_lldt070_transitive_hits_mapping.csv</span>
+<span class="sd">    │       ├── foldseek_af2_lddt070_leakage_dict.pkl</span>
+<span class="sd">    │       ├── foldseek_af2_lldt070_leakage_dict.pkl</span>
+<span class="sd">    │       ├── foldseek_af2_lldt070_potential_leaks.pkl</span>
+<span class="sd">    │       ├── foldseek_communities.pkl</span>
+<span class="sd">    │       ├── foldseek_components.pkl</span>
+<span class="sd">    │       ├── foldseek_leakage_dict.pkl</span>
+<span class="sd">    │       ├── foldseek_potential_leaks.pkl</span>
+<span class="sd">    │       ├── index.2.csv.gz</span>
+<span class="sd">    │       ├── mmseqs_components.pkl</span>
+<span class="sd">    │       ├── mmseqs_leakage_dict.pkl</span>
+<span class="sd">    │       ├── mmseqs_potential_leaks.pkl</span>
+<span class="sd">    │       ├── pindex_checkpoint.3.csv</span>
+<span class="sd">    │       ├── pindex_checkpoint.4.csv</span>
+<span class="sd">    │       ├── test_subset.csv</span>
+<span class="sd">    │       ├── test_sys_table.csv</span>
+<span class="sd">    │       └── transitive_hits_mapping.csv</span>
+<span class="sd">    ├── dimer_ids.parquet</span>
+<span class="sd">    ├── ecod_metadata.parquet</span>
+<span class="sd">    ├── entity_metadata.parquet</span>
+<span class="sd">    ├── enzyme_classification_metadata.parquet</span>
+<span class="sd">    ├── external_annotations</span>
+<span class="sd">    │   └── sabdab_summary_all.tsv</span>
+<span class="sd">    ├── foldseek  [672 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    ├── graphs</span>
+<span class="sd">    │   └── 52d26a07886d2d2300c364a381680e8b</span>
+<span class="sd">    │       ├── cleaned_foldseek_alignment_graph.pkl</span>
+<span class="sd">    │       ├── cleaned_mmseqs_alignment_graph.pkl</span>
+<span class="sd">    │       ├── foldseek_alignment_graph.pkl</span>
+<span class="sd">    │       ├── min_length_interfaces.pkl</span>
+<span class="sd">    │       └── mmseqs_alignment_graph.pkl</span>
+<span class="sd">    ├── ialign_metrics</span>
+<span class="sd">    │   ├── ialign_potential_leaks.parquet</span>
+<span class="sd">    │   ├── ialign_split_similarity_labels.parquet</span>
+<span class="sd">    │   ├── metrics.parquet</span>
+<span class="sd">    │   ├── pindex_checkpoint.5.parquet</span>
+<span class="sd">    │   └── potential_alignment_leaks.parquet</span>
+<span class="sd">    ├── index.1.csv.gz</span>
+<span class="sd">    ├── index.parquet</span>
+<span class="sd">    ├── index_with_apo.parquet</span>
+<span class="sd">    ├── index_with_pred.parquet</span>
+<span class="sd">    ├── interface_annotations.parquet</span>
+<span class="sd">    ├── interfaces.parquet</span>
+<span class="sd">    ├── mappings  [1363 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    ├── metadata.1.csv.gz</span>
+<span class="sd">    ├── metadata.2.csv.gz</span>
+<span class="sd">    ├── metadata.parquet</span>
+<span class="sd">    ├── mmseqs2</span>
+<span class="sd">    │   ├── input.fasta</span>
+<span class="sd">    │   └── mmseqs_dbs</span>
+<span class="sd">    │       ├── 00000</span>
+<span class="sd">    │       │   ├── 00000</span>
+<span class="sd">    │       │   │   ├── alignment.txt</span>
+<span class="sd">    │       │   │   └── mmseqs_error.txt</span>
+<span class="sd">    │       │   └── db</span>
+<span class="sd">    │       │       └── input_00000.fasta</span>
+<span class="sd">    │       ├── alignment.parquet</span>
+<span class="sd">    │       ├── alignment.txt</span>
+<span class="sd">    │       └── filtered_alignment.parquet</span>
+<span class="sd">    ├── monomer_ids.parquet</span>
+<span class="sd">    ├── monomer_predicted_ids.parquet</span>
+<span class="sd">    ├── pdbs  [2890 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    ├── putative_apo_monomer_ids.parquet</span>
+<span class="sd">    ├── putative_two_sided_apo_pairings.parquet</span>
+<span class="sd">    ├── rcsb_annotations</span>
+<span class="sd">    │   ├── annotations  [268 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    │   ├── annotations_cath.csv.gz</span>
+<span class="sd">    │   ├── annotations_ecod.csv.gz</span>
+<span class="sd">    │   ├── annotations_other.csv.gz</span>
+<span class="sd">    │   ├── annotations_scop.csv.gz</span>
+<span class="sd">    │   ├── enzyme_classification  [268 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    │   ├── enzyme_classification.csv.gz</span>
+<span class="sd">    │   ├── features  [268 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    │   ├── features_asa.csv.gz</span>
+<span class="sd">    │   ├── features_binding_site.csv.gz</span>
+<span class="sd">    │   ├── features_cath.csv.gz</span>
+<span class="sd">    │   ├── features_ecod.csv.gz</span>
+<span class="sd">    │   ├── features_occupancy.csv.gz</span>
+<span class="sd">    │   ├── features_other.csv.gz</span>
+<span class="sd">    │   ├── features_outlier.csv.gz</span>
+<span class="sd">    │   ├── features_sabdab.csv.gz</span>
+<span class="sd">    │   ├── features_scop.csv.gz</span>
+<span class="sd">    │   ├── features_unobserved.csv.gz</span>
+<span class="sd">    │   ├── pfam  [268 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    │   ├── pfam.csv.gz</span>
+<span class="sd">    │   └── query_data  [268 entries exceeds filelimit, not opening dir]</span>
+<span class="sd">    ├── sabdab_metadata.parquet</span>
+<span class="sd">    ├── scored_apo_pairings.parquet</span>
+<span class="sd">    ├── structural_metadata.parquet</span>
+<span class="sd">    ├── supplementary_metadata.parquet</span>
+<span class="sd">    └── test_set_pdbs</span>
+<span class="sd">        ├── 4boq__A1_Q5VVQ6-R.pdb</span>
+<span class="sd">        ├── 4boq__A2_Q5VVQ6-L.pdb</span>
+<span class="sd">        ├── 4boz__A1_Q5VVQ6-R.pdb</span>
+<span class="sd">        ├── 4boz__B1_P0CG48-L.pdb</span>
+<span class="sd">        ├── 5bot__A1_P45452-R.pdb</span>
+<span class="sd">        ├── 5bot__B1_P45452-L.pdb</span>
+<span class="sd">        ├── 8bo1__A1_P68135-L.pdb</span>
+<span class="sd">        ├── 8bo1__B1_A0A9P1NJI6-R.pdb</span>
+<span class="sd">        ├── 8bo8__A1_Q04609-R.pdb</span>
+<span class="sd">        ├── 8bo8__A2_Q04609-L.pdb</span>
+<span class="sd">        ├── 8bos__A1_P01112-L.pdb</span>
+<span class="sd">        ├── 8bos__B1_P20936-R.pdb</span>
+<span class="sd">        ├── 8bou__A1_A0A7G5MNS2-R.pdb</span>
+<span class="sd">        └── 8bou__B1_A0A7G5MNS2-L.pdb</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.data</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">rcsb_rsync</span><span class="p">,</span>
+    <span class="n">get_data</span><span class="p">,</span>
+    <span class="n">get_dimers</span><span class="p">,</span>
+    <span class="n">get_annotations</span><span class="p">,</span>
+    <span class="n">foldseek_utils</span><span class="p">,</span>
+    <span class="n">get_clusters</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pinder.data.pipeline.data_pipeline</span> <span class="kn">import</span> <span class="n">DataIngestPipeline</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="method_main">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.run.method_main">[docs]</a>
+<span class="k">def</span> <span class="nf">method_main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">fire</span>
+
+    <span class="n">fire</span><span class="o">.</span><span class="n">Fire</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;download&quot;</span><span class="p">:</span> <span class="n">rcsb_rsync</span><span class="o">.</span><span class="n">download_rscb_files</span><span class="p">,</span>
+            <span class="s2">&quot;ingest&quot;</span><span class="p">:</span> <span class="n">get_data</span><span class="o">.</span><span class="n">ingest_rscb_files</span><span class="p">,</span>
+            <span class="s2">&quot;annotate&quot;</span><span class="p">:</span> <span class="n">get_annotations</span><span class="o">.</span><span class="n">get_annotations</span><span class="p">,</span>
+            <span class="s2">&quot;collect&quot;</span><span class="p">:</span> <span class="n">get_annotations</span><span class="o">.</span><span class="n">collect</span><span class="p">,</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="n">get_dimers</span><span class="o">.</span><span class="n">index_dimers</span><span class="p">,</span>
+            <span class="s2">&quot;foldseek&quot;</span><span class="p">:</span> <span class="n">foldseek_utils</span><span class="o">.</span><span class="n">run_foldseek_on_pinder_chains</span><span class="p">,</span>
+            <span class="s2">&quot;mmseqs&quot;</span><span class="p">:</span> <span class="n">foldseek_utils</span><span class="o">.</span><span class="n">run_mmseqs_on_pinder_chains</span><span class="p">,</span>
+            <span class="s2">&quot;cluster&quot;</span><span class="p">:</span> <span class="n">get_clusters</span><span class="o">.</span><span class="n">cluster</span><span class="p">,</span>
+            <span class="c1"># &quot;select_benchmark&quot;: select_benchmark.clusters_to_df,</span>
+            <span class="c1"># &quot;add_interface_contact&quot;: contact_classification.get_crystal_contact_parallel,</span>
+            <span class="c1"># &quot;clean&quot;: deleak_edges.find_leaked_edges,</span>
+            <span class="c1"># &quot;split&quot;: select_benchmark.move_raw_files_to_splits,</span>
+        <span class="p">}</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.run.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">fire</span>
+
+    <span class="n">fire</span><span class="o">.</span><span class="n">Fire</span><span class="p">(</span><span class="n">DataIngestPipeline</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

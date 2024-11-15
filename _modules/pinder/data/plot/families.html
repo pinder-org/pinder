@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.plot.families &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/plot/families';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/plot/families.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.plot.families</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.plot.families</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">plotly.graph_objs._figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_index</span><span class="p">,</span> <span class="n">get_metadata</span><span class="p">,</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.log</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.retry</span> <span class="kn">import</span> <span class="n">exponential_retry</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">pc</span><span class="p">,</span> <span class="n">figure_utils</span> <span class="k">as</span> <span class="n">futils</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot</span> <span class="kn">import</span> <span class="n">BarPlot</span><span class="p">,</span> <span class="n">DarkTheme</span><span class="p">,</span> <span class="n">LightTheme</span><span class="p">,</span> <span class="n">Theme</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot.image</span> <span class="kn">import</span> <span class="n">image_grid</span>
+<span class="kn">from</span> <span class="nn">pinder.data.qc</span> <span class="kn">import</span> <span class="n">pfam_diversity</span> <span class="k">as</span> <span class="n">pf</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">pindex</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="copy_pinder_set">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.copy_pinder_set">[docs]</a>
+<span class="k">def</span> <span class="nf">copy_pinder_set</span><span class="p">(</span><span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">meta_sets</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pinder_xl&quot;</span><span class="p">,</span> <span class="s2">&quot;pinder_s&quot;</span><span class="p">,</span> <span class="s2">&quot;pinder_af2&quot;</span><span class="p">]:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pinder_set&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+        <span class="n">meta_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid&quot;</span><span class="p">]:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;split == &quot;</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pinder_set&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">split</span><span class="p">)</span>
+        <span class="n">meta_sets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">meta_sets</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">metadata</span></div>
+
+
+
+<div class="viewcode-block" id="get_pfam_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.get_pfam_metadata">[docs]</a>
+<span class="k">def</span> <span class="nf">get_pfam_metadata</span><span class="p">(</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+    <span class="n">frac_interface_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">min_intersection</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">fig_dir</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+    <span class="n">output_pqt</span> <span class="o">=</span> <span class="n">data_dir</span> <span class="o">/</span> <span class="s2">&quot;pfam_metadata.parquet&quot;</span>
+    <span class="k">if</span> <span class="n">output_pqt</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">pfam_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pfam_meta</span>
+    <span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">pfam_data</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+    <span class="n">pindex_with_RL</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">get_ecod_annotations</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">frac_interface_threshold</span><span class="o">=</span><span class="n">frac_interface_threshold</span><span class="p">,</span>
+        <span class="n">min_intersection</span><span class="o">=</span><span class="n">min_intersection</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">pindex_pfam</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">process_pfam_data</span><span class="p">(</span><span class="n">pindex_with_RL</span><span class="p">,</span> <span class="n">pfam_data</span><span class="p">)</span>
+    <span class="n">pindex_pfam</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pfam_clan&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot; : &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="nb">sorted</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">clan</span> <span class="k">for</span> <span class="n">clan</span> <span class="ow">in</span> <span class="p">[</span><span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">clan</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">clan</span> <span class="o">!=</span> <span class="s2">&quot;no_clan&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">R</span><span class="p">,</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pindex_pfam</span><span class="o">.</span><span class="n">pfam_clan_R</span><span class="p">,</span> <span class="n">pindex_pfam</span><span class="o">.</span><span class="n">pfam_clan_L</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">pindex_pfam</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pindex_pfam</span><span class="o">.</span><span class="n">pfam_clan</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;pfam_clan&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Not defined&quot;</span>
+    <span class="n">pfam_meta</span> <span class="o">=</span> <span class="n">copy_pinder_set</span><span class="p">(</span><span class="n">pfam_meta</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">data_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pfam_meta</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pfam_meta</span></div>
+
+
+
+<div class="viewcode-block" id="get_panther_id">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.get_panther_id">[docs]</a>
+<span class="nd">@exponential_retry</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">exceptions</span><span class="o">=</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,))</span>
+<span class="k">def</span> <span class="nf">get_panther_id</span><span class="p">(</span><span class="n">uniprot_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://rest.uniprot.org/uniprotkb/&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">uniprot_id</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+    <span class="n">failed_response</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="n">uniprot_id</span><span class="p">,</span> <span class="s2">&quot;panther_id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+    <span class="n">panther_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">failed_response</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;DR   PANTHER;&quot;</span><span class="p">):</span>
+            <span class="n">panther_id</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;:SF&quot;</span> <span class="ow">in</span> <span class="n">panther_id</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                    <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;UNCHARACTERIZED&quot;</span>
+                <span class="p">):</span>
+                    <span class="n">panther_info</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="n">uniprot_id</span><span class="p">,</span>
+                        <span class="s2">&quot;panther_id&quot;</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                    <span class="p">}</span>
+                    <span class="k">return</span> <span class="n">panther_info</span>
+                <span class="n">panther_info</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="n">uniprot_id</span><span class="p">,</span>
+                    <span class="s2">&quot;panther_id&quot;</span><span class="p">:</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="n">panther_info</span>
+    <span class="k">return</span> <span class="n">failed_response</span></div>
+
+
+
+<div class="viewcode-block" id="fetch_panther_ids">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.fetch_panther_ids">[docs]</a>
+<span class="k">def</span> <span class="nf">fetch_panther_ids</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">output_pqt</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;panther_ids.parquet&quot;</span>
+    <span class="k">if</span> <span class="n">output_pqt</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">panther_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">panther_df</span>
+
+    <span class="n">all_uniprots</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pindex</span><span class="o">.</span><span class="n">uniprot_R</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pindex</span><span class="o">.</span><span class="n">uniprot_L</span><span class="p">))</span> <span class="o">-</span> <span class="p">{</span><span class="s2">&quot;UNDEFINED&quot;</span><span class="p">}</span>
+    <span class="n">panther_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">uni</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">all_uniprots</span><span class="p">):</span>
+        <span class="n">panther_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_panther_id</span><span class="p">(</span><span class="n">uni</span><span class="p">))</span>
+    <span class="n">panther_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">panther_data</span><span class="p">)</span>
+    <span class="n">panther_df</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">panther_df</span></div>
+
+
+
+<div class="viewcode-block" id="get_panther_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.get_panther_metadata">[docs]</a>
+<span class="k">def</span> <span class="nf">get_panther_metadata</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">fig_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span>
+    <span class="n">data_dir</span> <span class="o">=</span> <span class="n">fig_dir</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+    <span class="n">output_pqt</span> <span class="o">=</span> <span class="n">data_dir</span> <span class="o">/</span> <span class="s2">&quot;panther_class_metadata.parquet&quot;</span>
+    <span class="k">if</span> <span class="n">output_pqt</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">panther_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">panther_meta</span>
+    <span class="n">panther_df</span> <span class="o">=</span> <span class="n">fetch_panther_ids</span><span class="p">(</span><span class="n">pinder_dir</span><span class="o">=</span><span class="n">pinder_dir</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]:</span>
+        <span class="n">panther_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">pindex</span><span class="p">,</span>
+            <span class="n">panther_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;uniprot_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;panther_id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;panther_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+            <span class="p">),</span>
+            <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">panther_meta</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;panther_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">panther_meta</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;panther_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">class_labs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">R</span><span class="p">,</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">panther_meta</span><span class="o">.</span><span class="n">panther_R</span><span class="p">,</span> <span class="n">panther_meta</span><span class="o">.</span><span class="n">panther_L</span><span class="p">):</span>
+        <span class="n">id_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">{</span><span class="n">R</span><span class="p">,</span> <span class="n">L</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">pid</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="n">pid</span> <span class="o">=</span> <span class="n">pid</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+                <span class="n">id_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">id_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">id_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+            <span class="c1"># ID is too long, add a line break between spaces in family ID</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="n">id_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">first_part</span> <span class="o">=</span> <span class="n">parts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">first_part</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">60</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">):</span>
+                <span class="n">first_part</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">parts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">class_pair</span> <span class="o">=</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">first_part</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)])</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot; : &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">id_list</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+            <span class="c1"># ID is too long, add a line break between second ID</span>
+            <span class="n">class_pair</span> <span class="o">=</span> <span class="s2">&quot; :&lt;br&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">id_list</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">class_pair</span> <span class="o">=</span> <span class="s2">&quot; : &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">id_list</span><span class="p">))</span>
+        <span class="n">class_labs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">class_pair</span><span class="p">)</span>
+    <span class="n">panther_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;panther_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">class_labs</span>
+    <span class="n">panther_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">panther_meta</span><span class="o">.</span><span class="n">panther_class</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;panther_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Not defined&quot;</span>
+    <span class="n">panther_meta</span> <span class="o">=</span> <span class="n">copy_pinder_set</span><span class="p">(</span><span class="n">panther_meta</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">data_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">panther_meta</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">output_pqt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">panther_meta</span></div>
+
+
+
+<div class="viewcode-block" id="family_diversity_bar_plot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.family_diversity_bar_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">family_diversity_bar_plot</span><span class="p">(</span>
+    <span class="n">class_size</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">pinder_set</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">class_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pfam_clan&quot;</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="n">class_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">(),</span>
+    <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1800</span><span class="p">,</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1200</span><span class="p">,</span>
+    <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Figure</span><span class="p">:</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">LABELS</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">class_label</span><span class="p">:</span>
+        <span class="n">labels</span><span class="p">[</span><span class="n">class_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">class_label</span>
+
+    <span class="n">bp</span> <span class="o">=</span> <span class="n">BarPlot</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">class_size</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">&#39;pinder_set == &quot;</span><span class="si">{</span><span class="n">pinder_set</span><span class="si">}</span><span class="s1">&quot; and </span><span class="si">{</span><span class="n">class_col</span><span class="si">}</span><span class="s1"> != &quot;Not defined&quot;&#39;</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;percent_reps&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">top_n</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;percent_reps&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;percent_reps&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">class_col</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pinder_set&quot;</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;percent_reps&quot;</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+        <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">pc</span><span class="o">.</span><span class="n">split_color_map</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+        <span class="n">grid_x</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+        <span class="n">grid_y</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+        <span class="n">hide_legend_title</span><span class="o">=</span><span class="n">hide_legend_title</span><span class="p">,</span>
+        <span class="n">hide_yaxis_title</span><span class="o">=</span><span class="n">hide_yaxis_title</span><span class="p">,</span>
+        <span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">class_col</span><span class="p">,</span><span class="w"> </span><span class="n">class_col</span><span class="p">)</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">pinder_set</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">l</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+            <span class="n">r</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+            <span class="n">b</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+            <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="family_grid_plot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.family_grid_plot">[docs]</a>
+<span class="k">def</span> <span class="nf">family_grid_plot</span><span class="p">(</span>
+    <span class="n">family_metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">class_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+    <span class="n">include_invalid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">random_cluster_rep</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+    <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">subdir_name</span> <span class="o">=</span> <span class="n">class_col</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+    <span class="n">fig_subdir</span> <span class="o">=</span> <span class="n">fig_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subdir_name</span><span class="si">}</span><span class="s2">-diversity&quot;</span>
+    <span class="k">if</span> <span class="n">random_cluster_rep</span><span class="p">:</span>
+        <span class="n">cluster_reps</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">family_metadata</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">class_col</span><span class="si">}</span><span class="s1"> != &quot;Not defined&quot;&#39;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">class_col</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pinder_set&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cluster_reps</span> <span class="o">=</span> <span class="n">family_metadata</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">class_size</span> <span class="o">=</span> <span class="n">cluster_reps</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;pinder_set&quot;</span><span class="p">,</span> <span class="n">class_col</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">tot_size</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">cluster_reps</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;pinder_set&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">size</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;total_systems&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">class_size</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">class_size</span><span class="p">,</span> <span class="n">tot_size</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+    <span class="n">class_size</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;percent_reps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">class_size</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">class_size</span><span class="p">[</span><span class="s2">&quot;total_systems&quot;</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="n">pc</span><span class="o">.</span><span class="n">split_color_map</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">include_invalid</span> <span class="ow">and</span> <span class="n">split</span> <span class="o">==</span> <span class="s2">&quot;Invalid&quot;</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">png_file</span> <span class="o">=</span> <span class="n">fig_subdir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">subdir_name</span><span class="si">}</span><span class="s2">-barplot.png&quot;</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">family_diversity_bar_plot</span><span class="p">(</span>
+            <span class="n">class_size</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">class_col</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="n">top_n</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span>
+        <span class="p">)</span>
+        <span class="n">futils</span><span class="o">.</span><span class="n">write_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">png_file</span><span class="p">)</span>
+        <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">png_file</span><span class="p">)</span>
+
+    <span class="n">image_grid</span><span class="p">(</span>
+        <span class="n">images</span><span class="p">,</span>
+        <span class="n">per_row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">top</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># 0.99,</span>
+        <span class="n">hspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># 0.01,</span>
+        <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># 0.99,</span>
+        <span class="n">wspace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># 0.01,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span>
+        <span class="n">img_width</span><span class="o">=</span><span class="mi">1100</span><span class="p">,</span>
+        <span class="n">img_height</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
+        <span class="n">output_png</span><span class="o">=</span><span class="n">fig_subdir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subdir_name</span><span class="si">}</span><span class="s2">-split-diversity-grid.</span><span class="si">{</span><span class="nb">format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.families.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+    <span class="n">theme_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>
+    <span class="n">include_invalid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">random_cluster_rep</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">()</span> <span class="k">if</span> <span class="n">theme_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;light&quot;</span> <span class="k">else</span> <span class="n">DarkTheme</span><span class="p">()</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating PFAM clan plots...&quot;</span><span class="p">)</span>
+    <span class="n">family_grid_plot</span><span class="p">(</span>
+        <span class="n">get_pfam_metadata</span><span class="p">(),</span>
+        <span class="n">class_col</span><span class="o">=</span><span class="s2">&quot;pfam_clan&quot;</span><span class="p">,</span>
+        <span class="n">fig_dir</span><span class="o">=</span><span class="n">fig_dir</span><span class="p">,</span>
+        <span class="n">include_invalid</span><span class="o">=</span><span class="n">include_invalid</span><span class="p">,</span>
+        <span class="n">random_cluster_rep</span><span class="o">=</span><span class="n">random_cluster_rep</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating panther class plots...&quot;</span><span class="p">)</span>
+    <span class="n">family_grid_plot</span><span class="p">(</span>
+        <span class="n">get_panther_metadata</span><span class="p">(),</span>
+        <span class="n">class_col</span><span class="o">=</span><span class="s2">&quot;panther_class&quot;</span><span class="p">,</span>
+        <span class="n">fig_dir</span><span class="o">=</span><span class="n">fig_dir</span><span class="p">,</span>
+        <span class="n">include_invalid</span><span class="o">=</span><span class="n">include_invalid</span><span class="p">,</span>
+        <span class="n">random_cluster_rep</span><span class="o">=</span><span class="n">random_cluster_rep</span><span class="p">,</span>
+        <span class="n">top_n</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1082 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.eval.dockq package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.eval.dockq';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.eval.dockq.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.methods package" href="pinder.methods.html" />
+    <link rel="prev" title="pinder.eval.clashes package" href="pinder.eval.clashes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.core.html">pinder.core package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.annotation.html">pinder.data.annotation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.pipeline.html">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.qc.html">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pinder.eval.html">pinder.eval package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="pinder.eval.html" class="nav-link">pinder.eval package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.eval.dockq package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-eval-dockq-package">
+<h1>pinder.eval.dockq package<a class="headerlink" href="#pinder-eval-dockq-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.eval.dockq.biotite_dockq">
+<span id="pinder-eval-dockq-biotite-dockq-module"></span><h2>pinder.eval.dockq.biotite_dockq module<a class="headerlink" href="#module-pinder.eval.dockq.biotite_dockq" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.get_irmsd_interface">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.biotite_dockq.</span></span><span class="sig-name descname"><span class="pre">get_irmsd_interface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heavy_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interface_cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/biotite_dockq.py#L31-L57"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#get_irmsd_interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.get_irmsd_interface" title="Link to this definition">#</a></dt>
+<dd><p>Get the residues part of the interface by chain, using a more permissive
+contact distance cutofff definition of 10A.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.DecoyDockQ">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.biotite_dockq.</span></span><span class="sig-name descname"><span class="pre">DecoyDockQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AtomArrayStack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition" title="pinder.core.structure.models.BackboneDefinition"><span class="pre">BackboneDefinition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_contacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/biotite_dockq.py#L60-L206"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#DecoyDockQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_metrics">
+<span class="sig-name descname"><span class="pre">get_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#DecoyDockQ.get_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_lrmsd">
+<span class="sig-name descname"><span class="pre">get_lrmsd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#DecoyDockQ.get_lrmsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_lrmsd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_irmsd">
+<span class="sig-name descname"><span class="pre">get_irmsd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#DecoyDockQ.get_irmsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_irmsd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_decoy_contacts">
+<span class="sig-name descname"><span class="pre">get_decoy_contacts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#DecoyDockQ.get_decoy_contacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_decoy_contacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.biotite_dockq.</span></span><span class="sig-name descname"><span class="pre">BiotiteDockQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_receptor_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_ligand_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy_receptor_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy_ligand_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fastpdb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition" title="pinder.core.structure.models.BackboneDefinition"><span class="pre">BackboneDefinition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'dockq'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel_io</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/biotite_dockq.py#L209-L477"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Biotite interface for fast calculation of DockQ and CAPRI metrics.</p>
+<p>Takes as input one native and all it’s decoys
+from arbitrary number of methods to compare.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.calculate">
+<span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.calculate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.calculate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.get_native_contacts">
+<span class="sig-name descname"><span class="pre">get_native_contacts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.get_native_contacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.get_native_contacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.prepare_inputs">
+<span class="sig-name descname"><span class="pre">prepare_inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.prepare_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.prepare_inputs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.read_decoys">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_decoys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decoys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AtomArray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.read_decoys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.read_decoys" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.create_decoy_stack">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_decoy_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">AtomArray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AtomArrayStack</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">AtomArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.create_decoy_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.create_decoy_stack" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.biotite_dockq.BiotiteDockQ.set_common">
+<span class="sig-name descname"><span class="pre">set_common</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/biotite_dockq.html#BiotiteDockQ.set_common"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.set_common" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pinder.eval.dockq.method">
+<span id="pinder-eval-dockq-method-module"></span><h2>pinder.eval.dockq.method module<a class="headerlink" href="#module-pinder.eval.dockq.method" title="Link to this heading">#</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.InvalidChainsError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">InvalidChainsError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L36-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#InvalidChainsError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.InvalidChainsError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.TooFewChainsError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">TooFewChainsError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L42-L50"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#TooFewChainsError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.TooFewChainsError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pinder.eval.dockq.method.InvalidChainsError" title="pinder.eval.dockq.method.InvalidChainsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidChainsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.ExpectedChainsNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">ExpectedChainsNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L53-L61"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#ExpectedChainsNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.ExpectedChainsNotFoundError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pinder.eval.dockq.method.InvalidChainsError" title="pinder.eval.dockq.method.InvalidChainsError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidChainsError</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.validate_system_id">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">validate_system_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L68-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#validate_system_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.validate_system_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_valid_eval_systems">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_valid_eval_systems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L75-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_valid_eval_systems"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_valid_eval_systems" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.SubsetIds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">SubsetIds</span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L132-L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#SubsetIds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.SubsetIds" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TypedDict</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.SubsetIds.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pinder.eval.dockq.method.SubsetIds.count" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.SubsetIds.ids">
+<span class="sig-name descname"><span class="pre">ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pinder.eval.dockq.method.SubsetIds.ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_expected_counts">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_expected_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#pinder.eval.dockq.method.SubsetIds" title="pinder.eval.dockq.method.SubsetIds"><span class="pre">SubsetIds</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L137-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_expected_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_expected_counts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.summarize_valid_systems">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">summarize_valid_systems</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L155-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#summarize_valid_systems"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.summarize_valid_systems" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.download_entry">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">download_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry" title="pinder.core.index.utils.IndexEntry"><span class="pre">IndexEntry</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L231-L235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#download_entry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.download_entry" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_eval_metrics">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_eval_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel_io</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L238-L354"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_eval_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_eval_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.safe_get_eval_metrics">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">safe_get_eval_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel_io</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L357-L373"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#safe_get_eval_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.safe_get_eval_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_eval_metrics_all_methods">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_eval_metrics_all_methods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L376-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_eval_metrics_all_methods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_eval_metrics_all_methods" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_method_eval_metrics">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_method_eval_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_dirs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.DatasetName" title="pinder.core.structure.models.DatasetName"><span class="pre">DatasetName</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monomer_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.MonomerName" title="pinder.core.structure.models.MonomerName"><span class="pre">MonomerName</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L396-L420"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_method_eval_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_method_eval_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.add_pinder_set">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">add_pinder_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_missing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L423-L483"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#add_pinder_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.add_pinder_set" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.get_missing_system_penalty_metrics">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">get_missing_system_penalty_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monomer_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty_rmsd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L486-L512"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#get_missing_system_penalty_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.get_missing_system_penalty_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.CapriClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">CapriClass</span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L515-L528"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#CapriClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.CapriClass" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.method.</span></span><span class="sig-name descname"><span class="pre">MethodMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_missing_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/method.py#L531-L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.metrics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.metrics" title="Link to this definition">#</a></dt>
+<dd><p>The metrics table for the evaluation. If not yet computed, it is computed and cached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.Dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.add_rank_column">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add_rank_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank_regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.add_rank_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.add_rank_column" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.get_metrics">
+<span class="sig-name descname"><span class="pre">get_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.get_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.get_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.oracle_median_summary">
+<span class="sig-name descname"><span class="pre">oracle_median_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.oracle_median_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.oracle_median_summary" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.get_leaderboard_entry">
+<span class="sig-name descname"><span class="pre">get_leaderboard_entry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.get_leaderboard_entry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.get_leaderboard_entry" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.median_oracle">
+<span class="sig-name descname"><span class="pre">median_oracle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.median_oracle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.median_oracle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.get_hit_rates">
+<span class="sig-name descname"><span class="pre">get_hit_rates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sys_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.get_hit_rates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.get_hit_rates" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.top_k">
+<span class="sig-name descname"><span class="pre">top_k</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.top_k"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.top_k" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.top_k_oracle">
+<span class="sig-name descname"><span class="pre">top_k_oracle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.top_k_oracle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.top_k_oracle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.top_percentile">
+<span class="sig-name descname"><span class="pre">top_percentile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.top_percentile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.top_percentile" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.system_oracle">
+<span class="sig-name descname"><span class="pre">system_oracle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.system_oracle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.system_oracle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.system_median">
+<span class="sig-name descname"><span class="pre">system_median</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.system_median"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.system_median" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.method_median">
+<span class="sig-name descname"><span class="pre">method_median</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.method_median"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.method_median" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.method_oracle">
+<span class="sig-name descname"><span class="pre">method_oracle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.method_oracle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.method_oracle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.system_capri_hit_rate">
+<span class="sig-name descname"><span class="pre">system_capri_hit_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.system_capri_hit_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.system_capri_hit_rate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.median_capri_hit_rate">
+<span class="sig-name descname"><span class="pre">median_capri_hit_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.median_capri_hit_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.median_capri_hit_rate" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.eval.dockq.method.MethodMetrics.histogram_plot">
+<span class="sig-name descname"><span class="pre">histogram_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/eval/dockq/method.html#MethodMetrics.histogram_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.method.MethodMetrics.histogram_plot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pinder.eval.dockq.metrics">
+<span id="pinder-eval-dockq-metrics-module"></span><h2>pinder.eval.dockq.metrics module<a class="headerlink" href="#module-pinder.eval.dockq.metrics" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.get_interface_mask">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">get_interface_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AtomArrayStack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">bool_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L12-L40"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#get_interface_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.get_interface_mask" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.calc_irmsd">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">calc_irmsd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decoy_stack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArrayStack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy2native_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calpha_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition" title="pinder.core.structure.models.BackboneDefinition"><span class="pre">BackboneDefinition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L43-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#calc_irmsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.calc_irmsd" title="Link to this definition">#</a></dt>
+<dd><p>Get interface RMSD after superposition of interface backbone atoms.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.get_receptor_masks">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">get_receptor_masks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy_stack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArrayStack</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">bool_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">bool_</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L108-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#get_receptor_masks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.get_receptor_masks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.calc_lrmsd">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">calc_lrmsd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decoy_stack</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArrayStack</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoy2native_res</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calpha_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backbone_definition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition" title="pinder.core.structure.models.BackboneDefinition"><span class="pre">BackboneDefinition</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'dockq'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L118-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#calc_lrmsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.calc_lrmsd" title="Link to this definition">#</a></dt>
+<dd><p>Get ligand body Calpha or backbone RMSD.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.calc_fnat">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">calc_fnat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decoy_contacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_contacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig" title="pinder.core.structure.models.ChainConfig"><span class="pre">ChainConfig</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L183-L206"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#calc_fnat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.calc_fnat" title="Link to this definition">#</a></dt>
+<dd><p>Get fraction of native contacts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>decoy_stack</strong><span class="classifier">AtomArrayStack</span></dt><dd><p>Stack of AtomArray containing decoys (models)</p>
+</dd>
+<dt><strong>native_contacts</strong><span class="classifier">set[tuple[str, str, int, int]]</span></dt><dd><p>Residue contact pairs in native. See dockq.contacts.pairwise_contacts</p>
+</dd>
+<dt><strong>chains</strong><span class="classifier">ChainConfig</span></dt><dd><p>Chain config object defining receptor and ligand chain pairings.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ndarray</dt><dd><p>Numpy array of fnat values for each decoy in the stack.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.get_dockq_score">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">get_dockq_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_rmsd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_rmsd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L209-L234"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#get_dockq_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.get_dockq_score" title="Link to this definition">#</a></dt>
+<dd><p>Get DockQ scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>i_rmsd</strong><span class="classifier">ndarray | float</span></dt><dd><p>interface rmsd</p>
+</dd>
+<dt><strong>l_rmsd</strong><span class="classifier">ndarray | float</span></dt><dd><p>ligand rmsd</p>
+</dd>
+<dt><strong>fnat</strong><span class="classifier">ndarray | float</span></dt><dd><p>fraction of native contact</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ndarray | float</dt><dd><p>DockQ score</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.metrics.capri_class">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.metrics.</span></span><span class="sig-name descname"><span class="pre">capri_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fnat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iRMS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LRMS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capri_peptide</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/metrics.py#L237-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/metrics.html#capri_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.metrics.capri_class" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.eval.dockq.unbound">
+<span id="pinder-eval-dockq-unbound-module"></span><h2>pinder.eval.dockq.unbound module<a class="headerlink" href="#module-pinder.eval.dockq.unbound" title="Link to this heading">#</a></h2>
+<p>Assess difficulty of unbound monomer or dimer with respect to bound holo.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.get_db4_difficulty">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">get_db4_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">irmsd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnonnat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L24-L31"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#get_db4_difficulty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.get_db4_difficulty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.fnat_unbound_summary">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">fnat_unbound_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bound_contacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unbound_contacts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L34-L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#fnat_unbound_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.fnat_unbound_summary" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.get_corresponding_residues">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">get_corresponding_residues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">res_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L72-L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#get_corresponding_residues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.get_corresponding_residues" title="Link to this definition">#</a></dt>
+<dd><p>Get corresponding residues with default mapping.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.filter_interface_intersect">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">filter_interface_intersect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">holo_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_interface</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holo2apo_seq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo2holo_seq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'R'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'L'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">AtomArray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">AtomArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L87-L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#filter_interface_intersect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.filter_interface_intersect" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.get_unbound_interface_metrics">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">get_unbound_interface_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">holo_complex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_RL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">R_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holo2apo_seq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo2holo_seq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L137-L210"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#get_unbound_interface_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.get_unbound_interface_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.get_unbound_difficulty">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">get_unbound_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">holo_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">holo_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L213-L238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#get_unbound_difficulty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.get_unbound_difficulty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.dockq.unbound.get_apo_monomer_difficulty">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.dockq.unbound.</span></span><span class="sig-name descname"><span class="pre">get_apo_monomer_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">holo_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">holo_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_mono</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure" title="pinder.core.loader.structure.Structure"><span class="pre">Structure</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/dockq/unbound.py#L241-L274"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/dockq/unbound.html#get_apo_monomer_difficulty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.dockq.unbound.get_apo_monomer_difficulty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.eval.dockq">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.eval.dockq" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.dockq.biotite_dockq">pinder.eval.dockq.biotite_dockq module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.get_irmsd_interface"><code class="docutils literal notranslate"><span class="pre">get_irmsd_interface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_metrics"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_lrmsd"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_lrmsd()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_irmsd"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_irmsd()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_decoy_contacts"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_decoy_contacts()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.calculate"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.calculate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.get_native_contacts"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.get_native_contacts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.prepare_inputs"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.prepare_inputs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.read_decoys"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.read_decoys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.create_decoy_stack"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.create_decoy_stack()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.set_common"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.set_common()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.dockq.method">pinder.eval.dockq.method module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.InvalidChainsError"><code class="docutils literal notranslate"><span class="pre">InvalidChainsError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.TooFewChainsError"><code class="docutils literal notranslate"><span class="pre">TooFewChainsError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.ExpectedChainsNotFoundError"><code class="docutils literal notranslate"><span class="pre">ExpectedChainsNotFoundError</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.validate_system_id"><code class="docutils literal notranslate"><span class="pre">validate_system_id()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_valid_eval_systems"><code class="docutils literal notranslate"><span class="pre">get_valid_eval_systems()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.SubsetIds"><code class="docutils literal notranslate"><span class="pre">SubsetIds</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.SubsetIds.count"><code class="docutils literal notranslate"><span class="pre">SubsetIds.count</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.SubsetIds.ids"><code class="docutils literal notranslate"><span class="pre">SubsetIds.ids</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_expected_counts"><code class="docutils literal notranslate"><span class="pre">get_expected_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.summarize_valid_systems"><code class="docutils literal notranslate"><span class="pre">summarize_valid_systems()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.download_entry"><code class="docutils literal notranslate"><span class="pre">download_entry()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_eval_metrics"><code class="docutils literal notranslate"><span class="pre">get_eval_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.safe_get_eval_metrics"><code class="docutils literal notranslate"><span class="pre">safe_get_eval_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_eval_metrics_all_methods"><code class="docutils literal notranslate"><span class="pre">get_eval_metrics_all_methods()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_method_eval_metrics"><code class="docutils literal notranslate"><span class="pre">get_method_eval_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.add_pinder_set"><code class="docutils literal notranslate"><span class="pre">add_pinder_set()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.get_missing_system_penalty_metrics"><code class="docutils literal notranslate"><span class="pre">get_missing_system_penalty_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.CapriClass"><code class="docutils literal notranslate"><span class="pre">CapriClass</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.metrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.metrics</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.add_rank_column"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.add_rank_column()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.get_metrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.oracle_median_summary"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.oracle_median_summary()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.get_leaderboard_entry"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_leaderboard_entry()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.median_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.median_oracle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.get_hit_rates"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_hit_rates()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.top_k"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_k()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.top_k_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_k_oracle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.top_percentile"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_percentile()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.system_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_oracle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.system_median"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_median()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.method_median"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.method_median()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.method_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.method_oracle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.system_capri_hit_rate"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_capri_hit_rate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.median_capri_hit_rate"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.median_capri_hit_rate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.method.MethodMetrics.histogram_plot"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.histogram_plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.dockq.metrics">pinder.eval.dockq.metrics module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.get_interface_mask"><code class="docutils literal notranslate"><span class="pre">get_interface_mask()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.calc_irmsd"><code class="docutils literal notranslate"><span class="pre">calc_irmsd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.get_receptor_masks"><code class="docutils literal notranslate"><span class="pre">get_receptor_masks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.calc_lrmsd"><code class="docutils literal notranslate"><span class="pre">calc_lrmsd()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.calc_fnat"><code class="docutils literal notranslate"><span class="pre">calc_fnat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.get_dockq_score"><code class="docutils literal notranslate"><span class="pre">get_dockq_score()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.metrics.capri_class"><code class="docutils literal notranslate"><span class="pre">capri_class()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.dockq.unbound">pinder.eval.dockq.unbound module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.get_db4_difficulty"><code class="docutils literal notranslate"><span class="pre">get_db4_difficulty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.fnat_unbound_summary"><code class="docutils literal notranslate"><span class="pre">fnat_unbound_summary()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.get_corresponding_residues"><code class="docutils literal notranslate"><span class="pre">get_corresponding_residues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.filter_interface_intersect"><code class="docutils literal notranslate"><span class="pre">filter_interface_intersect()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.get_unbound_interface_metrics"><code class="docutils literal notranslate"><span class="pre">get_unbound_interface_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.get_unbound_difficulty"><code class="docutils literal notranslate"><span class="pre">get_unbound_difficulty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.dockq.unbound.get_apo_monomer_difficulty"><code class="docutils literal notranslate"><span class="pre">get_apo_monomer_difficulty()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.dockq">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.eval.dockq.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.eval.dockq.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.annotation.sabdab &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/annotation/sabdab';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/annotation/sabdab.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.annotation.sabdab</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.annotation.sabdab</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.data.csv_utils</span> <span class="kn">import</span> <span class="n">read_csv_non_default_na</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="download_sabdab">
+<a class="viewcode-back" href="../../../../source/pinder.data.annotation.html#pinder.data.annotation.sabdab.download_sabdab">[docs]</a>
+<span class="k">def</span> <span class="nf">download_sabdab</span><span class="p">(</span>
+    <span class="n">download_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;sabdab_summary_all.tsv&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/&quot;</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">download_dir</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+        <span class="n">download_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">download_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">download_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">download_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">download_dir</span> <span class="o">/</span> <span class="n">filename</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">overwrite</span> <span class="ow">and</span> <span class="n">filepath</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">filepath</span>
+
+    <span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filepath</span></div>
+
+
+
+<div class="viewcode-block" id="explode_sabdab_per_chain">
+<a class="viewcode-back" href="../../../../source/pinder.data.annotation.html#pinder.data.annotation.sabdab.explode_sabdab_per_chain">[docs]</a>
+<span class="k">def</span> <span class="nf">explode_sabdab_per_chain</span><span class="p">(</span>
+    <span class="n">sabdab_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Explode sabdab table to be per chain for all columns that map to multiple values within single row</span>
+    <span class="n">explode_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">c</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sabdab_df</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">if</span> <span class="n">sabdab_df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+    <span class="p">]</span>
+    <span class="n">explode</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sabdab_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">long_vals</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">explode_cols</span><span class="p">:</span>
+            <span class="c1"># Convert NA | NA ... to NaN | NaN</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">val</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;NA&quot;</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+                    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+                <span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="n">c</span><span class="p">]]</span>
+            <span class="n">long_vals</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+        <span class="c1"># Ensure all exploded values are same length (e.g., antigen_species may not be same length)</span>
+        <span class="n">max_items</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">long_vals</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">long_vals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_items</span><span class="p">:</span>
+                <span class="n">long_vals</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_items</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))]</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">long_vals</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">row_vals</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">long_vals</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+            <span class="c1"># Copy full row and replace condensed columns with exploded values</span>
+            <span class="n">row_dict</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+            <span class="n">update_vals</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">row_vals</span><span class="p">)}</span>
+            <span class="n">row_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">update_vals</span><span class="p">)</span>
+            <span class="n">explode</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_dict</span><span class="p">)</span>
+    <span class="n">long_sabdab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">explode</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">long_sabdab</span></div>
+
+
+
+<div class="viewcode-block" id="map_to_pinder_chains">
+<a class="viewcode-back" href="../../../../source/pinder.data.annotation.html#pinder.data.annotation.sabdab.map_to_pinder_chains">[docs]</a>
+<span class="k">def</span> <span class="nf">map_to_pinder_chains</span><span class="p">(</span>
+    <span class="n">chains</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">sabdab</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Create fake chain since sabdab sometimes uses one-letter author chain</span>
+    <span class="c1"># despite multi-letter author chain in RCSB (e.g. H vs. HHH)</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_strand_id_R_alt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="o">.</span><span class="n">pdb_strand_id_R</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_strand_id_L_alt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="o">.</span><span class="n">pdb_strand_id_L</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_strand_id_R_lowercase&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="o">.</span><span class="n">pdb_strand_id_R_alt</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_strand_id_L_lowercase&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="o">.</span><span class="n">pdb_strand_id_L_alt</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]:</span>
+        <span class="c1"># First prioritize merging on un-modified pdb_strand_id columns</span>
+        <span class="n">chains</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">chains</span><span class="p">,</span>
+            <span class="n">sabdab</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;sabdab_type&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;pdb_strand_id_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">chains</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="c1"># Find systems without a match and attempt to match on first character of pdb_strand_id</span>
+        <span class="n">chains_defined</span> <span class="o">=</span> <span class="n">chains</span><span class="p">[</span><span class="n">chains</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">chains_undefined</span> <span class="o">=</span> <span class="n">chains</span><span class="p">[</span><span class="n">chains</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">chains_undefined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">chains_undefined</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+            <span class="n">sabdab</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;sabdab_type&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;pdb_strand_id_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_alt&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">chains_undefined</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains_undefined</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span>
+            <span class="s2">&quot;&quot;</span>
+        <span class="p">)</span>
+        <span class="c1"># Combine the two attempts at matching</span>
+        <span class="n">chains</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">chains_defined</span><span class="p">,</span> <span class="n">chains_undefined</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">add_match_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sabdab_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Hchain&quot;</span><span class="p">,</span> <span class="s2">&quot;Lchain&quot;</span><span class="p">,</span> <span class="s2">&quot;antigen_chain&quot;</span><span class="p">]:</span>
+        <span class="c1"># Find systems without a match and attempt to match on lower-case version of pdb_strand_id</span>
+        <span class="n">missing_type</span> <span class="o">=</span> <span class="n">chains</span><span class="p">[</span>
+            <span class="o">~</span><span class="n">chains</span><span class="o">.</span><span class="n">sabdab_R</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">sabdab_type</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="o">~</span><span class="n">chains</span><span class="o">.</span><span class="n">sabdab_L</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">sabdab_type</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]:</span>
+            <span class="n">missing_side</span> <span class="o">=</span> <span class="n">missing_type</span><span class="p">[</span>
+                <span class="o">~</span><span class="n">missing_type</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">sabdab_type</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">missing_side</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+                <span class="n">missing_side</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">),</span>
+                <span class="n">sabdab</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;sabdab_type&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;pdb_strand_id_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_lowercase&quot;</span><span class="p">,</span>
+                    <span class="p">},</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="p">),</span>
+                <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">missing_side</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">missing_side</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">matched</span> <span class="o">=</span> <span class="n">missing_side</span><span class="p">[</span><span class="n">missing_side</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;sabdab_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+                <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="n">add_match_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matched</span><span class="p">)</span>
+    <span class="n">add_matches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">add_match_list</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Combine all attempts at matching</span>
+    <span class="n">combined_matches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">chains</span><span class="p">,</span> <span class="n">add_matches</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">group_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">combined_matches</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;sabdab_&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="c1"># Condense multiple matches to a single pinder chain (e.g. chain R can be both H and L chain)</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="n">combined_matches</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">group_cols</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;sabdab_R&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s2">&quot;sabdab_L&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">))}</span>
+    <span class="p">)</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;contains_antigen&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_R</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span>
+        <span class="s2">&quot;antigen&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span> <span class="o">|</span> <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_L</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;antigen&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">chains</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;contains_antibody&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_R</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Hchain&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">|</span> <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_L</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Hchain&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">|</span> <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_R</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Lchain&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">|</span> <span class="n">chains</span><span class="o">.</span><span class="n">sabdab_L</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Lchain&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">chains</span></div>
+
+
+
+<div class="viewcode-block" id="map_to_sabdab_db">
+<a class="viewcode-back" href="../../../../source/pinder.data.annotation.html#pinder.data.annotation.sabdab.map_to_sabdab_db">[docs]</a>
+<span class="k">def</span> <span class="nf">map_to_sabdab_db</span><span class="p">(</span>
+    <span class="n">chains_long</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">sabdab_long</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Set a `pinder_monomer` column corresponding to the R/L holo PDB.</span>
+    <span class="n">pinder_monomer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">body</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">chains_long</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">chains_long</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]):</span>
+        <span class="n">id_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">body</span> <span class="o">==</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span>
+        <span class="n">monomer</span> <span class="o">=</span> <span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)[</span><span class="n">id_idx</span><span class="p">]</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;-</span><span class="si">{</span><span class="n">body</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">pinder_monomer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">monomer</span><span class="p">)</span>
+
+    <span class="n">chains_long</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pinder_monomer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_monomer</span>
+
+    <span class="n">sabdab_with_pinder</span> <span class="o">=</span> <span class="n">sabdab_long</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">sabdab_type</span><span class="p">,</span> <span class="n">chains_df</span> <span class="ow">in</span> <span class="n">chains_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;sabdab_type&quot;</span><span class="p">):</span>
+        <span class="n">chains_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Don&#39;t merge with NaNs here</span>
+        <span class="n">sabdab_type_df</span> <span class="o">=</span> <span class="n">sabdab_with_pinder</span><span class="p">[</span>
+            <span class="o">~</span><span class="n">sabdab_with_pinder</span><span class="p">[</span><span class="n">sabdab_type</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">sabdab_type_na</span> <span class="o">=</span> <span class="n">sabdab_with_pinder</span><span class="p">[</span>
+            <span class="n">sabdab_with_pinder</span><span class="p">[</span><span class="n">sabdab_type</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Create single string of pinder IDs and pinder monomer IDs that match the row instance in sabdab</span>
+        <span class="n">chains_condensed</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">chains_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+                    <span class="s2">&quot;pinder_monomer&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="n">sabdab_type</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_ids&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pinder_monomer&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_monomers&quot;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sabdab_type_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">sabdab_type_df</span><span class="p">,</span>
+            <span class="n">chains_condensed</span><span class="p">[</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span>
+                    <span class="n">sabdab_type</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_ids&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_monomers&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">],</span>
+            <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">sabdab_with_pinder</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">sabdab_type_df</span><span class="p">,</span> <span class="n">sabdab_type_na</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sabdab_with_pinder</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sabdab_with_pinder</span><span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_ids&quot;</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">sabdab_with_pinder</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_monomers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sabdab_with_pinder</span><span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;pinder_</span><span class="si">{</span><span class="n">sabdab_type</span><span class="si">}</span><span class="s2">_monomers&quot;</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sabdab_with_pinder</span></div>
+
+
+
+<div class="viewcode-block" id="add_sabdab_annotations">
+<a class="viewcode-back" href="../../../../source/pinder.data.annotation.html#pinder.data.annotation.sabdab.add_sabdab_annotations">[docs]</a>
+<span class="k">def</span> <span class="nf">add_sabdab_annotations</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">sabdab_checkpoint</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;sabdab_metadata.parquet&quot;</span>
+    <span class="k">if</span> <span class="n">sabdab_checkpoint</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sabdab_checkpoint</span><span class="si">}</span><span class="s2"> exists, skipping...&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">sabdab_tsv</span> <span class="o">=</span> <span class="n">download_sabdab</span><span class="p">(</span><span class="n">download_dir</span><span class="o">=</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;external_annotations&quot;</span><span class="p">)</span>
+    <span class="c1"># In this case, we DONT want to read the csv with non-default NA since sabdab uses `NA` to denote `NaN` / not defined.</span>
+    <span class="c1"># Unfortunately, this means there is no distinction for cases where asym_id/pdb_strand_id = &quot;NA&quot; literal</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sabdab_tsv</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">},</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="p">{</span><span class="s2">&quot;pdb&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">long_sabdab</span> <span class="o">=</span> <span class="n">explode_sabdab_per_chain</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">sabdab_chains</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">long_sabdab</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+            <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Lchain&quot;</span><span class="p">,</span> <span class="s2">&quot;Hchain&quot;</span><span class="p">,</span> <span class="s2">&quot;antigen_chain&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;sabdab_type&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">sabdab_chains</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">sabdab_chains</span><span class="p">[</span><span class="o">~</span><span class="n">sabdab_chains</span><span class="o">.</span><span class="n">pdb_strand_id</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">condensed</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">sabdab_chains</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">])[</span><span class="s2">&quot;sabdab_type&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">chain_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;chain_metadata.parquet&quot;</span><span class="p">)</span>
+    <span class="n">chain_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain_meta</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+    <span class="n">meta_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">]</span>
+    <span class="n">chain_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chain_cols</span><span class="p">:</span>
+        <span class="n">meta_cols</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_R&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">_L&quot;</span><span class="p">])</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="n">chain_meta</span><span class="p">[</span><span class="n">meta_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="n">map_to_pinder_chains</span><span class="p">(</span><span class="n">chains</span><span class="p">,</span> <span class="n">condensed</span><span class="p">)</span>
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.1.csv.gz&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="c1"># Drop the columns if they were previously added</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;contains_antibody&quot;</span><span class="p">,</span> <span class="s2">&quot;contains_antigen&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">,</span> <span class="n">chains</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;contains_antibody&quot;</span><span class="p">,</span> <span class="s2">&quot;contains_antigen&quot;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span>
+    <span class="p">)</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.1.csv.gz&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Now prepare an auxillary metadata table which contains pinder info mapped to the sabdab table schema.</span>
+    <span class="n">chains_long</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">chains</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_R&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_L&quot;</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;pdb_strand_id_R&quot;</span><span class="p">:</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_L&quot;</span><span class="p">:</span> <span class="s2">&quot;L&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># Include fake chain names</span>
+    <span class="n">chains_alt</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">chains</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_R_alt&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_L_alt&quot;</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;pdb_strand_id_R_alt&quot;</span><span class="p">:</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id_L_alt&quot;</span><span class="p">:</span> <span class="s2">&quot;L&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">chains_long</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">chains_long</span><span class="p">,</span> <span class="n">chains_alt</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;body&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Merge long-form chain metadata with long-form pinder-mapped sabdab_type per chain</span>
+    <span class="n">chains_long</span> <span class="o">=</span> <span class="n">chains_long</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sabdab_chains</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+    <span class="c1"># Find chains without a match and attempt to match on lower-case variant</span>
+    <span class="n">unmatched</span> <span class="o">=</span> <span class="n">chains_long</span><span class="p">[</span><span class="n">chains_long</span><span class="o">.</span><span class="n">sabdab_type</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lower_match</span> <span class="o">=</span> <span class="n">unmatched</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">sabdab_chains</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+    <span class="n">lower_match</span> <span class="o">=</span> <span class="n">lower_match</span><span class="p">[</span><span class="o">~</span><span class="n">lower_match</span><span class="o">.</span><span class="n">sabdab_type</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">chains_long</span> <span class="o">=</span> <span class="n">chains_long</span><span class="p">[</span><span class="o">~</span><span class="n">chains_long</span><span class="o">.</span><span class="n">sabdab_type</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">chains_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">chains_long</span><span class="p">,</span> <span class="n">lower_match</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">sabdab_with_pinder</span> <span class="o">=</span> <span class="n">map_to_sabdab_db</span><span class="p">(</span><span class="n">chains_long</span><span class="p">,</span> <span class="n">long_sabdab</span><span class="p">)</span>
+    <span class="n">sabdab_with_pinder</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">sabdab_checkpoint</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+:root {
+    --codeBackgroundColor: #f8f8f8;
+    --inlineCodeBackgroundColor: #f8f8f8;
+    --codeBlue: #0000ff;
+    --codeGreen: #008000;
+    --dividerColor: rgba(0, 0, 0, 0.08);
+    --faintFontColor: rgba(0, 0, 0, 0.6);
+    --fontColor: #252630;
+    --linkColor: #2980b9;
+    --mainBackgroundColor: white;
+    --mainNavColor: #673ab7;
+    --notificationBannerColor: #176bb0;
+    --searchHighlightColor: #fff150;
+    --sidebarColor: white;
+    --mystnb-source-bg-color: #071222;
+    --mystnb-stdout-bg-color: #29313d;
+    --mystnb-stderr-bg-color: #0c061a;
+    --mystnb-traceback-bg-color: #fcfcfc;
+    --mystnb-source-border-color: #ccc;
+    --mystnb-source-margin-color: #fd4ecb;
+    --mystnb-stdout-border-color: #f7f7f7;
+    --mystnb-stderr-border-color: #f7f7f7;
+    --mystnb-traceback-border-color: #ffd6d6;
+    --mystnb-hide-prompt-opacity: 70%;
+    --mystnb-source-border-radius: .4em;
+    --mystnb-source-border-width: 1px;
+}
+
+
+:root[data-mode=dark] body[data-dark_mode_code_blocks=true] .highlight, :root[data-mode=darkest] body[data-dark_mode_code_blocks=true] .highlight {
+    --black: #000000;
+    --red: #ff9393;
+    --darkBlue: #3a37ff;
+    --grey: #a8a8a8;
+    --pink: #ff99d8;
+    --torquoise: #68e9e9;
+    --brown: #d48a00;
+    --purple: #ce04e9;
+    --paleYellow: #454534;
+    background: var(--codeBackgroundColor);
+    color: var(--fontColor);
+}
+
+
+div.cell div.cell_input, div.cell details.above-input>summary {
+    padding-left: 0em;
+    padding-right: 0em;
+    border: var(--mystnb-source-border-width) var(--mystnb-source-border-color) solid;
+    background-color: var(--mystnb-source-bg-color);
+    border-left-color: var(--mystnb-source-margin-color);
+    border-left-width: medium;
+    border-radius: var(--mystnb-source-border-radius);
+}
+
+
+div.cell_output table {
+  color: #a8a8a8;
+}
+
+
+div.document div.documentwrapper {
+    max-width: 80rem;
+}
+
+
+div#top_nav nav h1 img {
+  height: 2.5rem;
+  width: auto;
+}
+
+div#top_nav nav {
+  background-image: linear-gradient(90deg, #5E35B1 10%, #6f42c1 30%, #dc5da2);
+}
+
+.classifier {
+  padding-left: 0.5rem;
+}
+
+
+html {
+  --pst-font-family-base: "Geologica", "Sans-Serif";
+  --pst-font-family-heading: "Montserrat", "Sans-Serif";
+  --pst-font-weight-heading: 700;
+}
+
+html[data-theme=light] {
+  --pst-color-primary: #da5da4;
+  --pst-color-primary-highlight: #da5da4;
+  --pst-color-secondary: #5c7ec0;
+  --pst-color-secondary-highlight: #5c7ec0;
+  --pst-color-accent: #a05ba4;
+  --pst-color-inline-code: #a05ba4;
+  --pst-color-inline-code-links: #a05ba4;
+  --pst-color-table-row-hover-bg: #dddad7;
+  --pst-color-text-muted: #dea7e0;
+}
+
+html[data-theme=dark] {
+  --pst-color-primary: #da5da4;
+  --pst-color-primary-highlight: #da5da4;
+  --pst-color-secondary: #5c7ec0;
+  --pst-color-secondary-highlight: #5c7ec0;
+  --pst-color-accent: #a05ba4;
+  --pst-color-inline-code: #a05ba4;
+  --pst-color-inline-code-links: #a05ba4;
+  --pst-color-table-row-hover-bg: #dddad7;
+}
+
+
+/* Separation between methods in the API reference */
+.py.method, .py.attribute{
+  border-top: 1px solid #cccccc;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* The tutorial buttons on the home page */
+.main-button {
+  padding-right: 20px;
+  align-self: center;
+}
+
+/* The tutorial button icons on the home page */
+svg.main-button-icon path {
+  fill: var(--pst-color-primary);
+}
+
+.bd-header {
+  background-image: linear-gradient(90deg, #5E35B1 10%, #6f42c1 30%, #dc5da2);
+}
+
+@media (min-width: 960px) {
+  .bd-page-width {
+      max-width: 100rem;
+  }
+}

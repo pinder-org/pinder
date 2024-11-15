@@ -1,0 +1,1095 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.plot.structure_case_studies &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/plot/structure_case_studies';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/plot/structure_case_studies.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.plot.structure_case_studies</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.plot.structure_case_studies</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">colorsys</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">from</span> <span class="nn">colormath.color_objects</span> <span class="kn">import</span> <span class="n">sRGBColor</span><span class="p">,</span> <span class="n">LabColor</span>
+<span class="kn">from</span> <span class="nn">colormath.color_conversions</span> <span class="kn">import</span> <span class="n">convert_color</span>
+
+
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">pc</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot.image</span> <span class="kn">import</span> <span class="n">image_grid</span>
+<span class="kn">from</span> <span class="nn">pinder.data.plot.performance</span> <span class="kn">import</span> <span class="n">get_dockq_metrics</span>
+
+<span class="n">pinder_root</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="get_oracle_per_id_monomer_method">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.get_oracle_per_id_monomer_method">[docs]</a>
+<span class="k">def</span> <span class="nf">get_oracle_per_id_monomer_method</span><span class="p">(</span><span class="n">dockq</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">oracle</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">oracle</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oracle</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">oracle</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="n">oracle</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">oracle</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+    <span class="n">oracle</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id_monomer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">oracle</span><span class="o">.</span><span class="n">pdb_id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">oracle</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="k">return</span> <span class="n">oracle</span></div>
+
+
+
+<div class="viewcode-block" id="get_case_subset">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.get_case_subset">[docs]</a>
+<span class="k">def</span> <span class="nf">get_case_subset</span><span class="p">(</span><span class="n">oracle_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">id_monomers</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">case_subset</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">oracle_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;id_monomer_name in </span><span class="si">{</span><span class="n">id_monomers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;method_name&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;DockQ&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;eval_dir&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;decoy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;receptor_chain&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ligand_chain&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pdb_id_monomer&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">case_subset</span></div>
+
+
+
+<div class="viewcode-block" id="clamp_rgb_value">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.clamp_rgb_value">[docs]</a>
+<span class="k">def</span> <span class="nf">clamp_rgb_value</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clamp the RGB values to ensure they are within the valid range [0, 1].&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="generate_color_palette">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.generate_color_palette">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_color_palette</span><span class="p">(</span>
+    <span class="n">n_methods</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="n">lightness_shift</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a color palette with n_methods distinct colors,</span>
+<span class="sd">    and for each color, generate a lighter/darker shade with better perceptual distinction.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n_methods : int, optional</span>
+<span class="sd">        Number of methods, by default 12.</span>
+<span class="sd">    lightness_shift : float, optional</span>
+<span class="sd">        Amount to lighten/darken for the paired color, by default 0.2.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict[int, str]</span>
+<span class="sd">        A dictionary of colors with keys as method numbers and values as hex codes.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">base_colors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">paired_colors</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Generate base colors evenly spaced around the color wheel</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_methods</span><span class="p">):</span>
+        <span class="n">hue</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">n_methods</span>
+        <span class="n">base_color</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span>
+            <span class="n">hue</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span>
+        <span class="p">)</span>  <span class="c1"># Saturated, medium lightness color</span>
+
+        <span class="c1"># Convert to Lab color space for perceptually uniform adjustments</span>
+        <span class="n">rgb_base</span> <span class="o">=</span> <span class="n">sRGBColor</span><span class="p">(</span><span class="n">base_color</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">base_color</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">base_color</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">lab_base</span> <span class="o">=</span> <span class="n">convert_color</span><span class="p">(</span><span class="n">rgb_base</span><span class="p">,</span> <span class="n">LabColor</span><span class="p">)</span>
+
+        <span class="c1"># Adjust lightness for the paired color</span>
+        <span class="n">lab_lighter</span> <span class="o">=</span> <span class="n">LabColor</span><span class="p">(</span>
+            <span class="n">lab_base</span><span class="o">.</span><span class="n">lab_l</span> <span class="o">+</span> <span class="n">lightness_shift</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">lab_base</span><span class="o">.</span><span class="n">lab_a</span><span class="p">,</span> <span class="n">lab_base</span><span class="o">.</span><span class="n">lab_b</span>
+        <span class="p">)</span>
+        <span class="n">rgb_lighter</span> <span class="o">=</span> <span class="n">convert_color</span><span class="p">(</span><span class="n">lab_lighter</span><span class="p">,</span> <span class="n">sRGBColor</span><span class="p">)</span>
+
+        <span class="c1"># Convert to hex and clamp values to valid range</span>
+        <span class="n">base_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;#&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">clamp_rgb_value</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rgb_base</span><span class="o">.</span><span class="n">get_value_tuple</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">paired_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="s2">&quot;#&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">clamp_rgb_value</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span><span class="si">:</span><span class="s2">02x</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rgb_lighter</span><span class="o">.</span><span class="n">get_value_tuple</span><span class="p">()</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">palette</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">base_colors</span><span class="p">,</span> <span class="n">paired_colors</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">palette</span></div>
+
+
+
+<div class="viewcode-block" id="generate_chimerax_native_pred_overlay">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.generate_chimerax_native_pred_overlay">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_chimerax_native_pred_overlay</span><span class="p">(</span>
+    <span class="n">native</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">models</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">color_palette</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">native_R_chain</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span>
+    <span class="n">native_L_chain</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span><span class="p">,</span>
+    <span class="n">pad</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">script</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">open </span><span class="si">{</span><span class="n">native</span><span class="si">}</span>
+<span class="s2">select #1/</span><span class="si">{</span><span class="n">native_R_chain</span><span class="si">}</span>
+<span class="s2">color sel dark gray</span>
+<span class="s2">select #1/</span><span class="si">{</span><span class="n">native_L_chain</span><span class="si">}</span>
+<span class="s2">color sel light gray</span>
+<span class="s2">set bgColor white</span>
+<span class="s2">graphics silhouettes true</span>
+<span class="s2">graphics silhouettes width 4</span>
+<span class="s2">select subtract #1</span>
+<span class="s2">lighting shadows false</span>
+<span class="s2">lighting gentle</span>
+<span class="s2">preset &#39;overall look&#39; &#39;publication 2 (depth-cued)&#39;</span>
+<span class="s2">select #1/R</span>
+<span class="s2">color sel #8b8b8bff</span>
+<span class="s2">select #1/L</span>
+<span class="s2">color sel dark gray</span>
+<span class="s2">select #1/R</span>
+<span class="s2">color sel dim gray</span>
+<span class="s2">select #1/L</span>
+<span class="s2">color sel light gray</span>
+<span class="s2">select subtract #1</span>
+<span class="s2">select subtract #2</span>
+<span class="s2">hide target p</span>
+<span class="s2">lighting flat</span>
+<span class="s2">lighting soft</span>
+<span class="s2">graphics silhouettes true</span>
+<span class="s2">graphics silhouettes width 5</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="n">model_start</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+        <span class="n">R_color</span><span class="p">,</span> <span class="n">L_color</span> <span class="o">=</span> <span class="n">color_palette</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="s2">&quot;method_name&quot;</span><span class="p">])]</span>
+        <span class="n">R_ch</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s2">&quot;R_chain&quot;</span><span class="p">]</span>
+        <span class="n">L_ch</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s2">&quot;L_chain&quot;</span><span class="p">]</span>
+        <span class="n">model_idx</span> <span class="o">=</span> <span class="n">model_start</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="n">script</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;open </span><span class="si">{</span><span class="n">model</span><span class="p">[</span><span class="s1">&#39;path&#39;</span><span class="p">]</span><span class="si">}</span>
+<span class="s2">        select #</span><span class="si">{</span><span class="n">model_idx</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">R_ch</span><span class="si">}</span>
+<span class="s2">        color sel </span><span class="si">{</span><span class="n">R_color</span><span class="si">}</span>
+<span class="s2">        sel #</span><span class="si">{</span><span class="n">model_idx</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">L_ch</span><span class="si">}</span>
+<span class="s2">        color sel </span><span class="si">{</span><span class="n">L_color</span><span class="si">}</span>
+<span class="s2">        select subtract #</span><span class="si">{</span><span class="n">model_idx</span><span class="si">}</span>
+<span class="s2">        mmaker #</span><span class="si">{</span><span class="n">model_idx</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">R_ch</span><span class="si">}</span><span class="s2"> to #1/</span><span class="si">{</span><span class="n">native_R_chain</span><span class="si">}</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+    <span class="n">script</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    select #1-</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span>
+<span class="s2">    view sel orient pad </span><span class="si">{</span><span class="n">pad</span><span class="si">}</span>
+<span class="s2">    select subtract #1-</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">model_start</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">label_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="n">label_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+        <span class="n">rest</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">model_start</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">model_png_file</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s2">&quot;png_file&quot;</span><span class="p">]</span>
+        <span class="n">model_idx</span> <span class="o">=</span> <span class="n">model_start</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="n">label1</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s2">&quot;method_name&quot;</span><span class="p">]</span>
+        <span class="n">label2</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="n">label_count</span> <span class="o">+=</span> <span class="mi">2</span>
+        <span class="n">script</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        show #!</span><span class="si">{</span><span class="n">model_idx</span><span class="si">}</span><span class="s2"> models</span>
+<span class="s2">        hide #!</span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s2"> models</span>
+<span class="s2">        hide #!1 models</span>
+<span class="s2">        hide target p</span>
+<span class="s2">        windowsize width 2432 height 1462</span>
+<span class="s2">        hide atoms</span>
+<span class="s2">        save </span><span class="si">{</span><span class="n">model_png_file</span><span class="si">}</span><span class="s2"> width 2432 height 1462 supersample 4 transparentBackground true</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+    <span class="n">pdb_id</span><span class="p">,</span> <span class="n">method_n</span><span class="p">,</span> <span class="n">mono_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">model_png_file</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">native_png</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">--native--</span><span class="si">{</span><span class="n">mono_name</span><span class="si">}</span><span class="s2">.png&quot;</span>
+    <span class="n">native_png_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">model_png_file</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="n">native_png</span>
+    <span class="n">rest</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">model_start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))])</span>
+    <span class="n">script</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    hide #!</span><span class="si">{</span><span class="n">rest</span><span class="si">}</span><span class="s2"> models</span>
+<span class="s2">    show #!1 models</span>
+<span class="s2">    hide target p</span>
+<span class="s2">    windowsize width 2432 height 1462</span>
+<span class="s2">    hide atoms</span>
+<span class="s2">    save </span><span class="si">{</span><span class="n">native_png_file</span><span class="si">}</span><span class="s2"> width 2432 height 1462 supersample 4 transparentBackground true</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">script</span></div>
+
+
+
+<div class="viewcode-block" id="generate_chimera_grid_scripts">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.generate_chimera_grid_scripts">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_chimera_grid_scripts</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">cxs_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">group_label</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">color_pal</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">gcs_model_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">cxs_dir</span> <span class="o">=</span> <span class="n">cxs_dir</span> <span class="o">/</span> <span class="n">group_label</span>
+    <span class="n">cxs_png_dir</span> <span class="o">=</span> <span class="n">cxs_dir</span> <span class="o">/</span> <span class="s2">&quot;images&quot;</span>
+    <span class="n">cxs_png_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cxs_script_dir</span> <span class="o">=</span> <span class="n">cxs_dir</span> <span class="o">/</span> <span class="s2">&quot;scripts&quot;</span>
+    <span class="n">cxs_script_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">structure_dir</span> <span class="o">=</span> <span class="n">cxs_dir</span> <span class="o">/</span> <span class="s2">&quot;structures&quot;</span>
+    <span class="n">structure_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">model_info</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">method_name</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;method_name&quot;</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">gcs_uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gcs_model_root</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">eval_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">method_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">monomer_name</span><span class="si">}</span><span class="s2">_decoys/</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">decoy</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">id_monomer_dir</span> <span class="o">=</span> <span class="n">structure_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">__</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">monomer_name</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">id_monomer_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">native</span> <span class="o">=</span> <span class="n">pinder_root</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.pdb&quot;</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">id_monomer_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">method_name</span><span class="si">}</span><span class="s2">__</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">decoy</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gsutil cp </span><span class="si">{</span><span class="n">gcs_uri</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">pdb_id</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+            <span class="n">method_name</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">pc</span><span class="o">.</span><span class="n">METHOD_LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">method_name</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">method_name</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/br&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;(PDB ID: </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">, DockQ: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">DockQ</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="n">png_file</span> <span class="o">=</span> <span class="n">cxs_png_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">--</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">method_name</span><span class="si">}</span><span class="s2">--</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">monomer_name</span><span class="si">}</span><span class="s2">.png&quot;</span>
+            <span class="n">model_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+                    <span class="s2">&quot;method_name&quot;</span><span class="p">:</span> <span class="n">method_name</span><span class="p">,</span>
+                    <span class="s2">&quot;R_chain&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">receptor_chain</span><span class="p">,</span>
+                    <span class="s2">&quot;L_chain&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">ligand_chain</span><span class="p">,</span>
+                    <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+                    <span class="s2">&quot;png_file&quot;</span><span class="p">:</span> <span class="n">png_file</span><span class="p">,</span>
+                    <span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">DockQ</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="n">monomer_name</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">monomer_name</span>
+
+    <span class="n">padding</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.6</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">group_label</span> <span class="o">==</span> <span class="s2">&quot;oracle_hardest_mean&quot;</span>
+        <span class="ow">and</span> <span class="n">pdb_id</span> <span class="o">==</span> <span class="s2">&quot;1GH7&quot;</span>
+        <span class="ow">and</span> <span class="n">monomer_name</span> <span class="o">==</span> <span class="s2">&quot;apo&quot;</span>
+    <span class="p">):</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">group_label</span> <span class="o">==</span> <span class="s2">&quot;oracle_singleton&quot;</span>
+        <span class="ow">and</span> <span class="n">pdb_id</span> <span class="o">==</span> <span class="s2">&quot;7QBM&quot;</span>
+        <span class="ow">and</span> <span class="n">monomer_name</span> <span class="o">==</span> <span class="s2">&quot;predicted&quot;</span>
+    <span class="p">):</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
+
+    <span class="n">script</span> <span class="o">=</span> <span class="n">generate_chimerax_native_pred_overlay</span><span class="p">(</span>
+        <span class="n">native</span><span class="p">,</span>
+        <span class="n">model_info</span><span class="p">,</span>
+        <span class="n">color_pal</span><span class="p">,</span>
+        <span class="n">pad</span><span class="o">=</span><span class="n">padding</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cxs_script_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">png_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.cxc&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model_info</span></div>
+
+
+
+<div class="viewcode-block" id="get_case_data">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.get_case_data">[docs]</a>
+<span class="k">def</span> <span class="nf">get_case_data</span><span class="p">(</span><span class="n">dockq</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+    <span class="n">oracle_data</span> <span class="o">=</span> <span class="n">get_oracle_per_id_monomer_method</span><span class="p">(</span><span class="n">dockq</span><span class="p">)</span>
+    <span class="n">dockq_cases</span> <span class="o">=</span> <span class="n">dockq</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">dockq_cases</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">dockq_cases</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+    <span class="n">dockq_cases</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id_monomer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq_cases</span><span class="o">.</span><span class="n">pdb_id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">dockq_cases</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">easiest_mean</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq_cases</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">easiest_mean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">easiest_mean</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">easiest_mean</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">oracle_easiest_mean</span> <span class="o">=</span> <span class="n">get_case_subset</span><span class="p">(</span>
+        <span class="n">oracle_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">easiest_mean</span><span class="o">.</span><span class="n">id_monomer_name</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Use different PDB IDs for oracle max mean to get larger representative set</span>
+    <span class="n">oracle_mean_easiest</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq_cases</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pdb_id not in </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">oracle_easiest_mean</span><span class="o">.</span><span class="n">pdb_id</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">oracle_mean_easiest</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">oracle_mean_easiest</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">oracle_mean_easiest</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">oracle_max_mean</span> <span class="o">=</span> <span class="n">get_case_subset</span><span class="p">(</span>
+        <span class="n">oracle_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">oracle_mean_easiest</span><span class="o">.</span><span class="n">id_monomer_name</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">hardest_mean</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">hardest_mean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">hardest_mean</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">hardest_mean</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">oracle_hardest_mean</span> <span class="o">=</span> <span class="n">get_case_subset</span><span class="p">(</span>
+        <span class="n">oracle_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">hardest_mean</span><span class="o">.</span><span class="n">id_monomer_name</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">oracle_variable</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">dockq</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="s2">&quot;std&quot;</span><span class="p">})</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">oracle_variable</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">oracle_variable</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">oracle_variable</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">oracle_max_var</span> <span class="o">=</span> <span class="n">get_case_subset</span><span class="p">(</span><span class="n">oracle_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">oracle_variable</span><span class="o">.</span><span class="n">id_monomer_name</span><span class="p">))</span>
+    <span class="n">max_delta_lst</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">monomer_name</span><span class="p">),</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">oracle_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">]):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">dq_delta</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;method_name&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;DockQ&quot;</span><span class="p">]]</span>
+            <span class="o">.</span><span class="n">DockQ</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">dq_max</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">DockQ</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">dq_max_method</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">method_name</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">max_delta_lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span>
+                <span class="s2">&quot;monomer_name&quot;</span><span class="p">:</span> <span class="n">monomer_name</span><span class="p">,</span>
+                <span class="s2">&quot;best_method&quot;</span><span class="p">:</span> <span class="n">dq_max_method</span><span class="p">,</span>
+                <span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="n">dq_max</span><span class="p">,</span>
+                <span class="s2">&quot;DockQ_delta&quot;</span><span class="p">:</span> <span class="n">dq_delta</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">max_delta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">max_delta_lst</span><span class="p">)</span>
+    <span class="n">singleton_methods</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">max_delta</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ_delta&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">singleton_methods</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;id_monomer_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">singleton_methods</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;--&quot;</span> <span class="o">+</span> <span class="n">singleton_methods</span><span class="o">.</span><span class="n">monomer_name</span>
+    <span class="p">)</span>
+    <span class="n">oracle_singleton</span> <span class="o">=</span> <span class="n">get_case_subset</span><span class="p">(</span>
+        <span class="n">oracle_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">singleton_methods</span><span class="o">.</span><span class="n">id_monomer_name</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Check if we have any duplicate representative systems across cases</span>
+    <span class="n">cases</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;oracle_singleton&quot;</span><span class="p">:</span> <span class="n">oracle_singleton</span><span class="p">,</span>
+        <span class="s2">&quot;oracle_max_var&quot;</span><span class="p">:</span> <span class="n">oracle_max_var</span><span class="p">,</span>
+        <span class="s2">&quot;oracle_max_mean&quot;</span><span class="p">:</span> <span class="n">oracle_max_mean</span><span class="p">,</span>
+        <span class="s2">&quot;oracle_easiest_mean&quot;</span><span class="p">:</span> <span class="n">oracle_easiest_mean</span><span class="p">,</span>
+        <span class="s2">&quot;oracle_hardest_mean&quot;</span><span class="p">:</span> <span class="n">oracle_hardest_mean</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">cases</span></div>
+
+
+
+<div class="viewcode-block" id="get_method_color_palette">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.get_method_color_palette">[docs]</a>
+<span class="k">def</span> <span class="nf">get_method_color_palette</span><span class="p">(</span><span class="n">dockq</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+    <span class="c1"># dockq = dockq.query(f&#39;method_name in {list(keep_methods)}&#39;).reset_index(drop=True)</span>
+    <span class="n">methods</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">dockq</span><span class="o">.</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="n">color_pal</span> <span class="o">=</span> <span class="n">generate_color_palette</span><span class="p">(</span><span class="n">n_methods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">methods</span><span class="p">),</span> <span class="n">lightness_shift</span><span class="o">=</span><span class="mf">0.55</span><span class="p">)</span>
+    <span class="n">method_pal</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">method_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">methods</span><span class="p">))):</span>
+        <span class="n">method_label</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">pc</span><span class="o">.</span><span class="n">METHOD_LABELS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method_name</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/br&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">method_pal</span><span class="p">[</span><span class="n">method_label</span><span class="p">]</span> <span class="o">=</span> <span class="n">color_pal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">color_bar</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">color_bar_map</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">cgroup</span> <span class="ow">in</span> <span class="n">method_pal</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">color_bar</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Method&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">--R&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+        <span class="n">color_bar</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;Method&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">--L&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+        <span class="n">color_bar_map</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">--R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cgroup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">color_bar_map</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">--L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cgroup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">color_bar</span><span class="p">),</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Method&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">color_bar_map</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Method&quot;</span><span class="p">,</span>
+        <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">method_pal</span></div>
+
+
+
+<div class="viewcode-block" id="generate_case_scripts">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.generate_case_scripts">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_case_scripts</span><span class="p">(</span>
+    <span class="n">cases</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+    <span class="n">color_pal</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">gcs_model_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">cxs_dir</span> <span class="o">=</span> <span class="n">fig_dir</span> <span class="o">/</span> <span class="s2">&quot;chimerax_example_structures&quot;</span>
+    <span class="n">cxs_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">group_label</span><span class="p">,</span> <span class="n">case_data</span> <span class="ow">in</span> <span class="n">cases</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">monomer_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">case_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">):</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">generate_chimera_grid_scripts</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span>
+                <span class="n">cxs_dir</span><span class="p">,</span>
+                <span class="n">group_label</span><span class="p">,</span>
+                <span class="n">color_pal</span><span class="o">=</span><span class="n">color_pal</span><span class="p">,</span>
+                <span class="n">gcs_model_root</span><span class="o">=</span><span class="n">gcs_model_root</span><span class="p">,</span>
+            <span class="p">)</span>
+    <span class="n">scripts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">subdir</span> <span class="ow">in</span> <span class="n">cxs_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">subdir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="n">scripts</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">((</span><span class="n">subdir</span> <span class="o">/</span> <span class="s2">&quot;scripts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.cxc&quot;</span><span class="p">)))</span>
+    <span class="n">task_file</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">scripts</span><span class="p">:</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ChimeraX --script </span><span class="si">{</span><span class="n">script</span><span class="si">}</span><span class="s2"> --exit;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">task_file</span> <span class="o">+=</span> <span class="n">task</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cxs_dir</span> <span class="o">/</span> <span class="s2">&quot;run_scripts.list&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">task_file</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_case_image_grids">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.generate_case_image_grids">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_case_image_grids</span><span class="p">(</span>
+    <span class="n">cases</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span>
+    <span class="n">color_pal</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">gcs_model_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">cxs_dir</span> <span class="o">=</span> <span class="n">fig_dir</span> <span class="o">/</span> <span class="s2">&quot;chimerax_example_structures&quot;</span>
+    <span class="k">for</span> <span class="n">group_label</span><span class="p">,</span> <span class="n">case_data</span> <span class="ow">in</span> <span class="n">cases</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">monomer_name</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">case_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;monomer_name&quot;</span><span class="p">):</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">model_info</span> <span class="o">=</span> <span class="n">generate_chimera_grid_scripts</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span>
+                <span class="n">cxs_dir</span><span class="p">,</span>
+                <span class="n">group_label</span><span class="p">,</span>
+                <span class="n">color_pal</span><span class="o">=</span><span class="n">color_pal</span><span class="p">,</span>
+                <span class="n">gcs_model_root</span><span class="o">=</span><span class="n">gcs_model_root</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">model_info</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">model_info</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;DockQ&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">model_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;valid_file&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">model_info</span><span class="o">.</span><span class="n">png_file</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">model_info</span> <span class="o">=</span> <span class="n">model_info</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;valid_file&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">model_images</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">model_info</span><span class="o">.</span><span class="n">png_file</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">model_info</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">pdb_id</span><span class="p">,</span> <span class="n">method_n</span><span class="p">,</span> <span class="n">mono_name</span> <span class="o">=</span> <span class="n">model_images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+            <span class="n">native_png</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">--native--</span><span class="si">{</span><span class="n">mono_name</span><span class="si">}</span><span class="s2">.png&quot;</span>
+            <span class="n">native_png_file</span> <span class="o">=</span> <span class="n">model_images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="n">native_png</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">native_png_file</span><span class="p">]</span> <span class="o">+</span> <span class="n">model_images</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ground truth&quot;</span><span class="p">]</span>
+            <span class="n">labels</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="se">\n</span><span class="s1">(</span><span class="si">{</span><span class="n">label</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+                    <span class="k">for</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                        <span class="n">model_info</span><span class="o">.</span><span class="n">method_name</span><span class="p">,</span> <span class="n">model_info</span><span class="o">.</span><span class="n">label</span>
+                    <span class="p">)</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+                <span class="n">per_row</span> <span class="o">=</span> <span class="mi">5</span>
+            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">per_row</span> <span class="o">=</span> <span class="mi">3</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">per_row</span> <span class="o">=</span> <span class="mi">4</span>
+            <span class="n">top_adjust</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="mf">0.9</span>
+                <span class="k">if</span> <span class="n">pdb_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;6BYI&quot;</span><span class="p">,</span> <span class="s2">&quot;8CZP&quot;</span><span class="p">,</span> <span class="s2">&quot;7KAZ&quot;</span><span class="p">,</span> <span class="s2">&quot;6XA0&quot;</span><span class="p">,</span> <span class="s2">&quot;4Z5Y&quot;</span><span class="p">,</span> <span class="s2">&quot;3GPN&quot;</span><span class="p">]</span>
+                <span class="k">else</span> <span class="mf">0.99</span>
+            <span class="p">)</span>
+            <span class="n">hspace</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="mf">0.3</span>
+                <span class="k">if</span> <span class="n">pdb_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;6BYI&quot;</span><span class="p">,</span> <span class="s2">&quot;8CZP&quot;</span><span class="p">,</span> <span class="s2">&quot;7KAZ&quot;</span><span class="p">,</span> <span class="s2">&quot;6XA0&quot;</span><span class="p">,</span> <span class="s2">&quot;4Z5Y&quot;</span><span class="p">,</span> <span class="s2">&quot;3GPN&quot;</span><span class="p">]</span>
+                <span class="k">else</span> <span class="mf">0.01</span>
+            <span class="p">)</span>
+            <span class="n">bottom_adjust</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="k">if</span> <span class="n">pdb_id</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;6BYI&quot;</span><span class="p">,</span> <span class="s2">&quot;8CZP&quot;</span><span class="p">,</span> <span class="s2">&quot;6XA0&quot;</span><span class="p">,</span> <span class="s2">&quot;4Z5Y&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">image_grid</span><span class="p">(</span>
+                <span class="n">images</span><span class="p">,</span>
+                <span class="n">labels</span><span class="p">,</span>
+                <span class="n">pdb_id</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">,</span>
+                <span class="n">per_row</span><span class="o">=</span><span class="n">per_row</span><span class="p">,</span>
+                <span class="n">top</span><span class="o">=</span><span class="n">top_adjust</span><span class="p">,</span>
+                <span class="n">bottom</span><span class="o">=</span><span class="n">bottom_adjust</span><span class="p">,</span>
+                <span class="n">hspace</span><span class="o">=</span><span class="n">hspace</span><span class="p">,</span>
+                <span class="n">right</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
+                <span class="n">wspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+                <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+                <span class="n">output_png</span><span class="o">=</span><span class="n">cxs_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">group_label</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">monomer_name</span><span class="si">}</span><span class="s2">_grid.</span><span class="si">{</span><span class="nb">format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.structure_case_studies.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span>
+    <span class="n">gcs_model_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">fig_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;publication_figures&quot;</span><span class="p">,</span>
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">dockq</span> <span class="o">=</span> <span class="n">get_dockq_metrics</span><span class="p">()</span>
+    <span class="n">cases</span> <span class="o">=</span> <span class="n">get_case_data</span><span class="p">(</span><span class="n">dockq</span><span class="p">)</span>
+    <span class="n">color_pal</span> <span class="o">=</span> <span class="n">get_method_color_palette</span><span class="p">(</span><span class="n">dockq</span><span class="p">)</span>
+    <span class="n">generate_case_scripts</span><span class="p">(</span>
+        <span class="n">cases</span><span class="o">=</span><span class="n">cases</span><span class="p">,</span> <span class="n">color_pal</span><span class="o">=</span><span class="n">color_pal</span><span class="p">,</span> <span class="n">gcs_model_root</span><span class="o">=</span><span class="n">gcs_model_root</span><span class="p">,</span> <span class="n">fig_dir</span><span class="o">=</span><span class="n">fig_dir</span>
+    <span class="p">)</span>
+    <span class="c1"># Now collate the images into a single png/pdf in a grid</span>
+    <span class="n">generate_case_image_grids</span><span class="p">(</span>
+        <span class="n">cases</span><span class="p">,</span>
+        <span class="n">color_pal</span><span class="p">,</span>
+        <span class="n">gcs_model_root</span><span class="o">=</span><span class="n">gcs_model_root</span><span class="p">,</span>
+        <span class="n">fig_dir</span><span class="o">=</span><span class="n">fig_dir</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

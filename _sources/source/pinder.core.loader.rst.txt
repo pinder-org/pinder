@@ -1,0 +1,77 @@
+pinder.core.loader package
+==========================
+
+Submodules
+----------
+
+pinder.core.loader.dataset module
+---------------------------------
+
+.. automodule:: pinder.core.loader.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.filters module
+---------------------------------
+
+.. automodule:: pinder.core.loader.filters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.geodata module
+---------------------------------
+
+.. automodule:: pinder.core.loader.geodata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.loader module
+--------------------------------
+
+.. automodule:: pinder.core.loader.loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.structure module
+-----------------------------------
+
+.. automodule:: pinder.core.loader.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.transforms module
+------------------------------------
+
+.. automodule:: pinder.core.loader.transforms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.utils module
+-------------------------------
+
+.. automodule:: pinder.core.loader.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.core.loader.writer module
+--------------------------------
+
+.. automodule:: pinder.core.loader.writer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.core.loader
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+pinder.methods.run.hdock package
+================================
+
+Submodules
+----------
+
+pinder.methods.run.hdock.predict module
+---------------------------------------
+
+.. automodule:: pinder.methods.run.hdock.predict
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.run.hdock
+   :members:
+   :undoc-members:
+   :show-inheritance:

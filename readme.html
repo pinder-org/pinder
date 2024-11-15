@@ -1,0 +1,1824 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting started &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/readme.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="PINDER: The Protein INteraction Dataset and Evaluation Resource" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting started</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p><img alt="pinder" src="https://github.com/pinder-org/pinder/raw/main/assets/pinder.png" /></p>
+<div align="center">
+    <h1>PINDER: The Protein INteraction Dataset and Evaluation Resource</h1>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://pypi.org/project/pinder/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pinder" /></a>
+<a class="reference external" href="https://github.com/pinder-org/pinder/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
+<a class="reference external" href="https://github.com/pinder-org/pinder/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/pinder-org/pinder" /></a>
+<a class="reference external" href="https://github.com/pinder-org/pinder/actions/workflows/pr.yaml"><img alt="test" src="https://github.com/pinder-org/pinder/actions/workflows/pr.yaml/badge.svg" /></a>
+<a class="reference external" href="https://codecov.io/gh/pinder-org/pinder"><img alt="codecov" src="https://codecov.io/gh/pinder-org/pinder/graph/badge.svg?token=NPQAYW75OD" /></a></p>
+<section id="about">
+<h2>📚 About<a class="headerlink" href="#about" title="Link to this heading">#</a></h2>
+<p><strong>pinder</strong>, short for <strong>p</strong>rotein <strong>in</strong>teraction <strong>d</strong>ataset and <strong>e</strong>valuation <strong>r</strong>esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is ~500x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.</p>
+<p>The dataset is large (~700Gb) and hosted on Google Cloud Storage (available at the <code class="docutils literal notranslate"><span class="pre">gs://pinder</span></code> bucket).</p>
+</section>
+<section id="id1">
+<h2>👨‍💻 Getting Started<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<section id="fastpdb-support">
+<h4>fastpdb support<a class="headerlink" href="#fastpdb-support" title="Link to this heading">#</a></h4>
+<p>pinder uses <a class="reference external" href="https://github.com/biotite-dev/fastpdb">fastpdb</a> to accelerate PDB
+I/O operations. fastpdb is a dependency of pinder-core, and pip will attempt to
+install it for you during the installation of pinder. Pre-built wheels of
+fastpdb are available on PyPI for the following platforms:</p>
+<ol class="arabic simple">
+<li><p>Linux with <code class="docutils literal notranslate"><span class="pre">glibc&gt;=2.34</span></code> (e.g., Debian 12, Ubuntu 22.04, RHEL 9, etc.)</p></li>
+<li><p>MacOS Sierra (10.12) or newer</p></li>
+<li><p>Windows</p></li>
+</ol>
+<p>If your platform doesn’t match these conditions, you will not get a wheel and
+pip will attempt to build fastpdb from source. In order to build fastpdb from
+source, you will need the rust toolchain, which you can install by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://sh.rustup.rs<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</pre></div>
+</div>
+<p>before installing pinder.</p>
+</section>
+</section>
+<section id="install-pinder">
+<h3>Install pinder<a class="headerlink" href="#install-pinder" title="Link to this heading">#</a></h3>
+<section id="initialize-a-virtual-environment-or-conda-environment">
+<h4>Initialize a virtual environment or conda environment<a class="headerlink" href="#initialize-a-virtual-environment-or-conda-environment" title="Link to this heading">#</a></h4>
+<p>We recommend installing pinder into a clean virtual environment or conda
+environment. This can be done using
+<a class="reference external" href="https://github.com/mamba-org/mamba"><code class="docutils literal notranslate"><span class="pre">mamba</span></code></a> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> (you can swap <code class="docutils literal notranslate"><span class="pre">mamba</span></code>
+for <code class="docutils literal notranslate"><span class="pre">conda</span></code> for the same functionality):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>pinder<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+mamba<span class="w"> </span>activate<span class="w"> </span>pinder
+</pre></div>
+</div>
+<p>or via <code class="docutils literal notranslate"><span class="pre">venv</span></code> from the Python standard library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># clone the repo and cd into it, unless you plan to install from PyPI, then</span>
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</pre></div>
+</div>
+</section>
+</section>
+<section id="install-optional-dependencies">
+<h3>Install optional dependencies<a class="headerlink" href="#install-optional-dependencies" title="Link to this heading">#</a></h3>
+<section id="pytorch-cluster">
+<h4>pytorch-cluster<a class="headerlink" href="#pytorch-cluster" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">pytorch-cluster</span></code> is an optional dependency for pinder. If you wish to make use
+of its features, you will need to install it separately.</p>
+<p>To install from a wheel, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>torch-cluster<span class="w"> </span>-f<span class="w"> </span>https://data.pyg.org/whl/torch-<span class="si">${</span><span class="nv">TORCH</span><span class="si">}</span>+<span class="si">${</span><span class="nv">CUDA</span><span class="si">}</span>.html
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">${TORCH}</span></code> should be replaced by the version of PyTorch installed and <code class="docutils literal notranslate"><span class="pre">${CUDA}</span></code> should be replaced by either <code class="docutils literal notranslate"><span class="pre">cpu</span></code>, <code class="docutils literal notranslate"><span class="pre">cu118</span></code>, or <code class="docutils literal notranslate"><span class="pre">cu121</span></code>
+depending on your PyTorch installation.</p>
+<p>To install from source, first make sure you have pytorch installed in the
+current environment (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">torch</span></code>), then run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>torch-cluster
+</pre></div>
+</div>
+<p>Note that on Apple Silicon MacOS machines, installation from source is the only option.</p>
+</section>
+<section id="prodigy-cryst">
+<h4>PRODIGY-cryst<a class="headerlink" href="#prodigy-cryst" title="Link to this heading">#</a></h4>
+<p>PRODIGY-cryst is used in the data ingestion pipeline to predict the probability that an interface is a biological interaction. While it is not needed to use <code class="docutils literal notranslate"><span class="pre">pinder.core</span></code>, it is an optional dependency of <code class="docutils literal notranslate"><span class="pre">pinder.data</span></code> and can be installed as a git-based installation. To install, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/yusuf1759/prodigy-cryst.git
+</pre></div>
+</div>
+</section>
+<section id="install-pinder-packages-from-pypi">
+<h4>Install pinder packages from PyPI<a class="headerlink" href="#install-pinder-packages-from-pypi" title="Link to this heading">#</a></h4>
+<p>To install with the minimal dependencies needed to use <code class="docutils literal notranslate"><span class="pre">pinder.core</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pinder
+</pre></div>
+</div>
+<p>Install optional extras, for instance to use the <code class="docutils literal notranslate"><span class="pre">pinder.eval</span></code> package</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pinder<span class="o">[</span>eval<span class="o">]</span>
+</pre></div>
+</div>
+<p>Or, install all extras</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pinder<span class="o">[</span>all<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="getting-the-dataset">
+<h2>⬇️ Getting the dataset<a class="headerlink" href="#getting-the-dataset" title="Link to this heading">#</a></h2>
+<p>We strongly recommend to interact via the provided python API in <code class="docutils literal notranslate"><span class="pre">pinder-core</span></code>, as follows, which will automatically download and load the data into either <code class="docutils literal notranslate"><span class="pre">$PINDER_BASE_DIR</span></code> or <code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME</span></code> (usually <code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder</span></code> on Mac and Linux) if no explicit download path is provided (recommended)</p>
+<p>NOTE: the default location for the dataset is <code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder/&lt;release</span> <span class="pre">version&gt;</span></code></p>
+<p>If you want to use a different location, you can do so by setting the <code class="docutils literal notranslate"><span class="pre">PINDER_BASE_DIR</span></code> environment variable.</p>
+<p>The base dir refers to a fully qualified path name up until the <code class="docutils literal notranslate"><span class="pre">&lt;release</span> <span class="pre">version&gt;</span></code> (not inclusive).</p>
+<p>For instance, you could:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PINDER_BASE_DIR</span><span class="o">=</span>~/my-custom-location-for-pinder/pinder
+</pre></div>
+</div>
+<p>You can always check the current location of the dataset like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="n">get_pinder_location</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The current release version of pinder is <code class="docutils literal notranslate"><span class="pre">2024-02</span></code>.</p>
+<p>You can find the list of available dataset releases and the associated changes in the <a class="reference internal" href="#changelog_data.md"><span class="xref myst">data changelog</span></a>.</p>
+<section id="to-download-the-complete-dataset-run-the-following">
+<h3>To download the complete dataset run the following<a class="headerlink" href="#to-download-the-complete-dataset-run-the-following" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_download</span> <span class="o">--</span><span class="n">help</span>
+
+<span class="n">usage</span><span class="p">:</span> <span class="n">Download</span> <span class="n">latest</span> <span class="n">pinder</span> <span class="n">dataset</span> <span class="n">to</span> <span class="n">disk</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip_inflation</span><span class="p">]</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">default</span> <span class="n">pinder</span> <span class="n">base</span> <span class="n">directory</span>
+  <span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">pinder</span> <span class="n">dataset</span> <span class="n">version</span>
+  <span class="o">--</span><span class="n">skip_inflation</span>      <span class="k">if</span> <span class="n">passed</span><span class="p">,</span> <span class="n">will</span> <span class="n">only</span> <span class="n">download</span> <span class="n">the</span> <span class="n">compressed</span> <span class="n">archives</span> <span class="n">without</span> <span class="n">unpacking</span>
+</pre></div>
+</div>
+<p>The full dataset should look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>get_pinder_location<span class="o">()</span>/
+<span class="w">    </span>pdbs/
+<span class="w">    </span>test_set_pdbs/
+<span class="w">    </span>mappings/
+<span class="w">    </span>index.parquet
+<span class="w">    </span>metadata.parquet
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pdbs/</span></code> contains individual monomer and ground-truth dimer PDB structures</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mappings/</span></code> contains mapping information for holo and apo monomers for PDB&lt;-&gt;uniprot, as well as original PDB assembly information used in some utilities</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index.parquet</span></code> contains the master index of every dimer in pinder. See <a class="reference internal" href="#examples/pinder-index.ipynb"><span class="xref myst">here</span></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata.parquet</span></code> contains additional metadata detail for each entry in the index.</p></li>
+</ul>
+<p>It is also possible to download it manually, via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PINDER_RELEASE</span><span class="o">=</span><span class="m">2024</span>-02
+<span class="nb">export</span><span class="w"> </span><span class="nv">PINDER_ROOT</span><span class="o">=</span>pinder/<span class="nv">$PINDER_RELEASE</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+gsutil<span class="w"> </span>-m<span class="w"> </span>cp<span class="w"> </span>gs://<span class="nv">$PINDER_ROOT</span>/pdbs.zip<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+gsutil<span class="w"> </span>-m<span class="w"> </span>cp<span class="w"> </span>gs://<span class="nv">$PINDER_ROOT</span>/test_set_pdbs.zip<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+gsutil<span class="w"> </span>-m<span class="w"> </span>cp<span class="w"> </span>gs://<span class="nv">$PINDER_ROOT</span>/mappings.zip<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+gsutil<span class="w"> </span>-m<span class="w"> </span>cp<span class="w"> </span>gs://<span class="nv">$PINDER_ROOT</span>/index.parquet<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+gsutil<span class="w"> </span>-m<span class="w"> </span>cp<span class="w"> </span>gs://<span class="nv">$PINDER_ROOT</span>/metadata.parquet<span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>/
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$XDG_DATA_HOME</span>/<span class="nv">$PINDER_ROOT</span>
+unzip<span class="w"> </span>pdbs.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>pdbs.zip
+unzip<span class="w"> </span>test_set_pdbs.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>test_set_pdbs.zip
+unzip<span class="w"> </span>mappings.zip<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>mappings.zip
+</pre></div>
+</div>
+<p>however, this is discouraged and requires installing gsutil.</p>
+<p>Note: to download the full dataset, you will need ~700Gb of free disk space.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># compressed</span>
+<span class="mi">144</span><span class="n">G</span>    <span class="n">pdbs</span><span class="o">.</span><span class="n">zip</span>
+<span class="mi">149</span><span class="n">M</span>    <span class="n">test_set_pdbs</span><span class="o">.</span><span class="n">zip</span>
+<span class="mf">6.8</span><span class="n">G</span>    <span class="n">mappings</span><span class="o">.</span><span class="n">zip</span>
+
+<span class="c1"># unpacked</span>
+<span class="mi">672</span><span class="n">G</span>    <span class="n">pdbs</span>
+<span class="mi">705</span><span class="n">M</span>    <span class="n">test_set_pdbs</span>
+<span class="mi">25</span><span class="n">G</span>     <span class="n">mappings</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-the-dataset">
+<h3>Updating the dataset<a class="headerlink" href="#updating-the-dataset" title="Link to this heading">#</a></h3>
+<p>In the event that there are patch (non-breaking) changes to the index or metadata, you can sync your local copy of the index using a similar command-line interface:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_update_index</span> <span class="o">--</span><span class="n">help</span>
+
+<span class="n">usage</span><span class="p">:</span> <span class="n">Download</span> <span class="n">latest</span> <span class="n">pinder</span> <span class="n">index</span> <span class="n">to</span> <span class="n">disk</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip_inflation</span><span class="p">]</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">default</span> <span class="n">pinder</span> <span class="n">base</span> <span class="n">directory</span>
+  <span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">pinder</span> <span class="n">dataset</span> <span class="n">version</span>
+</pre></div>
+</div>
+<p>If any <em>structure</em> files have been changed (will be announced in <a class="reference internal" href="#changelog_data.md"><span class="xref myst">data changelog</span></a>), but a major release (PINDER_RELEASE) has not yet been published, to sync your local dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_sync_data</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">Sync</span> <span class="n">missing</span> <span class="n">pinder</span> <span class="n">structural</span> <span class="n">data</span> <span class="n">files</span> <span class="n">to</span> <span class="n">disk</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">skip_inflation</span><span class="p">]</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">pinder_base_dir</span> <span class="n">PINDER_BASE_DIR</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">default</span> <span class="n">pinder</span> <span class="n">base</span> <span class="n">directory</span>
+  <span class="o">--</span><span class="n">pinder_release</span> <span class="n">PINDER_RELEASE</span>
+                        <span class="n">specify</span> <span class="n">a</span> <span class="n">pinder</span> <span class="n">dataset</span> <span class="n">version</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pinder-datasets-resources">
+<h2>Pinder datasets &amp; resources<a class="headerlink" href="#pinder-datasets-resources" title="Link to this heading">#</a></h2>
+<section id="gold-standard-benchmark-sets">
+<h3>1. 🏅 Gold standard benchmark sets<a class="headerlink" href="#gold-standard-benchmark-sets" title="Link to this heading">#</a></h3>
+<p>A set of 4 interface structure &amp; sequence-deleaked, gold standard benchmark sets, all of which were redundancy removed and filtered to be of highest quality</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Dataset</p></th>
+<th class="head text-right"><p># of PDB IDs</p></th>
+<th class="head text-right"><p># of Clusters</p></th>
+<th class="head text-right"><p># Holo pairs</p></th>
+<th class="head text-right"><p># Apo pairs</p></th>
+<th class="head text-right"><p># AF2 Pairs</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>PINDER-XL</p></td>
+<td class="text-right"><p>1955</p></td>
+<td class="text-right"><p>1955</p></td>
+<td class="text-right"><p>1955</p></td>
+<td class="text-right"><p>342</p></td>
+<td class="text-right"><p>1747</p></td>
+<td class="text-left"><p>Full test set, 1,955 cluster representatives, including 342 apo paired structures and 1,747 AFDB structures</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>PINDER-S</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>93</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-left"><p>A smaller subset of PINDER-XL, comprised of 250 clusters (188 heterodimer and 62 homodimers) sampled for diverse Uniprot and PFAM annotations, 93 of which have apo paired structures (143 have at least one apo monomer) and all of which have paired AFDB structures, to evaluate methods for which sampling from the full set is too slow</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>PINDER-AF2</p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>30</p></td>
+<td class="text-right"><p>127</p></td>
+<td class="text-left"><p>A smaller subset of PINDER-XL, comprised of 180 clusters, 30 of which have paired apo structures and 131 with paired AFDB structures, which were deleaked against the AF2MM training set with a more rigorous deleaking process to remove any members with interfaces similar to the AF2MM training set as determined by iAlign, to evaluate methods against AF2MM</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All of these contain ready to use, pre-rotated &amp; translated monomer structures</p>
+<p><strong>A validation holdout set:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Dataset</p></th>
+<th class="head text-right"><p># of PDB IDs</p></th>
+<th class="head text-right"><p># of Clusters</p></th>
+<th class="head text-right"><p># Holo pairs</p></th>
+<th class="head text-right"><p># Apo pairs</p></th>
+<th class="head text-right"><p># AF2 Pairs</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Val</p></td>
+<td class="text-right"><p>1958</p></td>
+<td class="text-right"><p>1958</p></td>
+<td class="text-right"><p>1958</p></td>
+<td class="text-right"><p>342</p></td>
+<td class="text-right"><p>1789</p></td>
+<td class="text-left"><p>Validation set, consisting of 1,958 cluster representatives, of which 342 have paired apo structures and 1,789 of which have paired AFDB structures</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>A training set which provides an extensive number of possible training examples:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Dataset</p></td>
+<td class="text-left"><p>Train</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Size<sup>1</sup></p></td>
+<td class="text-left"><p>2456152</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Theoretical Size<sup>2</sup></p></td>
+<td class="text-left"><p>25130994</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p># of PDB IDs</p></td>
+<td class="text-left"><p>62706</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p># of Clusters</p></td>
+<td class="text-left"><p>42220</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p># Apo Pairs</p></td>
+<td class="text-left"><p>136498</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p># AF2 Pairs</p></td>
+<td class="text-left"><p>566171</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p># At least one Apo Monomer</p></td>
+<td class="text-left"><p>274194</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p># At least one AF2 Monomer</p></td>
+<td class="text-left"><p>621276</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Description</p></td>
+<td class="text-left"><p>Training set, consisting of 1,560,682 dimers from 42,220 clusters, of which 136,498 have paired apo structures and 566,171 of which have paired AFDB structures</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple">
+<li><p>Size refers to the sum of training examples with at least one Apo monomer (274,194), at least one AF2 monomer (621,276), and the holo monomers (1,560,682)</p></li>
+<li><p>Theoretical size refers to the theoretical number of training examples made available by pinder. It includes all of the available Apo monomers for each of receptor and ligand, respectively, and all of the combinations with other monomer types. E.g., holo-receptor + apo-ligand1, AF2-receptor + apo-ligand2, etc.</p></li>
+</ol>
+<p>See <a class="reference internal" href="#-dataset-generation"><span class="xref myst">Dataset Generation</span></a> for details on how the dataset was generated.</p>
+</section>
+<section id="leaderboard">
+<h3>2. 📊 Leaderboard<a class="headerlink" href="#leaderboard" title="Link to this heading">#</a></h3>
+<p>A <strong>leaderboard</strong> of the current state of the art physics-based docking methods as reference</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Train Dataset</p></th>
+<th class="head"><p>Leaderboards</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Physics</p></td>
+<td><p>FroDock</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-S</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Physics</p></td>
+<td><p>PatchDock</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-S</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Physics</p></td>
+<td><p>HDock</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-S</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>ML</p></td>
+<td><p>DiffDock-PP</p></td>
+<td><p>pinder-holo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-S</span></code>, <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>ML</p></td>
+<td><p>AF2-MM</p></td>
+<td><p>af2mm</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="evaluation-harness">
+<h3>3. ⚖️ Evaluation harness<a class="headerlink" href="#evaluation-harness" title="Link to this heading">#</a></h3>
+<p>A complete evaluation harness with a set of highly efficient pure-python or rust implementations of standard metrics for evaluation, such as DockQ is provided.</p>
+<p>We use the community-standard CAPRI metrics for assessing docking methods. Further detail can be found <a class="reference external" href="https://predictioncenter.org/casp15/doc/presentations/Day2/Assessment_Assembly-CAPRI_MLensink.pdf">here</a></p>
+<p>The evaluation harness can be used either through methods in pinder.eval or as a CLI script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_eval</span> <span class="o">--</span><span class="n">help</span>
+
+<span class="n">usage</span><span class="p">:</span> <span class="n">pinder_eval</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">--</span><span class="n">eval_dir</span> <span class="n">eval_dir</span> <span class="p">[</span><span class="o">--</span><span class="n">serial</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">method_name</span> <span class="n">method_name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">allow_missing</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">custom_index</span> <span class="n">CUSTOM_INDEX</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">max_workers</span> <span class="n">MAX_WORKERS</span><span class="p">]</span>
+
+<span class="n">options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">--</span><span class="n">eval_dir</span> <span class="n">eval_dir</span><span class="p">,</span> <span class="o">-</span><span class="n">f</span> <span class="n">eval_dir</span>
+                        <span class="n">Path</span> <span class="n">to</span> <span class="nb">eval</span>
+  <span class="o">--</span><span class="n">serial</span><span class="p">,</span> <span class="o">-</span><span class="n">s</span>          <span class="n">Whether</span> <span class="n">to</span> <span class="n">disable</span> <span class="n">parallel</span> <span class="nb">eval</span> <span class="n">over</span> <span class="n">systems</span>
+  <span class="o">--</span><span class="n">method_name</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">-</span><span class="n">m</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span> <span class="n">method_name</span>
+                        <span class="n">Optional</span> <span class="n">name</span> <span class="k">for</span> <span class="n">output</span> <span class="n">csv</span>
+  <span class="o">--</span><span class="n">allow_missing</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span>   <span class="n">Whether</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">missing</span> <span class="n">systems</span> <span class="k">for</span> <span class="n">a</span> <span class="n">given</span> <span class="n">pinder</span><span class="o">-</span><span class="nb">set</span> <span class="o">+</span> <span class="n">monomer</span>
+  <span class="o">--</span><span class="n">custom_index</span> <span class="n">CUSTOM_INDEX</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span> <span class="n">CUSTOM_INDEX</span>
+                        <span class="n">Optional</span> <span class="n">local</span> <span class="n">filepath</span> <span class="ow">or</span> <span class="n">GCS</span> <span class="n">uri</span> <span class="n">to</span> <span class="n">a</span> <span class="n">custom</span> <span class="n">index</span> <span class="k">with</span> <span class="n">non</span><span class="o">-</span><span class="n">pinder</span> <span class="n">splits</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">must</span> <span class="n">still</span> <span class="n">follow</span> <span class="n">the</span> <span class="n">pinder</span> <span class="n">index</span> <span class="n">schema</span> <span class="ow">and</span> <span class="n">define</span> <span class="n">test</span> <span class="n">holdout</span> <span class="n">sets</span><span class="p">,</span> <span class="n">but</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">share</span> <span class="n">the</span> <span class="n">same</span>
+                        <span class="n">split</span> <span class="n">members</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">max_workers</span> <span class="n">MAX_WORKERS</span><span class="p">,</span> <span class="o">-</span><span class="n">w</span> <span class="n">MAX_WORKERS</span>
+                        <span class="n">Optional</span> <span class="n">maximum</span> <span class="n">number</span> <span class="n">of</span> <span class="n">processes</span> <span class="n">to</span> <span class="n">spawn</span> <span class="ow">in</span> <span class="n">multiprocessing</span><span class="o">.</span> <span class="n">Default</span> <span class="ow">is</span> <span class="kc">None</span> <span class="p">(</span><span class="nb">all</span> <span class="n">available</span> <span class="n">cores</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The expected format for the contents of <code class="docutils literal notranslate"><span class="pre">eval_dir</span></code> are shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>eval_dir_example/
+└── some_method
+    ├── 1an1__A1_P00761--1an1__B1_P80424
+    │   ├── apo_decoys
+    │   │   ├── model_1.pdb
+    │   │   └── model_2.pdb
+    │   ├── holo_decoys
+    │   │   ├── model_1.pdb
+    │   │   └── model_2.pdb
+    │   └── predicted_decoys
+    │       ├── model_1.pdb
+    │       └── model_2.pdb
+    └── 1b8m__A1_P23560--1b8m__B1_P34130
+        ├── holo_decoys
+        │   ├── model_1.pdb
+        │   └── model_2.pdb
+        └── predicted_decoys
+            ├── model_1.pdb
+            └── model_2.pdb
+</pre></div>
+</div>
+<p>The eval directory should contain one or more methods to evaluate as sub-directories.</p>
+<p>Each method sub-directory should contains sub-directories that are named by pinder system ID.</p>
+<p>Inside of each pinder system sub-directory, you should have three subdirectories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_decoys</span></code> (predictions that were made using holo monomers)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_decoys</span></code> (predictions made using apo monomers)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted_decoys</span></code> (predictions made using predicted, e.g. AF2, monomers)</p></li>
+</ul>
+<p>You can have any number of decoys in each directory; however, the decoys should be named in a way that the prediction rank can be extracted. In the above example, the decoys are named using a <code class="docutils literal notranslate"><span class="pre">model_&lt;rank&gt;.pdb</span></code> convention. Other names for decoy models are accepted, so long as they can match the regex pattern used in <code class="docutils literal notranslate"><span class="pre">pinder.eval.dockq.MethodMetrics</span></code>: <code class="docutils literal notranslate"><span class="pre">r&quot;\d+(?=\D*$)&quot;</span></code></p>
+<p>Each model decoy should have exactly two chains: {R, L} for {Receptor, Ligand}, respectively.</p>
+<p>⚠️ <strong>Note: in order to make a fair comparison of methods across complete test sets, if a method is missing predictions for a system, the following metrics are used as a penalty</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="p">{</span>
+    <span class="s2">&quot;iRMS&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;LRMS&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="s2">&quot;Fnat&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;DockQ&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="s2">&quot;CAPRI&quot;</span><span class="p">:</span> <span class="s2">&quot;Incorrect&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more details on the implementations of the eval metrics, see the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-eval.html">eval tutorial</a>, <a class="reference external" href="https://pinder-org.github.io/pinder/source/pinder.eval.dockq.html#">API docs</a> and <a class="reference external" href="https://pinder-org.github.io/pinder/faq.html#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context">eval FAQ</a>.</p>
+<p>For more details on leaderboard generation, see the <a class="reference internal" href="#src/pinder-eval/pinder/eval/dockq/method.py"><span class="xref myst">MethodMetrics</span></a> implementation.</p>
+</section>
+<section id="training-set">
+<h3>4. 🧪 Training set<a class="headerlink" href="#training-set" title="Link to this heading">#</a></h3>
+<p>We provide a ready-to-use, large training set, <code class="docutils literal notranslate"><span class="pre">PINDER-Train</span></code> with <strong>2,456,152</strong> pairs, consisting of 1,560,682 bound structures, 274,194 structures with at least one paired apo structure and 621,276 pairs with at least one paired AFDB structures. These can be combined to yield up to 25,130,994 unique training examples.
+They are clustered by <strong>interface</strong> similarity via FoldSeek and deleaked by structure and interface similarity against the <code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code> (and thus against all others) and validation set, <code class="docutils literal notranslate"><span class="pre">PINDER-Val</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PINDER-Val</span></code> is included as a redundancy removed validation set of 1,958 holo structures from 1,958 clusters, prepared in identical fashion and distribution to the test set, including 342 apo paired structures and 1,789 AFDB structures, filtered with the same quality criteria as the test set to allow for representative monitoring of training performance.</p>
+<p>See <a class="reference internal" href="#-dataset-generation"><span class="xref myst">Dataset Generation</span></a> for details on how the dataset was generated.</p>
+</section>
+<section id="dataloader">
+<h3>5. 📦 Dataloader<a class="headerlink" href="#dataloader" title="Link to this heading">#</a></h3>
+<p>We provide two flavors of dataloaders based on the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> APIs from <code class="docutils literal notranslate"><span class="pre">torch</span></code> and <code class="docutils literal notranslate"><span class="pre">torch-geometric</span></code> as example implementations (and are happy to provide more if there are feature requests) for easy loading of datasets.</p>
+<p>All dataloaders are based on iterators over <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code>, a core abstraction which provides the collection of structural data associated with an entry in the pinder database.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> exposes the following structures:</p>
+<ul class="simple">
+<li><p>Ground-truth crystal structure</p></li>
+<li><p>Holo receptor and ligand</p></li>
+<li><p>Apo receptor and ligand (where available)</p></li>
+<li><p>Predicted receptor and ligand (currently from alphafold; where available)</p></li>
+</ul>
+<p><strong>Note: all monomers follow the chain naming convention of R, L for receptor and ligand, respectively. However, if you are using the PDB files directly without <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code>, note that the apo and predicted monomers are both stored with chain ID A. This was done to reduce file/disk burden by not duplicating apo/predicted monomers that map to both receptor and/or ligand across multiple systems.</strong></p>
+<p>Each structure is defined by the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> abstraction. See the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-system.html">example notebook</a> for more details.</p>
+<p>We provide the following features:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Feature</p></th>
+<th class="head text-left"><p>Abstraction</p></th>
+<th class="head text-left"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Get collection of monomers associated with a pinder entry using <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/index/system.py"><span class="xref myst">PinderSystem</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-system.ipynb"><span class="xref myst">pinder-system.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Classify system difficulty based on degree of conformational shift in unbound and bound using <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/index/system.py"><span class="xref myst">PinderSystem</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-system.ipynb"><span class="xref myst">pinder-system.ipynb</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Get various structural features like coordinates, residues, atoms and sequence and structural utilities using the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> abstraction. All of the monomers in the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object are themselves <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects</p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/structure.py"><span class="xref myst">Structure</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-system.ipynb"><span class="xref myst">pinder-system.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Filter pinder systems to construct data mixes using <code class="docutils literal notranslate"><span class="pre">PinderFilterBase</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/filters.py"><span class="xref myst">PinderFilterBase</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Filter pinder systems to construct data mixes with specific monomers or monomers that satisfy specific filter criteria using <code class="docutils literal notranslate"><span class="pre">PinderFilterSubBase</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/filters.py"><span class="xref myst">PinderFilterSubBase</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Filter individual <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects in a system to construct data mixes with specific monomer properties using <code class="docutils literal notranslate"><span class="pre">StructureFilter</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/filters.py"><span class="xref myst">StructureFilter</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Construct iterator for getting specific data mixes and applying collection of filters through <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/loader.py"><span class="xref myst">PinderLoader</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Load systems as a pytorch dataset using <code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">PinderDataset</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Load datasets as pytorch geometric graph datasets using <code class="docutils literal notranslate"><span class="pre">PPIDataset</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">PPIDataset</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Create standard pytorch dataloaders using <code class="docutils literal notranslate"><span class="pre">get_torch_loader</span></code> with <code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> as input</p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">get_torch_loader</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Create standard torch-geometric dataloaders using <code class="docutils literal notranslate"><span class="pre">get_geo_loader</span></code> with <code class="docutils literal notranslate"><span class="pre">PPIDataset</span></code> as input</p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">get_geo_loader</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">pinder-loader.ipynb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Transform structures in a system before use in downstream tasks using <code class="docutils literal notranslate"><span class="pre">TransformBase</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/transforms.py"><span class="xref myst">TransformBase</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/README.md#transforms"><span class="xref myst">examples</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Transform individual <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects before use in downstream tasks using <code class="docutils literal notranslate"><span class="pre">StructureTransform</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="#src/pinder-core/pinder/core/loader/transforms.py"><span class="xref myst">StructureTransform</span></a></p></td>
+<td class="text-left"><p><a class="reference internal" href="#examples/README.md#transforms"><span class="xref myst">examples</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>…</p>
+<p>We are open to feature requests to add further functionality.</p>
+<section id="torch-dataloader">
+<h4>Torch dataloader<a class="headerlink" href="#torch-dataloader" title="Link to this heading">#</a></h4>
+<p>A standardized pytorch dataloader to load subsets of the dataset for training and validation is provided.</p>
+<p>Pinder provides a <a class="reference external" href="https://pytorch.org/tutorials/beginner/basics/data_tutorial.html#datasets-dataloaders">torch.utils.data.Dataset</a> sub-class, <a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">PinderDataset</span></a>, which is used to create a tensor dataset.</p>
+<p>The dataset class provides an interface for processing the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object into a dictionary object containing the feature/sample complex and the target (ground-truth) complex represented as a dictionary of structural properties encoded as <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> objects.</p>
+<p>It can be used as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span><span class="p">,</span> <span class="n">get_torch_loader</span><span class="p">,</span> <span class="n">PinderDataset</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span><span class="p">,</span> <span class="n">transforms</span>
+
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PinderDataset</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="c1"># We can leverage holo, apo, pred, random and random_mixed monomer sampling strategies</span>
+    <span class="n">monomer_priority</span><span class="o">=</span><span class="s2">&quot;random_mixed&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">sub_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterSubBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">structure_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">filters</span><span class="o">.</span><span class="n">StructureFilter</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">structure_transforms_target</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">transforms</span><span class="o">.</span><span class="n">StructureTransform</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">structure_transforms_feature</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">transforms</span><span class="o">.</span><span class="n">StructureTransform</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+<span class="p">)</span>
+
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">get_torch_loader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Get a batch from the dataloader</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Note: this is only one example of a featurizer that illustrates how to construct dict batch structure containing dicts of structure properties as tensors from <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> objects.</strong></p>
+</section>
+<section id="pytorch-geometric-dataloader">
+<h4>Pytorch-geometric dataloader<a class="headerlink" href="#pytorch-geometric-dataloader" title="Link to this heading">#</a></h4>
+<p>A standardized pytorch-geometric dataloader to load subsets of the dataset for training and validation is provided.</p>
+<p>Pinder provides a <a class="reference external" href="https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.Dataset.html#torch_geometric.data.Dataset">torch_geometric.data.Dataset</a> sub-class, <a class="reference internal" href="#src/pinder-core/pinder/core/loader/dataset.py"><span class="xref myst">PPIDataset</span></a>, which is used to create a graph dataset.</p>
+<p>The dataset class provides an interface for processing the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object into <code class="docutils literal notranslate"><span class="pre">HeteroData</span></code> objects that are written to disk.</p>
+<p>It can be used as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span><span class="p">,</span> <span class="n">get_geo_loader</span><span class="p">,</span> <span class="n">PPIDataset</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.geodata</span> <span class="kn">import</span> <span class="n">NodeRepresentation</span>
+
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">NodeRepresentation</span><span class="p">(</span><span class="s2">&quot;atom&quot;</span><span class="p">),</span> <span class="n">NodeRepresentation</span><span class="p">(</span><span class="s2">&quot;residue&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PPIDataset</span><span class="p">(</span>
+    <span class="n">node_types</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="n">monomer1</span><span class="o">=</span><span class="s2">&quot;holo_receptor&quot;</span><span class="p">,</span>
+    <span class="n">monomer2</span><span class="o">=</span><span class="s2">&quot;holo_ligand&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">sub_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterSubBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="n">root</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">(),</span>
+    <span class="n">transform</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">PinderSystem</span><span class="p">],</span> <span class="n">PinderSystem</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pre_transform</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">PinderSystem</span><span class="p">],</span> <span class="n">PinderSystem</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pre_filter</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">PinderSystem</span><span class="p">],</span> <span class="n">PinderSystem</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">limit_by</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">force_reload</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">filenames_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">repeat</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">add_edges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">get_geo_loader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note: this is only one example of a featurizer that illustrates how to construct a hetero graph from a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object.</strong></p>
+<p>We welcome and encourage contributions of additional featurizers. To implement additional featurizers, please see the <a class="reference internal" href="#src/pinder-core/pinder/core/loader/geodata.py"><span class="xref myst">PairedPDB</span></a> implementation. New featurizers should implement a way to convert <code class="docutils literal notranslate"><span class="pre">Structure</span></code> instances belonging to <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code>’s into the respective pytorch or pytorch-geometric data objects.</p>
+<p>For more detailed usage examples, including how to use the underlying loader without torch-geometric, see the <a class="reference internal" href="#examples/pinder-loader.ipynb"><span class="xref myst">example notebook</span></a>.</p>
+</section>
+</section>
+<section id="i-filters-annonations">
+<h3>6. ℹ️ Filters &amp; Annonations<a class="headerlink" href="#i-filters-annonations" title="Link to this heading">#</a></h3>
+<p>A core philosophy behind pinder is to provide a large, unfiltered training dataset to derive data mixes for evaluating the impact of different data selection strategies. To that end, we provide extensive tooling for leveraging annotations in filters.</p>
+<p>A large set of quality control annotations including interface cluster, resolution, interfacial gaps, planarity, elongation, and more can be accessed via the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object or directly in data frames.</p>
+<p>We also provide the effective MSA Depth (<span class="math notranslate nohighlight">\(N_{eff}\)</span>) calculated for each of the test members in <code class="docutils literal notranslate"><span class="pre">PINDER-XL/S/AF2</span></code> to allow accurate performance assessment by evolutionary information.</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object has an <code class="docutils literal notranslate"><span class="pre">.entry</span></code> and <code class="docutils literal notranslate"><span class="pre">.metadata</span></code> property, which expose all the primary annotations in the index and detailed metadata, respectively.</p>
+<p>For detailed schemas of these properties, see the <code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code> and <code class="docutils literal notranslate"><span class="pre">MetadataEntry</span></code> objects. Their fields are shown below for reference:</p>
+<p><strong>IndexEntry</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>split</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The type of data split (e.g., ‘train’, ‘test’).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The unique identifier for the dataset entry.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pdb_id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier associated with the entry.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>cluster_id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The cluster identifier associated with the entry.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>cluster_id_R</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The cluster identifier associated with receptor dimer body.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>cluster_id_L</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The cluster identifier associated with ligand dimer body.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_s</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the entry is part of the Pinder-S dataset.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pinder_xl</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the entry is part of the Pinder-XL dataset.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_af2</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the entry is part of the Pinder-AF2 dataset.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>uniprot_R</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The UniProt identifier for the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>uniprot_L</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The UniProt identifier for the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>holo_R_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the holo form of the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>holo_L_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the holo form of the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>predicted_R_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the predicted structure of the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>predicted_L_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the predicted structure of the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>apo_R_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the apo form of the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>apo_L_pdb</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifier for the apo form of the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>apo_R_pdbs</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifiers for the apo forms of the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>apo_L_pdbs</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The PDB identifiers for the apo forms of the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>holo_R</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the holo form of the receptor protein is available.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>holo_L</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the holo form of the ligand protein is available.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>predicted_R</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the predicted structure of the receptor protein is available.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>predicted_L</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the predicted structure of the ligand protein is available.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>apo_R</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the apo form of the receptor protein is available.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>apo_L</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the apo form of the ligand protein is available.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>apo_R_quality</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Classification of apo receptor pairing quality. Can be <code class="docutils literal notranslate"><span class="pre">high,</span> <span class="pre">low,</span> <span class="pre">''</span></code>. All test and val are labeled high. Train split is broken into <code class="docutils literal notranslate"><span class="pre">high</span></code> and <code class="docutils literal notranslate"><span class="pre">low</span></code>, depending on whether the pairing was produced with a low-confidence quality/eval metrics or <code class="docutils literal notranslate"><span class="pre">high</span></code> if the same metrics were used as for train and val.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>apo_L_quality</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Classification of apo ligand pairing quality. Can be <code class="docutils literal notranslate"><span class="pre">high,</span> <span class="pre">low,</span> <span class="pre">''</span></code>. All test and val are labeled high. Train split is broken into <code class="docutils literal notranslate"><span class="pre">high</span></code> and <code class="docutils literal notranslate"><span class="pre">low</span></code>, depending on whether the pairing was produced with a low-confidence quality/eval metrics or <code class="docutils literal notranslate"><span class="pre">high</span></code> if the same metrics were used as for train and val.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>chain1_neff</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The Neff value for the first chain in the protein complex.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>chain2_neff</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The Neff value for the second chain in the protein complex.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>chain_R</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The chain identifier for the receptor protein.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>chain_L</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The chain identifier for the ligand protein.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>contains_antibody</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the protein complex contains an antibody as per SAbDab.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>contains_antigen</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the protein complex contains an antigen as per SAbDab.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>contains_enzyme</p></td>
+<td class="text-left"><p>boolean</p></td>
+<td class="text-left"><p>Flag indicating if the protein complex contains an enzyme as per EC ID number.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>MetadataEntry</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Field</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The unique identifier for the PINDER entry. It follows the convention <code class="docutils literal notranslate"><span class="pre">&lt;Receptor&gt;--&lt;Ligand&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;Receptor&gt;</span></code> is <code class="docutils literal notranslate"><span class="pre">&lt;pdbid&gt;__&lt;chain_1&gt;_&lt;uniprotid&gt;</span></code> and</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>entry_id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The RCSB entry identifier associated with the PINDER entry.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>method</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The experimental method for structure determination (XRAY, CRYO-EM, etc.).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>date</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Date of deposition into RCSB PDB.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>release_date</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Date of initial public release in RCSB PDB.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>resolution</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The resolution of the experimental structure.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>label</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Classification of the interface as likely to be biologically-relevant or a crystal contact, annotated using PRODIGY-cryst.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>probability</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>Probability that the protein complex is a true biological complex.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>chain1_id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The Receptor chain identifier associated with the dimer entry. Should all be chain ‘R’.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>chain2_id</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The Ligand chain identifier associated with the dimer entry. Should all be chain ‘L’.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>assembly</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Which bioassembly is used to derive the structure. 1, 2, 3 means first, second, and third assembly, respectively.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>assembly_details</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>How the bioassembly information was derived. Is it author-defined or from another source.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>oligomeric_details</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>Description of the oligomeric state of the protein complex.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>oligomeric_count</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The oligomeric count associated with the dataset entry.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>biol_details</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The biological assembly details associated with the dataset entry.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>complex_type</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The type of the complex in the dataset entry (homomer or heteromer).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>chain_1</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>New chain id generated post-bioassembly generation, to reflect the asym_id of the bioassembly and also to ensure that there is no collision of chain ids, for example in homooligomers (receptor chain).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>asym_id_1</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The first asymmetric identifier (author chain ID)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>chain_2</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>New chain id generated post-bioassembly generation, to reflect the asym_id of the bioassembly and also to ensure that there is no collision of chain ids, for example in homooligomers (ligand chain).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>asym_id_2</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The second asymmetric identifier (author chain ID)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>length1</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of amino acids in the first (receptor) chain.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>length2</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of amino acids in the second (ligand) chain.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>length_resolved_1</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The structurally resolved (CA) length of the first (receptor) chain in amino acids.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>length_resolved_2</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The structurally resolved (CA) length of the second (ligand) chain in amino acids.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>number_of_components_1</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of connected components in the first (receptor) chain (contiguous structural fragments)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>number_of_components_2</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of connected components in the second (receptor) chain (contiguous structural fragments)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>link_density</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>Density of contacts at the interface as reported by PRODIGY-cryst. Interfacial link density is defined as the number of interfacial contacts normalized by the maximum possible number of pairwise contacts for that interface.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>planarity</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>Defined as the deviation of interfacial Cα atoms from the fitted plane. This interface characteristic quantifies interfacial shape complementarity.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>max_var_1</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The maximum variance of coordinates projected onto the largest principal component.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>max_var_2</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The maximum variance of coordinates projected onto the largest principal component.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>num_atom_types</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Number of unique atom types in structure. This is an important annotation to identify complexes with only Cα or backbone atoms.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>n_residue_pairs</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of residue pairs at the interface.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>n_residues</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The number of residues at the interface.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>buried_sasa</p></td>
+<td class="text-left"><p>number</p></td>
+<td class="text-left"><p>The buried solvent accessible surface area upon complex formation.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>intermolecular_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The total number of intermolecular contacts (pair residues with any atom within a 5Å distance cutoff) at the interface.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>charged_charged_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between any of the charged amino acids (E, D, H, K).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>charged_polar_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between charged amino acids (E, D, H, K, R) and polar amino acids (N, Q, S, T).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>charged_apolar_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between charged amino acids (E, D, H, K) and apolar amino acids (A, C, G, F, I, M, L, P, W, V, Y).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>polar_polar_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between any of the charged amino acids (N, Q, S, T).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>apolar_polar_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between apolar amino acids (A, C, G,F, I, M, L, P, W, V, Y) and polar amino acids (N, Q, S, T).</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>apolar_apolar_contacts</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Denotes intermolecular contacts between any of the charged amino acids (A, C, G, F, I, M, L, P, W, V, Y).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>interface_atom_gaps_4A</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Number of interface atoms within a 4Å radius of a residue gap.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>missing_interface_residues_4A</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Number of interface residues within a 4Å radius of a residue gap.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>interface_atom_gaps_8A</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Number of interface atoms within an 8Å radius of a residue gap.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>missing_interface_residues_8A</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>Number of interface residues within an 8Å radius of a residue gap.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>entity_id_R</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The RCSB PDB <code class="docutils literal notranslate"><span class="pre">entity_id</span></code> corresponding to the receptor dimer chain.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>entity_id_L</p></td>
+<td class="text-left"><p>integer</p></td>
+<td class="text-left"><p>The RCSB PDB <code class="docutils literal notranslate"><span class="pre">entity_id</span></code> corresponding to the ligand dimer chain.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pdb_strand_id_R</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The RCSB PDB <code class="docutils literal notranslate"><span class="pre">pdb_strand_id</span></code> (author chain) corresponding to the receptor dimer chain.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pdb_strand_id_L</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The RCSB PDB <code class="docutils literal notranslate"><span class="pre">pdb_strand_id</span></code> (author chain) corresponding to the ligand dimer chain.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ECOD_names_R</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The RCSB-derived ECOD domain protein family name(s) corresponding to the receptor dimer chain. If multiple ECOD domain annotations</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ECOD_names_L</p></td>
+<td class="text-left"><p>string</p></td>
+<td class="text-left"><p>The RCSB-derived ECOD domain protein family name(s) corresponding to the ligand dimer chain. If multiple ECOD domain annotations were found, the domains are delimited with a comma.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These annotations can be used during loading either by filtering the data frames or by implementing filters and transforms.
+For example, to filter on some metadata fields, you can construct a series of <code class="docutils literal notranslate"><span class="pre">FilterMetadataFields</span></code> filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderLoader</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByMissingHolo</span><span class="p">(),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByContacts</span><span class="p">(</span><span class="n">min_contacts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">calpha_only</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterMetadataFields</span><span class="p">(</span><span class="n">contains_antibody</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+    <span class="c1"># You can also combine multiple fields in the FilterMetadataFields:</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterMetadataFields</span><span class="p">(</span>
+      <span class="n">contains_enzyme</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;is not&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+      <span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&lt;=&#39;</span><span class="p">,</span> <span class="mf">2.75</span><span class="p">),</span>
+      <span class="n">method</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;!=&#39;</span><span class="p">,</span> <span class="s1">&#39;X-RAY DIFFRACTION&#39;</span><span class="p">),</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># These operate on individual monomers</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloOverlap</span><span class="p">(</span><span class="n">min_overlap</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubLengths</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubRmsds</span><span class="p">(</span><span class="n">rmsd_cutoff</span><span class="o">=</span><span class="mf">7.5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedSub</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+    <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;pinder_af2&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+    <span class="c1"># do something</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>These are documented in greater detail in the <a class="reference internal" href="examples.html"><span class="doc std std-doc">examples</span></a> section.</p>
+</section>
+<section id="future-work">
+<h3>7. 📡 Future work<a class="headerlink" href="#future-work" title="Link to this heading">#</a></h3>
+<p>While <code class="docutils literal notranslate"><span class="pre">pinder</span></code> makes significant strides, several limitations highlight areas for future improvement. Most evidently, <code class="docutils literal notranslate"><span class="pre">pinder</span></code> is currently focusing on biological dimers. As more methods expand beyond dimers, such as via co-folding approaches, <code class="docutils literal notranslate"><span class="pre">pinder</span></code> will be generalized to higher-order oligomers. Additionally, there are a few smaller methodological limitations - for instance, the reliance on single reference conformations and the inherent bias towards homodimers in the dataset can impact the accuracy and generalizability of the models.</p>
+<p>Further, improvements in <em>apo</em> pairing and the integration of more advanced tools, such as <code class="docutils literal notranslate"><span class="pre">iAlign</span></code>, into the alignment methodology could enhance the dataset’s precision. Addressing these limitations could lead to even larger datasets, better performance and evaluation in future iterations of <code class="docutils literal notranslate"><span class="pre">pinder</span></code>. We provide a more detailed discussion of the limitations of the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dataset and methodology in <a class="reference internal" href="limitations.html"><span class="std std-doc">limitations</span></a>. Below we summarize some key areas of future work:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Expansion to higher-order oligomers</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Homologous <em>apo</em> pairing via Foldseek and MMseqs2 monomer matching</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Rosetta-relaxed unbound structures &amp; evaluation set for all structures in the dataset</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> A complete evaluation harness for reference-free metrics to evaluate the quality of the predicted structures, such as VoroMQA, PISA, and more</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Confirmed negative pairs</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Addition of an antibody-focused benchmark test set <code class="docutils literal notranslate"><span class="pre">pinder-ab</span></code></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Contact-conditioned benchmarks</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Additional information for multimeric training examples (e.g. restraints)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Improved abstractions for pytorch-lightning data loaders</p></li>
+</ul>
+</section>
+</section>
+<section id="code-organization">
+<h2>👨‍💻 Code organization<a class="headerlink" href="#code-organization" title="Link to this heading">#</a></h2>
+<p>This code is split into 4 subpackages</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder-core</span></code>: core data structures for interacting with and loading the dataset. includes a pytorch dataloader</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder-data</span></code>: core code for generating the dataset, starting with downloading from the RCSB NextGen rsync server.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder-eval</span></code>: evaluation harness for the dataset that takes as an input predicted and ground truth structures in a pre-determined folder structure and returns a leaderboard-ready set of entries</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder-methods</span></code>: implementations of the methods in the leaderboard that leverage pinder-primitives for training &amp; running</p></li>
+</ul>
+</section>
+<section id="dataset-generation">
+<h2>💽 Dataset Generation<a class="headerlink" href="#dataset-generation" title="Link to this heading">#</a></h2>
+<p>The above datasets was generated using the following steps:</p>
+<section id="input">
+<h3>🚪 Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h3>
+<p>The RCSB NextGen database (as of 01.29.2024) was used as the starting point. All mmCIF files were obtained and representative biological assemblies were generated.</p>
+<ul class="simple">
+<li><p><strong>PDB PPIs</strong>: Protein-Protein Interactions (PPIs) were detected as all pairs of chains with a backbone atom in contact at a 10Å threshold.</p></li>
+<li><p><strong>PDB Monomers for apo structures</strong>: All monomeric PDB entries with the same UniProt ID as a monomer in the dimer PPI entries were aligned (using the UniProt numbering) to the corresponding PPI entry. A suite of evaluation metrics was calculated and only validated pairings were kept. For each dimer monomer, a single apo monomer was chosen as the canonical pair based on a normalized score derived from the evaluation metrics. The rest are made available as alternate apo pairings.</p></li>
+<li><p><strong>AFDB Monomers for af2 structures</strong>: AFDB entries with the same UniProt ID as PPI entries were aligned (using UniProt numbering) to the corresponding PPI entry.</p></li>
+</ul>
+</section>
+<section id="i-annotation">
+<h3>ℹ️ Annotation<a class="headerlink" href="#i-annotation" title="Link to this heading">#</a></h3>
+<p>Annotations were obtained from the RCSB NextGen database. The following annotations are included:</p>
+<ol class="arabic simple">
+<li><p>Oligomeric state of the protein complex (homodimer, heterodimer, oligomer or higher-order
+complexes)</p></li>
+<li><p>Structure determination method (X-Ray, CryoEM, NMR)</p></li>
+<li><p>Resolution</p></li>
+<li><p>Interfacial gaps, defined as structurally-unresolved segments on PPI interfaces</p></li>
+<li><p>Number of distinct atom types. Many earlier Cryo-EM structures contain only a few atom-types
+such as only Cα or backbone atoms</p></li>
+<li><p>Whether the interface is likely to be a physiological or crystal contact, annotated using Prodigy</p></li>
+<li><p>Structural elongation, defined as the maximum variance of coordinates projected onto the largest
+principal component. This allows detection of long end-to-end stacked complexes, likely to be
+repetitive with small interfaces</p></li>
+<li><p>Planarity, defined as deviation of interfacial Cα atoms from the fitted plane. This interface
+characteristic quantifies interfacial shape complementarity. Transient complexes have smaller
+and more planar interfaces than permanent and structural scaffold complexes</p></li>
+<li><p>Number of components, defined as the number of connected components of a 10Å Cα radius
+graph. This allows detection of structurally discontinuous domains</p></li>
+<li><p>Intermolecular contacts (labeled as polar or apolar)</p></li>
+</ol>
+</section>
+<section id="clustering">
+<h3>👥 Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h3>
+<p>The clustering works as follows</p>
+<ul class="simple">
+<li><p>We first define all possible interacting pairs as holo systems by taking chain pair with any residues within a 10Å backbone atom distance threshold between the interacting chains</p></li>
+<li><p>All-vs-all structural alignments of complete chains were performed using FoldSeek. Note that foldseek uses both sequence (blosum matrix) and structure (3di matrix) to define similar pairs</p></li>
+<li><p>We start by construct a graph with chains as nodes</p></li>
+<li><p>An edge is then added between any two nodes with over 50% foldseek-alignment coverage of the interface residues (as defined above)</p></li>
+<li><p>This will connect any two chains where a substantial part of the interface is similar in either sequence or structure</p></li>
+<li><p>Community clustering via asynchronous label propagation was then performed on this graph to obtain interface clusters. Clusters are used in three ways:</p>
+<ul>
+<li><p>Non-redundant sampling and weighing scheme during training</p></li>
+<li><p>Non-redundant test/val selection by selecting test as cluster representatives</p></li>
+<li><p>Deleaking by removal of other cluster members after a member of the cluster is chosen as test/val (Note: deleaking algorithm uses further steps to ensure no-leakage between test/val and train)</p></li>
+</ul>
+</li>
+<li><p>From the chain-graph clusters we create paired-interface clusters paired-interface cluster of each PPI as <span class="math notranslate nohighlight">\(\{c_{a}, c_{b}\}\)</span>, where <span class="math notranslate nohighlight">\(c_a\)</span> and <span class="math notranslate nohighlight">\(c_b\)</span> are the interface cluster identifiers for the two interacting chains.</p></li>
+</ul>
+</section>
+<section id="test-filters">
+<h3>🧭 Test filters<a class="headerlink" href="#test-filters" title="Link to this heading">#</a></h3>
+<p>Sampling for the test and validation sets was performed based on the following criteria:</p>
+<ul class="simple">
+<li><p>Physiological contact (from PRODIGY-cryst)</p></li>
+<li><p>Dimers (to guarantee full bioassembly available during inference)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X-RAY</span> <span class="pre">DIFFRACTION</span></code> experimental method</p></li>
+<li><p>Resolution <span class="math notranslate nohighlight">\(\leq\)</span> 3.5Å</p></li>
+<li><p>Minimum individual chain length <span class="math notranslate nohighlight">\(\geq\)</span> 40 residues</p></li>
+<li><p>Elements <span class="math notranslate nohighlight">\(\geq\)</span> 3</p></li>
+<li><p>Interface atom gaps at 4Å threshold = 0</p></li>
+<li><p>Maximum variance <span class="math notranslate nohighlight">\(\leq\)</span> 0.98</p></li>
+<li><p>Single component</p></li>
+</ul>
+<p>All clusters where any one member passed the above criteria were kept. These filters resulted in 32,775 PPIs (we call these proto-test) in 5,047 clusters (used for val/<strong>PINDER-XL</strong>).</p>
+<p>PPIs which passed the criteria in these sampled clusters were deleaked by an additional transitive neighbor search, where any system that had a transitive hit within a depth of 2 in the foldseek graph, but a different cluster ID, was removed. Leaky systems were kept, but assigned a split label of <code class="docutils literal notranslate"><span class="pre">invalid</span></code>. Eligible systems were ranked by heterodimer vs. homodimer (heterodimer preferred), whether they pass the <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code> criteria, and availability of apo and AFDB paired structures. 1 PPI was sampled from each cluster based on the member ranked by the criteria.</p>
+</section>
+<section id="split">
+<h3>🔪 Split<a class="headerlink" href="#split" title="Link to this heading">#</a></h3>
+<p>The dataset was split as follows:</p>
+<ul class="simple">
+<li><p><strong>PINDER-XL</strong>: Sampling from 1,955 clusters resulted in 1,955 members.</p></li>
+<li><p><strong>PINDER-Val</strong>: Sampling from 1,958 clusters resulted in 1,958 members.</p></li>
+<li><p><strong>PINDER-Train</strong>: The rest of the clusters (42,220) resulted in 1,560,682 members</p></li>
+</ul>
+<p>From the PDB monomer alignments, we obtained a total of 44,330 unique apo structures, corresponding to 41,630 receptor and 36,910 ligand monomers.
+This corresponds to 274,194 pinder dimers in train, 441 in val and 436 in <strong>PINDER-XL</strong> with at least one matched apo structure.</p>
+<p>From the AFDB monomer alignments, we obtained a total of 42,827 unique AFDB structures, corresponding to 37,095 receptor and 38,801 ligand monomers.
+This corresponds to 621,276 pinder dimers in train, 1,817 in val and 1,775 in <strong>PINDER-XL</strong> with at least one matched AFDB monomer structure.</p>
+<p>These were assigned to the respective chain pairs to yield the numbers from above tables.</p>
+<p><strong>PINDER-S</strong> is a subset of <strong>PINDER-XL</strong>, consisting of 250 clusters (188 heterodimer and 62 homodimers) sampled for diverse Uniprot and PFAM annotations, 93 of which have apo paired structures (143 have at least one apo monomer) and all of which have paired AFDB structures, to evaluate methods for which sampling from the full set is too slow.</p>
+</section>
+<section id="af2mm">
+<h3>🗞️ AF2mm<a class="headerlink" href="#af2mm" title="Link to this heading">#</a></h3>
+<p>Clusters which contain only members released after 10.01.2021 (the AlphaFold-2MM cutoff date) were separated into 675 clusters. From these 675 members, we further de-leaked against any similar interfaces found to any other entry released before the cutoff date as determined by <code class="docutils literal notranslate"><span class="pre">iAlign</span></code>. The members which have low or no similarity to AlphaFold2-Multimer training set (180) were assgined to the <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code> set. Those members in the <code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code> set are guaranteed to be structurally distinct from AF2-MM 2.3 training data, while the remaining members are only guaranteed to come from entries released after the cutoff date (time-split).</p>
+</section>
+</section>
+<section id="updates-versioning">
+<h2>📰 Updates &amp; Versioning<a class="headerlink" href="#updates-versioning" title="Link to this heading">#</a></h2>
+<p>Dataset and code are versioned independently.</p>
+<p>The dataset is expected to be updated with at at maximum monthly release cycles frequency via <code class="docutils literal notranslate"><span class="pre">year-month</span></code> as subfolders in <code class="docutils literal notranslate"><span class="pre">pinder</span></code>. The current version is <code class="docutils literal notranslate"><span class="pre">2024-02</span></code></p>
+<p>There are 2 “types” of updates:</p>
+<ul class="simple">
+<li><p>minor changes in the index, or addition or change in structures that can be assigned to train without reclustering and adding leakage and thus not invalidating the test set and <strong>not requiring re-evaluation of the leaderboard methods</strong></p></li>
+<li><p>major addition of structures that require re-clustering and re-assigning of structures to train, validation and test thus <strong>invalidating the leaderboard</strong></p></li>
+</ul>
+<p>Major changes may happen with at maximum annual frequency, and will be clearly announced. Methods can choose <em>not</em> to update and continue using previous versions of the dataset</p>
+<p>The code is versioned using <a class="reference external" href="https://semver.org/">semantic versioning</a> and updated regularly and contains integration test to avoid invalidating any results</p>
+</section>
+<section id="examples-documentation">
+<h2>Examples &amp; documentation<a class="headerlink" href="#examples-documentation" title="Link to this heading">#</a></h2>
+<p>Package documentation, including API documentation, <a class="reference internal" href="examples.html"><span class="doc std std-doc">example notebooks</span></a>, and supplementary guides, are made available.</p>
+<p>To view the latest documentation, you can checkout the <a class="reference external" href="https://github.com/pinder-org/pinder/tree/gh-pages">gh-pages</a> branch and open the <a class="reference external" href="https://github.com/pinder-org/pinder/blob/gh-pages/index.html">index.html</a> file in your browser.</p>
+<p>Alternatively, you can build the package documentation locally after installing optional documentation dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;.[docs]&#39;</span>
+<span class="n">cd</span> <span class="n">docs</span><span class="o">/</span>
+<span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="nb">open</span>
+</pre></div>
+</div>
+<p>For a list of frequently asked questions, check the <a class="reference internal" href="faq.html"><span class="std std-doc">FAQ section</span></a>.</p>
+</section>
+<section id="dev-guide">
+<h2>Dev guide<a class="headerlink" href="#dev-guide" title="Link to this heading">#</a></h2>
+<section id="dev-mode-install">
+<h3>Dev mode install<a class="headerlink" href="#dev-mode-install" title="Link to this heading">#</a></h3>
+<section id="clone-the-repo">
+<h4>Clone the repo<a class="headerlink" href="#clone-the-repo" title="Link to this heading">#</a></h4>
+<p>For http:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pinder-org/pinder.git
+</pre></div>
+</div>
+<p>Or ssh:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:pinder-org/pinder.git
+</pre></div>
+</div>
+</section>
+<section id="initialize-a-conda-env">
+<h4>Initialize a conda env<a class="headerlink" href="#initialize-a-conda-env" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>pinder
+mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>pinder<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+mamba<span class="w"> </span>activate<span class="w"> </span>pinder
+</pre></div>
+</div>
+</section>
+<section id="install-the-desired-pinder-subpackages-in-dev-mode">
+<h4>Install the desired pinder subpackages in dev mode<a class="headerlink" href="#install-the-desired-pinder-subpackages-in-dev-mode" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;.[dev]&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="optional-install-pre-commit-hooks">
+<h4>(Optional) install pre-commit hooks<a class="headerlink" href="#optional-install-pre-commit-hooks" title="Link to this heading">#</a></h4>
+<p>These will ensure that code passes the linter before being committed.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pre-commit install
+</pre></div>
+</div>
+</section>
+</section>
+<section id="test-suite">
+<h3>Test suite<a class="headerlink" href="#test-suite" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tox
+</pre></div>
+</div>
+<p>We lint with ruff. See <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> and <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> for details.</p>
+</section>
+<section id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h3>
+<p>In order to change log levels, set the <code class="docutils literal notranslate"><span class="pre">LOG_LEVEL</span></code> environment variable. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export LOG_LEVEL=DEBUG
+</pre></div>
+</div>
+</section>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<p>This is a community effort and as such we highly encourage contributions.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">📚 About</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">👨‍💻 Getting Started</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fastpdb-support">fastpdb support</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pinder">Install pinder</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-virtual-environment-or-conda-environment">Initialize a virtual environment or conda environment</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-optional-dependencies">Install optional dependencies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-cluster">pytorch-cluster</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prodigy-cryst">PRODIGY-cryst</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pinder-packages-from-pypi">Install pinder packages from PyPI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-dataset">⬇️ Getting the dataset</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-download-the-complete-dataset-run-the-following">To download the complete dataset run the following</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-dataset">Updating the dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-datasets-resources">Pinder datasets &amp; resources</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gold-standard-benchmark-sets">1. 🏅 Gold standard benchmark sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard">2. 📊 Leaderboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-harness">3. ⚖️ Evaluation harness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-set">4. 🧪 Training set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloader">5. 📦 Dataloader</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-dataloader">Torch dataloader</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-geometric-dataloader">Pytorch-geometric dataloader</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-filters-annonations">6. ℹ️ Filters &amp; Annonations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#future-work">7. 📡 Future work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-organization">👨‍💻 Code organization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-generation">💽 Dataset Generation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input">🚪 Input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-annotation">ℹ️ Annotation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">👥 Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-filters">🧭 Test filters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split">🔪 Split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#af2mm">🗞️ AF2mm</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updates-versioning">📰 Updates &amp; Versioning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-documentation">Examples &amp; documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-guide">Dev guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-mode-install">Dev mode install</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repo">Clone the repo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-a-conda-env">Initialize a conda env</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-desired-pinder-subpackages-in-dev-mode">Install the desired pinder subpackages in dev mode</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-install-pre-commit-hooks">(Optional) install pre-commit hooks</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-suite">Test suite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/readme.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/readme.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

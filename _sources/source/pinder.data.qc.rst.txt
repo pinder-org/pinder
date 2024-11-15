@@ -1,0 +1,69 @@
+pinder.data.qc package
+======================
+
+Submodules
+----------
+
+pinder.data.qc.annotation\_check module
+---------------------------------------
+
+.. automodule:: pinder.data.qc.annotation_check
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.ialign module
+----------------------------
+
+.. automodule:: pinder.data.qc.ialign
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.pfam\_diversity module
+-------------------------------------
+
+.. automodule:: pinder.data.qc.pfam_diversity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.run module
+-------------------------
+
+.. automodule:: pinder.data.qc.run
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.similarity\_check module
+---------------------------------------
+
+.. automodule:: pinder.data.qc.similarity_check
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.uniprot\_leakage module
+--------------------------------------
+
+.. automodule:: pinder.data.qc.uniprot_leakage
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.qc.utils module
+---------------------------
+
+.. automodule:: pinder.data.qc.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.data.qc
+   :members:
+   :undoc-members:
+   :show-inheritance:

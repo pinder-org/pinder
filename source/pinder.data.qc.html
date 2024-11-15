@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.data.qc package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.data.qc';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.data.qc.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.eval package" href="pinder.eval.html" />
+    <link rel="prev" title="pinder.data.plot package" href="pinder.data.plot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.core.html">pinder.core package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.annotation.html">pinder.data.annotation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.pipeline.html">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.eval.html">pinder.eval package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="pinder.data.html" class="nav-link">pinder.data package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.qc package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-data-qc-package">
+<h1>pinder.data.qc package<a class="headerlink" href="#pinder-data-qc-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.data.qc.annotation_check">
+<span id="pinder-data-qc-annotation-check-module"></span><h2>pinder.data.qc.annotation_check module<a class="headerlink" href="#module-pinder.data.qc.annotation_check" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.get_paired_uniprot_intersection">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">get_paired_uniprot_intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">split_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">against</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'test'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L14-L74"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#get_paired_uniprot_intersection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.get_paired_uniprot_intersection" title="Link to this definition">#</a></dt>
+<dd><p>Get the intersection of the uniprot pairs between the train and test/val splits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>split_index</strong> – the split index dataframe</p></li>
+<li><p><strong>against</strong> – the split to compare against, either “test” or “val”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.metadata_to_ecod_pairs">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">metadata_to_ecod_pairs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L77-L124"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#metadata_to_ecod_pairs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.metadata_to_ecod_pairs" title="Link to this definition">#</a></dt>
+<dd><p>Convert the metadata dataframe to a dataframe with ECOD pairs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meta_data</strong> – the metadata dataframe</p></li>
+<li><p><strong>pindex</strong> – the pindex dataframe</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the ECOD pairs dataframe
+test_ids: the test ids
+val_ids: the val ids</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ecod_RL</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.annotate_longest_intersecting_ecod_domain">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">annotate_longest_intersecting_ecod_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ecod_RL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_interface_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L127-L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#annotate_longest_intersecting_ecod_domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.annotate_longest_intersecting_ecod_domain" title="Link to this definition">#</a></dt>
+<dd><p>Annotate the longest intersecting ECOD domain for each chain in the pair</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ecod_RL</strong> – the ECOD annotated dataframe</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the ECOD annotated dataframe with the longest intersecting domain</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ecod_RL_with_ecod</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.merge_annotated_interfaces_with_pindex">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">merge_annotated_interfaces_with_pindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecod_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecod_L</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L198-L247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#merge_annotated_interfaces_with_pindex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.merge_annotated_interfaces_with_pindex" title="Link to this definition">#</a></dt>
+<dd><p>Merge the annotated interfaces with the pindex dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pindex</strong> – the pindex dataframe</p></li>
+<li><p><strong>ecod_R</strong> – the ECOD annotated dataframe for chain R</p></li>
+<li><p><strong>ecod_L</strong> – the ECOD annotated dataframe for chain L</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the pindex dataframe with the ECOD annotations</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pindex_with_RL</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.get_ecod_paired_leakage">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">get_ecod_paired_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_interface_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L259-L413"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#get_ecod_paired_leakage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.get_ecod_paired_leakage" title="Link to this definition">#</a></dt>
+<dd><p>Get the ECOD paired leakage between the test and train/val splits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata</strong> – the metadata dataframe</p></li>
+<li><p><strong>pindex</strong> – the pindex dataframe</p></li>
+<li><p><strong>frac_interface_threshold</strong> – the fraction of the interface that must be covered by the ECOD domain</p></li>
+<li><p><strong>min_intersection</strong> – int
+the minimum length of an interface</p></li>
+<li><p><strong>top_n</strong> – int
+The number of leaked pairs to include in the output dataframe</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the problem cases (potentially leaked ECOD accession pairs) in the test split
+problem_cases_val: the problem cases (potentially leaked ECOD accession pairs) in the val split</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>problem_cases_test</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.get_binding_leakage">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">get_binding_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotated_pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">against</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'test'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L416-L585"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#get_binding_leakage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.get_binding_leakage" title="Link to this definition">#</a></dt>
+<dd><p>Obtains the chain level binding site leakage between the test/val and train splits</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.annotation_check.binding_leakage_main">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.annotation_check.</span></span><span class="sig-name descname"><span class="pre">binding_leakage_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_interface_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/annotation_check.py#L588-L664"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/annotation_check.html#binding_leakage_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.annotation_check.binding_leakage_main" title="Link to this definition">#</a></dt>
+<dd><p>Extract ECOD paired binding site leakage for test and val splits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate index file, if not provided will use get_index().</p></li>
+<li><p><strong>metadata_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate metadata file, if not provided will use get_metadata().</p></li>
+<li><p><strong>frac_interface_threshold</strong> (<em>float</em>) – Fraction of interface required to be covered by ECOD domain.
+Default is 0.25.</p></li>
+<li><p><strong>min_intersection</strong> (<em>int</em>) – Minimum required intersection between interface and ECOD domain.
+Default is 10.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The test and val split binding leakage, respectively.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[pd.DataFrame, pd.DataFrame]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.ialign">
+<span id="pinder-data-qc-ialign-module"></span><h2>pinder.data.qc.ialign module<a class="headerlink" href="#module-pinder.data.qc.ialign" title="Link to this heading">#</a></h2>
+<p>Calculate interface alignment scores via IS-align.</p>
+<p>Used to handle similarity hit finding following initial alignments via Foldseek or MMSeq2.</p>
+<p>For full method details, please see: <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btq404">https://doi.org/10.1093/bioinformatics/btq404</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.ialign.ialign">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.ialign.</span></span><span class="sig-name descname"><span class="pre">ialign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_pdb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hit_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hit_pdb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.IalignConfig" title="pinder.data.config.IalignConfig"><span class="pre">IalignConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">IalignConfig(rmsd_threshold=5.0,</span> <span class="pre">log_pvalue_threshold=-9.0,</span> <span class="pre">is_score_threshold=0.3,</span> <span class="pre">alignment_printout=0,</span> <span class="pre">speed_mode=1,</span> <span class="pre">min_residues=5,</span> <span class="pre">min_interface=5,</span> <span class="pre">distance_cutoff=10.0,</span> <span class="pre">output_prefix='output')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/ialign.py#L26-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/ialign.html#ialign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.ialign.ialign" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.ialign.ialign_all">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.ialign.</span></span><span class="sig-name descname"><span class="pre">ialign_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_root</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.IalignConfig" title="pinder.data.config.IalignConfig"><span class="pre">IalignConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">IalignConfig(rmsd_threshold=5.0,</span> <span class="pre">log_pvalue_threshold=-9.0,</span> <span class="pre">is_score_threshold=0.3,</span> <span class="pre">alignment_printout=0,</span> <span class="pre">speed_mode=1,</span> <span class="pre">min_residues=5,</span> <span class="pre">min_interface=5,</span> <span class="pre">distance_cutoff=10.0,</span> <span class="pre">output_prefix='output')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/ialign.py#L95-L122"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/ialign.html#ialign_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.ialign.ialign_all" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.ialign.process_in_batches">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.ialign.</span></span><span class="sig-name descname"><span class="pre">process_in_batches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.local/share/pinder/2024-02/ialign_results')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">48</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.IalignConfig" title="pinder.data.config.IalignConfig"><span class="pre">IalignConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">IalignConfig(rmsd_threshold=5.0,</span> <span class="pre">log_pvalue_threshold=-9.0,</span> <span class="pre">is_score_threshold=0.3,</span> <span class="pre">alignment_printout=0,</span> <span class="pre">speed_mode=1,</span> <span class="pre">min_residues=5,</span> <span class="pre">min_interface=5,</span> <span class="pre">distance_cutoff=10.0,</span> <span class="pre">output_prefix='output')</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/ialign.py#L125-L144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/ialign.html#process_in_batches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.ialign.process_in_batches" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.pfam_diversity">
+<span id="pinder-data-qc-pfam-diversity-module"></span><h2>pinder.data.qc.pfam_diversity module<a class="headerlink" href="#module-pinder.data.qc.pfam_diversity" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.load_data">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfam_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L25-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.load_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.get_ecod_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">get_ecod_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_interface_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L37-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#get_ecod_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.get_ecod_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.process_pfam_data">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">process_pfam_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfam_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L54-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#process_pfam_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.process_pfam_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.visualize_data">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">visualize_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n_pfams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L71-L82"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#visualize_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.visualize_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.get_pfam_diversity">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">get_pfam_diversity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L85-L113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#get_pfam_diversity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.get_pfam_diversity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.plot_pfam_clan_distribution">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">plot_pfam_clan_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n_pfams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L116-L133"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#plot_pfam_clan_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.plot_pfam_clan_distribution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.report_ecod_diversity">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">report_ecod_diversity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L136-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#report_ecod_diversity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.report_ecod_diversity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.plot_ecod_family_distribution">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">plot_ecod_family_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n_pfams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L201-L221"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#plot_ecod_family_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.plot_ecod_family_distribution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.get_merged_metadata">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">get_merged_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L224-L238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#get_merged_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.get_merged_metadata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.get_cluster_diversity">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">get_cluster_diversity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merged_metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L241-L277"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#get_cluster_diversity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.get_cluster_diversity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.plot_merged_metadata_distributions">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">plot_merged_metadata_distributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L280-L517"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#plot_merged_metadata_distributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.plot_merged_metadata_distributions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.pfam_diversity.pfam_diversity_main">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.pfam_diversity.</span></span><span class="sig-name descname"><span class="pre">pfam_diversity_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfam_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.local/share/pinder/2024-02/data/pfam_visualizations')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frac_interface_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_n_pfams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/pfam_diversity.py#L520-L578"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/pfam_diversity.html#pfam_diversity_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.pfam_diversity.pfam_diversity_main" title="Link to this definition">#</a></dt>
+<dd><p>Extract PFAM clan diversity and generate visualizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate index file, if not provided will use get_index().</p></li>
+<li><p><strong>metadata_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate metadata file, if not provided will use get_metadata().</p></li>
+<li><p><strong>pfam_file</strong> (<em>str</em><em> | </em><em>None</em>) – Optional path to Pfam data file, if not provided will fetch and cache it.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em><em> | </em><em>Path</em>) – Directory to store PFAM visualizations. Defaults to get_pinder_location() / ‘data/pfam_visualizations’.</p></li>
+<li><p><strong>frac_interface_threshold</strong> (<em>float</em>) – Fraction of interface required to be covered by ECOD domain.
+Default is 0.25.</p></li>
+<li><p><strong>min_intersection</strong> (<em>int</em>) – Minimum required intersection between interface and ECOD domain.
+Default is 10.</p></li>
+<li><p><strong>top_n_pfams</strong> (<em>int</em>) – Number of top Pfam clans to visualize. Default is 50.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.run">
+<span id="pinder-data-qc-run-module"></span><h2>pinder.data.qc.run module<a class="headerlink" href="#module-pinder.data.qc.run" title="Link to this heading">#</a></h2>
+<p>pinder_qc</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME
+<span class="w">    </span>pinder_qc
+
+SYNOPSIS
+<span class="w">    </span>pinder_qc<span class="w"> </span>COMMAND
+
+COMMANDS
+<span class="w">    </span>COMMAND<span class="w"> </span>is<span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>following:
+
+<span class="w">    </span>uniprot_leakage
+
+<span class="w">    </span>binding_leakage
+<span class="w">    </span>Extract<span class="w"> </span>ECOD<span class="w"> </span>paired<span class="w"> </span>binding<span class="w"> </span>site<span class="w"> </span>leakage<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>and<span class="w"> </span>val<span class="w"> </span>splits.
+
+<span class="w">    </span>pfam_diversity
+<span class="w">    </span>Extract<span class="w"> </span>PFAM<span class="w"> </span>clan<span class="w"> </span>diversity<span class="w"> </span>and<span class="w"> </span>generate<span class="w"> </span>visualizations.
+
+<span class="w">    </span>sequence_leakage
+<span class="w">    </span>Extract<span class="w"> </span>sequence<span class="w"> </span>similarity<span class="w"> </span>/<span class="w"> </span>leakage<span class="w"> </span>by<span class="w"> </span>subsampling<span class="w"> </span>members<span class="w"> </span><span class="k">in</span><span class="w"> </span>train<span class="w"> </span>split.
+</pre></div>
+</div>
+<p>pinder_qc uniprot_leakage –help</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME
+<span class="w">    </span>pinder_qc<span class="w"> </span>uniprot_leakage
+
+SYNOPSIS
+<span class="w">    </span>pinder_qc<span class="w"> </span>uniprot_leakage<span class="w"> </span>&lt;flags&gt;
+
+FLAGS
+<span class="w">    </span>-i,<span class="w"> </span>--index_path<span class="o">=</span>INDEX_PATH
+<span class="w">        </span>Type:<span class="w"> </span>Optional<span class="o">[</span><span class="s1">&#39;str | None&#39;</span><span class="o">]</span>
+<span class="w">        </span>Default:<span class="w"> </span>None
+<span class="w">    </span>-s,<span class="w"> </span>--split<span class="o">=</span>SPLIT
+<span class="w">        </span>Type:<span class="w"> </span><span class="s1">&#39;str&#39;</span>
+<span class="w">        </span>Default:<span class="w"> </span><span class="s1">&#39;test&#39;</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.run.main">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.run.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/run.py#L56-L66"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/run.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.run.main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.similarity_check">
+<span id="pinder-data-qc-similarity-check-module"></span><h2>pinder.data.qc.similarity_check module<a class="headerlink" href="#module-pinder.data.qc.similarity_check" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.load_data">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L26-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.load_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.process_test_table">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">process_test_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_table_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L37-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#process_test_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.process_test_table" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.align_sequences">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">align_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_overlap_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L49-L71"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#align_sequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.align_sequences" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.write_alignment">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">write_alignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignment_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L74-L80"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#write_alignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.write_alignment" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.generate_alignments">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">generate_alignments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_sequences</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_sequences</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_overlap_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_chunks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L83-L124"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#generate_alignments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.generate_alignments" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.get_processed_alignments">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">get_processed_alignments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignments_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L127-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#get_processed_alignments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.get_processed_alignments" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.load_train_system_id_mapping">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">load_train_system_id_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sampled_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L158-L169"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#load_train_system_id_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.load_train_system_id_mapping" title="Link to this definition">#</a></dt>
+<dd><p>Generate mapping of system IDs from training data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.get_pdb_chain_uni">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">get_pdb_chain_uni</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monomer_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L172-L176"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#get_pdb_chain_uni"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.get_pdb_chain_uni" title="Link to this definition">#</a></dt>
+<dd><p>Extract pdb_id, chain, and uni from a combined monomer_id string</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.system_id_to_alignment">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">system_id_to_alignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sys_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_system_id_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L179-L211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#system_id_to_alignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.system_id_to_alignment" title="Link to this definition">#</a></dt>
+<dd><p>Map system IDs to alignments if applicable</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.alignments_to_dual_alignment">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">alignments_to_dual_alignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r_alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_systems</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L214-L247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#alignments_to_dual_alignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.alignments_to_dual_alignment" title="Link to this definition">#</a></dt>
+<dd><p>Check for dual alignments across systems and return them if valid</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.get_aligned_indices">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">get_aligned_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignment_trace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L250-L259"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#get_aligned_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.get_aligned_indices" title="Link to this definition">#</a></dt>
+<dd><p>Extract aligned indices from an alignment trace</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.get_aligned_interface_indices">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">get_aligned_interface_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Alignment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_chain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L262-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#get_aligned_interface_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.get_aligned_interface_indices" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the percentage of interface residues that are aligned</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.analyze_leakage">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">analyze_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Alignment</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_system_id_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_overlap_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L293-L364"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#analyze_leakage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.analyze_leakage" title="Link to this definition">#</a></dt>
+<dd><p>Analyze leakage across systems based on alignments and mapping</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.subsample_train">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">subsample_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pindex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_size_cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_to_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_chunks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L367-L398"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#subsample_train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.subsample_train" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.similarity_check.sequence_leakage_main">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.similarity_check.</span></span><span class="sig-name descname"><span class="pre">sequence_leakage_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_table_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.local/share/pinder/2024-02/data/similarity-cache')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_size_cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_overlap_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_to_sample</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_chunks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cpu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.ClusterConfig" title="pinder.data.config.ClusterConfig"><span class="pre">ClusterConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ClusterConfig(seed=40,</span> <span class="pre">canonical_method='foldseek_community',</span> <span class="pre">edge_weight='weight',</span> <span class="pre">foldseek_cluster_edge_threshold=0.7,</span> <span class="pre">foldseek_edge_threshold=0.55,</span> <span class="pre">foldseek_af2_difficulty_threshold=0.7,</span> <span class="pre">mmseqs_edge_threshold=0.0,</span> <span class="pre">resolution_thr=3.5,</span> <span class="pre">min_chain_length=40,</span> <span class="pre">min_atom_types=3,</span> <span class="pre">max_var_thr=0.98,</span> <span class="pre">oligomeric_count=2,</span> <span class="pre">method='X-RAY</span> <span class="pre">DIFFRACTION',</span> <span class="pre">interface_atom_gaps_4A=0,</span> <span class="pre">prodigy_label='BIO',</span> <span class="pre">number_of_components=1,</span> <span class="pre">alphafold_cutoff_date='2021-10-01',</span> <span class="pre">depth_limit=2,</span> <span class="pre">max_node_degree=1000,</span> <span class="pre">top_n=1,</span> <span class="pre">min_depth_2_hits_with_comm=1,</span> <span class="pre">max_depth_2_hits_with_comm=2000,</span> <span class="pre">max_depth_2_hits=1000)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/similarity_check.py#L401-L572"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/similarity_check.html#sequence_leakage_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.similarity_check.sequence_leakage_main" title="Link to this definition">#</a></dt>
+<dd><p>Extract sequence similarity / leakage by subsampling members in train split.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate index file, if not provided will use get_index().</p></li>
+<li><p><strong>metadata_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate metadata file, if not provided will use get_metadata().</p></li>
+<li><p><strong>test_table_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate test systems table, if not provided must provide pinder ingest directory via pinder_dir.</p></li>
+<li><p><strong>entity_metadata_file</strong> (<em>str</em><em> | </em><em>None</em>) – Path to custom/intermediate entity metadata file, if not provided will use get_supplementary_data().</p></li>
+<li><p><strong>cache_path</strong> (<em>str</em><em> | </em><em>Path</em>) – Directory to store cached alignments. Defaults to get_pinder_location() / ‘data/similarity-cache’.</p></li>
+<li><p><strong>cluster_size_cutoff</strong> (<em>int</em>) – The minimum size of a train set cluster for sampling. Default is 20.</p></li>
+<li><p><strong>chain_overlap_threshold</strong> (<em>float</em>) – Threshold for chain overlap in interface residues. Default is 0.3.</p></li>
+<li><p><strong>num_to_sample</strong> (<em>int</em>) – The number of cluster elements to sample. Default is 1.</p></li>
+<li><p><strong>n_chunks</strong> (<em>int</em>) – The number of sequence pair chunks to evaluate. Default is 100.</p></li>
+<li><p><strong>random_state</strong> (<em>int</em>) – Random state for train set subsampling. Default is 42.</p></li>
+<li><p><strong>use_cache</strong> (<em>bool</em>) – Whether to use cached alignments. Default is True.</p></li>
+<li><p><strong>num_cpu</strong> (<em>int</em><em> | </em><em>None</em>) – Limit number of CPU used in multiprocessing. Default is None (use all).</p></li>
+<li><p><strong>pinder_dir</strong> (<em>Path</em><em> | </em><em>None</em>) – Directory to pinder dataset generation directory. If not provided, will assume it is being run on local files / post-data gen.</p></li>
+<li><p><strong>config</strong> (<a class="reference internal" href="pinder.data.html#pinder.data.config.ClusterConfig" title="pinder.data.config.ClusterConfig"><em>ClusterConfig</em></a>) – The config object used to generate the clustering. Used to infer location of test_table_file if pinder_dir is provided.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.uniprot_leakage">
+<span id="pinder-data-qc-uniprot-leakage-module"></span><h2>pinder.data.qc.uniprot_leakage module<a class="headerlink" href="#module-pinder.data.qc.uniprot_leakage" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.uniprot_leakage.uniprot_leakage_main">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.uniprot_leakage.</span></span><span class="sig-name descname"><span class="pre">uniprot_leakage_main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'test'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/uniprot_leakage.py#L8-L23"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/uniprot_leakage.html#uniprot_leakage_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.uniprot_leakage.uniprot_leakage_main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.uniprot_leakage.report_uniprot_test_val_leakage">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.uniprot_leakage.</span></span><span class="sig-name descname"><span class="pre">report_uniprot_test_val_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/uniprot_leakage.py#L26-L39"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/uniprot_leakage.html#report_uniprot_test_val_leakage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.uniprot_leakage.report_uniprot_test_val_leakage" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.qc.utils">
+<span id="pinder-data-qc-utils-module"></span><h2>pinder.data.qc.utils module<a class="headerlink" href="#module-pinder.data.qc.utils" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.download_pdbfam_db">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">download_pdbfam_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'PDBfam.parquet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'http://dunbrack2.fccc.edu/ProtCiD/pfam/PDBfam.txt.gz'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L24-L49"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#download_pdbfam_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.download_pdbfam_db" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.load_index">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">load_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L52-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#load_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.load_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.load_metadata">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">load_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L65-L77"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#load_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.load_metadata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.load_entity_metadata">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">load_entity_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L80-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#load_entity_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.load_entity_metadata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.load_pfam_db">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">load_pfam_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfam_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L95-L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#load_pfam_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.load_pfam_db" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.qc.utils.view_potential_leaks">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.qc.utils.</span></span><span class="sig-name descname"><span class="pre">view_potential_leaks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">potential_leak_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pml_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/work/pinder/pinder/docs/view_potential_leaks.pml')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_scenes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['align',</span> <span class="pre">'super',</span> <span class="pre">'chain']</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/qc/utils.py#L112-L216"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/qc/utils.html#view_potential_leaks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.qc.utils.view_potential_leaks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.qc">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.data.qc" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.annotation_check">pinder.data.qc.annotation_check module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.get_paired_uniprot_intersection"><code class="docutils literal notranslate"><span class="pre">get_paired_uniprot_intersection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.metadata_to_ecod_pairs"><code class="docutils literal notranslate"><span class="pre">metadata_to_ecod_pairs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.annotate_longest_intersecting_ecod_domain"><code class="docutils literal notranslate"><span class="pre">annotate_longest_intersecting_ecod_domain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.merge_annotated_interfaces_with_pindex"><code class="docutils literal notranslate"><span class="pre">merge_annotated_interfaces_with_pindex()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.get_ecod_paired_leakage"><code class="docutils literal notranslate"><span class="pre">get_ecod_paired_leakage()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.get_binding_leakage"><code class="docutils literal notranslate"><span class="pre">get_binding_leakage()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.annotation_check.binding_leakage_main"><code class="docutils literal notranslate"><span class="pre">binding_leakage_main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.ialign">pinder.data.qc.ialign module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.ialign.ialign"><code class="docutils literal notranslate"><span class="pre">ialign()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.ialign.ialign_all"><code class="docutils literal notranslate"><span class="pre">ialign_all()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.ialign.process_in_batches"><code class="docutils literal notranslate"><span class="pre">process_in_batches()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.pfam_diversity">pinder.data.qc.pfam_diversity module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.get_ecod_annotations"><code class="docutils literal notranslate"><span class="pre">get_ecod_annotations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.process_pfam_data"><code class="docutils literal notranslate"><span class="pre">process_pfam_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.visualize_data"><code class="docutils literal notranslate"><span class="pre">visualize_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.get_pfam_diversity"><code class="docutils literal notranslate"><span class="pre">get_pfam_diversity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.plot_pfam_clan_distribution"><code class="docutils literal notranslate"><span class="pre">plot_pfam_clan_distribution()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.report_ecod_diversity"><code class="docutils literal notranslate"><span class="pre">report_ecod_diversity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.plot_ecod_family_distribution"><code class="docutils literal notranslate"><span class="pre">plot_ecod_family_distribution()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.get_merged_metadata"><code class="docutils literal notranslate"><span class="pre">get_merged_metadata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.get_cluster_diversity"><code class="docutils literal notranslate"><span class="pre">get_cluster_diversity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.plot_merged_metadata_distributions"><code class="docutils literal notranslate"><span class="pre">plot_merged_metadata_distributions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.pfam_diversity.pfam_diversity_main"><code class="docutils literal notranslate"><span class="pre">pfam_diversity_main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.run">pinder.data.qc.run module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.run.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.similarity_check">pinder.data.qc.similarity_check module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.process_test_table"><code class="docutils literal notranslate"><span class="pre">process_test_table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.align_sequences"><code class="docutils literal notranslate"><span class="pre">align_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.write_alignment"><code class="docutils literal notranslate"><span class="pre">write_alignment()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.generate_alignments"><code class="docutils literal notranslate"><span class="pre">generate_alignments()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.get_processed_alignments"><code class="docutils literal notranslate"><span class="pre">get_processed_alignments()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.load_train_system_id_mapping"><code class="docutils literal notranslate"><span class="pre">load_train_system_id_mapping()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.get_pdb_chain_uni"><code class="docutils literal notranslate"><span class="pre">get_pdb_chain_uni()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.system_id_to_alignment"><code class="docutils literal notranslate"><span class="pre">system_id_to_alignment()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.alignments_to_dual_alignment"><code class="docutils literal notranslate"><span class="pre">alignments_to_dual_alignment()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.get_aligned_indices"><code class="docutils literal notranslate"><span class="pre">get_aligned_indices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.get_aligned_interface_indices"><code class="docutils literal notranslate"><span class="pre">get_aligned_interface_indices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.analyze_leakage"><code class="docutils literal notranslate"><span class="pre">analyze_leakage()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.subsample_train"><code class="docutils literal notranslate"><span class="pre">subsample_train()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.similarity_check.sequence_leakage_main"><code class="docutils literal notranslate"><span class="pre">sequence_leakage_main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.uniprot_leakage">pinder.data.qc.uniprot_leakage module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.uniprot_leakage.uniprot_leakage_main"><code class="docutils literal notranslate"><span class="pre">uniprot_leakage_main()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.uniprot_leakage.report_uniprot_test_val_leakage"><code class="docutils literal notranslate"><span class="pre">report_uniprot_test_val_leakage()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc.utils">pinder.data.qc.utils module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.download_pdbfam_db"><code class="docutils literal notranslate"><span class="pre">download_pdbfam_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.load_index"><code class="docutils literal notranslate"><span class="pre">load_index()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.load_metadata"><code class="docutils literal notranslate"><span class="pre">load_metadata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.load_entity_metadata"><code class="docutils literal notranslate"><span class="pre">load_entity_metadata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.load_pfam_db"><code class="docutils literal notranslate"><span class="pre">load_pfam_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.qc.utils.view_potential_leaks"><code class="docutils literal notranslate"><span class="pre">view_potential_leaks()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.qc">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.data.qc.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.data.qc.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

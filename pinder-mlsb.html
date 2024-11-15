@@ -1,0 +1,2390 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MLSB PINDER Challenge &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pinder-mlsb';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/pinder-mlsb.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference" href="source/pinder.html" />
+    <link rel="prev" title="FAQ: cropped monomer superposition" href="superposition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pinder-index.html">Pinder index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-system.html">Pinder system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-loader.html">Pinder loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-eval.html">Pinder eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superposition.html">FAQ: cropped monomer superposition</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MLSB PINDER Challenge</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="examples.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">MLSB PINDER Challenge</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mlsb-pinder-challenge">
+<h1>MLSB PINDER Challenge<a class="headerlink" href="#mlsb-pinder-challenge" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#training-rules"><span class="xref myst">Rules: training</span></a></p></li>
+<li><p><a class="reference internal" href="#inference-rules"><span class="xref myst">Rules: inference</span></a></p></li>
+<li><p><a class="reference internal" href="#eval-dataset"><span class="xref myst">Evaluation dataset</span></a></p></li>
+<li><p><a class="reference internal" href="#accessing-training-data"><span class="xref myst">Accessing training data</span></a></p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#minimal-filepath-example"><span class="xref myst">Minimal filepath example</span></a></p></li>
+<li><p><a class="reference internal" href="#pinder-utilities"><span class="xref myst">Helpful pinder utilities</span></a></p></li>
+<li><p><a class="reference internal" href="#pinder-loader-and-dataset"><span class="xref myst">PinderLoader and PinderDataset</span></a></p></li>
+<li><p><a class="reference internal" href="#torch-dataloader"><span class="xref myst">Implementing a torch dataloader</span></a></p></li>
+</ol>
+</li>
+</ol>
+<p>The goal of this tutorial is to outline some basic rules for participating in the PINDER track of the MLSB challenge and provide simple hands-on examples for how participants can access and use the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dataset.</p>
+<p>Specifically, we will cover:</p>
+<ul class="simple">
+<li><p>Rules for model training</p></li>
+<li><p>Rules for valid inference submissions</p></li>
+<li><p>Accessing and loading data for training your model</p></li>
+<li><p>A description of the inputs to be provided in the evaluation set</p></li>
+</ul>
+<section id="rules-for-valid-model-training">
+<h2>Rules for valid model training <a name="training-rules"></a><a class="headerlink" href="#rules-for-valid-model-training" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Participants MUST use the sequences and SMILES in the provided train and validation sets from PINDER or PLINDER. In order to ensure no leakage, external data augmentation is not allowed.</p></li>
+<li><p>If starting structures/conformations need to be generated for the model, then this can only be done from the training and validation sequences and SMILES. Note that this is only the case for train &amp; validation - no external folding methods or starting structures are allowed for the test set under any circumstance!. Only the predicted structures/conformers themselves may be used in this way, the embeddings or models used to generate such predictions may not. E.g. it is not valid to “distill” a method that was not trained on PLINDER/PINDER</p></li>
+<li><p>The PINDER and PLINDER datasets should be used independently; combining the sets is considered augmentation and is not allowed.</p></li>
+<li><p>For inference, only the inputs provided in the evaluation sets may be used: canonical sequences, structures and MSAs; no alternate templates or sequences are permitted. The inputs that will be used by assessors for each challenge track is as follows:</p>
+<ul>
+<li><p>PLINDER: (SMILES, monomer protein structure, monomer FASTA, monomer MSA)</p></li>
+<li><p>PINDER: (monomer protein structure 1, monomer protein structure 2, FASTA 1, FASTA 2, MSA 1, MSA 2)</p></li>
+</ul>
+</li>
+<li><p>Model selection must be performed exclusively on the validation set designed for this purpose within the PINDER and PLINDER datasets.</p></li>
+<li><p>Methods relying on any model derivatives or embeddings trained on structures outside the PINDER/PLINDER training set are not permitted (e.g., ESM2, MSA: ✅; ESM3/ESMFold/SAProt/UniMol: ❌).</p></li>
+<li><p>For instruction on how to load training and validation data, check the links below:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/plinder-org/plinder/blob/8f7f4372a675abbbd948ea6aeaf6b870bf312a02/docs/examples/mlsb_challenge.md#mlsb-notebook-target">PLINDER</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-mlsb.html#accessing-and-loading-data-for-training">PINDER</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="rules-for-valid-inference-submissions">
+<h2>Rules for valid inference submissions<a name="inference-rules"></a><a class="headerlink" href="#rules-for-valid-inference-submissions" title="Link to this heading">#</a></h2>
+<p>Submission system will use Hugging Face Spaces. To qualify for submission, each team must:</p>
+<ul class="simple">
+<li><p>Provide an MLSB submission ID or a link to a preprint/paper describing their methodology. This publication does not have to specifically report training or evaluation on the P(L)INDER dataset. Previously published methods, such as DiffDock, only need to link their existing paper. Note that entry into this competition does not equate to an MLSB workshop paper submission.</p></li>
+<li><p>Create a copy of the provided <a class="reference external" href="https://huggingface.co/spaces/MLSB/pinder_inference_template/blob/main/inference_app.py">inference template</a>.</p>
+<ul>
+<li><p>Go to the top right corner of the page and click on the drop-down menu (vertical ellipsis) right next to the “Community”, then select “Duplicate this space”.</p></li>
+</ul>
+</li>
+<li><p>Change files in the newly created space to reflect the peculiarities of your model</p>
+<ul>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> to capture all dependencies.</p></li>
+<li><p>Include a <code class="docutils literal notranslate"><span class="pre">inference_app.py</span></code> file. This contains a <code class="docutils literal notranslate"><span class="pre">predict</span></code> function that should be modified to reflect the specifics of inference using their model.</p></li>
+<li><p>Include a <code class="docutils literal notranslate"><span class="pre">train.py</span></code> file to ensure that training and model selection use only the PINDER/PLINDER datasets and to clearly show any additional hyperparameters used.</p></li>
+<li><p>Provide a LICENSE file that allows for reuse, derivative works, and distribution of the provided software and weights (e.g., MIT or Apache2 license).</p></li>
+<li><p>Modify the Dockerfile as appropriate (including selecting the right base image)</p></li>
+</ul>
+</li>
+<li><p>Submit to the leaderboard via the <a class="reference external" href="https://huggingface.co/spaces/MLSB/leaderboard2024">designated form</a>.</p>
+<ul>
+<li><p>On submission page, add reference to the newly created space in the format username/space (e.g mlsb/alphafold3)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="evaluation-dataset">
+<h2>Evaluation dataset <a name="eval-dataset"></a><a class="headerlink" href="#evaluation-dataset" title="Link to this heading">#</a></h2>
+<p>Although the exact composition of the eval set will be shared at a future date, below we provide an overview of the dataset and what to expect</p>
+<ul class="simple">
+<li><p>Two leaderboards, one for each of PINDER and PLINDER, will be created using a single evaluation set for each.</p></li>
+<li><p>Evaluation sets will be subsets of 150-200 structures from the current PINDER and PLINDER test splits (subsets to enable reasonable eval runtime).</p></li>
+<li><p>Each evaluation sample will contain a predefined input/output to ensure performance assessment is model-dependent, not input-dependent.</p></li>
+<li><p>The focus will be exclusively on flexible docking/co-folding, with a single canonical structure per protein, sampled from apo and predicted structures.</p></li>
+<li><p>Monomer input structures will be sampled from paired structures available in PINDER/PLINDER, balanced between apo and predicted structures and stratified by “flexibility” level according to specified conformational difference thresholds.</p></li>
+<li><p>Inputs will be: <code class="docutils literal notranslate"><span class="pre">(monomer</span> <span class="pre">protein</span> <span class="pre">structure</span> <span class="pre">1,</span> <span class="pre">monomer</span> <span class="pre">protein</span> <span class="pre">structure</span> <span class="pre">2,</span> <span class="pre">FASTA</span> <span class="pre">1,</span> <span class="pre">FASTA</span> <span class="pre">2)</span></code> for PINDER</p></li>
+</ul>
+</section>
+<section id="accessing-and-loading-data-for-training">
+<h2>Accessing and loading data for training <a name="accessing-training-data"></a><a class="headerlink" href="#accessing-and-loading-data-for-training" title="Link to this heading">#</a></h2>
+<p>In order to access the train and val splits for PINDER, please refer to the <a class="reference external" href="https://github.com/pinder-org/pinder/tree/main?tab=readme-ov-file#%EF%B8%8F-getting-the-dataset">pinder documentation</a></p>
+<p>Once you have downloaded the pinder dataset, either via the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> package or directly through <code class="docutils literal notranslate"><span class="pre">gsutil</span></code>, you will have all of the necessary files for training.</p>
+<p>For those mainly interested in torch dataloaders, refer to the <a class="reference external" href="https://github.com/pinder-org/pinder#5--dataloader">readme section</a> and <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">tutorial</a> on the torch dataloader provided in pinder. TLDR:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">PinderDataset</span><span class="p">,</span> <span class="n">get_torch_loader</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_torch_loader</span><span class="p">(</span><span class="n">PinderDataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="n">split</span><span class="p">))</span> <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]]</span> <span class="c1"># do NOT use test, we will verify your pipeline does not use test in neither training nor model selection</span>
+</pre></div>
+</div>
+<p>For those interested in loading/filtering/sampling/augmenting data using pinder utilities, see remaining sections below.</p>
+<p>You are ONLY allowed to access those systems labeled with split <code class="docutils literal notranslate"><span class="pre">train</span></code> and split <code class="docutils literal notranslate"><span class="pre">val</span></code> for model training and validation, respectively.</p>
+<p>See below for two different options for accessing the index and split labels.</p>
+<p><strong>If you have already installed pinder (preferred method):</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_index</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;train&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;val&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1560682, 34), (1958, 34))
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Without installing pinder (need to install <code class="docutils literal notranslate"><span class="pre">gcsfs</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> or install the <code class="docutils literal notranslate"><span class="pre">gsutil</span></code> utility to get the index file)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">index_uri</span> <span class="o">=</span> <span class="s2">&quot;gs://pinder/2024-02/index.parquet&quot;</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;anon&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">index_uri</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;train&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;val&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">val</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((1560682, 34), (1958, 34))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="minimal-example-with-filepaths">
+<h3>Minimal example with filepaths <a name="minimal-filepath-example"></a><a class="headerlink" href="#minimal-example-with-filepaths" title="Link to this heading">#</a></h3>
+<p>For those who simply want access to PDB files and/or sequences, below we provide a minimal example of how to go from a row in the pinder index to a tuple of filepaths and sequences akin to the expected inputs for inference.</p>
+<p>Later sections provide alternative means to loading data with common pinder utilities, including the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> and <code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> torch dataset.</p>
+<p>All <code class="docutils literal notranslate"><span class="pre">pinder</span></code> data should be stored in <code class="docutils literal notranslate"><span class="pre">PINDER_BASE_DIR</span></code>. Unless you customized the download directory, this would default to:
+<code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder/2024-02/</span></code></p>
+<p>PDB files are stored in a subdirectory, named <code class="docutils literal notranslate"><span class="pre">pdbs</span></code>.</p>
+<p>To go from a row in the index to a collection of filepaths, you can either use the pydantic model for the pinder index schema (<code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code>) or construct the filepaths yourself.</p>
+<p>We will first illustrate how to do this via <code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">IndexEntry</span>
+
+<span class="n">pinder_dir</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">entry</span> <span class="o">=</span> <span class="n">IndexEntry</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+<span class="c1"># IndexEntry has a convenience property `pdb_paths` which returns a dict of structure_type: relative_path | list[relative_path]</span>
+<span class="n">relative_paths</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">pdb_paths</span>
+<span class="n">absolute_paths</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">structure_type</span><span class="p">,</span> <span class="n">rel_path</span> <span class="ow">in</span> <span class="n">relative_paths</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="c1"># non-canonical apo monomers are stored as a list of relative paths</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rel_path</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">alt_monomer</span> <span class="ow">in</span> <span class="n">rel_path</span><span class="p">:</span>
+            <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="n">alt_monomer</span><span class="p">)</span> 
+    <span class="c1"># Not all systems have every type of monomer. When they are not available, the relative path is &quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">rel_path</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">rel_path</span>
+    <span class="c1"># Convert relative path to absolute path </span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">structure_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="n">rel_path</span>
+
+<span class="n">relative_paths</span><span class="p">,</span> <span class="n">absolute_paths</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;native&#39;: &#39;pdbs/3j1r__O1_A8AAA0--3j1r__P1_A8AAA0.pdb&#39;,
+  &#39;holo_R&#39;: &#39;pdbs/3j1r__O1_A8AAA0-R.pdb&#39;,
+  &#39;holo_L&#39;: &#39;pdbs/3j1r__P1_A8AAA0-L.pdb&#39;,
+  &#39;predicted_R&#39;: &#39;pdbs/af__A8AAA0.pdb&#39;,
+  &#39;predicted_L&#39;: &#39;pdbs/af__A8AAA0.pdb&#39;,
+  &#39;apo_R&#39;: &#39;&#39;,
+  &#39;apo_L&#39;: &#39;&#39;,
+  &#39;apo_R_alt&#39;: [],
+  &#39;apo_L_alt&#39;: []},
+ {&#39;native&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/3j1r__O1_A8AAA0--3j1r__P1_A8AAA0.pdb&#39;),
+  &#39;holo_R&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/3j1r__O1_A8AAA0-R.pdb&#39;),
+  &#39;holo_L&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/3j1r__P1_A8AAA0-L.pdb&#39;),
+  &#39;predicted_R&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__A8AAA0.pdb&#39;),
+  &#39;predicted_L&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__A8AAA0.pdb&#39;),
+  &#39;apo_R&#39;: &#39;&#39;,
+  &#39;apo_L&#39;: &#39;&#39;,
+  &#39;apo_R_alt&#39;: [],
+  &#39;apo_L_alt&#39;: []})
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, the <code class="docutils literal notranslate"><span class="pre">IndexEntry.pdb_paths</span></code> property was used to conveniently extract filepaths from a row in the index. This is done by using the following columns from the index:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_R_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_L_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted_R_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted_L_pdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_R_pdbs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_L_pdbs</span></code></p></li>
+</ul>
+<p>It is possible to do this yourself without IndexEntry:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="n">absolute_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;native&quot;</span><span class="p">:</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">pdb_cols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;holo_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># holo monomers for receptor and ligand, respectively</span>
+    <span class="s2">&quot;predicted_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;predicted_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># predicted monomers</span>
+    <span class="s2">&quot;apo_R_pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_L_pdb&quot;</span><span class="p">,</span> <span class="c1"># canonical apo monomers</span>
+    <span class="s2">&quot;apo_R_pdbs&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_L_pdbs&quot;</span><span class="p">,</span> <span class="c1"># canonical + non-canonical (alternative) apo monomers, separated by a semi-colon</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">pdb_column</span> <span class="ow">in</span> <span class="n">pdb_cols</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pdb_column</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;pdbs&quot;</span><span class="p">):</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="n">alt_apo</span> <span class="k">if</span> <span class="n">alt_apo</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> 
+            <span class="k">for</span> <span class="n">alt_apo</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pdb_name</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span>
+        <span class="n">absolute_paths</span><span class="p">[</span><span class="n">pdb_column</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span> <span class="o">/</span> <span class="n">pdb_name</span> <span class="k">if</span> <span class="n">pdb_name</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+<span class="n">absolute_paths</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;native&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4qvv__AA1_P30657--4qvv__S1_P40302.pdb&#39;),
+ &#39;holo_R_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4qvv__AA1_P30657-R.pdb&#39;),
+ &#39;holo_L_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/4qvv__S1_P40302-L.pdb&#39;),
+ &#39;predicted_R_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__P30657.pdb&#39;),
+ &#39;predicted_L_pdb&#39;: PosixPath(&#39;/home/runner/.local/share/pinder/2024-02/pdbs/af__P40302.pdb&#39;),
+ &#39;apo_R_pdb&#39;: &#39;&#39;,
+ &#39;apo_L_pdb&#39;: &#39;&#39;,
+ &#39;apo_R_pdbs&#39;: [&#39;&#39;],
+ &#39;apo_L_pdbs&#39;: [&#39;&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most minimal interface for loading these filepaths and extracting e.g. coordinates and sequence would be via <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.structure</span></code> module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+<span class="c1"># Note: since this notebook is executed in CI, I will also create a `PinderSystem` object which will auto-download any missing PDB file</span>
+<span class="c1"># You do NOT need to do this if you already downloaded the dataset</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;native&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+    
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">absolute_paths</span><span class="p">[</span><span class="s2">&quot;holo_R_pdb&quot;</span><span class="p">])</span>
+<span class="n">receptor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:29,840 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/4qvv__AA1_P30657-R.pdb,
+    uniprot_map=None,
+    pinder_id=&#39;4qvv__AA1_P30657-R&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1824,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  42.843, -166.299,   40.963],
+       [  43.   , -164.91 ,   41.486],
+       [  42.193, -164.727,   42.763],
+       [  41.016, -165.075,   42.816],
+       [  42.542, -163.854,   40.456],
+       [  43.347, -163.95 ,   39.272],
+       [  42.653, -162.434,   41.033],
+       [  42.837, -164.19 ,   43.794],
+       [  42.152, -163.84 ,   45.031],
+       [  42.728, -162.539,   45.568]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;TQQPIVTGTSVISMKYDNGVIIAADNLGSYGSLLRFNGVERLIPVGDNTVVGISGDISDMQHIERLLKDLVTENAYDNPLADAEEALEPSYIFEYLATVMYQRRSKMNPLWNAIIVAGVQSNGDQFLRYVNLLGVTYSSPTLATGFGAHMANPLLRKVVDRESDIPKTTVQVAEEAIVNAMRVLYYRDARSSRNFSLAIIDKNTGLTFKKNLQVENMKWDFAKDIKGYGTQKI&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">fasta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&gt;4qvv__AA1_P30657-R\nTQQPIVTGTSVISMKYDNGVIIAADNLGSYGSLLRFNGVERLIPVGDNTVVGISGDISDMQHIERLLKDLVTENAYDNPLADAEEALEPSYIFEYLATVMYQRRSKMNPLWNAIIVAGVQSNGDQFLRYVNLLGVTYSSPTLATGFGAHMANPLLRKVVDRESDIPKTTVQVAEEAIVNAMRVLYYRDARSSRNFSLAIIDKNTGLTFKKNLQVENMKWDFAKDIKGYGTQKI&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can also write the Structure object to a PDB file if desired (e.g. after making changes)</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">TemporaryDirectory</span>
+<span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmp_dir</span><span class="p">:</span>
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">)</span>
+    <span class="n">receptor</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">temp_dir</span> <span class="o">/</span> <span class="s2">&quot;modified_receptor.pdb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-pinder-utilities-to-construct-a-dataloader">
+<h3>Using pinder utilities to construct a dataloader <a name="pinder-utilities"></a><a class="headerlink" href="#using-pinder-utilities-to-construct-a-dataloader" title="Link to this heading">#</a></h3>
+<p>Before proceeding with this section, you may find it helpful to review the existing tutorials available in <code class="docutils literal notranslate"><span class="pre">pinder</span></code>.</p>
+<p>Specifcially, the tutorials covering:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-index.html">pinder index</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-system.html">pinder system</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">pinder loader</a></p></li>
+<li><p><a class="reference external" href="https://pinder-org.github.io/pinder/superposition.html">cropped superposition</a></p></li>
+</ul>
+<p><strong>We will start by looking at the most basic way to load items from the training and validation set: via <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> objects</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+
+<span class="k">def</span> <span class="nf">get_system</span><span class="p">(</span><span class="n">system_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PinderSystem</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">system_id</span><span class="p">)</span>
+
+
+<span class="n">system</span> <span class="o">=</span> <span class="n">get_system</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">system</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        &#39;split&#39;,
+        &#39;train&#39;,
+    ),
+    (
+        &#39;id&#39;,
+        &#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+    ),
+    (
+        &#39;pdb_id&#39;,
+        &#39;8phr&#39;,
+    ),
+    (
+        &#39;cluster_id&#39;,
+        &#39;cluster_24559_24559&#39;,
+    ),
+    (
+        &#39;cluster_id_R&#39;,
+        &#39;cluster_24559&#39;,
+    ),
+    (
+        &#39;cluster_id_L&#39;,
+        &#39;cluster_24559&#39;,
+    ),
+    (
+        &#39;pinder_s&#39;,
+        False,
+    ),
+    (
+        &#39;pinder_xl&#39;,
+        False,
+    ),
+    (
+        &#39;pinder_af2&#39;,
+        False,
+    ),
+    (
+        &#39;uniprot_R&#39;,
+        &#39;UNDEFINED&#39;,
+    ),
+    (
+        &#39;uniprot_L&#39;,
+        &#39;UNDEFINED&#39;,
+    ),
+    (
+        &#39;holo_R_pdb&#39;,
+        &#39;8phr__X4_UNDEFINED-R.pdb&#39;,
+    ),
+    (
+        &#39;holo_L_pdb&#39;,
+        &#39;8phr__W4_UNDEFINED-L.pdb&#39;,
+    ),
+    (
+        &#39;predicted_R_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;predicted_L_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_R_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_pdb&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_R_pdbs&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_pdbs&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;holo_R&#39;,
+        True,
+    ),
+    (
+        &#39;holo_L&#39;,
+        True,
+    ),
+    (
+        &#39;predicted_R&#39;,
+        False,
+    ),
+    (
+        &#39;predicted_L&#39;,
+        False,
+    ),
+    (
+        &#39;apo_R&#39;,
+        False,
+    ),
+    (
+        &#39;apo_L&#39;,
+        False,
+    ),
+    (
+        &#39;apo_R_quality&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;apo_L_quality&#39;,
+        &#39;&#39;,
+    ),
+    (
+        &#39;chain1_neff&#39;,
+        10.78125,
+    ),
+    (
+        &#39;chain2_neff&#39;,
+        11.1171875,
+    ),
+    (
+        &#39;chain_R&#39;,
+        &#39;X4&#39;,
+    ),
+    (
+        &#39;chain_L&#39;,
+        &#39;W4&#39;,
+    ),
+    (
+        &#39;contains_antibody&#39;,
+        False,
+    ),
+    (
+        &#39;contains_antigen&#39;,
+        False,
+    ),
+    (
+        &#39;contains_enzyme&#39;,
+        False,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__X4_UNDEFINED--8phr__W4_UNDEFINED.pdb,
+    uniprot_map=None,
+    pinder_id=&#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (2556,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__X4_UNDEFINED-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/8phr__X4_UNDEFINED-R.parquet,
+    pinder_id=&#39;8phr__X4_UNDEFINED-R&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1358,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/8phr__W4_UNDEFINED-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/8phr__W4_UNDEFINED-L.parquet,
+    pinder_id=&#39;8phr__W4_UNDEFINED-L&#39;,
+    atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1198,),
+    pdb_engine=&#39;fastpdb&#39;,
+)
+apo_receptor=None
+apo_ligand=None
+pred_receptor=None
+pred_ligand=None
+)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will notice in the printed <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object has the following properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code> - the ground-truth dimer complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_receptor</span></code> - the receptor chain (monomer) from the ground-truth complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo_ligand</span></code> - the ligand chain (monomer) from the ground-truth complex</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_receptor</span></code> - the canonical <em>apo</em> chain (monomer) paired to the receptor chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo_ligand</span></code> - the canonical <em>apo</em> chain (monomer) paired to the ligand chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred_receptor</span></code> - the AlphaFold2 predicted monomer paired to the receptor chain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pred_ligand</span></code> - the AlphaFold2 predicted monomer paired to the ligand chain</p></li>
+</ul>
+<p>These properties are pointers to <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects. The <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object provides the most direct mode of access to structures and associated properties.</p>
+<p><strong>Note: not all systems have an apo and/or predicted structure for all chains of the ground-truth dimer complex!</strong></p>
+<p>As was the case in the example above, when the alternative monomers are not available, the property will have a value of <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>You can determine which systems have which alternative monomer pairings <em>a priori</em> by looking at the boolean columns in the index <code class="docutils literal notranslate"><span class="pre">apo_R</span></code> and <code class="docutils literal notranslate"><span class="pre">apo_L</span></code> for the apo receptor and ligand, and <code class="docutils literal notranslate"><span class="pre">predicted_R</span></code> and <code class="docutils literal notranslate"><span class="pre">predicted_L</span></code> for the predicted receptor and ligand, respectively.</p>
+<p>For instance, we can load a different system that <em>does</em> have apo receptor and ligand as such:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_system</span> <span class="o">=</span> <span class="n">get_system</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;apo_R and apo_L&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">apo_system</span><span class="o">.</span><span class="n">apo_receptor</span>
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">apo_system</span><span class="o">.</span><span class="n">apo_ligand</span> 
+
+<span class="n">receptor</span><span class="p">,</span> <span class="n">ligand</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3wdb__A1_P9WPC9.pdb,
+     uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3wdb__A1_P9WPC9.parquet,
+     pinder_id=&#39;3wdb__A1_P9WPC9&#39;,
+     atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1144,),
+     pdb_engine=&#39;fastpdb&#39;,
+ ),
+ Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/pdbs/6ucr__A1_P9WPC9.pdb,
+     uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/6ucr__A1_P9WPC9.parquet,
+     pinder_id=&#39;6ucr__A1_P9WPC9&#39;,
+     atom_array=&lt;class &#39;biotite.structure.AtomArray&#39;&gt; with shape (1193,),
+     pdb_engine=&#39;fastpdb&#39;,
+ ))
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now access e.g. the sequence and the coordinates of the structures via the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PLGSMFERFTDRARRVVVLAQEEARMLNHNYIGTEHILLGLIHEGEGVAAKSLESLGISLEGVRSQVEEIIGQGQQAPSGHIPFTPRAKKVLELSLREALQLGHNYIGTEHILLGLIREGEGVAAQVLVKLGAELTRVRQQVIQLLSGY&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-12.982, -17.271, -11.271],
+       [-14.36 , -17.069, -11.749],
+       [-15.261, -16.373, -10.703],
+       [-15.461, -15.161, -10.801],
+       [-14.842, -18.494, -12.077]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can always access the underyling biotite <a class="reference external" href="https://www.biotite-python.org/latest/apidoc/biotite.structure.AtomArray.html">AtomArray</a> via the <code class="docutils literal notranslate"><span class="pre">Structure.atom_array</span></code> property:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">receptor</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([
+	Atom(np.array([-12.982, -17.271, -11.271], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;N&quot;, element=&quot;N&quot;, b_factor=0.0),
+	Atom(np.array([-14.36 , -17.069, -11.749], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;CA&quot;, element=&quot;C&quot;, b_factor=0.0),
+	Atom(np.array([-15.261, -16.373, -10.703], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;C&quot;, element=&quot;C&quot;, b_factor=0.0),
+	Atom(np.array([-15.461, -15.161, -10.801], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;O&quot;, element=&quot;O&quot;, b_factor=0.0),
+	Atom(np.array([-14.842, -18.494, -12.077], dtype=float32), chain_id=&quot;R&quot;, res_id=2, ins_code=&quot;&quot;, res_name=&quot;PRO&quot;, hetero=False, atom_name=&quot;CB&quot;, element=&quot;C&quot;, b_factor=0.0)
+])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For a more comprehensive overview of all of the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> class properties, refer to the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-system.html">pinder system</a> tutorial.</p>
+</section>
+<section id="using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems">
+<h3>Using PinderLoader and PinderDataset to fetch, filter, transform systems <a name="pinder-loader-and-dataset"></a><a class="headerlink" href="#using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems" title="Link to this heading">#</a></h3>
+<p>While the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object provides a self-contained access to structures associated with a dimer system, the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> provides a base abstraction for how to iterate over systems, apply optional filters and/or transforms, and return training and validation data represented as <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> and <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> is an example implementation of a torch <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> that can be consumed in a torch <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>. It uses the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> under the hood and additionally implements a default <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">target_transform</span></code> function that converts the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects returned by <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> into dictionaries of structural properties encoded as tensors. The return value of the <code class="docutils literal notranslate"><span class="pre">PinderDataset.__getitem__</span></code> represents an example of dataset sample that is suitable for collating into <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> batches via the default <code class="docutils literal notranslate"><span class="pre">collate_fn</span></code> defined in <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.dataset.collate_batch</span></code>.</p>
+<p>This is covered in much greater detail in the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html">pinder loader</a> tutorial, but we will quickly showcase how both can be used to load data in an ML context.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderLoader</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByResidueCount</span><span class="p">(</span><span class="n">min_residue_count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_residue_count</span><span class="o">=</span><span class="mi">2000</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+<span class="p">)</span>
+
+<span class="n">loader</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderLoader(split=val, monomers=holo, systems=1958)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now access individual items in the loader or iterate over it.</p>
+<p>The current default return value of <code class="docutils literal notranslate"><span class="pre">PinderLoader.__getitem__</span></code> is a tuple consisting of <code class="docutils literal notranslate"><span class="pre">(system,</span> <span class="pre">feature_complex,</span> <span class="pre">target_complex)</span></code>:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system</span></code>: A <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> instance corresponding to the item index</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_complex</span></code>: A <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object containing a sampled receptor and ligand monomer superimposed to the ground-truth complex.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target_complex</span></code>: A <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object containing the ground-truth holo complex.</p></li>
+</ol>
+<p>Note: the monomers in the <code class="docutils literal notranslate"><span class="pre">feature_complex</span></code> can consist of holo/apo/pred or a mix of them. You can control which monomer is selected via the <code class="docutils literal notranslate"><span class="pre">monomer_priority</span></code> argument.</p>
+<p>Valid values are:</p>
+<ul class="simple">
+<li><p>holo (default)</p></li>
+<li><p>apo</p></li>
+<li><p>pred</p></li>
+<li><p>random (select a monomer at random from the set of monomer types available in both the receptor and ligand)</p></li>
+<li><p>random_mixed (select a monomer at random from the set of monomer types available in the receptor and ligand, separately)</p></li>
+</ul>
+<p>If you wanted to leverage the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> but mainly just want the filepaths and/or sequence, you can do so with the returned <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">system</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">loader</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">receptor</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+<span class="n">ligand</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">])</span>
+<span class="c1"># Can do things like e.g.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./receptor_</span><span class="si">{</span><span class="n">receptor</span><span class="o">.</span><span class="n">pinder_id</span><span class="si">}</span><span class="s2">.fasta&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">receptor</span><span class="o">.</span><span class="n">fasta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:33,669 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">loaded_systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># for faster exec in CI</span>
+<span class="k">for</span> <span class="n">system</span><span class="p">,</span> <span class="n">feature_complex</span><span class="p">,</span> <span class="n">target_complex</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">loader</span><span class="p">):</span>
+    <span class="n">loaded_systems</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">loaded_systems</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">limit</span><span class="p">:</span>
+        <span class="k">break</span>
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1958 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 1/1958 [00:00&lt;07:01,  4.64it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:35,012 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 2/1958 [00:01&lt;28:53,  1.13it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:36,367 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=23
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 3/1958 [00:05&lt;1:07:18,  2.07s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:39,835 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=9
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 4/1958 [00:07&lt;1:10:07,  2.15s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:42,124 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 5/1958 [00:08&lt;1:00:52,  1.87s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:43,492 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 6/1958 [00:09&lt;54:02,  1.66s/it]  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:44,749 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 7/1958 [00:11&lt;50:35,  1.56s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:46,087 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=11
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 8/1958 [00:13&lt;53:08,  1.64s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:47,892 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 9/1958 [00:14&lt;49:34,  1.53s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:49,178 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 9/1958 [00:15&lt;57:27,  1.77s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">loaded_systems</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PinderDataset - torch dataset</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span><span class="p">,</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">PinderDataset</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByResidueCount</span><span class="p">(</span><span class="n">min_residue_count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_residue_count</span><span class="o">=</span><span class="mi">2000</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># We can include Structure-level transforms (and filters) which will operate on the target and/or feature complexes</span>
+<span class="n">target_transforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">SelectAtomTypes</span><span class="p">(</span><span class="n">atom_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">]),</span>
+<span class="p">]</span>
+<span class="c1"># In addition to slicing only backbone atoms, we introduce random rotation to the ligand protein </span>
+<span class="c1"># in the feature complex while preserving the target (ground-truth) complex orientations.</span>
+<span class="n">feature_transforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">SelectAtomTypes</span><span class="p">(</span><span class="n">atom_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">]),</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">RandomLigandTransform</span><span class="p">(</span><span class="n">max_translation</span><span class="o">=</span><span class="mf">10.0</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PinderDataset</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> 
+    <span class="c1"># We can leverage holo, apo, pred, random and random_mixed monomer sampling strategies</span>
+    <span class="n">monomer_priority</span><span class="o">=</span><span class="s2">&quot;random_mixed&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span><span class="p">,</span>
+    <span class="n">structure_transforms_target</span><span class="o">=</span><span class="n">target_transforms</span><span class="p">,</span>
+    <span class="n">structure_transforms_feature</span><span class="o">=</span><span class="n">feature_transforms</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">train_dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pinder.core.loader.dataset.PinderDataset at 0x7f9a78cd3fd0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can now access individual items in the PinderDataset or iterate over it.</p>
+<p>The current default return value of <code class="docutils literal notranslate"><span class="pre">PinderDataset.__getitem__</span></code> is a dict consisting of the following key, value pairs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target_complex</span></code>: The ground-truth holo dimer, represented with a set of default properties encoded as <code class="docutils literal notranslate"><span class="pre">Tensor</span></code>’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feature_complex</span></code>: The sampled dimer complex, representing “features”, also represented with a set of default properties encoded as <code class="docutils literal notranslate"><span class="pre">Tensor</span></code>’s</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The pinder ID for the selected system</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target_id</span></code>: The IDs of the receptor and ligand holo monomers, concatenated into a single ID string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample_id</span></code>: The IDs of the sampled receptor and ligand holo monomers, concatenated into a single ID string. This can be useful for debugging purposes or generally tracking which specific monomers are selected when targeting alternative monomers (more on this shortly)</p></li>
+</ul>
+<p>Each of the <code class="docutils literal notranslate"><span class="pre">target_complex</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_complex</span></code> values are dictionaries with structural properties encoded by the <code class="docutils literal notranslate"><span class="pre">pinder.core.loader.geodata.structure2tensor</span></code> function by default:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atom_coordinates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atom_types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">element_types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chain_ids</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_coordinates</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_types</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residue_ids</span></code></p></li>
+</ul>
+<p>You can choose to use a different representation by overriding the default values of <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">target_transform</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_item</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data_item</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;target_complex&#39;: {&#39;atom_types&#39;: tensor([[0.],
+          [1.],
+          [2.],
+          ...,
+          [1.],
+          [2.],
+          [3.]]),
+  &#39;element_types&#39;: tensor([[3.],
+          [0.],
+          [0.],
+          ...,
+          [0.],
+          [0.],
+          [2.]]),
+  &#39;residue_types&#39;: tensor([[16.],
+          [16.],
+          [16.],
+          ...,
+          [ 0.],
+          [ 0.],
+          [ 0.]]),
+  &#39;atom_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [177.7620, 463.8650, 166.9020],
+          [177.4130, 465.0800, 167.7550],
+          [176.8000, 464.9490, 168.8150]]),
+  &#39;residue_coordinates&#39;: tensor([[132.6810, 428.2520, 163.1550],
+          [133.5560, 429.2490, 159.5910],
+          [133.8750, 432.8980, 160.6290],
+          [136.1110, 431.8050, 163.5130],
+          [138.3420, 429.8920, 161.0830],
+          [138.5230, 432.9090, 158.7600],
+          [139.4710, 435.1730, 161.6750],
+          [142.1200, 432.6310, 162.6740],
+          [143.5890, 432.7500, 159.1600],
+          [143.6190, 436.5600, 159.1540],
+          [145.2600, 436.8040, 162.5830],
+          [147.8380, 434.1320, 161.7330],
+          [148.7390, 435.8920, 158.4790],
+          [149.0640, 439.2630, 160.2240],
+          [151.2220, 437.7670, 162.9840],
+          [153.4710, 435.8030, 160.6120],
+          [153.9420, 438.9180, 158.4710],
+          [156.1140, 440.2660, 161.3150],
+          [158.3330, 437.1860, 161.4250],
+          [161.8090, 436.4120, 160.1100],
+          [161.1120, 432.8370, 158.9350],
+          [157.4020, 432.0710, 159.3930],
+          [156.5290, 428.3870, 159.0310],
+          [154.0400, 428.1160, 156.1500],
+          [153.3520, 424.6590, 154.7510],
+          [152.8370, 424.8210, 150.9870],
+          [150.9700, 422.4160, 148.7320],
+          [153.5900, 422.6860, 145.9670],
+          [157.3050, 423.3410, 145.6600],
+          [158.4860, 426.6730, 144.2700],
+          [160.7730, 427.0880, 141.2590],
+          [163.9630, 429.0530, 141.9600],
+          [166.4230, 427.4330, 139.5550],
+          [167.6170, 430.8330, 138.3250],
+          [170.5180, 431.9210, 140.5320],
+          [169.7800, 435.6680, 140.3160],
+          [167.6790, 437.8790, 142.6110],
+          [167.3350, 435.1910, 145.2890],
+          [168.9090, 437.3000, 148.0580],
+          [166.1860, 439.9440, 148.5750],
+          [164.1010, 438.1300, 151.1890],
+          [163.0190, 438.8690, 154.7450],
+          [164.6750, 435.6560, 155.9860],
+          [168.1170, 436.6550, 154.6330],
+          [169.8040, 437.0930, 158.0010],
+          [173.2680, 438.4850, 158.5750],
+          [174.9270, 440.8490, 156.1460],
+          [175.9170, 440.8010, 152.5000],
+          [179.6060, 441.0910, 153.4330],
+          [180.8000, 439.9830, 156.8710],
+          [184.2540, 439.9980, 158.4580],
+          [185.5840, 437.2970, 160.7670],
+          [186.4140, 439.9000, 163.4480],
+          [182.9430, 441.4570, 163.7500],
+          [181.4930, 442.0910, 167.2100],
+          [178.0780, 440.5360, 167.9060],
+          [176.1650, 440.9290, 171.1790],
+          [173.0530, 438.9530, 172.1310],
+          [170.3990, 440.6990, 174.2170],
+          [166.7880, 440.0710, 175.2260],
+          [164.4480, 442.1010, 173.0340],
+          [160.9780, 443.6110, 173.3810],
+          [158.8330, 443.9000, 170.2730],
+          [160.1820, 442.9360, 166.8360],
+          [163.5010, 444.7230, 166.1630],
+          [164.6310, 442.4290, 163.3160],
+          [166.6330, 444.2560, 160.6240],
+          [166.1700, 447.5210, 162.5220],
+          [168.1350, 449.9450, 164.6440],
+          [168.0040, 449.0470, 168.3240],
+          [168.4210, 451.0540, 171.5220],
+          [169.0440, 450.0360, 175.1300],
+          [166.1650, 450.3680, 177.6100],
+          [166.7800, 449.8300, 181.3340],
+          [163.8480, 448.9150, 183.5760],
+          [163.3500, 443.9770, 187.9750],
+          [165.0240, 442.4930, 184.8870],
+          [168.1120, 443.0980, 182.7810],
+          [168.1280, 445.9210, 180.2050],
+          [166.7230, 445.0130, 176.8030],
+          [167.0690, 446.1330, 173.1930],
+          [164.0790, 447.8390, 171.5780],
+          [163.4630, 449.0630, 168.0350],
+          [164.4160, 452.7320, 168.0130],
+          [166.7460, 455.3190, 166.5790],
+          [167.5460, 459.0090, 166.8440],
+          [170.2010, 459.9620, 169.3810],
+          [169.5150, 456.8220, 171.4570],
+          [170.7440, 454.3880, 168.7860],
+          [172.8900, 451.6810, 170.3850],
+          [173.2420, 449.3000, 167.4490],
+          [171.4700, 447.3670, 164.7150],
+          [169.7840, 443.9650, 164.9670],
+          [170.8880, 441.4120, 162.3680],
+          [169.3320, 438.1640, 163.6510],
+          [166.7170, 436.9060, 166.1030],
+          [166.2830, 433.5290, 167.7900],
+          [162.5490, 433.4260, 168.5040],
+          [162.6440, 430.3540, 170.7620],
+          [164.9490, 432.1120, 173.2350],
+          [163.6530, 435.5760, 172.2210],
+          [167.2540, 436.7450, 171.8300],
+          [168.3710, 439.3650, 169.3060],
+          [171.8910, 439.6680, 167.8930],
+          [173.1360, 443.2500, 167.5870],
+          [176.0990, 444.7950, 165.8030],
+          [177.1670, 447.8660, 167.8270],
+          [177.4160, 451.2430, 166.1360],
+          [181.1790, 451.0810, 166.7480],
+          [181.3560, 448.4350, 163.9980],
+          [180.6020, 448.8920, 160.3060],
+          [177.8440, 446.8990, 158.6170],
+          [176.7540, 446.3160, 155.0150],
+          [173.3820, 444.6900, 154.4770],
+          [169.6430, 444.9660, 153.9760],
+          [167.6080, 446.9450, 156.5140],
+          [163.9630, 447.9270, 156.8800],
+          [163.1520, 451.2160, 155.1430],
+          [160.3870, 453.6570, 156.0420],
+          [158.9330, 453.6920, 152.5150],
+          [159.8050, 453.2460, 148.8360],
+          [161.2560, 456.7540, 148.4440],
+          [164.9420, 455.8330, 148.8520],
+          [167.3780, 455.9500, 145.9260],
+          [171.0380, 455.0610, 145.5060],
+          [173.5830, 457.5340, 146.9270],
+          [171.2360, 458.9430, 149.5740],
+          [171.8150, 459.8640, 153.2130],
+          [169.5910, 457.9090, 155.6000],
+          [168.4960, 458.3960, 159.2100],
+          [167.0870, 455.9020, 161.7110],
+          [163.6430, 457.0390, 162.8610],
+          [161.8700, 456.3550, 166.1660],
+          [160.7490, 452.9260, 164.8950],
+          [164.2440, 451.8750, 163.8110],
+          [163.4490, 452.3040, 160.1090],
+          [165.6820, 454.0140, 157.5590],
+          [164.2940, 457.2310, 156.0670],
+          [165.6810, 459.7290, 153.5780],
+          [167.3870, 462.7790, 155.0760],
+          [170.2060, 465.8340, 161.8360],
+          [172.1620, 462.7680, 160.6890],
+          [174.0280, 461.7040, 163.8180],
+          [175.2110, 458.5660, 161.9930],
+          [176.5410, 458.2410, 158.4450],
+          [174.5550, 455.7530, 156.3540],
+          [174.3580, 455.6030, 152.5600],
+          [171.8590, 453.6260, 150.4910],
+          [173.6300, 451.2730, 148.0810],
+          [170.4820, 450.1750, 146.2000],
+          [166.8520, 451.1980, 145.7810],
+          [164.0730, 450.1880, 148.1490],
+          [162.6710, 446.7750, 147.1980],
+          [159.1420, 445.8080, 148.2240],
+          [158.3160, 442.3640, 149.5950],
+          [155.0300, 443.1470, 151.4050],
+          [152.6800, 446.0960, 151.8500],
+          [155.0610, 447.4890, 154.4910],
+          [158.2010, 445.3460, 154.0190],
+          [160.8090, 447.5340, 152.2870],
+          [164.4130, 446.3150, 152.1360],
+          [167.3360, 448.5380, 151.1380],
+          [171.0310, 447.6630, 150.9500],
+          [172.8160, 450.1440, 153.2260],
+          [176.3550, 450.4540, 154.5850],
+          [176.6310, 452.0780, 158.0240],
+          [180.1600, 453.0970, 159.0310],
+          [179.9110, 454.9710, 162.3160],
+          [178.7370, 458.4030, 163.4610],
+          [179.1350, 461.9150, 162.0830],
+          [180.3160, 464.9940, 163.9950],
+          [195.1700, 454.0210, 194.1160],
+          [196.4220, 450.5570, 193.1610],
+          [195.0530, 447.5260, 191.3340],
+          [195.7530, 445.4320, 194.4410],
+          [195.6760, 446.8960, 197.9710],
+          [199.1230, 447.9300, 199.1640],
+          [198.4070, 447.0140, 202.7840],
+          [198.1130, 443.3080, 203.5090],
+          [195.0350, 441.7530, 205.1060],
+          [194.7040, 440.1720, 208.5300],
+          [191.7420, 437.9460, 207.6670],
+          [190.9460, 435.0990, 205.3140],
+          [188.0870, 435.6760, 202.8880],
+          [184.8300, 433.7320, 203.1830],
+          [184.1270, 431.8260, 199.9570],
+          [180.5450, 430.8500, 200.7460],
+          [178.2470, 433.3320, 199.0220],
+          [178.2770, 433.9260, 195.2680],
+          [176.3170, 437.2030, 195.0280],
+          [177.7690, 440.7330, 194.9660],
+          [181.3350, 439.3910, 195.1330],
+          [182.5820, 441.3460, 192.0940],
+          [182.3530, 444.9560, 193.3610],
+          [186.0870, 445.2240, 194.0290],
+          [188.7230, 447.5570, 192.6190],
+          [190.8760, 444.5870, 191.5490],
+          [188.2670, 443.5230, 188.9590],
+          [190.1360, 444.3010, 185.7360],
+          [188.8140, 444.1990, 182.1980],
+          [185.1300, 444.1560, 181.3470],
+          [182.1290, 442.2030, 182.6060],
+          [181.3330, 441.2700, 178.9860],
+          [184.3690, 440.6570, 176.7700],
+          [184.4240, 439.7520, 173.0740],
+          [187.1540, 437.5560, 171.6020],
+          [187.5170, 439.9750, 168.6500],
+          [188.4180, 443.0500, 170.7240],
+          [191.4360, 445.2100, 169.8910],
+          [193.7480, 445.6510, 172.8940],
+          [196.8200, 447.8990, 173.0280],
+          [199.4910, 448.6120, 175.6310],
+          [201.2080, 451.9090, 176.3780],
+          [203.6110, 453.4740, 178.8680],
+          [201.6130, 454.9210, 181.7570],
+          [202.0690, 458.3840, 183.2730],
+          [200.4970, 458.3690, 186.7180],
+          [197.7960, 455.8130, 187.5240],
+          [195.1460, 455.8470, 184.7720],
+          [193.6160, 452.5740, 185.9790],
+          [189.8600, 452.3800, 185.3150],
+          [189.9440, 455.8580, 183.7680],
+          [189.7400, 457.4310, 180.3410],
+          [193.1630, 457.9480, 178.8100],
+          [194.6770, 460.5170, 176.4640],
+          [197.9720, 460.6430, 174.6010],
+          [200.7710, 462.5710, 176.3210],
+          [203.7970, 463.7400, 174.3330],
+          [207.1150, 464.5820, 175.9770],
+          [210.1390, 466.5260, 174.8060],
+          [210.8850, 463.9390, 172.1200],
+          [213.6440, 461.8050, 173.6150],
+          [211.1280, 459.2430, 174.9140],
+          [208.0390, 457.7610, 173.2930],
+          [204.4770, 458.9110, 173.9310],
+          [202.5240, 457.8000, 177.0030],
+          [198.9190, 457.7220, 178.2440],
+          [197.5730, 459.9040, 181.0500],
+          [194.2310, 460.2350, 182.8060],
+          [192.1140, 462.6430, 180.7850],
+          [189.0250, 463.1720, 178.7000],
+          [187.1240, 465.8360, 176.8220],
+          [188.2850, 466.3320, 173.2420],
+          [191.5580, 464.4520, 173.8600],
+          [189.9950, 461.1280, 174.9010],
+          [191.8440, 458.2970, 173.1540],
+          [190.4670, 455.2690, 174.9900],
+          [189.7380, 453.5820, 178.3070],
+          [192.3390, 451.8830, 180.5000],
+          [191.2020, 448.5340, 181.9050],
+          [194.3800, 447.0280, 183.4050],
+          [197.8700, 447.9650, 184.5850],
+          [200.9840, 445.8270, 184.9660],
+          [202.8290, 447.6220, 187.7590],
+          [206.2120, 445.9180, 187.3400],
+          [206.6040, 447.1310, 183.7460],
+          [204.4430, 450.2380, 184.1830],
+          [202.2310, 449.1370, 181.2890],
+          [198.6660, 450.3790, 180.7720],
+          [196.2310, 448.2490, 178.7680],
+          [194.0550, 450.4240, 176.5260],
+          [190.8490, 449.7090, 174.6070],
+          [190.4360, 452.3080, 171.8240],
+          [187.3830, 454.5590, 171.7980],
+          [186.4670, 452.9730, 168.4480],
+          [185.9050, 449.6480, 170.2580],
+          [182.8890, 448.8910, 172.4330],
+          [183.5680, 448.6030, 176.1630],
+          [181.3330, 447.5400, 179.0590],
+          [182.7340, 447.5270, 182.5670],
+          [183.3280, 449.2260, 185.8920],
+          [184.8760, 452.6980, 185.6990],
+          [185.7140, 455.4170, 188.2030],
+          [182.9420, 457.9530, 188.8300],
+          [183.2930, 461.5650, 189.9350],
+          [182.7580, 462.1320, 193.6660],
+          [180.0620, 464.7490, 193.1030],
+          [176.4120, 463.9030, 192.5790],
+          [177.1550, 460.1730, 192.6930],
+          [173.8180, 459.5980, 194.4390],
+          [172.0770, 461.1030, 191.4040],
+          [173.6950, 458.5410, 189.0910],
+          [171.0060, 456.0190, 188.1270],
+          [170.8210, 453.3390, 185.4210],
+          [170.0180, 454.8270, 182.0350],
+          [171.8690, 458.1080, 182.6590],
+          [174.2320, 459.6520, 180.1210],
+          [177.8640, 459.9130, 181.2230],
+          [180.8780, 461.8410, 179.9490],
+          [184.5650, 461.8070, 180.8430],
+          [186.0650, 464.7990, 182.6440],
+          [189.5780, 466.2740, 182.6170],
+          [190.7120, 463.6340, 185.1390],
+          [189.2980, 460.6630, 183.2290],
+          [186.3560, 460.3000, 185.6240],
+          [182.7840, 459.6590, 184.5210],
+          [180.2130, 462.3320, 185.3590],
+          [176.5320, 462.8410, 184.6140],
+          [175.8580, 465.0300, 181.5790],
+          [178.1930, 465.7110, 174.9000],
+          [180.9150, 464.1190, 172.7670],
+          [181.2510, 460.5420, 174.1130],
+          [178.4430, 457.9660, 174.2140],
+          [178.5420, 456.4790, 177.7180],
+          [175.4730, 455.1590, 179.5500],
+          [175.4670, 454.0690, 183.1870],
+          [174.1210, 450.5430, 183.6830],
+          [173.9850, 450.6340, 187.5030],
+          [174.3640, 452.9240, 190.5240],
+          [177.5140, 454.2200, 192.1820],
+          [179.3060, 451.6570, 194.3540],
+          [181.4890, 453.2110, 197.0570],
+          [184.7390, 451.3110, 197.6330],
+          [186.4870, 454.0230, 199.6690],
+          [185.5270, 457.3810, 201.1790],
+          [186.7910, 459.0050, 197.9610],
+          [186.6010, 456.0430, 195.5320],
+          [183.3680, 455.3620, 193.6270],
+          [182.9110, 452.9430, 190.7280],
+          [180.0190, 452.5230, 188.3060],
+          [179.0910, 450.0250, 185.5960],
+          [178.9850, 451.7840, 182.2280],
+          [179.0510, 451.0080, 178.5100],
+          [181.0530, 453.1550, 176.0780],
+          [180.1320, 452.7170, 172.4060],
+          [182.0570, 455.4530, 170.6120],
+          [181.8140, 459.1820, 170.0770],
+          [178.5990, 461.0580, 169.3130],
+          [177.7620, 463.8650, 166.9020]]),
+  &#39;residue_ids&#39;: tensor([  4.,   4.,   4.,  ..., 182., 182., 182.]),
+  &#39;chain_ids&#39;: tensor([0., 0., 0.,  ..., 1., 1., 1.])},
+ &#39;feature_complex&#39;: {&#39;atom_types&#39;: tensor([[0.],
+          [1.],
+          [2.],
+          ...,
+          [1.],
+          [2.],
+          [3.]]),
+  &#39;element_types&#39;: tensor([[3.],
+          [0.],
+          [0.],
+          ...,
+          [0.],
+          [0.],
+          [2.]]),
+  &#39;residue_types&#39;: tensor([[16.],
+          [16.],
+          [16.],
+          ...,
+          [ 0.],
+          [ 0.],
+          [ 0.]]),
+  &#39;atom_coordinates&#39;: tensor([[131.7500, 429.3090, 163.5360],
+          [132.6810, 428.2520, 163.1550],
+          [133.5150, 428.6750, 161.9500],
+          ...,
+          [186.5629, 421.9754, 185.6878],
+          [185.6360, 421.5445, 184.5560],
+          [184.7227, 422.2786, 184.1773]]),
+  &#39;residue_coordinates&#39;: tensor([[132.6810, 428.2520, 163.1550],
+          [133.5560, 429.2490, 159.5910],
+          [133.8750, 432.8980, 160.6290],
+          [136.1110, 431.8050, 163.5130],
+          [138.3420, 429.8920, 161.0830],
+          [138.5230, 432.9090, 158.7600],
+          [139.4710, 435.1730, 161.6750],
+          [142.1200, 432.6310, 162.6740],
+          [143.5890, 432.7500, 159.1600],
+          [143.6190, 436.5600, 159.1540],
+          [145.2600, 436.8040, 162.5830],
+          [147.8380, 434.1320, 161.7330],
+          [148.7390, 435.8920, 158.4790],
+          [149.0640, 439.2630, 160.2240],
+          [151.2220, 437.7670, 162.9840],
+          [153.4710, 435.8030, 160.6120],
+          [153.9420, 438.9180, 158.4710],
+          [156.1140, 440.2660, 161.3150],
+          [158.3330, 437.1860, 161.4250],
+          [161.8090, 436.4120, 160.1100],
+          [161.1120, 432.8370, 158.9350],
+          [157.4020, 432.0710, 159.3930],
+          [156.5290, 428.3870, 159.0310],
+          [154.0400, 428.1160, 156.1500],
+          [153.3520, 424.6590, 154.7510],
+          [152.8370, 424.8210, 150.9870],
+          [150.9700, 422.4160, 148.7320],
+          [153.5900, 422.6860, 145.9670],
+          [157.3050, 423.3410, 145.6600],
+          [158.4860, 426.6730, 144.2700],
+          [160.7730, 427.0880, 141.2590],
+          [163.9630, 429.0530, 141.9600],
+          [166.4230, 427.4330, 139.5550],
+          [167.6170, 430.8330, 138.3250],
+          [170.5180, 431.9210, 140.5320],
+          [169.7800, 435.6680, 140.3160],
+          [167.6790, 437.8790, 142.6110],
+          [167.3350, 435.1910, 145.2890],
+          [168.9090, 437.3000, 148.0580],
+          [166.1860, 439.9440, 148.5750],
+          [164.1010, 438.1300, 151.1890],
+          [163.0190, 438.8690, 154.7450],
+          [164.6750, 435.6560, 155.9860],
+          [168.1170, 436.6550, 154.6330],
+          [169.8040, 437.0930, 158.0010],
+          [173.2680, 438.4850, 158.5750],
+          [174.9270, 440.8490, 156.1460],
+          [175.9170, 440.8010, 152.5000],
+          [179.6060, 441.0910, 153.4330],
+          [180.8000, 439.9830, 156.8710],
+          [184.2540, 439.9980, 158.4580],
+          [185.5840, 437.2970, 160.7670],
+          [186.4140, 439.9000, 163.4480],
+          [182.9430, 441.4570, 163.7500],
+          [181.4930, 442.0910, 167.2100],
+          [178.0780, 440.5360, 167.9060],
+          [176.1650, 440.9290, 171.1790],
+          [173.0530, 438.9530, 172.1310],
+          [170.3990, 440.6990, 174.2170],
+          [166.7880, 440.0710, 175.2260],
+          [164.4480, 442.1010, 173.0340],
+          [160.9780, 443.6110, 173.3810],
+          [158.8330, 443.9000, 170.2730],
+          [160.1820, 442.9360, 166.8360],
+          [163.5010, 444.7230, 166.1630],
+          [164.6310, 442.4290, 163.3160],
+          [166.6330, 444.2560, 160.6240],
+          [166.1700, 447.5210, 162.5220],
+          [168.1350, 449.9450, 164.6440],
+          [168.0040, 449.0470, 168.3240],
+          [168.4210, 451.0540, 171.5220],
+          [169.0440, 450.0360, 175.1300],
+          [166.1650, 450.3680, 177.6100],
+          [166.7800, 449.8300, 181.3340],
+          [163.8480, 448.9150, 183.5760],
+          [163.3500, 443.9770, 187.9750],
+          [165.0240, 442.4930, 184.8870],
+          [168.1120, 443.0980, 182.7810],
+          [168.1280, 445.9210, 180.2050],
+          [166.7230, 445.0130, 176.8030],
+          [167.0690, 446.1330, 173.1930],
+          [164.0790, 447.8390, 171.5780],
+          [163.4630, 449.0630, 168.0350],
+          [164.4160, 452.7320, 168.0130],
+          [166.7460, 455.3190, 166.5790],
+          [167.5460, 459.0090, 166.8440],
+          [170.2010, 459.9620, 169.3810],
+          [169.5150, 456.8220, 171.4570],
+          [170.7440, 454.3880, 168.7860],
+          [172.8900, 451.6810, 170.3850],
+          [173.2420, 449.3000, 167.4490],
+          [171.4700, 447.3670, 164.7150],
+          [169.7840, 443.9650, 164.9670],
+          [170.8880, 441.4120, 162.3680],
+          [169.3320, 438.1640, 163.6510],
+          [166.7170, 436.9060, 166.1030],
+          [166.2830, 433.5290, 167.7900],
+          [162.5490, 433.4260, 168.5040],
+          [162.6440, 430.3540, 170.7620],
+          [164.9490, 432.1120, 173.2350],
+          [163.6530, 435.5760, 172.2210],
+          [167.2540, 436.7450, 171.8300],
+          [168.3710, 439.3650, 169.3060],
+          [171.8910, 439.6680, 167.8930],
+          [173.1360, 443.2500, 167.5870],
+          [176.0990, 444.7950, 165.8030],
+          [177.1670, 447.8660, 167.8270],
+          [177.4160, 451.2430, 166.1360],
+          [181.1790, 451.0810, 166.7480],
+          [181.3560, 448.4350, 163.9980],
+          [180.6020, 448.8920, 160.3060],
+          [177.8440, 446.8990, 158.6170],
+          [176.7540, 446.3160, 155.0150],
+          [173.3820, 444.6900, 154.4770],
+          [169.6430, 444.9660, 153.9760],
+          [167.6080, 446.9450, 156.5140],
+          [163.9630, 447.9270, 156.8800],
+          [163.1520, 451.2160, 155.1430],
+          [160.3870, 453.6570, 156.0420],
+          [158.9330, 453.6920, 152.5150],
+          [159.8050, 453.2460, 148.8360],
+          [161.2560, 456.7540, 148.4440],
+          [164.9420, 455.8330, 148.8520],
+          [167.3780, 455.9500, 145.9260],
+          [171.0380, 455.0610, 145.5060],
+          [173.5830, 457.5340, 146.9270],
+          [171.2360, 458.9430, 149.5740],
+          [171.8150, 459.8640, 153.2130],
+          [169.5910, 457.9090, 155.6000],
+          [168.4960, 458.3960, 159.2100],
+          [167.0870, 455.9020, 161.7110],
+          [163.6430, 457.0390, 162.8610],
+          [161.8700, 456.3550, 166.1660],
+          [160.7490, 452.9260, 164.8950],
+          [164.2440, 451.8750, 163.8110],
+          [163.4490, 452.3040, 160.1090],
+          [165.6820, 454.0140, 157.5590],
+          [164.2940, 457.2310, 156.0670],
+          [165.6810, 459.7290, 153.5780],
+          [167.3870, 462.7790, 155.0760],
+          [170.2060, 465.8340, 161.8360],
+          [172.1620, 462.7680, 160.6890],
+          [174.0280, 461.7040, 163.8180],
+          [175.2110, 458.5660, 161.9930],
+          [176.5410, 458.2410, 158.4450],
+          [174.5550, 455.7530, 156.3540],
+          [174.3580, 455.6030, 152.5600],
+          [171.8590, 453.6260, 150.4910],
+          [173.6300, 451.2730, 148.0810],
+          [170.4820, 450.1750, 146.2000],
+          [166.8520, 451.1980, 145.7810],
+          [164.0730, 450.1880, 148.1490],
+          [162.6710, 446.7750, 147.1980],
+          [159.1420, 445.8080, 148.2240],
+          [158.3160, 442.3640, 149.5950],
+          [155.0300, 443.1470, 151.4050],
+          [152.6800, 446.0960, 151.8500],
+          [155.0610, 447.4890, 154.4910],
+          [158.2010, 445.3460, 154.0190],
+          [160.8090, 447.5340, 152.2870],
+          [164.4130, 446.3150, 152.1360],
+          [167.3360, 448.5380, 151.1380],
+          [171.0310, 447.6630, 150.9500],
+          [172.8160, 450.1440, 153.2260],
+          [176.3550, 450.4540, 154.5850],
+          [176.6310, 452.0780, 158.0240],
+          [180.1600, 453.0970, 159.0310],
+          [179.9110, 454.9710, 162.3160],
+          [178.7370, 458.4030, 163.4610],
+          [179.1350, 461.9150, 162.0830],
+          [180.3160, 464.9940, 163.9950],
+          [194.3526, 447.5152, 165.0098],
+          [196.6725, 449.6794, 167.1105],
+          [196.8679, 450.8312, 170.7208],
+          [196.8410, 454.4390, 169.4914],
+          [195.0953, 455.5005, 166.2610],
+          [197.4823, 455.6115, 163.3175],
+          [195.7098, 458.5518, 161.6839],
+          [196.0764, 461.8777, 163.4590],
+          [193.1024, 463.9345, 164.6282],
+          [191.9094, 467.2896, 163.3425],
+          [190.1228, 468.3376, 166.5335],
+          [190.9830, 469.0458, 170.1438],
+          [189.1918, 466.9384, 172.7404],
+          [186.6393, 468.4757, 175.1059],
+          [187.6807, 467.9099, 178.7294],
+          [184.4171, 468.9856, 180.3412],
+          [182.4022, 465.8605, 181.1073],
+          [183.6892, 463.0532, 183.3230],
+          [181.2283, 460.2528, 182.4630],
+          [181.6926, 457.5359, 179.8219],
+          [185.1478, 458.8627, 178.9016],
+          [186.9255, 455.5023, 179.3012],
+          [185.3688, 453.4701, 176.4487],
+          [188.3953, 453.8640, 174.1803],
+          [190.7147, 451.2960, 172.6294],
+          [193.7639, 453.0481, 174.1239],
+          [192.6568, 452.1291, 177.6703],
+          [195.3462, 449.6016, 178.6003],
+          [195.5117, 447.4044, 181.6697],
+          [192.5437, 446.7234, 183.9113],
+          [189.8618, 448.8829, 185.5079],
+          [190.7307, 447.3081, 188.8804],
+          [194.4259, 446.5515, 189.4066],
+          [196.0781, 444.9496, 192.4376],
+          [199.6059, 445.8761, 193.5045],
+          [200.4472, 442.1646, 193.9684],
+          [199.7299, 441.1097, 190.3710],
+          [202.2173, 439.0560, 188.3553],
+          [203.0555, 440.7037, 185.0176],
+          [205.2080, 439.1884, 182.2646],
+          [206.4511, 440.3921, 178.8846],
+          [206.9065, 438.3754, 175.7063],
+          [207.7449, 438.8314, 172.0303],
+          [204.5241, 439.4103, 170.1007],
+          [203.5230, 437.6822, 166.8588],
+          [200.8308, 439.7688, 165.2041],
+          [198.7335, 442.1299, 167.3265],
+          [197.3833, 440.2521, 170.3676],
+          [196.3582, 443.4805, 172.1103],
+          [193.2925, 443.0303, 174.3430],
+          [193.1009, 439.3580, 173.3560],
+          [193.8182, 435.9807, 174.8857],
+          [197.3287, 434.7910, 174.1180],
+          [198.9368, 431.3986, 173.5697],
+          [202.5520, 430.2996, 173.3122],
+          [203.9446, 430.0112, 169.7784],
+          [207.1122, 428.0082, 169.1232],
+          [209.2617, 428.5442, 166.0389],
+          [211.9335, 426.4479, 164.3769],
+          [214.2351, 426.8219, 167.3813],
+          [216.6637, 429.5557, 166.3666],
+          [214.5489, 432.2387, 168.0726],
+          [212.7513, 432.2271, 171.4095],
+          [209.0453, 431.5531, 171.8874],
+          [206.4182, 434.2415, 171.2905],
+          [202.7466, 434.8990, 172.0839],
+          [199.9616, 434.8857, 169.4974],
+          [196.2333, 435.5594, 169.5850],
+          [194.5094, 432.3153, 170.5171],
+          [192.3965, 430.4469, 173.0099],
+          [190.7503, 427.1035, 173.6003],
+          [193.0082, 424.5374, 175.2518],
+          [196.1631, 426.5507, 174.4633],
+          [195.1830, 429.7135, 176.3638],
+          [198.1797, 430.9191, 178.3767],
+          [196.9966, 434.3573, 179.4789],
+          [195.5133, 437.7083, 178.5043],
+          [197.4335, 440.5316, 176.8300],
+          [196.7045, 443.9624, 178.3066],
+          [199.3535, 446.2308, 176.7397],
+          [201.8074, 446.4113, 173.8422],
+          [204.9715, 448.4697, 173.4356],
+          [205.1411, 448.9081, 169.6665],
+          [208.7397, 450.1417, 169.4380],
+          [210.1404, 446.9701, 171.0258],
+          [207.2875, 444.7153, 169.8894],
+          [206.6585, 443.6548, 173.4894],
+          [203.3596, 442.1872, 174.7069],
+          [202.4481, 442.4736, 178.3906],
+          [200.8108, 439.2700, 179.6350],
+          [198.8336, 438.4688, 182.7847],
+          [198.8734, 434.6842, 183.3729],
+          [195.6036, 432.7627, 183.4439],
+          [196.4229, 431.8594, 187.0619],
+          [196.0511, 435.5532, 187.9922],
+          [192.7223, 437.3526, 188.2768],
+          [192.0043, 439.9416, 185.5864],
+          [189.1790, 442.4687, 185.2074],
+          [189.1234, 444.7405, 182.1900],
+          [187.9978, 445.5241, 178.6667],
+          [188.6112, 442.7753, 176.1063],
+          [187.7632, 442.2633, 172.4479],
+          [184.4313, 440.5417, 171.7821],
+          [183.4538, 438.4355, 168.7823],
+          [181.4411, 440.2989, 166.1355],
+          [178.6028, 437.7743, 166.2046],
+          [175.7381, 437.9249, 168.6711],
+          [177.2672, 440.9391, 170.4188],
+          [173.7674, 442.3126, 171.0345],
+          [172.9790, 439.1570, 173.0164],
+          [175.9153, 439.7880, 175.3641],
+          [174.4827, 441.0170, 178.6743],
+          [175.9812, 441.4048, 182.1591],
+          [176.1678, 438.0897, 183.9754],
+          [176.7931, 436.0152, 180.8312],
+          [179.4820, 433.3434, 180.6301],
+          [182.2566, 434.0090, 178.1136],
+          [184.9619, 431.8602, 176.5359],
+          [187.9352, 432.6283, 174.3080],
+          [187.8763, 431.4971, 170.6800],
+          [190.6716, 430.5054, 168.2884],
+          [191.3847, 434.1945, 167.5829],
+          [191.5563, 435.2455, 171.2354],
+          [188.1155, 436.8791, 171.1087],
+          [185.4874, 436.5120, 173.8189],
+          [182.2231, 434.8255, 172.8403],
+          [179.0839, 433.7808, 174.6890],
+          [179.0841, 430.1452, 175.8026],
+          [183.5072, 425.5566, 178.9499],
+          [187.1284, 425.5991, 180.1243],
+          [187.7951, 429.2438, 181.1198],
+          [185.8707, 431.1746, 183.7843],
+          [185.0097, 434.5277, 182.1988],
+          [181.8987, 436.5487, 183.0672],
+          [180.7975, 439.6705, 181.2077],
+          [180.2646, 442.6608, 183.5021],
+          [178.6914, 444.9704, 180.8924],
+          [177.3435, 445.0929, 177.3312],
+          [179.2271, 445.2756, 174.0495],
+          [180.6412, 448.7187, 173.2475],
+          [181.2056, 449.3054, 169.5295],
+          [184.3606, 451.3069, 168.7915],
+          [184.5037, 450.5530, 165.0542],
+          [182.2632, 448.8328, 162.5050],
+          [184.2036, 445.6192, 163.2110],
+          [185.6626, 446.3996, 166.6711],
+          [183.6476, 445.5793, 169.8036],
+          [184.9115, 445.6296, 173.3903],
+          [183.3317, 444.2998, 176.5750],
+          [184.1225, 444.5065, 180.2867],
+          [184.8602, 441.0260, 181.6250],
+          [186.4991, 439.3104, 184.5917],
+          [188.6786, 436.2172, 184.1296],
+          [189.3349, 434.2180, 187.3071],
+          [191.0636, 431.0608, 186.1018],
+          [190.1397, 427.8091, 184.4214],
+          [187.0923, 425.7105, 185.2866],
+          [186.5629, 421.9754, 185.6878]]),
+  &#39;residue_ids&#39;: tensor([  4.,   4.,   4.,  ..., 182., 182., 182.]),
+  &#39;chain_ids&#39;: tensor([0., 0., 0.,  ..., 1., 1., 1.])},
+ &#39;id&#39;: &#39;8phr__X4_UNDEFINED--8phr__W4_UNDEFINED&#39;,
+ &#39;sample_id&#39;: &#39;8phr__X4_UNDEFINED-R--8phr__W4_UNDEFINED-L&#39;,
+ &#39;target_id&#39;: &#39;8phr__X4_UNDEFINED-R--8phr__W4_UNDEFINED-L&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">collate_batch</span><span class="p">,</span> <span class="n">get_torch_loader</span>
+
+<span class="c1"># Now wrap the dataset in a torch DataLoader</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">get_torch_loader</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="p">,</span> 
+    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">collate_fn</span><span class="o">=</span><span class="n">collate_batch</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+<span class="p">)</span>
+
+<span class="c1"># Get a batch from the dataloader</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">))</span>
+
+<span class="c1"># expected batch dict keys</span>
+<span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">batch</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">{</span>
+    <span class="s2">&quot;target_complex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;feature_complex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sample_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;target_id&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">feature_coords</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;feature_complex&quot;</span><span class="p">][</span><span class="s2">&quot;atom_coordinates&quot;</span><span class="p">]</span>
+<span class="c1"># Ensure batch size propagates to tensor dims</span>
+<span class="k">assert</span> <span class="n">feature_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">batch_size</span>
+<span class="c1"># Ensure coordinates have dim 3</span>
+<span class="k">assert</span> <span class="n">feature_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:55,934 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=7
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-11-15 12:14:57,458 | pinder.core.utils.cloud:375 | INFO : Gsutil process_many=download_to_filename, threads=4, items=5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batch</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;target_complex&#39;: {&#39;atom_types&#39;: tensor([[[ 0.],
+           [ 1.],
+           [ 2.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 0.],
+           [ 1.],
+           [ 2.],
+           ...,
+           [ 1.],
+           [ 2.],
+           [ 3.]]]),
+  &#39;element_types&#39;: tensor([[[ 3.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 3.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [ 0.],
+           [ 0.],
+           [ 2.]]]),
+  &#39;residue_types&#39;: tensor([[[ 0.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 4.],
+           [ 4.],
+           [ 4.],
+           ...,
+           [ 5.],
+           [ 5.],
+           [ 5.]]]),
+  &#39;atom_coordinates&#39;: tensor([[[ 238.8460,  357.3990,  387.2690],
+           [ 238.3230,  356.4020,  388.1950],
+           [ 238.8780,  355.0210,  387.8720],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]],
+  
+          [[ 280.7290,  142.4940,  235.3350],
+           [ 280.2980,  141.7710,  234.1080],
+           [ 280.1140,  140.3010,  234.3730],
+           ...,
+           [ 315.1630,  132.9490,  180.6540],
+           [ 314.1190,  131.9150,  181.0770],
+           [ 312.9030,  132.2420,  181.0280]]]),
+  &#39;residue_coordinates&#39;: tensor([[[ 238.3230,  356.4020,  388.1950],
+           [ 240.4110,  353.2410,  388.5110],
+           [ 239.1700,  349.8340,  389.7560],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]],
+  
+          [[ 280.2980,  141.7710,  234.1080],
+           [ 279.4230,  138.1500,  233.3690],
+           [ 281.2600,  138.0610,  230.0370],
+           ...,
+           [ 320.3230,  136.4760,  182.5070],
+           [ 317.2980,  134.3810,  183.4050],
+           [ 315.1630,  132.9490,  180.6540]]]),
+  &#39;residue_ids&#39;: tensor([[  2.,   2.,   2.,  ..., -99., -99., -99.],
+          [  7.,   7.,   7.,  ..., 239., 239., 239.]]),
+  &#39;chain_ids&#39;: tensor([[ 0.,  0.,  0.,  ..., -1., -1., -1.],
+          [ 0.,  0.,  0.,  ...,  1.,  1.,  1.]])},
+ &#39;feature_complex&#39;: {&#39;atom_types&#39;: tensor([[[ 0.],
+           [ 1.],
+           [ 2.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 0.],
+           [ 1.],
+           [ 2.],
+           ...,
+           [ 1.],
+           [ 2.],
+           [ 3.]]]),
+  &#39;element_types&#39;: tensor([[[ 3.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 3.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [ 0.],
+           [ 0.],
+           [ 2.]]]),
+  &#39;residue_types&#39;: tensor([[[ 0.],
+           [ 0.],
+           [ 0.],
+           ...,
+           [-1.],
+           [-1.],
+           [-1.]],
+  
+          [[ 4.],
+           [ 4.],
+           [ 4.],
+           ...,
+           [ 5.],
+           [ 5.],
+           [ 5.]]]),
+  &#39;atom_coordinates&#39;: tensor([[[ 239.0594,  357.0178,  386.4921],
+           [ 238.6853,  355.9713,  387.4380],
+           [ 239.4948,  354.6902,  387.1700],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]],
+  
+          [[ 280.7290,  142.4940,  235.3350],
+           [ 280.2980,  141.7710,  234.1080],
+           [ 280.1140,  140.3010,  234.3730],
+           ...,
+           [ 341.9383,  155.9993,  243.4603],
+           [ 342.7656,  157.1881,  242.9700],
+           [ 342.2882,  158.3454,  243.1132]]]),
+  &#39;residue_coordinates&#39;: tensor([[[ 238.6853,  355.9713,  387.4380],
+           [ 240.8402,  352.8592,  388.1541],
+           [ 238.7678,  349.6642,  388.6942],
+           ...,
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000],
+           [-100.0000, -100.0000, -100.0000]],
+  
+          [[ 280.2980,  141.7710,  234.1080],
+           [ 279.4230,  138.1500,  233.3690],
+           [ 281.2600,  138.0610,  230.0370],
+           ...,
+           [ 338.9307,  150.4625,  241.7879],
+           [ 340.4811,  153.7729,  240.7964],
+           [ 341.9383,  155.9993,  243.4603]]]),
+  &#39;residue_ids&#39;: tensor([[  2.,   2.,   2.,  ..., -99., -99., -99.],
+          [  7.,   7.,   7.,  ..., 239., 239., 239.]]),
+  &#39;chain_ids&#39;: tensor([[ 0.,  0.,  0.,  ..., -1., -1., -1.],
+          [ 0.,  0.,  0.,  ...,  1.,  1.,  1.]])},
+ &#39;id&#39;: [&#39;7n2c__M1_P0A7S9--7n2c__S1_P0A7U3&#39;,
+  &#39;6rjf__B34_O91734--6rjf__C34_O91734&#39;],
+ &#39;sample_id&#39;: [&#39;af__P0A7S9--af__P0A7U3&#39;,
+  &#39;6rjf__B34_O91734-R--6rjf__C34_O91734-L&#39;],
+ &#39;target_id&#39;: [&#39;7n2c__M1_P0A7S9-R--7n2c__S1_P0A7U3-L&#39;,
+  &#39;6rjf__B34_O91734-R--6rjf__C34_O91734-L&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementing-your-own-pytorch-dataset-dataloader-for-pinder">
+<h3>Implementing your own PyTorch Dataset &amp; DataLoader for pinder <a name="torch-dataloader"></a><a class="headerlink" href="#implementing-your-own-pytorch-dataset-dataloader-for-pinder" title="Link to this heading">#</a></h3>
+<p>We invite you to review the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-loader.html#implementing-your-own-pytorch-dataset-dataloader-for-pinder">existing tutorial</a> on this topic in the pinder documentation. Please don’t hesitate to ask questions or otherwise engage via GitHub issues!</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-valid-model-training">Rules for valid model training <a name="training-rules"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-valid-inference-submissions">Rules for valid inference submissions<a name="inference-rules"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-dataset">Evaluation dataset <a name="eval-dataset"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-loading-data-for-training">Accessing and loading data for training <a name="accessing-training-data"></a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example-with-filepaths">Minimal example with filepaths <a name="minimal-filepath-example"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pinder-utilities-to-construct-a-dataloader">Using pinder utilities to construct a dataloader <a name="pinder-utilities"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems">Using PinderLoader and PinderDataset to fetch, filter, transform systems <a name="pinder-loader-and-dataset"></a></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-your-own-pytorch-dataset-dataloader-for-pinder">Implementing your own PyTorch Dataset &amp; DataLoader for pinder <a name="torch-dataloader"></a></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/pinder-mlsb.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/pinder-mlsb.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

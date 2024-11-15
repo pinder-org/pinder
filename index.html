@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PINDER: The Protein INteraction Dataset and Evaluation Resource &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/index.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting started" href="readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-the-protein-interaction-dataset-and-evaluation-resource">
+<h1>PINDER: The Protein INteraction Dataset and Evaluation Resource<a class="headerlink" href="#pinder-the-protein-interaction-dataset-and-evaluation-resource" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#about">📚 About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#id1">👨‍💻 Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#prerequisites">Prerequisites</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#fastpdb-support">fastpdb support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#install-pinder">Install pinder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#initialize-a-virtual-environment-or-conda-environment">Initialize a virtual environment or conda environment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#install-optional-dependencies">Install optional dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#pytorch-cluster">pytorch-cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#prodigy-cryst">PRODIGY-cryst</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-pinder-packages-from-pypi">Install pinder packages from PyPI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#getting-the-dataset">⬇️ Getting the dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#to-download-the-complete-dataset-run-the-following">To download the complete dataset run the following</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#updating-the-dataset">Updating the dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#pinder-datasets-resources">Pinder datasets &amp; resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#gold-standard-benchmark-sets">1. 🏅 Gold standard benchmark sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#leaderboard">2. 📊 Leaderboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#evaluation-harness">3. ⚖️ Evaluation harness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#training-set">4. 🧪 Training set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#dataloader">5. 📦 Dataloader</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#torch-dataloader">Torch dataloader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#pytorch-geometric-dataloader">Pytorch-geometric dataloader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#i-filters-annonations">6. ℹ️ Filters &amp; Annonations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#future-work">7. 📡 Future work</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#code-organization">👨‍💻 Code organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#dataset-generation">💽 Dataset Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#input">🚪 Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#i-annotation">ℹ️ Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#clustering">👥 Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#test-filters">🧭 Test filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#split">🔪 Split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#af2mm">🗞️ AF2mm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#updates-versioning">📰 Updates &amp; Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#examples-documentation">Examples &amp; documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#dev-guide">Dev guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#dev-mode-install">Dev mode install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#clone-the-repo">Clone the repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#initialize-a-conda-env">Initialize a conda env</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#install-the-desired-pinder-subpackages-in-dev-mode">Install the desired pinder subpackages in dev mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readme.html#optional-install-pre-commit-hooks">(Optional) install pre-commit hooks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#test-suite">Test suite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readme.html#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="readme.html#contributing">Contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder-index.html">Pinder index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder-index.html#download-the-dataset">Download the dataset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#to-download-the-complete-dataset-run-the-following">To download the complete dataset run the following</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#alternatively-use-the-cli-script-pinder-download">Alternatively, use the CLI script <code class="docutils literal notranslate"><span class="pre">pinder_download</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#the-full-dataset-should-look-like-this">The full dataset should look like this</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-index.html#pinder-metadata-api">Pinder metadata API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-index.html#pinder-index-api">Pinder index API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#how-to-get-subsets-of-data-from-the-index">How to get subsets of data from the index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#finding-the-existing-local-filepaths-for-systems-without-re-writing-them-per-system">Finding the existing local filepaths for systems (without re-writing them per system)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#it-should-be-cached-no-need-to-download-if-you-re-run">It should be cached, no need to download if you re-run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-index.html#pinder-filters">Pinder filters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder-system.html">Pinder system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#pindersystem-api-base-class-representing-structures-in-a-pinder-entry">PinderSystem API - base class representing <code class="docutils literal notranslate"><span class="pre">Structure</span></code>’s in a pinder entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#classify-system-difficulty-based-on-degree-of-conformational-shift-in-unbound-and-bound">Classify system difficulty based on degree of conformational shift in unbound and bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#illustrating-utilities-available-in-structure-instances">Illustrating utilities available in <code class="docutils literal notranslate"><span class="pre">Structure</span></code> instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#can-also-filter-in-place-rather-than-returning-a-copy-a-la-pandas">Can also filter “in place” rather than returning a copy (a la pandas)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#create-masked-unbound-complex-aligned-to-bound-for-apo">Create masked unbound complex aligned to bound for apo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-system.html#whats-going-on-under-the-hood">What’s going on under the hood</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#structures-have-resolved-pdb2uniprot-and-resolved-uniprot2pdb-properties">Structures have <code class="docutils literal notranslate"><span class="pre">resolved_pdb2uniprot</span></code> and <code class="docutils literal notranslate"><span class="pre">resolved_uniprot2pdb</span></code> properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#case-with-multiple-available-apo-structures">Case with multiple available apo structures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-system.html#specify-2kmr-as-apo-ligand-and-1fmg-as-apo-receptor">Specify 2kmr as apo ligand and 1fmg as apo receptor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#id1">Classify system difficulty based on degree of conformational shift in unbound and bound</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-system.html#a-bunch-of-other-features-of-the-structure-class-are-illustrated-below">A bunch of other features of the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> class are illustrated below</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder-loader.html">Pinder loader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder-loader.html#accessing-and-loading-data-for-training">Accessing and loading data for training</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#recap-pindersystem-and-structure-classes">Recap: PinderSystem and Structure classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#using-the-pinderloader-to-load-filter-and-transform-systems">Using the PinderLoader to load, filter and transform systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#loading-a-specific-split">Loading a specific split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#loading-a-specific-list-of-systems">Loading a specific list of systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#optional-pinder-writer">Optional Pinder writer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-loader.html#constructing-torch-datasets-and-dataloaders-from-pinder-systems">Constructing torch datasets and dataloaders from pinder systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#pinderdataset-torch-dataset">PinderDataset (torch Dataset)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#sampling-alternative-monomers">Sampling alternative monomers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#torch-dataloader-for-pinderdataset">Torch DataLoader for PinderDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#torch-geometric-dataset">Torch geometric Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#pairedpdb-torch-geometric-heterodata-object">PairedPDB torch-geometric HeteroData object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#torch-geometric-dataloader">Torch geometric DataLoader</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-loader.html#implementing-your-own-pytorch-dataset-dataloader-for-pinder">Implementing your own PyTorch Dataset &amp; DataLoader for pinder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#defining-the-dataset">Defining the Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#implementing-diversity-sampling">Implementing diversity sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#defining-the-dataloader">Defining the dataloader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-loader.html#using-a-larger-batch-size-collate-fn">Using a larger batch size (collate_fn)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder-eval.html">Pinder eval</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder-eval.html#harnessing-biotite-the-workhorse-beind-pinders-abstractions">Harnessing Biotite: the workhorse beind Pinder’s abstractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-eval.html#evaluation-harness-implementation-of-dockq-metrics">Evaluation harness: implementation of DockQ metrics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-eval.html#biotitedockq-efficient-implementation-of-evaluation-metrics">BiotiteDockQ: efficient implementation of evaluation metrics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-eval.html#comparison-to-original-dockq">Comparison to original DockQ</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-eval.html#pinder-eval-entrypoint">pinder_eval entrypoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-eval.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="superposition.html">FAQ: cropped monomer superposition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#examine-monomer-shapes-prior-to-cropping-or-superposition">Examine monomer shapes prior to cropping or superposition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superposition.html#receptor-monomers">Receptor monomers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superposition.html#ligand-monomers">Ligand monomers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#single-alternative-monomer-use-case-without-cropping">Single alternative monomer use-case without cropping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#with-cropping-such-that-apo-and-holo-have-the-same-shapes">With cropping such that apo and holo have the same shapes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="superposition.html#why-are-the-shapes-still-off-by-2-atoms">Why are the shapes still off by 2 atoms?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="superposition.html#the-residues-were-not-renumbered-so-the-number-of-differing-atom-specifications-is-larger-than-the-shape-mismatch-of-2">The residues were not renumbered, so the number of differing atom specifications is larger than the shape mismatch of 2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#why-are-these-atoms-missing-in-the-apo-but-present-in-the-holo-structure">Why are these atoms missing in the apo, but present in the holo structure?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#what-if-we-need-them-to-be-identical-shapes">What if we need them to be identical shapes?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="superposition.html#we-specified-monomer-types-apo-but-got-a-tuple-of-structures-that-included-the-predicted-complex-why">We specified <code class="docutils literal notranslate"><span class="pre">monomer_types</span></code> apo, but got a tuple of structures that included the predicted complex, why?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder-mlsb.html">MLSB PINDER Challenge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder-mlsb.html#rules-for-valid-model-training">Rules for valid model training <a name="training-rules"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-mlsb.html#rules-for-valid-inference-submissions">Rules for valid inference submissions<a name="inference-rules"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-mlsb.html#evaluation-dataset">Evaluation dataset <a name="eval-dataset"></a></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder-mlsb.html#accessing-and-loading-data-for-training">Accessing and loading data for training <a name="accessing-training-data"></a></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder-mlsb.html#minimal-example-with-filepaths">Minimal example with filepaths <a name="minimal-filepath-example"></a></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-mlsb.html#using-pinder-utilities-to-construct-a-dataloader">Using pinder utilities to construct a dataloader <a name="pinder-utilities"></a></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-mlsb.html#using-pinderloader-and-pinderdataset-to-fetch-filter-transform-systems">Using PinderLoader and PinderDataset to fetch, filter, transform systems <a name="pinder-loader-and-dataset"></a></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder-mlsb.html#implementing-your-own-pytorch-dataset-dataloader-for-pinder">Implementing your own PyTorch Dataset &amp; DataLoader for pinder <a name="torch-dataloader"></a></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source/pinder.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="source/pinder.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="source/pinder.core.html">pinder.core package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.core.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.core.html#module-pinder.core">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="source/pinder.data.html">pinder.data package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.alignment_utils">pinder.data.alignment_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.apo_utils">pinder.data.apo_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.config">pinder.data.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.csv_utils">pinder.data.csv_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.find_transitive_hits">pinder.data.find_transitive_hits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.foldseek_utils">pinder.data.foldseek_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_alignment_similarity">pinder.data.get_alignment_similarity module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_annotations">pinder.data.get_annotations module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_apo">pinder.data.get_apo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_clusters">pinder.data.get_clusters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_data">pinder.data.get_data module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_dimers">pinder.data.get_dimers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_splits">pinder.data.get_splits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.get_test_set">pinder.data.get_test_set module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.graph_utils">pinder.data.graph_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.rcsb_rsync">pinder.data.rcsb_rsync module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.run">pinder.data.run module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data.system">pinder.data.system module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.data.html#module-pinder.data">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="source/pinder.eval.html">pinder.eval package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.eval.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.eval.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.eval.html#module-pinder.eval.create_submission">pinder.eval.create_submission module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.eval.html#module-pinder.eval.run">pinder.eval.run module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.eval.html#module-pinder.eval">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="source/pinder.methods.html">pinder.methods package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.methods.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.methods.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.methods.html#module-pinder.methods.main">pinder.methods.main module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="source/pinder.methods.html#module-pinder.methods">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example_readme.html">Pinder abstractions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#pinder-system-loader-workflow-filters-and-transforms-for-pinder-dimer-systems">PINDER system loader workflow: filters and transforms for Pinder dimer systems.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#filters">Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="example_readme.html#pinderfilterbase">PinderFilterBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_readme.html#pinderfiltersubbase">PinderFilterSubBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_readme.html#structurefilter">StructureFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="example_readme.html#filter-implementation-progress">Filter implementation progress</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#transforms">Transforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="example_readme.html#structure-object">Structure object</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#writers-generators">Writers/Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#pinder-loader">Pinder loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#create-train-dataloader-torch">Create train dataloader (torch)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example_readme.html#create-test-dataset-torch-geometric">Create test dataset (torch-geometric)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#is-there-a-sequence-database-available">Is there a sequence database available?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#can-pinder-be-used-to-detect-steric-clashes">Can <code class="docutils literal notranslate"><span class="pre">pinder</span></code> be used to detect steric clashes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-do-holo-apo-native-and-predicted-structures-within-pindersystem-mean">What do holo, apo, native, and predicted structures within <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> mean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#for-some-protein-pairs-when-i-extract-the-apo-and-holo-structures-and-align-their-sequence-the-results-dont-have-the-same-atoms-and-or-sequence-how-can-i-align-monomers-such-that-all-have-the-same-shape">For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don’t have the same atoms and/or sequence. How can I align monomers such that all have the same shape?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context">How can I use the evaluation harness outside of a <code class="docutils literal notranslate"><span class="pre">pinder</span></code> context?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#do-i-have-to-use-the-pinder-loader-how-can-i-write-my-own-loader">Do I have to use the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> loader? How can I write my own loader?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="limitations.html#known-limitationns">Known limitationns</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#dimers">Dimers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#alphafold2-monomers">AlphaFold2 monomers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#apo-pairing">Apo pairing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#single-reference-conformation">Single reference conformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#alignment-methodology">Alignment methodology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="limitations.html#foldseek-limitations">Foldseek limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#prodigy-cryst">PRODIGY-Cryst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#limitations-of-the-data-ingestion-pipeline">Limitations of the data ingestion pipeline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="limitations.html#limitations-of-the-clustering-spliting-algorithm">Limitations of the clustering / spliting algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="limitations.html#data-types-in-the-pinder-index">Data types in the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#pinder-2024-02-release">Pinder 2024-02 release</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#updated-dataset-counts">Updated dataset counts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#diversity-stats">Diversity stats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#test-val-size">Test + val size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#interface-size-distribution">Interface size distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#planarity-distribution">Planarity distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#ecod-domain-domain-diversity">ECOD domain-domain diversity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#both-chains-unique-ecod-domain-unique-binding-site-ratio">Both chains unique ECOD domain (unique binding site ratio)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#ecod-single-chain-domain-diversity">ECOD single chain domain diversity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#pfam-clan-distribution">Pfam-clan distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#leakage-qc">Leakage QC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#uniprot">UniProt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#ecod">ECOD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="changelog.html#sequence-similarity-global">Sequence similarity (global)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#parameter-optimization">Parameter optimization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#pinder-2023-11-patch-update">Pinder 2023-11 (patch update)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#updated-test-dataset-counts">Updated test dataset counts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#pinder-2023-11">Pinder 2023-11</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#total-dataset-size">Total dataset size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="changelog.html#file-manifest">File manifest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PINDER: The Protein INteraction Dataset and Evaluation Resource</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/index.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

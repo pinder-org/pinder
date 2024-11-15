@@ -1,0 +1,10 @@
+pinder.methods.run.af2mm package
+================================
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.run.af2mm
+   :members:
+   :undoc-members:
+   :show-inheritance:

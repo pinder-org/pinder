@@ -1,0 +1,1734 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.core.index.utils &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/core/index/utils';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/core/index/utils.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core.index.utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.core.index.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span><span class="p">,</span> <span class="n">reduce</span><span class="p">,</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span><span class="p">,</span> <span class="n">error</span> <span class="k">as</span> <span class="n">zip_error</span>
+
+<span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">google.cloud.storage.client</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">ConfigDict</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">fnmatch</span> <span class="kn">import</span> <span class="n">fnmatch</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.cloud</span> <span class="kn">import</span> <span class="n">Gsutil</span><span class="p">,</span> <span class="n">gcs_read_dataframe</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">pc</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">_ignore_pydantic_fields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;model_config&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model_fields&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model_computed_fields&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<div class="viewcode-block" id="get_pinder_location">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_pinder_location">[docs]</a>
+<span class="k">def</span> <span class="nf">get_pinder_location</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determines the base directory location for the Pinder data.</span>
+
+<span class="sd">    First, check the environment for PINDER_DATA_DIR. If provided, assume</span>
+<span class="sd">    it is the full path to the directory containing the index, pdbs/, and mappings/.</span>
+<span class="sd">    Otherwise, the PINDER_BASE_DIR environment variable is checked, and if unset,</span>
+<span class="sd">    falls back to the default XDG_DATA_HOME location (~/.local/share), and</span>
+<span class="sd">    appends the current version of the Pinder release. The Pinder release can be</span>
+<span class="sd">    controlled via the PINDER_RELEASE environment variable.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path: The path to the base directory for Pinder data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pinder_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PINDER_DATA_DIR&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">default_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XDG_DATA_HOME&quot;</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.local/share&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pinder_data</span><span class="p">:</span>
+        <span class="n">pinder_base</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">pinder_data</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PINDER_BASE_DIR&quot;</span><span class="p">,</span> <span class="n">default_loc</span><span class="p">)</span>
+        <span class="n">pinder_release</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PINDER_RELEASE&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-02&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">base_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">base_dir</span><span class="p">)</span>
+        <span class="n">pinder_base</span> <span class="o">=</span> <span class="n">base_dir</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;pinder&quot;</span> <span class="o">/</span> <span class="n">pinder_release</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pinder_base</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">pinder_base</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pinder is located at </span><span class="si">{</span><span class="n">pinder_base</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pinder_base</span></div>
+
+
+
+<div class="viewcode-block" id="get_pinder_bucket_root">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_pinder_bucket_root">[docs]</a>
+<span class="k">def</span> <span class="nf">get_pinder_bucket_root</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Constructs the root bucket path for the Pinder data in Google Cloud Storage</span>
+<span class="sd">    based on the PINDER_RELEASE environment variable.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The root bucket path as a string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pinder_release</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PINDER_RELEASE&quot;</span><span class="p">,</span> <span class="s2">&quot;2024-02&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;gs://pinder/</span><span class="si">{</span><span class="n">pinder_release</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="get_index_location">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_index_location">[docs]</a>
+<span class="k">def</span> <span class="nf">get_index_location</span><span class="p">(</span>
+    <span class="n">csv_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;index.parquet&quot;</span><span class="p">,</span> <span class="n">remote</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets the file path for the Pinder index CSV/Parquet file, either locally or remotely.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        csv_name (str): The name of the CSV/Parquet file. Defaults to &quot;index.parquet&quot;.</span>
+<span class="sd">        remote (bool): A flag to determine if the remote file path should be returned.</span>
+<span class="sd">                       Defaults to False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[Path, str]:</span>
+<span class="sd">            The path to the index CSV/Parquet file, either as a Path object (local)</span>
+<span class="sd">            or a string (remote).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">remote</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">get_pinder_bucket_root</span><span class="p">()</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">csv_name</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="n">csv_name</span></div>
+
+
+
+<div class="viewcode-block" id="get_index">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_index">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="n">csv_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;index.parquet&quot;</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieves the Pinder index as a pandas DataFrame. If the index is not already</span>
+<span class="sd">    loaded, it reads from the local CSV/Parquet file, or downloads it if not present.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        csv_name (str): The name of the CSV/Parquet file to load. Defaults to &quot;index.parquet&quot;.</span>
+<span class="sd">        update (bool): Whether to force update index on disk even if it exists.</span>
+<span class="sd">            Default is False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Pinder index as a DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;gs://&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;/&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">csv_name</span><span class="p">):</span>
+        <span class="c1"># Its a custom index in local filepath or gcs uri</span>
+        <span class="n">custom_index</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">local_index</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;custom_indices&quot;</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">local_index</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">local_index</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">local_index</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">get_index_location</span><span class="p">(</span><span class="n">csv_name</span><span class="p">))</span>
+        <span class="n">custom_index</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">local_index</span><span class="o">.</span><span class="n">suffix</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;.gz&quot;</span><span class="p">]:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="s2">&quot;to_csv&quot;</span>
+        <span class="n">cast_types</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># reader_kwargs = {}</span>
+    <span class="k">elif</span> <span class="n">local_index</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.parquet&quot;</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="s2">&quot;to_parquet&quot;</span>
+        <span class="n">cast_types</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># reader_kwargs = {&quot;engine&quot;: &quot;pyarrow&quot;}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported file type for index: </span><span class="si">{</span><span class="n">local_index</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">! Use csv or parquet.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_index</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">update</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">custom_index</span><span class="p">:</span>
+        <span class="c1"># Only load cached index when update is False and its not a custom index</span>
+        <span class="n">pindex</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">local_index</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Given the potential duplicate named indices, we force-update any custom index</span>
+        <span class="k">if</span> <span class="n">custom_index</span><span class="p">:</span>
+            <span class="n">pindex</span> <span class="o">=</span> <span class="n">gcs_read_dataframe</span><span class="p">(</span><span class="n">csv_name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pindex</span> <span class="o">=</span> <span class="n">gcs_read_dataframe</span><span class="p">(</span><span class="n">get_index_location</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">remote</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">writer</span><span class="p">)(</span><span class="n">local_index</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># for backwards compatibility:</span>
+    <span class="n">drop_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;affinity_class&quot;</span><span class="p">,</span> <span class="s2">&quot;pKd_pKi_pIC50&quot;</span><span class="p">,</span> <span class="s2">&quot;tmp_chain2&quot;</span><span class="p">,</span> <span class="s2">&quot;pinder_af2_hard&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">drop_cols</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">pindex</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">pindex</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">fix_index</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">,</span>
+        <span class="n">index_fields</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">IndexEntry</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+        <span class="n">cast_types</span><span class="o">=</span><span class="n">cast_types</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pindex</span></div>
+
+
+
+<div class="viewcode-block" id="get_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_metadata">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span>
+    <span class="n">csv_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;metadata.parquet&quot;</span><span class="p">,</span>
+    <span class="n">update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">extra_glob</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;metadata-*.csv.gz&quot;</span><span class="p">,</span>
+    <span class="n">extra_data</span><span class="p">:</span> <span class="n">SupplementaryData</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">SupplementaryData</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[()]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieves the Pinder index metadata as a pandas DataFrame.</span>
+
+<span class="sd">    If the metadata is not already loaded, it reads from the local CSV/Parquet file,</span>
+<span class="sd">    or downloads it if not present.</span>
+
+<span class="sd">    Also attempts to read extra metadata. We assume that all extra CSV</span>
+<span class="sd">    files contain an `id` field.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        csv_name (str): The name of the CSV file to load. Defaults to &quot;metadata.parquet&quot;.</span>
+<span class="sd">        update (bool): Whether to force update index on disk even if it exists. Default is False.</span>
+<span class="sd">        extra_glob (str): The pattern to match extra metadata CSV files. Defaults to &quot;metadata-\*.csv.gz&quot;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Pinder metadata as a DataFrame.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">local_metadata</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">get_index_location</span><span class="p">(</span><span class="n">csv_name</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">local_metadata</span><span class="o">.</span><span class="n">suffix</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;.gz&quot;</span><span class="p">]:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="s2">&quot;to_csv&quot;</span>
+        <span class="n">cast_types</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># reader_kwargs = {}</span>
+    <span class="k">elif</span> <span class="n">local_metadata</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.parquet&quot;</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="s2">&quot;to_parquet&quot;</span>
+        <span class="n">cast_types</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># reader_kwargs = {&quot;engine&quot;: &quot;pyarrow&quot;}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported file type for metadata: </span><span class="si">{</span><span class="n">local_metadata</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">! Use csv or parquet.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_metadata</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">update</span><span class="p">:</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">local_metadata</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">gcs_read_dataframe</span><span class="p">(</span><span class="n">get_index_location</span><span class="p">(</span><span class="n">csv_name</span><span class="p">,</span> <span class="n">remote</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">writer</span><span class="p">)(</span><span class="n">local_metadata</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Backwards compatibility with old column names</span>
+    <span class="n">meta_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;number_of_components_1&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_components_2&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">meta_cols</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">!=</span> <span class="mi">2</span>
+    <span class="p">):</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;number_of_components1&quot;</span><span class="p">:</span> <span class="s2">&quot;number_of_components_1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;number_of_components2&quot;</span><span class="p">:</span> <span class="s2">&quot;number_of_components_2&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">({</span><span class="s2">&quot;length_resolved_1&quot;</span><span class="p">,</span> <span class="s2">&quot;length_resolved_2&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">meta_cols</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;length_resolved_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">length1</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;length_resolved_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">length2</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">fix_metadata</span><span class="p">(</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">metadata_fields</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">MetadataEntry</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+        <span class="n">cast_types</span><span class="o">=</span><span class="n">cast_types</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Try to get extra metadata, if it exists</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">extra_data</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">extra_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">extra_data</span><span class="p">,)</span>
+    <span class="n">extra_metadata</span> <span class="o">=</span> <span class="n">get_extra_metadata</span><span class="p">(</span>
+        <span class="n">get_pinder_location</span><span class="p">(),</span>
+        <span class="n">get_pinder_bucket_root</span><span class="p">(),</span>
+        <span class="n">glob_pattern</span><span class="o">=</span><span class="n">extra_glob</span><span class="p">,</span>
+        <span class="n">update</span><span class="o">=</span><span class="n">update</span><span class="p">,</span>
+        <span class="n">extra_data</span><span class="o">=</span><span class="n">extra_data</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">extra_metadata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">extra_metadata</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="c1"># Only keep non-common columns + id column to merge on to prevent conflicts</span>
+        <span class="n">common_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">extra_metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+            <span class="nb">set</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">common_cols</span><span class="p">:</span>
+            <span class="n">extra_metadata</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">common_cols</span><span class="p">),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">extra_metadata</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">metadata</span></div>
+
+
+
+<div class="viewcode-block" id="get_extra_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_extra_metadata">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_extra_metadata</span><span class="p">(</span>
+    <span class="n">local_location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">remote_location</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">glob_pattern</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;metadata-*.csv.gz&quot;</span><span class="p">,</span>
+    <span class="n">extra_data</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">SupplementaryData</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[()]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="n">update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieves extra metadata as a pandas DataFrame.</span>
+
+<span class="sd">    If the metadata is not already loaded, it reads from local CSV files,</span>
+<span class="sd">    or downloads them if not present.</span>
+
+<span class="sd">    We assume that all CSV files contain an `id` field.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        local_location (str):</span>
+<span class="sd">            The filepath to the local directory containing CSV files.</span>
+<span class="sd">        remote_location (str):</span>
+<span class="sd">            The filepath to the remote location containing CSV files.</span>
+<span class="sd">        glob_pattern (str): The pattern to match extra metadata CSV files. Defaults to</span>
+<span class="sd">            &quot;metadata-\*.csv.gz&quot;</span>
+<span class="sd">        update (bool): Whether to force update index on disk even if it exists.</span>
+<span class="sd">            Default is False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Pinder metadata as a DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">local_metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="n">local_location</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">glob_pattern</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]</span>
+
+    <span class="n">metadata_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">local_metadata</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">update</span><span class="p">:</span>
+        <span class="n">metadata_dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span> <span class="k">for</span> <span class="n">meta</span> <span class="ow">in</span> <span class="n">local_metadata</span> <span class="k">if</span> <span class="n">meta</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gs</span> <span class="o">=</span> <span class="n">Gsutil</span><span class="p">()</span>
+        <span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;anon&quot;</span><span class="p">)</span>
+        <span class="n">metadata_dfs</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">gcs_read_dataframe</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">meta</span> <span class="ow">in</span> <span class="n">gs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="n">remote_location</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">fnmatch</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">glob_pattern</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="k">if</span> <span class="n">extra_data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">extra_data</span><span class="p">:</span>
+            <span class="n">supp</span> <span class="o">=</span> <span class="n">get_supplementary_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">update</span><span class="o">=</span><span class="n">update</span><span class="p">)</span>
+            <span class="n">metadata_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">supp</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">metadata_dfs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">partial</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">),</span> <span class="n">metadata_dfs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="SupplementaryData">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.SupplementaryData">[docs]</a>
+<span class="k">class</span> <span class="nc">SupplementaryData</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
+    <span class="n">sequence_database</span> <span class="o">=</span> <span class="s2">&quot;sequence_database.parquet&quot;</span>
+    <span class="n">supplementary_metadata</span> <span class="o">=</span> <span class="s2">&quot;supplementary_metadata.parquet&quot;</span>
+    <span class="n">entity_metadata</span> <span class="o">=</span> <span class="s2">&quot;entity_metadata.parquet&quot;</span>
+    <span class="n">chain_metadata</span> <span class="o">=</span> <span class="s2">&quot;chain_metadata.parquet&quot;</span>
+    <span class="n">ecod_metadata</span> <span class="o">=</span> <span class="s2">&quot;ecod_metadata.parquet&quot;</span>
+    <span class="n">enzyme_classification_metadata</span> <span class="o">=</span> <span class="s2">&quot;enzyme_classification_metadata.parquet&quot;</span>
+    <span class="n">interface_annotations</span> <span class="o">=</span> <span class="s2">&quot;interface_annotations.parquet&quot;</span>
+    <span class="n">sabdab_metadata</span> <span class="o">=</span> <span class="s2">&quot;sabdab_metadata.parquet&quot;</span>
+    <span class="n">monomer_neff</span> <span class="o">=</span> <span class="s2">&quot;monomer_neff.parquet&quot;</span>
+    <span class="n">paired_neff</span> <span class="o">=</span> <span class="s2">&quot;test_split_paired_neffs.parquet&quot;</span>
+    <span class="n">transient_interface_metadata</span> <span class="o">=</span> <span class="s2">&quot;transient_interface_metadata.parquet&quot;</span>
+    <span class="n">ialign_split_similarity_labels</span> <span class="o">=</span> <span class="s2">&quot;ialign_split_similarity_labels.parquet&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="get_supplementary_data">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_supplementary_data">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_supplementary_data</span><span class="p">(</span>
+    <span class="n">supplementary_data</span><span class="p">:</span> <span class="n">SupplementaryData</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieves supplementary data file exposed in the Pinder dataset as a pandas DataFrame.</span>
+<span class="sd">    If the data is not already loaded, it reads from the local Parquet file, or downloads it if not present.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        supplementary_data (SupplementaryData): The name of the Parquet file to load.</span>
+<span class="sd">        update (bool): Whether to force update data on disk even if it exists.</span>
+<span class="sd">            Default is False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The requested supplementary Pinder data as a DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">supplementary_data</span><span class="p">,</span> <span class="n">SupplementaryData</span><span class="p">):</span>
+        <span class="n">supplementary_data</span> <span class="o">=</span> <span class="n">SupplementaryData</span><span class="p">[</span><span class="n">supplementary_data</span><span class="p">]</span>
+    <span class="n">local_index</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">get_index_location</span><span class="p">(</span><span class="n">supplementary_data</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">local_index</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.parquet&quot;</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="s2">&quot;to_parquet&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unsupported file type for sequence database: </span><span class="si">{</span><span class="n">local_index</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">! Use parquet.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">local_index</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">update</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">local_index</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">gcs_read_dataframe</span><span class="p">(</span>
+            <span class="n">get_index_location</span><span class="p">(</span><span class="n">supplementary_data</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">remote</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">writer</span><span class="p">)(</span><span class="n">local_index</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<div class="viewcode-block" id="get_sequence_database">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_sequence_database">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_sequence_database</span><span class="p">(</span>
+    <span class="n">pqt_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;sequence_database.parquet&quot;</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieves sequences for all PDB files in the Pinder dataset (including dimers, bound and unbound monomers) as a pandas DataFrame.</span>
+<span class="sd">    If the database is not already loaded, it reads from the local Parquet file, or downloads it if not present.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        pqt_name (str): The name of the Parquet file to load. Defaults to &quot;sequence_database.parquet&quot;.</span>
+<span class="sd">        update (bool): Whether to force update sequence database on disk even if it exists.</span>
+<span class="sd">            Default is False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The Pinder sequence database as a DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">seq_db</span> <span class="o">=</span> <span class="n">get_supplementary_data</span><span class="p">(</span><span class="n">SupplementaryData</span><span class="p">(</span><span class="n">pqt_name</span><span class="p">),</span> <span class="n">update</span><span class="o">=</span><span class="n">update</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seq_db</span></div>
+
+
+
+<div class="viewcode-block" id="download_dataset">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.download_dataset">[docs]</a>
+<span class="k">def</span> <span class="nf">download_dataset</span><span class="p">(</span><span class="n">skip_inflation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Downloads the Pinder dataset archives (PDBs and mappings) and optionally inflates them.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        skip_inflation (bool):</span>
+<span class="sd">            If True, the method will skip inflating (unzipping) the</span>
+<span class="sd">            downloaded archives. Defaults to False.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Required disk space to download the full Pinder dataset:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # compressed</span>
+<span class="sd">            144G    pdbs.zip</span>
+<span class="sd">            149M    test_set_pdbs.zip</span>
+<span class="sd">            6.8G    mappings.zip</span>
+
+<span class="sd">            # unpacked</span>
+<span class="sd">            672G    pdbs</span>
+<span class="sd">            705M    test_set_pdbs</span>
+<span class="sd">            25G     mappings</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span>
+    <span class="n">expected_arch_files</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;pdbs&quot;</span><span class="p">:</span> <span class="n">pc</span><span class="o">.</span><span class="n">PDB_FILE_COUNT</span><span class="p">,</span>
+        <span class="s2">&quot;test_set_pdbs&quot;</span><span class="p">:</span> <span class="n">pc</span><span class="o">.</span><span class="n">TEST_SET_PDB_FILE_COUNT</span><span class="p">,</span>
+        <span class="s2">&quot;mappings&quot;</span><span class="p">:</span> <span class="n">pc</span><span class="o">.</span><span class="n">MAPPING_FILE_COUNT</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">remote_archs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">archive_paths</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">arch_name</span><span class="p">,</span> <span class="n">n_expected</span> <span class="ow">in</span> <span class="n">expected_arch_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">local_dir</span> <span class="o">=</span> <span class="n">root</span> <span class="o">/</span> <span class="n">arch_name</span>
+        <span class="n">local_arch</span> <span class="o">=</span> <span class="n">root</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">arch_name</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+        <span class="n">remote_arch</span> <span class="o">=</span> <span class="n">get_pinder_bucket_root</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">arch_name</span><span class="si">}</span><span class="s2">.zip&quot;</span>
+        <span class="k">if</span> <span class="n">local_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">arch_name</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">n_existing</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">local_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">ext</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n_existing</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Only unzip archive if contents are incomplete</span>
+        <span class="n">unzip</span> <span class="o">=</span> <span class="n">n_existing</span> <span class="o">&lt;</span> <span class="n">n_expected</span>
+        <span class="c1"># Only download archive if directory doesn&#39;t exist or contents are incomplete</span>
+        <span class="n">download</span> <span class="o">=</span> <span class="n">unzip</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">local_arch</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">download</span><span class="p">:</span>
+            <span class="n">remote_archs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remote_arch</span><span class="p">)</span>
+            <span class="n">local_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">local_arch</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Archive </span><span class="si">{</span><span class="n">local_arch</span><span class="si">}</span><span class="s2"> exists, skipping download...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">unzip</span><span class="p">:</span>
+            <span class="n">archive_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">local_arch</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipping inflation, </span><span class="si">{</span><span class="n">local_arch</span><span class="si">}</span><span class="s2"> contents are valid...&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">remote_archs</span><span class="p">:</span>
+        <span class="n">gs</span> <span class="o">=</span> <span class="n">Gsutil</span><span class="p">()</span>
+        <span class="n">gs</span><span class="o">.</span><span class="n">cp_paired_paths</span><span class="p">(</span><span class="n">remote_archs</span><span class="p">,</span> <span class="n">local_paths</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">skip_inflation</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">local_arch</span> <span class="ow">in</span> <span class="n">archive_paths</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">local_arch</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">local_arch</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archive</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">archive</span><span class="o">.</span><span class="n">infolist</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Extracting </span><span class="si">{</span><span class="n">local_arch</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">archive</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">local_arch</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="n">zip_error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="n">local_arch</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="get_arg_parser_args">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_arg_parser_args">[docs]</a>
+<span class="k">def</span> <span class="nf">get_arg_parser_args</span><span class="p">(</span>
+    <span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Download latest pinder dataset to disk&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The command-line arg parser for different pinder data downloads and updates.</span>
+
+<span class="sd">    It accepts command-line arguments to specify the base directory, release version,</span>
+<span class="sd">    and whether to skip inflating the compressed archives.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        argv (Optional[List[str]]): The command-line arguments. If None, sys.argv is used.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParser</span>
+
+    <span class="c1"># Check if XDG_DATA_HOME is defined, if not fallback to expected</span>
+    <span class="n">default_loc</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XDG_DATA_HOME&quot;</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.local/share&quot;</span><span class="p">)</span>
+    <span class="c1"># Prefer checking PINDER_BASE_DIR, if not set then use default location</span>
+    <span class="n">default_base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PINDER_BASE_DIR&quot;</span><span class="p">,</span> <span class="n">default_loc</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--pinder_base_dir&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;specify a non-default pinder base directory&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">default_base_dir</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--pinder_release&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;specify a pinder dataset version&quot;</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="s2">&quot;2024-02&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--skip_inflation&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;if passed, will only download the compressed archives without unpacking&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">vargs</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span> <span class="k">if</span> <span class="n">argv</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+    <span class="n">base_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">vargs</span><span class="p">[</span><span class="s2">&quot;pinder_base_dir&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">absolute</span><span class="p">())</span>
+    <span class="n">release</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">vargs</span><span class="p">[</span><span class="s2">&quot;pinder_release&quot;</span><span class="p">])</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PINDER_BASE_DIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">base_dir</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PINDER_RELEASE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">release</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using </span><span class="si">{</span><span class="n">base_dir</span><span class="si">}</span><span class="s2"> as base directory for Pinder </span><span class="si">{</span><span class="n">release</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vargs</span></div>
+
+
+
+<div class="viewcode-block" id="download_pinder_cmd">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.download_pinder_cmd">[docs]</a>
+<span class="k">def</span> <span class="nf">download_pinder_cmd</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The command-line interface for downloading the latest Pinder dataset to disk.</span>
+
+<span class="sd">    It accepts command-line arguments to specify the base directory, release version,</span>
+<span class="sd">    and whether to skip inflating the compressed archives.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        argv (Optional[List[str]]): The command-line arguments. If None, sys.argv is used.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Required disk space to download the full Pinder dataset:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # compressed</span>
+<span class="sd">            144G    pdbs.zip</span>
+<span class="sd">            149M    test_set_pdbs.zip</span>
+<span class="sd">            6.8G    mappings.zip</span>
+
+<span class="sd">            # unpacked</span>
+<span class="sd">            672G    pdbs</span>
+<span class="sd">            705M    test_set_pdbs</span>
+<span class="sd">            25G     mappings</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vargs</span> <span class="o">=</span> <span class="n">get_arg_parser_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">skip_inflation</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">vargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;skip_inflation&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+    <span class="n">download_dataset</span><span class="p">(</span><span class="n">skip_inflation</span><span class="o">=</span><span class="n">skip_inflation</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="update_index_cmd">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.update_index_cmd">[docs]</a>
+<span class="k">def</span> <span class="nf">update_index_cmd</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The command-line interface for downloading the latest Pinder index to disk.</span>
+
+<span class="sd">    It accepts command-line arguments to specify the base directory and release version.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        argv (Optional[List[str]]): The command-line arguments. If None, sys.argv is used.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">vargs</span> <span class="o">=</span> <span class="n">get_arg_parser_args</span><span class="p">(</span><span class="n">argv</span><span class="p">,</span> <span class="s2">&quot;Download latest pinder index to disk&quot;</span><span class="p">)</span>
+    <span class="n">get_index</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">get_metadata</span><span class="p">(</span><span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_missing_blobs">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.get_missing_blobs">[docs]</a>
+<span class="k">def</span> <span class="nf">get_missing_blobs</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]]:</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">create_anonymous_client</span><span class="p">()</span>
+    <span class="n">bucket</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">bucket</span><span class="p">(</span><span class="s2">&quot;pinder&quot;</span><span class="p">)</span>
+    <span class="n">release</span> <span class="o">=</span> <span class="n">get_pinder_bucket_root</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;pinder/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">prefix</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">local_dir</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="n">prefix</span>
+    <span class="n">local_names</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">local_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;*</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)}</span>
+    <span class="n">missing_blobs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">b</span>
+        <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">bucket</span><span class="o">.</span><span class="n">list_blobs</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">release</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="n">Path</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">local_names</span>
+    <span class="p">]</span>
+    <span class="n">remote_paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">local_paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">missing_blobs</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">remote</span> <span class="o">=</span> <span class="n">get_pinder_bucket_root</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">local</span> <span class="o">=</span> <span class="n">local_dir</span> <span class="o">/</span> <span class="n">name</span>
+        <span class="n">remote_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+        <span class="n">local_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">remote_paths</span><span class="p">,</span> <span class="n">local_paths</span></div>
+
+
+
+<div class="viewcode-block" id="sync_pinder_structure_data">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.sync_pinder_structure_data">[docs]</a>
+<span class="k">def</span> <span class="nf">sync_pinder_structure_data</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The command-line interface for syncing any structural data files missing on disk.</span>
+
+<span class="sd">    It accepts command-line arguments to specify the base directory and release version.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        argv (Optional[List[str]]): The command-line arguments. If None, sys.argv is used.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">vargs</span> <span class="o">=</span> <span class="n">get_arg_parser_args</span><span class="p">(</span>
+        <span class="n">argv</span><span class="p">,</span> <span class="s2">&quot;Sync missing pinder structural data files to disk&quot;</span>
+    <span class="p">)</span>
+    <span class="n">remote_paths</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pdbs&quot;</span><span class="p">,</span> <span class="s2">&quot;test_set_pdbs&quot;</span><span class="p">,</span> <span class="s2">&quot;mappings&quot;</span><span class="p">]:</span>
+        <span class="n">remote</span><span class="p">,</span> <span class="n">local</span> <span class="o">=</span> <span class="n">get_missing_blobs</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+        <span class="n">remote_paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+        <span class="n">local_paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">remote_paths</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">remote_paths</span><span class="p">)</span><span class="si">}</span><span class="s2"> outdated files. Starting download...&quot;</span><span class="p">)</span>
+        <span class="n">gs</span> <span class="o">=</span> <span class="n">Gsutil</span><span class="p">()</span>
+        <span class="n">gs</span><span class="o">.</span><span class="n">cp_paired_paths</span><span class="p">(</span><span class="n">remote_paths</span><span class="p">,</span> <span class="n">local_paths</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;All local files are up to date!&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="IndexEntry">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.IndexEntry">[docs]</a>
+<span class="k">class</span> <span class="nc">IndexEntry</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pydantic model representing a single entry in the Pinder index.</span>
+
+<span class="sd">    Stores all associated metadata for a particular dataset entry as attributes.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">        split (str):</span>
+<span class="sd">            The type of data split (e.g., &#39;train&#39;, &#39;test&#39;).</span>
+<span class="sd">        id (str):</span>
+<span class="sd">            The unique identifier for the dataset entry.</span>
+<span class="sd">        pdb_id (str):</span>
+<span class="sd">            The PDB identifier associated with the entry.</span>
+<span class="sd">        cluster_id (str):</span>
+<span class="sd">            The cluster identifier associated with the entry.</span>
+<span class="sd">        cluster_id_R (str):</span>
+<span class="sd">            The cluster identifier associated with receptor dimer body.</span>
+<span class="sd">        cluster_id_L (str):</span>
+<span class="sd">            The cluster identifier associated with ligand dimer body.</span>
+<span class="sd">        pinder_s (bool):</span>
+<span class="sd">            Flag indicating if the entry is part of the Pinder-S dataset.</span>
+<span class="sd">        pinder_xl (bool):</span>
+<span class="sd">            Flag indicating if the entry is part of the Pinder-XL dataset.</span>
+<span class="sd">        pinder_af2 (bool):</span>
+<span class="sd">            Flag indicating if the entry is part of the Pinder-AF2 dataset.</span>
+<span class="sd">        uniprot_R (str):</span>
+<span class="sd">            The UniProt identifier for the receptor protein.</span>
+<span class="sd">        uniprot_L (str):</span>
+<span class="sd">            The UniProt identifier for the ligand protein.</span>
+<span class="sd">        holo_R_pdb (str):</span>
+<span class="sd">            The PDB identifier for the holo form of the receptor protein.</span>
+<span class="sd">        holo_L_pdb (str):</span>
+<span class="sd">            The PDB identifier for the holo form of the ligand protein.</span>
+<span class="sd">        predicted_R_pdb (str):</span>
+<span class="sd">            The PDB identifier for the predicted structure of the receptor protein.</span>
+<span class="sd">        predicted_L_pdb (str):</span>
+<span class="sd">            The PDB identifier for the predicted structure of the ligand protein.</span>
+<span class="sd">        apo_R_pdb (str):</span>
+<span class="sd">            The PDB identifier for the apo form of the receptor protein.</span>
+<span class="sd">        apo_L_pdb (str):</span>
+<span class="sd">            The PDB identifier for the apo form of the ligand protein.</span>
+<span class="sd">        apo_R_pdbs (str):</span>
+<span class="sd">            The PDB identifiers for the apo forms of the receptor protein.</span>
+<span class="sd">        apo_L_pdbs (str):</span>
+<span class="sd">            The PDB identifiers for the apo forms of the ligand protein.</span>
+<span class="sd">        holo_R (bool):</span>
+<span class="sd">            Flag indicating if the holo form of the receptor protein is available.</span>
+<span class="sd">        holo_L (bool):</span>
+<span class="sd">            Flag indicating if the holo form of the ligand protein is available.</span>
+<span class="sd">        predicted_R (bool):</span>
+<span class="sd">            Flag indicating if the predicted structure of the receptor protein is available.</span>
+<span class="sd">        predicted_L (bool):</span>
+<span class="sd">            Flag indicating if the predicted structure of the ligand protein is available.</span>
+<span class="sd">        apo_R (bool):</span>
+<span class="sd">            Flag indicating if the apo form of the receptor protein is available.</span>
+<span class="sd">        apo_L (bool):</span>
+<span class="sd">            Flag indicating if the apo form of the ligand protein is available.</span>
+<span class="sd">        apo_R_quality (str):</span>
+<span class="sd">            Classification of apo receptor pairing quality. Can be `high, low, &#39;&#39;`.</span>
+<span class="sd">            All test and val are labeled high. Train split is broken into `high` and `low`,</span>
+<span class="sd">            depending on whether the pairing was produced with a low-confidence quality/eval metrics</span>
+<span class="sd">            or `high` if the same metrics were used as for train and val.</span>
+<span class="sd">            If no pairing exists, it is labeled with an empty string.</span>
+<span class="sd">        apo_L_quality (str):</span>
+<span class="sd">            Classification of apo ligand pairing quality. Can be `high, low, &#39;&#39;`.</span>
+<span class="sd">            All test and val are labeled high. Train split is broken into `high` and `low`,</span>
+<span class="sd">            depending on whether the pairing was produced with a low-confidence quality/eval metrics</span>
+<span class="sd">            or `high` if the same metrics were used as for train and val.</span>
+<span class="sd">            If no pairing exists, it is labeled with an empty string.</span>
+<span class="sd">        chain1_neff (float):</span>
+<span class="sd">            The Neff value for the first chain in the protein complex.</span>
+<span class="sd">        chain2_neff (float):</span>
+<span class="sd">            The Neff value for the second chain in the protein complex.</span>
+<span class="sd">        chain_R (str):</span>
+<span class="sd">            The chain identifier for the receptor protein.</span>
+<span class="sd">        chain_L (str):</span>
+<span class="sd">            The chain identifier for the ligand protein.</span>
+<span class="sd">        contains_antibody (bool):</span>
+<span class="sd">            Flag indicating if the protein complex contains an antibody as per SAbDab.</span>
+<span class="sd">        contains_antigen (bool):</span>
+<span class="sd">            Flag indicating if the protein complex contains an antigen as per SAbDab.</span>
+<span class="sd">        contains_enzyme (bool):</span>
+<span class="sd">            Flag indicating if the protein complex contains an enzyme as per EC ID number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;forbid&quot;</span><span class="p">)</span>
+
+    <span class="n">split</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pdb_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">cluster_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">cluster_id_R</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">cluster_id_L</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pinder_s</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">pinder_xl</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">pinder_af2</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">uniprot_R</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">uniprot_L</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">holo_R_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">holo_L_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">predicted_R_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">predicted_L_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">apo_R_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">apo_L_pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">apo_R_pdbs</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">apo_L_pdbs</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">holo_R</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">holo_L</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">predicted_R</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">predicted_L</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">apo_R</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">apo_L</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">apo_R_quality</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">apo_L_quality</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain1_neff</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">chain2_neff</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">chain_R</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain_L</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">contains_antibody</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">contains_antigen</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">contains_enzyme</span><span class="p">:</span> <span class="nb">bool</span>
+
+<div class="viewcode-block" id="IndexEntry.pdb_path">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.IndexEntry.pdb_path">[docs]</a>
+    <span class="k">def</span> <span class="nf">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdb_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Constructs the relative path for a given PDB file within the Pinder dataset.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            pdb_name (str): The name of the PDB file.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The relative path as a string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">pdb_name</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_system</span> <span class="ow">and</span> <span class="p">(</span>
+            <span class="n">pdb_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;-R.pdb&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">pdb_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;-L.pdb&quot;</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">pdbs_dir</span> <span class="o">=</span> <span class="s2">&quot;test_set_pdbs&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pdbs_dir</span> <span class="o">=</span> <span class="s2">&quot;pdbs&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdbs_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">pdb_name</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+<div class="viewcode-block" id="IndexEntry.mapping_path">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.IndexEntry.mapping_path">[docs]</a>
+    <span class="k">def</span> <span class="nf">mapping_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdb_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pdb_name</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;mappings/</span><span class="si">{</span><span class="n">pdb_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.pdb&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;.parquet&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pdb_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;dict[str, str | list[str]]: Dictionary containing the PDB type as key and PDB file name as value. Alternative apo monomers (if available) are returned as a list.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;native&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pinder_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;holo_R&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">holo_R_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;holo_L&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">holo_L_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;predicted_R&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predicted_R_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;predicted_L&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predicted_L_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_R&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apo_R_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_L&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apo_L_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_R_alt&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_R_alt</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;apo_L_alt&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pdb_path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_L_alt</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mapping_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;dict[str, str | list[str]]: Dictionary containing the PDB type as key and parquet file names corresponding to residue-level mapping information as value. are returned as a list.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;holo_R&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">holo_R_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;holo_L&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">holo_L_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_R&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apo_R_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_L&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">apo_L_pdb</span><span class="p">),</span>
+            <span class="s2">&quot;apo_R_alt&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_R_alt</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;apo_L_alt&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">mapping_path</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_L_alt</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinder_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;str: PINDER identifier for the dimer.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinder_pdb</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;str: PINDER dimer PDB file name.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;.pdb&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">apo_R_alt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: list of alternative apo receptor PDBs associated with entry.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_R_pdbs</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_R_pdb</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">apo_L_alt</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: list of alternative apo ligand PDBs associated with entry.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_L_pdbs</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apo_L_pdb</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">homodimer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;bool: loose definition of whether the entry is a homodimer (based on identical receptor and ligand UniProt IDs).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uniprot_R</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">uniprot_L</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">test_system</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;bool: whether the system is part of the test split.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="MetadataEntry">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.MetadataEntry">[docs]</a>
+<span class="k">class</span> <span class="nc">MetadataEntry</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pydantic model representing a single entry in the Pinder metadata.</span>
+
+<span class="sd">    Stores detailed metadata for a particular dataset entry as attributes.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        id (str):</span>
+<span class="sd">            The unique identifier for the PINDER entry.</span>
+<span class="sd">            It follows the convention `&lt;Receptor&gt;--&lt;Ligand&gt;`, where `&lt;Receptor&gt;` is `&lt;pdbid&gt;__&lt;chain_1&gt;_&lt;uniprotid&gt;` and</span>
+<span class="sd">            `&lt;Ligand&gt;` is `&lt;pdbid&gt;__&lt;chain_2&gt;&lt;uniprotid&gt;`.</span>
+<span class="sd">        entry_id (str):</span>
+<span class="sd">            The RCSB entry identifier associated with the PINDER entry.</span>
+<span class="sd">        method (str):</span>
+<span class="sd">            The experimental method for structure determination (XRAY, CRYO-EM, etc.).</span>
+<span class="sd">        date (str):</span>
+<span class="sd">            Date of deposition into RCSB PDB.</span>
+<span class="sd">        release_date (str):</span>
+<span class="sd">            Date of initial public release in RCSB PDB.</span>
+<span class="sd">        resolution (float):</span>
+<span class="sd">            The resolution of the experimental structure.</span>
+<span class="sd">        label (str):</span>
+<span class="sd">            Classification of the interface as likely to be biologically-relevant or a crystal contact, annotated using PRODIGY-cryst.</span>
+<span class="sd">            PRODIGY-cryst uses machine learning to compute bio-relevant/crystal contact propensity based on Intermolecular contact types and Interfacial link density.</span>
+<span class="sd">        probability (float):</span>
+<span class="sd">            Probability that the protein complex is a true biological complex.</span>
+<span class="sd">        chain1_id (str):</span>
+<span class="sd">            The Receptor chain identifier associated with the dimer entry. Should all be chain &#39;R&#39;.</span>
+<span class="sd">        chain2_id (str):</span>
+<span class="sd">            The Ligand chain identifier associated with the dimer entry. Should all be chain &#39;L&#39;.</span>
+<span class="sd">        assembly (int):</span>
+<span class="sd">            Which bioassembly is used to derive the structure. 1, 2, 3 means first, second, and third assembly, respectively.</span>
+<span class="sd">            All PINDER dimers are derived from the first biological assembly.</span>
+<span class="sd">        assembly_details (str):</span>
+<span class="sd">            How the bioassembly information was derived. Is it author-defined or from another source.</span>
+<span class="sd">        oligomeric_details (str):</span>
+<span class="sd">            Description of the oligomeric state of the protein complex.</span>
+<span class="sd">        oligomeric_count (int):</span>
+<span class="sd">            The oligomeric count associated with the dataset entry.</span>
+<span class="sd">        biol_details (str):</span>
+<span class="sd">            The biological assembly details associated with the dataset entry.</span>
+<span class="sd">        complex_type (str):</span>
+<span class="sd">            The type of the complex in the dataset entry (homomer or heteromer).</span>
+<span class="sd">        chain_1 (str):</span>
+<span class="sd">            New chain id generated post-bioassembly generation, to reflect the asym_id of the bioassembly and also to ensure that there is no collision of chain ids, for example in homooligomers (receptor chain).</span>
+<span class="sd">        asym_id_1 (str):</span>
+<span class="sd">            The first asymmetric identifier (author chain ID)</span>
+<span class="sd">        chain_2 (str):</span>
+<span class="sd">            New chain id generated post-bioassembly generation, to reflect the asym_id of the bioassembly and also to ensure that there is no collision of chain ids, for example in homooligomers (ligand chain).</span>
+<span class="sd">        asym_id_2 (str):</span>
+<span class="sd">            The second asymmetric identifier (author chain ID)</span>
+<span class="sd">        length1 (int):</span>
+<span class="sd">            The number of amino acids in the first (receptor) chain.</span>
+<span class="sd">        length2 (int):</span>
+<span class="sd">            The number of amino acids in the second (ligand) chain.</span>
+<span class="sd">        length_resolved_1 (int):</span>
+<span class="sd">            The structurally resolved (CA) length of the first (receptor) chain in amino acids.</span>
+<span class="sd">        length_resolved_2 (int):</span>
+<span class="sd">            The structurally resolved (CA) length of the second (ligand) chain in amino acids.</span>
+<span class="sd">        number_of_components_1 (int):</span>
+<span class="sd">            The number of connected components in the first (receptor) chain (contiguous structural fragments)</span>
+<span class="sd">        number_of_components_2 (int):</span>
+<span class="sd">            The number of connected components in the second (receptor) chain (contiguous structural fragments)</span>
+<span class="sd">        link_density (float):</span>
+<span class="sd">            Density of contacts at the interface as reported by PRODIGY-cryst.</span>
+<span class="sd">            Interfacial link density is defined as the number of interfacial contacts normalized by the maximum possible number of pairwise contacts for that interface.</span>
+<span class="sd">            Values range between 0 and 1, with higher values indicating a denser contact network at the interface.</span>
+<span class="sd">        planarity (float):</span>
+<span class="sd">            Defined as the deviation of interfacial Cα atoms from the fitted plane.</span>
+<span class="sd">            This interface characteristic quantifies interfacial shape complementarity.</span>
+<span class="sd">            Transient complexes have smaller and more planar interfaces than permanent and structural scaffold complexes.</span>
+<span class="sd">        max_var_1 (float):</span>
+<span class="sd">            The maximum variance of coordinates projected onto the largest principal component.</span>
+<span class="sd">            This allows the detection of long end-to-end stacked complexes, likely to be repetitive with small interfaces (receptor chain).</span>
+<span class="sd">        max_var_2 (float):</span>
+<span class="sd">            The maximum variance of coordinates projected onto the largest principal component.</span>
+<span class="sd">            This allows the detection of long end-to-end stacked complexes, likely to be repetitive with small interfaces (ligand chain).</span>
+<span class="sd">        num_atom_types (int):</span>
+<span class="sd">            Number of unique atom types in structure. This is an important annotation to identify complexes with only Cα or backbone atoms.</span>
+<span class="sd">        n_residue_pairs (int):</span>
+<span class="sd">            The number of residue pairs at the interface.</span>
+<span class="sd">        n_residues (int):</span>
+<span class="sd">            The number of residues at the interface.</span>
+<span class="sd">        buried_sasa (float):</span>
+<span class="sd">            The buried solvent accessible surface area upon complex formation.</span>
+<span class="sd">        intermolecular_contacts (int):</span>
+<span class="sd">            The total number of intermolecular contacts (pair residues with any atom within a 5Å distance cutoff) at the interface.</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        charged_charged_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between any of the charged amino acids (E, D, H, K).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        charged_polar_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between charged amino acids (E, D, H, K, R) and polar amino acids (N, Q, S, T).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        charged_apolar_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between charged amino acids (E, D, H, K) and apolar amino acids (A, C, G, F, I, M, L, P, W, V, Y).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        polar_polar_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between any of the charged amino acids (N, Q, S, T).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        apolar_polar_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between apolar amino acids (A, C, G,F, I, M, L, P, W, V, Y) and polar amino acids (N, Q, S, T).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        apolar_apolar_contacts (int):</span>
+<span class="sd">            Denotes intermolecular contacts between any of the charged amino acids (A, C, G, F, I, M, L, P, W, V, Y).</span>
+<span class="sd">            Annotated using PRODIGY-cryst.</span>
+<span class="sd">        interface_atom_gaps_4A (int):</span>
+<span class="sd">            Number of interface atoms within a 4Å radius of a residue gap.</span>
+<span class="sd">            A Gap is determined by residue numbering; regions where one or more of the expected residue index is missing is marked as a gap.</span>
+<span class="sd">        missing_interface_residues_4A (int):</span>
+<span class="sd">            Number of interface residues within a 4Å radius of a residue gap.</span>
+<span class="sd">            A Gap is determined by residue numbering; regions where one or more of the expected residue index is missing is marked as a gap.</span>
+<span class="sd">        interface_atom_gaps_8A (int):</span>
+<span class="sd">            Number of interface atoms within an 8Å radius of a residue gap.</span>
+<span class="sd">            A Gap is determined by residue numbering; regions where one or more of the expected residue index is missing is marked as a gap.</span>
+<span class="sd">        missing_interface_residues_8A (int):</span>
+<span class="sd">            Number of interface residues within an 8Å radius of a residue gap.</span>
+<span class="sd">            A Gap is determined by residue numbering; regions where one or more of the expected residue index is missing is marked as a gap.</span>
+<span class="sd">        entity_id_R (int):</span>
+<span class="sd">            The RCSB PDB `entity_id` corresponding to the receptor dimer chain.</span>
+<span class="sd">        entity_id_L (int):</span>
+<span class="sd">            The RCSB PDB `entity_id` corresponding to the ligand dimer chain.</span>
+<span class="sd">        pdb_strand_id_R (str):</span>
+<span class="sd">            The RCSB PDB `pdb_strand_id` (author chain) corresponding to the receptor dimer chain.</span>
+<span class="sd">        pdb_strand_id_L (str):</span>
+<span class="sd">            The RCSB PDB `pdb_strand_id` (author chain) corresponding to the ligand dimer chain.</span>
+<span class="sd">        ECOD_names_R (str):</span>
+<span class="sd">            The RCSB-derived ECOD domain protein family name(s) corresponding to the receptor dimer chain. If multiple ECOD domain annotations</span>
+<span class="sd">            were found, the domains are delimited with a comma.</span>
+<span class="sd">        ECOD_names_L (str):</span>
+<span class="sd">            The RCSB-derived ECOD domain protein family name(s) corresponding to the ligand dimer chain. If multiple ECOD domain annotations</span>
+<span class="sd">            were found, the domains are delimited with a comma.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">extra</span><span class="o">=</span><span class="s2">&quot;allow&quot;</span><span class="p">)</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">entry_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">date</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">release_date</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">chain1_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain2_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">assembly</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">assembly_details</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">oligomeric_details</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">oligomeric_count</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">biol_details</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">complex_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain_1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">asym_id_1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain_2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">asym_id_2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">length1</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">length2</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">length_resolved_1</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">length_resolved_2</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">number_of_components_1</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">number_of_components_2</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">link_density</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">planarity</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">max_var_1</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">max_var_2</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">num_atom_types</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_residue_pairs</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">n_residues</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">buried_sasa</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">intermolecular_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">charged_charged_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">charged_polar_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">charged_apolar_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">polar_polar_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">apolar_polar_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">apolar_apolar_contacts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">interface_atom_gaps_4A</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">missing_interface_residues_4A</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">interface_atom_gaps_8A</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">missing_interface_residues_8A</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">entity_id_R</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">entity_id_L</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">pdb_strand_id_R</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pdb_strand_id_L</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">ECOD_names_R</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">ECOD_names_L</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinder_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;str: PINDER identifier for the dimer.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span></div>
+
+
+
+<div class="viewcode-block" id="fix_index">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.fix_index">[docs]</a>
+<span class="k">def</span> <span class="nf">fix_index</span><span class="p">(</span>
+    <span class="n">df_index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">index_fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">cast_types</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fix the index dataframe according to the IndexEntry schema&quot;&quot;&quot;</span>
+    <span class="c1"># fix missing values</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">index_fields</span><span class="p">:</span>
+        <span class="n">field_type</span> <span class="o">=</span> <span class="n">IndexEntry</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">df_index</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">df_index</span> <span class="o">=</span> <span class="n">_fill_missing_values</span><span class="p">(</span><span class="n">df_index</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">cast_types</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">_ignore_pydantic_fields</span> <span class="ow">or</span> <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ignoring field </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> with type </span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fill_val</span> <span class="o">=</span> <span class="n">_get_default_value</span><span class="p">(</span><span class="n">field_type</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Expected field </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> with type &#39;</span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&#39; missing from index! &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Setting default value=</span><span class="si">{</span><span class="n">fill_val</span><span class="si">}</span><span class="s2">. Verify your index file!&quot;</span>
+            <span class="p">)</span>
+            <span class="n">df_index</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">fill_val</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cast_types</span> <span class="ow">and</span> <span class="s2">&quot;category&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_index</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="n">df_index</span> <span class="o">=</span> <span class="n">downcast_dtypes</span><span class="p">(</span><span class="n">df_index</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df_index</span></div>
+
+
+
+<div class="viewcode-block" id="fix_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.fix_metadata">[docs]</a>
+<span class="k">def</span> <span class="nf">fix_metadata</span><span class="p">(</span>
+    <span class="n">df_metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">metadata_fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">cast_types</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fix the metadata dataframe according to the MetadataEntry schema&quot;&quot;&quot;</span>
+    <span class="c1"># fix resolution</span>
+    <span class="n">df_metadata</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_metadata</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">df_metadata</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_metadata</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">metadata_fields</span><span class="p">:</span>
+        <span class="n">field_type</span> <span class="o">=</span> <span class="n">MetadataEntry</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">df_metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">df_metadata</span> <span class="o">=</span> <span class="n">_fill_missing_values</span><span class="p">(</span>
+                <span class="n">df_metadata</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">cast_types</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">_ignore_pydantic_fields</span> <span class="ow">or</span> <span class="n">field</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ignoring field </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> with type </span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fill_val</span> <span class="o">=</span> <span class="n">_get_default_value</span><span class="p">(</span><span class="n">field_type</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Expected field </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> with type &#39;</span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&#39; missing from metadata! &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Setting default value=</span><span class="si">{</span><span class="n">fill_val</span><span class="si">}</span><span class="s2">. Verify your metadata file!&quot;</span>
+            <span class="p">)</span>
+            <span class="n">df_metadata</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">fill_val</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cast_types</span> <span class="ow">and</span> <span class="s2">&quot;category&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df_metadata</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="n">df_metadata</span> <span class="o">=</span> <span class="n">downcast_dtypes</span><span class="p">(</span><span class="n">df_metadata</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df_metadata</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_get_default_value</span><span class="p">(</span><span class="n">field_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Add missing columns to the dataframes</span>
+    <span class="n">default_vals</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;int&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;float&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="s2">&quot;str&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bool&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">fill_val</span> <span class="o">=</span> <span class="n">default_vals</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field_type</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fill_val</span>
+
+
+<span class="k">def</span> <span class="nf">_fill_missing_values</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">field_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">cast_types</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># Fill missing values w/default for the field type and cast column to field_type</span>
+    <span class="n">fill_val</span> <span class="o">=</span> <span class="n">_get_default_value</span><span class="p">(</span><span class="n">field_type</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Expected field </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> with type &#39;</span><span class="si">{</span><span class="n">field_type</span><span class="si">}</span><span class="s2">&#39; contains NaN values and will be filled with value=</span><span class="si">{</span><span class="n">fill_val</span><span class="si">}</span><span class="s2">. &quot;</span>
+            <span class="s2">&quot;Verify your index/metadata file!&quot;</span>
+        <span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">fill_val</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cast_types</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">field_type</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<div class="viewcode-block" id="downcast_dtypes">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.downcast_dtypes">[docs]</a>
+<span class="k">def</span> <span class="nf">downcast_dtypes</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">str_as_cat</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">str_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;str&quot;</span><span class="p">]</span>
+    <span class="n">start_mem</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">np_int_types</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">typing</span><span class="o">.</span><span class="n">DTypeLike</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">]</span>
+    <span class="n">np_float_types</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">typing</span><span class="o">.</span><span class="n">DTypeLike</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">col_type</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
+        <span class="k">if</span> <span class="n">col_type</span> <span class="ow">in</span> <span class="n">str_types</span> <span class="ow">and</span> <span class="n">str_as_cat</span><span class="p">:</span>
+            <span class="c1"># Only cast to category if the number of categories is &lt; 68% of the data</span>
+            <span class="c1"># otherwise the memory is going to be higher than object dtype.</span>
+            <span class="n">cat_frac</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]))</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">str_dtype</span> <span class="o">=</span> <span class="s2">&quot;object&quot;</span> <span class="k">if</span> <span class="n">cat_frac</span> <span class="o">&gt;</span> <span class="mf">0.68</span> <span class="k">else</span> <span class="s2">&quot;category&quot;</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Casting </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">col_type</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">str_dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">str_dtype</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;int&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;float&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">):</span>
+            <span class="n">c_min</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+            <span class="n">c_max</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="k">if</span> <span class="s2">&quot;int&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">):</span>
+                <span class="n">np_types</span> <span class="o">=</span> <span class="n">np_int_types</span>
+                <span class="n">type_info_fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">np_types</span> <span class="o">=</span> <span class="n">np_float_types</span>
+                <span class="n">type_info_fn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">finfo</span>
+
+            <span class="k">for</span> <span class="n">np_type</span> <span class="ow">in</span> <span class="n">np_types</span><span class="p">:</span>
+                <span class="n">type_info</span> <span class="o">=</span> <span class="n">type_info_fn</span><span class="p">(</span><span class="n">np_type</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">type_info</span><span class="o">.</span><span class="n">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">type_info</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Casting </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">col_type</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">np_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np_type</span><span class="p">)</span>
+                    <span class="k">break</span>
+    <span class="n">end_mem</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+        <span class="s2">&quot;Mem. usage decreased to </span><span class="si">{:5.2f}</span><span class="s2"> Mb (</span><span class="si">{:.1f}% r</span><span class="s2">eduction)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">end_mem</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">start_mem</span> <span class="o">-</span> <span class="n">end_mem</span><span class="p">)</span> <span class="o">/</span> <span class="n">start_mem</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="set_mapping_column_types">
+<a class="viewcode-back" href="../../../../source/pinder.core.index.html#pinder.core.index.utils.set_mapping_column_types">[docs]</a>
+<span class="k">def</span> <span class="nf">set_mapping_column_types</span><span class="p">(</span><span class="n">mapping_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set the column types for the mapping dataframe to avoid 1.0 2.0 &quot;integers&quot;.</span>
+<span class="sd">    Int64 is supposed to support NaNs. This function requires Pandas 1.0+.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mapping_df : pd.DataFrame</span>
+<span class="sd">        The dataframe whose column types are to be set.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Contain NaN or undefined</span>
+    <span class="c1"># [&#39;resi_auth&#39;, &#39;one_letter_code_uniprot&#39;, &#39;resi_uniprot&#39;, &#39;uniprot_acc&#39;]</span>
+    <span class="n">map_dtypes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="s2">&quot;int16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resi&quot;</span><span class="p">:</span> <span class="s2">&quot;int32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resi_pdb&quot;</span><span class="p">:</span> <span class="s2">&quot;Int32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resi_auth&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resn&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;one_letter_code_can&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resolved&quot;</span><span class="p">:</span> <span class="s2">&quot;int8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;one_letter_code_uniprot&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resi_uniprot&quot;</span><span class="p">:</span> <span class="s2">&quot;Int32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;uniprot_acc&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;chain&quot;</span><span class="p">:</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;resi_uniprot&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">mapping_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span>
+        <span class="k">if</span> <span class="s2">&quot;uniprot_acc&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">mapping_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;uniprot_acc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;one_letter_code_uniprot&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">mapping_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;one_letter_code_uniprot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">mapping_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mapping_df</span><span class="o">.</span><span class="n">resi_uniprot</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span>
+        <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">dtype</span> <span class="ow">in</span> <span class="n">map_dtypes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">mapping_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">mapping_df</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">map_dtypes</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to cast mapping column types: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mapping_df</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

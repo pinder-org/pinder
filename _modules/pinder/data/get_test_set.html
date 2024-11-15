@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.get_test_set &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/get_test_set';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/get_test_set.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.get_test_set</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.get_test_set</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.atoms</span> <span class="kn">import</span> <span class="n">get_seq_identity</span><span class="p">,</span> <span class="n">normalize_orientation</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.process</span> <span class="kn">import</span> <span class="n">process_map</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="create_transformed_holo_monomer">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.create_transformed_holo_monomer">[docs]</a>
+<span class="k">def</span> <span class="nf">create_transformed_holo_monomer</span><span class="p">(</span><span class="n">pdb_paths</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">pdb_paths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="n">input_pdb</span><span class="p">,</span> <span class="n">output_pdb</span> <span class="o">=</span> <span class="n">pdb_paths</span>
+    <span class="n">holo_struct</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">input_pdb</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">holo_struct</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="n">normalize_orientation</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">holo_struct</span><span class="o">.</span><span class="n">atom_array</span> <span class="o">=</span> <span class="n">normalized</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">holo_struct</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">output_pdb</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="create_normalized_test_monomers">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.create_normalized_test_monomers">[docs]</a>
+<span class="k">def</span> <span class="nf">create_normalized_test_monomers</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Store test set holo PDBs in separate directory for easier distribution and</span>
+    <span class="c1"># to avoid modifying their filenames when creating normalized orientations</span>
+    <span class="n">src_pdb_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span>
+    <span class="n">test_pdb_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;test_set_pdbs&quot;</span>
+    <span class="n">test_pdb_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.parquet&quot;</span><span class="p">)</span>
+    <span class="n">test_index</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;test&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">holo_pdb_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">test_index</span><span class="o">.</span><span class="n">holo_R_pdb</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">test_index</span><span class="o">.</span><span class="n">holo_L_pdb</span><span class="p">)))</span>
+    <span class="n">pdb_path_pairs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">src_pdb_dir</span> <span class="o">/</span> <span class="n">pdb_name</span><span class="p">,</span> <span class="n">test_pdb_dir</span> <span class="o">/</span> <span class="n">pdb_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">pdb_name</span> <span class="ow">in</span> <span class="n">holo_pdb_names</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">pdb_path_pairs</span> <span class="o">=</span> <span class="p">[</span><span class="n">pair</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pdb_path_pairs</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">is_file</span><span class="p">()]</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">process_map</span><span class="p">(</span>
+        <span class="n">create_transformed_holo_monomer</span><span class="p">,</span>
+        <span class="n">pdb_path_pairs</span><span class="p">,</span>
+        <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_stratified_sample">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.get_stratified_sample">[docs]</a>
+<span class="k">def</span> <span class="nf">get_stratified_sample</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">feat</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">n_samples</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">n_bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets a stratified sample</span>
+
+<span class="sd">    Outputs a stratified sample of the provided dataframe based on criteria set</span>
+<span class="sd">    for binning distribution. Max binning dimension supported is 2D.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pd.DataFrame</span>
+<span class="sd">        The DataFrame to sample from.</span>
+<span class="sd">    feat : Union[str, List]</span>
+<span class="sd">        The feature to segment bins from (1-D or 2-D)</span>
+<span class="sd">    n_samples : int</span>
+<span class="sd">        The number of samples to sample from df with the same distribution probability</span>
+<span class="sd">    n_bins : int</span>
+<span class="sd">        Number of bin segments. Note: Exponential for 2D. eg 25 for 5 bins in 2D.</span>
+<span class="sd">    random_state : int, optional</span>
+<span class="sd">        random seed number</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        DataFrame containing sampled data from the original DataFrame</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Argument exceptions</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">len</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Too many features were provided! Max two allowed, got &lt;</span><span class="si">{</span><span class="n">feat</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_bins</span> <span class="o">&gt;</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;You must provide a bin size less than the number of rows! &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;n_bins = </span><span class="si">{</span><span class="n">n_bins</span><span class="si">}</span><span class="s2">, df.shape[0] = </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">n_bins</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You must provide a bin greater than 1, got &lt;</span><span class="si">{</span><span class="n">n_bins</span><span class="si">}</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+    <span class="c1"># If number of samples is greater than the original df size, gracefully return.</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;category&quot;</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_samples</span> <span class="o">&gt;</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">df</span>
+    <span class="n">dummy_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">len</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">col_a</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_bin&quot;</span>
+        <span class="n">col_b</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_bin&quot;</span>
+        <span class="n">dummy_df</span><span class="p">[</span><span class="n">col_a</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">dummy_df</span><span class="p">[</span><span class="n">feat</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">n_bins</span><span class="p">)</span>
+        <span class="n">dummy_df</span><span class="p">[</span><span class="n">col_b</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">dummy_df</span><span class="p">[</span><span class="n">feat</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">n_bins</span><span class="p">)</span>
+        <span class="n">group_df</span> <span class="o">=</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">col_a</span><span class="p">,</span> <span class="n">col_b</span><span class="p">],</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">feats</span> <span class="o">=</span> <span class="p">[</span><span class="n">col_a</span><span class="p">,</span> <span class="n">col_b</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">feat</span> <span class="o">=</span> <span class="n">feat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">feat</span><span class="si">}</span><span class="s2">_bin&quot;</span>
+        <span class="n">dummy_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">dummy_df</span><span class="p">[</span><span class="n">feat</span><span class="p">],</span> <span class="n">n_bins</span><span class="p">)</span>
+        <span class="n">group_df</span> <span class="o">=</span> <span class="n">dummy_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">feats</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="p">]</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">group_df</span><span class="o">.</span><span class="n">ngroup</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">frequency</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">group_df</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="n">weights_df</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">group_df</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">frequency</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">weights_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">dummy_df</span><span class="p">,</span> <span class="n">weights_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="n">feats</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="n">feats</span>
+    <span class="p">)</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">weights_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="s2">&quot;weights&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sample</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="assign_pinder_s_subset">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.assign_pinder_s_subset">[docs]</a>
+<span class="k">def</span> <span class="nf">assign_pinder_s_subset</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">max_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">250</span><span class="p">,</span>
+    <span class="n">min_frac_heterodimers</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">,</span>
+    <span class="n">heterodimer_seq_identity_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">pdb_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span>
+    <span class="n">pinder_s</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;test&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;both_apo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_s</span><span class="o">.</span><span class="n">apo_R</span> <span class="o">&amp;</span> <span class="n">pinder_s</span><span class="o">.</span><span class="n">apo_L</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;both_pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pinder_s</span><span class="o">.</span><span class="n">predicted_R</span> <span class="o">&amp;</span> <span class="n">pinder_s</span><span class="o">.</span><span class="n">predicted_L</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;seq_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">holo_R</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sequence</span>
+        <span class="k">for</span> <span class="n">holo_R</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">pinder_s</span><span class="o">.</span><span class="n">holo_R_pdb</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;seq_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">holo_L</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sequence</span>
+        <span class="k">for</span> <span class="n">holo_L</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">pinder_s</span><span class="o">.</span><span class="n">holo_L_pdb</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;holo_seq_identity&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">get_seq_identity</span><span class="p">(</span><span class="n">seq_R</span><span class="p">,</span> <span class="n">seq_L</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">seq_R</span><span class="p">,</span> <span class="n">seq_L</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pinder_s</span><span class="p">[</span><span class="s2">&quot;seq_R&quot;</span><span class="p">],</span> <span class="n">pinder_s</span><span class="p">[</span><span class="s2">&quot;seq_L&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="c1"># use sequence identity &lt; 0.8 as definition of heterodimer vs. uniprot (which may be undefined)</span>
+    <span class="n">pinder_s</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;heterodimer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pinder_s</span><span class="o">.</span><span class="n">holo_seq_identity</span> <span class="o">&lt;</span> <span class="n">heterodimer_seq_identity_threshold</span>
+    <span class="p">)</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.parquet&quot;</span><span class="p">)</span>
+
+    <span class="c1"># keep all heterodimers with dual apo (and dual AF2)</span>
+    <span class="c1"># apo_hetero = set(pinder_s.query(&#39;both_apo and heterodimer&#39;).id)</span>
+    <span class="n">apo_pred_hetero</span> <span class="o">=</span> <span class="n">pinder_s</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;both_apo and both_pred and heterodimer&quot;</span><span class="p">)</span>
+    <span class="n">target_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">apo_pred_hetero</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">used_uniprots</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">apo_pred_hetero</span><span class="o">.</span><span class="n">uniprot_R</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">apo_pred_hetero</span><span class="o">.</span><span class="n">uniprot_L</span><span class="p">))</span>
+    <span class="n">remaining</span> <span class="o">=</span> <span class="n">pinder_s</span><span class="p">[</span><span class="o">~</span><span class="n">pinder_s</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">target_ids</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">remaining</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">remaining</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;probability&quot;</span><span class="p">,</span> <span class="s2">&quot;buried_sasa&quot;</span><span class="p">,</span> <span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">,</span> <span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">]],</span>
+    <span class="p">)</span>
+    <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">)</span>
+    <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">)</span>
+    <span class="n">remaining</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining</span><span class="o">.</span><span class="n">ECOD_names_R</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))))</span>
+    <span class="p">)</span>
+    <span class="n">remaining</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining</span><span class="o">.</span><span class="n">ECOD_names_L</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))))</span>
+    <span class="p">)</span>
+    <span class="c1"># Create unique set of pfam IDs contained within a dimer for diversity sampling</span>
+    <span class="n">remaining</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pfam_pairs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pfam_r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pfam_l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)))))</span>
+        <span class="k">for</span> <span class="n">pfam_r</span><span class="p">,</span> <span class="n">pfam_l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">],</span> <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="c1"># Float16 not supported by pd.cut</span>
+    <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;buried_sasa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">remaining</span><span class="p">[</span><span class="s2">&quot;buried_sasa&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+    <span class="c1"># desired homodimer/heterodimer split</span>
+    <span class="n">n_hetero_samples</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">max_size</span> <span class="o">*</span> <span class="n">min_frac_heterodimers</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_ids</span><span class="p">)</span>
+    <span class="n">n_homo_samples</span> <span class="o">=</span> <span class="n">max_size</span> <span class="o">-</span> <span class="n">n_hetero_samples</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_ids</span><span class="p">)</span>
+    <span class="c1"># Split remaining into heterodimers with AF2 monomers available and homodimers with apo + AF2 monomers available.</span>
+    <span class="n">pred_hetero</span> <span class="o">=</span> <span class="n">remaining</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;both_pred and heterodimer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">apo_homo</span> <span class="o">=</span> <span class="n">remaining</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;both_pred and both_apo and ~heterodimer&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+        <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># Random sample one system from each set of unique pfam_pairs</span>
+    <span class="k">for</span> <span class="n">sample_group</span><span class="p">,</span> <span class="n">n_samples</span> <span class="ow">in</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">pred_hetero</span><span class="p">,</span> <span class="n">n_hetero_samples</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">apo_homo</span><span class="p">,</span> <span class="n">n_homo_samples</span><span class="p">),</span>
+    <span class="p">]:</span>
+        <span class="n">pfam_samples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">pf_p</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">sample_group</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;pfam_pairs&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span>
+                <span class="p">(</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">uniprot_R</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">used_uniprots</span><span class="p">))</span>
+                <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">uniprot_L</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">used_uniprots</span><span class="p">))</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Not able to select a sample from PFAM </span><span class="si">{</span><span class="n">pf_p</span><span class="si">}</span><span class="s2">, all uniprots already sampled&quot;</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">used_uniprots</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">uniprot_R</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">used_uniprots</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">uniprot_L</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">pfam_samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">pfam_samples</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">&quot;Unable to sample any PFAM pairs from this group, all uniprots sampled&quot;</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">sampled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">pfam_samples</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Get desired number of samples from binned buried_sasa for representative sampling of interface size</span>
+        <span class="n">n_bins</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="n">sampled</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="k">if</span> <span class="n">n_bins</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">sasa_sampled</span> <span class="o">=</span> <span class="n">sampled</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sasa_sampled</span> <span class="o">=</span> <span class="n">get_stratified_sample</span><span class="p">(</span>
+                <span class="n">sampled</span><span class="p">,</span>
+                <span class="s2">&quot;buried_sasa&quot;</span><span class="p">,</span>
+                <span class="n">n_samples</span><span class="o">=</span><span class="n">n_samples</span><span class="p">,</span>
+                <span class="n">n_bins</span><span class="o">=</span><span class="n">n_bins</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">target_ids</span> <span class="o">=</span> <span class="n">target_ids</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">sasa_sampled</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pinder_s&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">target_ids</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">index</span></div>
+
+
+
+<div class="viewcode-block" id="assign_test_subsets">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.assign_test_subsets">[docs]</a>
+<span class="k">def</span> <span class="nf">assign_test_subsets</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.parquet&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">index</span><span class="o">.</span><span class="n">pinder_xl</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">split</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;pinder_xl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">assign_pinder_s_subset</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.parquet&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="curate_test_split">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.curate_test_split">[docs]</a>
+<span class="k">def</span> <span class="nf">curate_test_split</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Curating normalized holo monomers for test set...&quot;</span><span class="p">)</span>
+    <span class="n">create_normalized_test_monomers</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">,</span> <span class="n">use_cache</span><span class="p">,</span> <span class="n">parallel</span><span class="p">,</span> <span class="n">max_workers</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Assigning pinder_xl and pinder_s test subsets...&quot;</span><span class="p">)</span>
+    <span class="n">assign_test_subsets</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">,</span> <span class="n">use_cache</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="extract_sequence">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.extract_sequence">[docs]</a>
+<span class="k">def</span> <span class="nf">extract_sequence</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">seq</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span><span class="o">.</span><span class="n">sequence</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get sequence for </span><span class="si">{</span><span class="n">pdb_file</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">seq</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">seq_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pdb&quot;</span><span class="p">:</span> <span class="n">pdb_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;sequence&quot;</span><span class="p">:</span> <span class="n">seq</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">seq_info</span></div>
+
+
+
+<div class="viewcode-block" id="construct_sequence_database">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_test_set.construct_sequence_database">[docs]</a>
+<span class="k">def</span> <span class="nf">construct_sequence_database</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">seq_db_chkpt</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;sequence_database.parquet&quot;</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">seq_db_chkpt</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seq_db_chkpt</span><span class="si">}</span><span class="s2"> exists, skipping...&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">pdb_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;pdbs&quot;</span>
+    <span class="n">pdb_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">pdb_dir</span> <span class="o">/</span> <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">pdb_dir</span><span class="p">)]</span>
+    <span class="n">seq_info</span> <span class="o">=</span> <span class="n">process_map</span><span class="p">(</span>
+        <span class="n">extract_sequence</span><span class="p">,</span>
+        <span class="n">pdb_files</span><span class="p">,</span>
+        <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
+        <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">seq_db</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">seq_info</span><span class="p">)</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">seq_db</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;dimer&quot;</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">seq_db</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;-R.pdb&quot;</span><span class="p">),</span> <span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;receptor&quot;</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">seq_db</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;-L.pdb&quot;</span><span class="p">),</span> <span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ligand&quot;</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">seq_db</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;af__&quot;</span><span class="p">),</span> <span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;predicted&quot;</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">seq_db</span><span class="o">.</span><span class="n">pdb_kind</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;monomer&quot;</span>
+    <span class="n">seq_db</span><span class="p">[</span><span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq_db</span><span class="p">[</span><span class="s2">&quot;pdb_kind&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="n">seq_db</span><span class="p">[</span><span class="s2">&quot;sequence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq_db</span><span class="p">[</span><span class="s2">&quot;sequence&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+    <span class="n">seq_db</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">seq_db_chkpt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

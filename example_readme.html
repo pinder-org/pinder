@@ -1,0 +1,945 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pinder abstractions &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'example_readme';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/example_readme.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="pinder.methods.train package" href="source/pinder.methods.train.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pinder abstractions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pinder-abstractions">
+<h1>Pinder abstractions<a class="headerlink" href="#pinder-abstractions" title="Link to this heading">#</a></h1>
+<section id="pinder-system-loader-workflow-filters-and-transforms-for-pinder-dimer-systems">
+<h2>PINDER system loader workflow: filters and transforms for Pinder dimer systems.<a class="headerlink" href="#pinder-system-loader-workflow-filters-and-transforms-for-pinder-dimer-systems" title="Link to this heading">#</a></h2>
+<p>The loader workflow is aimed for ML or physics-based method applications.</p>
+<p><img alt="loader workflow" src="_images/loader_abstractions.svg" /></p>
+</section>
+<section id="filters">
+<h2>Filters<a class="headerlink" href="#filters" title="Link to this heading">#</a></h2>
+<section id="pinderfilterbase">
+<h3>PinderFilterBase<a class="headerlink" href="#pinderfilterbase" title="Link to this heading">#</a></h3>
+<p>This is a base class for implementing additional sub-classes with implementations.</p>
+<p>Each sub-class must implement a <code class="docutils literal notranslate"><span class="pre">filter</span></code> method, which accepts a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as input, and return a boolean indicating whether the system passes the filter or not.</p>
+<p>For example, if we wanted to limit pinder systems with holo monomers that are each at least 10 residues and at most 500 residues, we could construct a FilterByResidueCount like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="k">class</span> <span class="nc">FilterByResidueCount</span><span class="p">(</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">query</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">ResidueCount</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ps</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">holo_structs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;holo_receptor&quot;</span><span class="p">,</span> <span class="s2">&quot;holo_ligand&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">structure</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">structure</span> <span class="ow">in</span> <span class="n">holo_structs</span>
+        <span class="p">)</span>
+
+</pre></div>
+</div>
+<p>This filter is now callable and would return True or False depending on the criteria:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">&quot;1df0__A1_Q07009--1df0__B1_Q64537&quot;</span>
+<span class="o">&gt;&gt;</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">res_filter</span> <span class="o">=</span> <span class="n">FilterByResidueCount</span><span class="p">(</span><span class="n">min_residue_count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_residue_count</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">res_filter</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="pinderfiltersubbase">
+<h3>PinderFilterSubBase<a class="headerlink" href="#pinderfiltersubbase" title="Link to this heading">#</a></h3>
+<p>This is a base class for implementing additional sub-classes with implementations.</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">PinderFilterBase</span></code>, this class operates on individual monomers of the <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> without filtering the entire set of dimers out of your training examples. These accept a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as input, and return a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as output.</p>
+<p>For example, if we wanted to limit monomers to only those with a minimum number of atom types, we could implement a <code class="docutils literal notranslate"><span class="pre">AtomTypeCount</span></code> <code class="docutils literal notranslate"><span class="pre">ChainQuery</span></code>, and then use it in a <code class="docutils literal notranslate"><span class="pre">FilterMonomerAtomTypes</span></code> filter.</p>
+<p>First create a <code class="docutils literal notranslate"><span class="pre">ChainQuery</span></code> which takes a <a class="reference download internal" download="" href="_downloads/3d7ea4d870bb57d30b3576fec6512b21/structure.py"><span class="xref download myst">Structure</span></a> object as input and returns a boolean value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">class</span> <span class="nc">AtomTypeCount</span><span class="p">(</span><span class="nb">filter</span><span class="o">.</span><span class="n">ChainQuery</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">min_atom_type</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">max_atom_type</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">count_hetero</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_atom_type</span> <span class="o">=</span> <span class="n">min_atom_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_atom_type</span> <span class="o">=</span> <span class="n">max_atom_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count_hetero</span> <span class="o">=</span> <span class="n">count_hetero</span>
+
+    <span class="k">def</span> <span class="nf">check_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">:</span> <span class="n">Structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_hetero</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">atom_names</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">non_het</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;hetero&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">False</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_het</span><span class="o">.</span><span class="n">atom_names</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">:</span> <span class="n">Structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">n_at</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_length</span><span class="p">(</span><span class="n">chain</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_atom_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n_at</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_atom_type</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_atom_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n_at</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_atom_type</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The presence of individual monomer chains after applying a filter is still stored in the individual <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> structure attributes.
+If an individual monomer is removed by the filter, the corresponding structure attribute will be set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, even if it was originally loaded as a <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object.</p>
+<p>Here’s how to create a filter that would only keep monomers with at least 4 atom types (as default).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FilterMonomerAtomTypes</span><span class="p">(</span><span class="n">filters</span><span class="o">.</span><span class="n">PinderFilterSubBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_atom_types</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_atom_types</span> <span class="o">=</span> <span class="n">min_atom_types</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atom_type_count</span> <span class="o">=</span> <span class="n">AtomTypeCount</span><span class="p">(</span><span class="n">min_atom_type</span><span class="o">=</span><span class="n">min_atom_types</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">ps</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">,</span> <span class="n">update_monomers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PinderSystem</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_by_chain_query</span><span class="p">(</span>
+            <span class="n">ps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_type_count</span><span class="p">,</span> <span class="n">update_monomers</span><span class="o">=</span><span class="n">update_monomers</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="structurefilter">
+<h3>StructureFilter<a class="headerlink" href="#structurefilter" title="Link to this heading">#</a></h3>
+<p>This is a base class for implementing <code class="docutils literal notranslate"><span class="pre">Structure</span></code>-level filter sub-classes.</p>
+<p>Each sub-class must implement a <code class="docutils literal notranslate"><span class="pre">filter</span></code> method, which accepts a <code class="docutils literal notranslate"><span class="pre">Structure</span></code> as input, and return a boolean indicating whether the system passes the filter or not.</p>
+<p>For example, if we wanted to limit considered dimers to those with at least 50 residues, we could define a <code class="docutils literal notranslate"><span class="pre">MinStructureResidueCount</span></code> filter like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+
+<span class="k">class</span> <span class="nc">MinStructureResidueCount</span><span class="p">(</span><span class="n">filters</span><span class="o">.</span><span class="n">StructureFilter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_residues</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_residues</span> <span class="o">=</span> <span class="n">min_residues</span>
+
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">:</span> <span class="n">Structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">residues</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_residues</span>
+
+</pre></div>
+</div>
+<p>This filter is now callable and would return True or False depending on the criteria:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">&quot;1df0__A1_Q07009--1df0__B1_Q64537&quot;</span>
+<span class="o">&gt;&gt;</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">native</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">native</span>
+<span class="o">&gt;&gt;</span> <span class="n">res_filter</span> <span class="o">=</span> <span class="n">MinStructureResidueCount</span><span class="p">()</span>
+<span class="o">&gt;&gt;</span> <span class="n">res_filter</span><span class="p">(</span><span class="n">native</span><span class="p">)</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="filter-implementation-progress">
+<h3>Filter implementation progress<a class="headerlink" href="#filter-implementation-progress" title="Link to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Filter by sequence length</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Filter by holo overlap</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Number of atom types</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Max. RMSD to holo</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Backbone completeness</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Minimum contact</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Elongated chains</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Discontinuous chains</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Homodimer</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Any metadata field</p></li>
+</ul>
+</section>
+</section>
+<section id="transforms">
+<h2>Transforms<a class="headerlink" href="#transforms" title="Link to this heading">#</a></h2>
+<p>Transforms take a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as input, apply structure transformations and return a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as output.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> object exposes the set of <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects associated with a “system” (entry in the index).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Structure</span></code> objects expose a number of base methods which can be used to apply various transforms.</p>
+<p>Some examples of transforms derived directly from <code class="docutils literal notranslate"><span class="pre">Structure</span></code> object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+<span class="c1"># Simplest interface - get a single pinder system</span>
+<span class="n">pinder_id</span> <span class="o">=</span> <span class="s1">&#39;1doa__A1_P60953--1doa__B1_P19803&#39;</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="n">holo_L_calpha</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">holo_ligand</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;atom_name&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">])</span>
+<span class="c1"># Can also filter &quot;in place&quot; rather than returning a copy</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;atom_name&quot;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># You can superimpose `Structure` objects as long as they have common atoms:</span>
+<span class="c1"># Calpha rmsd after superposition is stored in `rms`</span>
+<span class="n">R_super</span><span class="p">,</span> <span class="n">rms</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_receptor</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">holo_receptor</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">L_super</span><span class="p">,</span> <span class="n">rms</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">holo_ligand</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>To define a series of transforms in the loader, or implement custom transformation logic, you can create a subclass of the <code class="docutils literal notranslate"><span class="pre">TransformBase</span></code> parent class. The only requirement is that the subclass implements a <code class="docutils literal notranslate"><span class="pre">transform</span></code> method which accepts a <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as an input and returns a transformed <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as output.</p>
+<p>Here’s an example of a custom transform implementation that super-imposes all monomers to a reference monomer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core.index.transforms</span> <span class="kn">import</span> <span class="n">TransformBase</span>
+
+
+<span class="k">class</span> <span class="nc">SuperposeToReference</span><span class="p">(</span><span class="n">TransformBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reference_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">reference_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;holo&quot;</span><span class="p">,</span> <span class="s2">&quot;native&quot;</span><span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reference_type</span> <span class="o">=</span> <span class="n">reference_type</span>
+
+    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ppi</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PinderSystem</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">ppi</span><span class="o">.</span><span class="n">holo_L</span> <span class="ow">and</span> <span class="n">ppi</span><span class="o">.</span><span class="n">holo_R</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_type</span> <span class="o">==</span> <span class="s2">&quot;native&quot;</span><span class="p">:</span>
+            <span class="n">ppi</span><span class="o">.</span><span class="n">holo_receptor</span> <span class="o">=</span> <span class="n">ppi</span><span class="o">.</span><span class="n">aligned_holo_R</span>
+            <span class="n">ppi</span><span class="o">.</span><span class="n">holo_ligand</span> <span class="o">=</span> <span class="n">ppi</span><span class="o">.</span><span class="n">aligned_holo_L</span>
+
+        <span class="n">R_ref</span> <span class="o">=</span> <span class="n">ppi</span><span class="o">.</span><span class="n">holo_receptor</span>
+        <span class="n">L_ref</span> <span class="o">=</span> <span class="n">ppi</span><span class="o">.</span><span class="n">holo_ligand</span>
+        <span class="k">for</span> <span class="n">R_monomer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;apo_receptor&quot;</span><span class="p">,</span> <span class="s2">&quot;pred_receptor&quot;</span><span class="p">]:</span>
+            <span class="n">R_struc</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ppi</span><span class="p">,</span> <span class="n">R_monomer</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">R_struc</span><span class="p">:</span>
+                <span class="n">unbound_super</span><span class="p">,</span> <span class="n">rms_R</span> <span class="o">=</span> <span class="n">R_struc</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">R_ref</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">ppi</span><span class="p">,</span> <span class="n">R_monomer</span><span class="p">,</span> <span class="n">unbound_super</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">L_monomer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;apo_ligand&quot;</span><span class="p">,</span> <span class="s2">&quot;pred_ligand&quot;</span><span class="p">]:</span>
+            <span class="n">L_struc</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ppi</span><span class="p">,</span> <span class="n">L_monomer</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">L_struc</span><span class="p">:</span>
+                <span class="n">unbound_super</span><span class="p">,</span> <span class="n">rms_L</span> <span class="o">=</span> <span class="n">L_struc</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">L_ref</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">ppi</span><span class="p">,</span> <span class="n">L_monomer</span><span class="p">,</span> <span class="n">unbound_super</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ppi</span>
+
+</pre></div>
+</div>
+<section id="structure-object">
+<h3>Structure object<a class="headerlink" href="#structure-object" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># You can add `Structure` objects to create a multimer complex using Structure.__add__</span>
+<span class="n">apo_binary</span> <span class="o">=</span> <span class="n">R_super</span> <span class="o">+</span> <span class="n">L_super</span>
+<span class="n">holo_binary</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">holo_receptor</span> <span class="o">+</span> <span class="n">ps</span><span class="o">.</span><span class="n">holo_ligand</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">resolved_pdb2uniprot</span>
+<span class="n">apo_complex</span><span class="o">.</span><span class="n">resolved_mapping</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">residue_names</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">sequence</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">chain_sequence</span>
+<span class="n">apo_complex</span><span class="o">.</span><span class="n">chain_sequence</span>
+
+<span class="c1"># The underlying [biotite](https://www.biotite-python.org/) AtomArray object:</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">res_name</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="n">apo_L</span><span class="o">.</span><span class="n">backbone_mask</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="n">apo_L</span><span class="o">.</span><span class="n">calpha_mask</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># If the output PDB filepath is omitted, the structure will be written to Structure.filepath, which may overwrite</span>
+
+<span class="c1"># In this case, it would be a new file composed of the added complex filepaths if we omit</span>
+<span class="n">apo_complex</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">destination_dir</span> <span class="o">/</span> <span class="s2">&quot;apo_complex.pdb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="writers-generators">
+<h2>Writers/Generators<a class="headerlink" href="#writers-generators" title="Link to this heading">#</a></h2>
+<p>Writers take <code class="docutils literal notranslate"><span class="pre">Iterator</span></code> of <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> as input, apply user defined featurization, write as pickled input features or iterator of features.</p>
+</section>
+<section id="pinder-loader">
+<h2>Pinder loader<a class="headerlink" href="#pinder-loader" title="Link to this heading">#</a></h2>
+<p>Pinder loader brings together filters, transforms and writers to create an optionally parallel <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> iterator. Takes either split or list of systems as input.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderLoader</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.writer</span> <span class="kn">import</span> <span class="n">PinderDefaultWriter</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByMissingHolo</span><span class="p">(),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByContacts</span><span class="p">(</span><span class="n">min_contacts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">calpha_only</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloOverlap</span><span class="p">(</span><span class="n">min_overlap</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubLengths</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubRmsds</span><span class="p">(</span><span class="n">rmsd_cutoff</span><span class="o">=</span><span class="mf">7.5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedSub</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+<span class="p">)</span>
+<span class="n">passing_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+    <span class="n">passing_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="n">systems_removed_by_filters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">loader</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">passing_ids</span><span class="p">)</span>
+
+<span class="c1"># If you want to explicitly write (potentially transformed) PDB files to a custom location:</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="n">pinder_id</span><span class="p">],</span>
+    <span class="n">monomer_priority</span><span class="o">=</span><span class="s2">&quot;pred&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span><span class="o">=</span><span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span><span class="o">=</span><span class="n">sub_filters</span><span class="p">,</span>
+    <span class="n">writer</span><span class="o">=</span><span class="n">PinderDefaultWriter</span><span class="p">(</span><span class="n">pinder_temp_dir</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">loaded</span> <span class="o">=</span> <span class="n">loader</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">loader</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">output_path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">loader</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">output_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;af_*.pdb&quot;</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+</pre></div>
+</div>
+</section>
+<section id="create-train-dataloader-torch">
+<h2>Create train dataloader (torch)<a class="headerlink" href="#create-train-dataloader-torch" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span><span class="p">,</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">collate_batch</span><span class="p">,</span> <span class="n">get_torch_loader</span><span class="p">,</span> <span class="n">PinderDataset</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByMissingHolo</span><span class="p">(),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByContacts</span><span class="p">(</span><span class="n">min_contacts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">calpha_only</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloOverlap</span><span class="p">(</span><span class="n">min_overlap</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubRmsds</span><span class="p">(</span><span class="n">rmsd_cutoff</span><span class="o">=</span><span class="mf">7.5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedSub</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="c1"># We can include Structure-level transforms (and filters) which will operate on the target and/or feature complexes</span>
+<span class="n">structure_transforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">SelectAtomTypes</span><span class="p">(</span><span class="n">atom_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">])</span>
+<span class="p">]</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PinderDataset</span><span class="p">(</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="c1"># We can leverage holo, apo, pred, random and random_mixed monomer sampling strategies</span>
+    <span class="n">monomer_priority</span><span class="o">=</span><span class="s2">&quot;random_mixed&quot;</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span><span class="p">,</span>
+    <span class="c1"># Apply to the target (ground-truth) complex</span>
+    <span class="n">structure_transforms_target</span><span class="o">=</span><span class="n">structure_transforms</span><span class="p">,</span>
+    <span class="c1"># Apply to the feature complex</span>
+    <span class="n">structure_transforms_feature</span><span class="o">=</span><span class="n">structure_transforms</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">get_torch_loader</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">collate_fn</span><span class="o">=</span><span class="n">collate_batch</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># Get a batch from the dataloader</span>
+<span class="n">batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="create-test-dataset-torch-geometric">
+<h2>Create test dataset (torch-geometric)<a class="headerlink" href="#create-test-dataset-torch-geometric" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_index</span><span class="p">,</span> <span class="n">PinderSystem</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.geodata</span> <span class="kn">import</span> <span class="n">PairedPDB</span><span class="p">,</span> <span class="n">NodeRepresentation</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.dataset</span> <span class="kn">import</span> <span class="n">get_geo_loader</span><span class="p">,</span> <span class="n">PPIDataset</span>
+<span class="kn">from</span> <span class="nn">torch_geometric.data</span> <span class="kn">import</span> <span class="n">HeteroData</span>
+<span class="kn">from</span> <span class="nn">torch_geometric.loader</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">NodeRepresentation</span><span class="p">(</span><span class="s2">&quot;atom&quot;</span><span class="p">),</span> <span class="n">NodeRepresentation</span><span class="p">(</span><span class="s2">&quot;residue&quot;</span><span class="p">)}</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">PPIDataset</span><span class="p">(</span>
+    <span class="n">node_types</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+    <span class="n">monomer1</span><span class="o">=</span><span class="s2">&quot;holo_receptor&quot;</span><span class="p">,</span>
+    <span class="n">monomer2</span><span class="o">=</span><span class="s2">&quot;holo_ligand&quot;</span><span class="p">,</span>
+    <span class="n">limit_by</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+
+<span class="n">pindex</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">raw_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">train_dataset</span><span class="o">.</span><span class="n">raw_file_names</span><span class="p">)</span>
+<span class="n">processed_ids</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">stem</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">processed_file_names</span><span class="p">}</span>
+
+<span class="n">data_item</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data_item</span><span class="p">,</span> <span class="n">HeteroData</span><span class="p">)</span>
+
+<span class="n">data_item</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">get_filename</span><span class="p">(</span><span class="s2">&quot;117e__A1_P00817--117e__B1_P00817&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">data_item</span><span class="o">.</span><span class="n">num_nodes</span> <span class="o">==</span> <span class="mi">5031</span>
+<span class="k">assert</span> <span class="n">data_item</span><span class="o">.</span><span class="n">num_edges</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data_item</span><span class="o">.</span><span class="n">num_node_features</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+<span class="n">expected_num_feats</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ligand_residue&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;receptor_residue&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;ligand_atom&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;receptor_atom&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s1">&#39;pdb&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">expected_num_feats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">data_item</span><span class="o">.</span><span class="n">num_node_features</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span>
+
+<span class="n">expected_node_types</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;ligand_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor_residue&#39;</span><span class="p">,</span> <span class="s1">&#39;ligand_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor_atom&#39;</span><span class="p">,</span> <span class="s1">&#39;pdb&#39;</span>
+<span class="p">]</span>
+<span class="k">assert</span> <span class="n">data_item</span><span class="o">.</span><span class="n">node_types</span> <span class="o">==</span> <span class="n">expected_node_types</span>
+
+<span class="n">train_dataset</span><span class="o">.</span><span class="n">print_summary</span><span class="p">()</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">get_geo_loader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="n">DataLoader</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">dataset</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-system-loader-workflow-filters-and-transforms-for-pinder-dimer-systems">PINDER system loader workflow: filters and transforms for Pinder dimer systems.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">Filters</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinderfilterbase">PinderFilterBase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinderfiltersubbase">PinderFilterSubBase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structurefilter">StructureFilter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-implementation-progress">Filter implementation progress</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforms">Transforms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-object">Structure object</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writers-generators">Writers/Generators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-loader">Pinder loader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-train-dataloader-torch">Create train dataloader (torch)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-test-dataset-torch-geometric">Create test dataset (torch-geometric)</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/example_readme.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/example_readme.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

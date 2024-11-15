@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.core.loader.loader &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/core/loader/loader';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/core/loader/loader.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core.loader.loader</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.core.loader.loader</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Generator</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">islice</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">get_index</span><span class="p">,</span> <span class="n">get_metadata</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.system</span> <span class="kn">import</span> <span class="n">_align_monomers_with_mask</span><span class="p">,</span> <span class="n">PinderSystem</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.filters</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PinderFilterSubBase</span><span class="p">,</span>
+    <span class="n">PinderFilterBase</span><span class="p">,</span>
+    <span class="n">StructureFilter</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.transforms</span> <span class="kn">import</span> <span class="n">StructureTransform</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.writer</span> <span class="kn">import</span> <span class="n">PinderWriterBase</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.log</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.models</span> <span class="kn">import</span> <span class="n">DatasetName</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+
+
+<span class="n">ALLOWED_MONOMER_PRIORITIES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;holo&quot;</span><span class="p">,</span> <span class="s2">&quot;pred&quot;</span><span class="p">,</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="s2">&quot;random_mixed&quot;</span><span class="p">]</span>
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_systems">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.get_systems">[docs]</a>
+<span class="k">def</span> <span class="nf">get_systems</span><span class="p">(</span><span class="n">systems</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">PinderSystem</span><span class="p">,</span> <span class="n">PinderSystem</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">systems</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">system</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">system</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">continue</span></div>
+
+
+
+<div class="viewcode-block" id="get_available_monomers">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.get_available_monomers">[docs]</a>
+<span class="k">def</span> <span class="nf">get_available_monomers</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the available monomers for a given row of the index.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        row (pd.Series): A row of the pinder index representing a pinder system.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, list[str]]: A dictionary mapping dimer body (R or L) to a list of available monomer types (apo, predicted, or holo).</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">available_monomers</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;holo&quot;</span><span class="p">],</span> <span class="s2">&quot;L&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;holo&quot;</span><span class="p">]}</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">monomer</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;predicted&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">monomer</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]:</span>
+                <span class="n">monomer_key</span> <span class="o">=</span> <span class="s2">&quot;pred&quot;</span> <span class="k">if</span> <span class="n">monomer</span> <span class="o">==</span> <span class="s2">&quot;predicted&quot;</span> <span class="k">else</span> <span class="n">monomer</span>
+                <span class="n">available_monomers</span><span class="p">[</span><span class="n">side</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">monomer_key</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">available_monomers</span></div>
+
+
+
+<div class="viewcode-block" id="get_alternate_apo_codes">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.get_alternate_apo_codes">[docs]</a>
+<span class="k">def</span> <span class="nf">get_alternate_apo_codes</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">side</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the list of non-canonical (alternate) apo PDB codes for the specified dimer side (R or L).</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        row (pd.Series): A row of the pinder index representing a pinder system.</span>
+<span class="sd">        side (str): The dimer side, R or L, representing receptor or ligand, respectively.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list[str]: A list of 4-letter PDB codes for all alternate apo monomers (when available).</span>
+<span class="sd">            The codes can be used to select an alternate apo monomer when working with `PinderSystem` objects.</span>
+<span class="sd">            When no alternate apo monomers exist, returns an empty list.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">alternate_apo</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]:</span>
+        <span class="n">alternate_apo</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">pdb</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">pdb</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_pdbs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">pdb</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_pdb&quot;</span><span class="p">]]</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">alternate_apo</span></div>
+
+
+
+<div class="viewcode-block" id="select_monomer">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.select_monomer">[docs]</a>
+<span class="k">def</span> <span class="nf">select_monomer</span><span class="p">(</span>
+    <span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span>
+    <span class="n">monomer_priority</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span><span class="p">,</span>
+    <span class="n">fallback_to_holo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">canonical_apo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Select a monomer type to use for the receptor and ligand in a given pinder dimer system.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        row (pd.Series): A row of the pinder index representing a pinder system.</span>
+<span class="sd">        monomer_priority (str, optional): The monomer priority to use. Defaults to &quot;holo&quot;.</span>
+<span class="sd">            Allowed values are &quot;apo&quot;, &quot;holo&quot;, &quot;pred&quot;, &quot;random&quot; or &quot;random_mixed&quot;..</span>
+<span class="sd">            See note about the random and random_mixed options.</span>
+<span class="sd">        fallback_to_holo (bool, optional): Whether to fallback to the holo monomer when no other monomer is available. Defaults to True.</span>
+<span class="sd">        canonical_apo (bool, optional): Whether to use the canonical apo monomer when the apo monomer type is available and selected.</span>
+<span class="sd">            Defaults to True. To sample non-canonical apo monomers, set this value to False.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict[str, str]: A dictionary mapping dimer body (R or L) to the selected monomer type (apo, predicted, or holo).</span>
+<span class="sd">            If non-canonical apo monomers are selected, the dictionary values will point to the apo PDB code to load.</span>
+<span class="sd">            See `PinderSystem` for more details on how the apo PDB code is used.</span>
+<span class="sd">    Note:</span>
+<span class="sd">        The allowed values for `monomer_priority` are &quot;apo&quot;, &quot;holo&quot;, &quot;pred&quot;, &quot;random&quot; or &quot;random_mixed&quot;.</span>
+
+<span class="sd">        When `monomer_priority` is set to one of the available monomer types (holo, apo, pred), the same monomer type will be selected for both receptor and ligand.</span>
+
+<span class="sd">        When the monomer priority is &quot;random&quot;, a random monomer type will be selected from the set of monomer types available for both the receptor and ligand. This option ensures the same type of monomer is used for the receptor and ligand.</span>
+
+<span class="sd">        When the monomer priority is &quot;random_mixed&quot;, a random monomer type will be selected for each of receptor and ligand, separately.</span>
+
+<span class="sd">        Enabling the `fallback_to_holo` option (default) will enable silent fallback to holo when the `monomer_priority` is set to one of apo or pred, but the corresponding monomer is not available for the dimer.</span>
+<span class="sd">        This is useful when only one of receptor or ligand has an unbound monomer, but you wish to include apo or predicted structures in your workflow.</span>
+<span class="sd">        If `fallback_to_holo` is disabled, an error will be raised when the `monomer_priority` is set to one of apo or pred, but the corresponding monomer is not available for the dimer.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">available_monomers</span> <span class="o">=</span> <span class="n">get_available_monomers</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="n">paired_monomers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">available_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+        <span class="nb">set</span><span class="p">(</span><span class="n">available_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">monomer_priority</span> <span class="o">==</span> <span class="s2">&quot;random_mixed&quot;</span><span class="p">:</span>
+        <span class="n">R_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">available_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+        <span class="n">L_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">available_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">monomer_priority</span> <span class="o">==</span> <span class="s2">&quot;random&quot;</span><span class="p">:</span>
+        <span class="n">R_selection</span> <span class="o">=</span> <span class="n">L_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">paired_monomers</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">monomer_priority</span> <span class="ow">in</span> <span class="n">paired_monomers</span><span class="p">:</span>
+        <span class="n">R_selection</span> <span class="o">=</span> <span class="n">monomer_priority</span>
+        <span class="n">L_selection</span> <span class="o">=</span> <span class="n">monomer_priority</span>
+    <span class="k">elif</span> <span class="n">fallback_to_holo</span><span class="p">:</span>
+        <span class="n">R_selection</span> <span class="o">=</span> <span class="n">L_selection</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Unable to find suitable monomers for </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> with monomer_priority=</span><span class="si">{</span><span class="n">monomer_priority</span><span class="si">}</span><span class="s2"> and fallback_to_holo was False!&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># If an alternate is available, select a random one, otherwise use canonical</span>
+    <span class="k">if</span> <span class="n">R_selection</span> <span class="o">==</span> <span class="s2">&quot;apo&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">canonical_apo</span><span class="p">:</span>
+        <span class="n">alt_receptor</span> <span class="o">=</span> <span class="n">get_alternate_apo_codes</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">alt_receptor</span><span class="p">:</span>
+            <span class="n">R_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">alt_receptor</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">L_selection</span> <span class="o">==</span> <span class="s2">&quot;apo&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">canonical_apo</span><span class="p">:</span>
+        <span class="n">alt_ligand</span> <span class="o">=</span> <span class="n">get_alternate_apo_codes</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">alt_ligand</span><span class="p">:</span>
+            <span class="n">L_selection</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">alt_ligand</span><span class="p">)</span>
+
+    <span class="n">selected_monomers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">R_selection</span><span class="p">,</span>
+        <span class="s2">&quot;L&quot;</span><span class="p">:</span> <span class="n">L_selection</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">selected_monomers</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_create_target_feature_complex</span><span class="p">(</span>
+    <span class="n">system</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">,</span>
+    <span class="n">selected_monomers</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">crop_equal_monomer_shapes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">fallback_to_holo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Structure</span><span class="p">,</span> <span class="n">Structure</span><span class="p">]:</span>
+    <span class="n">holo_R</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">aligned_holo_R</span>
+    <span class="n">holo_L</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">aligned_holo_L</span>
+    <span class="k">if</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;holo&quot;</span><span class="p">,</span> <span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;pred&quot;</span><span class="p">]:</span>
+        <span class="c1"># Alternative apo monomer is available and requested</span>
+        <span class="n">system</span><span class="o">.</span><span class="n">apo_receptor_pdb_code</span> <span class="o">=</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span>
+        <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;apo&quot;</span>
+    <span class="k">if</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;holo&quot;</span><span class="p">,</span> <span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;pred&quot;</span><span class="p">]:</span>
+        <span class="c1"># Alternative apo monomer is available and requested</span>
+        <span class="n">system</span><span class="o">.</span><span class="n">apo_ligand_pdb_code</span> <span class="o">=</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span>
+        <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;apo&quot;</span>
+
+    <span class="n">decoy_R</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_receptor&quot;</span><span class="p">)</span>
+    <span class="n">decoy_L</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_ligand&quot;</span><span class="p">)</span>
+    <span class="c1"># Check to ensure that the monomer wasn&#39;t filtered out by a PinderFilterSubBase</span>
+    <span class="k">if</span> <span class="n">decoy_R</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fallback_to_holo</span><span class="p">:</span>
+        <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span>
+        <span class="n">decoy_R</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_receptor&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">decoy_L</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fallback_to_holo</span><span class="p">:</span>
+        <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span>
+        <span class="n">decoy_L</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">selected_monomers</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;_ligand&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">decoy_R</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">decoy_L</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No valid monomers found for </span><span class="si">{</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> with selected_monomers=</span><span class="si">{</span><span class="n">selected_monomers</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="n">both_holo</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="n">selection</span> <span class="o">==</span> <span class="s2">&quot;holo&quot;</span> <span class="k">for</span> <span class="n">selection</span> <span class="ow">in</span> <span class="n">selected_monomers</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+    <span class="c1"># No need to crop since our target and feature complex is identical</span>
+    <span class="k">if</span> <span class="n">crop_equal_monomer_shapes</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">both_holo</span><span class="p">:</span>
+        <span class="n">holo_R</span><span class="p">,</span> <span class="n">decoy_R</span> <span class="o">=</span> <span class="n">_align_monomers_with_mask</span><span class="p">(</span><span class="n">holo_R</span><span class="p">,</span> <span class="n">decoy_R</span><span class="p">)</span>
+        <span class="n">holo_L</span><span class="p">,</span> <span class="n">decoy_L</span> <span class="o">=</span> <span class="n">_align_monomers_with_mask</span><span class="p">(</span><span class="n">holo_L</span><span class="p">,</span> <span class="n">decoy_L</span><span class="p">)</span>
+    <span class="n">target_complex</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span>
+    <span class="n">feature_complex</span> <span class="o">=</span> <span class="n">decoy_R</span> <span class="o">+</span> <span class="n">decoy_L</span>
+    <span class="k">return</span> <span class="n">target_complex</span><span class="p">,</span> <span class="n">feature_complex</span>
+
+
+<div class="viewcode-block" id="PinderLoader">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.PinderLoader">[docs]</a>
+<span class="k">class</span> <span class="nc">PinderLoader</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">split</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ids</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">subset</span><span class="p">:</span> <span class="n">DatasetName</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">base_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PinderFilterBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">sub_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PinderFilterSubBase</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">structure_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StructureFilter</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">structure_transforms_target</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StructureTransform</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">structure_transforms_feature</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StructureTransform</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">index_query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">metadata_query</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">writer</span><span class="p">:</span> <span class="n">PinderWriterBase</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">monomer_priority</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;holo&quot;</span><span class="p">,</span>
+        <span class="n">fallback_to_holo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">use_canonical_apo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">crop_equal_monomer_shapes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">max_load_attempts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">pre_specified_monomers</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a PinderLoader instance.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            split (str, optional): The split of the pinder dataset to load. Defaults to None.</span>
+<span class="sd">            ids (list[str], optional): A list of specific pinder system IDs to load. Defaults to None.</span>
+<span class="sd">            index (pd.DataFrame, optional): The pinder index to load. Defaults to None and retrieved via `get_index` if not provided.</span>
+<span class="sd">            metadata (pd.DataFrame, optional): The pinder metadata to load. Defaults to None and retrieved via `get_metadata` if not provided.</span>
+<span class="sd">            subset (DatasetName, optional): An optional test subset (pinder_xl/pinder_s/pinder_af2) to load. Defaults to None.</span>
+<span class="sd">            base_filters (list[PinderFilterBase], optional): A list of system-level filters (PinderFilterBase) to apply to the pinder system.</span>
+<span class="sd">                Defaults to [].</span>
+<span class="sd">            sub_filters (list[PinderFilterSubBase], optional): A list of substructure filters (PinderFilterSubBase) to apply to the pinder system.</span>
+<span class="sd">                Defaults to [].</span>
+<span class="sd">            structure_filters (list[StructureFilter], optional): A list of structure filters to apply to the target and feature complexes created from the pinder system.</span>
+<span class="sd">                Defaults to [].</span>
+<span class="sd">            structure_transforms (list[StructureTransform], optional): A list of structure transforms to apply to the target and feature complexes created from the pinder system.</span>
+<span class="sd">                Defaults to [].</span>
+<span class="sd">            index_query (str, optional): A query string to apply to the pinder index. Defaults to None.</span>
+<span class="sd">            metadata_query (str, optional): A query string to apply to the pinder metadata. Defaults to None.</span>
+<span class="sd">            writer (PinderWriterBase, optional): A writer to use to write the pinder system. Defaults to None.</span>
+<span class="sd">            monomer_priority (str, optional): The monomer priority to use. Defaults to &quot;holo&quot;.</span>
+<span class="sd">                Allowed values are &quot;apo&quot;, &quot;holo&quot;, &quot;pred&quot;, &quot;random&quot; or &quot;random_mixed&quot;..</span>
+<span class="sd">                See note about the random and random_mixed options.</span>
+<span class="sd">            fallback_to_holo (bool, optional): Whether to fallback to the holo monomer when no other monomer is available. Defaults to True.</span>
+<span class="sd">            use_canonical_apo (bool, optional): Whether to use the canonical apo monomer when the apo monomer type is available and selected.</span>
+<span class="sd">                Defaults to True. To sample non-canonical apo monomers, set this value to False.</span>
+<span class="sd">            crop_equal_monomer_shapes (bool, optional): Whether to crop the holo and feature (decoy, potentially with apo/pred monomers) complexes to the same shape. Defaults to True.</span>
+<span class="sd">                See the tutorial on cropped superposition for more details: https://pinder-org.github.io/pinder/superposition.html.</span>
+<span class="sd">            max_load_attempts (int): Maximum number of times to try loading an item from the index in the __getitem__ call before raising an IndexError.</span>
+<span class="sd">                Default is 10. When a system is removed by one of the filters, the default behavior is to try another index selected at random.</span>
+<span class="sd">                This is done to prevent exceptions or NoneType objects being returned to the data loader.</span>
+<span class="sd">            pre_specified_monomers (dict[str, str], pd.DataFrame, optional): Optional pre-specified monomers to use for each pinder system ID.</span>
+<span class="sd">                This argument can either be a dictionary or a pandas DataFrame, specifying a mapping of system IDs to monomer types.</span>
+<span class="sd">                If a dictionary is provided, it should be in the format {&quot;system_id&quot;: &quot;monomer_type&quot;}.</span>
+<span class="sd">                If a DataFrame is provided, it should have a &quot;id&quot; column and a &quot;monomer&quot; column.</span>
+<span class="sd">                The &quot;id&quot; column should contain the system IDs, and the &quot;monomer&quot; column should contain the monomer types (either &quot;holo&quot;, &quot;apo&quot;, or &quot;pred&quot;).</span>
+<span class="sd">                Default is None, indicating that monomer_priority will be used to select monomers for each system.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            The allowed values for `monomer_priority` are &quot;apo&quot;, &quot;holo&quot;, &quot;pred&quot;, &quot;random&quot; or &quot;random_mixed&quot;.</span>
+
+<span class="sd">            When `monomer_priority` is set to one of the available monomer types (holo, apo, pred), the same monomer type will be selected for both receptor and ligand.</span>
+
+<span class="sd">            When the monomer priority is &quot;random&quot;, a random monomer type will be selected from the set of monomer types available for both the receptor and ligand. This option ensures the same type of monomer is used for the receptor and ligand.</span>
+
+<span class="sd">            When the monomer priority is &quot;random_mixed&quot;, a random monomer type will be selected for each of receptor and ligand, separately.</span>
+
+<span class="sd">            Enabling the `fallback_to_holo` option (default) will enable silent fallback to holo when the `monomer_priority` is set to one of apo or pred, but the corresponding monomer is not available for the dimer.</span>
+<span class="sd">            This is useful when only one of receptor or ligand has an unbound monomer, but you wish to include apo or predicted structures in your workflow.</span>
+<span class="sd">            If `fallback_to_holo` is disabled, an error will be raised when the `monomer_priority` is set to one of apo or pred, but the corresponding monomer is not available for the dimer.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">split</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">subset</span><span class="p">]]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Must provide at least one of split, ids, index, metadata, subset&quot;</span>
+            <span class="p">)</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="n">monomer_priority</span> <span class="ow">in</span> <span class="n">ALLOWED_MONOMER_PRIORITIES</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Invalid monomer_priority=</span><span class="si">{</span><span class="n">monomer_priority</span><span class="si">}</span><span class="s2">. Allowed values are </span><span class="si">{</span><span class="n">ALLOWED_MONOMER_PRIORITIES</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="c1"># Which split/mode we are using for the dataset instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">split</span> <span class="o">=</span> <span class="n">split</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monomer_priority</span> <span class="o">=</span> <span class="n">monomer_priority</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_holo</span> <span class="o">=</span> <span class="n">fallback_to_holo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_canonical_apo</span> <span class="o">=</span> <span class="n">use_canonical_apo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">crop_equal_monomer_shapes</span> <span class="o">=</span> <span class="n">crop_equal_monomer_shapes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_load_attempts</span> <span class="o">=</span> <span class="n">max_load_attempts</span>
+
+        <span class="c1"># Optional structure filters to apply</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure_filters</span> <span class="o">=</span> <span class="n">structure_filters</span>
+        <span class="c1"># Optional structure transforms to apply</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure_transforms_target</span> <span class="o">=</span> <span class="n">structure_transforms_target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">structure_transforms_feature</span> <span class="o">=</span> <span class="n">structure_transforms_feature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index_query</span> <span class="o">=</span> <span class="n">index_query</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata_query</span> <span class="o">=</span> <span class="n">metadata_query</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">writer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span>
+
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">()</span>
+
+        <span class="c1"># Define the subset of the pinder index and metadata corresponding to the split of our dataset instance</span>
+        <span class="k">if</span> <span class="n">split</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;split == &quot;</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">subset</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span> <span class="n">DatasetName</span><span class="p">):</span>
+                <span class="n">subset</span> <span class="o">=</span> <span class="n">DatasetName</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">subset</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ids</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ids</span><span class="p">))]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">index_query</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">index_query</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to apply index_query=</span><span class="si">{</span><span class="n">index_query</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">metadata_query</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">metadata_query</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to apply metadata_query=</span><span class="si">{</span><span class="n">metadata_query</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">final_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">metadata</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">final_ids</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">final_ids</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;No systems found matching split=</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s2">, ids=</span><span class="si">{</span><span class="n">ids</span><span class="si">}</span><span class="s2">, subset=</span><span class="si">{</span><span class="n">subset</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pre_specified_monomers</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pre_specified_monomers DataFrame must have columns &#39;id&#39; and &#39;monomer&#39;, got </span><span class="si">{</span><span class="n">pre_specified_monomers</span><span class="o">.</span><span class="n">columns</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;monomer&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span>
+                <span class="nb">set</span><span class="p">(</span><span class="n">pre_specified_monomers</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+            <span class="p">),</span> <span class="n">err_msg</span>
+            <span class="n">pre_specified_monomers</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">pid</span><span class="p">:</span> <span class="n">monomer</span>
+                <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">monomer</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                    <span class="n">pre_specified_monomers</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">pre_specified_monomers</span><span class="p">[</span><span class="s2">&quot;monomer&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pre_specified_monomers</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">monomer_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pre_specified_monomers</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">pre_specified_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pre_specified_monomers</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pre_specified_monomers dict must only contain values: &#39;holo&#39;, &#39;apo&#39;, or &#39;pred&#39;, got </span><span class="si">{</span><span class="n">monomer_names</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">assert</span> <span class="n">monomer_names</span><span class="o">.</span><span class="n">issubset</span><span class="p">({</span><span class="s2">&quot;holo&quot;</span><span class="p">,</span> <span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;pred&quot;</span><span class="p">}),</span> <span class="n">err_msg</span>
+            <span class="n">missing</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">pre_specified_ids</span><span class="p">))</span>
+            <span class="n">err_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;pre_specified_monomers dict must map all IDs to be loaded to monomer types, missing </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2"> IDs&quot;</span>
+            <span class="k">assert</span> <span class="n">pre_specified_ids</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">id</span><span class="p">)),</span> <span class="n">err_msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pre_specified_monomers</span> <span class="o">=</span> <span class="n">pre_specified_monomers</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">PinderSystem</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Structure</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">PinderSystem</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Structure</span><span class="p">]:</span>
+        <span class="n">valid_idx</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">valid_idx</span> <span class="ow">and</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_load_attempts</span><span class="p">:</span>
+            <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">system</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="n">system</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_dimer_filters</span><span class="p">(</span>
+                <span class="n">system</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_filters</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub_filters</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">PinderSystem</span><span class="p">):</span>
+                <span class="c1"># Select a new random system, previous one failed filters</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))))</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_specified_monomers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pre_selected</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pre_specified_monomers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                    <span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s2">&quot;holo&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_holo</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">monomer_priority</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">selected_monomers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;R&quot;</span><span class="p">:</span> <span class="n">pre_selected</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">:</span> <span class="n">pre_selected</span><span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">selected_monomers</span> <span class="o">=</span> <span class="n">select_monomer</span><span class="p">(</span>
+                    <span class="n">row</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">monomer_priority</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_holo</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">use_canonical_apo</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">target_complex</span><span class="p">,</span> <span class="n">feature_complex</span> <span class="o">=</span> <span class="n">_create_target_feature_complex</span><span class="p">(</span>
+                <span class="n">system</span><span class="p">,</span>
+                <span class="n">selected_monomers</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">crop_equal_monomer_shapes</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fallback_to_holo</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">valid_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_structure_filters</span><span class="p">(</span><span class="n">target_complex</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_idx</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_idx</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unable to find a valid item in the dataset satisfying filters at </span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2"> after </span><span class="si">{</span><span class="n">attempts</span><span class="si">}</span><span class="s2"> attempts!&quot;</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure_transforms_target</span><span class="p">:</span>
+            <span class="n">target_complex</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">target_complex</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure_transforms_feature</span><span class="p">:</span>
+            <span class="n">feature_complex</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">feature_complex</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">system</span><span class="p">,</span> <span class="n">feature_complex</span><span class="p">,</span> <span class="n">target_complex</span>
+
+<div class="viewcode-block" id="PinderLoader.apply_structure_filters">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.PinderLoader.apply_structure_filters">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_structure_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">structure</span><span class="p">:</span> <span class="n">Structure</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">pass_filters</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">structure_filter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">structure_filters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">structure_filter</span><span class="p">(</span><span class="n">structure</span><span class="p">):</span>
+                <span class="n">pass_filters</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">break</span>
+        <span class="k">return</span> <span class="n">pass_filters</span></div>
+
+
+<div class="viewcode-block" id="PinderLoader.apply_dimer_filters">
+<a class="viewcode-back" href="../../../../source/pinder.core.loader.html#pinder.core.loader.loader.PinderLoader.apply_dimer_filters">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">apply_dimer_filters</span><span class="p">(</span>
+        <span class="n">dimer</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">,</span>
+        <span class="n">base_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PinderFilterBase</span><span class="p">]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">sub_filters</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PinderFilterSubBase</span><span class="p">]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PinderSystem</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">sub_filter</span> <span class="ow">in</span> <span class="n">sub_filters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sub_filter</span><span class="p">,</span> <span class="n">PinderFilterSubBase</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">dimer</span> <span class="o">=</span> <span class="n">sub_filter</span><span class="p">(</span><span class="n">dimer</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="c1"># Likely due to previous filter removing a holo Structure from the system</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Failed to apply sub_filter=</span><span class="si">{</span><span class="n">sub_filter</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">dimer</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">base_filter</span> <span class="ow">in</span> <span class="n">base_filters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">base_filter</span><span class="p">,</span> <span class="n">PinderFilterBase</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">base_filter</span><span class="p">(</span><span class="n">dimer</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">dimer</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;PinderLoader(split=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">split</span><span class="si">}</span><span class="s2">, monomers=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">monomer_priority</span><span class="si">}</span><span class="s2">, systems=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

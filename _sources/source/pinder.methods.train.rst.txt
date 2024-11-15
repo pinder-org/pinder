@@ -1,0 +1,10 @@
+pinder.methods.train package
+============================
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.train
+   :members:
+   :undoc-members:
+   :show-inheritance:

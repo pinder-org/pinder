@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.get_splits &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/get_splits';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/get_splits.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.get_splits</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.get_splits</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas.api.types</span> <span class="kn">import</span> <span class="n">union_categoricals</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MetadataEntry</span><span class="p">,</span>
+    <span class="n">IndexEntry</span><span class="p">,</span>
+    <span class="n">downcast_dtypes</span><span class="p">,</span>
+    <span class="n">get_pinder_bucket_root</span><span class="p">,</span>
+    <span class="n">get_supplementary_data</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pinder.data.csv_utils</span> <span class="kn">import</span> <span class="n">read_csv_non_default_na</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">ApoPairingConfig</span><span class="p">,</span> <span class="n">ClusterConfig</span><span class="p">,</span> <span class="n">get_config_hash</span>
+<span class="kn">from</span> <span class="nn">pinder.data.get_apo</span> <span class="kn">import</span> <span class="n">add_weighted_apo_score</span>
+<span class="kn">from</span> <span class="nn">pinder.data.pipeline.constants</span> <span class="kn">import</span> <span class="n">CONSIDER_LEAKED</span><span class="p">,</span> <span class="n">TEST_SYSTEM_BLACKLIST</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="print_test_meta_details">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.print_test_meta_details">[docs]</a>
+<span class="k">def</span> <span class="nf">print_test_meta_details</span><span class="p">(</span><span class="n">test_meta</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function will print out the details of the test set that was generated</span>
+<span class="sd">    by the get_split_subsets function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">total_testval_num</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_apos</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_putative_apo&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_pred</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_pred&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_heterodimer</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;heterodimer&quot;</span><span class="p">])</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_homodimer</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;heterodimer&quot;</span><span class="p">])</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">num_apos_af2</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_putative_apo&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_pred_af2</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_pred&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_heterodimer_af2</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;heterodimer&quot;</span><span class="p">])</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_homodimer_af2</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;heterodimer&quot;</span><span class="p">])</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">total_removed</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">][</span>
+        <span class="s2">&quot;depth_2_hits_with_comm&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;total removed data: </span><span class="si">{</span><span class="n">total_removed</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;total number of test+val systems: </span><span class="si">{</span><span class="n">total_testval_num</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val apos: </span><span class="si">{</span><span class="n">num_apos</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val preds: </span><span class="si">{</span><span class="n">num_pred</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val homodimers: </span><span class="si">{</span><span class="n">num_homodimer</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val heterodimers: </span><span class="si">{</span><span class="n">num_heterodimer</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val apos (af2): </span><span class="si">{</span><span class="n">num_apos_af2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val preds (af2): </span><span class="si">{</span><span class="n">num_pred_af2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val homodimers (af2): </span><span class="si">{</span><span class="n">num_homodimer_af2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number of test+val heterodimers (af2): </span><span class="si">{</span><span class="n">num_heterodimer_af2</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_splits">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.get_splits">[docs]</a>
+<span class="k">def</span> <span class="nf">get_splits</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">metadata_path</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.2.csv.gz&quot;</span>
+    <span class="n">availability_index_path</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index_with_apo.parquet&quot;</span>
+    <span class="n">chk_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;cluster&quot;</span> <span class="o">/</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">test_systems_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;test_sys_table.csv&quot;</span>
+    <span class="n">test_meta_output_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;test_subset.csv&quot;</span>
+    <span class="n">deleaked_checkpoint</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;pindex_checkpoint.4.csv&quot;</span>
+    <span class="k">if</span> <span class="n">deleaked_checkpoint</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipping get_splits, </span><span class="si">{</span><span class="n">deleaked_checkpoint</span><span class="si">}</span><span class="s2"> checkpoint exists...&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="c1"># NOTE: this needs to be the index after get_clusters.cluster checkpoint, not the original!</span>
+    <span class="n">index_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;index.2.csv.gz&quot;</span>
+    <span class="n">filtered_pindex_output_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;pindex_checkpoint.3.csv&quot;</span>
+    <span class="k">if</span> <span class="n">test_meta_output_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipping get_split_subsets, </span><span class="si">{</span><span class="n">test_meta_output_path</span><span class="si">}</span><span class="s2"> checkpoint exists...&quot;</span>
+        <span class="p">)</span>
+        <span class="n">test_meta_df</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+            <span class="n">test_meta_output_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">thresh_label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">foldseek_af2_difficulty_threshold</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">af2_transitive_hits_path</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;af2_lddt</span><span class="si">{</span><span class="n">thresh_label</span><span class="si">}</span><span class="s2">_transitive_hits_mapping.csv&quot;</span>
+        <span class="p">)</span>
+        <span class="n">test_meta_df</span> <span class="o">=</span> <span class="n">get_split_subsets</span><span class="p">(</span>
+            <span class="n">index_path</span><span class="p">,</span>
+            <span class="n">metadata_path</span><span class="p">,</span>
+            <span class="n">test_systems_path</span><span class="p">,</span>
+            <span class="n">availability_index_path</span><span class="p">,</span>
+            <span class="n">test_meta_output_path</span><span class="o">=</span><span class="n">test_meta_output_path</span><span class="p">,</span>
+            <span class="n">filtered_pindex_output_path</span><span class="o">=</span><span class="n">filtered_pindex_output_path</span><span class="p">,</span>
+            <span class="n">af2_transitive_hits_path</span><span class="o">=</span><span class="n">af2_transitive_hits_path</span><span class="p">,</span>
+            <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">print_test_meta_details</span><span class="p">(</span><span class="n">test_meta_df</span><span class="p">)</span>
+    <span class="c1">## Get splits</span>
+    <span class="n">filtered_index_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;pindex_checkpoint.3.csv&quot;</span>
+    <span class="n">test_subset_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;test_subset.csv&quot;</span>
+    <span class="n">deleak_map_file</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;transitive_hits_mapping.csv&quot;</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Finalizing test-val splits...&quot;</span><span class="p">)</span>
+    <span class="n">get_test_val_splits</span><span class="p">(</span>
+        <span class="n">original_index_path</span><span class="o">=</span><span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index_with_apo.parquet&quot;</span><span class="p">,</span>
+        <span class="n">filtered_index_path</span><span class="o">=</span><span class="n">filtered_index_path</span><span class="p">,</span>
+        <span class="n">metadata_path</span><span class="o">=</span><span class="n">metadata_path</span><span class="p">,</span>
+        <span class="n">test_meta_path</span><span class="o">=</span><span class="n">test_subset_path</span><span class="p">,</span>
+        <span class="n">deleak_map_path</span><span class="o">=</span><span class="n">deleak_map_file</span><span class="p">,</span>
+        <span class="n">deleak_mask_outpath</span><span class="o">=</span><span class="n">deleaked_checkpoint</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="rename_peptide_cluster_ids">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.rename_peptide_cluster_ids">[docs]</a>
+<span class="k">def</span> <span class="nf">rename_peptide_cluster_ids</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="c1"># rename chain cluster ids with using the &quot;p&quot; for all short chains</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">cluster_l</span><span class="p">)</span> <span class="k">if</span> <span class="n">l1</span> <span class="o">&gt;=</span> <span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span> <span class="k">else</span> <span class="s2">&quot;p&quot;</span>
+        <span class="k">for</span> <span class="n">cluster_l</span><span class="p">,</span> <span class="n">l1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">],</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;length1&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">cluster_r</span><span class="p">)</span> <span class="k">if</span> <span class="n">l2</span> <span class="o">&gt;=</span> <span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span> <span class="k">else</span> <span class="s2">&quot;p&quot;</span>
+        <span class="k">for</span> <span class="n">cluster_r</span><span class="p">,</span> <span class="n">l2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">],</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;length2&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="c1"># rename the cluster ids using the chains</span>
+    <span class="n">renamed_cluster_ids</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cluster_id_L</span><span class="p">,</span> <span class="n">cluster_id_R</span> <span class="ow">in</span> <span class="n">pindex</span><span class="p">[[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+        <span class="n">id1</span><span class="p">,</span> <span class="n">id2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">cluster_id_L</span><span class="p">,</span> <span class="n">cluster_id_R</span><span class="p">])</span>
+        <span class="n">renamed_cluster_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cluster_</span><span class="si">{</span><span class="n">id1</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">id2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">renamed_cluster_ids</span>
+    <span class="k">return</span> <span class="n">pindex</span></div>
+
+
+
+<div class="viewcode-block" id="get_split_subsets">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.get_split_subsets">[docs]</a>
+<span class="k">def</span> <span class="nf">get_split_subsets</span><span class="p">(</span>
+    <span class="n">index_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">metadata_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">test_systems_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">availability_index_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;data/index_with_apo.parquet&quot;</span><span class="p">,</span>
+    <span class="n">test_meta_output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;data/test_subset.csv&quot;</span><span class="p">,</span>
+    <span class="n">filtered_pindex_output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;data/pindex_checkpoint.3.csv&quot;</span><span class="p">,</span>
+    <span class="n">af2_transitive_hits_path</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;data/af2_lddt070_transitive_hits_mapping.csv&quot;</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the split subsets. This function will generate the test set and the</span>
+<span class="sd">    filtered pindex based on the test set. The test set will be saved to</span>
+<span class="sd">    test_meta_output_path and the filtered pindex will be saved to</span>
+<span class="sd">    filtered_pindex_output_path.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        test_systems_path (Path): The path to the test systems.</span>
+<span class="sd">        index_path (Path): The path to the index.</span>
+<span class="sd">        metadata_path (Path): The path to the metadata.</span>
+<span class="sd">        availability_index_path (Path): The path to the availability index.</span>
+<span class="sd">        test_meta_output_path (Path): The path to save the test meta data.</span>
+<span class="sd">        filtered_pindex_output_path (Path): The path to save the filtered pindex.</span>
+<span class="sd">        max_depth_2_hits (int): The maximum depth 2 hits.</span>
+<span class="sd">        max_depth_2_hits_with_comm (int): The maximum depth 2 hits with comm.</span>
+<span class="sd">        min_depth_2_hits_with_comm (int): The minimum depth 2 hits with comm.</span>
+<span class="sd">        top_n (int): The top n.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">test_sys_table</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">test_systems_path</span><span class="p">)</span>
+
+    <span class="n">eligible_systems</span> <span class="o">=</span> <span class="n">test_sys_table</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">test_sys_table</span><span class="p">[</span><span class="s2">&quot;depth_2_hits&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">max_depth_2_hits</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">test_sys_table</span><span class="p">[</span><span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">max_depth_2_hits_with_comm</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">eligible_systems_to_hits</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="n">v</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">eligible_systems</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">eligible_systems</span><span class="p">[</span><span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">metadata_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">})</span>
+    <span class="n">test_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">eligible_systems</span><span class="p">[</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cluster_id_L&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;cluster_id_R&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">availability_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">availability_index_path</span><span class="p">)</span>
+    <span class="n">test_meta</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">test_meta</span><span class="p">,</span>
+        <span class="n">availability_index</span><span class="p">[</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;predicted_R&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;predicted_L&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;apo_R&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;apo_L&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;uniprot_R&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;uniprot_L&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_putative_apo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">test_meta</span><span class="p">[[</span><span class="s2">&quot;apo_R&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_L&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;min_both_pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">test_meta</span><span class="p">[[</span><span class="s2">&quot;predicted_R&quot;</span><span class="p">,</span> <span class="s2">&quot;predicted_L&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># test_meta[&quot;min_both_putative_apo&quot;] = test_meta[&quot;min_both_putative_apo&quot;].fillna(0)</span>
+    <span class="c1"># test_meta[&quot;min_both_pred&quot;] = test_meta[&quot;min_both_pred&quot;].fillna(0)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;heterodimer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;uniprot_R&quot;</span><span class="p">],</span> <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;uniprot_L&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Extract the af2mm IDs which pass transitive hits wrt other test/val members</span>
+    <span class="c1"># start with most strict threshold to see max clean clusters</span>
+
+    <span class="n">af2_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">alphafold_cutoff_date</span><span class="p">)</span>
+    <span class="n">date_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">sys_id</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">sys_id</span><span class="p">,</span> <span class="n">date_str</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">af2_date</span>
+    <span class="p">}</span>
+    <span class="n">systems_before_af2mm</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">date_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="c1"># Read af2mm transitive hits to derive a &quot;clean&quot; holdout of systems that are not part of AF2 training set</span>
+    <span class="c1"># AND have no transitive hits to anything else that IS in the AF2 training set</span>
+    <span class="n">af2_transitive_hits</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">af2_transitive_hits_path</span><span class="p">)</span>
+    <span class="n">af2_transitive</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="nb">set</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">af2_transitive_hits</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">af2_transitive_hits</span><span class="p">[</span><span class="s2">&quot;neighbors&quot;</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="n">transitive_af2mm_all</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">systems_before_af2mm</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">af2_transitive</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">systems_before_af2mm</span>
+    <span class="p">}</span>
+    <span class="n">clean_af2mm</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">transitive_af2mm_all</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
+
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_hard_pass&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">clean_af2mm</span><span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_date_pass&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">af2_date</span>
+    <span class="c1"># Sort to prefer heterodimer and af2 deleaked &quot;hard&quot; cluster representative</span>
+    <span class="n">test_meta</span> <span class="o">=</span> <span class="n">test_meta</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;heterodimer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;af2_hard_pass&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;af2_date_pass&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_both_putative_apo&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_both_pred&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;proto-test&quot;</span>
+    <span class="n">top_n_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_meta</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">top_n</span><span class="p">)[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;proto-test&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">top_n_ids</span> <span class="k">else</span> <span class="s2">&quot;proto-train&quot;</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm_hard&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_hard_pass&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span>
+        <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_date_pass&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span>
+        <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span>
+    <span class="p">)</span>
+    <span class="n">af2mm_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">]][</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+    <span class="n">test_meta</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">split_labels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">pid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">top_n_ids</span><span class="p">:</span>
+            <span class="n">split_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;proto-train&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">eligible_systems_to_hits</span><span class="p">[</span><span class="n">pid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_depth_2_hits_with_comm</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="n">pid</span> <span class="ow">in</span> <span class="n">af2mm_ids</span>
+        <span class="p">):</span>
+            <span class="n">split_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;proto-test&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">split_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;proto-train&quot;</span><span class="p">)</span>
+
+    <span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">split_labels</span>
+    <span class="n">filtered_pindex</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">index_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;proto-train&quot;</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_n_ids</span><span class="p">),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;proto-test&quot;</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">]][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())),</span>
+        <span class="s2">&quot;pinder_af2&quot;</span><span class="p">,</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">test_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">],</span> <span class="s2">&quot;af2_difficulty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Easy&quot;</span>
+    <span class="n">test_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm&quot;</span><span class="p">],</span> <span class="s2">&quot;af2_difficulty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;N/A&quot;</span>
+    <span class="n">test_meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;af2_mm_hard&quot;</span><span class="p">],</span> <span class="s2">&quot;af2_difficulty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hard&quot;</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pinder_af2_hard&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">clean_af2mm</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">pinder_af2</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">test_meta_output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filtered_pindex_output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">test_meta</span></div>
+
+
+
+<div class="viewcode-block" id="get_test_val_splits">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.get_test_val_splits">[docs]</a>
+<span class="k">def</span> <span class="nf">get_test_val_splits</span><span class="p">(</span>
+    <span class="n">original_index_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;index_with_apo.parquet&quot;</span><span class="p">,</span>
+    <span class="n">filtered_index_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;pindex_checkpoint.3.csv&quot;</span><span class="p">,</span>
+    <span class="n">metadata_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;metadata.2.csv.gz&quot;</span><span class="p">,</span>
+    <span class="n">test_meta_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;test_subset.csv&quot;</span><span class="p">,</span>
+    <span class="n">deleak_map_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;transitive_hits_mapping.csv&quot;</span><span class="p">,</span>
+    <span class="n">deleak_mask_outpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;pindex_checkpoint.4.csv&quot;</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">test_meta</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">test_meta_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">deleak_df</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">deleak_map_path</span><span class="p">)</span>
+    <span class="n">deleak_map</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">not_used</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pid</span><span class="p">,</span> <span class="n">neighbors</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">deleak_df</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">deleak_df</span><span class="p">[</span><span class="s2">&quot;neighbors&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">neighbors</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">CONSIDER_LEAKED</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+                <span class="n">not_used</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">neighbors</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">deleak_map</span><span class="p">[</span><span class="n">pid</span><span class="p">]</span> <span class="o">=</span> <span class="n">systems</span>
+
+    <span class="n">filtered_pindex</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">filtered_index_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">system_to_cluster</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="n">cluster_to_system</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">):</span>
+        <span class="n">cluster_to_system</span><span class="p">[</span><span class="n">cluster_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_to_system</span><span class="p">[</span><span class="n">cluster_id</span><span class="p">]</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+    <span class="n">deleaked_systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">cumulative_test</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">sys_id</span> <span class="ow">in</span> <span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]:</span>
+        <span class="n">sys_deleak</span> <span class="o">=</span> <span class="n">deleak_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sys_id</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span>
+        <span class="n">sys_cluster</span> <span class="o">=</span> <span class="n">system_to_cluster</span><span class="p">[</span><span class="n">sys_id</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">deleaked_systems</span> <span class="o">|=</span> <span class="n">sys_deleak</span> <span class="o">|</span> <span class="n">cluster_to_system</span><span class="p">[</span><span class="n">sys_cluster</span><span class="p">]</span>
+            <span class="n">cumulative_test</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys_deleak</span> <span class="o">|</span> <span class="n">cluster_to_system</span><span class="p">[</span><span class="n">sys_cluster</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sys_id</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">sys_deleak</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">sys_cluster</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">ranked_representatives</span> <span class="o">=</span> <span class="n">test_meta</span><span class="p">[</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="n">cumulative_deleaked</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">leaked</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ranked_representatives</span><span class="p">[</span><span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cumulative_deleaked</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">leaked</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cumulative_deleaked</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">leaked</span> <span class="o">+</span> <span class="n">cumulative_deleaked</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">ranked_representatives</span><span class="p">[</span><span class="s2">&quot;cumulative_deleak_counts&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cumulative_deleaked</span><span class="p">)</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">metadata_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">})</span>
+    <span class="n">filtered_pindex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">filtered_pindex</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;length1&quot;</span><span class="p">,</span> <span class="s2">&quot;length2&quot;</span><span class="p">]],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span> <span class="o">=</span> <span class="n">rename_peptide_cluster_ids</span><span class="p">(</span><span class="n">filtered_pindex</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="n">short_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">metadata</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;length1&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span><span class="p">)</span>
+            <span class="o">|</span> <span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;length2&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span><span class="p">)</span>
+        <span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">used</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span>
+        <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">ranked_representatives</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+    <span class="p">]</span>
+    <span class="n">communities_used</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span>
+        <span class="nb">set</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">short_id_community_overlap</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">short_ids</span><span class="p">)]</span>
+    <span class="n">short_id_community_overlap</span> <span class="o">=</span> <span class="n">short_id_community_overlap</span><span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">short_id_community_overlap</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">communities_used</span><span class="p">)</span>
+            <span class="o">|</span> <span class="n">short_id_community_overlap</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">communities_used</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">short_id_community_overlap_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">short_id_community_overlap</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">total_deleaked_systems</span> <span class="o">=</span> <span class="n">deleaked_systems</span> <span class="o">|</span> <span class="n">short_id_community_overlap_ids</span>
+
+    <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;leakage_mask&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">total_deleaked_systems</span><span class="p">)</span>
+
+    <span class="n">test_val_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">ranked_representatives</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">original_index_path</span><span class="p">)</span>
+
+    <span class="n">afmm_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;pinder_af2&quot;</span><span class="p">]][</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;train&quot;</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_val_ids</span><span class="p">),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;deleak_mask&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">total_deleaked_systems</span> <span class="o">-</span> <span class="n">test_val_ids</span><span class="p">),</span> <span class="s2">&quot;deleak_mask&quot;</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pinder_af2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">afmm_ids</span><span class="p">),</span> <span class="s2">&quot;pinder_af2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pinder_af2&quot;</span><span class="p">]),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;val&quot;</span>
+    <span class="n">to_test</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">[(</span><span class="o">~</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;deleak_mask&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">test_val_ids</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pinder_af2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="p">)[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">to_test</span><span class="p">),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>
+
+    <span class="n">pindex</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;pinder_af2_hard&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">col_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pindex</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">pindex_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">),</span>
+        <span class="n">filtered_pindex</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster_id&quot;</span><span class="p">]],</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span>
+        <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">pindex_final</span> <span class="o">=</span> <span class="n">pindex_final</span><span class="p">[</span><span class="n">col_order</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">pindex_final</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pindex_final</span><span class="o">.</span><span class="n">deleak_mask</span><span class="p">,</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;invalid&quot;</span>
+    <span class="c1"># Keep all systems, but don&#39;t include any deleak_mask = True in train/test/val.</span>
+    <span class="c1"># pindex_final[~pindex_final[&quot;deleak_mask&quot;]].to_csv(deleak_mask_outpath, index=False)</span>
+    <span class="n">pindex_final</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">deleak_mask_outpath</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_train_noisy_apo">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.get_train_noisy_apo">[docs]</a>
+<span class="k">def</span> <span class="nf">get_train_noisy_apo</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">noisy_config</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(</span>
+        <span class="n">max_interface_miss_frac</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">max_interface_miss_frac</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="n">max_refine_rmsd</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">max_refine_rmsd</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">,</span>
+        <span class="n">min_seq_identity</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">min_aligned_apo_res_frac</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">min_aligned_apo_res_frac</span> <span class="o">/</span> <span class="mf">2.5</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">metric_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;apo_metrics&quot;</span>
+    <span class="n">metric_pqt</span> <span class="o">=</span> <span class="n">metric_dir</span> <span class="o">/</span> <span class="s2">&quot;two_sided_apo_monomer_metrics.parquet&quot;</span>
+    <span class="k">assert</span> <span class="n">metric_pqt</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+    <span class="n">two_sided</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">metric_pqt</span><span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">two_sided</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;apo_holo_ligand_interface_frac&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_ligand_interface_res</span> <span class="o">/</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">holo_ligand_interface_res</span>
+    <span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;apo_holo_receptor_interface_frac&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_receptor_interface_res</span> <span class="o">/</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">holo_receptor_interface_res</span>
+    <span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;pairing_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided</span><span class="o">.</span><span class="n">id</span> <span class="o">+</span> <span class="s2">&quot;___&quot;</span> <span class="o">+</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_monomer_id</span> <span class="o">+</span> <span class="s2">&quot;___&quot;</span> <span class="o">+</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">unbound_body</span>
+    <span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;max_miss&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">two_sided</span><span class="p">[[</span><span class="s2">&quot;Fmiss_R&quot;</span><span class="p">,</span> <span class="s2">&quot;Fmiss_L&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;invalid_coverage&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_holo_receptor_interface_frac</span>
+            <span class="o">&gt;=</span> <span class="n">config</span><span class="o">.</span><span class="n">invalid_coverage_upper_bound</span>
+        <span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span>
+            <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_holo_ligand_interface_frac</span>
+            <span class="o">&gt;=</span> <span class="n">config</span><span class="o">.</span><span class="n">invalid_coverage_upper_bound</span>
+        <span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span>
+            <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_holo_receptor_interface_frac</span>
+            <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">invalid_coverage_lower_bound</span>
+        <span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span>
+            <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_holo_ligand_interface_frac</span>
+            <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">invalid_coverage_lower_bound</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;holo_res&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">holo_sequence</span><span class="p">]</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;apo_res&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">two_sided</span><span class="o">.</span><span class="n">apo_sequence</span><span class="p">]</span>
+    <span class="n">two_sided</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;frac_aligned&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">aln_res</span> <span class="o">/</span> <span class="nb">min</span><span class="p">([</span><span class="n">holo_res</span><span class="p">,</span> <span class="n">apo_res</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">aln_res</span><span class="p">,</span> <span class="n">holo_res</span><span class="p">,</span> <span class="n">apo_res</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">two_sided</span><span class="p">[</span><span class="s2">&quot;aln_res&quot;</span><span class="p">],</span> <span class="n">two_sided</span><span class="p">[</span><span class="s2">&quot;holo_res&quot;</span><span class="p">],</span> <span class="n">two_sided</span><span class="p">[</span><span class="s2">&quot;apo_res&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Only patch those systems which do NOT yet have an apo pairing</span>
+    <span class="n">train_no_apo</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;split == &quot;train&quot; and (~apo_R or ~apo_L)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+        <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">train_no_apo_R</span> <span class="o">=</span> <span class="n">train_no_apo</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;~apo_R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">train_no_apo_L</span> <span class="o">=</span> <span class="n">train_no_apo</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;~apo_L&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">two_sided_R</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided</span><span class="p">[</span><span class="n">two_sided</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_no_apo_R</span><span class="o">.</span><span class="n">id</span><span class="p">))]</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;unbound_body == &quot;R&quot;&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">two_sided_L</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided</span><span class="p">[</span><span class="n">two_sided</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_no_apo_L</span><span class="o">.</span><span class="n">id</span><span class="p">))]</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;unbound_body == &quot;L&quot;&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">two_sided_eval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">two_sided_R</span><span class="p">,</span> <span class="n">two_sided_L</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">potential_apo</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">two_sided_eval</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Fmiss_R &lt;= </span><span class="si">{</span><span class="n">noisy_config</span><span class="o">.</span><span class="n">max_interface_miss_frac</span><span class="si">}</span><span class="s2"> and Fmiss_L &lt;= </span><span class="si">{</span><span class="n">noisy_config</span><span class="o">.</span><span class="n">max_interface_miss_frac</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sequence_identity &gt;= </span><span class="si">{</span><span class="n">noisy_config</span><span class="o">.</span><span class="n">min_seq_identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;refine_rmsd &lt; </span><span class="si">{</span><span class="n">noisy_config</span><span class="o">.</span><span class="n">max_refine_rmsd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;frac_aligned &gt;= </span><span class="si">{</span><span class="n">noisy_config</span><span class="o">.</span><span class="n">min_aligned_apo_res_frac</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># .query(&#39;~invalid_coverage&#39;) keep this in there</span>
+        <span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;max_miss&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">potential_apo</span> <span class="o">=</span> <span class="n">add_weighted_apo_score</span><span class="p">(</span><span class="n">potential_apo</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">noisy_config</span><span class="p">)</span>
+    <span class="n">potential_apo</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;apo_pdb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">potential_apo</span><span class="o">.</span><span class="n">apo_monomer_id</span> <span class="o">+</span> <span class="s2">&quot;.pdb&quot;</span>
+    <span class="n">potential_apo</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span>
+        <span class="n">metric_dir</span> <span class="o">/</span> <span class="s2">&quot;scored_noisy_train_apo_pairings.parquet&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+    <span class="c1"># Select canonical apo monomer per R/L holo side based on apo score</span>
+    <span class="n">canonical</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">potential_apo</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;apo_score&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;unbound_body&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># Condense all valid pairings per R/L holo side based on available structures</span>
+    <span class="c1"># Store in order of descreasing apo score.</span>
+    <span class="n">condensed_pairings</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">potential_apo</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;unbound_body&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_score&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;unbound_body&quot;</span><span class="p">])[</span><span class="s2">&quot;apo_pdb&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">condensed_pairings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">condensed_pairings</span><span class="p">,</span>
+        <span class="n">canonical</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;unbound_body&quot;</span><span class="p">,</span> <span class="s2">&quot;apo_pdb&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;apo_pdb&quot;</span><span class="p">:</span> <span class="s2">&quot;canonical_pdb&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">),</span>
+        <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># Update apo_R/L, apo_R/L_pdb, and apo_R/L_pdbs columns in index</span>
+    <span class="n">col_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">apo_R_pdb</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_R_pdb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">apo_R_pdbs</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_R_pdbs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">apo_L_pdb</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_L_pdb&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="o">.</span><span class="n">apo_L_pdbs</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_L_pdbs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="n">index_rest</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="o">~</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_no_apo</span><span class="o">.</span><span class="n">id</span><span class="p">))]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">index_patch</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_no_apo</span><span class="o">.</span><span class="n">id</span><span class="p">))]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">side</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">condensed_pairings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;unbound_body&quot;</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;unbound_body&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">canon_pdb_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_pdb&quot;</span>
+        <span class="n">pdbs_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">_pdbs&quot;</span>
+        <span class="n">index_patch_side</span> <span class="o">=</span> <span class="n">index_patch</span><span class="p">[</span><span class="o">~</span><span class="n">index_patch</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span>
+            <span class="n">drop</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">index_rest_side</span> <span class="o">=</span> <span class="n">index_patch</span><span class="p">[</span><span class="n">index_patch</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">index_patch_side</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">canon_pdb_col</span><span class="p">,</span> <span class="n">pdbs_col</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span>
+        <span class="p">)</span>
+        <span class="n">rename_cols</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;canonical_pdb&quot;</span><span class="p">:</span> <span class="n">canon_pdb_col</span><span class="p">,</span>
+            <span class="s2">&quot;apo_pdb&quot;</span><span class="p">:</span> <span class="n">pdbs_col</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">rename_cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">index_patch_side</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">index_patch_side</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+        <span class="n">index_patch_side</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patch_side</span><span class="p">[</span><span class="n">pdbs_col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="n">pdbs_col</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">index_patch_side</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patch_side</span><span class="p">[</span><span class="n">canon_pdb_col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="n">canon_pdb_col</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">index_patch_side</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="sa">f</span><span class="s2">&quot;apo_</span><span class="si">{</span><span class="n">side</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index_patch_side</span><span class="p">[</span><span class="n">canon_pdb_col</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">index_patch</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">index_patch_side</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">index_patch</span><span class="o">.</span><span class="n">columns</span><span class="p">)],</span> <span class="n">index_rest_side</span><span class="p">],</span>
+            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">index_patched</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">index_rest</span><span class="p">,</span> <span class="n">index_patch</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">index_rest</span><span class="o">.</span><span class="n">columns</span><span class="p">)]],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">index_patched</span> <span class="o">=</span> <span class="n">index_patched</span><span class="p">[</span><span class="n">col_order</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Add apo_R/L_quality column to distinguish which class the apo belongs to: validated vs. noisy pairing</span>
+    <span class="n">R_patched_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;~apo_R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+        <span class="nb">set</span><span class="p">(</span><span class="n">index_patched</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;apo_R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">L_patched_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;~apo_L&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+        <span class="nb">set</span><span class="p">(</span><span class="n">index_patched</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;apo_L&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Anything that was &quot;patched&quot; is low quality</span>
+    <span class="n">index_patched</span><span class="p">[</span><span class="s2">&quot;apo_R_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index_patched</span><span class="p">[</span><span class="s2">&quot;apo_R_quality&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">index_patched</span><span class="p">[</span><span class="s2">&quot;apo_L_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index_patched</span><span class="p">[</span><span class="s2">&quot;apo_L_quality&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patched</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">R_patched_ids</span><span class="p">),</span> <span class="s2">&quot;apo_R_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;low&quot;</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patched</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">L_patched_ids</span><span class="p">),</span> <span class="s2">&quot;apo_L_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;low&quot;</span>
+    <span class="c1"># Everything else is high quality</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patched</span><span class="o">.</span><span class="n">apo_R_quality</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_R_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index_patched</span><span class="o">.</span><span class="n">apo_L_quality</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span> <span class="s2">&quot;apo_L_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;high&quot;</span>
+    <span class="c1"># Everything without apo is &quot;&quot; quality</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">index_patched</span><span class="o">.</span><span class="n">apo_R</span><span class="p">,</span> <span class="s2">&quot;apo_R_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">index_patched</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">index_patched</span><span class="o">.</span><span class="n">apo_L</span><span class="p">,</span> <span class="s2">&quot;apo_L_quality&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">index_patched</span></div>
+
+
+
+<div class="viewcode-block" id="add_neff_to_index">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.add_neff_to_index">[docs]</a>
+<span class="k">def</span> <span class="nf">add_neff_to_index</span><span class="p">(</span>
+    <span class="n">index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">monomer_neff</span> <span class="o">=</span> <span class="n">get_supplementary_data</span><span class="p">(</span><span class="s2">&quot;monomer_neff&quot;</span><span class="p">)</span>
+    <span class="n">col_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;chain1_neff&quot;</span><span class="p">,</span> <span class="s2">&quot;chain2_neff&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">index</span><span class="p">,</span> <span class="n">monomer_neff</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;chain1_neff&quot;</span><span class="p">,</span> <span class="s2">&quot;chain2_neff&quot;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span>
+    <span class="p">)</span>
+    <span class="c1"># There should be no NaN, but to be safe</span>
+    <span class="n">index</span><span class="p">[</span><span class="s2">&quot;chain1_neff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;chain1_neff&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">index</span><span class="p">[</span><span class="s2">&quot;chain2_neff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="s2">&quot;chain2_neff&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">col_order</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">index</span></div>
+
+
+
+<div class="viewcode-block" id="construct_final_index">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_splits.construct_final_index">[docs]</a>
+<span class="k">def</span> <span class="nf">construct_final_index</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">apo_config</span><span class="p">:</span> <span class="n">ApoPairingConfig</span> <span class="o">=</span> <span class="n">ApoPairingConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">blacklist_invalid_ids</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">TEST_SYSTEM_BLACKLIST</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">index_checkpoint_file</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;index.parquet&quot;</span>
+    <span class="n">meta_checkpoint_file</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.parquet&quot;</span>
+
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">index_checkpoint_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">meta_checkpoint_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index and metadata checkpoints exist. Skipping...&quot;</span><span class="p">)</span>
+    <span class="n">ialign_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;ialign_metrics&quot;</span>
+    <span class="n">chk5_path</span> <span class="o">=</span> <span class="n">ialign_dir</span> <span class="o">/</span> <span class="s2">&quot;pindex_checkpoint.5.parquet&quot;</span>
+    <span class="n">df5</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">chk5_path</span><span class="p">)</span>
+    <span class="n">metadata_path</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.2.csv.gz&quot;</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">metadata_path</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">})</span>
+    <span class="c1"># Add &quot;noisy&quot; potentially invalid apo pairings to train split that got filtered out</span>
+    <span class="n">df5</span> <span class="o">=</span> <span class="n">get_train_noisy_apo</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">,</span> <span class="n">df5</span><span class="p">,</span> <span class="n">apo_config</span><span class="p">)</span>
+
+    <span class="n">index_empty_str_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;apo_R_pdb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apo_L_pdb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apo_R_pdbs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apo_L_pdbs&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;predicted_R_pdb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;predicted_L_pdb&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apo_R_quality&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;apo_L_quality&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">index_empty_str_cols</span><span class="p">:</span>
+        <span class="n">df5</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">df5</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="n">index_schema</span> <span class="o">=</span> <span class="n">IndexEntry</span><span class="o">.</span><span class="vm">__annotations__</span>
+    <span class="n">index_fields</span> <span class="o">=</span> <span class="n">index_schema</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="n">df5</span> <span class="o">=</span> <span class="n">df5</span><span class="p">[</span><span class="n">index_fields</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Add per-chain Neff values calculated using pre-computed MSAs</span>
+    <span class="n">df5</span> <span class="o">=</span> <span class="n">add_neff_to_index</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span>
+    <span class="c1"># Downcast float and int columns and cast str object to category</span>
+    <span class="n">final_index</span> <span class="o">=</span> <span class="n">downcast_dtypes</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span>
+    <span class="c1"># Create union of uniprot_R/L and cluster_id_R/L categorical columns so they can be compared</span>
+    <span class="n">union_cols</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;uniprot_R&quot;</span><span class="p">,</span> <span class="s2">&quot;uniprot_L&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster_id_L&quot;</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">R_col</span><span class="p">,</span> <span class="n">L_col</span> <span class="ow">in</span> <span class="n">union_cols</span><span class="p">:</span>
+        <span class="n">cat_union</span> <span class="o">=</span> <span class="n">union_categoricals</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">final_index</span><span class="p">[</span><span class="n">R_col</span><span class="p">],</span> <span class="n">final_index</span><span class="p">[</span><span class="n">L_col</span><span class="p">]]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">categories</span>
+        <span class="n">final_index</span><span class="p">[</span><span class="n">R_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_index</span><span class="p">[</span><span class="n">R_col</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">(</span><span class="n">cat_union</span><span class="p">)</span>
+        <span class="n">final_index</span><span class="p">[</span><span class="n">L_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_index</span><span class="p">[</span><span class="n">L_col</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">set_categories</span><span class="p">(</span><span class="n">cat_union</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">final_index</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)):</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">IndexEntry</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">IndexEntry</span><span class="p">)</span>
+
+    <span class="n">final_index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">final_index</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">blacklist_invalid_ids</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;invalid&quot;</span>
+    <span class="p">)</span>
+    <span class="n">final_index</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">final_index</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">blacklist_invalid_ids</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="s2">&quot;pinder_xl&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="kc">False</span>
+    <span class="p">)</span>
+    <span class="c1"># Sort split categorical column by custom order, with invalid split members last.</span>
+    <span class="n">split_order</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">,</span> <span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid&quot;</span><span class="p">]</span>
+    <span class="n">final_index</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_index</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">reorder_categories</span><span class="p">(</span><span class="n">split_order</span><span class="p">)</span>
+    <span class="n">final_index</span> <span class="o">=</span> <span class="n">final_index</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;split&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">final_index</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">index_checkpoint_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+
+    <span class="n">meta_empty_str_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;biol_details&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;complex_type&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_ids_R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_ids_L&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_names_R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_names_L&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_intersection_R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_intersection_L&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">meta_empty_str_cols</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="n">meta_schema</span> <span class="o">=</span> <span class="n">MetadataEntry</span><span class="o">.</span><span class="vm">__annotations__</span>
+    <span class="c1"># Downcast float and int columns and cast str object to category</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">downcast_dtypes</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+    <span class="n">supplemental_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;ECOD_ids_R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_ids_L&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_intersection_R&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ECOD_intersection_L&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;chain_1_residues&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;chain_2_residues&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">supplemental_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">supplemental_cols</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">supp_meta</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">supplemental_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">supp_meta</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span>
+        <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;supplementary_metadata.parquet&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span>
+    <span class="p">)</span>
+    <span class="n">metadata</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">supplemental_cols</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">meta_fields</span> <span class="o">=</span> <span class="n">meta_schema</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="n">final_metadata</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="n">meta_fields</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="c1"># Sort metadata to match order of IDs in index</span>
+    <span class="n">final_metadata</span> <span class="o">=</span> <span class="n">final_metadata</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+    <span class="n">final_metadata</span> <span class="o">=</span> <span class="n">final_metadata</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">final_index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+    <span class="n">final_metadata</span> <span class="o">=</span> <span class="n">final_metadata</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">final_metadata</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">)):</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">MetadataEntry</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">MetadataEntry</span><span class="p">)</span>
+
+    <span class="n">final_metadata</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">meta_checkpoint_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

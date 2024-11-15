@@ -1,0 +1,1588 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.core.utils.cloud &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/core/utils/cloud';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/core/utils/cloud.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core.utils.cloud</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.core.utils.cloud</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ALL_COMPLETED</span><span class="p">,</span> <span class="n">ThreadPoolExecutor</span><span class="p">,</span> <span class="n">wait</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span> <span class="nn">gzip</span> <span class="kn">import</span> <span class="n">GzipFile</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">cpu_count</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">tqdm.std</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">gcsfs</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">google.cloud.storage.blob</span> <span class="kn">import</span> <span class="n">Blob</span>
+<span class="kn">from</span> <span class="nn">google.cloud.storage.bucket</span> <span class="kn">import</span> <span class="n">Bucket</span>
+<span class="kn">from</span> <span class="nn">google.cloud.storage.client</span> <span class="kn">import</span> <span class="n">Client</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">paths</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.timer</span> <span class="kn">import</span> <span class="n">timeit</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+
+
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;urllib3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
+
+<span class="n">UPLOAD</span> <span class="o">=</span> <span class="s2">&quot;upload_from_filename&quot;</span>
+<span class="n">DOWNLOAD</span> <span class="o">=</span> <span class="s2">&quot;download_to_filename&quot;</span>
+<span class="n">BLOB_ACTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="n">UPLOAD</span><span class="p">,</span> <span class="n">DOWNLOAD</span><span class="p">]</span>
+
+<span class="n">REMOTE_COPY</span> <span class="o">=</span> <span class="s2">&quot;copy_blob&quot;</span>
+<span class="n">BUCKET_ACTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="n">REMOTE_COPY</span><span class="p">]</span>
+<span class="n">LOG</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_safe_decode</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">incoming</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;strict&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Decodes incoming text/bytes string using `incoming` if they&#39;re not</span>
+<span class="sd">       already unicode.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    incoming</span>
+<span class="sd">        Text&#39;s current encoding</span>
+<span class="sd">    errors</span>
+<span class="sd">        Errors handling policy. See here for valid values</span>
+<span class="sd">        http://docs.python.org/2/library/codecs.html</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        text or a unicode `incoming` encoded representation of it.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If text is not an instance of str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> can&#39;t be decoded&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">text</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">incoming</span><span class="p">:</span>
+        <span class="n">incoming</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">sys</span><span class="o">.</span><span class="n">getdefaultencoding</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">incoming</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_format_with_unicode_kwargs</span><span class="p">(</span><span class="n">msg_format</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">msg_format</span> <span class="o">%</span> <span class="n">kwargs</span>
+    <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">_safe_decode</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">msg_format</span>
+        <span class="k">return</span> <span class="n">msg_format</span> <span class="o">%</span> <span class="n">kwargs</span>
+
+
+<div class="viewcode-block" id="Error">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Error">[docs]</a>
+<span class="k">class</span> <span class="nc">Error</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base error class</span>
+
+<span class="sd">    Child classes have a title and a message format.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">code</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">message_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;missing exception kwargs&quot;</span><span class="p">)</span>
+            <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">message_format</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">Error</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_build_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">message</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">message</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message_format</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_format_with_unicode_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message_format</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GCPError">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.GCPError">[docs]</a>
+<span class="k">class</span> <span class="nc">GCPError</span><span class="p">(</span><span class="n">Error</span><span class="p">):</span>
+    <span class="n">message_format</span> <span class="o">=</span> <span class="s2">&quot;Unexpected GCP Error&quot;</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">BAD_GATEWAY</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="p">[</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">BAD_GATEWAY</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="GCPTimeOutError">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.GCPTimeOutError">[docs]</a>
+<span class="k">class</span> <span class="nc">GCPTimeOutError</span><span class="p">(</span><span class="n">GCPError</span><span class="p">):</span>
+    <span class="n">message_format</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;The GCP request you have made timed out after attempting to reconnect&quot;</span>
+    <span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">GATEWAY_TIMEOUT</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="p">[</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">GATEWAY_TIMEOUT</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_cpu_limit">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.get_cpu_limit">[docs]</a>
+<span class="nd">@lru_cache</span>
+<span class="k">def</span> <span class="nf">get_cpu_limit</span><span class="p">(</span>
+    <span class="n">reserve_cpu</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">quota_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/sys/fs/cgroup/cpu/cpu.cfs_quota_us&quot;</span><span class="p">),</span>
+    <span class="n">period_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/sys/fs/cgroup/cpu/cpu.cfs_period_us&quot;</span><span class="p">),</span>
+    <span class="n">shares_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/sys/fs/cgroup/cpu/cpu.shares&quot;</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;See https://bugs.python.org/issue36054 for more details.</span>
+<span class="sd">    Attempt to correctly obtain the available CPU resources</span>
+<span class="sd">    allocated to a given container since os.cpu_count always</span>
+<span class="sd">    returns the machine resources, not the resources allocated</span>
+<span class="sd">    to the container.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cfs_quota_us</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">quota_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">with</span> <span class="n">quota_path</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">cfs_quota_us</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="n">avail_cpu</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">period_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">with</span> <span class="n">period_path</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">cfs_period_us</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">cfs_quota_us</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">avail_cpu</span> <span class="o">=</span> <span class="n">cfs_quota_us</span> <span class="o">//</span> <span class="n">cfs_period_us</span>
+    <span class="k">elif</span> <span class="n">shares_path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">with</span> <span class="n">shares_path</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">cpu_shares</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="n">avail_cpu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cpu_shares</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">avail_cpu</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;could not find cgroup cpu limits&quot;</span><span class="p">)</span>
+        <span class="n">avail_cpu</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">avail_cpu</span> <span class="o">-=</span> <span class="n">reserve_cpu</span>
+    <span class="k">if</span> <span class="n">avail_cpu</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">avail_cpu</span>
+    <span class="n">avail_cpu</span> <span class="o">=</span> <span class="n">cpu_count</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">avail_cpu</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">avail_cpu</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">([</span><span class="n">avail_cpu</span> <span class="o">-</span> <span class="n">reserve_cpu</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="get_container_cpu_frac">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.get_container_cpu_frac">[docs]</a>
+<span class="k">def</span> <span class="nf">get_container_cpu_frac</span><span class="p">(</span><span class="n">max_cpu_fraction</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">cpu_limit</span> <span class="o">=</span> <span class="n">get_cpu_limit</span><span class="p">()</span>
+    <span class="n">cpu</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">max_cpu_fraction</span> <span class="o">*</span> <span class="n">cpu_limit</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cpu</span></div>
+
+
+
+<div class="viewcode-block" id="retry_bucket_method">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.retry_bucket_method">[docs]</a>
+<span class="k">def</span> <span class="nf">retry_bucket_method</span><span class="p">(</span>
+    <span class="n">source_blob</span><span class="p">:</span> <span class="n">Blob</span><span class="p">,</span>
+    <span class="n">target_blob</span><span class="p">:</span> <span class="n">Blob</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retry wrapper around bucket.copy_blob to</span>
+<span class="sd">    tolerate intermittent network outages. Can be generalized</span>
+<span class="sd">    to other Bucket methods which are not also provided as</span>
+<span class="sd">    convenience methods on the Blob object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source_blob : Blob</span>
+<span class="sd">        blob to copy</span>
+<span class="sd">    target_blob : Blob</span>
+<span class="sd">        new location of source blob</span>
+<span class="sd">    timeout : tuple, default=(5, 120)</span>
+<span class="sd">        timeout forwarded to Bucket method</span>
+<span class="sd">    retries : int, default=5</span>
+<span class="sd">        how many times to attempt the method</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">exc</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">source_blob</span><span class="o">.</span><span class="n">bucket</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">retries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">func</span><span class="p">(</span>
+                <span class="n">blob</span><span class="o">=</span><span class="n">source_blob</span><span class="p">,</span>
+                <span class="n">destination_bucket</span><span class="o">=</span><span class="n">target_blob</span><span class="o">.</span><span class="n">bucket</span><span class="p">,</span>
+                <span class="n">new_name</span><span class="o">=</span><span class="n">target_blob</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># exponential backoff on retry</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">source_blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> hit </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">, sleeping </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">i</span><span class="si">}</span><span class="s2">s&quot;</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">exc</span> <span class="o">=</span> <span class="n">e</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">continue</span>
+    <span class="n">LOG</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;failed to copy blob to </span><span class="si">{</span><span class="n">target_blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">GCPTimeOutError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Timeout error for </span><span class="si">{</span><span class="n">source_blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="bucket_process_many">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.bucket_process_many">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">bucket_process_many</span><span class="p">(</span>
+    <span class="n">sources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Blob</span><span class="p">],</span>
+    <span class="n">targets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Blob</span><span class="p">],</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">global_timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Use a ThreadPoolExecutor to execute multiple bucket</span>
+<span class="sd">    operations concurrently using the python storage API.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sources : List[Blob]</span>
+<span class="sd">        source blobs</span>
+<span class="sd">    targets : List[Blob]</span>
+<span class="sd">        target blobs</span>
+<span class="sd">    method : str</span>
+<span class="sd">        name of Bucket method to call</span>
+<span class="sd">    global_timeout : int=600</span>
+<span class="sd">        timeout to wait for all operations to complete</span>
+<span class="sd">    timeout : tuple, default=(5, 120)</span>
+<span class="sd">        timeout forwarded to Bucket method</span>
+<span class="sd">    retries : int, default=5</span>
+<span class="sd">        how many times to attempt the method</span>
+<span class="sd">    threads : int, default=4</span>
+<span class="sd">        how many threads to use in the thread pool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">targets</span><span class="p">):</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Gsutil bucket_process_many was called with no files&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">BUCKET_ACTIONS</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">=}</span><span class="s2"> not in </span><span class="si">{</span><span class="n">BUCKET_ACTIONS</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">threads</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">threads</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">futures</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                <span class="n">retry_bucket_method</span><span class="p">,</span>
+                <span class="n">source</span><span class="p">,</span>
+                <span class="n">target</span><span class="p">,</span>
+                <span class="n">method</span><span class="p">,</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+                <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">wait</span><span class="p">(</span>
+            <span class="n">futures</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">global_timeout</span><span class="p">,</span>
+            <span class="n">return_when</span><span class="o">=</span><span class="n">ALL_COMPLETED</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span>  <span class="c1"># type: ignore</span></div>
+
+
+
+<div class="viewcode-block" id="retry_blob_method">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.retry_blob_method">[docs]</a>
+<span class="k">def</span> <span class="nf">retry_blob_method</span><span class="p">(</span>
+    <span class="n">blob</span><span class="p">:</span> <span class="n">Blob</span><span class="p">,</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Thin wrapper around Blob methods to add a retry</span>
+<span class="s2">    loop. Supports the following actions: </span><span class="si">{</span><span class="n">BLOB_ACTIONS</span><span class="si">}</span><span class="s2">.</span>
+
+<span class="s2">    Parameters</span>
+<span class="s2">    ----------</span>
+<span class="s2">    blob : Blob</span>
+<span class="s2">        the blob to process</span>
+<span class="s2">    method : str</span>
+<span class="s2">        &quot;</span><span class="si">{</span><span class="n">UPLOAD</span><span class="si">}</span><span class="s2">&quot; | &quot;</span><span class="si">{</span><span class="n">DOWNLOAD</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s2">    path : str</span>
+<span class="s2">        the path string to upload to or download to</span>
+<span class="s2">    retries : int, default=5</span>
+<span class="s2">        how many times to attempt the method</span>
+<span class="s2">    timeout : tuple, default=(5, 120)</span>
+<span class="s2">        forwarded to the Blob method itself</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">kws</span> <span class="o">=</span> <span class="p">{</span><span class="n">UPLOAD</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">}}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">exc</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">blob</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+    <span class="c1"># bucket.blob doesn&#39;t return blob metadata - bucket.get_blob does.</span>
+    <span class="n">blob_name</span> <span class="o">=</span> <span class="n">blob</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">blob</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
+        <span class="n">blob</span> <span class="o">=</span> <span class="n">blob</span><span class="o">.</span><span class="n">bucket</span><span class="o">.</span><span class="n">get_blob</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="c1"># In case blob.size was not defined, bucket.get_blob may return a NoneType.</span>
+    <span class="k">if</span> <span class="n">blob</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Requested storage blob &lt;</span><span class="si">{</span><span class="n">blob_name</span><span class="si">}</span><span class="s2">&gt; does not exist! &quot;</span>
+            <span class="s2">&quot;Verify that the provided GCS path points to a valid file!&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Only show pbar at 500Mb</span>
+    <span class="n">large_file</span> <span class="o">=</span> <span class="n">blob</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span> <span class="o">&gt;</span> <span class="mi">500</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">UPLOAD</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="n">DOWNLOAD</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;remote rm </span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">retries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">DOWNLOAD</span><span class="p">:</span>
+                <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">DOWNLOAD</span> <span class="ow">and</span> <span class="n">large_file</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span>
+                        <span class="n">f</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">blob</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Downloading </span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+                        <span class="n">blob</span><span class="o">.</span><span class="n">download_to_file</span><span class="p">(</span><span class="n">file_obj</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">func</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># exponential backoff on retry</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> hit </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">, sleeping </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">i</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+            <span class="n">exc</span> <span class="o">=</span> <span class="n">e</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">continue</span>
+    <span class="n">LOG</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;failed on </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Timeout error </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="process_many">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.process_many">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">process_many</span><span class="p">(</span>
+    <span class="n">path_pairs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Blob</span><span class="p">]],</span>
+    <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">global_timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Use a ThreadPoolExecutor to execute multiple uploads</span>
+<span class="s2">    or downloads concurrently using the python storage API.</span>
+
+<span class="s2">    Parameters</span>
+<span class="s2">    ----------</span>
+<span class="s2">    path_pairs : list</span>
+<span class="s2">        tuples of (path_str, Blob)</span>
+<span class="s2">    method : str</span>
+<span class="s2">        &quot;</span><span class="si">{</span><span class="n">UPLOAD</span><span class="si">}</span><span class="s2">&quot; | &quot;</span><span class="si">{</span><span class="n">DOWNLOAD</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s2">    global_timeout : int=600</span>
+<span class="s2">        timeout to wait for all operations to complete</span>
+<span class="s2">    timeout : tuple, default=(5, 120)</span>
+<span class="s2">        timeout forwarded to Blob method</span>
+<span class="s2">    retries : int, default=5</span>
+<span class="s2">        how many times to attempt the method</span>
+<span class="s2">    threads : int, default=4</span>
+<span class="s2">        how many threads to use in the thread pool</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">path_pairs</span><span class="p">):</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Gsutil process_many was called with no files&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">BLOB_ACTIONS</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">method</span><span class="si">=}</span><span class="s2"> not in </span><span class="si">{</span><span class="n">BLOB_ACTIONS</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">threads</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">path_pairs</span><span class="p">))</span>
+    <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Gsutil process_many=</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">, threads=</span><span class="si">{</span><span class="n">threads</span><span class="si">}</span><span class="s2">, items=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">path_pairs</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">threads</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">futures</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
+                <span class="n">retry_blob_method</span><span class="p">,</span>
+                <span class="n">blob</span><span class="p">,</span>
+                <span class="n">method</span><span class="p">,</span>
+                <span class="n">path</span><span class="p">,</span>
+                <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+                <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">path_pairs</span>
+        <span class="p">]</span>
+        <span class="n">wait</span><span class="p">(</span>
+            <span class="n">futures</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">global_timeout</span><span class="p">,</span>
+            <span class="n">return_when</span><span class="o">=</span><span class="n">ALL_COMPLETED</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="n">future</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span>  <span class="c1"># type: ignore</span></div>
+
+
+
+<div class="viewcode-block" id="method_context">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.method_context">[docs]</a>
+<span class="k">def</span> <span class="nf">method_context</span><span class="p">(</span>
+    <span class="n">sources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+    <span class="n">targets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Determine by inspection of source and target</span>
+<span class="s2">    whether the action to perform is an upload or</span>
+<span class="s2">    a download. Assumes all paths in sources and</span>
+<span class="s2">    targets are self-consistent, i.e., all remote</span>
+<span class="s2">    or local paths, respectively.</span>
+
+<span class="s2">    Parameters</span>
+<span class="s2">    ----------</span>
+<span class="s2">    source : List[Path]</span>
+<span class="s2">        source paths</span>
+<span class="s2">    target : List[Path]</span>
+<span class="s2">        target paths</span>
+
+<span class="s2">    Returns</span>
+<span class="s2">    -------</span>
+<span class="s2">    tup : tuple</span>
+<span class="s2">        (local, remote, &quot;</span><span class="si">{</span><span class="n">UPLOAD</span><span class="si">}</span><span class="s2">&quot; | &quot;</span><span class="si">{</span><span class="n">DOWNLOAD</span><span class="si">}</span><span class="s2">&quot;)</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">source_local</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">is_local_path</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+    <span class="n">target_local</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">is_local_path</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">source_local</span> <span class="ow">and</span> <span class="n">target_local</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">source</span><span class="si">=}</span><span class="s2"> and </span><span class="si">{</span><span class="n">target</span><span class="si">=}</span><span class="s2"> are both local paths!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">source_local</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">target_local</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">source</span><span class="si">=}</span><span class="s2"> and </span><span class="si">{</span><span class="n">target</span><span class="si">=}</span><span class="s2"> are both remote paths!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">source_local</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sources</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">UPLOAD</span>
+    <span class="k">return</span> <span class="n">targets</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">DOWNLOAD</span></div>
+
+
+
+<div class="viewcode-block" id="make_path_pairs">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.make_path_pairs">[docs]</a>
+<span class="k">def</span> <span class="nf">make_path_pairs</span><span class="p">(</span>
+    <span class="n">local_paths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+    <span class="n">remote_keys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Blob</span><span class="p">]],</span>
+    <span class="n">bucket</span><span class="p">:</span> <span class="n">Bucket</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Blob</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create pairs of (str, Blob) for threaded processing.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    local_paths : List[Path]</span>
+<span class="sd">        local file paths</span>
+<span class="sd">    remote_keys : List[str] | List[Path] | List[Blob]</span>
+<span class="sd">        remote key locations</span>
+<span class="sd">    bucket : Bucket</span>
+<span class="sd">        client provider</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pairs : List[Tuple[str, Blob]]</span>
+<span class="sd">        destinations and blobs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">local_paths</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">remote_keys</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">get_blob</span><span class="p">(</span><span class="n">blob</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="n">Blob</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Blob</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">blob</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">as_posix</span><span class="p">())</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">blob</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">blob</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">blob</span>
+
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">(),</span>
+            <span class="n">get_blob</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_keys</span><span class="p">)</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="Gsutil">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil">[docs]</a>
+<span class="k">class</span> <span class="nc">Gsutil</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Attempt to achieve the efficiency of &quot;gsutil -m&quot; commands</span>
+<span class="sd">    using the python storage API. This involves using a simple</span>
+<span class="sd">    ThreadPoolExecutor to circumvent blocking network I/O and</span>
+<span class="sd">    retain an ergonomic high-level user interface.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">DOWNLOAD</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">DOWNLOAD</span>
+    <span class="n">UPLOAD</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">UPLOAD</span>
+    <span class="n">REMOTE_COPY</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">REMOTE_COPY</span>
+
+<div class="viewcode-block" id="Gsutil.process_many">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.process_many">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">process_many</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Blob</span><span class="p">]],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">process_many</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.bucket_process_many">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.bucket_process_many">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">bucket_process_many</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Blob</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">bucket_process_many</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">()&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Client</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bucket</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Gsutil.get_bucket">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.get_bucket">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_bucket</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span> <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Bucket</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Bucket</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bucket</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">bucket</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bucket</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bucket</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">create_anonymous_client</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">bucket</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;could not create bucket from </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bucket</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.cp_paired_paths">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_paired_paths">[docs]</a>
+    <span class="k">def</span> <span class="nf">cp_paired_paths</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sources</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_ListStrPath</span><span class="p">,</span>
+        <span class="n">targets</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_ListStrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Bucket</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">threads</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Copy a collection of sources to collection of targets.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sources : List[str | Path]</span>
+<span class="sd">            source files to copy</span>
+<span class="sd">        targets : List[str | Path]</span>
+<span class="sd">            target destinations</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing client</span>
+<span class="sd">        threads : int, default=None</span>
+<span class="sd">            explicit number of threads passed to ThreadPoolExecutor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Only support target as list of str or Paths, got </span><span class="si">{</span><span class="n">targets</span><span class="si">=}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_paths</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">method_context</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">],</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Gsutil.cp_paths received no files&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">remote_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">UPLOAD</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Uploading paired paths not supported! See cp_paths&quot;</span><span class="p">)</span>
+
+        <span class="n">remote_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">remote_paths</span><span class="p">]</span>
+        <span class="n">pairs</span> <span class="o">=</span> <span class="n">make_path_pairs</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_keys</span><span class="p">,</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">process_many</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span> <span class="ow">or</span> <span class="n">get_cpu_limit</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.cp_paths">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_paths">[docs]</a>
+    <span class="k">def</span> <span class="nf">cp_paths</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sources</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_ListStrPath</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">anchor</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Bucket</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">threads</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Copy a collection of sources to target.</span>
+<span class="sd">        target must be a single path.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sources : List[str | Path]</span>
+<span class="sd">            source files to copy</span>
+<span class="sd">        target : str | Path</span>
+<span class="sd">            target destination</span>
+<span class="sd">        anchor : str | Path</span>
+<span class="sd">            make source paths relative to anchor</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing client</span>
+<span class="sd">        threads : int, default=None</span>
+<span class="sd">            explicit number of threads passed to ThreadPoolExecutor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Only support target as single str or Path, got </span><span class="si">{</span><span class="n">target</span><span class="si">=}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_paths</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">method_context</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="p">[</span><span class="n">target</span><span class="p">]],</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Gsutil.cp_paths received no files&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">anchor</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">remote_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">UPLOAD</span><span class="p">:</span>
+            <span class="n">remote</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">strip_glob</span><span class="p">(</span><span class="n">remote_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">rkey</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+            <span class="n">remote_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">rkey</span> <span class="o">/</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">local_paths</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">local</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">strip_glob</span><span class="p">(</span><span class="n">local_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">local</span> <span class="o">/</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">remote_paths</span><span class="p">]</span>
+            <span class="n">remote_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">remote_paths</span><span class="p">]</span>
+        <span class="n">pairs</span> <span class="o">=</span> <span class="n">make_path_pairs</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_keys</span><span class="p">,</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">process_many</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span> <span class="ow">or</span> <span class="n">get_cpu_limit</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.cp_dir">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_dir">[docs]</a>
+    <span class="k">def</span> <span class="nf">cp_dir</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">source</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">threads</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Copy an entire source directory to target. Assumes</span>
+<span class="sd">        everything processed will be relative to source and target.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        source : str | Path</span>
+<span class="sd">            source directory to copy</span>
+<span class="sd">        target : str | Path</span>
+<span class="sd">            target destination</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing client</span>
+<span class="sd">        threads : int, default=None</span>
+<span class="sd">            explicit number of threads passed to ThreadPoolExecutor</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        For downloading flat directories like:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            gs://{bucket}/{flat_path}</span>
+<span class="sd">            ├── data.csv</span>
+<span class="sd">            ├── other_data.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     f&quot;gs://{bucket}/{flat_path}&quot;,</span>
+<span class="sd">            ...     &quot;/path/to/local_dir&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            /path/to/local_dir</span>
+<span class="sd">            ├── data.csv</span>
+<span class="sd">            ├── other_data.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        For downloading nested directories like:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            gs://{bucket}/{nested_path}</span>
+<span class="sd">            ├── {nested_path}-0</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            ├── {nested_path}-1</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     f&quot;gs://{bucket}/{nested_path}&quot;,</span>
+<span class="sd">            ...     &quot;/path/to/local_dir&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            /path/to/local_dir</span>
+<span class="sd">            ├── {nested_path}-0</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            ├── {nested_path}-1</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        For uploading flat directories like:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            /path/to/local_dir</span>
+<span class="sd">            ├── data.csv</span>
+<span class="sd">            ├── other_data.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     &quot;/path/to/local_dir&quot;,</span>
+<span class="sd">            ...     f&quot;gs://{bucket}/{target_path}&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            gs://{bucket}/{target_path}</span>
+<span class="sd">            ├── data.csv</span>
+<span class="sd">            ├── other_data.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        For uploading nested directories like:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            /path/to/local_dir</span>
+<span class="sd">            ├── {nested_path}-0</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            ├── {nested_path}-1</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     &quot;/path/to/local_dir&quot;,</span>
+<span class="sd">            ...     f&quot;gs://{bucket}/{nested_path}&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            gs://{bucket}/{nested_path}</span>
+<span class="sd">            ├── {nested_path}-0</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            ├── {nested_path}-1</span>
+<span class="sd">            │   └── item.json</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        For downloading files using partial matches:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            gs://{bucket}/{prefix}/{partial_match}</span>
+<span class="sd">            ├── {partial_match}-0.csv</span>
+<span class="sd">            ├── {partial_match}-1.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     &quot;gs://{bucket}/{prefix}/{partial_match}&quot;,</span>
+<span class="sd">            ...     &quot;test_dir/subdir&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            test_dir</span>
+<span class="sd">            └── subdir</span>
+<span class="sd">                ├── {partial_match}-0.csv</span>
+<span class="sd">                ├── {partial_match}-1.csv</span>
+<span class="sd">                └── ...</span>
+
+<span class="sd">        For uploading files using partial matches:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            test_dir</span>
+<span class="sd">            └── subdir</span>
+<span class="sd">                ├── {partial_match}-0.csv</span>
+<span class="sd">                ├── {partial_match}-1.csv</span>
+<span class="sd">                └── ...</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            &gt;&gt;&gt; Gsutil().cp_dir(</span>
+<span class="sd">            ...     &quot;test_dir/subdir/{partial_match}&quot;,</span>
+<span class="sd">            ...     &quot;gs://{bucket}/{prefix}/test_upload&quot;,</span>
+<span class="sd">            ... ) # doctest: +SKIP</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            # should result in</span>
+<span class="sd">            gs://{bucket}/{prefix}/test_upload</span>
+<span class="sd">            ├── {partial_match}-0.csv</span>
+<span class="sd">            ├── {partial_match}-1.csv</span>
+<span class="sd">            └── ...</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;*&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;*&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Gsutil will not resolve glob expressions&quot;</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">local</span><span class="p">],</span> <span class="p">[</span><span class="n">remote</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="n">method_context</span><span class="p">([</span><span class="n">Path</span><span class="p">(</span><span class="n">source</span><span class="p">)],</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">target</span><span class="p">)])</span>
+        <span class="n">local</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">strip_glob</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
+        <span class="n">remote</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">strip_glob</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+        <span class="n">rkey</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">remote</span><span class="p">,</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="n">UPLOAD</span><span class="p">:</span>
+            <span class="n">local_paths</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">expand_local_path</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># when a clean directory is provided</span>
+                <span class="n">remote_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">rkey</span> <span class="o">/</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">local</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">local_paths</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="c1"># when trailing filter characters are provided</span>
+                <span class="n">remote_keys</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">rkey</span> <span class="o">/</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">local</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">local_paths</span>
+                <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># assume a clean directory was provided</span>
+            <span class="n">remote_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bucket</span><span class="o">.</span><span class="n">list_blobs</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rkey</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">remote_keys</span><span class="p">):</span>
+                <span class="c1"># but allow for trailing filter characters</span>
+                <span class="n">remote_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">bucket</span><span class="o">.</span><span class="n">list_blobs</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rkey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">remote_keys</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">remote_keys</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">local</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c1"># the case where clean directory was provided</span>
+                    <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="n">local</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">rkey</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">remote_keys</span>
+                    <span class="p">]</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="n">rkey</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">rkey</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+                    <span class="c1"># the case where we have trailing filter characters</span>
+                    <span class="n">local_paths</span> <span class="o">=</span> <span class="p">[</span>
+                        <span class="n">local</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">rkey</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">remote_keys</span>
+                    <span class="p">]</span>
+        <span class="n">pairs</span> <span class="o">=</span> <span class="n">make_path_pairs</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">remote_keys</span><span class="p">,</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">process_many</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="n">threads</span> <span class="ow">or</span> <span class="n">get_cpu_limit</span><span class="p">())</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_ls</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Bucket</span><span class="p">,</span>
+        <span class="n">versions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">recursive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Blob</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Bucket search&quot;&quot;&quot;</span>
+        <span class="n">remote</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">paths</span><span class="o">.</span><span class="n">is_local_path</span><span class="p">(</span><span class="n">remote</span><span class="p">):</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gsutil.ls will skip </span><span class="si">{</span><span class="n">remote</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">iter</span><span class="p">(())</span>
+        <span class="n">remote_key</span> <span class="o">=</span> <span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">remote</span><span class="p">)</span>
+        <span class="c1">## Logic to allow mimicking ls in a non-recursive manner</span>
+        <span class="c1"># The remote key will *never* have a trailing slash as currently</span>
+        <span class="c1"># implemented. If we are passing delimiter (non-recursive),</span>
+        <span class="c1"># we want to append the delimiter iff the remote_key is not a blob.</span>
+        <span class="n">extra_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">recursive</span><span class="p">:</span>
+            <span class="n">extra_kwargs</span><span class="p">[</span><span class="s2">&quot;delimiter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">remote_key</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">remote_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">remote_key</span><span class="si">}{</span><span class="n">extra_kwargs</span><span class="p">[</span><span class="s1">&#39;delimiter&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="c1"># Call to list_blobs</span>
+        <span class="n">blob_iter</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Blob</span><span class="p">]</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">list_blobs</span><span class="p">(</span>
+            <span class="n">prefix</span><span class="o">=</span><span class="n">remote_key</span><span class="p">,</span>
+            <span class="n">versions</span><span class="o">=</span><span class="n">versions</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">extra_kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">blob_iter</span>
+
+<div class="viewcode-block" id="Gsutil.ls">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.ls">[docs]</a>
+    <span class="k">def</span> <span class="nf">ls</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">recursive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List the contents of a remote directory, returning full paths</span>
+<span class="sd">        to files including gs://{bucket_name}.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target : str | Path</span>
+<span class="sd">            root path for remote files to list</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing client</span>
+<span class="sd">        recursive : bool</span>
+<span class="sd">            recursively list files in sub-directories</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        paths : List[Path]</span>
+<span class="sd">            full remote paths to listed files</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">blobs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ls</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="n">recursive</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;gs://</span><span class="si">{</span><span class="n">bucket</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">blob</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">blob</span> <span class="ow">in</span> <span class="n">blobs</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.ls_blobs">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.ls_blobs">[docs]</a>
+    <span class="k">def</span> <span class="nf">ls_blobs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">,</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">versions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Blob</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remote ls returning blob objects instead of paths</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target : str | Path</span>
+<span class="sd">            root path for remote files to list</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing client</span>
+<span class="sd">        versions : bool, default=False</span>
+<span class="sd">            if True, include blob versions</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        paths : List[Path]</span>
+<span class="sd">            full remote paths to listed files</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ls</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">versions</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Gsutil.remote_cp">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.remote_cp">[docs]</a>
+    <span class="k">def</span> <span class="nf">remote_cp</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">sources</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">],</span>
+        <span class="n">targets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">paths</span><span class="o">.</span><span class="n">_StrPath</span><span class="p">],</span>
+        <span class="n">bucket</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transfer remote files from one location to another without</span>
+<span class="sd">        downloading them to a local context first. Assumes all source</span>
+<span class="sd">        files reside in the same bucket, and all target files reside in</span>
+<span class="sd">        the same bucket, but the source bucket can be different from</span>
+<span class="sd">        the target bucket.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sources : List[str | Path]</span>
+<span class="sd">            full remote paths to copy from</span>
+<span class="sd">        targets : List[str | Path]</span>
+<span class="sd">            full remote paths to copy to</span>
+<span class="sd">        bucket : Any</span>
+<span class="sd">            optionally pass existing bucket (assumes source and target</span>
+<span class="sd">            buckets are the same bucket)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">]</span>
+        <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">((</span><span class="n">paths</span><span class="o">.</span><span class="n">is_local_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">))</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">is_local_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Gsutil.remote_cp is only meant for remote-&gt;remote copy&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">source_bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">target_bucket</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">targets</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bucket</span><span class="p">)</span>
+        <span class="n">bucket_process_many</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">source_bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">source</span><span class="p">))</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">target_bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">paths</span><span class="o">.</span><span class="n">remote_key</span><span class="p">(</span><span class="n">target</span><span class="p">))</span> <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">],</span>
+            <span class="n">REMOTE_COPY</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="gcs_read_dataframe">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.cloud.gcs_read_dataframe">[docs]</a>
+<span class="k">def</span> <span class="nf">gcs_read_dataframe</span><span class="p">(</span>
+    <span class="n">gcs_uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">fs</span><span class="p">:</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="s2">&quot;anon&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read remote files directly into `pandas.DataFrame` with anonymous client credentials.</span>
+
+<span class="sd">    If the gcsfs.GCSFileSystem object is not provided, one will be created with</span>
+<span class="sd">    token set to `anon` (no authentication is performed), and you can only</span>
+<span class="sd">    access data which is accessible to IAM principal allUsers.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    gcs_uri : str | Path</span>
+<span class="sd">        full remote paths to read.</span>
+<span class="sd">        Must end with .csv, .csv.gz, or .parquet extension.</span>
+<span class="sd">    fs : gcsfs.GCSFileSystem</span>
+<span class="sd">        optionally pass an existing authenticated GCSFileSystem object to use.</span>
+<span class="sd">    token : str | None</span>
+<span class="sd">        optionally pass a token type to use for authenticating requests.</span>
+<span class="sd">        Default is &quot;anon&quot; (only public objects). If an authentication error is raised,</span>
+<span class="sd">        the method is retried with token=None to attempt to infer credentials in the following order:</span>
+<span class="sd">        gcloud CLI default, gcsfs cached token, google compute metadata service, anonymous.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Verify that the filepath is a GCS uri, if its not don&#39;t use gcsfs</span>
+    <span class="n">remote</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">gcs_uri</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;gs://&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+    <span class="n">file_ext</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">gcs_uri</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span>
+    <span class="k">if</span> <span class="n">file_ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;.gz&quot;</span><span class="p">]:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span>
+    <span class="k">elif</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s2">&quot;.parquet&quot;</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span>
+    <span class="k">if</span> <span class="n">remote</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">gcs_uri</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">file_ext</span> <span class="o">==</span> <span class="s2">&quot;.gz&quot;</span><span class="p">:</span>
+                    <span class="n">g</span> <span class="o">=</span> <span class="n">GzipFile</span><span class="p">(</span><span class="n">fileobj</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># Decompress data with gzip</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">retry</span><span class="o">.</span><span class="n">HttpError</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Failed to read </span><span class="si">{</span><span class="n">gcs_uri</span><span class="si">}</span><span class="s2"> with token=`anon`, retrying with token=None.&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="n">gcs_read_dataframe</span><span class="p">(</span><span class="n">gcs_uri</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># It&#39;s a local file</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">reader</span><span class="p">(</span><span class="n">gcs_uri</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

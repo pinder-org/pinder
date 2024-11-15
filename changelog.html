@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Changelog &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'changelog';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/changelog.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Limitations" href="limitations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Changelog</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">#</a></h1>
+<section id="pinder-2024-02-release">
+<h2>Pinder 2024-02 release<a class="headerlink" href="#pinder-2024-02-release" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>New dataset release version <code class="docutils literal notranslate"><span class="pre">2024-02</span></code>, with RCSB PDB entries ingested up until February 2024</p></li>
+<li><p>We’ve increased Foldseek’s sensitivity and now utilize LDDT (new) to better capture the alignment of flexible chains.</p></li>
+<li><p>We’ve added unit tests and QC reports that sanity check the splits using sequence alignments from MMseqs, domain annotations from ECOD, iAlign similary amongst other methods.</p></li>
+<li><p>Improved alignment sensitivity by optimizing Foldseek parameters</p></li>
+<li><p>We introduced an additional de-leaking step where we search for transitive neighbors in the interface alignment graph and use this to remove leakage across clusters</p></li>
+<li><p>With the re-run, we were able to increase the total dataset size, including newer RCSB entries that were not part of the previous ingest (this one goes up to Feb 2024)</p></li>
+<li><p>Most importantly, this increases <code class="docutils literal notranslate"><span class="pre">pinder-af2</span></code> holdout size from 69 before to 180 total now.</p>
+<ul>
+<li><p>In addition to an overall larger size, we further improved the de-leaking process by scoring pairs of dimers with Foldseek or MMSeqs hits via iAlign to extract interface similarity.</p></li>
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">pinder-af2</span></code> set is comprised of systems that come from a PDB entry that was released after the AF2 training date (time split) and low or no interface similarity to AF2 training members.</p></li>
+<li><p>There are 675 clusters in the time-split and 180 systems in the final iAlign-deleaked set.</p></li>
+</ul>
+</li>
+</ul>
+<section id="updated-dataset-counts">
+<h3>Updated dataset counts<a class="headerlink" href="#updated-dataset-counts" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Dataset</p></th>
+<th class="head text-right"><p>Size</p></th>
+<th class="head text-right"><p>PDB IDs</p></th>
+<th class="head text-right"><p>Clusters</p></th>
+<th class="head text-right"><p>Apo pairs</p></th>
+<th class="head text-right"><p>AF2 Pairs</p></th>
+<th class="head text-right"><p>Apo <span class="math notranslate nohighlight">\(\geq 1\)</span></p></th>
+<th class="head text-right"><p>AF2 <span class="math notranslate nohighlight">\(\geq 1\)</span></p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">PINDER-XL</span></code></p></td>
+<td class="text-right"><p>1,955</p></td>
+<td class="text-right"><p>1,955</p></td>
+<td class="text-right"><p>1,955</p></td>
+<td class="text-right"><p>342</p></td>
+<td class="text-right"><p>1,747</p></td>
+<td class="text-right"><p>436</p></td>
+<td class="text-right"><p>1,775</p></td>
+<td class="text-left"><p>Full test set, 1,955 cluster representatives</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">PINDER-S</span></code></p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>93</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-right"><p>143</p></td>
+<td class="text-right"><p>250</p></td>
+<td class="text-left"><p>A smaller subset of PINDER-XL, comprised of 250 clusters (188 heterodimer and 62 homodimers) sampled for diverse Uniprot and PFAM annotations, with full AFDB coverage, to evaluate methods for which sampling from the full set is too slow</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">PINDER-AF2</span></code></p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>180</p></td>
+<td class="text-right"><p>30</p></td>
+<td class="text-right"><p>127</p></td>
+<td class="text-right"><p>37</p></td>
+<td class="text-right"><p>133</p></td>
+<td class="text-left"><p>A smaller subset of PINDER-XL, comprised of 180 clusters, 30 of which have paired apo structures and 131 with paired AFDB structures, which were deleaked against the AF2MM training set with a more rigorous deleaking process to remove any members with interfaces similar to the AF2MM training set as determined by iAlign, to evaluate methods against AF2MM</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Val</span></code></p></td>
+<td class="text-right"><p>1,958</p></td>
+<td class="text-right"><p>1,958</p></td>
+<td class="text-right"><p>1,958</p></td>
+<td class="text-right"><p>342</p></td>
+<td class="text-right"><p>1,789</p></td>
+<td class="text-right"><p>441</p></td>
+<td class="text-right"><p>1,817</p></td>
+<td class="text-left"><p>Validation set, consisting of 1,958 cluster representatives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Train</span></code></p></td>
+<td class="text-right"><p>1,560,682</p></td>
+<td class="text-right"><p>62,706</p></td>
+<td class="text-right"><p>42,220</p></td>
+<td class="text-right"><p>136,498</p></td>
+<td class="text-right"><p>566,171</p></td>
+<td class="text-right"><p>274,194</p></td>
+<td class="text-right"><p>621,276</p></td>
+<td class="text-left"><p>Training set, consisting of 1,560,682 dimers from 42,220 clusters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="diversity-stats">
+<h3>Diversity stats<a class="headerlink" href="#diversity-stats" title="Link to this heading">#</a></h3>
+<section id="test-val-size">
+<h4>Test + val size<a class="headerlink" href="#test-val-size" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><em>Pinder cluster-level diversity: 12.41%</em></p></li>
+<li><p><em>Acceptance criteria: test + val &gt; 5-10% of overall number of clusters</em></p></li>
+</ul>
+</section>
+<section id="interface-size-distribution">
+<h4>Interface size distribution<a class="headerlink" href="#interface-size-distribution" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Interface residue length distributions between splits</p></li>
+<li><p>Acceptance criteria: no specific criteria, we just want to ensure there is some overlap across splits</p></li>
+</ul>
+<p><img alt="" src="_images/interface_length_distribution.png" />
+<img alt="" src="_images/intermolecular_contacts_distribution_max500.png" /></p>
+</section>
+<section id="planarity-distribution">
+<h4>Planarity distribution<a class="headerlink" href="#planarity-distribution" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Planarity distribution between splits (lower means more transient interaction)</p></li>
+<li><p>Acceptance criteria: no specific criteria, we just want to ensure there is some overlap across splits</p></li>
+</ul>
+<p><img alt="" src="_images/planarity_distribution.png" /></p>
+</section>
+<section id="ecod-domain-domain-diversity">
+<h4>ECOD domain-domain diversity<a class="headerlink" href="#ecod-domain-domain-diversity" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>ECOD domain is defined as
+(1) ECOD id which overlaps with the interface most
+(2) Minimum of 25% of interface &amp; 10 AA should be covered</p></li>
+<li><p>“Pair diversity”</p>
+<ul>
+<li><p><em>test: 9.65%</em></p></li>
+<li><p><em>val: 10.82%</em></p></li>
+<li><p><em>test+val: 18.11%</em></p></li>
+</ul>
+</li>
+<li><p><em>Acceptance criteria: &gt;5%</em></p></li>
+</ul>
+</section>
+<section id="both-chains-unique-ecod-domain-unique-binding-site-ratio">
+<h4>Both chains unique ECOD domain (unique binding site ratio)<a class="headerlink" href="#both-chains-unique-ecod-domain-unique-binding-site-ratio" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Percentage of test systems with ECOD ids unique to test (both chains)</p>
+<ul>
+<li><p>Check if single domain exists in train irrespective of pairs</p></li>
+<li><p>If neither of the ECOD domains exist in train then this system is completely unique to the test</p></li>
+</ul>
+</li>
+<li><p>test: 30.91%</p></li>
+<li><p>val: 33.15%</p></li>
+<li><p>Acceptance criteria: ~1/3rd</p></li>
+</ul>
+</section>
+<section id="ecod-single-chain-domain-diversity">
+<h4>ECOD single chain domain diversity<a class="headerlink" href="#ecod-single-chain-domain-diversity" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>ECOD domain diversity based on chains</p></li>
+<li><p>“Single-chain diversity”</p>
+<ul>
+<li><p><em>test: 18.47%</em></p></li>
+<li><p><em>val: 21.14%</em></p></li>
+<li><p><em>test+val: 33.83%</em></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/top_50_ecod_families.png" /></p>
+</section>
+<section id="pfam-clan-distribution">
+<h4>Pfam-clan distribution<a class="headerlink" href="#pfam-clan-distribution" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Pfam-clan level diversity (broader than ECOD families)</p>
+<ul>
+<li><p>Note: not all chains are annotated</p></li>
+</ul>
+</li>
+<li><p><em>test: 52.65%</em></p></li>
+</ul>
+<p><img alt="" src="_images/top_50_pfam_clans.png" /></p>
+</section>
+</section>
+<section id="leakage-qc">
+<h3>Leakage QC<a class="headerlink" href="#leakage-qc" title="Link to this heading">#</a></h3>
+<section id="uniprot">
+<h4>UniProt<a class="headerlink" href="#uniprot" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Intersection of uniprot pairs between train &amp; test</p>
+<ul>
+<li><p><em>test: 3.17%</em></p></li>
+<li><p><em>val: 3.63%</em></p></li>
+</ul>
+</li>
+<li><p><em>Acceptance criteria: &lt;5%</em></p></li>
+</ul>
+</section>
+<section id="ecod">
+<h4>ECOD<a class="headerlink" href="#ecod" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Percent of test set with same ECOD pair as train</p>
+<ul>
+<li><p><em>test: 6.39%</em></p></li>
+<li><p><em>val: 8.02%</em></p></li>
+</ul>
+</li>
+<li><p><em>Acceptance criteria: &lt;10%</em></p></li>
+</ul>
+</section>
+<section id="sequence-similarity-global">
+<h4>Sequence similarity (global)<a class="headerlink" href="#sequence-similarity-global" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Test vs subsampled train (1 per cluster with clusters &gt;20: 4,658 total systems)</p>
+<ul>
+<li><p>0.05% (2/3915) from sampling 0.24% of the training set (3627 entries).</p></li>
+<li><p>subsampling 1.2% of the training set (a different set of 18,135 train systems) results in 0.07% leakage (3/3915)</p></li>
+</ul>
+</li>
+<li><p>Acceptance criteria: N/A</p></li>
+</ul>
+</section>
+</section>
+<section id="parameter-optimization">
+<h3>Parameter optimization<a class="headerlink" href="#parameter-optimization" title="Link to this heading">#</a></h3>
+<p>Foldseek and MMseqs2 alignments are used directly to de-leak, therefore looking at the leakage given these methods will yield no leakage unless the alignments produced are different from our pipeline. This could be because of bugs or inconsistencies between Foldseek/MMseqs2 runs. We performed Foldseek/MMseqs2 alignments between subsampled train data vs test and looked at the following:</p>
+<ol class="arabic simple">
+<li><p>Alignment consistency with same parameter settings</p></li>
+<li><p>Alignment performance with different settings
+a. Tested Foldseek in slow-mode (performs tm-align at post instead of 3di)
+b. Tested different e-value cut-offs for both
+c. Higher “max n alignments per sequence” in MMseqs2</p></li>
+<li><p>Test on single chain ECOD homology classification
+a. True alignment if both of the aligned chains have the same ECOD family.
+b. False if they have different ECOD family.</p></li>
+</ol>
+<p><strong>Alignment consistency:</strong></p>
+<ul class="simple">
+<li><p>Foldseek alignments yielded ~90% (thr &gt; 0.6) of overlap between the old and new alignments, both runs having similar total numbers above 0.6 lddt.</p></li>
+<li><p>MMseqs2 yielded substantially higher number of alignments. This was due to the lower number of sequences in the sequence subset used, which gave more freedom to the “max n alignments per sequence” parameter (1000). Therefore, most of these are suspected to be short and unspecific alignments at the used 30% ident. cutoff:</p></li>
+</ul>
+<p><img alt="" src="_images/mmseqs_alnlen_distribution.png" />
+<img alt="" src="_images/foldseek_alnlen_distribution.png" /></p>
+<p><strong>Alignment at different settings:</strong></p>
+<ul class="simple">
+<li><p>The only setting with substantially different outcome was the use of “slow-mode” in Foldseek instead of “fast-mode” used in our pipeline (makes use of Foldseek alphabet + sequence similarity)</p>
+<ul>
+<li><p>In general we see more alignments above the lddt threshold</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Assessment of differences in terms of performance:</strong></p>
+<ul class="simple">
+<li><p>MMseqs2 contribution is minimal (possibly random) with increased hits, confirming the hypothesis of short unspecific hits (FP)</p>
+<ul>
+<li><p>default max hits:</p>
+<ul>
+<li><p>TP: 1012 FP: 750</p></li>
+</ul>
+</li>
+<li><p>increased max hits:</p>
+<ul>
+<li><p>TP: 1088 FP: 29560</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Foldseek fast-mode is better in terms of precision. This can be attributed to the VQ-VAE task used in Foldseek alphabet training which was based on SCOPe classification. This leads to good alignments for relevant folds and suboptimal alignments for “unimportant” folds which lead to low mean global lddt compared to tm-align pass.</p>
+<ul>
+<li><p>fast-mode (alignment-type 2, 3Di+AA Gotoh-Smith-Waterman) at 0.5 lddt threshold:</p>
+<ul>
+<li><p>TP: 2328 FP: 3586</p></li>
+</ul>
+</li>
+<li><p>slow-mode (alignment-type 1, TMalign) at 0.6 lddt threshold:</p>
+<ul>
+<li><p>TP: 2200 FP: 3560</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="_images/foldseek_precision_vs_threshold.png" />
+<img alt="" src="_images/foldseek_recall_vs_threshold.png" /></p>
+<p><strong>Conclusion:</strong></p>
+<ul class="simple">
+<li><p>Our current settings for both Foldseek and MMseqs2 are good and no need to change anything.</p></li>
+<li><p>Alignment graph cutoff for Foldseek graph can be changed to 0.5 or 0.55 to cover more TPs, but may not make a substantial difference.</p></li>
+</ul>
+</section>
+</section>
+<section id="pinder-2023-11-patch-update">
+<h2>Pinder 2023-11 (patch update)<a class="headerlink" href="#pinder-2023-11-patch-update" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Previously, test set was defined by randomly sampling two accessions from each cluster</p></li>
+<li><p>This was done without redundancy removal, leading to redundant systems across pinder-xl, pinder-s and pinder-af2</p></li>
+<li><p>This update removes redundant test members as defined by having the same receptor and ligand UniProt IDs</p></li>
+<li><p>Representative was selected based on lowest number of interface atom gaps, highest sequence resolution, and crystal resolution (in that order)</p></li>
+<li><p>If both cluster members had identical characteristics, a representative was selected at random</p></li>
+<li><p>The structural files in the bucket remain unchanged; however, the index file was updated to remove the redundant rows.</p>
+<ul>
+<li><p><strong>NOTE: In order to update to the new index file please remove the index.csv.gz from your <code class="docutils literal notranslate"><span class="pre">PINDER_BASE_DIR</span></code> env variable or default location in <code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder</span></code></strong></p></li>
+<li><p>Alternatively, you can use the new CLI tool <code class="docutils literal notranslate"><span class="pre">pinder_update_index</span> <span class="pre">--help</span></code></p></li>
+</ul>
+</li>
+</ul>
+<section id="updated-test-dataset-counts">
+<h3>Updated test dataset counts<a class="headerlink" href="#updated-test-dataset-counts" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Dataset</p></th>
+<th class="head text-left"><p>Monomer</p></th>
+<th class="head text-right"><p>Current count</p></th>
+<th class="head text-right"><p>Previous count (with redundant test members)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>pinder_xl</p></td>
+<td class="text-left"><p>holo</p></td>
+<td class="text-right"><p>1455</p></td>
+<td class="text-right"><p>1756</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pinder_xl</p></td>
+<td class="text-left"><p>apo</p></td>
+<td class="text-right"><p>323</p></td>
+<td class="text-right"><p>401</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_xl</p></td>
+<td class="text-left"><p>predicted</p></td>
+<td class="text-right"><p>1296</p></td>
+<td class="text-right"><p>1575</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pinder_s</p></td>
+<td class="text-left"><p>holo</p></td>
+<td class="text-right"><p>101</p></td>
+<td class="text-right"><p>117</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_s</p></td>
+<td class="text-left"><p>apo</p></td>
+<td class="text-right"><p>59</p></td>
+<td class="text-right"><p>71</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pinder_s</p></td>
+<td class="text-left"><p>predicted</p></td>
+<td class="text-right"><p>90</p></td>
+<td class="text-right"><p>106</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_af2</p></td>
+<td class="text-left"><p>holo</p></td>
+<td class="text-right"><p>69</p></td>
+<td class="text-right"><p>72</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>pinder_af2</p></td>
+<td class="text-left"><p>apo</p></td>
+<td class="text-right"><p>15</p></td>
+<td class="text-right"><p>15</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>pinder_af2</p></td>
+<td class="text-left"><p>predicted</p></td>
+<td class="text-right"><p>50</p></td>
+<td class="text-right"><p>52</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="pinder-2023-11">
+<h2>Pinder 2023-11<a class="headerlink" href="#pinder-2023-11" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Initial release</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PINDER_RELEASE=2023-11</span></code></p></li>
+</ul>
+<section id="total-dataset-size">
+<h3>Total dataset size<a class="headerlink" href="#total-dataset-size" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># compressed</span>
+<span class="mi">34</span><span class="n">G</span>     <span class="n">pdbs</span><span class="o">.</span><span class="n">zip</span>
+<span class="mi">867</span><span class="n">M</span>    <span class="n">csvs</span><span class="o">.</span><span class="n">zip</span>
+
+<span class="c1"># unpacked</span>
+<span class="mi">156</span><span class="n">G</span>    <span class="n">pdbs</span>
+<span class="mf">1.6</span><span class="n">G</span>    <span class="n">csvs</span>
+</pre></div>
+</div>
+</section>
+<section id="file-manifest">
+<h3>File manifest<a class="headerlink" href="#file-manifest" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">metadata</span><span class="o">.</span><span class="n">csv</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">csvs</span><span class="o">.</span><span class="n">zip</span>
+<span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">csvs</span><span class="o">/</span>
+<span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">pdbs</span><span class="o">.</span><span class="n">zip</span>
+<span class="n">gs</span><span class="p">:</span><span class="o">//</span><span class="n">pinder</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">pdbs</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-2024-02-release">Pinder 2024-02 release</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated-dataset-counts">Updated dataset counts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diversity-stats">Diversity stats</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-val-size">Test + val size</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interface-size-distribution">Interface size distribution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#planarity-distribution">Planarity distribution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecod-domain-domain-diversity">ECOD domain-domain diversity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#both-chains-unique-ecod-domain-unique-binding-site-ratio">Both chains unique ECOD domain (unique binding site ratio)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecod-single-chain-domain-diversity">ECOD single chain domain diversity</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pfam-clan-distribution">Pfam-clan distribution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leakage-qc">Leakage QC</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniprot">UniProt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ecod">ECOD</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-similarity-global">Sequence similarity (global)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-optimization">Parameter optimization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-2023-11-patch-update">Pinder 2023-11 (patch update)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated-test-dataset-counts">Updated test dataset counts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-2023-11">Pinder 2023-11</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-dataset-size">Total dataset size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-manifest">File manifest</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/changelog.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/changelog.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

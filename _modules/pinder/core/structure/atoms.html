@@ -1,0 +1,1604 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.core.structure.atoms &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/core/structure/atoms';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/core/structure/atoms.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core.structure.atoms</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.core.structure.atoms</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">biotite.sequence</span> <span class="k">as</span> <span class="nn">seq</span>
+<span class="kn">import</span> <span class="nn">biotite.sequence.align</span> <span class="k">as</span> <span class="nn">align</span>
+<span class="kn">import</span> <span class="nn">biotite.structure</span> <span class="k">as</span> <span class="nn">struc</span>
+<span class="kn">import</span> <span class="nn">biotite.structure.io</span> <span class="k">as</span> <span class="nn">strucio</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">biotite</span> <span class="kn">import</span> <span class="n">TextFile</span>
+<span class="kn">from</span> <span class="nn">biotite.sequence.align</span> <span class="kn">import</span> <span class="n">Alignment</span>
+<span class="kn">from</span> <span class="nn">biotite.structure.atoms</span> <span class="kn">import</span> <span class="n">Atom</span><span class="p">,</span> <span class="n">AtomArray</span><span class="p">,</span> <span class="n">AtomArrayStack</span><span class="p">,</span> <span class="n">stack</span>
+<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">NDArray</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span><span class="p">,</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">pc</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.models</span> <span class="kn">import</span> <span class="n">BackboneDefinition</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">DOCKQ_BACKBONE_ATOMS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">]</span>
+
+
+<span class="n">_AtomArrayOrStack</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">AtomArray</span><span class="p">,</span> <span class="n">AtomArrayStack</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="biotite_pdbxfile">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.biotite_pdbxfile">[docs]</a>
+<span class="k">def</span> <span class="nf">biotite_pdbxfile</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">TextFile</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">biotite.structure.io.pdbx</span> <span class="kn">import</span> <span class="n">CIFFile</span>
+
+    <span class="k">return</span> <span class="n">CIFFile</span></div>
+
+
+
+<div class="viewcode-block" id="biotite_pdbfile">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.biotite_pdbfile">[docs]</a>
+<span class="k">def</span> <span class="nf">biotite_pdbfile</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">TextFile</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">biotite.structure.io.pdb</span> <span class="kn">import</span> <span class="n">PDBFile</span>
+
+    <span class="k">return</span> <span class="n">PDBFile</span></div>
+
+
+
+<div class="viewcode-block" id="rust_pdbfile">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.rust_pdbfile">[docs]</a>
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">rust_pdbfile</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">TextFile</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">fastpdb</span>
+
+        <span class="k">return</span> <span class="n">fastpdb</span><span class="o">.</span><span class="n">PDBFile</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">&quot;Requested fastpdb engine, but its not installed. &quot;</span>
+            <span class="s2">&quot;Falling back to biotite&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">biotite_pdbfile</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="atom_array_from_pdb_file">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.atom_array_from_pdb_file">[docs]</a>
+<span class="k">def</span> <span class="nf">atom_array_from_pdb_file</span><span class="p">(</span>
+    <span class="n">structure</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">AtomArray</span><span class="p">,</span>
+    <span class="n">backend</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+    <span class="n">extra_fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_AtomArrayOrStack</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">structure</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">rust_pdbfile</span><span class="p">()</span> <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;fastpdb&quot;</span> <span class="k">else</span> <span class="n">biotite_pdbfile</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">structure</span><span class="p">))</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">extra_fields</span><span class="o">=</span><span class="n">extra_fields</span><span class="p">)</span>  <span class="c1"># noqa</span>
+            <span class="k">return</span> <span class="n">arr</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to parse </span><span class="si">{</span><span class="n">structure</span><span class="si">}</span><span class="s2">! </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span>
+    <span class="k">return</span> <span class="n">structure</span></div>
+
+
+
+<div class="viewcode-block" id="atom_vdw_radius">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.atom_vdw_radius">[docs]</a>
+<span class="k">def</span> <span class="nf">atom_vdw_radius</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="n">Atom</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">at</span><span class="o">.</span><span class="n">hetero</span><span class="p">:</span>
+            <span class="n">rad</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">vdw_radius_single</span><span class="p">(</span><span class="n">at</span><span class="o">.</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rad</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">vdw_radius_protor</span><span class="p">(</span><span class="n">at</span><span class="o">.</span><span class="n">res_name</span><span class="p">,</span> <span class="n">at</span><span class="o">.</span><span class="n">atom_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">rad</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rad</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">vdw_radius_single</span><span class="p">(</span><span class="n">at</span><span class="o">.</span><span class="n">element</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">rad</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">vdw_radius_single</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rad</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rad</span></div>
+
+
+
+<div class="viewcode-block" id="backbone_mask">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.backbone_mask">[docs]</a>
+<span class="k">def</span> <span class="nf">backbone_mask</span><span class="p">(</span>
+    <span class="n">atoms</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="p">:</span> <span class="n">BackboneDefinition</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">backbone_definition</span> <span class="o">==</span> <span class="s2">&quot;dockq&quot;</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">atom_name</span><span class="p">,</span> <span class="n">DOCKQ_BACKBONE_ATOMS</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">filter_peptide_backbone</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mask</span></div>
+
+
+
+<div class="viewcode-block" id="mask_from_res_list">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.mask_from_res_list">[docs]</a>
+<span class="k">def</span> <span class="nf">mask_from_res_list</span><span class="p">(</span>
+    <span class="n">atoms</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">res_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]:</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="n">res_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mask</span></div>
+
+
+
+<div class="viewcode-block" id="apply_mask">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.apply_mask">[docs]</a>
+<span class="k">def</span> <span class="nf">apply_mask</span><span class="p">(</span><span class="n">atoms</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">mask</span><span class="p">:</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">_AtomArrayOrStack</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply a boolean mask to an AtomArray or AtomArrayStack to filter atoms.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atoms : (AtomArray | AtomArrayStack)</span>
+<span class="sd">        The atoms to be filtered.</span>
+<span class="sd">    mask : NDArray[np.bool\_]</span>
+<span class="sd">        The boolean mask that specifies which atoms to keep.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        AtomArray | AtomArrayStack:</span>
+<span class="sd">            The filtered atoms.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">AtomArray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">atoms</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">AtomArrayStack</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">atoms</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">mask</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;atoms must be an AtomArray or AtomArrayStack&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="filter_atoms">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.filter_atoms">[docs]</a>
+<span class="k">def</span> <span class="nf">filter_atoms</span><span class="p">(</span>
+    <span class="n">atoms</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">calpha_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">backbone_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">heavy_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">backbone_definition</span><span class="p">:</span> <span class="n">BackboneDefinition</span> <span class="o">=</span> <span class="s2">&quot;dockq&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_AtomArrayOrStack</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">calpha_only</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">atoms</span><span class="o">.</span><span class="n">atom_name</span> <span class="o">==</span> <span class="s2">&quot;CA&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">backbone_only</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">backbone_mask</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">heavy_only</span><span class="p">:</span>
+        <span class="n">atoms</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">atoms</span><span class="o">.</span><span class="n">element</span> <span class="o">!=</span> <span class="s2">&quot;H&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">atoms</span></div>
+
+
+
+<div class="viewcode-block" id="get_backbone_atom_masks">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_backbone_atom_masks">[docs]</a>
+<span class="k">def</span> <span class="nf">get_backbone_atom_masks</span><span class="p">(</span>
+    <span class="n">native</span><span class="p">:</span> <span class="n">AtomArray</span><span class="p">,</span>
+    <span class="n">decoy_stack</span><span class="p">:</span> <span class="n">AtomArrayStack</span><span class="p">,</span>
+    <span class="n">backbone_only</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">calpha_only</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">backbone_definition</span><span class="p">:</span> <span class="n">BackboneDefinition</span> <span class="o">=</span> <span class="s2">&quot;dockq&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]]:</span>
+    <span class="c1"># superimpose</span>
+    <span class="k">if</span> <span class="n">backbone_only</span><span class="p">:</span>
+        <span class="n">model_mask</span> <span class="o">=</span> <span class="n">backbone_mask</span><span class="p">(</span><span class="n">decoy_stack</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="p">)</span>
+        <span class="n">native_mask</span> <span class="o">=</span> <span class="n">backbone_mask</span><span class="p">(</span><span class="n">native</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">calpha_only</span><span class="p">:</span>
+        <span class="n">model_mask</span> <span class="o">=</span> <span class="n">decoy_stack</span><span class="o">.</span><span class="n">atom_name</span> <span class="o">==</span> <span class="s2">&quot;CA&quot;</span>
+        <span class="n">native_mask</span> <span class="o">=</span> <span class="n">native</span><span class="o">.</span><span class="n">atom_name</span> <span class="o">==</span> <span class="s2">&quot;CA&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">model_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">decoy_stack</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">native_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">native</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">native_mask</span><span class="p">,</span> <span class="n">model_mask</span></div>
+
+
+
+<div class="viewcode-block" id="assign_receptor_ligand">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.assign_receptor_ligand">[docs]</a>
+<span class="k">def</span> <span class="nf">assign_receptor_ligand</span><span class="p">(</span>
+    <span class="n">arr</span><span class="p">:</span> <span class="n">AtomArray</span><span class="p">,</span> <span class="n">chains</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="c1"># Assign bigger chain as receptor, smaller as ligand</span>
+    <span class="n">chain_size</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ch</span><span class="p">:</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">ch</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">chains</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chains</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Detected </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">chains</span><span class="p">)</span><span class="si">}</span><span class="s2"> chains! &quot;</span>
+            <span class="s2">&quot;Will assign ligand chain to smallest chain&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">ordered</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chain_size</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">chain_size</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rec</span> <span class="o">=</span> <span class="n">ordered</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">lig</span> <span class="o">=</span> <span class="n">ordered</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">rec</span><span class="p">,</span> <span class="n">lig</span></div>
+
+
+
+<div class="viewcode-block" id="renumber_res_ids">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.renumber_res_ids">[docs]</a>
+<span class="k">def</span> <span class="nf">renumber_res_ids</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_AtomArrayOrStack</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># biotite for py39 and below does not have this method</span>
+        <span class="n">arr</span><span class="o">.</span><span class="n">res_id</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">create_continuous_res_ids</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="c1"># Deprecated in biotite 0.41.0, and py39 no longer supported</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">renumber_res_ids</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arr</span></div>
+
+
+
+<div class="viewcode-block" id="standardize_atom_array">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.standardize_atom_array">[docs]</a>
+<span class="k">def</span> <span class="nf">standardize_atom_array</span><span class="p">(</span>
+    <span class="n">arr</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">standardize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_AtomArrayOrStack</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">standardize</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">arr</span>
+    <span class="n">std_order</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">standardize_order</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">std_order</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">renumber_res_ids</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">arr</span></div>
+
+
+
+<div class="viewcode-block" id="stack_filter_intersect">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.stack_filter_intersect">[docs]</a>
+<span class="k">def</span> <span class="nf">stack_filter_intersect</span><span class="p">(</span>
+    <span class="n">arr_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">AtomArray</span><span class="p">],</span>
+    <span class="n">remove_elements</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">standardize_order</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">AtomArrayStack</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]:</span>
+    <span class="c1"># Ensure only matching atoms and annotations persisted</span>
+    <span class="c1"># This way we can construct an AtomArrayStack</span>
+    <span class="n">common_decoys</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">AtomArray</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">largest_decoy</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arr_list</span><span class="p">)</span>
+
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_decoys</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr_list</span><span class="p">):</span>
+        <span class="n">decoy</span> <span class="o">=</span> <span class="n">arr_list</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">decoy</span><span class="p">,</span> <span class="s2">&quot;atom_id&quot;</span><span class="p">):</span>
+            <span class="c1"># All annotation categories must be equal. If there are differing</span>
+            <span class="c1"># atom counts in the decoys, the filter_intersection will return</span>
+            <span class="c1"># a seemingly invalid, smaller number of intersecting atoms if the</span>
+            <span class="c1"># atom_id (an atom index) is not equal.</span>
+            <span class="n">decoy</span><span class="o">.</span><span class="n">set_annotation</span><span class="p">(</span><span class="s2">&quot;atom_id&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">decoy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Nothing to filter intersect on, only one decoy</span>
+            <span class="n">common_decoys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">standardize_atom_array</span><span class="p">(</span><span class="n">decoy</span><span class="p">,</span> <span class="n">standardize_order</span><span class="p">))</span>
+            <span class="k">break</span>
+
+        <span class="n">decoy2</span> <span class="o">=</span> <span class="n">arr_list</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">decoy2</span><span class="p">,</span> <span class="s2">&quot;atom_id&quot;</span><span class="p">):</span>
+            <span class="n">decoy2</span><span class="o">.</span><span class="n">set_annotation</span><span class="p">(</span><span class="s2">&quot;atom_id&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">decoy2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="n">remove_elements</span><span class="p">:</span>
+            <span class="n">decoy</span><span class="o">.</span><span class="n">set_annotation</span><span class="p">(</span><span class="s2">&quot;element&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">decoy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+            <span class="n">decoy2</span><span class="o">.</span><span class="n">set_annotation</span><span class="p">(</span><span class="s2">&quot;element&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">decoy2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">decoy_intersect</span> <span class="o">=</span> <span class="n">decoy</span><span class="p">[</span><span class="n">struc</span><span class="o">.</span><span class="n">filter_intersection</span><span class="p">(</span><span class="n">decoy</span><span class="p">,</span> <span class="n">decoy2</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_decoys</span><span class="p">):</span>
+            <span class="n">decoy_prev</span> <span class="o">=</span> <span class="n">common_decoys</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">decoy_intersect</span> <span class="o">=</span> <span class="n">decoy_intersect</span><span class="p">[</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">filter_intersection</span><span class="p">(</span><span class="n">decoy_intersect</span><span class="p">,</span> <span class="n">decoy_prev</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="n">common_decoys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">standardize_atom_array</span><span class="p">(</span><span class="n">decoy_intersect</span><span class="p">,</span> <span class="n">standardize_order</span><span class="p">))</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># We need the final element in the list</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr_list</span><span class="p">):</span>
+            <span class="n">decoy2</span> <span class="o">=</span> <span class="n">decoy2</span><span class="p">[</span><span class="n">struc</span><span class="o">.</span><span class="n">filter_intersection</span><span class="p">(</span><span class="n">decoy2</span><span class="p">,</span> <span class="n">decoy_intersect</span><span class="p">)]</span>
+            <span class="n">common_decoys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">standardize_atom_array</span><span class="p">(</span><span class="n">decoy2</span><span class="p">,</span> <span class="n">standardize_order</span><span class="p">))</span>
+
+    <span class="n">in_common</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">common</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">common</span> <span class="ow">in</span> <span class="n">common_decoys</span><span class="p">)</span>
+    <span class="n">max_in_common</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">common</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">common</span> <span class="ow">in</span> <span class="n">common_decoys</span><span class="p">)</span>
+    <span class="n">smallest_decoy</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">common_decoys</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mismatch</span> <span class="o">=</span> <span class="n">largest_decoy</span> <span class="o">-</span> <span class="n">in_common</span>
+    <span class="k">if</span> <span class="n">in_common</span> <span class="o">&lt;</span> <span class="n">max_in_common</span><span class="p">:</span>
+        <span class="c1"># Make sure all of the common atoms that exceed smallest are filtered out</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">decoy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">common_decoys</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">decoy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">in_common</span><span class="p">:</span>
+                <span class="n">decoy_intersect</span> <span class="o">=</span> <span class="n">decoy</span><span class="p">[</span>
+                    <span class="n">struc</span><span class="o">.</span><span class="n">filter_intersection</span><span class="p">(</span><span class="n">decoy</span><span class="p">,</span> <span class="n">smallest_decoy</span><span class="p">)</span>
+                <span class="p">]</span>
+                <span class="n">common_decoys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">decoy_intersect</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">in_common</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">common</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">common</span> <span class="ow">in</span> <span class="n">common_decoys</span><span class="p">)</span>
+    <span class="n">mismatch</span> <span class="o">=</span> <span class="n">largest_decoy</span> <span class="o">-</span> <span class="n">in_common</span>
+    <span class="k">if</span> <span class="n">mismatch</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Large atom mismatch detected between decoys: </span><span class="si">{</span><span class="n">mismatch</span><span class="si">}</span><span class="s2"> atoms.&quot;</span><span class="p">)</span>
+        <span class="n">lost_chains</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">chain_id</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">common_decoys</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lost_chains</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">remove_elements</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Attempting to remove element annotations&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">stack_filter_intersect</span><span class="p">(</span>
+                <span class="n">arr_list</span><span class="p">,</span>
+                <span class="n">standardize_order</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">remove_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">stack</span><span class="p">(</span><span class="n">common_decoys</span><span class="p">),</span> <span class="n">standardize_order</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">standardize_order</span> <span class="ow">and</span> <span class="n">remove_elements</span><span class="p">:</span>
+            <span class="c1"># log.warning(</span>
+            <span class="c1">#     &quot;Caution: results will only represent the atoms in common! &quot;</span>
+            <span class="c1">#     f&quot;keeping {in_common} / {largest_decoy} atoms in common&quot;</span>
+            <span class="c1"># )</span>
+            <span class="c1"># Escape hatch to prevent infinite recursion</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to create valid decoy stack! Mismatched!&quot;</span><span class="p">)</span>
+        <span class="c1"># First see if stack can be made by removing element annotations</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">remove_elements</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Attempting to remove element annotations&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">stack_filter_intersect</span><span class="p">(</span>
+                <span class="n">arr_list</span><span class="p">,</span>
+                <span class="n">standardize_order</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">remove_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="c1"># Finally, see if renumbering + standardizing can fix</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">standardize_order</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Attempting to renumber and standardize order!&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">stack_filter_intersect</span><span class="p">(</span>
+                <span class="n">arr_list</span><span class="p">,</span>
+                <span class="n">standardize_order</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">remove_elements</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="c1"># Escape hatch to prevent infinite recursion</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to create valid decoy stack! Mismatched!&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_seq_alignments">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_seq_alignments">[docs]</a>
+<span class="k">def</span> <span class="nf">get_seq_alignments</span><span class="p">(</span>
+    <span class="n">ref_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">subject_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">gap_penalty</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Alignment</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate optimal global alignments between two sequences using BLOSUM62 matrix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ref_seq : (str)</span>
+<span class="sd">        The reference sequence.</span>
+<span class="sd">    subject_seq : (str)</span>
+<span class="sd">        The subject sequence.</span>
+<span class="sd">    gap_penalty : (tuple[float, float], optional)</span>
+<span class="sd">        A tuple consisting of the gap open penalty and the gap extension penalty.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        list[Alignment]:</span>
+<span class="sd">            A list of `Alignment` objects that represent the optimal global alignment(s).</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">       The function uses the BLOSUM62 matrix by default for alignment scoring.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ref_protein_seq</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">ProteinSequence</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">)</span>
+    <span class="n">subject_protein_seq</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">ProteinSequence</span><span class="p">(</span><span class="n">subject_seq</span><span class="p">)</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">SubstitutionMatrix</span><span class="o">.</span><span class="n">std_protein_matrix</span><span class="p">()</span>  <span class="c1"># BLOSUM62 matrix</span>
+    <span class="c1"># matrix = seq.align.SubstitutionMatrix(alph, alph, &quot;IDENTITY&quot;)</span>
+    <span class="c1"># alph = seq.ProteinSequence.alphabet</span>
+    <span class="n">alignments</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">align_optimal</span><span class="p">(</span>
+        <span class="n">subject_protein_seq</span><span class="p">,</span>
+        <span class="n">ref_protein_seq</span><span class="p">,</span>
+        <span class="n">matrix</span><span class="p">,</span>
+        <span class="n">gap_penalty</span><span class="o">=</span><span class="n">gap_penalty</span><span class="p">,</span>
+        <span class="n">terminal_penalty</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">max_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">alignments</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">alignments</span></div>
+
+
+
+<div class="viewcode-block" id="get_seq_identity">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_seq_identity">[docs]</a>
+<span class="k">def</span> <span class="nf">get_seq_identity</span><span class="p">(</span>
+    <span class="n">ref_seq</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">subject_seq</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">alignments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Alignment</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">gap_penalty</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Align an arbitrary sequence with the reference sequence</span>
+<span class="sd">    Return sequence identity between the two.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">all_none</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">arg</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ref_seq</span><span class="p">,</span> <span class="n">subject_seq</span><span class="p">,</span> <span class="n">alignments</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">all_none</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must provide one of ref_seq and subject_seq or alignments!&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">alignments</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subject_seq</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">alignments</span> <span class="o">=</span> <span class="n">get_seq_alignments</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">,</span> <span class="n">subject_seq</span><span class="p">,</span> <span class="n">gap_penalty</span><span class="p">)</span>
+
+    <span class="n">aln</span> <span class="o">=</span> <span class="n">alignments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">identity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">get_sequence_identity</span><span class="p">(</span><span class="n">aln</span><span class="p">,</span> <span class="s2">&quot;shortest&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">identity</span> <span class="o">&lt;</span> <span class="mf">0.90</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alignment issue detected with identity of </span><span class="si">{</span><span class="n">identity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">identity</span></div>
+
+
+
+<div class="viewcode-block" id="calc_num_mismatches">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.calc_num_mismatches">[docs]</a>
+<span class="k">def</span> <span class="nf">calc_num_mismatches</span><span class="p">(</span><span class="n">alignments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Alignment</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate number of mismatches in sequence alignment</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    alignments : list[Alignment]</span>
+<span class="sd">        sequence alignment(s)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        tuple[int, int]:</span>
+<span class="sd">            A tuple containing number of mismatches and matches in sequence alignment, respectively.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_matches</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">n_mismatches</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">alignment</span> <span class="ow">in</span> <span class="n">alignments</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">alignment</span><span class="o">.</span><span class="n">get_symbols</span><span class="p">(</span><span class="n">alignment</span><span class="p">)</span>
+        <span class="c1"># p = subject protein sequence, u = ref sequence</span>
+        <span class="n">ui</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">pj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">u</span><span class="p">:</span>
+                <span class="n">ui</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
+                <span class="n">pj</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">u</span> <span class="ow">and</span> <span class="n">p</span> <span class="ow">and</span> <span class="n">u</span> <span class="o">!=</span> <span class="s2">&quot;X&quot;</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">!=</span> <span class="s2">&quot;X&quot;</span><span class="p">:</span>
+                <span class="n">n_matches</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">n_mismatches</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n_mismatches</span><span class="p">,</span> <span class="n">n_matches</span></div>
+
+
+
+<div class="viewcode-block" id="align_sequences">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.align_sequences">[docs]</a>
+<span class="k">def</span> <span class="nf">align_sequences</span><span class="p">(</span>
+    <span class="n">ref_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">subject_seq</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ref_numbering</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">subject_numbering</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aligns two sequences and returns a tuple containing the aligned sequences</span>
+<span class="sd">    and their respective numbering.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ref_seq : (str)</span>
+<span class="sd">        The reference sequence to align to.</span>
+<span class="sd">    subject_seq : (str)</span>
+<span class="sd">        The subject sequence to be aligned.</span>
+<span class="sd">    ref_numbering : (list[int], optional)</span>
+<span class="sd">        List of residue numbers for the reference sequence.</span>
+<span class="sd">    subject_numbering : (list[int], optional)</span>
+<span class="sd">        List of residue numbers for the subject sequence.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing:</span>
+<span class="sd">            - Aligned reference sequence (str)</span>
+<span class="sd">            - Aligned subject sequence (str)</span>
+<span class="sd">            - Numbering of the aligned reference sequence (list[int])</span>
+<span class="sd">            - Numbering of the aligned subject sequence (list[int])</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">        ValueError if the sequences cannot be aligned.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">alignments</span> <span class="o">=</span> <span class="n">get_seq_alignments</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">,</span> <span class="n">subject_seq</span><span class="p">)</span>
+    <span class="n">get_seq_identity</span><span class="p">(</span><span class="n">alignments</span><span class="o">=</span><span class="n">alignments</span><span class="p">)</span>
+    <span class="n">aln</span> <span class="o">=</span> <span class="n">alignments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">alignment</span><span class="o">.</span><span class="n">get_symbols</span><span class="p">(</span><span class="n">aln</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ref_numbering</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ref_numbering</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">subject_numbering</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">subject_numbering</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">subject_seq</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="c1"># assigning reference numbering to all residues in a given sequence</span>
+    <span class="c1"># (e.g. PDB chain)</span>
+    <span class="c1"># p = subject protein sequence, u = ref sequence</span>
+    <span class="n">ref_numbering_mapped</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">subject_numbering_mapped</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">subject_sequence_mapped</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">ref_sequence_mapped</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">ui</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">pj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">u</span><span class="p">:</span>
+            <span class="n">ui</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">p</span><span class="p">:</span>
+            <span class="n">pj</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">u</span> <span class="ow">and</span> <span class="n">p</span> <span class="ow">and</span> <span class="n">u</span> <span class="o">!=</span> <span class="s2">&quot;X&quot;</span> <span class="ow">and</span> <span class="n">p</span> <span class="o">!=</span> <span class="s2">&quot;X&quot;</span><span class="p">:</span>
+            <span class="c1"># ref_numbering_mapped.append(ui + 1)  # 1-based</span>
+            <span class="n">ref_numbering_mapped</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_numbering</span><span class="p">[</span><span class="n">ui</span><span class="p">])</span>
+            <span class="n">subject_numbering_mapped</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subject_numbering</span><span class="p">[</span><span class="n">pj</span><span class="p">])</span>
+            <span class="n">ref_sequence_mapped</span> <span class="o">+=</span> <span class="n">u</span>
+            <span class="n">subject_sequence_mapped</span> <span class="o">+=</span> <span class="n">p</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">ref_sequence_mapped</span><span class="p">,</span>
+        <span class="n">subject_sequence_mapped</span><span class="p">,</span>
+        <span class="n">ref_numbering_mapped</span><span class="p">,</span>
+        <span class="n">subject_numbering_mapped</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_get_structure_and_res_info</span><span class="p">(</span>
+    <span class="n">structure</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">pdb_engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">atom_array_from_pdb_file</span><span class="p">(</span><span class="n">structure</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">numbering</span><span class="p">,</span> <span class="n">resn</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">get_residues</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">structure</span><span class="p">,</span> <span class="n">numbering</span><span class="p">,</span> <span class="n">resn</span>
+
+
+<span class="k">def</span> <span class="nf">_convert_resn_to_sequence_and_numbering</span><span class="p">(</span>
+    <span class="n">structure_info</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts residue names to a sequence and extracts numbering.&quot;&quot;&quot;</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">numbering</span><span class="p">,</span> <span class="n">resn</span> <span class="o">=</span> <span class="n">structure_info</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">resn2seq</span><span class="p">(</span><span class="n">resn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">seq</span><span class="p">,</span> <span class="n">numbering</span>
+
+
+<span class="k">def</span> <span class="nf">_align_and_map_sequences</span><span class="p">(</span>
+    <span class="n">ref_info</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">subj_info</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Aligns two sequences and maps the numbering from the reference to the subject.</span>
+
+<span class="sd">    This method only safely works on a single chain.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ref_seq</span><span class="p">,</span> <span class="n">ref_numbering</span> <span class="o">=</span> <span class="n">_convert_resn_to_sequence_and_numbering</span><span class="p">(</span><span class="n">ref_info</span><span class="p">)</span>
+    <span class="n">subj_seq</span><span class="p">,</span> <span class="n">subj_numbering</span> <span class="o">=</span> <span class="n">_convert_resn_to_sequence_and_numbering</span><span class="p">(</span><span class="n">subj_info</span><span class="p">)</span>
+
+    <span class="n">alignments</span> <span class="o">=</span> <span class="n">align_sequences</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">,</span> <span class="n">subj_seq</span><span class="p">,</span> <span class="n">ref_numbering</span><span class="p">,</span> <span class="n">subj_numbering</span><span class="p">)</span>
+    <span class="p">(</span>
+        <span class="n">ref_seq_mapped</span><span class="p">,</span>
+        <span class="n">subj_seq_mapped</span><span class="p">,</span>
+        <span class="n">ref_numbering_mapped</span><span class="p">,</span>
+        <span class="n">subj_numbering_mapped</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="n">alignments</span>
+
+    <span class="n">subject_common</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subj_seq_mapped</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">subj_seq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">ref_common</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ref_seq_mapped</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ref_seq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subject_common</span><span class="si">}</span><span class="s2"> residues in subject matched to &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ref_common</span><span class="si">}</span><span class="s2"> residues in ref&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Renumber subject residues to match aligned reference</span>
+    <span class="n">subj_resid_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">subj_numbering_mapped</span><span class="p">,</span> <span class="n">ref_numbering_mapped</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">subj_resid_map</span><span class="p">,</span> <span class="n">alignments</span>
+
+
+<div class="viewcode-block" id="resn2seq">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.resn2seq">[docs]</a>
+<span class="k">def</span> <span class="nf">resn2seq</span><span class="p">(</span><span class="n">resn</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">three_to_one</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">three_to_one_noncanonical_mapping</span>
+    <span class="n">seq_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">three_to_one</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">three</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">three</span> <span class="ow">in</span> <span class="n">resn</span><span class="p">]</span>
+    <span class="c1"># Make sure we convert selenocysteine to cysteine</span>
+    <span class="c1"># https://github.com/biotite-dev/biotite/blob/master/src/biotite/sequence/seqtypes.py#L364-L369</span>
+    <span class="c1"># It appears that pyrrolysine (PYL-&gt;O) is also not supported - convert to lysine.</span>
+    <span class="n">seq_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">seq_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;U&quot;</span><span class="p">:</span>
+            <span class="n">seq_str</span> <span class="o">+=</span> <span class="s2">&quot;C&quot;</span>
+        <span class="k">elif</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;O&quot;</span><span class="p">:</span>
+            <span class="n">seq_str</span> <span class="o">+=</span> <span class="s2">&quot;K&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">seq_str</span> <span class="o">+=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">seq_str</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_get_seq_aligned_structures</span><span class="p">(</span>
+    <span class="n">ref</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">subject</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">pdb_engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">_AtomArrayOrStack</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find common sequence and set identical residue numbering for common seq.</span>
+<span class="sd">    This method only safely works on a single chain.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ref_info</span> <span class="o">=</span> <span class="n">_get_structure_and_res_info</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">subj_info</span> <span class="o">=</span> <span class="n">_get_structure_and_res_info</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+
+    <span class="n">subj_resid_map</span><span class="p">,</span> <span class="n">alns</span> <span class="o">=</span> <span class="n">_align_and_map_sequences</span><span class="p">(</span><span class="n">ref_info</span><span class="p">,</span> <span class="n">subj_info</span><span class="p">)</span>
+
+    <span class="c1"># Need to remove ref residues in order to match subject</span>
+    <span class="n">ref_structure</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ref_info</span>
+    <span class="n">subj_structure</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">subj_info</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ref_structure</span><span class="p">,</span> <span class="p">(</span><span class="n">AtomArray</span><span class="p">,</span> <span class="n">AtomArrayStack</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subj_structure</span><span class="p">,</span> <span class="p">(</span><span class="n">AtomArray</span><span class="p">,</span> <span class="n">AtomArrayStack</span><span class="p">))</span>
+
+    <span class="n">ref_mask</span> <span class="o">=</span> <span class="n">mask_from_res_list</span><span class="p">(</span><span class="n">ref_structure</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">subj_resid_map</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+    <span class="n">subj_mask</span> <span class="o">=</span> <span class="n">mask_from_res_list</span><span class="p">(</span><span class="n">subj_structure</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">subj_resid_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+    <span class="n">ref_aligned</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">ref_structure</span><span class="p">,</span> <span class="n">ref_mask</span><span class="p">)</span>
+    <span class="n">subject_aligned</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">subj_structure</span><span class="p">,</span> <span class="n">subj_mask</span><span class="p">)</span>
+    <span class="n">subject_aligned</span><span class="o">.</span><span class="n">res_id</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">subj_resid_map</span><span class="p">[</span><span class="n">ri</span><span class="p">]</span> <span class="k">for</span> <span class="n">ri</span> <span class="ow">in</span> <span class="n">subject_aligned</span><span class="o">.</span><span class="n">res_id</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ref_aligned</span><span class="p">,</span> <span class="n">subject_aligned</span>
+
+
+<span class="k">def</span> <span class="nf">_get_paired_structures_and_chains</span><span class="p">(</span>
+    <span class="n">ref</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">subject</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">pdb_engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">]]:</span>
+    <span class="n">ref_arr</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span> <span class="o">=</span> <span class="n">atom_array_from_pdb_file</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">subject_arr</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span> <span class="o">=</span> <span class="n">atom_array_from_pdb_file</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">ref_chains</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">get_chains</span><span class="p">(</span><span class="n">ref_arr</span><span class="p">)</span>
+    <span class="n">subject_chains</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">get_chains</span><span class="p">(</span><span class="n">subject_arr</span><span class="p">)</span>
+
+    <span class="c1"># Sometimes returns repeated chains</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">sub_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">subject_chains</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">subject_chains</span> <span class="o">=</span> <span class="n">subject_chains</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">sub_idx</span><span class="p">)]</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">ref_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">ref_chains</span><span class="p">,</span> <span class="n">return_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ref_chains</span> <span class="o">=</span> <span class="n">ref_chains</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ref_idx</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref_chains</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">subject_chains</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Ref and subject must have same number of chains!&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">ref_chains</span> <span class="o">!=</span> <span class="n">subject_chains</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Ref and subject have different chains!&quot;</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">&quot;Sequence alignment will assume this order: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ref_chains</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">subject_chains</span><span class="si">}</span><span class="s2"> &quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ref_arr</span><span class="p">,</span> <span class="n">subject_arr</span><span class="p">,</span> <span class="n">ref_chains</span><span class="p">,</span> <span class="n">subject_chains</span>
+
+
+<div class="viewcode-block" id="get_seq_aligned_structures">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_seq_aligned_structures">[docs]</a>
+<span class="k">def</span> <span class="nf">get_seq_aligned_structures</span><span class="p">(</span>
+    <span class="n">ref</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">subject</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">pdb_engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_AtomArrayOrStack</span><span class="p">,</span> <span class="n">_AtomArrayOrStack</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes per-chain sequence alignments between reference and subject</span>
+<span class="sd">    structures, and creates a new set of structures where the residue numbers</span>
+<span class="sd">    in the subject structure are renumbered to match those in the reference</span>
+<span class="sd">    structure for the aligned sequence segments for each chain.</span>
+
+<span class="sd">    This function processes each chain separately, aligns their sequences,</span>
+<span class="sd">    and then constructs the multi-chain structure using the chain-aligned</span>
+<span class="sd">    sequences.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ref : Path | _AtomArrayOrStack</span>
+<span class="sd">        The file path or structure array of the reference structure.</span>
+<span class="sd">    subject : Path | _AtomArrayOrStack</span>
+<span class="sd">        The file path or structure array of the subject structure to align with the reference.</span>
+<span class="sd">    pdb_engine : str, optional</span>
+<span class="sd">        The backend engine to use for PDB file processing, defaults to &quot;fastpdb&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        A tuple containing:</span>
+<span class="sd">        - Reference structure with aligned sequence and residue numbering (_AtomArrayOrStack).</span>
+<span class="sd">        - Subject structure with aligned sequence and residue numbering (_AtomArrayOrStack).</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the reference and subject structures do not have the same number of chains or if the chains cannot be matched properly.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pinder.core import PinderSystem</span>
+<span class="sd">    &gt;&gt;&gt; ps = PinderSystem(&quot;8i2f__A1_O34841--8i2f__B1_P54421&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; ref_structure = ps.holo_receptor.atom_array.copy()</span>
+<span class="sd">    &gt;&gt;&gt; subject_structure = ps.apo_receptor.atom_array.copy()</span>
+<span class="sd">    &gt;&gt;&gt; ref_aln, subj_aln = get_seq_aligned_structures(ref_structure, subject_structure)</span>
+<span class="sd">    &gt;&gt;&gt; print((ref_aln.res_id[0], subj_aln.res_id[0]))</span>
+<span class="sd">    (8, 8)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">(</span>
+        <span class="n">ref_arr</span><span class="p">,</span>
+        <span class="n">subject_arr</span><span class="p">,</span>
+        <span class="n">ref_chains</span><span class="p">,</span>
+        <span class="n">subject_chains</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="n">_get_paired_structures_and_chains</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">ref_arrays</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">subject_arrays</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ref_ch</span><span class="p">,</span> <span class="n">subject_ch</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ref_chains</span><span class="p">,</span> <span class="n">subject_chains</span><span class="p">):</span>
+        <span class="n">ref_mask</span> <span class="o">=</span> <span class="n">ref_arr</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">ref_ch</span>
+        <span class="n">subject_mask</span> <span class="o">=</span> <span class="n">subject_arr</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">subject_ch</span>
+        <span class="n">ref_ch_arr</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">ref_arr</span><span class="p">,</span> <span class="n">ref_mask</span><span class="p">)</span>
+        <span class="n">subject_ch_arr</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">subject_arr</span><span class="p">,</span> <span class="n">subject_mask</span><span class="p">)</span>
+        <span class="n">ref_aligned</span><span class="p">,</span> <span class="n">subject_aligned</span> <span class="o">=</span> <span class="n">_get_seq_aligned_structures</span><span class="p">(</span>
+            <span class="n">ref_ch_arr</span><span class="p">,</span> <span class="n">subject_ch_arr</span><span class="p">,</span> <span class="n">pdb_engine</span>
+        <span class="p">)</span>
+        <span class="n">ref_arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_aligned</span><span class="p">)</span>
+        <span class="n">subject_arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subject_aligned</span><span class="p">)</span>
+
+    <span class="c1"># construct multi-chain objects again</span>
+    <span class="n">ref_aligned</span> <span class="o">=</span> <span class="n">ref_arrays</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">subject_aligned</span> <span class="o">=</span> <span class="n">subject_arrays</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ref_arr</span><span class="p">,</span> <span class="n">sub_arr</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ref_arrays</span><span class="p">,</span> <span class="n">subject_arrays</span><span class="p">):</span>
+        <span class="n">ref_aligned</span> <span class="o">+=</span> <span class="n">ref_arr</span>
+        <span class="n">subject_aligned</span> <span class="o">+=</span> <span class="n">sub_arr</span>
+    <span class="k">return</span> <span class="n">ref_aligned</span><span class="p">,</span> <span class="n">subject_aligned</span></div>
+
+
+
+<div class="viewcode-block" id="get_per_chain_seq_alignments">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_per_chain_seq_alignments">[docs]</a>
+<span class="k">def</span> <span class="nf">get_per_chain_seq_alignments</span><span class="p">(</span>
+    <span class="n">ref</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">subject</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="n">_AtomArrayOrStack</span><span class="p">,</span>
+    <span class="n">pdb_engine</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fastpdb&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes per-chain sequence alignments between reference and subject</span>
+<span class="sd">    structures, and provides a mapping of residue numbers from the subject</span>
+<span class="sd">    to the reference for each chain.</span>
+
+<span class="sd">    This function processes each chain separately, aligns their sequences,</span>
+<span class="sd">    and creates a mapping of residue numbering from the subject structure</span>
+<span class="sd">    to the reference structure based on sequence alignment. It is designed</span>
+<span class="sd">    to work with multi-chain structures, aligning each chain independently.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ref : Path | _AtomArrayOrStack</span>
+<span class="sd">        The file path or structure array of the reference structure.</span>
+<span class="sd">    subject : Path | _AtomArrayOrStack</span>
+<span class="sd">        The file path or structure array of the subject structure to align with the reference.</span>
+<span class="sd">    pdb_engine : str, optional</span>
+<span class="sd">        The backend engine to use for PDB file processing, defaults to &quot;fastpdb&quot;.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict[str, dict[int, int]]</span>
+<span class="sd">        A dictionary where keys are chain identifiers from the subject structure and values are dictionaries mapping residue numbers in the subject structure to those in the reference structure for the aligned sequence segments.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the reference and subject structures do not have the same number of chains or if the chains cannot be matched properly.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pinder.core import PinderSystem</span>
+<span class="sd">    &gt;&gt;&gt; ps = PinderSystem(&quot;8i2f__A1_O34841--8i2f__B1_P54421&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; ref_structure = ps.holo_receptor.atom_array.copy()</span>
+<span class="sd">    &gt;&gt;&gt; subject_structure = ps.apo_receptor.atom_array.copy()</span>
+<span class="sd">    &gt;&gt;&gt; mappings = get_per_chain_seq_alignments(ref_structure, subject_structure)</span>
+<span class="sd">    &gt;&gt;&gt; print(mappings[&#39;R&#39;])</span>
+<span class="sd">    {7: 8, 8: 9, 9: 10, 10: 11, ...}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">(</span>
+        <span class="n">ref_arr</span><span class="p">,</span>
+        <span class="n">subject_arr</span><span class="p">,</span>
+        <span class="n">ref_chains</span><span class="p">,</span>
+        <span class="n">subject_chains</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">=</span> <span class="n">_get_paired_structures_and_chains</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+    <span class="n">ch_res_maps</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">ref_ch</span><span class="p">,</span> <span class="n">subject_ch</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ref_chains</span><span class="p">,</span> <span class="n">subject_chains</span><span class="p">):</span>
+        <span class="n">ref_mask</span> <span class="o">=</span> <span class="n">ref_arr</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">ref_ch</span>
+        <span class="n">subject_mask</span> <span class="o">=</span> <span class="n">subject_arr</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">subject_ch</span>
+        <span class="n">ref_ch_arr</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">ref_arr</span><span class="p">,</span> <span class="n">ref_mask</span><span class="p">)</span>
+        <span class="n">subject_ch_arr</span> <span class="o">=</span> <span class="n">apply_mask</span><span class="p">(</span><span class="n">subject_arr</span><span class="p">,</span> <span class="n">subject_mask</span><span class="p">)</span>
+
+        <span class="n">ref_info</span> <span class="o">=</span> <span class="n">_get_structure_and_res_info</span><span class="p">(</span><span class="n">ref_ch_arr</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+        <span class="n">subj_info</span> <span class="o">=</span> <span class="n">_get_structure_and_res_info</span><span class="p">(</span><span class="n">subject_ch_arr</span><span class="p">,</span> <span class="n">pdb_engine</span><span class="p">)</span>
+        <span class="n">existing2new</span><span class="p">,</span> <span class="n">alns</span> <span class="o">=</span> <span class="n">_align_and_map_sequences</span><span class="p">(</span><span class="n">ref_info</span><span class="p">,</span> <span class="n">subj_info</span><span class="p">)</span>
+        <span class="n">ch_res_maps</span><span class="p">[</span><span class="n">subject_ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">existing2new</span>
+    <span class="k">return</span> <span class="n">ch_res_maps</span></div>
+
+
+
+<div class="viewcode-block" id="invert_chain_seq_map">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.invert_chain_seq_map">[docs]</a>
+<span class="k">def</span> <span class="nf">invert_chain_seq_map</span><span class="p">(</span>
+    <span class="n">seq_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]:</span>
+    <span class="k">def</span> <span class="nf">_invert</span><span class="p">(</span><span class="n">seq_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+        <span class="n">rev_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span><span class="n">ch</span><span class="p">:</span> <span class="p">{}</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">seq_map</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">rmap</span> <span class="ow">in</span> <span class="n">seq_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">rev_map</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rmap</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">return</span> <span class="n">rev_map</span>
+
+    <span class="n">inverted</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">seq_map</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">inverted</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">sm</span> <span class="ow">in</span> <span class="n">seq_map</span><span class="p">:</span>
+            <span class="n">inverted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_invert</span><span class="p">(</span><span class="n">sm</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">inverted</span> <span class="o">=</span> <span class="n">_invert</span><span class="p">(</span><span class="n">seq_map</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inverted</span></div>
+
+
+
+<div class="viewcode-block" id="get_buried_sasa">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_buried_sasa">[docs]</a>
+<span class="k">def</span> <span class="nf">get_buried_sasa</span><span class="p">(</span>
+    <span class="n">a</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArray</span><span class="p">,</span>
+    <span class="n">b</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArray</span><span class="p">,</span>
+    <span class="n">point_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">ignore_ions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the rounded dSASA value for a pair of interacting substructures (chains).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a : struc.AtomArray</span>
+<span class="sd">        The first substructure (chain).</span>
+<span class="sd">    b : struc.AtomArray</span>
+<span class="sd">        The second substructure (chain).</span>
+<span class="sd">    point_number : int, optional</span>
+<span class="sd">        The number of points per atom, by default 200.</span>
+<span class="sd">        This parameter affects the speed and the accuracy of the calculation.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The rounded dSASA value.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; atom1a = struc.atoms.Atom([0,0,0], chain_id=&quot;A&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; atom2a = struc.atoms.Atom([1,1,1], chain_id=&quot;A&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; atom1b = struc.atoms.Atom([2,2,2], chain_id=&quot;B&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; atom2b = struc.atoms.Atom([3,3,3], chain_id=&quot;B&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; a = struc.atoms.array([atom1a, atom2a])</span>
+<span class="sd">    &gt;&gt;&gt; b = struc.atoms.array([atom1b, atom2b])</span>
+<span class="sd">    &gt;&gt;&gt; get_buried_sasa(a, b, ignore_ions=False)</span>
+<span class="sd">    0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dsasa</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">sasa_ab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span> <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sasa_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span> <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sasa_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span> <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">dsasa</span> <span class="o">=</span> <span class="n">sasa_a</span> <span class="o">+</span> <span class="n">sasa_b</span> <span class="o">-</span> <span class="n">sasa_ab</span>
+        <span class="n">dsasa</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">dsasa</span><span class="p">))</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to calculate buried sasa using ProtOr vdw radius: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sasa_ab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span>
+                    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span>
+                    <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span>
+                    <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">,</span>
+                    <span class="n">vdw_radii</span><span class="o">=</span><span class="s2">&quot;Single&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sasa_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span>
+                    <span class="n">a</span><span class="p">,</span>
+                    <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span>
+                    <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">,</span>
+                    <span class="n">vdw_radii</span><span class="o">=</span><span class="s2">&quot;Single&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">sasa_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span>
+                <span class="n">struc</span><span class="o">.</span><span class="n">sasa</span><span class="p">(</span>
+                    <span class="n">b</span><span class="p">,</span>
+                    <span class="n">point_number</span><span class="o">=</span><span class="n">point_number</span><span class="p">,</span>
+                    <span class="n">ignore_ions</span><span class="o">=</span><span class="n">ignore_ions</span><span class="p">,</span>
+                    <span class="n">vdw_radii</span><span class="o">=</span><span class="s2">&quot;Single&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">dsasa</span> <span class="o">=</span> <span class="n">sasa_a</span> <span class="o">+</span> <span class="n">sasa_b</span> <span class="o">-</span> <span class="n">sasa_ab</span>
+        <span class="n">dsasa</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">dsasa</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Failed to calculate buried sasa even with vdw_radii=Single, returning 0! </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">dsasa</span></div>
+
+
+
+<div class="viewcode-block" id="get_resolved_resi_from_atom_array">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_resolved_resi_from_atom_array">[docs]</a>
+<span class="k">def</span> <span class="nf">get_resolved_resi_from_atom_array</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a list of resolved resi (only checking the CA atom) in the PDB file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : _AtomArrayOrStack</span>
+<span class="sd">        AtomArray or Stack</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[int]</span>
+<span class="sd">        A list of resolved resi in the PDB file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model_ch</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">)</span>
+    <span class="n">per_chain_resolved</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">model_ch</span><span class="p">:</span>
+        <span class="n">per_chain_resolved</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">res_id</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">res_id</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">res_id</span><span class="p">[</span>
+                <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">atom_name</span> <span class="o">==</span> <span class="s2">&quot;CA&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">ch</span><span class="p">)</span>
+            <span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="p">]</span>
+    <span class="k">return</span> <span class="n">per_chain_resolved</span></div>
+
+
+
+<div class="viewcode-block" id="get_resolved_resi">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.get_resolved_resi">[docs]</a>
+<span class="k">def</span> <span class="nf">get_resolved_resi</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a list of resolved resi (only checking the CA atom) in the PDB file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pdb_path : str</span>
+<span class="sd">        The path to the PDB file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    List[int]</span>
+<span class="sd">        A list of resolved resi in the PDB file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span><span class="p">:</span> <span class="n">_AtomArrayOrStack</span> <span class="o">=</span> <span class="n">atom_array_from_pdb_file</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">))</span>
+    <span class="n">resolved_resi</span> <span class="o">=</span> <span class="n">get_resolved_resi_from_atom_array</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resolved_resi</span></div>
+
+
+
+<div class="viewcode-block" id="write_pdb">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.write_pdb">[docs]</a>
+<span class="k">def</span> <span class="nf">write_pdb</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">AtomArray</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write AtomArray to a PDB file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : AtomArray</span>
+<span class="sd">        AtomArray to save to PDB file.</span>
+<span class="sd">    filepath : Path</span>
+<span class="sd">        Path to outut PDB file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">filepath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">filepath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">strucio</span><span class="o">.</span><span class="n">save_structure</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="rename_chains">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.rename_chains">[docs]</a>
+<span class="k">def</span> <span class="nf">rename_chains</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_chain</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Rename chains in a PDB file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pdb_path : str</span>
+<span class="sd">        The path to the PDB file whose chains are to be renamed.</span>
+<span class="sd">    new_chain : Union[str, dict]</span>
+<span class="sd">        The new name(s) for the chain(s). If a string is provided, all chains are renamed to this string.</span>
+<span class="sd">        If a dictionary is provided, chains are renamed according to the dictionary. If the key is an integer,</span>
+<span class="sd">        the alphabetically sorted chain at that index is renamed to the value. If the key is a string, the chain</span>
+<span class="sd">        with that name is renamed to the value.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">biotite_pdbfile</span><span class="p">()</span>
+    <span class="n">pdb_file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pdb_file</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># , use_author_fields=False)</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_chain</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">chain</span><span class="p">,</span> <span class="n">new_chain_id</span> <span class="ow">in</span> <span class="n">new_chain</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">chain</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">chains</span><span class="p">):</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chains</span><span class="p">[</span><span class="n">chain</span><span class="p">]</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_chain_id</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># mask = struc.filter_amino_acids(model) &amp; (model.chain_id == chain)</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_chain_id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">new_chain</span>
+    <span class="n">write_pdb</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="cif_to_pdb">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.cif_to_pdb">[docs]</a>
+<span class="k">def</span> <span class="nf">cif_to_pdb</span><span class="p">(</span>
+    <span class="n">cif_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pdb_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">chains</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert CIF file to PDB file</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cif_path : str</span>
+<span class="sd">        The path to the CIF file to be converted.</span>
+<span class="sd">    pdb_path : str</span>
+<span class="sd">        The path where the converted PDB file will be saved.</span>
+<span class="sd">    chains : Optional[dict], default is None</span>
+<span class="sd">        If provided, only the chains specified in the dictionary will be kept</span>
+<span class="sd">        and they will be renamed according to the dictionary.</span>
+<span class="sd">        Note: The new chain names must be single characters to be PDB compatible.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># temp workaround for biotite API</span>
+    <span class="kn">from</span> <span class="nn">biotite.structure.io</span> <span class="kn">import</span> <span class="n">pdbx</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">biotite_pdbxfile</span><span class="p">()</span>
+    <span class="n">pdbx_file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">cif_path</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">pdbx</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span>
+        <span class="n">pdbx_file</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_author_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">extra_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;b_factor&quot;</span><span class="p">,</span> <span class="s2">&quot;charge&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="c1"># print(f&quot;DEBUG: {cif_path} has {sorted(np.unique(model.chain_id))} chains&quot;)</span>
+    <span class="k">if</span> <span class="n">chains</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">chains</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WARNING: chains </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">chains</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2"> not found in </span><span class="si">{</span><span class="n">cif_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="n">model_orig</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">old_chain_id</span><span class="p">,</span> <span class="n">new_chain_id</span> <span class="ow">in</span> <span class="n">chains</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">model_orig</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">old_chain_id</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_chain_id</span>
+    <span class="n">write_pdb</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="n">pdb_path</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="normalize_orientation">
+<a class="viewcode-back" href="../../../../source/pinder.core.structure.html#pinder.core.structure.atoms.normalize_orientation">[docs]</a>
+<span class="k">def</span> <span class="nf">normalize_orientation</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">AtomArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AtomArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Align the structure along principal axes.</span>
+
+<span class="sd">    The structure is transformed such that it is projected on the xy plane,</span>
+<span class="sd">    minimizing variance along the z-axis and translating the centroid to the origin.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : AtomArray</span>
+<span class="sd">        The AtomArray object to apply the normalization transformation to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    AtomArray</span>
+<span class="sd">        The same atoms with transformed coordinates.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;original variance =&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">coord</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">coord</span><span class="p">(</span><span class="n">struc</span><span class="o">.</span><span class="n">centroid</span><span class="p">(</span><span class="n">model</span><span class="p">))</span>
+    <span class="c1"># &#39;centroid()&#39; removes the second last dimesion</span>
+    <span class="c1"># -&gt; add dimension again to ensure correct translation</span>
+    <span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="o">-</span><span class="n">center</span><span class="p">)</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="n">struc</span><span class="o">.</span><span class="n">orient_principal_components</span><span class="p">(</span><span class="n">translated</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;moved (zyx) variance =&quot;</span><span class="p">,</span> <span class="n">normalized</span><span class="o">.</span><span class="n">coord</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">normalized</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

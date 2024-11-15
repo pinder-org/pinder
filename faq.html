@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FAQ &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'faq';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/faq.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Limitations" href="limitations.html" />
+    <link rel="prev" title="Pinder abstractions" href="example_readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">FAQ</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h1>
+<section id="is-there-a-sequence-database-available">
+<h2>Is there a sequence database available?<a class="headerlink" href="#is-there-a-sequence-database-available" title="Link to this heading">#</a></h2>
+<p>Yes! As of the latest release (2024-02), there is now an interface to fetch the full database of sequences for all PDB files available in the pinder dataset.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">get_sequence_database</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq_db</span> <span class="o">=</span> <span class="n">get_sequence_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq_db</span>
+<span class="go">                                            pdb                                           sequence  pdb_kind</span>
+<span class="go">0                    7sqc__ME1_A0A2K3DEG1-L.pdb  QKERVAFVTAVAEMAKNPQNIEALQQAGAMALLRPLLLDNVPSIQQ...    ligand</span>
+<span class="go">1                      5f2y__C1_UNDEFINED-R.pdb                          GEIAKALREIAKALREXAWAHREEA  receptor</span>
+<span class="go">2        2xvr__F51_P19726--2xvr__G55_P19726.pdb  LTADVLIYDIEDAMNHYDVRSEYTSQLGESLAMAADGAVLAEIAGL...     dimer</span>
+<span class="go">3                        7c9s__D39_Q8QWB2-R.pdb  GAQVSTQKTGAHIIHYTNINYYKDSASNSLNRQDFTQDPSKFTEPV...  receptor</span>
+<span class="go">4                        4v82__FA1_Q8DHA7-R.pdb                 MEVNQLGLIATALFVLVPSVFLIILYVQTESQQK  receptor</span>
+<span class="go">...                                         ...                                                ...       ...</span>
+<span class="go">3826759    4pkn__Q1_Q548M1--4pkn__T1_Q548M1.pdb  AAKDVKFGNDARVKMLRGVNVLADAVKVTLGPKGRNVVLDKSFGAP...     dimer</span>
+<span class="go">3826760                   3lu0__C1_P0A8V2-L.pdb  KKRIRKDFGKRPQVLDVPYLLSIQLDSFQKFIEQDPEGQYGLEAAF...    ligand</span>
+<span class="go">3826761    6i0o__A1_P12268--6i0o__A4_P12268.pdb  SYVPDDGLTAQQLFNCGDGLTYNDFLILPGYIDFTADQVDLTSALT...     dimer</span>
+<span class="go">3826762                   8fc1__N1_Q5SHQ4-R.pdb  RLTAYERRKFRVRNRIKRTGRLRLSVFRSLKHIYAQIIDDEKGVTL...  receptor</span>
+<span class="go">3826763                  7ebr__D28_J9Z449-R.pdb                       NFYKDSYAASASKQDFSQDPSKFTEPVV  receptor</span>
+
+<span class="go">[3826764 rows x 3 columns]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq_db</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="go">                               pdb                                           sequence pdb_kind</span>
+<span class="go">count                      3826764                                            3826764  3826764</span>
+<span class="go">unique                     3826764                                             624894        5</span>
+<span class="go">top     7sqc__ME1_A0A2K3DEG1-L.pdb  ASNFTQFVLVDNGGTGDVTVAPSNFANGVAEWISSNSRSQAYKVTC...    dimer</span>
+<span class="go">freq                             1                                              17772  2319564</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seq_db</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="go">pdb           object</span>
+<span class="go">sequence    category</span>
+<span class="go">pdb_kind    category</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+</section>
+<section id="can-pinder-be-used-to-detect-steric-clashes">
+<h2>Can <code class="docutils literal notranslate"><span class="pre">pinder</span></code> be used to detect steric clashes?<a class="headerlink" href="#can-pinder-be-used-to-detect-steric-clashes" title="Link to this heading">#</a></h2>
+<p>Yes! For <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code>-level evaluation, you can use the <code class="docutils literal notranslate"><span class="pre">pinder.eval.clashes.count_pinder_clashes</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pinder.eval.clashes</span> <span class="kn">import</span> <span class="n">count_pinder_clashes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">&quot;2e31__A1_Q80UW2--2e31__B1_P63208&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clashes</span> <span class="o">=</span> <span class="n">count_pinder_clashes</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clashes</span>
+<span class="go">   atom_clashes  residue_clashes  min_dist  min_dist_vdw_ratio  vdw_sum  radius                                id monomer_name  holo_mask</span>
+<span class="go">0             0                0  2.738283            0.894864     3.06     1.2  2e31__A1_Q80UW2--2e31__B1_P63208         holo      False</span>
+<span class="go">1             0                0  2.513461            0.759354     3.31     1.2  2e31__A1_Q80UW2--2e31__B1_P63208          apo      False</span>
+<span class="go">2            15                7  0.388205            0.111233     3.49     1.2  2e31__A1_Q80UW2--2e31__B1_P63208    predicted      False</span>
+<span class="go">3             0                0  3.368342            0.990689     3.40     1.2  2e31__A1_Q80UW2--2e31__B1_P63208          apo       True</span>
+<span class="go">4             8                5  0.627183            0.206991     3.03     1.2  2e31__A1_Q80UW2--2e31__B1_P63208    predicted       True</span>
+</pre></div>
+</div>
+<p>To detect clashes in an arbitrary PDB file, use <code class="docutils literal notranslate"><span class="pre">pinder.core.structure.contacts</span></code>. <strong>Note: currently clash detection is enabled only between two chains</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pinder.core.structure.contacts</span> <span class="kn">import</span> <span class="n">pairwise_clashes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pinder.core.loader.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct</span> <span class="o">=</span> <span class="n">Structure</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AB</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;chain_id&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clashes</span> <span class="o">=</span> <span class="n">pairwise_clashes</span><span class="p">(</span><span class="n">AB</span><span class="o">.</span><span class="n">atom_array</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clashes</span>
+<span class="go">{&#39;atom_clashes&#39;: 0, &#39;residue_clashes&#39;: 0, &#39;min_dist&#39;: 2.7268461070070824, &#39;min_dist_vdw_ratio&#39;: 0.8796277764538977, &#39;vdw_sum&#39;: 3.0999999999999996, &#39;radius&#39;: 1.2}</span>
+</pre></div>
+</div>
+</section>
+<section id="what-do-holo-apo-native-and-predicted-structures-within-pindersystem-mean">
+<h2>What do holo, apo, native, and predicted structures within <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> mean?<a class="headerlink" href="#what-do-holo-apo-native-and-predicted-structures-within-pindersystem-mean" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">native</span></code>: really its the same as holo , but in the pinder case it means the native dimer interaction as extracted from RCSB, without any coordinate transformations (except for stripping of solvent and non-protein/modified-protein atoms). It should align with the RCSB structure if you load the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dimer and e.g. run <code class="docutils literal notranslate"><span class="pre">fetch</span> <span class="pre">&lt;pdb_id&gt;</span></code> in pymol.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">holo</span></code>: bound conformation. Where bound in the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> context means there are other interacting protein chains in the original RCSB crystal.</p>
+<ul>
+<li><p>It is generally used to refer to the individual monomer chains that compose dimers. <code class="docutils literal notranslate"><span class="pre">holo-R</span></code> = Receptor from native, <code class="docutils literal notranslate"><span class="pre">holo-L</span></code> = Ligand from native</p></li>
+<li><p>The only caveat is that for the test split, we transform the coordinates of the monomers using a PCA-based normalization to ensure that there are no biases introduced during evaluation from methods that may be leaky if the input proteins are pre-oriented.</p></li>
+<li><p>All of the train split is left un-perturbed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> loads all of these for convenience, in case you need to make comparisons to the un-transformed version but tucks this into the code rather than the files on disk to ensure fair evaluation across methods.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apo</span></code>: unbound conformation. A uniprot-matched pairing of a structure from a different RCSB entry that is <em>not</em> interacting with other proteins</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predicted</span></code>: structures from AF2 predictions which were uniprot-matched to the holo monomers across all systems</p></li>
+</ul>
+</section>
+<section id="for-some-protein-pairs-when-i-extract-the-apo-and-holo-structures-and-align-their-sequence-the-results-dont-have-the-same-atoms-and-or-sequence-how-can-i-align-monomers-such-that-all-have-the-same-shape">
+<h2>For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don’t have the same atoms and/or sequence. How can I align monomers such that all have the same shape?<a class="headerlink" href="#for-some-protein-pairs-when-i-extract-the-apo-and-holo-structures-and-align-their-sequence-the-results-dont-have-the-same-atoms-and-or-sequence-how-can-i-align-monomers-such-that-all-have-the-same-shape" title="Link to this heading">#</a></h2>
+<p>For a more detailed example, see the <a class="reference internal" href="#examples/superposition.ipynb"><span class="xref myst">example notebook</span></a> (also available in the <a class="reference external" href="https://pinder-org.github.io/pinder/superposition.html">documentation</a>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+
+<span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">&quot;2gct__C1_P00766--2gct__A1_P00766&quot;</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+
+<span class="c1"># Single alternative monomer use-case without cropping</span>
+<span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">holo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_R</span> <span class="o">+</span> <span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_L</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">apo_RL</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">holo_RL</span><span class="p">)</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">764</span><span class="p">,</span> <span class="mi">758</span><span class="p">)</span>
+
+<span class="c1"># With cropping such that apo only contains atom that are in holo. No guarantee that holo doesn&#39;t contain &quot;extra&quot; atoms not in apo.</span>
+<span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">apo_RL</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">holo_RL</span><span class="p">)</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">756</span><span class="p">,</span> <span class="mi">758</span><span class="p">)</span>
+
+<span class="c1"># You can also renumber the residues in the apo structure to match the holo structure.</span>
+<span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Pairwise cropped structure superposition: ensure ALL monomer have the same shape.</span>
+<span class="c1"># Note: this will modify the ground-truth structure.</span>
+<span class="n">holo_cropped</span><span class="p">,</span> <span class="n">apo_cropped</span><span class="p">,</span> <span class="n">pred_cropped</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_masked_bound_unbound_complexes</span><span class="p">(</span>
+  <span class="n">monomer_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;apo&quot;</span><span class="p">],</span>
+  <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span>
+    <span class="n">holo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">apo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">pred_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">756</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">3598</span><span class="p">)</span>
+
+<span class="c1"># Pairwise including predicted monomers</span>
+<span class="n">holo_cropped</span><span class="p">,</span> <span class="n">apo_cropped</span><span class="p">,</span> <span class="n">pred_cropped</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_masked_bound_unbound_complexes</span><span class="p">(</span>
+  <span class="n">monomer_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;apo&quot;</span><span class="p">,</span> <span class="s2">&quot;predicted&quot;</span><span class="p">],</span>
+  <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span>
+    <span class="n">holo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">apo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">pred_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">756</span><span class="p">,</span> <span class="mi">756</span><span class="p">,</span> <span class="mi">756</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context">
+<h2>How can I use the evaluation harness outside of a <code class="docutils literal notranslate"><span class="pre">pinder</span></code> context?<a class="headerlink" href="#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context" title="Link to this heading">#</a></h2>
+<p>For a more detailed example, see the <a class="reference internal" href="#examples/pinder-eval.ipynb"><span class="xref myst">example notebook</span></a> (also available in the <a class="reference external" href="https://pinder-org.github.io/pinder/pinder-eval.html#pinder-eval-entrypoint">documentation</a>).</p>
+<p>In short, the DockQ-related classes provided in pinder roughly follow this hierarchy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder.eval.dockq.method.MethodMetrics</span></code></p>
+<ul>
+<li><p>For evaluating methods over many systems and producing a pinder-specific leaderboard</p></li>
+<li><p>Wraps BiotiteDockQ</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder.eval.dockq.biotite_dockq.BiotiteDockQ</span></code></p>
+<ul>
+<li><p>The DockQ calculation interface, designed to take one native/reference and score N decoys</p></li>
+<li><p>Performs I/O</p></li>
+<li><p>Does calculations that only need to be done one (native contacts, patching canonical order, etc)</p></li>
+<li><p>Makes calls to <code class="docutils literal notranslate"><span class="pre">DecoyDockQ</span></code>  in serial for list of <code class="docutils literal notranslate"><span class="pre">AtomArray</span></code> or vectorized over <code class="docutils literal notranslate"><span class="pre">AtomArrayStack</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinder.eval.dockq.biotite_dockq.DecoyDockQ</span></code></p>
+<ul>
+<li><p>Takes pre-prepared models and native information and gets the metrics</p></li>
+</ul>
+</li>
+</ul>
+<p>For the simplest interface to calculating DockQ metrics for arbitrary inputs, say you have a ground-truth structure with 2 chains, R and L, and a list of predicted models with chains A and B.</p>
+<p>If you know which chains between the ground-truth and models correspond with each other, you can specify the chains via <code class="docutils literal notranslate"><span class="pre">native_receptor_chains,</span> <span class="pre">native_ligand_chain,</span> <span class="pre">decoy_receptor_chain,</span> <span class="pre">decoy_ligand_chain</span></code>. If the chains are not provided, the receptor chain will be inferred based on the larger chain in both native and decoy structures.</p>
+<p><strong>Note the use of a list: it is possible to specify more than one chain to assign as receptor or ligand.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">native_receptor_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span>
+<span class="n">native_ligand_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span>
+<span class="n">decoy_receptor_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span>
+<span class="n">decoy_ligand_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">pinder.eval</span> <span class="kn">import</span> <span class="n">BiotiteDockQ</span>
+
+<span class="n">native</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./native.pdb&quot;</span><span class="p">)</span>
+<span class="n">models</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./models&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.pdb&quot;</span><span class="p">))</span>
+
+<span class="n">bdq</span> <span class="o">=</span> <span class="n">BiotiteDockQ</span><span class="p">(</span>
+    <span class="n">native</span><span class="p">,</span>
+    <span class="n">models</span><span class="p">,</span>
+    <span class="n">backbone_definition</span><span class="o">=</span><span class="s2">&quot;dockq&quot;</span><span class="p">,</span>
+    <span class="n">native_receptor_chain</span><span class="o">=</span><span class="n">native_receptor_chain</span><span class="p">,</span>
+    <span class="n">native_ligand_chain</span><span class="o">=</span><span class="n">native_ligand_chain</span><span class="p">,</span>
+    <span class="n">decoy_receptor_chain</span><span class="o">=</span><span class="n">decoy_receptor_chain</span><span class="p">,</span>
+    <span class="n">decoy_ligand_chain</span><span class="o">=</span><span class="n">decoy_ligand_chain</span><span class="p">,</span>
+    <span class="n">parallel_io</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">metrics</span> <span class="o">=</span> <span class="n">bdq</span><span class="o">.</span><span class="n">calculate</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="do-i-have-to-use-the-pinder-loader-how-can-i-write-my-own-loader">
+<h2>Do I have to use the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> loader? How can I write my own loader?<a class="headerlink" href="#do-i-have-to-use-the-pinder-loader-how-can-i-write-my-own-loader" title="Link to this heading">#</a></h2>
+<p>No! The <code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code> torch dataset and <code class="docutils literal notranslate"><span class="pre">PPIDataset</span></code> torch-geometric dataset serve as example implementations of a loader. The dataset wraps the abstract <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> class under the hood, which is the primary interface for loading <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> objects and applying filters and/or transforms.</p>
+<p>While not required, it is recommended to use the <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> class directly to implement your own loader.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code> brings together filters, transforms and writers to create an optionally parallel <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> iterator. It can accept either a specific split name or list of system IDs as input.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">PinderLoader</span>
+<span class="kn">from</span> <span class="nn">pinder.core.loader</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByMissingHolo</span><span class="p">(),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByContacts</span><span class="p">(</span><span class="n">min_contacts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">calpha_only</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloOverlap</span><span class="p">(</span><span class="n">min_overlap</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubLengths</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubRmsds</span><span class="p">(</span><span class="n">rmsd_cutoff</span><span class="o">=</span><span class="mf">7.5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedSub</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="c1"># Load a list of system IDs</span>
+<span class="n">systems</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;1df0__A1_Q07009--1df0__B1_Q64537&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;117e__A1_P00817--117e__B1_P00817&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">PinderLoader</span><span class="p">(</span>
+    <span class="n">ids</span><span class="o">=</span><span class="n">systems</span><span class="p">,</span>
+    <span class="n">base_filters</span> <span class="o">=</span> <span class="n">base_filters</span><span class="p">,</span>
+    <span class="n">sub_filters</span> <span class="o">=</span> <span class="n">sub_filters</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">PinderLoader</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">monomers</span><span class="o">=</span><span class="n">holo</span><span class="p">,</span> <span class="n">systems</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Iterate over loader to apply the filters and transforms. Systems that pass all filters will be yielded.</span>
+<span class="n">passing_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+    <span class="n">system</span><span class="p">,</span> <span class="n">feature_complex</span><span class="p">,</span> <span class="n">target_complex</span> <span class="o">=</span> <span class="n">item</span>
+    <span class="n">passing_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+<span class="c1"># Each dimer object can now be used in your own loader to access any of the properties exposed by the PinderSystem class, the monomer `Structure` objects, or the underlying `biotite.structure.AtomArray` objects.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-there-a-sequence-database-available">Is there a sequence database available?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-pinder-be-used-to-detect-steric-clashes">Can <code class="docutils literal notranslate"><span class="pre">pinder</span></code> be used to detect steric clashes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-holo-apo-native-and-predicted-structures-within-pindersystem-mean">What do holo, apo, native, and predicted structures within <code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code> mean?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-some-protein-pairs-when-i-extract-the-apo-and-holo-structures-and-align-their-sequence-the-results-dont-have-the-same-atoms-and-or-sequence-how-can-i-align-monomers-such-that-all-have-the-same-shape">For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don’t have the same atoms and/or sequence. How can I align monomers such that all have the same shape?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context">How can I use the evaluation harness outside of a <code class="docutils literal notranslate"><span class="pre">pinder</span></code> context?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-i-have-to-use-the-pinder-loader-how-can-i-write-my-own-loader">Do I have to use the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> loader? How can I write my own loader?</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/faq.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/faq.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

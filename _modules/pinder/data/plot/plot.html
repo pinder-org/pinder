@@ -1,0 +1,1477 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.plot.plot &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/plot/plot';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/plot/plot.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.plot.plot</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.plot.plot</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="kn">from</span> <span class="nn">pinder.data.plot</span> <span class="kn">import</span> <span class="n">figure_utils</span> <span class="k">as</span> <span class="n">futils</span>
+
+
+<div class="viewcode-block" id="Colors">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.Colors">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Colors</span><span class="p">:</span>
+    <span class="c1"># Neutral</span>
+    <span class="n">white</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#FFFFFF&quot;</span>
+    <span class="n">gray</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#A6ADCB&quot;</span>
+
+    <span class="c1"># Pinks</span>
+    <span class="n">pink</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#e7bade&quot;</span>
+    <span class="n">brightpink</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#FD4ECB&quot;</span>
+    <span class="n">pinder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#f26b6c&quot;</span>
+
+    <span class="c1"># Purples</span>
+    <span class="n">palepurple</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#c1c7e4&quot;</span>
+    <span class="n">whitepurple</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#d6d3db&quot;</span>
+    <span class="n">purple</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#8268F4&quot;</span>
+    <span class="n">redpurple</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#CC79A7&quot;</span>
+
+    <span class="c1"># Greens</span>
+    <span class="n">green</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#A3D6B3&quot;</span>
+    <span class="n">palegreen</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#5F9A8D&quot;</span>
+    <span class="n">teal</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#38EADC&quot;</span>
+    <span class="n">bluish_green</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#009E73&quot;</span>
+
+    <span class="c1"># Blues</span>
+    <span class="n">blue</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#b2dff6&quot;</span>
+    <span class="n">cb_blue</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#0072B2&quot;</span>
+    <span class="n">cb_skyblue</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#56B4E9&quot;</span>
+
+    <span class="n">ice</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#AAD2E8&quot;</span>
+    <span class="n">deepice</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#77B9F1&quot;</span>
+    <span class="n">paleblue</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#61A4BB&quot;</span>
+    <span class="n">denim</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#285290&quot;</span>
+    <span class="n">navy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#132747&quot;</span>
+    <span class="n">midnight</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#0B131B&quot;</span>
+
+    <span class="c1"># Orange/yellow</span>
+    <span class="n">cb_orange</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#E69F00&quot;</span>
+    <span class="n">cb_vermillion</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#D55E00&quot;</span>
+    <span class="n">cb_yellow</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#F0E442&quot;</span>
+
+<div class="viewcode-block" id="Colors.palette">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.Colors.palette">[docs]</a>
+    <span class="k">def</span> <span class="nf">palette</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">all_colors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">colors</span>
+        <span class="n">pal</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Warning: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> palette has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">)</span><span class="si">}</span><span class="s2"> colors, but </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> requested. Replacing with alternatives&quot;</span>
+            <span class="p">)</span>
+            <span class="n">pal</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">all_colors</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pal</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pal</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">palette_names</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">prop</span>
+            <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">prop</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;palette&quot;</span><span class="p">,</span> <span class="s2">&quot;colors&quot;</span><span class="p">]</span>
+            <span class="ow">and</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="p">]</span>
+        <span class="n">vbar</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">color_names</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="k">for</span> <span class="n">palette</span> <span class="ow">in</span> <span class="n">palette_names</span><span class="p">:</span>
+            <span class="n">colors</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">palette</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+                <span class="n">vbar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;Color&quot;</span><span class="p">:</span> <span class="n">color_names</span><span class="p">[</span><span class="n">c</span><span class="p">],</span>
+                        <span class="s2">&quot;hex&quot;</span><span class="p">:</span> <span class="n">c</span><span class="p">,</span>
+                        <span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="n">palette</span><span class="p">,</span>
+                        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">100</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span>
+                        <span class="s2">&quot;palette_size&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+        <span class="n">vbar_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vbar</span><span class="p">)</span>
+        <span class="n">palette_order</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="n">vbar_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;palette_size&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s2">&quot;palette&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">palette</span>
+        <span class="p">)</span>
+
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+            <span class="n">vbar_df</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;palette&quot;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Color&quot;</span><span class="p">,</span>
+            <span class="n">color_discrete_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">,</span>
+            <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="n">palette_order</span><span class="p">},</span>
+            <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">850</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+            <span class="n">vbar_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;palette_size&quot;</span><span class="p">),</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;palette&quot;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Color&quot;</span><span class="p">,</span>
+            <span class="n">color_discrete_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">,</span>
+            <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="n">palette_order</span><span class="p">},</span>
+            <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_dark&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mi">850</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">colors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available colors.&quot;&quot;&quot;</span>
+        <span class="n">colors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">field</span><span class="o">.</span><span class="n">default</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dataclass_fields__</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">colors</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">light</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available light colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pink</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dark</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available dark colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denim</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">navy</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">midnight</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">paleblue</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">palegreen</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">colorblind_paired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available colorblind-friendly paired colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bluish_green</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">redpurple</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cb_blue</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cb_orange</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cb_yellow</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cb_skyblue</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cb_vermillion</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">blues</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available blue-hued colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ice</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">deepice</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">paleblue</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denim</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">navy</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">midnight</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pinks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available pink-hued colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brightpink</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">purples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available purple-hued colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">palepurple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">purple</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">neutral</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: The list of available neutral colors.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">white</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">midnight</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">paired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: paired color palette.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">palegreen</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">brightpink</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">palepurple</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">purple</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ice</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">deepice</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denim</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">navy</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">white</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bright</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: bright color palette.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">brightpink</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">teal</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">purple</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denim</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">white</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">deepice</span><span class="p">,</span>
+        <span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pastel</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;list[str]: pastel color palette.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">palepurple</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gray</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="Theme">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.Theme">[docs]</a>
+<span class="k">class</span> <span class="nc">Theme</span><span class="p">:</span>
+    <span class="n">axis_linewidth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.8</span>
+    <span class="n">area_fill_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#ffb8b8&quot;</span>
+    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;presentation&quot;</span>
+    <span class="n">axis_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="n">axis_title_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="n">tick_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">text_marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">marker_pattern_bgcolor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+    <span class="n">meanline_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#b3b3b3&quot;</span>
+    <span class="n">box_fill_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#d6d6d6&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="LightTheme">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.LightTheme">[docs]</a>
+<span class="k">class</span> <span class="nc">LightTheme</span><span class="p">(</span><span class="n">Theme</span><span class="p">):</span>
+    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;simple_white&quot;</span>
+    <span class="n">tick_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">axis_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="n">axis_title_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="n">text_marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">box_fill_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rgba(214, 214, 214, 0.1)&quot;</span>
+    <span class="n">marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#333&quot;</span>
+    <span class="n">meanline_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#b3b3b3&quot;</span>
+    <span class="n">violin_marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rgba(214, 214, 214, 0.1)&quot;</span>
+    <span class="n">marker_pattern_bgcolor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="DarkTheme">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.DarkTheme">[docs]</a>
+<span class="k">class</span> <span class="nc">DarkTheme</span><span class="p">(</span><span class="n">Theme</span><span class="p">):</span>
+    <span class="n">template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;plotly_dark&quot;</span>
+    <span class="n">tick_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#d6d6d6&quot;</span>
+    <span class="n">axis_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+    <span class="n">axis_title_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+    <span class="n">marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#d6d6d6&quot;</span>
+    <span class="n">text_marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#d6d6d6&quot;</span>
+    <span class="n">box_fill_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#212121&quot;</span>
+    <span class="n">meanline_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;#616161&quot;</span>
+    <span class="n">violin_marker_line_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rgba(33, 33, 33, 0.1)&quot;</span>
+    <span class="n">marker_pattern_bgcolor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="format_axes">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.format_axes">[docs]</a>
+<span class="k">def</span> <span class="nf">format_axes</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">:</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">(),</span>
+    <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">hide_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">custom_xaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">custom_yaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">shared_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">shared_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">shared_xaxis_y_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">shared_yaxis_x_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">x_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">y_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">custom_xaxis_title</span><span class="p">:</span>
+        <span class="n">x_title_text</span> <span class="o">=</span> <span class="n">custom_xaxis_title</span>
+    <span class="k">elif</span> <span class="n">hide_xaxis_title</span><span class="p">:</span>
+        <span class="n">x_title_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x_title_text</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">custom_yaxis_title</span><span class="p">:</span>
+        <span class="n">y_title_text</span> <span class="o">=</span> <span class="n">custom_yaxis_title</span>
+    <span class="k">elif</span> <span class="n">hide_yaxis_title</span><span class="p">:</span>
+        <span class="n">y_title_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y_title_text</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># if hide_xaxis_title:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">remove_xaxis_titles</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="c1"># if hide_yaxis_title:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">remove_yaxis_titles</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">update_axes</span><span class="p">(</span>
+        <span class="n">fig</span><span class="p">,</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">axis_line_color</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">tick_color</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">axis_title_color</span><span class="p">,</span>
+        <span class="n">showgrid</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">axis_linewidth</span><span class="p">,</span>
+        <span class="n">title_text</span><span class="o">=</span><span class="n">y_title_text</span><span class="p">,</span>
+        <span class="n">showticklabels</span><span class="o">=</span><span class="n">y_tick_labels</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">update_axes</span><span class="p">(</span>
+        <span class="n">fig</span><span class="p">,</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">axis_line_color</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">tick_color</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">.</span><span class="n">axis_title_color</span><span class="p">,</span>
+        <span class="n">showgrid</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">axis_linewidth</span><span class="p">,</span>
+        <span class="n">title_text</span><span class="o">=</span><span class="n">x_title_text</span><span class="p">,</span>
+        <span class="n">showticklabels</span><span class="o">=</span><span class="n">x_tick_labels</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">shared_xaxis_title</span><span class="p">:</span>
+        <span class="n">x_title</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;&quot;</span> <span class="o">+</span> <span class="n">x_title_text</span> <span class="o">+</span> <span class="s2">&quot;&lt;/b&gt;&quot;</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">add_xaxis_title</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">x_title</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">shared_xaxis_y_loc</span><span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">remove_xaxis_titles</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">shared_yaxis_title</span><span class="p">:</span>
+        <span class="n">y_title</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;&quot;</span> <span class="o">+</span> <span class="n">y_title_text</span> <span class="o">+</span> <span class="s2">&quot;&lt;/b&gt;&quot;</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">add_yaxis_title</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">y_title</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">shared_yaxis_x_loc</span><span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">remove_yaxis_titles</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">shared_xaxis_title</span><span class="p">:</span>
+        <span class="n">margin_bottom</span> <span class="o">=</span> <span class="mi">75</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">hide_xaxis_title</span><span class="p">:</span>
+        <span class="n">margin_bottom</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">margin_bottom</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">fig</span><span class="p">,</span>
+        <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;Helvetica&quot;</span><span class="p">),</span>
+        <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">l</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+            <span class="n">r</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+            <span class="n">b</span><span class="o">=</span><span class="n">margin_bottom</span><span class="p">,</span>
+            <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="format_text">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.format_text">[docs]</a>
+<span class="k">def</span> <span class="nf">format_text</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">:</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">(),</span>
+    <span class="n">text_template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%</span><span class="si">{text:.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">bold_trace_name</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">bold_annotations</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">format_text_template</span><span class="p">(</span>
+            <span class="n">fig</span><span class="p">,</span>
+            <span class="n">marker_line_color</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">text_marker_line_color</span><span class="p">,</span>
+            <span class="n">text_template</span><span class="o">=</span><span class="n">text_template</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="format_legend">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.format_legend">[docs]</a>
+<span class="k">def</span> <span class="nf">format_legend</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">:</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
+    <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">hide_legend_title</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">remove_legend_title</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">showlegend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="format_facets">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.format_facets">[docs]</a>
+<span class="k">def</span> <span class="nf">format_facets</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">:</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">facet_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">facet_col_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">show_facet_y_line</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">facet_col</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fig</span>
+    <span class="n">n_facets</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">facet_col</span><span class="p">]))</span>
+    <span class="n">multi_row</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">facet_col_wrap</span><span class="p">:</span>
+        <span class="n">multi_row</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_facets</span> <span class="o">/</span> <span class="n">facet_col_wrap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+    <span class="c1"># hide shared y-axis tick labels when all in one row</span>
+    <span class="n">show_secondary_y_ticks</span> <span class="o">=</span> <span class="n">multi_row</span>
+    <span class="n">axis_keys</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;yaxis</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_facets</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">secondary_axis</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">showticklabels</span><span class="o">=</span><span class="n">show_secondary_y_ticks</span><span class="p">,</span>
+        <span class="n">showline</span><span class="o">=</span><span class="n">show_facet_y_line</span><span class="p">,</span>
+        <span class="n">tickfont</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;rgba(0,0,0,0)&quot;</span><span class="p">),</span>
+        <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">tickwidth</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">tickcolor</span><span class="o">=</span><span class="s2">&quot;rgba(0,0,0,0)&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">axis_key</span> <span class="ow">in</span> <span class="n">axis_keys</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="p">[</span><span class="n">axis_key</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">secondary_axis</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="apply_formatting">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.apply_formatting">[docs]</a>
+<span class="k">def</span> <span class="nf">apply_formatting</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">:</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">,</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">LightTheme</span><span class="p">(),</span>
+    <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+    <span class="n">hide_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">custom_xaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">custom_yaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">shared_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">shared_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">shared_xaxis_y_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">shared_yaxis_x_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">x_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">y_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">facet_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">facet_col_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">show_facet_y_line</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">text_template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%</span><span class="si">{text:.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">format_axes</span><span class="p">(</span>
+        <span class="n">fig</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+        <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+        <span class="n">hide_xaxis_title</span><span class="o">=</span><span class="n">hide_xaxis_title</span><span class="p">,</span>
+        <span class="n">hide_yaxis_title</span><span class="o">=</span><span class="n">hide_yaxis_title</span><span class="p">,</span>
+        <span class="n">custom_xaxis_title</span><span class="o">=</span><span class="n">custom_xaxis_title</span><span class="p">,</span>
+        <span class="n">custom_yaxis_title</span><span class="o">=</span><span class="n">custom_yaxis_title</span><span class="p">,</span>
+        <span class="n">grid_x</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+        <span class="n">grid_y</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+        <span class="n">shared_xaxis_title</span><span class="o">=</span><span class="n">shared_xaxis_title</span><span class="p">,</span>
+        <span class="n">shared_yaxis_title</span><span class="o">=</span><span class="n">shared_yaxis_title</span><span class="p">,</span>
+        <span class="n">x_tick_labels</span><span class="o">=</span><span class="n">x_tick_labels</span><span class="p">,</span>
+        <span class="n">y_tick_labels</span><span class="o">=</span><span class="n">y_tick_labels</span><span class="p">,</span>
+        <span class="n">shared_xaxis_y_loc</span><span class="o">=</span><span class="n">shared_xaxis_y_loc</span><span class="p">,</span>
+        <span class="n">shared_yaxis_x_loc</span><span class="o">=</span><span class="n">shared_yaxis_x_loc</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">format_text</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">theme</span><span class="o">=</span><span class="n">theme</span><span class="p">,</span> <span class="n">text_template</span><span class="o">=</span><span class="n">text_template</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">format_legend</span><span class="p">(</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">,</span> <span class="n">hide_legend_title</span><span class="o">=</span><span class="n">hide_legend_title</span>
+    <span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">format_facets</span><span class="p">(</span>
+        <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+        <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+        <span class="n">show_facet_y_line</span><span class="o">=</span><span class="n">show_facet_y_line</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+
+<div class="viewcode-block" id="LinePlot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.LinePlot">[docs]</a>
+<span class="k">class</span> <span class="nc">LinePlot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">DarkTheme</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">theme</span>
+
+<div class="viewcode-block" id="LinePlot.lineplot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.LinePlot.lineplot">[docs]</a>
+    <span class="k">def</span> <span class="nf">lineplot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_row</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">color_discrete_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">category_orders</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">hide_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">custom_xaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">custom_yaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_xaxis_y_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">shared_yaxis_x_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">x_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">y_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_facet_y_line</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">text_template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%</span><span class="si">{text:.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+        <span class="n">line_dash</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">color_discrete_map</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">category_orders</span><span class="o">=</span><span class="n">category_orders</span><span class="p">,</span>
+            <span class="n">template</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">facet_row</span><span class="o">=</span><span class="n">facet_row</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">line_dash</span><span class="o">=</span><span class="n">line_dash</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">apply_formatting</span><span class="p">(</span>
+            <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">hide_xaxis_title</span><span class="o">=</span><span class="n">hide_xaxis_title</span><span class="p">,</span>
+            <span class="n">hide_yaxis_title</span><span class="o">=</span><span class="n">hide_yaxis_title</span><span class="p">,</span>
+            <span class="n">custom_xaxis_title</span><span class="o">=</span><span class="n">custom_xaxis_title</span><span class="p">,</span>
+            <span class="n">custom_yaxis_title</span><span class="o">=</span><span class="n">custom_yaxis_title</span><span class="p">,</span>
+            <span class="n">grid_x</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+            <span class="n">grid_y</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+            <span class="n">shared_xaxis_title</span><span class="o">=</span><span class="n">shared_xaxis_title</span><span class="p">,</span>
+            <span class="n">shared_yaxis_title</span><span class="o">=</span><span class="n">shared_yaxis_title</span><span class="p">,</span>
+            <span class="n">shared_xaxis_y_loc</span><span class="o">=</span><span class="n">shared_xaxis_y_loc</span><span class="p">,</span>
+            <span class="n">shared_yaxis_x_loc</span><span class="o">=</span><span class="n">shared_yaxis_x_loc</span><span class="p">,</span>
+            <span class="n">x_tick_labels</span><span class="o">=</span><span class="n">x_tick_labels</span><span class="p">,</span>
+            <span class="n">y_tick_labels</span><span class="o">=</span><span class="n">y_tick_labels</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">show_facet_y_line</span><span class="o">=</span><span class="n">show_facet_y_line</span><span class="p">,</span>
+            <span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">,</span>
+            <span class="n">hide_legend_title</span><span class="o">=</span><span class="n">hide_legend_title</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">text_template</span><span class="o">=</span><span class="n">text_template</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+            <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">yanchor</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BarPlot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.BarPlot">[docs]</a>
+<span class="k">class</span> <span class="nc">BarPlot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">DarkTheme</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">theme</span>
+
+<div class="viewcode-block" id="BarPlot.barplot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.BarPlot.barplot">[docs]</a>
+    <span class="k">def</span> <span class="nf">barplot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_row</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">color_discrete_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">category_orders</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">barmode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+        <span class="n">hide_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">custom_xaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">custom_yaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">show_facet_y_line</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">text_template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%</span><span class="si">{text:.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+        <span class="n">x_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">y_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">shared_xaxis_y_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">shared_yaxis_x_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">color_discrete_map</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">category_orders</span><span class="o">=</span><span class="n">category_orders</span><span class="p">,</span>
+            <span class="n">template</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">facet_row</span><span class="o">=</span><span class="n">facet_row</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">barmode</span><span class="o">=</span><span class="n">barmode</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">apply_formatting</span><span class="p">(</span>
+            <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">hide_xaxis_title</span><span class="o">=</span><span class="n">hide_xaxis_title</span><span class="p">,</span>
+            <span class="n">hide_yaxis_title</span><span class="o">=</span><span class="n">hide_yaxis_title</span><span class="p">,</span>
+            <span class="n">custom_xaxis_title</span><span class="o">=</span><span class="n">custom_xaxis_title</span><span class="p">,</span>
+            <span class="n">custom_yaxis_title</span><span class="o">=</span><span class="n">custom_yaxis_title</span><span class="p">,</span>
+            <span class="n">grid_x</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+            <span class="n">grid_y</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+            <span class="n">shared_xaxis_title</span><span class="o">=</span><span class="n">shared_xaxis_title</span><span class="p">,</span>
+            <span class="n">shared_yaxis_title</span><span class="o">=</span><span class="n">shared_yaxis_title</span><span class="p">,</span>
+            <span class="n">shared_xaxis_y_loc</span><span class="o">=</span><span class="n">shared_xaxis_y_loc</span><span class="p">,</span>
+            <span class="n">shared_yaxis_x_loc</span><span class="o">=</span><span class="n">shared_yaxis_x_loc</span><span class="p">,</span>
+            <span class="n">x_tick_labels</span><span class="o">=</span><span class="n">x_tick_labels</span><span class="p">,</span>
+            <span class="n">y_tick_labels</span><span class="o">=</span><span class="n">y_tick_labels</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">show_facet_y_line</span><span class="o">=</span><span class="n">show_facet_y_line</span><span class="p">,</span>
+            <span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">,</span>
+            <span class="n">hide_legend_title</span><span class="o">=</span><span class="n">hide_legend_title</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">text_template</span><span class="o">=</span><span class="n">text_template</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span></div>
+
+
+<div class="viewcode-block" id="BarPlot.grouped_stacked_bar">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.BarPlot.grouped_stacked_bar">[docs]</a>
+    <span class="k">def</span> <span class="nf">grouped_stacked_bar</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">group_col</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">y_cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">group_colors</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Top 1&quot;</span><span class="p">:</span> <span class="n">Colors</span><span class="o">.</span><span class="n">green</span><span class="p">,</span>
+            <span class="s2">&quot;Top 5&quot;</span><span class="p">:</span> <span class="n">Colors</span><span class="o">.</span><span class="n">pink</span><span class="p">,</span>
+            <span class="s2">&quot;Oracle&quot;</span><span class="p">:</span> <span class="n">Colors</span><span class="o">.</span><span class="n">blue</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">x_order</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">pattern_cols</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;percent_capri&quot;</span><span class="p">],</span>
+        <span class="n">y_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">y_colors</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1400</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">900</span><span class="p">,</span>
+        <span class="n">legend_orientation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;v&quot;</span><span class="p">,</span>
+        <span class="n">legend_font_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
+        <span class="n">font_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">font_family</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Helvetica&quot;</span><span class="p">,</span>
+        <span class="n">barmode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">group_col</span><span class="p">]</span> <span class="o">+</span> <span class="n">y_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">y_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">y_cols</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">group_col</span><span class="p">)</span>
+
+        <span class="c1"># Set custom x-axis order</span>
+        <span class="k">if</span> <span class="n">x_order</span><span class="p">:</span>
+            <span class="n">reorderlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">x_order</span> <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">reorderlist</span><span class="p">)</span><span class="o">.</span><span class="n">argsort</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">groups</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">group_col</span><span class="p">]))</span>
+        <span class="n">n_groups</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">group_colors</span><span class="p">:</span>
+            <span class="n">group_colors</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">group</span><span class="p">:</span> <span class="n">color</span>
+                <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">Colors</span><span class="p">()</span><span class="o">.</span><span class="n">palette</span><span class="p">(</span><span class="s2">&quot;paired&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">)))</span>
+            <span class="p">}</span>
+        <span class="c1"># Preserve legend order to match group_colors (unordered if not provided)</span>
+        <span class="n">groups</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">group_colors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="n">color_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span><span class="n">group</span><span class="p">:</span> <span class="p">{}</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">y_col</span> <span class="ow">in</span> <span class="n">y_cols</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">y_colors</span><span class="p">:</span>
+                    <span class="n">y_color</span> <span class="o">=</span> <span class="n">y_colors</span><span class="p">[</span><span class="n">y_col</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">y_color</span> <span class="o">=</span> <span class="n">group_colors</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
+
+                <span class="n">color_map</span><span class="p">[</span><span class="n">group</span><span class="p">][</span><span class="n">y_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_color</span>
+
+        <span class="n">yaxes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_groups</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">axis_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;yaxis</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="c1"># Secondary y-axis overlayed on the primary one and not visible</span>
+            <span class="n">yaxes</span><span class="p">[</span><span class="n">axis_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">YAxis</span><span class="p">(</span>
+                <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">matches</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+                <span class="n">overlaying</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+                <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+                <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+                <span class="n">template</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+                <span class="n">barmode</span><span class="o">=</span><span class="n">barmode</span><span class="p">,</span>
+                <span class="n">yaxis_showticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">yaxis_showgrid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">yaxis_title</span><span class="o">=</span><span class="n">y_title</span> <span class="ow">or</span> <span class="n">y_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">yaxis_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mi">100</span><span class="p">])],</span>
+                <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">font_size</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">font_family</span><span class="p">),</span>
+                <span class="n">legend_orientation</span><span class="o">=</span><span class="n">legend_orientation</span><span class="p">,</span>
+                <span class="n">legend_font_size</span><span class="o">=</span><span class="n">legend_font_size</span><span class="p">,</span>
+                <span class="n">hovermode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+                <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+                <span class="o">**</span><span class="n">yaxes</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pattern_cols</span><span class="p">:</span>
+            <span class="n">pattern_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">y_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
+        <span class="c1"># Add the traces</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">y_cols</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">add_bar</span><span class="p">(</span>
+                    <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">col</span><span class="p">],</span>
+                    <span class="c1"># Set the right yaxis depending on the selected product (from enumerate)</span>
+                    <span class="n">yaxis</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;y</span><span class="si">{</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="c1"># Offset the bar trace, offset needs to match the width</span>
+                    <span class="c1"># For categorical traces, each category is spaced by 1</span>
+                    <span class="n">offsetgroup</span><span class="o">=</span><span class="n">j</span><span class="p">,</span>
+                    <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_groups</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="n">width</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">n_groups</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="n">legendgroup</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                    <span class="n">legendgrouptitle_text</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span>
+                    <span class="n">marker_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">t</span><span class="p">],</span>
+                    <span class="c1"># text=sr_holo[t][col].round(1),</span>
+                    <span class="n">marker_line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">marker_line_color</span><span class="p">),</span>
+                    <span class="n">marker_pattern_shape</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pattern_cols</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="n">marker_pattern_bgcolor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">marker_pattern_bgcolor</span>
+                    <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pattern_cols</span>
+                    <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">marker_pattern_fgcolor</span><span class="o">=</span><span class="n">color_map</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">t</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pattern_cols</span>
+                    <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">marker_pattern_fgopacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                    <span class="n">marker_pattern_solidity</span><span class="o">=</span><span class="mf">0.4</span> <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">pattern_cols</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">hovertemplate</span><span class="o">=</span><span class="s2">&quot;%</span><span class="si">{y}</span><span class="s2">&lt;extra&gt;&lt;/extra&gt;&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+            <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">yanchor</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ViolinPlot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.ViolinPlot">[docs]</a>
+<span class="k">class</span> <span class="nc">ViolinPlot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theme</span><span class="p">:</span> <span class="n">Theme</span> <span class="o">=</span> <span class="n">DarkTheme</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="n">theme</span>
+
+<div class="viewcode-block" id="ViolinPlot.violinplot">
+<a class="viewcode-back" href="../../../../source/pinder.data.plot.html#pinder.data.plot.plot.ViolinPlot.violinplot">[docs]</a>
+    <span class="k">def</span> <span class="nf">violinplot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">facet_col</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col_wrap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">facet_col_spacing</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">points</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;outliers&quot;</span><span class="p">,</span>
+        <span class="n">color_discrete_map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">category_orders</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">violinmode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+        <span class="n">hide_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">hide_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">custom_xaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">custom_yaxis_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">grid_x</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">grid_y</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">hide_legend_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_xaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_yaxis_title</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">shared_xaxis_y_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">shared_yaxis_x_loc</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">hard_span</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">span</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">vrect</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">hrect</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">meanline_visible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">scalemode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;width&quot;</span><span class="p">,</span>
+        <span class="n">scale_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">x_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">y_tick_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">marker_line_width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">marker_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">marker_opacity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="n">show_facet_y_line</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">text_template</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%</span><span class="si">{text:.1f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">px</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">template</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">color_discrete_map</span><span class="o">=</span><span class="n">color_discrete_map</span><span class="p">,</span>
+            <span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span>
+            <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span>
+            <span class="n">category_orders</span><span class="o">=</span><span class="n">category_orders</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+            <span class="n">violinmode</span><span class="o">=</span><span class="n">violinmode</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">facet_col_spacing</span><span class="o">=</span><span class="n">facet_col_spacing</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">hard_span</span><span class="p">:</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">spanmode</span><span class="o">=</span><span class="s2">&quot;hard&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">span</span><span class="p">:</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="n">span</span><span class="p">,</span> <span class="n">spanmode</span><span class="o">=</span><span class="s2">&quot;manual&quot;</span><span class="p">)</span>
+
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">apply_formatting</span><span class="p">(</span>
+            <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">theme</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="p">,</span>
+            <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+            <span class="n">hide_xaxis_title</span><span class="o">=</span><span class="n">hide_xaxis_title</span><span class="p">,</span>
+            <span class="n">hide_yaxis_title</span><span class="o">=</span><span class="n">hide_yaxis_title</span><span class="p">,</span>
+            <span class="n">custom_xaxis_title</span><span class="o">=</span><span class="n">custom_xaxis_title</span><span class="p">,</span>
+            <span class="n">custom_yaxis_title</span><span class="o">=</span><span class="n">custom_yaxis_title</span><span class="p">,</span>
+            <span class="n">grid_x</span><span class="o">=</span><span class="n">grid_x</span><span class="p">,</span>
+            <span class="n">grid_y</span><span class="o">=</span><span class="n">grid_y</span><span class="p">,</span>
+            <span class="n">shared_xaxis_title</span><span class="o">=</span><span class="n">shared_xaxis_title</span><span class="p">,</span>
+            <span class="n">shared_yaxis_title</span><span class="o">=</span><span class="n">shared_yaxis_title</span><span class="p">,</span>
+            <span class="n">shared_xaxis_y_loc</span><span class="o">=</span><span class="n">shared_xaxis_y_loc</span><span class="p">,</span>
+            <span class="n">shared_yaxis_x_loc</span><span class="o">=</span><span class="n">shared_yaxis_x_loc</span><span class="p">,</span>
+            <span class="n">x_tick_labels</span><span class="o">=</span><span class="n">x_tick_labels</span><span class="p">,</span>
+            <span class="n">y_tick_labels</span><span class="o">=</span><span class="n">y_tick_labels</span><span class="p">,</span>
+            <span class="n">facet_col</span><span class="o">=</span><span class="n">facet_col</span><span class="p">,</span>
+            <span class="n">facet_col_wrap</span><span class="o">=</span><span class="n">facet_col_wrap</span><span class="p">,</span>
+            <span class="n">show_facet_y_line</span><span class="o">=</span><span class="n">show_facet_y_line</span><span class="p">,</span>
+            <span class="n">show_legend</span><span class="o">=</span><span class="n">show_legend</span><span class="p">,</span>
+            <span class="n">hide_legend_title</span><span class="o">=</span><span class="n">hide_legend_title</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">text_template</span><span class="o">=</span><span class="n">text_template</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">futils</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+            <span class="n">fig</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;Helvetica&quot;</span><span class="p">),</span>
+            <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">l</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span>
+                <span class="n">r</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                <span class="n">b</span><span class="o">=</span><span class="mi">100</span> <span class="k">if</span> <span class="n">facet_col</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">t</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span>
+            <span class="n">marker_line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">width</span><span class="o">=</span><span class="n">marker_line_width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">marker_line_color</span>
+            <span class="p">),</span>
+            <span class="n">meanline_visible</span><span class="o">=</span><span class="n">meanline_visible</span><span class="p">,</span>
+            <span class="n">marker_size</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span>
+            <span class="n">marker_opacity</span><span class="o">=</span><span class="n">marker_opacity</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">for_each_trace</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">width</span><span class="o">=</span><span class="n">scale_width</span><span class="p">,</span>
+                <span class="n">scalemode</span><span class="o">=</span><span class="n">scalemode</span><span class="p">,</span>
+                <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="n">meanline</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                    <span class="n">visible</span><span class="o">=</span><span class="n">meanline_visible</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">meanline_color</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span>
+                <span class="p">),</span>
+                <span class="n">box</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                    <span class="n">visible</span><span class="o">=</span><span class="n">box</span><span class="p">,</span>
+                    <span class="n">width</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                    <span class="n">fillcolor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">box_fill_color</span><span class="p">,</span>
+                    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">marker_line_color</span><span class="p">),</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">vrect</span><span class="p">:</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">add_vrect</span><span class="p">(</span>
+                <span class="n">x0</span><span class="o">=</span><span class="n">vrect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">x1</span><span class="o">=</span><span class="n">vrect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">fillcolor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">area_fill_color</span><span class="p">,</span>
+                <span class="n">opacity</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">hrect</span><span class="p">:</span>
+            <span class="n">fig</span><span class="o">.</span><span class="n">add_hrect</span><span class="p">(</span>
+                <span class="n">y0</span><span class="o">=</span><span class="n">hrect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">y1</span><span class="o">=</span><span class="n">hrect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">fillcolor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">theme</span><span class="o">.</span><span class="n">area_fill_color</span><span class="p">,</span>
+                <span class="n">opacity</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

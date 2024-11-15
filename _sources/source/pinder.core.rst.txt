@@ -1,0 +1,22 @@
+pinder.core package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 10
+
+   pinder.core.index
+   pinder.core.loader
+   pinder.core.structure
+   pinder.core.submit
+   pinder.core.utils
+
+Module contents
+---------------
+
+.. automodule:: pinder.core
+   :members:
+   :undoc-members:
+   :show-inheritance:

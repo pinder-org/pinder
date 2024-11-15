@@ -1,0 +1,10 @@
+pinder.methods.preprocess package
+=================================
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.preprocess
+   :members:
+   :undoc-members:
+   :show-inheritance:

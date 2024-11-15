@@ -1,0 +1,1315 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.find_transitive_hits &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/find_transitive_hits';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/find_transitive_hits.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.find_transitive_hits</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.find_transitive_hits</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">combinations_with_replacement</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">pinder.data.graph_utils</span> <span class="k">as</span> <span class="nn">gu</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.timer</span> <span class="kn">import</span> <span class="n">timeit</span>
+<span class="kn">from</span> <span class="nn">pinder.data.csv_utils</span> <span class="kn">import</span> <span class="n">read_csv_non_default_na</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">ClusterConfig</span><span class="p">,</span> <span class="n">GraphConfig</span><span class="p">,</span> <span class="n">get_config_hash</span>
+<span class="kn">from</span> <span class="nn">pinder.data.get_clusters</span> <span class="kn">import</span> <span class="n">load_cluster_cache</span>
+<span class="kn">from</span> <span class="nn">pinder.data.pipeline.constants</span> <span class="kn">import</span> <span class="n">CONSIDER_LEAKED</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_potential_representatives">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_potential_representatives">[docs]</a>
+<span class="k">def</span> <span class="nf">get_potential_representatives</span><span class="p">(</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get potential representatives from the metadata based on specified criteria.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        metadata (pd.DataFrame): The metadata containing information about the dataset.</span>
+<span class="sd">        config (ClusterConfig): The `ClusterConfig` object containing config for selecting the test set.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple[pd.DataFrame, pd.DataFrame]: A tuple containing two DataFrames:</span>
+<span class="sd">            - The first DataFrame contains the potential representatives based on the specified criteria.</span>
+<span class="sd">            - The second DataFrame contains the potential representatives after a specific date.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="n">query_fields</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">&quot;oligomeric_count == </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">oligomeric_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;method == &#39;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;interface_atom_gaps_4A &lt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">interface_atom_gaps_4A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;length1 &gt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;length2 &gt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">min_chain_length</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;num_atom_types &gt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">min_atom_types</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;label == &#39;</span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">prodigy_label</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;resolution &lt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">resolution_thr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number_of_components_1 == </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">number_of_components</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;number_of_components_2 == </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">number_of_components</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;max_var_1 &lt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">max_var_thr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;max_var_2 &lt;= </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">max_var_thr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">query_str</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot; &amp; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">query_fields</span><span class="p">])</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_str</span><span class="p">)</span>
+    <span class="n">af2mm_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[(</span><span class="n">test</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">alphafold_cutoff_date</span><span class="p">))]</span>
+    <span class="k">return</span> <span class="n">test</span><span class="p">,</span> <span class="n">af2mm_test</span></div>
+
+
+
+<div class="viewcode-block" id="get_test_conversion_dicts">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_test_conversion_dicts">[docs]</a>
+<span class="k">def</span> <span class="nf">get_test_conversion_dicts</span><span class="p">(</span>
+    <span class="n">test_index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">cluster_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert the test index data into a set of test system IDs and a dictionary mapping cluster IDs to test system IDs.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        test_index (pandas.DataFrame): The test index data.</span>
+<span class="sd">        cluster_key (str, optional): The column name for the cluster ID. Defaults to &quot;cluster_id&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: A tuple containing the set of test system IDs and the dictionary mapping cluster IDs to test system IDs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">test_system_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])</span>
+    <span class="n">cluster_to_test_systems</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">sys_id</span><span class="p">,</span> <span class="n">cluster_id</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">test_index</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">test_index</span><span class="p">[</span><span class="n">cluster_key</span><span class="p">]):</span>
+        <span class="n">cluster_to_test_systems</span><span class="p">[</span><span class="n">cluster_id</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sys_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_system_ids</span><span class="p">,</span> <span class="n">cluster_to_test_systems</span>  <span class="c1"># type: ignore</span></div>
+
+
+
+<div class="viewcode-block" id="get_proto_splits_pindex">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_proto_splits_pindex">[docs]</a>
+<span class="k">def</span> <span class="nf">get_proto_splits_pindex</span><span class="p">(</span>
+    <span class="n">index</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">cluster_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the test-train split for the index based on the cluster_id&quot;&quot;&quot;</span>
+    <span class="n">filtered_pindex</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;cluster_id_R&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">index</span><span class="p">[</span><span class="s2">&quot;cluster_id_L&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">filtered_pindex</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> clustered systems in &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> index entries&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">test_meta</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_potential_representatives</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">test_index</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">])]</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Chose </span><span class="si">{</span><span class="n">test_index</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> potential test systems &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;from </span><span class="si">{</span><span class="n">filtered_pindex</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> clustered systems.&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">cluster_to_test_systems</span> <span class="o">=</span> <span class="n">get_test_conversion_dicts</span><span class="p">(</span><span class="n">test_index</span><span class="p">,</span> <span class="n">cluster_key</span><span class="p">)</span>
+
+    <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;proto-test&quot;</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_meta</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]),</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;proto-train&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">filtered_pindex</span><span class="p">,</span> <span class="n">cluster_to_test_systems</span></div>
+
+
+
+<div class="viewcode-block" id="get_leakage_dict">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_leakage_dict">[docs]</a>
+<span class="k">def</span> <span class="nf">get_leakage_dict</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">graph_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+    <span class="n">graph_config</span><span class="p">:</span> <span class="n">GraphConfig</span> <span class="o">=</span> <span class="n">GraphConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">af2_transitive_hits</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">chk_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;cluster&quot;</span> <span class="o">/</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">af2_transitive_hits</span><span class="p">:</span>
+        <span class="n">thresh_label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">foldseek_af2_difficulty_threshold</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">leakage_checkpoint</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_af2_lddt</span><span class="si">{</span><span class="n">thresh_label</span><span class="si">}</span><span class="s2">_leakage_dict.pkl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">potential_leaks_chkpt</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_af2_lddt</span><span class="si">{</span><span class="n">thresh_label</span><span class="si">}</span><span class="s2">_potential_leaks.pkl&quot;</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">leakage_checkpoint</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_leakage_dict.pkl&quot;</span>
+        <span class="n">potential_leaks_chkpt</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_potential_leaks.pkl&quot;</span>
+
+    <span class="k">if</span> <span class="n">leakage_checkpoint</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipping </span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2"> split leakage search, </span><span class="si">{</span><span class="n">leakage_checkpoint</span><span class="si">}</span><span class="s2"> checkpoint exists...&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;index.2.csv.gz&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">})</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.2.csv.gz&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="p">,</span> <span class="n">cluster_to_test_systems</span> <span class="o">=</span> <span class="n">get_proto_splits_pindex</span><span class="p">(</span>
+        <span class="n">index</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">systems_proto_test</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">systems_proto_train</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-train&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">foldseek_communities_cache</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;foldseek_communities.pkl&quot;</span>
+    <span class="n">graph_clusters</span> <span class="o">=</span> <span class="n">load_cluster_cache</span><span class="p">(</span><span class="n">foldseek_communities_cache</span><span class="p">)</span>
+    <span class="n">graph_fp</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;graphs&quot;</span> <span class="o">/</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">graph_config</span><span class="p">)</span>
+    <span class="n">mmseqs_graph_pkl</span> <span class="o">=</span> <span class="n">graph_fp</span> <span class="o">/</span> <span class="s2">&quot;cleaned_mmseqs_alignment_graph.pkl&quot;</span>
+    <span class="n">foldseek_graph_pkl</span> <span class="o">=</span> <span class="n">graph_fp</span> <span class="o">/</span> <span class="s2">&quot;cleaned_foldseek_alignment_graph.pkl&quot;</span>
+    <span class="k">if</span> <span class="n">graph_type</span> <span class="o">==</span> <span class="s2">&quot;foldseek&quot;</span><span class="p">:</span>
+        <span class="n">graph_pkl</span> <span class="o">=</span> <span class="n">foldseek_graph_pkl</span>
+        <span class="k">if</span> <span class="n">af2_transitive_hits</span><span class="p">:</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">foldseek_af2_difficulty_threshold</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">foldseek_edge_threshold</span>
+    <span class="k">elif</span> <span class="n">graph_type</span> <span class="o">==</span> <span class="s2">&quot;mmseqs&quot;</span><span class="p">:</span>
+        <span class="n">graph_pkl</span> <span class="o">=</span> <span class="n">mmseqs_graph_pkl</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">mmseqs_edge_threshold</span>
+
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">gu</span><span class="o">.</span><span class="n">load_graph_pickle</span><span class="p">(</span><span class="n">graph_pkl</span><span class="p">)</span>
+    <span class="n">n2c</span> <span class="o">=</span> <span class="n">gu</span><span class="o">.</span><span class="n">get_node_to_cluster_mapping</span><span class="p">(</span><span class="n">graph_clusters</span><span class="p">)</span>
+    <span class="n">split_leakage</span> <span class="o">=</span> <span class="n">find_split_leakage</span><span class="p">(</span>
+        <span class="n">systems_proto_test</span><span class="p">,</span>
+        <span class="n">systems_proto_train</span><span class="p">,</span>
+        <span class="n">graph</span><span class="p">,</span>
+        <span class="n">n2c</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">depth_limit</span><span class="p">,</span>
+        <span class="n">edge_threshold</span><span class="o">=</span><span class="n">score</span><span class="p">,</span>
+        <span class="n">max_node_degree</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">max_node_degree</span><span class="p">,</span>
+        <span class="n">potential_leaks_chkpt</span><span class="o">=</span><span class="n">potential_leaks_chkpt</span><span class="p">,</span>
+        <span class="n">use_cache</span><span class="o">=</span><span class="n">use_cache</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">leakage_checkpoint</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">split_leakage</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_transitive_hits">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_transitive_hits">[docs]</a>
+<span class="k">def</span> <span class="nf">get_transitive_hits</span><span class="p">(</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+    <span class="n">graph_config</span><span class="p">:</span> <span class="n">GraphConfig</span> <span class="o">=</span> <span class="n">GraphConfig</span><span class="p">(),</span>
+    <span class="n">test_systems_output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;test_sys_table.csv&quot;</span><span class="p">,</span>
+    <span class="n">deleak_map_output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;transitive_hits_mapping.csv&quot;</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">af2_transitive_hits</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">chk_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;cluster&quot;</span> <span class="o">/</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">transitive_hits_checkpoint</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="n">test_systems_output</span>
+    <span class="k">if</span> <span class="n">transitive_hits_checkpoint</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipping transitive hit search, </span><span class="si">{</span><span class="n">transitive_hits_checkpoint</span><span class="si">}</span><span class="s2"> checkpoint exists...&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span><span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;index.2.csv.gz&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">})</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">read_csv_non_default_na</span><span class="p">(</span>
+        <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;metadata.2.csv.gz&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="p">,</span> <span class="n">cluster_to_test_systems</span> <span class="o">=</span> <span class="n">get_proto_splits_pindex</span><span class="p">(</span>
+        <span class="n">index</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">af2_transitive_hits</span><span class="p">:</span>
+        <span class="n">graph_type</span> <span class="o">=</span> <span class="s2">&quot;foldseek&quot;</span>
+        <span class="n">thresh_label</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">config</span><span class="o">.</span><span class="n">foldseek_af2_difficulty_threshold</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">leakage_checkpoint</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_af2_lddt</span><span class="si">{</span><span class="n">thresh_label</span><span class="si">}</span><span class="s2">_leakage_dict.pkl&quot;</span>
+        <span class="p">)</span>
+        <span class="n">leakage_checkpoints</span> <span class="o">=</span> <span class="p">[</span><span class="n">leakage_checkpoint</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">leakage_checkpoints</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">chk_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">graph_type</span><span class="si">}</span><span class="s2">_leakage_dict.pkl&quot;</span>
+            <span class="k">for</span> <span class="n">graph_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;foldseek&quot;</span><span class="p">,</span> <span class="s2">&quot;mmseqs&quot;</span><span class="p">]</span>
+        <span class="p">]</span>
+    <span class="n">leakage_dicts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">chk</span> <span class="ow">in</span> <span class="n">leakage_checkpoints</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">chk</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Split leakage checkpoint </span><span class="si">{</span><span class="n">chk</span><span class="si">}</span><span class="s2"> not found! Generating split leakage...&quot;</span>
+            <span class="p">)</span>
+            <span class="n">graph_type</span> <span class="o">=</span> <span class="n">chk</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_leakage_dict&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_af2_lddt&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">get_leakage_dict</span><span class="p">(</span>
+                <span class="n">pinder_dir</span><span class="o">=</span><span class="n">pinder_dir</span><span class="p">,</span>
+                <span class="n">graph_type</span><span class="o">=</span><span class="n">graph_type</span><span class="p">,</span>
+                <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+                <span class="n">graph_config</span><span class="o">=</span><span class="n">graph_config</span><span class="p">,</span>
+                <span class="n">use_cache</span><span class="o">=</span><span class="n">use_cache</span><span class="p">,</span>
+                <span class="n">af2_transitive_hits</span><span class="o">=</span><span class="n">af2_transitive_hits</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">chk</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">split_leakage</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="n">leakage_dicts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">split_leakage</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Finished loading leakage_dicts&quot;</span><span class="p">)</span>
+    <span class="n">system_hits_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span>
+        <span class="n">deep_merge_dict</span><span class="p">,</span> <span class="n">leakage_dicts</span><span class="p">,</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">system_hits_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">self_system</span><span class="p">,</span> <span class="n">target_systems</span> <span class="ow">in</span> <span class="n">system_hits_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">system_hits_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">self_system</span><span class="p">,</span>
+                <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">target_systems</span><span class="p">)),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">system_hits_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">system_hits_list</span><span class="p">)</span>
+    <span class="n">system_hits_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">chk_dir</span> <span class="o">/</span> <span class="n">deleak_map_output</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">system_hits_dict_clean_num</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">system_hits_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">CONSIDER_LEAKED</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+            <span class="n">system_hits_dict_clean_num</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">system_hits_dict_clean_num</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="n">system_to_dg1_clust</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">cluster_id</span><span class="p">,</span> <span class="n">test_systems</span> <span class="ow">in</span> <span class="n">cluster_to_test_systems</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">test_system</span> <span class="ow">in</span> <span class="n">test_systems</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">test_system</span> <span class="ow">in</span> <span class="n">system_hits_dict</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">CONSIDER_LEAKED</span> <span class="ow">in</span> <span class="n">system_hits_dict</span><span class="p">[</span><span class="n">test_system</span><span class="p">]:</span>
+                    <span class="n">system_to_dg1_clust</span><span class="p">[</span><span class="n">test_system</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">system_to_dg1_clust</span><span class="p">[</span><span class="n">test_system</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span>
+                        <span class="n">system_hits_dict</span><span class="p">[</span><span class="n">test_system</span><span class="p">]</span> <span class="o">|</span> <span class="n">test_systems</span>
+                    <span class="p">)</span>
+
+    <span class="c1"># unused</span>
+    <span class="c1"># test_system_to_clust = {}</span>
+    <span class="c1"># for cluster_id, test_systems in cluster_to_test_systems.items():</span>
+    <span class="c1">#     for test_system in test_systems:</span>
+    <span class="c1">#         test_system_to_clust[test_system] = test_systems</span>
+
+    <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;depth_2_hits&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">system_hits_dict_clean_num</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">system_to_dg1_clust</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">test_sys_table</span> <span class="o">=</span> <span class="n">filtered_pindex</span><span class="p">[</span><span class="n">filtered_pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">]</span>
+    <span class="n">test_sys_table</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">transitive_hits_checkpoint</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="cluster_leaks">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.cluster_leaks">[docs]</a>
+<span class="k">def</span> <span class="nf">cluster_leaks</span><span class="p">(</span>
+    <span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">graph</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span>
+    <span class="n">node_to_cluster</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find all nodes x in a graph such that:</span>
+<span class="sd">        1. there exists a path of length l &lt;= &lt;depth&gt; from source to x</span>
+<span class="sd">        2. source and x are in different clusters</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source: str</span>
+<span class="sd">        The source node</span>
+<span class="sd">    graph: nx.Graph</span>
+<span class="sd">        The target graph. Must contain &lt;node&gt;</span>
+<span class="sd">    node_to_cluster: Dict[str, int]</span>
+<span class="sd">        Map from nodes to cluster IDs</span>
+<span class="sd">    depth: int</span>
+<span class="sd">        Maximum allowed path length.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Set[str]</span>
+<span class="sd">        The set of nodes in the &quot;&lt;depth&gt;-neighborhood&quot; of source</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">source_cluster</span> <span class="o">=</span> <span class="n">node_to_cluster</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
+    <span class="n">neighbor_nodes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">single_source_shortest_path_length</span><span class="p">(</span>
+        <span class="n">graph</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">depth</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">neighbor_nodes</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">nodes</span></div>
+
+
+
+<div class="viewcode-block" id="batch_cluster_leaks">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.batch_cluster_leaks">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">batch_cluster_leaks</span><span class="p">(</span>
+    <span class="n">source_set</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">graph</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span>
+    <span class="n">node_to_cluster</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">max_node_degree</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="mi">1_000</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find cluster leaks for all nodes in node_set.</span>
+
+<span class="sd">    For each node, finds the set of all neighbors in graph within depth</span>
+<span class="sd">    hops of node that are in different clusters.</span>
+
+<span class="sd">    Applies checks to limit computation. If a node fails any</span>
+<span class="sd">    check, the corresponding value will be CONSIDER_LEAKED.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    source_set: Set[str]</span>
+<span class="sd">        A set of target sources</span>
+<span class="sd">    graph: nx.Graph</span>
+<span class="sd">        The target graph. Must contain all nodes in &lt;node_set&gt;</span>
+<span class="sd">    node_to_cluster: Dict[str, int]</span>
+<span class="sd">        Map from nodes to cluster IDs</span>
+<span class="sd">    depth: int</span>
+<span class="sd">        Maximum allowed path length.</span>
+<span class="sd">    max_node_degree: int</span>
+<span class="sd">        Maximum allowed node degree. Default 1000</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Dict[str, Set[str]]</span>
+<span class="sd">        Mapping from a node to the set of nodes in the</span>
+<span class="sd">        node&#39;s &quot;&lt;depth&gt;-neighborhood&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># First determine for which nodes we can avoid finding paths</span>
+    <span class="k">if</span> <span class="n">max_node_degree</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">degrees</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">source_set</span><span class="p">))</span>
+        <span class="n">failing_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">passing_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span>
+            <span class="n">degrees</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+            <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Extracting nodes within max_node_degree=</span><span class="si">{</span><span class="n">max_node_degree</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">degrees</span><span class="p">),</span>
+        <span class="p">):</span>
+            <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">max_node_degree</span><span class="p">:</span>
+                <span class="n">passing_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">failing_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">passing_nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">source_set</span><span class="p">)</span>
+        <span class="n">failing_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Compute the neighbors</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">passing_nodes</span><span class="p">):</span>
+        <span class="n">source_match</span> <span class="o">=</span> <span class="n">cluster_leaks</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span> <span class="n">node_to_cluster</span><span class="o">=</span><span class="n">node_to_cluster</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span>
+        <span class="p">)</span>
+        <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">source_match</span><span class="p">)</span>
+
+    <span class="c1"># Build the dictionary</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">passing_nodes</span><span class="p">,</span> <span class="n">matches</span><span class="p">))</span> <span class="o">|</span> <span class="p">{</span>
+        <span class="n">n</span><span class="p">:</span> <span class="p">{</span><span class="n">CONSIDER_LEAKED</span><span class="p">}</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">failing_nodes</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="get_leak_map_for_id">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.get_leak_map_for_id">[docs]</a>
+<span class="k">def</span> <span class="nf">get_leak_map_for_id</span><span class="p">(</span>
+    <span class="n">pure_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">pure_map_forward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">pure_map_backward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">corrupt_map_backward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">all_pure_pairs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">all_corrupt_pairs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">potential_leaks</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Do the multi-step mapping from:</span>
+<span class="sd">    pure system -&gt; pure pair of nodes</span>
+<span class="sd">    pure pair of nodes -&gt; possibly corrupt leaks for each node</span>
+<span class="sd">    possibly corrupt leaks -&gt; corrupt systems (by intersection)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">pure_map_forward</span><span class="p">[</span><span class="n">pure_id</span><span class="p">]</span>
+    <span class="n">v_leaks</span> <span class="o">=</span> <span class="n">potential_leaks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span>  <span class="c1"># Say this has size n</span>
+    <span class="n">u_leaks</span> <span class="o">=</span> <span class="n">potential_leaks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span>  <span class="c1"># Say this has size m</span>
+    <span class="c1"># Possible that one or more of the nodes was skipped</span>
+    <span class="k">if</span> <span class="n">CONSIDER_LEAKED</span> <span class="ow">in</span> <span class="n">v_leaks</span> <span class="ow">or</span> <span class="n">CONSIDER_LEAKED</span> <span class="ow">in</span> <span class="n">u_leaks</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">CONSIDER_LEAKED</span><span class="p">}</span>
+    <span class="c1"># potential_leak_pairs = filtered_product(v_leaks, u_leaks, all_corrupt_pairs)</span>
+    <span class="n">check_pairs</span> <span class="o">=</span> <span class="n">all_corrupt_pairs</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">all_pure_pairs</span><span class="p">)</span>
+    <span class="c1"># O(min(n*m, k)), where k = |check_pairs|</span>
+    <span class="n">potential_leak_pairs</span> <span class="o">=</span> <span class="n">intersection_unordered_product</span><span class="p">(</span><span class="n">v_leaks</span><span class="p">,</span> <span class="n">u_leaks</span><span class="p">,</span> <span class="n">check_pairs</span><span class="p">)</span>
+    <span class="n">corrupt</span> <span class="o">=</span> <span class="p">[</span><span class="n">corrupt_map_backward</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">potential_leak_pairs</span><span class="p">]</span>
+    <span class="n">corrupt_test</span> <span class="o">=</span> <span class="p">[</span><span class="n">pure_map_backward</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">potential_leak_pairs</span><span class="p">]</span>
+    <span class="n">corrupt</span> <span class="o">=</span> <span class="n">corrupt</span> <span class="o">+</span> <span class="n">corrupt_test</span>
+    <span class="n">pairs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="nb">set</span><span class="o">.</span><span class="n">union</span><span class="p">,</span> <span class="n">corrupt</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">pairs</span></div>
+
+
+
+<div class="viewcode-block" id="map_leak_pairs">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.map_leak_pairs">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">map_leak_pairs</span><span class="p">(</span>
+    <span class="n">pure_split</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">pure_map_forward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">pure_map_backward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">corrupt_map_backward</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">all_pure_pairs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">all_corrupt_pairs</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">potential_leaks</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">mapped_pairs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">pure_id</span><span class="p">:</span> <span class="n">get_leak_map_for_id</span><span class="p">(</span>
+            <span class="n">pure_id</span><span class="p">,</span>
+            <span class="n">pure_map_forward</span><span class="p">,</span>
+            <span class="n">pure_map_backward</span><span class="p">,</span>
+            <span class="n">corrupt_map_backward</span><span class="p">,</span>
+            <span class="n">all_pure_pairs</span><span class="p">,</span>
+            <span class="n">all_corrupt_pairs</span><span class="p">,</span>
+            <span class="n">potential_leaks</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">pure_id</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">pure_split</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Mapping potential leakage pairs per ID&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">mapped_pairs</span></div>
+
+
+
+<div class="viewcode-block" id="find_split_leakage">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.find_split_leakage">[docs]</a>
+<span class="k">def</span> <span class="nf">find_split_leakage</span><span class="p">(</span>
+    <span class="n">pure_split</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">corrupt_split</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">graph</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span>
+    <span class="n">node_to_cluster</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">depth</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">edge_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.65</span><span class="p">,</span>
+    <span class="n">max_node_degree</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1_000</span><span class="p">,</span>
+    <span class="n">potential_leaks_chkpt</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Find leakage between transitive neighbors of two putative splits.</span>
+
+<span class="sd">    For systems in pure_split, determine whether there are systems in</span>
+<span class="sd">    corrupt_split that leak into the pure_split.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        pure_split : Set[str]</span>
+<span class="sd">            The set of PINDER System IDs in the pure split (e.g., test).</span>
+<span class="sd">        corrupt_split : Set[str]</span>
+<span class="sd">            The set of PINDER System IDs in the corrupt split (e.g., train).</span>
+<span class="sd">        graph : nx.Graph</span>
+<span class="sd">            The foldseek-similarity monomer graph.</span>
+<span class="sd">        node_to_cluster : Dict[str, int]</span>
+<span class="sd">            The map from graph nodes to cluster IDs.</span>
+<span class="sd">        depth : int</span>
+<span class="sd">            The maximum path length to travel looking for leakage.</span>
+<span class="sd">        edge_threshold : float, optional</span>
+<span class="sd">            The threshold for considering edges in the graph. Default is 0.65.</span>
+<span class="sd">        max_node_degree : int, optional</span>
+<span class="sd">            The node degree at which we assume there is leakage. This is</span>
+<span class="sd">            to save compute. Default is 1000.</span>
+<span class="sd">        potential_leaks_chkpt : Path, optional</span>
+<span class="sd">            The path to checkpoint potential leaks. Default is None.</span>
+<span class="sd">        use_cache : bool, optional</span>
+<span class="sd">            Whether to use cached results. Default is True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dict[str, Set[str]]</span>
+<span class="sd">            The map from pure_split IDs to corrupt_split IDs, indicating leakage.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        A system `c:= {u, v}` in `corrupt_split` is a leaking system for system</span>
+<span class="sd">        `p:= {s, t}` in `pure_split` iff any of the following are true:</span>
+
+<span class="sd">            1. All of the following are true:</span>
+<span class="sd">                - `u` and `s` are in different clusters</span>
+<span class="sd">                - There exists a path between `u` and `s` of length &lt;= `depth`</span>
+<span class="sd">                - `v` and `t` are in different clusters</span>
+<span class="sd">                - There exists a path between `v` and `t` of length &lt;= `depth`</span>
+
+<span class="sd">            2. All of the following are true:</span>
+<span class="sd">                - `u` and `t` are in different clusters</span>
+<span class="sd">                - There exists a path between `u` and `t` of length &lt;= `depth`</span>
+<span class="sd">                - `v` and `s` are in different clusters</span>
+<span class="sd">                - There exists a path between `v` and `s` of length &lt;= `depth`</span>
+
+<span class="sd">        Method sequence:</span>
+
+<span class="sd">            1. Create a map from test systems to graph node pairs</span>
+<span class="sd">            2. Do any filtering required on the graph</span>
+<span class="sd">            3. Find cluster_leaks for all nodes in these pairs</span>
+<span class="sd">            4. For train systems, create a nested map from graph node pairs to sets of train systems</span>
+<span class="sd">            5. For each system x in test:</span>
+<span class="sd">                a. Map x to a graph test pair</span>
+<span class="sd">                b. Find all graph train pairs containing at least one member of the graph test pair using the &quot;adjacency map&quot;</span>
+<span class="sd">                c. Map from these graph train pairs to train systems</span>
+<span class="sd">                d. These are the inter_split connections</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">## We will need two maps. Ahoy!</span>
+    <span class="n">pure_map_forward</span> <span class="o">=</span> <span class="n">map_systems_to_fsid_pairs</span><span class="p">(</span><span class="n">pure_split</span><span class="p">)</span>
+    <span class="n">corrupt_map_backward</span> <span class="o">=</span> <span class="n">map_fsid_pair_to_systems</span><span class="p">(</span><span class="n">corrupt_split</span><span class="p">)</span>
+    <span class="n">pure_map_backward</span> <span class="o">=</span> <span class="n">map_fsid_pair_to_systems</span><span class="p">(</span><span class="n">pure_split</span><span class="p">)</span>
+
+    <span class="c1"># Useful to also have the set of all node pairs associated with corrupt set</span>
+    <span class="n">all_corrupt_pairs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">corrupt_map_backward</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">all_pure_pairs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pure_map_backward</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="c1"># Filter the graph, if necessary</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="c1"># TODO: filtering this way does not play nicely with multiprocessing</span>
+    <span class="n">subgraph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">subgraph_view</span><span class="p">(</span>
+        <span class="n">graph</span><span class="p">,</span>
+        <span class="n">filter_edge</span><span class="o">=</span><span class="k">lambda</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">edge_threshold</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;graph filtering succeeded: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Find potential leaks</span>
+    <span class="n">all_pure_nodes</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pure_map_forward</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">pair</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">potential_leaks_chkpt</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">potential_leaks_chkpt</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+        <span class="ow">and</span> <span class="n">use_cache</span>
+    <span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">potential_leaks_chkpt</span><span class="si">}</span><span class="s2"> found, skipping batch_cluster_leaks...&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">potential_leaks_chkpt</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">potential_leaks</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">potential_leaks</span> <span class="o">=</span> <span class="n">batch_cluster_leaks</span><span class="p">(</span>
+            <span class="n">all_pure_nodes</span><span class="p">,</span>
+            <span class="n">subgraph</span><span class="p">,</span>
+            <span class="n">node_to_cluster</span><span class="p">,</span>
+            <span class="n">depth</span><span class="p">,</span>
+            <span class="n">max_node_degree</span><span class="o">=</span><span class="n">max_node_degree</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">potential_leaks_chkpt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">potential_leaks_chkpt</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">potential_leaks</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="n">mapped_pairs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">map_leak_pairs</span><span class="p">(</span>
+        <span class="n">pure_split</span><span class="o">=</span><span class="n">pure_split</span><span class="p">,</span>
+        <span class="n">pure_map_forward</span><span class="o">=</span><span class="n">pure_map_forward</span><span class="p">,</span>
+        <span class="n">pure_map_backward</span><span class="o">=</span><span class="n">pure_map_backward</span><span class="p">,</span>
+        <span class="n">corrupt_map_backward</span><span class="o">=</span><span class="n">corrupt_map_backward</span><span class="p">,</span>
+        <span class="n">all_pure_pairs</span><span class="o">=</span><span class="n">all_pure_pairs</span><span class="p">,</span>
+        <span class="n">all_corrupt_pairs</span><span class="o">=</span><span class="n">all_corrupt_pairs</span><span class="p">,</span>
+        <span class="n">potential_leaks</span><span class="o">=</span><span class="n">potential_leaks</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">mapped_pairs</span></div>
+
+
+
+<div class="viewcode-block" id="map_systems_to_fsid_pairs">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.map_systems_to_fsid_pairs">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">map_systems_to_fsid_pairs</span><span class="p">(</span><span class="n">system_ids</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a map from PINDER System ID strings to pairs of Foldseek monomer ID strings&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="n">gu</span><span class="o">.</span><span class="n">system_id_to_fsid_pair</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">system_ids</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="map_fsid_pair_to_systems">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.map_fsid_pair_to_systems">[docs]</a>
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">map_fsid_pair_to_systems</span><span class="p">(</span><span class="n">system_ids</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Construct a hierarchical map from Foldseek monomer ID pairs to PINDER System IDs</span>
+
+<span class="sd">    This map is insensitive to order.</span>
+<span class="sd">    Avoid using defaultdict, which is actually quite slow</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fsid_pair_to_systems</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">system_ids</span><span class="p">:</span>
+        <span class="c1"># Technically, this can be a singleton, but that&#39;s ok</span>
+        <span class="n">unordered_pair</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">gu</span><span class="o">.</span><span class="n">system_id_to_fsid_pair</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">unordered_pair</span> <span class="ow">in</span> <span class="n">fsid_pair_to_systems</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">fsid_pair_to_systems</span><span class="p">[</span><span class="n">unordered_pair</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="c1"># Add the items</span>
+        <span class="n">fsid_pair_to_systems</span><span class="p">[</span><span class="n">unordered_pair</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fsid_pair_to_systems</span></div>
+
+
+
+<div class="viewcode-block" id="deep_merge_dict">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.deep_merge_dict">[docs]</a>
+<span class="k">def</span> <span class="nf">deep_merge_dict</span><span class="p">(</span>
+    <span class="n">a</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merge two dictionaries in which values are Set objects using `set.update`&quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span></div>
+
+
+
+<div class="viewcode-block" id="intersection_unordered_product">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.intersection_unordered_product">[docs]</a>
+<span class="k">def</span> <span class="nf">intersection_unordered_product</span><span class="p">(</span>
+    <span class="n">A</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">B</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">C</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the intersection between C and the unordered set product of A and B:= U.</span>
+
+<span class="sd">    Attempts to do this efficiently by determining the size of U before actually</span>
+<span class="sd">    computing U, then iterating over the smaller of U or C, while checking inclusion</span>
+<span class="sd">    in the larger.</span>
+
+<span class="sd">    Specifically:</span>
+<span class="sd">        1. determines the size of U, the unordered cartesian product of A and B</span>
+<span class="sd">        2. if U is smaller than C, computes U and iterates over it, checking inclusion</span>
+<span class="sd">           in C.</span>
+<span class="sd">        3. if U is larger than C, iterates over C and checks inclusion in A and B.</span>
+
+<span class="sd">    NB: our elements are of size 1 or 2, so to check inclusion we use 0 or -1 as our</span>
+<span class="sd">    indices. If our elements were of another size, this code would not work!</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A: set[str]</span>
+<span class="sd">        The first set in the possible product</span>
+<span class="sd">    B: set[str]</span>
+<span class="sd">        The second set in the possible product</span>
+<span class="sd">    C: set[frozenset[str]]</span>
+<span class="sd">        The set that we are intersecting with A x B</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    set[frozenset[str]</span>
+<span class="sd">        The set intersection between C and AxB (unordered)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">len_unordered_set_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">size</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">unordered_set_product</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span> <span class="k">if</span> <span class="nb">frozenset</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="ow">in</span> <span class="n">C</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nb">frozenset</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">C</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">e</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">A</span> <span class="ow">and</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">e</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">B</span><span class="p">)</span>
+            <span class="ow">or</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">e</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">A</span> <span class="ow">and</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">e</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">B</span><span class="p">)</span>
+        <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="unordered_set_product">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.unordered_set_product">[docs]</a>
+<span class="k">def</span> <span class="nf">unordered_set_product</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">B</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the unordered cartesian product of sets A and B.</span>
+
+<span class="sd">    We define the unordered set product :math:`U` as a subset of :math:`P := A \times B`,</span>
+<span class="sd">    where if :math:`x := (a, b)` is in :math:`U`, then :math:`y := (b, a)` is not in :math:`U`,</span>
+<span class="sd">    even if :math:`y` is in :math:`P`.</span>
+
+<span class="sd">    The goal of this method is to compute the unordered set product of A and B</span>
+<span class="sd">    in the most efficient way possible, ideally without computing the entire product.</span>
+
+<span class="sd">    Given two sets, A and B, with intersection :math:`|A \cap B| := I`, where :math:`|A| = n`,</span>
+<span class="sd">    :math:`|B| = m`, and :math:`|I| = i`. The cartesian product of A and B has size :math:`n \\times m`,</span>
+<span class="sd">    but the *unordered* cartesian product may be smaller.</span>
+
+<span class="sd">    To compute the unordered cartesian product, we want the union of:</span>
+
+<span class="sd">        - combinations with replacement, length 2 of :math:`I` :math:`\\left( \\binom{i+1}{2} = \\frac{(i+1) \\cdot i}{2} \\right)`</span>
+<span class="sd">        - product of :math:`A \setminus I` with :math:`I` :math:`\\left( (n-i) \cdot i \\right)`</span>
+<span class="sd">        - product of :math:`B \setminus I` with :math:`I` :math:`\\left( (m-i) \cdot i \\right)`</span>
+<span class="sd">        - product of :math:`A \setminus I` with :math:`B \setminus I` :math:`\\left( (n-i) \\cdot (m-i) \\right)`</span>
+
+<span class="sd">    The size of this union is :math:`n \\times m - \\frac{i^2 - i}{2}`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A : set[str]</span>
+<span class="sd">        The first product set.</span>
+<span class="sd">    B : set[str]</span>
+<span class="sd">        The second product set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    set[tuple[str]]</span>
+<span class="sd">        The unordered cartesian product of A and B.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+    <span class="n">A_unique</span> <span class="o">=</span> <span class="n">A</span> <span class="o">-</span> <span class="n">I</span>
+    <span class="n">B_unique</span> <span class="o">=</span> <span class="n">B</span> <span class="o">-</span> <span class="n">I</span>
+
+    <span class="n">set_prod</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">chain</span><span class="p">(</span>
+        <span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+        <span class="n">product</span><span class="p">(</span><span class="n">A_unique</span><span class="p">,</span> <span class="n">I</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+        <span class="n">product</span><span class="p">(</span><span class="n">B_unique</span><span class="p">,</span> <span class="n">I</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+        <span class="n">product</span><span class="p">(</span><span class="n">A_unique</span><span class="p">,</span> <span class="n">B_unique</span><span class="p">),</span>  <span class="c1"># type: ignore</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">set_prod</span></div>
+
+
+
+<div class="viewcode-block" id="len_unordered_set_product">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.find_transitive_hits.len_unordered_set_product">[docs]</a>
+<span class="k">def</span> <span class="nf">len_unordered_set_product</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">B</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the size of the unordered cartesian product of sets A and B.</span>
+
+<span class="sd">    We define the unordered set product U as a subset of P:=product(A, B), where if</span>
+<span class="sd">    x:=(a,b) is in U, then y:=(b,a) is not in U, even if y is in P.</span>
+
+<span class="sd">    Given two sets, A and B, with intersection :math:`|A \cap B| = I`, where :math:`|A| = n`,</span>
+<span class="sd">    :math:`|B| = m`, and :math:`|I| = i`. The cartesian product of A and B has size n*m, but the *unordered*</span>
+<span class="sd">    cartesian product may be smaller.</span>
+
+<span class="sd">    To compute the unordered cartesian product, we want the union of:</span>
+
+<span class="sd">        - combinations with replacement, length 2 of :math:`I` :math:`\\left( \\binom{i+1}{2} = \\frac{(i+1) \\cdot i}{2} \\right)`</span>
+<span class="sd">        - product of :math:`A \setminus I` with :math:`I` :math:`\\left( (n-i) \cdot i \\right)`</span>
+<span class="sd">        - product of :math:`B \setminus I` with :math:`I` :math:`\\left( (m-i) \cdot i \\right)`</span>
+<span class="sd">        - product of :math:`A \setminus I` with :math:`B \setminus I` :math:`\\left( (n-i) \\cdot (m-i) \\right)`</span>
+
+<span class="sd">    The size of this union is :math:`n \\times m - \\frac{i^2 - i}{2}`. Note that :math:`(i**2 - i))` is</span>
+<span class="sd">    always even for all integer i.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    A: set[str]</span>
+<span class="sd">        The first product set</span>
+<span class="sd">    B: set[str]</span>
+<span class="sd">        The second product set</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        The size of AxB (unordered)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">m</span> <span class="o">-</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Note that i**2 - i is always even for all i</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

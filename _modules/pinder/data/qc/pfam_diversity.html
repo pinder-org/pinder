@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.qc.pfam_diversity &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/qc/pfam_diversity';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/qc/pfam_diversity.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.qc.pfam_diversity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.qc.pfam_diversity</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">digits</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+
+<span class="kn">from</span> <span class="nn">pinder.data.qc.annotation_check</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">metadata_to_ecod_pairs</span><span class="p">,</span>
+    <span class="n">annotate_longest_intersecting_ecod_domain</span><span class="p">,</span>
+    <span class="n">merge_annotated_interfaces_with_pindex</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pinder.data.qc.utils</span> <span class="kn">import</span> <span class="n">load_index</span><span class="p">,</span> <span class="n">load_metadata</span><span class="p">,</span> <span class="n">load_pfam_db</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="load_data">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.load_data">[docs]</a>
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span>
+    <span class="n">index_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pfam_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">load_index</span><span class="p">(</span><span class="n">index_file</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">load_metadata</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">)</span>
+    <span class="n">pfam_data</span> <span class="o">=</span> <span class="n">load_pfam_db</span><span class="p">(</span><span class="n">pfam_file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">pfam_data</span></div>
+
+
+
+<div class="viewcode-block" id="get_ecod_annotations">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.get_ecod_annotations">[docs]</a>
+<span class="k">def</span> <span class="nf">get_ecod_annotations</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">frac_interface_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">min_intersection</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">ecod_RL</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">metadata_to_ecod_pairs</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">pindex</span><span class="p">)</span>
+    <span class="n">ecod_RL</span><span class="p">,</span> <span class="n">ecod_R</span><span class="p">,</span> <span class="n">ecod_L</span> <span class="o">=</span> <span class="n">annotate_longest_intersecting_ecod_domain</span><span class="p">(</span>
+        <span class="n">ecod_RL</span><span class="p">,</span>
+        <span class="n">frac_interface_threshold</span><span class="o">=</span><span class="n">frac_interface_threshold</span><span class="p">,</span>
+        <span class="n">min_intersection</span><span class="o">=</span><span class="n">min_intersection</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">pindex_with_RL</span> <span class="o">=</span> <span class="n">merge_annotated_interfaces_with_pindex</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">ecod_R</span><span class="p">,</span> <span class="n">ecod_L</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pindex_with_RL</span></div>
+
+
+
+<div class="viewcode-block" id="process_pfam_data">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.process_pfam_data">[docs]</a>
+<span class="k">def</span> <span class="nf">process_pfam_data</span><span class="p">(</span><span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pfam_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Processing Pfam data...&quot;</span><span class="p">)</span>
+    <span class="n">pdb_id_chain_to_pfam</span> <span class="o">=</span> <span class="n">pfam_data</span><span class="p">[</span><span class="s2">&quot;Clan_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+    <span class="n">pindex_R_asym</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;chain_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+    <span class="n">pindex_L_asym</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;chain_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="n">digits</span><span class="p">))</span>
+
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pfam_clan_R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">pdb_id_chain_to_pfam</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="s2">&quot;no_clan&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">pindex_R_asym</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pfam_clan_L&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">pdb_id_chain_to_pfam</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="s2">&quot;no_clan&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">pindex_L_asym</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pindex</span></div>
+
+
+
+<div class="viewcode-block" id="visualize_data">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.visualize_data">[docs]</a>
+<span class="k">def</span> <span class="nf">visualize_data</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">top_n_pfams</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Visualization blocks as functions</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating visualizations...&quot;</span><span class="p">)</span>
+    <span class="n">plot_pfam_clan_distribution</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">top_n_pfams</span><span class="p">)</span>
+    <span class="n">report_ecod_diversity</span><span class="p">(</span><span class="n">pindex</span><span class="p">)</span>
+    <span class="n">plot_ecod_family_distribution</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">top_n_pfams</span><span class="p">)</span>
+    <span class="n">plot_merged_metadata_distributions</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_pfam_diversity">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.get_pfam_diversity">[docs]</a>
+<span class="k">def</span> <span class="nf">get_pfam_diversity</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+    <span class="n">val_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">]</span>
+    <span class="n">pfam_test_clans</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">pfam_val_clans</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">val_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">val_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">pfam_all_clans</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pfam_clan_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;pfam_clan_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">pfam_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pfam_test_clans</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pfam_all_clans</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">pfam_val</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pfam_val_clans</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pfam_all_clans</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diversity of Pfam-clans in test set: </span><span class="si">{</span><span class="n">pfam_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Diversity of Pfam-clans in val set: </span><span class="si">{</span><span class="n">pfam_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Measure&quot;</span><span class="p">:</span> <span class="s2">&quot;Diversity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Metric&quot;</span><span class="p">:</span> <span class="s2">&quot;Pfam clan&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Test&quot;</span><span class="p">:</span> <span class="n">pfam_test</span><span class="p">,</span>
+                <span class="s2">&quot;Val&quot;</span><span class="p">:</span> <span class="n">pfam_val</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">report</span></div>
+
+
+
+<div class="viewcode-block" id="plot_pfam_clan_distribution">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.plot_pfam_clan_distribution">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_pfam_clan_distribution</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">top_n_pfams</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating Pfam clan distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">get_pfam_diversity</span><span class="p">(</span><span class="n">pindex</span><span class="p">)</span>
+    <span class="n">test_pfams_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_R&quot;</span><span class="p">],</span> <span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;pfam_clan_L&quot;</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">test_pfams_concat</span><span class="p">[</span><span class="n">test_pfams_concat</span> <span class="o">!=</span> <span class="s2">&quot;no_clan&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)[:</span><span class="n">top_n_pfams</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top </span><span class="si">{</span><span class="n">top_n_pfams</span><span class="si">}</span><span class="s2"> Pfam clans in test set&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;top_</span><span class="si">{</span><span class="n">top_n_pfams</span><span class="si">}</span><span class="s2">_pfam_clans.png&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="report_ecod_diversity">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.report_ecod_diversity">[docs]</a>
+<span class="k">def</span> <span class="nf">report_ecod_diversity</span><span class="p">(</span><span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+    <span class="n">val_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">]</span>
+
+    <span class="n">indiv_ecod_test_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">indiv_ecod_val_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">val_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">val_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">indiv_ecod_all_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;ecod_label_L&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;ecod_label_R&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">pair_ecod_test_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;ecod_pair&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">pair_ecod_val_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">val_table</span><span class="p">[</span><span class="s2">&quot;ecod_pair&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+    <span class="n">pair_ecod_all_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;ecod_pair&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="n">single_chain_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_test_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">single_chain_val</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_val_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">single_chain_test_val</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_test_ids</span> <span class="o">|</span> <span class="n">indiv_ecod_val_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">indiv_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">pair_test</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_test_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">pair_val</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_val_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="n">pair_test_val</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_test_ids</span> <span class="o">|</span> <span class="n">pair_ecod_val_ids</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pair_ecod_all_ids</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">)</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;Single-chain diversity of ECOD families in &lt;test, val, test+val&gt; set: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">single_chain_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">single_chain_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">single_chain_test_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;Pair diversity of ECOD families in &lt;test, val, test+val&gt; set: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">pair_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pair_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pair_test_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Measure&quot;</span><span class="p">:</span> <span class="s2">&quot;Diversity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Metric&quot;</span><span class="p">:</span> <span class="s2">&quot;ECOD single-chain&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Test&quot;</span><span class="p">:</span> <span class="n">single_chain_test</span><span class="p">,</span>
+                <span class="s2">&quot;Val&quot;</span><span class="p">:</span> <span class="n">single_chain_val</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Measure&quot;</span><span class="p">:</span> <span class="s2">&quot;Diversity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Metric&quot;</span><span class="p">:</span> <span class="s2">&quot;ECOD chain-pair&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Test&quot;</span><span class="p">:</span> <span class="n">pair_test</span><span class="p">,</span>
+                <span class="s2">&quot;Val&quot;</span><span class="p">:</span> <span class="n">pair_val</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">report</span></div>
+
+
+
+<div class="viewcode-block" id="plot_ecod_family_distribution">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.plot_ecod_family_distribution">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_ecod_family_distribution</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">top_n_pfams</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating ECOD family distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">]</span>
+    <span class="n">test_ecods_concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_R&quot;</span><span class="p">],</span> <span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;ecod_label_L&quot;</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+    <span class="c1"># These ECOD domains should not be considered:</span>
+    <span class="n">unknown_domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;F_UNCLASSIFIED&quot;</span><span class="p">,</span> <span class="s2">&quot;UNK_F_TYPE&quot;</span><span class="p">]</span>
+
+    <span class="n">test_ecods_concat</span><span class="p">[</span>
+        <span class="o">~</span><span class="n">test_ecods_concat</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">unknown_domains</span><span class="p">)</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="n">top_n_pfams</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;barh&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top </span><span class="si">{</span><span class="n">top_n_pfams</span><span class="si">}</span><span class="s2"> ECOD families in test set&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;top_</span><span class="si">{</span><span class="n">top_n_pfams</span><span class="si">}</span><span class="s2">_ecod_families.png&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_merged_metadata">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.get_merged_metadata">[docs]</a>
+<span class="k">def</span> <span class="nf">get_merged_metadata</span><span class="p">(</span><span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">merged_metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">pindex</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span> <span class="s2">&quot;split&quot;</span><span class="p">]],</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;interface_lengths&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged_metadata</span><span class="p">[</span>
+        <span class="s2">&quot;chain_1_residues&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)))</span> <span class="o">+</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;chain_2_residues&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="c1"># Cluster Level Diversity</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;min_chain_len&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;length1&quot;</span><span class="p">],</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;length2&quot;</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">merged_metadata</span></div>
+
+
+
+<div class="viewcode-block" id="get_cluster_diversity">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.get_cluster_diversity">[docs]</a>
+<span class="k">def</span> <span class="nf">get_cluster_diversity</span><span class="p">(</span><span class="n">merged_metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">diversity_test_val</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">merged_metadata</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">)</span>
+        <span class="p">][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">/</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;min_chain_len&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">diversity_test</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">merged_metadata</span><span class="p">[(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">)][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">/</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;min_chain_len&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">diversity_val</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">merged_metadata</span><span class="p">[(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">)][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">/</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;min_chain_len&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">][</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+        <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;Pinder cluster level diversity in &lt;test, val, test+val&gt; set: &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">diversity_test</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">diversity_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">diversity_test_val</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&gt;&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Measure&quot;</span><span class="p">:</span> <span class="s2">&quot;Diversity&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Metric&quot;</span><span class="p">:</span> <span class="s2">&quot;Cluster&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Test&quot;</span><span class="p">:</span> <span class="n">diversity_test</span><span class="p">,</span>
+                <span class="s2">&quot;Val&quot;</span><span class="p">:</span> <span class="n">diversity_val</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">report</span></div>
+
+
+
+<div class="viewcode-block" id="plot_merged_metadata_distributions">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.plot_merged_metadata_distributions">[docs]</a>
+<span class="k">def</span> <span class="nf">plot_merged_metadata_distributions</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">merged_metadata</span> <span class="o">=</span> <span class="n">get_merged_metadata</span><span class="p">(</span><span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+    <span class="c1"># Interface Length Distribution</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating interface length distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;interface_lengths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;interface_lengths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">][</span><span class="s2">&quot;interface_lengths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Interface Res-length Distribution&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Interface Res-length&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;interface_length_distribution.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Intermolecular Contacts Distribution</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating intermolecular contacts distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">min_val</span> <span class="o">=</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;intermolecular_contacts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="n">merged_metadata</span><span class="p">[</span>
+        <span class="s2">&quot;intermolecular_contacts&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>  <span class="c1"># Adjusted from the example for full range</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;intermolecular_contacts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">][</span>
+        <span class="s2">&quot;intermolecular_contacts&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">][</span><span class="s2">&quot;intermolecular_contacts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Intermolecular Contacts Distribution&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Intermolecular Contacts&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;intermolecular_contacts_distribution.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Do it again for comparison to previous example</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;intermolecular_contacts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">][</span>
+        <span class="s2">&quot;intermolecular_contacts&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">][</span><span class="s2">&quot;intermolecular_contacts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Intermolecular Contacts Distribution (maximum 500)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Intermolecular Contacts&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;intermolecular_contacts_distribution_max500.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Probability Distribution</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating probability distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">][</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;BIO Probabilities&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;bio_probability_distributions.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Planarity Distribution</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating planarity distribution plot&quot;</span><span class="p">)</span>
+    <span class="n">min_val</span> <span class="o">=</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;planarity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;planarity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Planarity range: </span><span class="si">{</span><span class="n">min_val</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">max_val</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;planarity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">][</span><span class="s2">&quot;planarity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">merged_metadata</span><span class="p">[</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">][</span><span class="s2">&quot;planarity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;hist&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="p">,</span>
+        <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Planarity Distribution&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Planarity&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;planarity_distribution.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Planarity vs Interface Length Correlation</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">merged_metadata</span><span class="p">[</span>
+                    <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">)</span>
+                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">)</span>
+                <span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.05</span><span class="p">),</span>
+                <span class="n">merged_metadata</span><span class="p">[</span>
+                    <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;val&quot;</span><span class="p">)</span>
+                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span>
+                <span class="p">],</span>
+                <span class="n">merged_metadata</span><span class="p">[</span>
+                    <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+                    <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;probability&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">)</span>
+                <span class="p">],</span>
+            <span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;probability&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;planarity&quot;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;split&quot;</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Planarity vs Interface Length Correlation&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;planarity_vs_interface_length_correlation.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Interface Length Distribution for different oligomeric states</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">merged_metadata</span><span class="p">[(</span><span class="n">merged_metadata</span><span class="p">[</span><span class="s2">&quot;oligomeric_count&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)],</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;interface_lengths&quot;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;oligomeric_count&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Interface Length Distribution for Different Oligomeric States&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_dir</span> <span class="o">/</span> <span class="s2">&quot;interface_length_distribution_oligomeric_states.png&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Cluster Level Diversity</span>
+    <span class="n">get_cluster_diversity</span><span class="p">(</span><span class="n">merged_metadata</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="pfam_diversity_main">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.pfam_diversity.pfam_diversity_main">[docs]</a>
+<span class="k">def</span> <span class="nf">pfam_diversity_main</span><span class="p">(</span>
+    <span class="n">index_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pfam_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;data/pfam_visualizations&quot;</span><span class="p">,</span>
+    <span class="n">frac_interface_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">min_intersection</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">top_n_pfams</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract PFAM clan diversity and generate visualizations.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        index_file (str | None): Path to custom/intermediate index file, if not provided will use get_index().</span>
+<span class="sd">        metadata_file (str | None): Path to custom/intermediate metadata file, if not provided will use get_metadata().</span>
+<span class="sd">        pfam_file (str | None): Optional path to Pfam data file, if not provided will fetch and cache it.</span>
+<span class="sd">        output_dir (str | Path): Directory to store PFAM visualizations. Defaults to get_pinder_location() / &#39;data/pfam_visualizations&#39;.</span>
+<span class="sd">        frac_interface_threshold (float): Fraction of interface required to be covered by ECOD domain.</span>
+<span class="sd">            Default is 0.25.</span>
+<span class="sd">        min_intersection (int): Minimum required intersection between interface and ECOD domain.</span>
+<span class="sd">            Default is 10.</span>
+<span class="sd">        top_n_pfams (int): Number of top Pfam clans to visualize. Default is 50.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting diversity analysis script, parsing arguments...&quot;</span><span class="p">)</span>
+    <span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">pfam_data</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span>
+        <span class="n">index_file</span><span class="o">=</span><span class="n">index_file</span><span class="p">,</span> <span class="n">metadata_file</span><span class="o">=</span><span class="n">metadata_file</span><span class="p">,</span> <span class="n">pfam_file</span><span class="o">=</span><span class="n">pfam_file</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+        <span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+
+    <span class="n">all_splits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid&quot;</span><span class="p">]</span>
+    <span class="n">pindex_all_splits</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">all_splits</span><span class="p">))</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;-1&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;p_p&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="p">]</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Data loaded successfully.&quot;</span><span class="p">)</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Creating ECOD annotations&quot;</span><span class="p">)</span>
+    <span class="n">pindex_with_RL</span> <span class="o">=</span> <span class="n">get_ecod_annotations</span><span class="p">(</span>
+        <span class="n">pindex_all_splits</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">frac_interface_threshold</span><span class="o">=</span><span class="n">frac_interface_threshold</span><span class="p">,</span>
+        <span class="n">min_intersection</span><span class="o">=</span><span class="n">min_intersection</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">pindex_pfam</span> <span class="o">=</span> <span class="n">process_pfam_data</span><span class="p">(</span><span class="n">pindex_with_RL</span><span class="p">,</span> <span class="n">pfam_data</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Pfam data processed successfully.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># make sure output dir exists</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">output_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">visualize_data</span><span class="p">(</span><span class="n">pindex_pfam</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">top_n_pfams</span><span class="o">=</span><span class="n">top_n_pfams</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Visualizations generated successfully.&quot;</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

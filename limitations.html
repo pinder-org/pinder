@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Limitations &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'limitations';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/limitations.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="FAQ" href="faq.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Limitations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="limitations">
+<h1>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h1>
+<section id="known-limitationns">
+<h2>Known limitationns<a class="headerlink" href="#known-limitationns" title="Link to this heading">#</a></h2>
+<section id="dimers">
+<h3>Dimers<a class="headerlink" href="#dimers" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">PINDER</span></code> exclusively utilizes interactions at dimeric scale for training and evaluation. Even though we utilize biological dimers in the test and validation sets, in training split they were often extracted from higher-order oligomeric complexes. This could limit their biological plausibility in isolation, for example, the binding of two monomers can create a neo-substrate for a third interacting chain that would otherwise not have the requisite binding affinity.</p>
+<p>Additionally, the classification of protein complexes into oligomeric states, such as homodimers and heterodimers, relies heavily on specific definitions and contextual interpretations. This variability can introduce inconsistencies in the analysis and interpretation of interaction data. Furthermore, the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dataset exhibits a heavy bias towards homodimers, which is reflective of the bias observed in the PDB source data.</p>
+</section>
+<section id="alphafold2-monomers">
+<h3>AlphaFold2 monomers<a class="headerlink" href="#alphafold2-monomers" title="Link to this heading">#</a></h3>
+<p>While the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> dataset includes many predicted AlphaFold2 monomers, it is limited to only those present in AFDB 2.3. For structures with undefined UniProt IDs, we could have inferred sequences to broaden the dataset.</p>
+</section>
+<section id="apo-pairing">
+<h3>Apo pairing<a class="headerlink" href="#apo-pairing" title="Link to this heading">#</a></h3>
+<p>Pairing <em>apo</em> forms could be improved by integrating Foldseek and MMseqs2 to search for homologous monomers, as the current approach is primarily UniProt-based.</p>
+</section>
+<section id="single-reference-conformation">
+<h3>Single reference conformation<a class="headerlink" href="#single-reference-conformation" title="Link to this heading">#</a></h3>
+<p>Evaluating protein interactions using a single reference conformation restricts analysis flexibility. Proteins can adopt multiple conformations, and relying on one reference may not capture the full range of interactions, thereby reducing accuracy. This is particularly important to note given the inclusion of <em>apo</em> and predicted monomers as augmentation. Incorporating multiple conformational states can provide a more accurate and comprehensive assessment of protein-protein interactions.</p>
+</section>
+<section id="alignment-methodology">
+<h3>Alignment methodology<a class="headerlink" href="#alignment-methodology" title="Link to this heading">#</a></h3>
+<p>Our primary focus was to minimize leakage within the test/validation splits. To achieve this, we employed low score thresholds in our all-vs-all score computations, specifically using Foldseek and MMseqs2. While alignments between monomers were required to have a minimum coverage of the interface for each monomer, the alignments themselves were not specific to the interfaces. Additionally, we masked training data with indirect (transitive) hits at a depth of two to enhance recall. Although this approach did yield a diverse set of clusters, it has limitations. Dissimilar interfaces may have been considered similar and consequently removed from the training data, and individual clusters can have a high range of interfaces. Future iterations could address this by incorporating tools with greater precision, such as iAlign, into the splitting algorithm.</p>
+<section id="foldseek-limitations">
+<h4>Foldseek limitations<a class="headerlink" href="#foldseek-limitations" title="Link to this heading">#</a></h4>
+<p>Foldseek is a tool designed for fast and sensitive alignment of protein structures. It excels in identifying similar structures by comparing the 3D coordinates of proteins, making it useful for structural clustering. However, Foldseek has several limitations. First, Foldseek primarily handles dimeric structures and does not efficiently accommodate higher-order oligomeric complexes. This limitation means that for oligomeric proteins, the interactions within larger complexes may not be accurately represented. Additionally, Foldseek’s reliance on structural alignment can miss functionally significant variations that do not manifest as large-scale structural differences. For example, subtle changes in the side-chain orientations at the binding interface, which can be critical for interaction specificity, might not be captured by Foldseek’s alignment algorithms. These limitations highlight the need for complementary approaches and tools to achieve a more accurate and comprehensive clustering of protein interfaces.</p>
+</section>
+</section>
+<section id="prodigy-cryst">
+<h3>PRODIGY-Cryst<a class="headerlink" href="#prodigy-cryst" title="Link to this heading">#</a></h3>
+<p>For the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> test, we selected protein complexes using multiple criteria to ensure quality, though each choice involved trade-offs. The threshold of 0.5 in the PRODIGY algorithm signifies a relatively low-quality interaction prediction, with scores between 0.5 and 0.6 falling into this category. Moreover, scores below 0.5 might still represent biologically relevant interfaces, potentially affecting the accuracy of interaction assessments.</p>
+</section>
+<section id="limitations-of-the-data-ingestion-pipeline">
+<h3>Limitations of the data ingestion pipeline<a class="headerlink" href="#limitations-of-the-data-ingestion-pipeline" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>NextGen mmCIF assemblies is a better alternative for storage to PDB chain pairs in terms of:</p>
+<ul>
+<li><p>Lower redundancy</p></li>
+<li><p>Consistent chain naming (no need to rename duplicate chains in higher-order assemblies with symmetry)</p></li>
+</ul>
+</li>
+</ul>
+<section id="limitations-of-the-clustering-spliting-algorithm">
+<h4>Limitations of the clustering / spliting algorithm<a class="headerlink" href="#limitations-of-the-clustering-spliting-algorithm" title="Link to this heading">#</a></h4>
+<p>Clustering (used in sampling train, test, val) is not at a domain-level granularity (i.e. we use OR to encapsulate all alterntive interactions in a given chain if it overlaps with any other interacting domain from any other chain).</p>
+<p>Test data has a different distribution in terms of multiple properties:</p>
+<ul class="simple">
+<li><p>Planarity</p></li>
+<li><p>Experimental method</p></li>
+<li><p>Oligomeric state</p></li>
+<li><p>Only dimers</p></li>
+</ul>
+<p>Although it is possible to reconstruct the original oligomeric complex with the files provided in <code class="docutils literal notranslate"><span class="pre">pinder</span></code>, it is not possible to load multi-chain data while maintaining the same splits and cluster IDs.</p>
+</section>
+</section>
+<section id="data-types-in-the-pinder-index">
+<h3>Data types in the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> index<a class="headerlink" href="#data-types-in-the-pinder-index" title="Link to this heading">#</a></h3>
+<p>By default, the index and metadata has dtypes that have been optimized for reduced memory usage due to the large table sizes. While this should be a non-issue for most use-cases, there may be certain operations that require casting the column dtypes to their more commonly used variants. Some known issues:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">float16</span></code> not supported by <code class="docutils literal notranslate"><span class="pre">pandas.cut</span></code> -&gt; need to cast to float <code class="docutils literal notranslate"><span class="pre">data[column]</span> <span class="pre">=</span> <span class="pre">data[column].astype(float)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">category</span></code> dtype can have some quirks</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.groupby</span></code> should pass <code class="docutils literal notranslate"><span class="pre">observed=True</span></code> to ensure categorical columns only report the <em>observed</em> values, rather than all categories encoded in the column prior to any mutation.</p></li>
+<li><p>Depending on the environment and how you are accessing items from the dataset, you may need to convert to object type: <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">col</span> <span class="pre">in</span> <span class="pre">index.select_dtypes(include=[&quot;category&quot;]).columns:</span> <span class="pre">index[col]</span> <span class="pre">=</span> <span class="pre">index[col].astype('object');</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#known-limitationns">Known limitationns</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimers">Dimers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alphafold2-monomers">AlphaFold2 monomers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apo-pairing">Apo pairing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-reference-conformation">Single reference conformation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-methodology">Alignment methodology</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#foldseek-limitations">Foldseek limitations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prodigy-cryst">PRODIGY-Cryst</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-the-data-ingestion-pipeline">Limitations of the data ingestion pipeline</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-the-clustering-spliting-algorithm">Limitations of the clustering / spliting algorithm</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-in-the-pinder-index">Data types in the <code class="docutils literal notranslate"><span class="pre">pinder</span></code> index</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/limitations.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/limitations.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.eval package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.eval';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.eval.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.eval.clashes package" href="pinder.eval.clashes.html" />
+    <link rel="prev" title="pinder.data.qc package" href="pinder.data.qc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.core.html">pinder.core package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.annotation.html">pinder.data.annotation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.pipeline.html">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.qc.html">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">pinder.eval package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.eval package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-eval-package">
+<h1>pinder.eval package<a class="headerlink" href="#pinder-eval-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html#module-pinder.eval.clashes">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.clashes.html#pinder.eval.clashes.count_pinder_clashes"><code class="docutils literal notranslate"><span class="pre">count_pinder_clashes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.clashes.html#pinder.eval.clashes.count_clashes"><code class="docutils literal notranslate"><span class="pre">count_clashes()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#module-pinder.eval.dockq.biotite_dockq">pinder.eval.dockq.biotite_dockq module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.get_irmsd_interface"><code class="docutils literal notranslate"><span class="pre">get_irmsd_interface()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.DecoyDockQ"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_metrics"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_metrics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_lrmsd"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_lrmsd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_irmsd"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_irmsd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.DecoyDockQ.get_decoy_contacts"><code class="docutils literal notranslate"><span class="pre">DecoyDockQ.get_decoy_contacts()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.calculate"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.calculate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.get_native_contacts"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.get_native_contacts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.prepare_inputs"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.prepare_inputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.read_decoys"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.read_decoys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.create_decoy_stack"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.create_decoy_stack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.biotite_dockq.BiotiteDockQ.set_common"><code class="docutils literal notranslate"><span class="pre">BiotiteDockQ.set_common()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#module-pinder.eval.dockq.method">pinder.eval.dockq.method module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.InvalidChainsError"><code class="docutils literal notranslate"><span class="pre">InvalidChainsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.TooFewChainsError"><code class="docutils literal notranslate"><span class="pre">TooFewChainsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.ExpectedChainsNotFoundError"><code class="docutils literal notranslate"><span class="pre">ExpectedChainsNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.validate_system_id"><code class="docutils literal notranslate"><span class="pre">validate_system_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_valid_eval_systems"><code class="docutils literal notranslate"><span class="pre">get_valid_eval_systems()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.SubsetIds"><code class="docutils literal notranslate"><span class="pre">SubsetIds</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.SubsetIds.count"><code class="docutils literal notranslate"><span class="pre">SubsetIds.count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.SubsetIds.ids"><code class="docutils literal notranslate"><span class="pre">SubsetIds.ids</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_expected_counts"><code class="docutils literal notranslate"><span class="pre">get_expected_counts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.summarize_valid_systems"><code class="docutils literal notranslate"><span class="pre">summarize_valid_systems()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.download_entry"><code class="docutils literal notranslate"><span class="pre">download_entry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_eval_metrics"><code class="docutils literal notranslate"><span class="pre">get_eval_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.safe_get_eval_metrics"><code class="docutils literal notranslate"><span class="pre">safe_get_eval_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_eval_metrics_all_methods"><code class="docutils literal notranslate"><span class="pre">get_eval_metrics_all_methods()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_method_eval_metrics"><code class="docutils literal notranslate"><span class="pre">get_method_eval_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.add_pinder_set"><code class="docutils literal notranslate"><span class="pre">add_pinder_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.get_missing_system_penalty_metrics"><code class="docutils literal notranslate"><span class="pre">get_missing_system_penalty_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.CapriClass"><code class="docutils literal notranslate"><span class="pre">CapriClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.metrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.add_rank_column"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.add_rank_column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.get_metrics"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_metrics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.oracle_median_summary"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.oracle_median_summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.get_leaderboard_entry"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_leaderboard_entry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.median_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.median_oracle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.get_hit_rates"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.get_hit_rates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.top_k"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_k()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.top_k_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_k_oracle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.top_percentile"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.top_percentile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.system_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_oracle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.system_median"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_median()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.method_median"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.method_median()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.method_oracle"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.method_oracle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.system_capri_hit_rate"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.system_capri_hit_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.median_capri_hit_rate"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.median_capri_hit_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.method.MethodMetrics.histogram_plot"><code class="docutils literal notranslate"><span class="pre">MethodMetrics.histogram_plot()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#module-pinder.eval.dockq.metrics">pinder.eval.dockq.metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.get_interface_mask"><code class="docutils literal notranslate"><span class="pre">get_interface_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.calc_irmsd"><code class="docutils literal notranslate"><span class="pre">calc_irmsd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.get_receptor_masks"><code class="docutils literal notranslate"><span class="pre">get_receptor_masks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.calc_lrmsd"><code class="docutils literal notranslate"><span class="pre">calc_lrmsd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.calc_fnat"><code class="docutils literal notranslate"><span class="pre">calc_fnat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.get_dockq_score"><code class="docutils literal notranslate"><span class="pre">get_dockq_score()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.metrics.capri_class"><code class="docutils literal notranslate"><span class="pre">capri_class()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#module-pinder.eval.dockq.unbound">pinder.eval.dockq.unbound module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.get_db4_difficulty"><code class="docutils literal notranslate"><span class="pre">get_db4_difficulty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.fnat_unbound_summary"><code class="docutils literal notranslate"><span class="pre">fnat_unbound_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.get_corresponding_residues"><code class="docutils literal notranslate"><span class="pre">get_corresponding_residues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.filter_interface_intersect"><code class="docutils literal notranslate"><span class="pre">filter_interface_intersect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.get_unbound_interface_metrics"><code class="docutils literal notranslate"><span class="pre">get_unbound_interface_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.get_unbound_difficulty"><code class="docutils literal notranslate"><span class="pre">get_unbound_difficulty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.eval.dockq.html#pinder.eval.dockq.unbound.get_apo_monomer_difficulty"><code class="docutils literal notranslate"><span class="pre">get_apo_monomer_difficulty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html#module-pinder.eval.dockq">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.eval.create_submission">
+<span id="pinder-eval-create-submission-module"></span><h2>pinder.eval.create_submission module<a class="headerlink" href="#module-pinder.eval.create_submission" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.create_submission.main">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.create_submission.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/create_submission.py#L32-L63"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/create_submission.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.create_submission.main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.eval.run">
+<span id="pinder-eval-run-module"></span><h2>pinder.eval.run module<a class="headerlink" href="#module-pinder.eval.run" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.eval.run.main">
+<span class="sig-prename descclassname"><span class="pre">pinder.eval.run.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/eval/run.py#L29-L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/eval/run.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.eval.run.main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.eval">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.eval" title="Link to this heading">#</a></h2>
+<p>Namespace package root for pinder-eval.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.create_submission">pinder.eval.create_submission module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.create_submission.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval.run">pinder.eval.run module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.eval.run.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.eval">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.eval.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.eval.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

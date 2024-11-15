@@ -1,0 +1,1253 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.alignment_utils &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/alignment_utils';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/alignment_utils.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.alignment_utils</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.alignment_utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Set</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">concurrent</span> <span class="kn">import</span> <span class="n">futures</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">repeat</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="kn">import</span> <span class="nn">biotite.structure</span> <span class="k">as</span> <span class="nn">struc</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">biotite.structure.atoms</span> <span class="kn">import</span> <span class="n">AtomArray</span>
+<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">NDArray</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.index.system</span> <span class="kn">import</span> <span class="n">PinderSystem</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.contacts</span> <span class="kn">import</span> <span class="n">pairwise_contacts</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.atoms</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">atom_array_from_pdb_file</span><span class="p">,</span>
+    <span class="n">backbone_mask</span><span class="p">,</span>
+    <span class="n">renumber_res_ids</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.paths</span> <span class="kn">import</span> <span class="n">empty_file</span>
+<span class="kn">from</span> <span class="nn">pinder.data.system</span> <span class="kn">import</span> <span class="n">get_dev_systems</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">get_config_hash</span><span class="p">,</span> <span class="n">ContactConfig</span>
+<span class="kn">from</span> <span class="nn">pinder.data.foldseek_utils</span> <span class="kn">import</span> <span class="n">FOLDSEEK_FIELDS</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="DomainInfo">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.DomainInfo">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">DomainInfo</span><span class="p">:</span>
+    <span class="n">pdb</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">ecod_domain_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">t_name</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="Domain">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Domain">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Domain</span><span class="p">:</span>
+    <span class="n">pdb_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">chain</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">domain_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">t_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pdb_from</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">pdb_to</span><span class="p">:</span> <span class="nb">int</span>
+
+<div class="viewcode-block" id="Domain.from_domain_info">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Domain.from_domain_info">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_domain_info</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">domain_info</span><span class="p">:</span> <span class="n">DomainInfo</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Domain&quot;</span><span class="p">:</span>
+        <span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">domain_id</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">pdb_from</span><span class="p">,</span> <span class="n">pdb_to</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">domain_info</span><span class="o">.</span><span class="n">pdb</span><span class="p">,</span>
+            <span class="n">domain_info</span><span class="o">.</span><span class="n">chain</span><span class="p">,</span>
+            <span class="n">domain_info</span><span class="o">.</span><span class="n">ecod_domain_id</span><span class="p">,</span>
+            <span class="n">domain_info</span><span class="o">.</span><span class="n">t_name</span><span class="p">,</span>
+            <span class="n">start</span><span class="p">,</span>
+            <span class="n">end</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">domain_id</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">pdb_from</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">pdb_to</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Alignment">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Alignment</span><span class="p">:</span>
+    <span class="n">pdbid1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pdbid2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">alntmscore</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">qstart</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">qend</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">qlen</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">tstart</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">tend</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">tlen</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">alnlen</span><span class="p">:</span> <span class="nb">int</span>
+
+<div class="viewcode-block" id="Alignment.from_line">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.from_line">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_line</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">:</span>
+        <span class="p">(</span>
+            <span class="n">pdbid1</span><span class="p">,</span>
+            <span class="n">pdbid2</span><span class="p">,</span>
+            <span class="n">alntmscore</span><span class="p">,</span>
+            <span class="n">qstart</span><span class="p">,</span>
+            <span class="n">qend</span><span class="p">,</span>
+            <span class="n">qlen</span><span class="p">,</span>
+            <span class="n">tstart</span><span class="p">,</span>
+            <span class="n">tend</span><span class="p">,</span>
+            <span class="n">tlen</span><span class="p">,</span>
+            <span class="n">alnlen</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">alntmscore</span> <span class="o">==</span> <span class="s2">&quot;nan&quot;</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Alignment score for </span><span class="si">{</span><span class="n">pdbid1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">pdbid2</span><span class="si">}</span><span class="s2"> is nan! Using default value of 0.5....&quot;</span>
+            <span class="p">)</span>
+            <span class="n">alntmscore</span> <span class="o">=</span> <span class="s2">&quot;0.5&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pdbid1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+            <span class="n">pdbid2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">alntmscore</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qstart</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qend</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qlen</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tstart</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tend</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tlen</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">alnlen</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Alignment.from_foldseek_line">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.from_foldseek_line">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_foldseek_line</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="n">FOLDSEEK_FIELDS</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;alntmscore&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="n">field_name_map</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;pdbid1&quot;</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;pdbid2&quot;</span><span class="p">}</span>
+        <span class="n">aln_fields</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__dataclass_fields__</span>
+        <span class="n">aln_kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">aln_fields</span><span class="p">:</span>
+                <span class="n">type_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">aln_fields</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+                <span class="n">aln_val</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">type_str</span><span class="p">)(</span><span class="n">val</span><span class="p">)</span>
+                <span class="n">aln_kwargs</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">aln_val</span>
+            <span class="k">elif</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">field_name_map</span><span class="p">:</span>
+                <span class="n">aln_field_name</span> <span class="o">=</span> <span class="n">field_name_map</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+                <span class="n">type_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">aln_fields</span><span class="p">[</span><span class="n">aln_field_name</span><span class="p">]</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+                <span class="n">aln_val</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">type_str</span><span class="p">)(</span><span class="n">val</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">aln_val</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="n">aln_val</span> <span class="o">=</span> <span class="n">aln_val</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.pdb&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="n">aln_kwargs</span><span class="p">[</span><span class="n">aln_field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">aln_val</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unrecognized/unused alignment field: </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">score_val</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;alntmscore&quot;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">score_val</span><span class="p">):</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Alignment score for </span><span class="si">{</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s1">&#39;pdbid1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s1">&#39;pdbid2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> is nan! &quot;</span>
+                <span class="s2">&quot;Using default value of 0.5....&quot;</span>
+            <span class="p">)</span>
+            <span class="n">score_val</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pdbid1</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;pdbid1&quot;</span><span class="p">]),</span>
+            <span class="n">pdbid2</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;pdbid2&quot;</span><span class="p">]),</span>
+            <span class="n">alntmscore</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">score_val</span><span class="p">),</span>
+            <span class="n">qstart</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;qstart&quot;</span><span class="p">]),</span>
+            <span class="n">qend</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;qend&quot;</span><span class="p">]),</span>
+            <span class="n">qlen</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;qlen&quot;</span><span class="p">]),</span>
+            <span class="n">tstart</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;tstart&quot;</span><span class="p">]),</span>
+            <span class="n">tend</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;tend&quot;</span><span class="p">]),</span>
+            <span class="n">tlen</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;tlen&quot;</span><span class="p">]),</span>
+            <span class="n">alnlen</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">aln_kwargs</span><span class="p">[</span><span class="s2">&quot;alnlen&quot;</span><span class="p">]),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Alignment.from_ecod_info">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.from_ecod_info">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_ecod_info</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ecod_info_pair</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Domain</span><span class="p">,</span> <span class="n">Domain</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">:</span>
+        <span class="n">ecod_info1</span><span class="p">,</span> <span class="n">ecod_info2</span> <span class="o">=</span> <span class="n">ecod_info_pair</span>
+        <span class="n">pdbid1</span><span class="p">,</span> <span class="n">pdbid2</span><span class="p">,</span> <span class="n">alntmscore</span><span class="p">,</span> <span class="n">qstart</span><span class="p">,</span> <span class="n">qend</span><span class="p">,</span> <span class="n">qlen</span><span class="p">,</span> <span class="n">tstart</span><span class="p">,</span> <span class="n">tend</span><span class="p">,</span> <span class="n">tlen</span><span class="p">,</span> <span class="n">alnlen</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_id</span><span class="p">,</span>
+            <span class="n">ecod_info2</span><span class="o">.</span><span class="n">pdb_id</span><span class="p">,</span>
+            <span class="mf">1.0</span><span class="p">,</span>
+            <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_from</span><span class="p">,</span>
+            <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_to</span><span class="p">,</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_to</span> <span class="o">-</span> <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_from</span><span class="p">),</span>
+            <span class="n">ecod_info2</span><span class="o">.</span><span class="n">pdb_from</span><span class="p">,</span>
+            <span class="n">ecod_info2</span><span class="o">.</span><span class="n">pdb_to</span><span class="p">,</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_to</span> <span class="o">-</span> <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_from</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_to</span> <span class="o">-</span> <span class="n">ecod_info1</span><span class="o">.</span><span class="n">pdb_from</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pdbid1</span><span class="p">,</span>
+            <span class="n">pdbid2</span><span class="p">,</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">alntmscore</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qstart</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qend</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">qlen</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tstart</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tend</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">tlen</span><span class="p">),</span>
+            <span class="nb">int</span><span class="p">(</span><span class="n">alnlen</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Alignment.indices1">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.indices1">[docs]</a>
+    <span class="k">def</span> <span class="nf">indices1</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">qstart</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">qend</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Alignment.indices2">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.indices2">[docs]</a>
+    <span class="k">def</span> <span class="nf">indices2</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tstart</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tend</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Alignment.flip_query_and_target">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Alignment.flip_query_and_target">[docs]</a>
+    <span class="k">def</span> <span class="nf">flip_query_and_target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Alignment&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Alignment</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pdbid2</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pdbid1</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alntmscore</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tstart</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tend</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tlen</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qstart</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qend</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qlen</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alnlen</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Interface">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Interface">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Interface</span><span class="p">:</span>
+    <span class="n">pdbid1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pdbid2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">indices1</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">indices2</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">alignments1</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>
+    <span class="n">alignments2</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="Interface.from_line">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Interface.from_line">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_line</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Interface&quot;</span><span class="p">:</span>
+        <span class="n">pdbid1</span><span class="p">,</span> <span class="n">pdbid2</span><span class="p">,</span> <span class="n">indices1</span><span class="p">,</span> <span class="n">indices2</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pdbid1</span><span class="p">,</span>
+            <span class="n">pdbid2</span><span class="p">,</span>
+            <span class="nb">set</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">indices1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]),</span>
+            <span class="nb">set</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">indices2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]),</span>
+            <span class="nb">set</span><span class="p">(),</span>
+            <span class="nb">set</span><span class="p">(),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Interface.from_system">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Interface.from_system">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_system</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">system</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Interface&quot;</span><span class="p">:</span>
+        <span class="n">pdbid_R</span><span class="p">,</span> <span class="n">pdbid_L</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+        <span class="n">pdbid_R</span> <span class="o">+=</span> <span class="s2">&quot;-R&quot;</span>
+        <span class="n">pdbid_L</span> <span class="o">+=</span> <span class="s2">&quot;-L&quot;</span>
+        <span class="n">chainR_res_foldseek_idx</span><span class="p">,</span> <span class="n">chainL_res_foldseek_idx</span> <span class="o">=</span> <span class="n">get_foldseek_contacts</span><span class="p">(</span>
+            <span class="n">system</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="o">=</span><span class="s2">&quot;dockq&quot;</span><span class="p">,</span> <span class="n">return_calpha_only</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">pdbid_R</span><span class="p">,</span>
+            <span class="n">pdbid_L</span><span class="p">,</span>
+            <span class="nb">set</span><span class="p">(</span><span class="n">chainR_res_foldseek_idx</span><span class="p">),</span>
+            <span class="nb">set</span><span class="p">(</span><span class="n">chainL_res_foldseek_idx</span><span class="p">),</span>
+            <span class="nb">set</span><span class="p">(),</span>
+            <span class="nb">set</span><span class="p">(),</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Interface.from_contact_info">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Interface.from_contact_info">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_contact_info</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">contact_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Interface&quot;</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;R_residues&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;L_residues&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">R_res</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;R_residues&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)}</span>
+        <span class="n">L_res</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;L_residues&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)}</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id1&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id2&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">id1</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id1&quot;</span><span class="p">]</span>
+        <span class="n">id2</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id2&quot;</span><span class="p">]</span>
+        <span class="n">interface</span> <span class="o">=</span> <span class="n">Interface</span><span class="p">(</span>
+            <span class="n">id1</span><span class="p">,</span>
+            <span class="n">id2</span><span class="p">,</span>
+            <span class="n">indices1</span><span class="o">=</span><span class="n">R_res</span><span class="p">,</span>
+            <span class="n">indices2</span><span class="o">=</span><span class="n">L_res</span><span class="p">,</span>
+            <span class="n">alignments1</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+            <span class="n">alignments2</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">interface</span></div>
+
+
+<div class="viewcode-block" id="Interface.flip_interface">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.Interface.flip_interface">[docs]</a>
+    <span class="k">def</span> <span class="nf">flip_interface</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Interface&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Interface</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pdbid2</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pdbid1</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indices2</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indices1</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alignments2</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alignments1</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="get_foldseek_contacts">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.get_foldseek_contacts">[docs]</a>
+<span class="k">def</span> <span class="nf">get_foldseek_contacts</span><span class="p">(</span>
+    <span class="n">dimer</span><span class="p">:</span> <span class="n">PinderSystem</span><span class="p">,</span>
+    <span class="n">radius</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="n">backbone_definition</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dockq&quot;</span><span class="p">,</span>
+    <span class="n">return_calpha_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]]:</span>
+    <span class="n">contacts</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">native</span><span class="o">.</span><span class="n">get_contacts</span><span class="p">(</span>
+        <span class="n">heavy_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">backbone_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">radius</span>
+    <span class="p">)</span>
+    <span class="n">r_contacts</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">contacts</span><span class="p">}</span>
+    <span class="n">l_contacts</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">contacts</span><span class="p">}</span>
+
+    <span class="n">arr_ori</span> <span class="o">=</span> <span class="n">dimer</span><span class="o">.</span><span class="n">native</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">bb_mask</span> <span class="o">=</span> <span class="n">backbone_mask</span><span class="p">(</span><span class="n">arr_ori</span><span class="p">,</span> <span class="n">backbone_definition</span><span class="p">)</span>
+
+    <span class="n">R_arr</span> <span class="o">=</span> <span class="n">arr_ori</span><span class="p">[(</span><span class="n">arr_ori</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">bb_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">L_arr</span> <span class="o">=</span> <span class="n">arr_ori</span><span class="p">[(</span><span class="n">arr_ori</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;L&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">bb_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">R_renum</span> <span class="o">=</span> <span class="n">R_arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">L_renum</span> <span class="o">=</span> <span class="n">L_arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">R_renum</span> <span class="o">=</span> <span class="n">renumber_res_ids</span><span class="p">(</span><span class="n">R_renum</span><span class="p">)</span>
+    <span class="n">L_renum</span> <span class="o">=</span> <span class="n">renumber_res_ids</span><span class="p">(</span><span class="n">L_renum</span><span class="p">)</span>
+
+    <span class="n">R_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">at1</span><span class="o">.</span><span class="n">res_id</span><span class="p">:</span> <span class="n">at2</span><span class="o">.</span><span class="n">res_id</span> <span class="k">for</span> <span class="n">at1</span><span class="p">,</span> <span class="n">at2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">R_arr</span><span class="p">,</span> <span class="n">R_renum</span><span class="p">)}</span>
+    <span class="n">L_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">at1</span><span class="o">.</span><span class="n">res_id</span><span class="p">:</span> <span class="n">at2</span><span class="o">.</span><span class="n">res_id</span> <span class="k">for</span> <span class="n">at1</span><span class="p">,</span> <span class="n">at2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">L_arr</span><span class="p">,</span> <span class="n">L_renum</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">return_calpha_only</span><span class="p">:</span>
+        <span class="n">R_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="nb">list</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="n">R_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">R_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">R_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">r_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">L_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="nb">list</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="n">L_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">L_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">L_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">l_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">R_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">R_list</span><span class="p">)</span>
+        <span class="n">L_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L_list</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">R_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">R_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">R_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">R_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">r_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">L_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">L_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">L_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">L_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">l_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">R_cont_filter</span><span class="p">,</span> <span class="n">L_cont_filter</span></div>
+
+
+
+<div class="viewcode-block" id="get_foldseek_numbering">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.get_foldseek_numbering">[docs]</a>
+<span class="k">def</span> <span class="nf">get_foldseek_numbering</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span> <span class="n">AtomArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+    <span class="n">arr_renum</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arr_renum</span> <span class="o">=</span> <span class="n">renumber_res_ids</span><span class="p">(</span><span class="n">arr_renum</span><span class="p">)</span>
+    <span class="n">res_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">at1</span><span class="o">.</span><span class="n">res_id</span><span class="p">:</span> <span class="n">at2</span><span class="o">.</span><span class="n">res_id</span> <span class="k">for</span> <span class="n">at1</span><span class="p">,</span> <span class="n">at2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr_renum</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="n">res_map</span></div>
+
+
+
+<div class="viewcode-block" id="get_foldseek_dimer_contacts">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.get_foldseek_dimer_contacts">[docs]</a>
+<span class="k">def</span> <span class="nf">get_foldseek_dimer_contacts</span><span class="p">(</span>
+    <span class="n">dimer_pdb</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">contact_config</span><span class="p">:</span> <span class="n">ContactConfig</span> <span class="o">=</span> <span class="n">ContactConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">atom_array_from_pdb_file</span><span class="p">(</span><span class="n">dimer_pdb</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;fastpdb&quot;</span><span class="p">)</span>
+    <span class="n">res_conts</span> <span class="o">=</span> <span class="n">pairwise_contacts</span><span class="p">(</span>
+        <span class="n">structure</span><span class="p">,</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">contact_config</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span>
+        <span class="n">heavy_only</span><span class="o">=</span><span class="n">contact_config</span><span class="o">.</span><span class="n">heavy_only</span><span class="p">,</span>
+        <span class="n">backbone_only</span><span class="o">=</span><span class="n">contact_config</span><span class="o">.</span><span class="n">backbone_only</span><span class="p">,</span>
+        <span class="n">chain1</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">],</span>
+        <span class="n">chain2</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">],</span>
+        <span class="n">atom_and_residue_level</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">res_conts</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimer </span><span class="si">{</span><span class="n">dimer_pdb</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> had zero contacts!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res_conts</span><span class="p">):</span>
+        <span class="n">r_contacts</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res_conts</span><span class="p">}</span>
+        <span class="n">l_contacts</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res_conts</span><span class="p">}</span>
+
+    <span class="n">arr_ori</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">R_arr</span> <span class="o">=</span> <span class="n">arr_ori</span><span class="p">[(</span><span class="n">arr_ori</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">L_arr</span> <span class="o">=</span> <span class="n">arr_ori</span><span class="p">[(</span><span class="n">arr_ori</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="s2">&quot;L&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">R_map</span> <span class="o">=</span> <span class="n">get_foldseek_numbering</span><span class="p">(</span><span class="n">R_arr</span><span class="p">)</span>
+    <span class="n">L_map</span> <span class="o">=</span> <span class="n">get_foldseek_numbering</span><span class="p">(</span><span class="n">L_arr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">contact_config</span><span class="o">.</span><span class="n">only_unique_resi</span><span class="p">:</span>
+        <span class="n">R_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="nb">list</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="n">R_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">R_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">R_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">r_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">L_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="nb">list</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="n">L_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">L_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">L_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">l_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">R_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">R_list</span><span class="p">)</span>
+        <span class="n">L_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L_list</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">R_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">R_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">R_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">R_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">r_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">L_cont_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">L_map</span><span class="p">[</span><span class="n">resi</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">resi</span> <span class="ow">in</span> <span class="n">L_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">L_arr</span><span class="o">.</span><span class="n">res_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">l_contacts</span><span class="p">))]</span><span class="o">.</span><span class="n">res_id</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="n">pdbid_R</span><span class="p">,</span> <span class="n">pdbid_L</span> <span class="o">=</span> <span class="n">dimer_pdb</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">pdbid_R</span> <span class="o">+=</span> <span class="s2">&quot;-R&quot;</span>
+    <span class="n">pdbid_L</span> <span class="o">+=</span> <span class="s2">&quot;-L&quot;</span>
+    <span class="n">interface_id1</span> <span class="o">=</span> <span class="n">pdbid_R</span>
+    <span class="n">interface_id2</span> <span class="o">=</span> <span class="n">pdbid_L</span>
+
+    <span class="n">R_residues</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">R_cont_filter</span><span class="p">))</span>
+    <span class="n">L_residues</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">L_cont_filter</span><span class="p">))</span>
+    <span class="n">contact_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">dimer_pdb</span><span class="o">.</span><span class="n">stem</span><span class="p">,</span>
+        <span class="s2">&quot;interface_id1&quot;</span><span class="p">:</span> <span class="n">pdbid_R</span><span class="p">,</span>
+        <span class="s2">&quot;interface_id2&quot;</span><span class="p">:</span> <span class="n">pdbid_L</span><span class="p">,</span>
+        <span class="s2">&quot;R_residues&quot;</span><span class="p">:</span> <span class="n">R_residues</span><span class="p">,</span>
+        <span class="s2">&quot;L_residues&quot;</span><span class="p">:</span> <span class="n">L_residues</span><span class="p">,</span>
+        <span class="s2">&quot;radius&quot;</span><span class="p">:</span> <span class="n">contact_config</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span>
+        <span class="s2">&quot;R_length&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">R_cont_filter</span><span class="p">),</span>
+        <span class="s2">&quot;L_length&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">L_cont_filter</span><span class="p">),</span>
+        <span class="s2">&quot;heavy_only&quot;</span><span class="p">:</span> <span class="n">contact_config</span><span class="o">.</span><span class="n">heavy_only</span><span class="p">,</span>
+        <span class="s2">&quot;backbone_only&quot;</span><span class="p">:</span> <span class="n">contact_config</span><span class="o">.</span><span class="n">backbone_only</span><span class="p">,</span>
+        <span class="s2">&quot;only_unique_resi&quot;</span><span class="p">:</span> <span class="n">contact_config</span><span class="o">.</span><span class="n">only_unique_resi</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">contact_info</span></div>
+
+
+
+<div class="viewcode-block" id="generate_dimer_foldseek_contacts">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.generate_dimer_foldseek_contacts">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_dimer_foldseek_contacts</span><span class="p">(</span>
+    <span class="n">dimer_pdb</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">contact_config</span><span class="p">:</span> <span class="n">ContactConfig</span> <span class="o">=</span> <span class="n">ContactConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">Path</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">contact_fp</span> <span class="o">=</span> <span class="n">dimer_pdb</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;foldseek_contacts&quot;</span>
+    <span class="n">config_hash</span> <span class="o">=</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">contact_config</span><span class="p">)</span>
+    <span class="n">config_dir</span> <span class="o">=</span> <span class="n">contact_fp</span> <span class="o">/</span> <span class="n">config_hash</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">config_dir</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">config_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">contact_json</span> <span class="o">=</span> <span class="n">config_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dimer_pdb</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.json&quot;</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">contact_json</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">contact_info</span> <span class="o">=</span> <span class="n">get_foldseek_dimer_contacts</span><span class="p">(</span><span class="n">dimer_pdb</span><span class="p">,</span> <span class="n">contact_config</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">contact_info</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">contact_info</span><span class="p">,</span> <span class="n">contact_json</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="populate_foldseek_contacts">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.populate_foldseek_contacts">[docs]</a>
+<span class="k">def</span> <span class="nf">populate_foldseek_contacts</span><span class="p">(</span>
+    <span class="n">dimer_pdbs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+    <span class="n">contact_config</span><span class="p">:</span> <span class="n">ContactConfig</span> <span class="o">=</span> <span class="n">ContactConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process batch of Dimer PDBs to store contacts with different configurations for foldseek.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dimer_pdbs : list[Path]</span>
+<span class="sd">        List of dimer PDBs to get contacts for.</span>
+<span class="sd">    use_cache : bool</span>
+<span class="sd">        Whether to skip generation of contacts if the contacts.json corresponding to the config hash exists.</span>
+<span class="sd">    parallel : bool</span>
+<span class="sd">        Whether to populate entries in parallel.</span>
+<span class="sd">    max_workers : int, optional</span>
+<span class="sd">        Limit number of parallel processes spawned to `max_workers`.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Getting foldseek contacts for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dimer_pdbs</span><span class="p">)</span><span class="si">}</span><span class="s2"> dimer PDBs&quot;</span><span class="p">)</span>
+    <span class="n">dimer_contacts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">Path</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dimer_pdbs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># process all files in parallel</span>
+        <span class="k">if</span> <span class="n">parallel</span><span class="p">:</span>
+            <span class="c1"># max_workers=param_n_cores</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">(</span>
+                    <span class="n">mp_context</span><span class="o">=</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="s2">&quot;spawn&quot;</span><span class="p">),</span>
+                    <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+                    <span class="n">dimer_contacts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                        <span class="n">exe</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+                            <span class="n">generate_dimer_foldseek_contacts</span><span class="p">,</span>
+                            <span class="n">dimer_pdbs</span><span class="p">,</span>
+                            <span class="n">repeat</span><span class="p">(</span><span class="n">contact_config</span><span class="p">),</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to calculate foldseek contacts: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dimer_contacts</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">dimer_pdb</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">dimer_pdbs</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">generate_dimer_foldseek_contacts</span><span class="p">(</span><span class="n">dimer_pdb</span><span class="p">,</span> <span class="n">contact_config</span><span class="p">)</span>
+                <span class="n">dimer_contacts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">dimer_contacts</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">cinfo</span><span class="p">,</span> <span class="n">cjson</span> <span class="o">=</span> <span class="n">c</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cjson</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">cinfo</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="safe_read_contact_json">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.safe_read_contact_json">[docs]</a>
+<span class="k">def</span> <span class="nf">safe_read_contact_json</span><span class="p">(</span>
+    <span class="n">contact_json</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">contact_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">empty_file</span><span class="p">(</span><span class="n">contact_json</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">contact_json</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">contact_info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;JSON is not empty, but its not readable: </span><span class="si">{</span><span class="n">contact_json</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">contact_json</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">contact_info</span></div>
+
+
+
+<div class="viewcode-block" id="load_contact_info">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.load_contact_info">[docs]</a>
+<span class="k">def</span> <span class="nf">load_contact_info</span><span class="p">(</span>
+    <span class="n">pdb_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">contact_json</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ContactConfig</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># Attempt to load the contact info from json. If the file exists and is corrupt,</span>
+    <span class="c1"># attempt to re-create up to 5 times.</span>
+    <span class="n">contact_info</span> <span class="o">=</span> <span class="n">safe_read_contact_json</span><span class="p">(</span><span class="n">contact_json</span><span class="p">)</span>
+    <span class="n">attempts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">contact_info</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">attempts</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="c1"># Attempt to re-generate the contact json for the PDB file.</span>
+        <span class="n">generate_dimer_foldseek_contacts</span><span class="p">(</span>
+            <span class="n">pdb_file</span><span class="p">,</span>
+            <span class="n">config</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">attempts</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">contact_info</span> <span class="o">=</span> <span class="n">safe_read_contact_json</span><span class="p">(</span><span class="n">contact_json</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">contact_info</span></div>
+
+
+
+<div class="viewcode-block" id="collect_contact_jsons">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.collect_contact_jsons">[docs]</a>
+<span class="k">def</span> <span class="nf">collect_contact_jsons</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">dimer_pdbs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ContactConfig</span><span class="p">,</span>
+    <span class="n">config_hash</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a mapping from monomer pairs to Interface objects</span>
+
+<span class="sd">    Collects json files storing foldseek-formatted contacts (assumed to consist of two monomers),</span>
+<span class="sd">    creates Interface objects using these data, filters those Interfaces based on criteria, and</span>
+<span class="sd">    constructs a map between pairs of monomer identifiers (str) and Interface objects that</span>
+<span class="sd">    describe the interface between the monomer pair.</span>
+
+<span class="sd">    Any skipped systems are written to a log file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_dir: Path</span>
+<span class="sd">        Path to the data ingestion directory.</span>
+<span class="sd">    dimer_pdbs: list[Path]</span>
+<span class="sd">        List of dimer PDBs which should have contact jsons on disk.</span>
+<span class="sd">    config: ContactConfig</span>
+<span class="sd">        Config object used to determine the directory with a hash name based on config used for contacts.</span>
+<span class="sd">    config_hash: str</span>
+<span class="sd">        MD5 hash of the config object used.</span>
+<span class="sd">    use_cache: bool</span>
+<span class="sd">        Whether to skip creation of the interface dictionary if the output pickle file exists on disk.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">        The interface dictionary is written to a pickle file called `interfaces.pkl`,</span>
+<span class="sd">        with contents of type dict[tuple[str, str], Interface].</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">foldseek_data_dir</span> <span class="o">=</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;foldseek_contacts&quot;</span>
+    <span class="n">hash_fp</span> <span class="o">=</span> <span class="n">foldseek_data_dir</span> <span class="o">/</span> <span class="n">config_hash</span>
+    <span class="n">hash_fp</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">interface_pkl</span> <span class="o">=</span> <span class="n">hash_fp</span> <span class="o">/</span> <span class="s2">&quot;interfaces.pkl&quot;</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">interface_pkl</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">return</span>
+    <span class="n">interface_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">too_short</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">skip</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">failed_read</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">pdb_file</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">dimer_pdbs</span><span class="p">):</span>
+        <span class="n">contact_fp</span> <span class="o">=</span> <span class="n">pdb_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;foldseek_contacts&quot;</span>
+        <span class="n">config_dir</span> <span class="o">=</span> <span class="n">contact_fp</span> <span class="o">/</span> <span class="n">config_hash</span>
+        <span class="n">contact_json</span> <span class="o">=</span> <span class="n">config_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">.json&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">contact_json</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="c1"># We can assume there were no contacts or it failed upstream</span>
+            <span class="k">continue</span>
+
+        <span class="n">contact_info</span> <span class="o">=</span> <span class="n">load_contact_info</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">,</span> <span class="n">contact_json</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contact_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">failed_read</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">contact_json</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># TODO: create a TypedDict / pydantic model to skip these</span>
+        <span class="n">id1</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id1&quot;</span><span class="p">]</span>
+        <span class="n">id2</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;interface_id2&quot;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">id1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">id2</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="n">interface_id</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">id1</span><span class="p">,</span>
+            <span class="n">id2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">R_len</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;R_length&quot;</span><span class="p">]</span>
+        <span class="n">L_len</span> <span class="o">=</span> <span class="n">contact_info</span><span class="p">[</span><span class="s2">&quot;L_length&quot;</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">R_len</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">L_len</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">short</span> <span class="o">=</span> <span class="n">R_len</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_length</span> <span class="ow">or</span> <span class="n">L_len</span> <span class="o">&lt;</span> <span class="n">config</span><span class="o">.</span><span class="n">min_length</span>
+        <span class="k">if</span> <span class="n">short</span> <span class="ow">or</span> <span class="n">interface_id</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">:</span>
+            <span class="n">too_short</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">interface_id</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">interface_dict</span><span class="p">[</span><span class="n">interface_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">Interface</span><span class="o">.</span><span class="n">from_contact_info</span><span class="p">(</span><span class="n">contact_info</span><span class="p">)</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipped </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">too_short</span><span class="p">)</span><span class="si">}</span><span class="s2"> interfaces with length &lt; </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">min_length</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="c1"># write skipped interfaces to file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hash_fp</span> <span class="o">/</span> <span class="s2">&quot;too_short_interfaces.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">iface</span> <span class="ow">in</span> <span class="n">too_short</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">iface</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hash_fp</span> <span class="o">/</span> <span class="s2">&quot;corrupt_contact_json.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">failed_read</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_name</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">interface_pkl</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">interface_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">interface_dict</span><span class="p">)</span><span class="si">}</span><span class="s2"> interfaces with minimum length </span><span class="si">{</span><span class="n">config</span><span class="o">.</span><span class="n">min_length</span><span class="si">}</span><span class="s2"> residues&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="load_interface_pkl">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.load_interface_pkl">[docs]</a>
+<span class="k">def</span> <span class="nf">load_interface_pkl</span><span class="p">(</span><span class="n">interface_pkl</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">Interface</span><span class="p">]:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">interface_pkl</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">interfaces</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">Interface</span><span class="p">]</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">interfaces</span></div>
+
+
+
+<div class="viewcode-block" id="write_interface_dict">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.write_interface_dict">[docs]</a>
+<span class="k">def</span> <span class="nf">write_interface_dict</span><span class="p">(</span>
+    <span class="n">interface_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">Interface</span><span class="p">],</span>
+    <span class="n">filepath</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write the interface dictionary to pkl file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    interface_dict: Dict[Tuple[str, str], Interface]</span>
+<span class="sd">        Dictionary mapping dimers (tuples of monomer IDs) to Interface objects</span>
+<span class="sd">    filepath: Path</span>
+<span class="sd">        The path to which to write &quot;interfaces.pkl&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span> <span class="o">/</span> <span class="s2">&quot;interfaces.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">interface_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_interfaces_from_config">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.alignment_utils.get_interfaces_from_config">[docs]</a>
+<span class="k">def</span> <span class="nf">get_interfaces_from_config</span><span class="p">(</span>
+    <span class="n">contact_root</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config_hash</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">Interface</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">config_hash</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">hash_str</span> <span class="o">=</span> <span class="n">config_hash</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hash_str</span> <span class="o">=</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">ContactConfig</span><span class="p">())</span>
+    <span class="n">hash_fp</span> <span class="o">=</span> <span class="n">contact_root</span> <span class="o">/</span> <span class="n">hash_str</span>
+    <span class="n">interface_pkl</span> <span class="o">=</span> <span class="n">hash_fp</span> <span class="o">/</span> <span class="s2">&quot;interfaces.pkl&quot;</span>
+    <span class="k">return</span> <span class="n">load_interface_pkl</span><span class="p">(</span><span class="n">interface_pkl</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

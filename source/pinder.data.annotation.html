@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.data.annotation package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.data.annotation';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.data.annotation.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.data.pipeline package" href="pinder.data.pipeline.html" />
+    <link rel="prev" title="pinder.data package" href="pinder.data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.core.html">pinder.core package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pinder.data.annotation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.pipeline.html">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.qc.html">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.eval.html">pinder.eval package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="pinder.data.html" class="nav-link">pinder.data package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.annotation package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-data-annotation-package">
+<h1>pinder.data.annotation package<a class="headerlink" href="#pinder-data-annotation-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.data.annotation.canonical_apo">
+<span id="pinder-data-annotation-canonical-apo-module"></span><h2>pinder.data.annotation.canonical_apo module<a class="headerlink" href="#module-pinder.data.annotation.canonical_apo" title="Link to this heading">#</a></h2>
+<p>Select single representative apo monomers for a dimer entry.</p>
+<p>Uses suite of apo-holo difficulty assessment metrics to create a scaled score
+and select a single receptor and single ligand monomer for a given pinder_id
+when apo structures are available.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.canonical_apo.get_apo_monomer_weighted_score">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.canonical_apo.</span></span><span class="sig-name descname"><span class="pre">get_apo_monomer_weighted_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apo_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'standard'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/canonical_apo.py#L21-L52"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/canonical_apo.html#get_apo_monomer_weighted_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.canonical_apo.get_apo_monomer_weighted_score" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.canonical_apo.get_system_monomer_difficulty">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.canonical_apo.</span></span><span class="sig-name descname"><span class="pre">get_system_monomer_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/canonical_apo.py#L55-L112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/canonical_apo.html#get_system_monomer_difficulty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.canonical_apo.get_system_monomer_difficulty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.canonical_apo.get_canonical_apo_codes">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.canonical_apo.</span></span><span class="sig-name descname"><span class="pre">get_canonical_apo_codes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/canonical_apo.py#L115-L125"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/canonical_apo.html#get_canonical_apo_codes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.canonical_apo.get_canonical_apo_codes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.constants">
+<span id="pinder-data-annotation-constants-module"></span><h2>pinder.data.annotation.constants module<a class="headerlink" href="#module-pinder.data.annotation.constants" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.data.annotation.contact_classification">
+<span id="pinder-data-annotation-contact-classification-module"></span><h2>pinder.data.annotation.contact_classification module<a class="headerlink" href="#module-pinder.data.annotation.contact_classification" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.contact_classification.get_crystal_contact_classification">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.contact_classification.</span></span><span class="sig-name descname"><span class="pre">get_crystal_contact_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/contact_classification.py#L15-L46"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/contact_classification.html#get_crystal_contact_classification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.contact_classification.get_crystal_contact_classification" title="Link to this definition">#</a></dt>
+<dd><p>Get crystal contact classification using prodigy_cryst
+In addition to the contacts, the link density and label are also returned
+The label is the classification of the crystal contact as either
+“biological” or “crystal”</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.contact_classification.detect_disulfide_bonds">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.contact_classification.</span></span><span class="sig-name descname"><span class="pre">detect_disulfide_bonds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AtomArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_tol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dihedral</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dihedral_tol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">int64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/contact_classification.py#L49-L139"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/contact_classification.html#detect_disulfide_bonds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.contact_classification.detect_disulfide_bonds" title="Link to this definition">#</a></dt>
+<dd><p>Detect potential disulfide bonds.</p>
+<p>This function is used to detects disulfide bridges in protein structures.</p>
+<p>The employed criteria for disulfide bonds are quite simple in this case:
+the <span class="math notranslate nohighlight">\(S_\gamma\)</span> atoms of two cystein residues must be in a vicinity
+of <span class="math notranslate nohighlight">\(2.05 \pm 0.05\)</span> Å and the dihedral angle of
+<span class="math notranslate nohighlight">\(C_\beta - S_\gamma - S^\prime_\gamma - C^\prime_\beta\)</span> must be
+<span class="math notranslate nohighlight">\(90 \pm 10 ^{\circ}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Code source: Patrick Kunzmann
+License: BSD 3 clause
+Originally implemented in <a class="reference external" href="https://www.biotite-python.org/examples/gallery/structure/disulfide_bonds.html#sphx-glr-examples-gallery-structure-disulfide-bonds-py">https://www.biotite-python.org/examples/gallery/structure/disulfide_bonds.html#sphx-glr-examples-gallery-structure-disulfide-bonds-py</a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.detached_components">
+<span id="pinder-data-annotation-detached-components-module"></span><h2>pinder.data.annotation.detached_components module<a class="headerlink" href="#module-pinder.data.annotation.detached_components" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.detached_components.get_num_connected_components">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.detached_components.</span></span><span class="sig-name descname"><span class="pre">get_num_connected_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/detached_components.py#L11-L48"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/detached_components.html#get_num_connected_components"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.detached_components.get_num_connected_components" title="Link to this definition">#</a></dt>
+<dd><p>Get number of connected components in CA-CA distance graph.</p>
+<p>Find detached structures for each chain separately by detecting connected components in CA-CA distance
+graph with radius of 15 Angstroms (default)</p>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.elongation">
+<span id="pinder-data-annotation-elongation-module"></span><h2>pinder.data.annotation.elongation module<a class="headerlink" href="#module-pinder.data.annotation.elongation" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.elongation.get_max_var">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.elongation.</span></span><span class="sig-name descname"><span class="pre">get_max_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/elongation.py#L14-L30"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/elongation.html#get_max_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.elongation.get_max_var" title="Link to this definition">#</a></dt>
+<dd><p>Get the maximum variance of the coordinates of the CA atoms of the two</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.elongation.calculate_elongation">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.elongation.</span></span><span class="sig-name descname"><span class="pre">calculate_elongation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/elongation.py#L33-L93"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/elongation.html#calculate_elongation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.elongation.calculate_elongation" title="Link to this definition">#</a></dt>
+<dd><p>Get the maximum variance of the coordinates of the CA atoms of the two
+chains in the PDB file. Also get the length of the two chains and the
+number of atom types.</p>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.graphql">
+<span id="pinder-data-annotation-graphql-module"></span><h2>pinder.data.annotation.graphql module<a class="headerlink" href="#module-pinder.data.annotation.graphql" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.run_graphql_annotation_query">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">run_graphql_annotation_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L28-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#run_graphql_annotation_query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.run_graphql_annotation_query" title="Link to this definition">#</a></dt>
+<dd><p>Fetch annotations for an entry by PDB entry ID.</p>
+<p>The data returned is identical to the data used to generate webpages for entries.
+For example: <a class="reference external" href="https://www.rcsb.org/annotations/2A79">https://www.rcsb.org/annotations/2A79</a>
+The query is taken from the Data API widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pdb_id</strong><span class="classifier">str</span></dt><dd><p>The PDB entry ID to fetch.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>data: dict[str, Any]</dt><dd><p>A dictionary of data for the entry. If the entry is not found, the response will
+be {‘data’: {‘entry’: None}}.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.fetch_entry_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">fetch_entry_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L54-L99"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#fetch_entry_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.fetch_entry_annotations" title="Link to this definition">#</a></dt>
+<dd><p>Fetch annotations for an entry by PDB entry ID and store in json.</p>
+<p>If the entry is not found, the json is still saved with status: empty.
+If the query fails, e.g. due to ratelimit exceeded or network connectivity,
+the json is saved with status: failed. The contents of the json are used to
+enable cached results without requiring a new query unless specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pdb_id</strong><span class="classifier">str</span></dt><dd><p>The PDB entry ID to fetch.</p>
+</dd>
+<dt><strong>data_json</strong><span class="classifier">Path</span></dt><dd><p>The Path to the json file to write data to.</p>
+</dd>
+<dt><strong>use_cache</strong><span class="classifier">bool</span></dt><dd><p>Whether to skip the query if valid results exist on disk.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.parse_pfam">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">parse_pfam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polymer_entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L102-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#parse_pfam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.parse_pfam" title="Link to this definition">#</a></dt>
+<dd><p>Extract PFAM (protein family) annotations from a polymer entity.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.parse_ec">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">parse_ec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polymer_entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L133-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#parse_ec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.parse_ec" title="Link to this definition">#</a></dt>
+<dd><p>Extract PFAM (protein family) annotations from a polymer entity.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.parse_polymer_entity_instance">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">parse_polymer_entity_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polymer_entity_instance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L149-L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#parse_polymer_entity_instance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.parse_polymer_entity_instance" title="Link to this definition">#</a></dt>
+<dd><p>Extract polymer entity instance features and annotations.</p>
+<p>Takes an instance of a polymer entity from a data entry and converts to
+dataframes corresponding to the <cite>rcsb_polymer_instance_annotation</cite> and <cite>rcsb_polymer_instance_feature</cite>
+keys. Also adds entity information to the dataframe containing identifiers like asym_id, auth_asym_id, entity_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>polymer_entity_instance</strong><span class="classifier">dict[str, Any]</span></dt><dd><p>The polymer entity instance coming from a polymer entity.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple[pd.DataFrame, pd.DataFrame]</dt><dd><p>A tuple containing the annotation data and feature data for the entity instance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.cast_entity_info_lists">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">cast_entity_info_lists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L183-L191"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#cast_entity_info_lists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.cast_entity_info_lists" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.add_entity_info">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">add_entity_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L194-L202"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#add_entity_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.add_entity_info" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.parse_annotation_data">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">parse_annotation_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L205-L256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#parse_annotation_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.parse_annotation_data" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.csv_format_pfam">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">csv_format_pfam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfam_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L259-L265"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#csv_format_pfam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.csv_format_pfam" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.csv_format_features">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">csv_format_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L268-L274"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#csv_format_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.csv_format_features" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.csv_format_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">csv_format_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotation_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L277-L283"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#csv_format_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.csv_format_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.safe_fetch_entry_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">safe_fetch_entry_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L286-L314"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#safe_fetch_entry_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.safe_fetch_entry_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.populate_rcsb_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">populate_rcsb_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdb_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L317-L343"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#populate_rcsb_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.populate_rcsb_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.split_annotation_types">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">split_annotation_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L346-L369"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#split_annotation_types"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.split_annotation_types" title="Link to this definition">#</a></dt>
+<dd><p>Split list of annotation dataframes into their respective annotation categories.</p>
+<p>Reduces final dataframe size and used to write each category to its own file on disk.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.extract_feature_positions">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">extract_feature_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L372-L394"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#extract_feature_positions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.extract_feature_positions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.cast_incompatible_annotation_columns">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">cast_incompatible_annotation_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annot_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L397-L403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#cast_incompatible_annotation_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.cast_incompatible_annotation_columns" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.cast_incompatible_feature_columns">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">cast_incompatible_feature_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feat_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L406-L414"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#cast_incompatible_feature_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.cast_incompatible_feature_columns" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.collate_csvs">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">collate_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csvs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_csv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L417-L430"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#collate_csvs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.collate_csvs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.collect_csvs_by_group">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">collect_csvs_by_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csv_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L433-L457"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#collect_csvs_by_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.collect_csvs_by_group" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.graphql.collect_rcsb_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.graphql.</span></span><span class="sig-name descname"><span class="pre">collect_rcsb_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/graphql.py#L460-L491"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/graphql.html#collect_rcsb_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.graphql.collect_rcsb_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.interface_gaps">
+<span id="pinder-data-annotation-interface-gaps-module"></span><h2>pinder.data.annotation.interface_gaps module<a class="headerlink" href="#module-pinder.data.annotation.interface_gaps" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.interface_gaps.annotate_interface_gaps">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.interface_gaps.</span></span><span class="sig-name descname"><span class="pre">annotate_interface_gaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smaller_radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">larger_radius</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/interface_gaps.py#L15-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/interface_gaps.html#annotate_interface_gaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.interface_gaps.annotate_interface_gaps" title="Link to this definition">#</a></dt>
+<dd><p>Find atomic gaps near the PPI interface.</p>
+<p>Look for atoms (and count residues) that are part of the interface
+and within a radius of one of the residue gaps (as defined by numbering).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.interface_gaps.mp_annotate_interface_gaps">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.interface_gaps.</span></span><span class="sig-name descname"><span class="pre">mp_annotate_interface_gaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/interface_gaps.py#L95-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/interface_gaps.html#mp_annotate_interface_gaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.interface_gaps.mp_annotate_interface_gaps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.planarity">
+<span id="pinder-data-annotation-planarity-module"></span><h2>pinder.data.annotation.planarity module<a class="headerlink" href="#module-pinder.data.annotation.planarity" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.planarity.get_planarity">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.planarity.</span></span><span class="sig-name descname"><span class="pre">get_planarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/planarity.py#L10-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/planarity.html#get_planarity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.planarity.get_planarity" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the planarity of the interface between two proteins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pdb_file</strong><span class="classifier">Path</span></dt><dd><p>The path to the pdb file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd><p>The root mean square error (RMSE) of the distance of the interface
+C-alpha atoms to the plane of the interface. If the interface
+C-alpha atoms are less than 3, returns -1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation.sabdab">
+<span id="pinder-data-annotation-sabdab-module"></span><h2>pinder.data.annotation.sabdab module<a class="headerlink" href="#module-pinder.data.annotation.sabdab" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.sabdab.download_sabdab">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.sabdab.</span></span><span class="sig-name descname"><span class="pre">download_sabdab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">download_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'sabdab_summary_all.tsv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabdab/summary/all/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/sabdab.py#L16-L34"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/sabdab.html#download_sabdab"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.sabdab.download_sabdab" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.sabdab.explode_sabdab_per_chain">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.sabdab.</span></span><span class="sig-name descname"><span class="pre">explode_sabdab_per_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sabdab_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/sabdab.py#L37-L72"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/sabdab.html#explode_sabdab_per_chain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.sabdab.explode_sabdab_per_chain" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.sabdab.map_to_pinder_chains">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.sabdab.</span></span><span class="sig-name descname"><span class="pre">map_to_pinder_chains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sabdab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/sabdab.py#L75-L168"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/sabdab.html#map_to_pinder_chains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.sabdab.map_to_pinder_chains" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.sabdab.map_to_sabdab_db">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.sabdab.</span></span><span class="sig-name descname"><span class="pre">map_to_sabdab_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chains_long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sabdab_long</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/sabdab.py#L171-L235"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/sabdab.html#map_to_sabdab_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.sabdab.map_to_sabdab_db" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.annotation.sabdab.add_sabdab_annotations">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.annotation.sabdab.</span></span><span class="sig-name descname"><span class="pre">add_sabdab_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/annotation/sabdab.py#L238-L321"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/annotation/sabdab.html#add_sabdab_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.annotation.sabdab.add_sabdab_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.annotation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.data.annotation" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.canonical_apo">pinder.data.annotation.canonical_apo module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.canonical_apo.get_apo_monomer_weighted_score"><code class="docutils literal notranslate"><span class="pre">get_apo_monomer_weighted_score()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.canonical_apo.get_system_monomer_difficulty"><code class="docutils literal notranslate"><span class="pre">get_system_monomer_difficulty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.canonical_apo.get_canonical_apo_codes"><code class="docutils literal notranslate"><span class="pre">get_canonical_apo_codes()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.constants">pinder.data.annotation.constants module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.contact_classification">pinder.data.annotation.contact_classification module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.contact_classification.get_crystal_contact_classification"><code class="docutils literal notranslate"><span class="pre">get_crystal_contact_classification()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.contact_classification.detect_disulfide_bonds"><code class="docutils literal notranslate"><span class="pre">detect_disulfide_bonds()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.detached_components">pinder.data.annotation.detached_components module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.detached_components.get_num_connected_components"><code class="docutils literal notranslate"><span class="pre">get_num_connected_components()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.elongation">pinder.data.annotation.elongation module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.elongation.get_max_var"><code class="docutils literal notranslate"><span class="pre">get_max_var()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.elongation.calculate_elongation"><code class="docutils literal notranslate"><span class="pre">calculate_elongation()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.graphql">pinder.data.annotation.graphql module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.run_graphql_annotation_query"><code class="docutils literal notranslate"><span class="pre">run_graphql_annotation_query()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.fetch_entry_annotations"><code class="docutils literal notranslate"><span class="pre">fetch_entry_annotations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.parse_pfam"><code class="docutils literal notranslate"><span class="pre">parse_pfam()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.parse_ec"><code class="docutils literal notranslate"><span class="pre">parse_ec()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.parse_polymer_entity_instance"><code class="docutils literal notranslate"><span class="pre">parse_polymer_entity_instance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.cast_entity_info_lists"><code class="docutils literal notranslate"><span class="pre">cast_entity_info_lists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.add_entity_info"><code class="docutils literal notranslate"><span class="pre">add_entity_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.parse_annotation_data"><code class="docutils literal notranslate"><span class="pre">parse_annotation_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.csv_format_pfam"><code class="docutils literal notranslate"><span class="pre">csv_format_pfam()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.csv_format_features"><code class="docutils literal notranslate"><span class="pre">csv_format_features()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.csv_format_annotations"><code class="docutils literal notranslate"><span class="pre">csv_format_annotations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.safe_fetch_entry_annotations"><code class="docutils literal notranslate"><span class="pre">safe_fetch_entry_annotations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.populate_rcsb_annotations"><code class="docutils literal notranslate"><span class="pre">populate_rcsb_annotations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.split_annotation_types"><code class="docutils literal notranslate"><span class="pre">split_annotation_types()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.extract_feature_positions"><code class="docutils literal notranslate"><span class="pre">extract_feature_positions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.cast_incompatible_annotation_columns"><code class="docutils literal notranslate"><span class="pre">cast_incompatible_annotation_columns()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.cast_incompatible_feature_columns"><code class="docutils literal notranslate"><span class="pre">cast_incompatible_feature_columns()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.collate_csvs"><code class="docutils literal notranslate"><span class="pre">collate_csvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.collect_csvs_by_group"><code class="docutils literal notranslate"><span class="pre">collect_csvs_by_group()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.graphql.collect_rcsb_annotations"><code class="docutils literal notranslate"><span class="pre">collect_rcsb_annotations()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.interface_gaps">pinder.data.annotation.interface_gaps module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.interface_gaps.annotate_interface_gaps"><code class="docutils literal notranslate"><span class="pre">annotate_interface_gaps()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.interface_gaps.mp_annotate_interface_gaps"><code class="docutils literal notranslate"><span class="pre">mp_annotate_interface_gaps()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.planarity">pinder.data.annotation.planarity module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.planarity.get_planarity"><code class="docutils literal notranslate"><span class="pre">get_planarity()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation.sabdab">pinder.data.annotation.sabdab module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.sabdab.download_sabdab"><code class="docutils literal notranslate"><span class="pre">download_sabdab()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.sabdab.explode_sabdab_per_chain"><code class="docutils literal notranslate"><span class="pre">explode_sabdab_per_chain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.sabdab.map_to_pinder_chains"><code class="docutils literal notranslate"><span class="pre">map_to_pinder_chains()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.sabdab.map_to_sabdab_db"><code class="docutils literal notranslate"><span class="pre">map_to_sabdab_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.annotation.sabdab.add_sabdab_annotations"><code class="docutils literal notranslate"><span class="pre">add_sabdab_annotations()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.annotation">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.data.annotation.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.data.annotation.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

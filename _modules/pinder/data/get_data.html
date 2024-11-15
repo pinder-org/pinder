@@ -1,0 +1,1477 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.get_data &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/get_data';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/get_data.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.get_data</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.get_data</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">repeat</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">import</span> <span class="nn">biotite.structure</span> <span class="k">as</span> <span class="nn">struc</span>
+<span class="kn">import</span> <span class="nn">gemmi</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">from</span> <span class="nn">concurrent</span> <span class="kn">import</span> <span class="n">futures</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">biotite.structure.io.pdb</span> <span class="kn">import</span> <span class="n">PDBFile</span>
+<span class="kn">from</span> <span class="nn">biotite.structure.io.pdbx</span> <span class="kn">import</span> <span class="n">CIFFile</span><span class="p">,</span> <span class="n">get_structure</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core.index.id</span> <span class="kn">import</span> <span class="n">Dimer</span><span class="p">,</span> <span class="n">Monomer</span><span class="p">,</span> <span class="n">Protein</span>
+<span class="kn">from</span> <span class="nn">pinder.core.index.utils</span> <span class="kn">import</span> <span class="n">set_mapping_column_types</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.paths</span> <span class="kn">import</span> <span class="n">empty_file</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.atoms</span> <span class="kn">import</span> <span class="n">get_buried_sasa</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.contacts</span> <span class="kn">import</span> <span class="n">pairwise_contacts</span>
+<span class="kn">from</span> <span class="nn">pinder.core.structure.atoms</span> <span class="kn">import</span> <span class="n">get_resolved_resi_from_atom_array</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">PinderDataGenConfig</span>
+<span class="kn">from</span> <span class="nn">pinder.data.csv_utils</span> <span class="kn">import</span> <span class="n">read_csv_non_default_na</span>
+<span class="kn">from</span> <span class="nn">pinder.data.pipeline.constants</span> <span class="kn">import</span> <span class="n">UNIPROT_UNDEFINED</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># import warnings</span>
+<span class="c1"># warnings.filterwarnings(&quot;ignore&quot;, category=FutureWarning)</span>
+
+
+<div class="viewcode-block" id="ingest_rscb_files">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.ingest_rscb_files">[docs]</a>
+<span class="k">def</span> <span class="nf">ingest_rscb_files</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">),</span>
+    <span class="n">two_char_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">PinderDataGenConfig</span> <span class="o">=</span> <span class="n">PinderDataGenConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process the downloaded RCSB files by globs on the data directory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_dir : Path</span>
+<span class="sd">        The directory where the downloaded files are stored.</span>
+<span class="sd">    two_char_code : Optional[str]</span>
+<span class="sd">        A two character code representing the batch of files to process.</span>
+<span class="sd">        If not provided, all files will be processed.</span>
+<span class="sd">    parallel : bool</span>
+<span class="sd">        If True, files will be processed in parallel.</span>
+<span class="sd">    max_workers : int | None</span>
+<span class="sd">        If specified, limits number of processes to spawn in parallel mode.</span>
+<span class="sd">    config : PinderDataGenConfig</span>
+<span class="sd">        Configuration parameters for dataset generation.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path_to_pdb</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+    <span class="c1"># collect all source CIF files to process</span>
+    <span class="n">processing_queue</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">f</span>
+        <span class="k">for</span> <span class="n">two_char_subdir</span> <span class="ow">in</span> <span class="n">path_to_pdb</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">pdb_subdir</span> <span class="ow">in</span> <span class="n">two_char_subdir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">pdb_subdir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.cif.gz&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="p">(</span><span class="ow">not</span> <span class="n">two_char_code</span> <span class="ow">or</span> <span class="n">two_char_subdir</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">two_char_code</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">two_char_subdir</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="c1"># print(path_to_pdb, processing_queue)</span>
+    <span class="n">ingest_mmcif_list</span><span class="p">(</span>
+        <span class="n">processing_queue</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ingest_mmcif_list">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.ingest_mmcif_list">[docs]</a>
+<span class="k">def</span> <span class="nf">ingest_mmcif_list</span><span class="p">(</span>
+    <span class="n">mmcif_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">],</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">PinderDataGenConfig</span> <span class="o">=</span> <span class="n">PinderDataGenConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process a list of downloaded RCSB mmcif files.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mmcif_list : Path</span>
+<span class="sd">        The list of mmcif files to process in a batch.</span>
+<span class="sd">    parallel : bool</span>
+<span class="sd">        If True, files will be processed in parallel.</span>
+<span class="sd">    max_workers : int | None</span>
+<span class="sd">        If specified, limits number of processes to spawn in parallel mode.</span>
+<span class="sd">    config : PinderDataGenConfig</span>
+<span class="sd">        Configuration parameters for dataset generation.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing queue </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mmcif_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mmcif_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># process all files in parallel</span>
+        <span class="k">if</span> <span class="n">parallel</span><span class="p">:</span>
+            <span class="c1"># max_workers=param_n_cores</span>
+            <span class="k">with</span> <span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">(</span>
+                <span class="n">mp_context</span><span class="o">=</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="s2">&quot;spawn&quot;</span><span class="p">),</span> <span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+                <span class="n">exe</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_mmcif</span><span class="p">,</span> <span class="n">mmcif_list</span><span class="p">,</span> <span class="n">repeat</span><span class="p">(</span><span class="n">config</span><span class="p">),</span> <span class="n">repeat</span><span class="p">(</span><span class="n">use_cache</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">mmcif_file</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">mmcif_list</span><span class="p">):</span>
+                <span class="n">process_mmcif</span><span class="p">(</span><span class="n">mmcif_file</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">use_cache</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_bio_assembly">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.generate_bio_assembly">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_bio_assembly</span><span class="p">(</span><span class="n">mmcif_filename</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate biological assemblies for the given mmCIF file&quot;&quot;&quot;</span>
+    <span class="c1"># read in the CIF structure</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">cif</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mmcif_filename</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_structure_from_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+
+    <span class="c1"># Potentially better way to interrogate stoichometry and transforms</span>
+    <span class="c1"># assembly = structure.assemblies[0]</span>
+    <span class="c1"># gen = assembly.generators[0]</span>
+    <span class="c1"># gen.chains</span>
+    <span class="c1"># gen.subchains</span>
+    <span class="c1"># len(gen.operators)</span>
+
+    <span class="c1"># generate assembly with duplicate chains handled with copy number added</span>
+    <span class="n">asm_addnum</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_assembly</span><span class="p">(</span>
+        <span class="n">structure</span><span class="o">.</span><span class="n">assemblies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">HowToNameCopiedChain</span><span class="o">.</span><span class="n">AddNumber</span>
+    <span class="p">)</span>
+    <span class="c1"># generate WITHOUT handling duplicates - will be in same order as AddNumber</span>
+    <span class="n">asm_dup</span> <span class="o">=</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">make_assembly</span><span class="p">(</span>
+        <span class="n">structure</span><span class="o">.</span><span class="n">assemblies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">gemmi</span><span class="o">.</span><span class="n">HowToNameCopiedChain</span><span class="o">.</span><span class="n">Dup</span>
+    <span class="p">)</span>
+    <span class="c1"># This modifies structure in-place and loses lineage to copy number</span>
+    <span class="c1"># structure.transform_to_assembly(</span>
+    <span class="c1">#     assembly_name=&quot;1&quot;, how=gemmi.HowToNameCopiedChain.AddNumber</span>
+    <span class="c1"># )</span>
+
+    <span class="n">renum_map</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">renum_subch</span><span class="p">,</span> <span class="n">dup_subch</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">asm_addnum</span><span class="o">.</span><span class="n">subchains</span><span class="p">(),</span> <span class="n">asm_dup</span><span class="o">.</span><span class="n">subchains</span><span class="p">()):</span>
+        <span class="c1"># renum_subch is the chain_id that will be used for final assembly</span>
+        <span class="c1"># dupe_subch is the chain_id before adding a copy number.</span>
+        <span class="c1"># We need this to safely map entities, asym_id, instance number</span>
+        <span class="c1"># and author / pdb_strand_id in downstream use-cases.</span>
+        <span class="n">renum_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;chain_id&quot;</span><span class="p">:</span> <span class="n">renum_subch</span><span class="o">.</span><span class="n">subchain_id</span><span class="p">(),</span>
+                <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="n">dup_subch</span><span class="o">.</span><span class="n">subchain_id</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">renum_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">renum_map</span><span class="p">)</span>
+
+    <span class="c1"># While we have original structure, lets get entity_id &lt;-&gt; asym_id mappings</span>
+    <span class="n">entity_chain_map</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">entities</span><span class="p">:</span>
+        <span class="n">entity_chain_map</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="p">[{</span><span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="n">ch</span><span class="p">}</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">entity</span><span class="o">.</span><span class="n">subchains</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="n">entity_chain_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entity_chain_map</span><span class="p">)</span>
+    <span class="n">entity_chain_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">renum_map</span><span class="p">,</span> <span class="n">entity_chain_map</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
+
+    <span class="c1"># do not depend on parent directory name</span>
+    <span class="n">entry_id</span> <span class="o">=</span> <span class="n">mmcif_filename</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">new_fname</span> <span class="o">=</span> <span class="n">mmcif_filename</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">entry_id</span><span class="si">}</span><span class="s2">-assembly.cif&quot;</span>
+
+    <span class="c1"># Transform the Structure object to assembly. make_assembly produces Model,</span>
+    <span class="c1"># not Structure which can&#39;t be converted to a CIF document.</span>
+    <span class="n">structure</span><span class="o">.</span><span class="n">transform_to_assembly</span><span class="p">(</span>
+        <span class="n">assembly_name</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">gemmi</span><span class="o">.</span><span class="n">HowToNameCopiedChain</span><span class="o">.</span><span class="n">AddNumber</span>
+    <span class="p">)</span>
+    <span class="n">structure</span><span class="o">.</span><span class="n">make_mmcif_document</span><span class="p">()</span><span class="o">.</span><span class="n">write_file</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">new_fname</span><span class="p">))</span>
+    <span class="c1"># read and return the assembly in biotite format</span>
+    <span class="n">asm_pdbx_file</span> <span class="o">=</span> <span class="n">read_mmcif_file</span><span class="p">(</span><span class="n">new_fname</span><span class="p">)</span>
+    <span class="n">bio_asm</span> <span class="o">=</span> <span class="n">get_structure</span><span class="p">(</span>
+        <span class="n">asm_pdbx_file</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">use_author_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">extra_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;b_factor&quot;</span><span class="p">,</span> <span class="s2">&quot;charge&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">bio_asm</span><span class="p">,</span> <span class="n">entity_chain_map</span></div>
+
+
+
+<div class="viewcode-block" id="read_mmcif_file">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.read_mmcif_file">[docs]</a>
+<span class="k">def</span> <span class="nf">read_mmcif_file</span><span class="p">(</span><span class="n">mmcif_filename</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CIFFile</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Read a PDBx/mmCIF file.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">mmcif_filename</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.gz&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mmcif_filename</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">mmcif_file</span><span class="p">:</span>
+            <span class="n">pdbx_file</span> <span class="o">=</span> <span class="n">CIFFile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">mmcif_file</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pdbx_file</span> <span class="o">=</span> <span class="n">CIFFile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">mmcif_filename</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pdbx_file</span></div>
+
+
+
+<div class="viewcode-block" id="convert_category">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.convert_category">[docs]</a>
+<span class="k">def</span> <span class="nf">convert_category</span><span class="p">(</span>
+    <span class="n">category</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a PDBx/mmCIF category to a dictionary indexed by sequential ids.</span>
+<span class="sd">    with keys and values taken from the original value arrays.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">category_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">category</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">category</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">category</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]])):</span>
+            <span class="n">category_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">category</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">category_dict</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">category_dict</span></div>
+
+
+
+<div class="viewcode-block" id="replace_with_nan">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.replace_with_nan">[docs]</a>
+<span class="k">def</span> <span class="nf">replace_with_nan</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;?&quot;</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;NaN&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="get_mmcif_category">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.get_mmcif_category">[docs]</a>
+<span class="k">def</span> <span class="nf">get_mmcif_category</span><span class="p">(</span>
+    <span class="n">pdbx_file</span><span class="p">:</span> <span class="n">CIFFile</span><span class="p">,</span> <span class="n">category_name</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a PDBx/mmCIF category as a dictionary&quot;&quot;&quot;</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="n">pdbx_file</span><span class="o">.</span><span class="n">block</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">convert_category</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">category_name</span><span class="p">))</span>
+    <span class="c1"># cat = convert_category(pdbx_file.get_category(category_name, expect_looped=True))</span>
+    <span class="k">return</span> <span class="n">cat</span></div>
+
+
+
+<div class="viewcode-block" id="infer_uniprot_from_mapping">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.infer_uniprot_from_mapping">[docs]</a>
+<span class="k">def</span> <span class="nf">infer_uniprot_from_mapping</span><span class="p">(</span><span class="n">mapping_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Assign uniprot based on largest number of residues in mapping (in case of chimera)&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;uniprot_acc&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">uniprot</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">UNIPROT_UNDEFINED</span>
+        <span class="k">return</span> <span class="n">uniprot</span>
+    <span class="n">uniprot_sizes</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;uniprot_acc&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+    <span class="n">pdb_id</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span>
+    <span class="n">asym_id</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;asym_id&quot;</span><span class="p">]</span>
+    <span class="n">pdb_strand_id</span> <span class="o">=</span> <span class="n">mapping_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">uniprot_sizes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Multiple uniprots found for </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">asym_id</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">pdb_strand_id</span><span class="si">}</span><span class="s2">). It is likely a chimera protein&quot;</span>
+        <span class="p">)</span>
+    <span class="n">uniprot</span> <span class="o">=</span> <span class="n">uniprot_sizes</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span> <span class="k">if</span> <span class="n">uniprot_sizes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="n">UNIPROT_UNDEFINED</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uniprot</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">uniprot</span></div>
+
+
+
+<div class="viewcode-block" id="sequence_mapping">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.sequence_mapping">[docs]</a>
+<span class="k">def</span> <span class="nf">sequence_mapping</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">:</span> <span class="n">CIFFile</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entity_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get sequence mapping from a PDBx/mmCIF file for all chains.&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">pdbx_file</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;entity_poly&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;polypeptide(L)&quot;</span> <span class="ow">and</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity_id</span><span class="p">:</span>
+            <span class="n">canonical_sequence</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_seq_one_letter_code_can&quot;</span><span class="p">]</span>
+
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">get_structure</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">use_author_fields</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">chain_resolved_resi</span> <span class="o">=</span> <span class="n">get_resolved_resi_from_atom_array</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+    <span class="n">residue_mapping</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;pdbx_poly_seq_scheme&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">residue</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">residue</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity_id</span><span class="p">:</span>
+            <span class="n">resolved_resi</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">chain_resolved_resi</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">],</span> <span class="p">[])</span>
+            <span class="n">residue_mapping</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]),</span>
+                    <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="n">residue</span><span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="n">residue</span><span class="p">[</span><span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;resi&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">]),</span>
+                    <span class="s2">&quot;resi_pdb&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;pdb_seq_num&quot;</span><span class="p">]),</span>
+                    <span class="s2">&quot;resi_auth&quot;</span><span class="p">:</span> <span class="n">replace_with_nan</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;auth_seq_num&quot;</span><span class="p">]),</span>
+                    <span class="s2">&quot;resn&quot;</span><span class="p">:</span> <span class="n">residue</span><span class="p">[</span><span class="s2">&quot;mon_id&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;one_letter_code_can&quot;</span><span class="p">:</span> <span class="n">canonical_sequence</span><span class="p">[</span>
+                        <span class="nb">int</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="p">],</span>
+                    <span class="s2">&quot;resolved&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;seq_id&quot;</span><span class="p">])</span> <span class="ow">in</span> <span class="n">resolved_resi</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">residue_mapping</span><span class="p">)</span>
+
+    <span class="c1"># load up uniprot residue mapping</span>
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;atom_site&quot;</span><span class="p">)</span>
+    <span class="n">df_uniprot</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;label_entity_id == &quot;</span><span class="si">{</span><span class="n">entity_id</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;label_atom_id == &#39;CA&#39;&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;pdbx_sifts_xref_db_res&quot;</span> <span class="ow">in</span> <span class="n">df_uniprot</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">df_uniprot</span> <span class="o">=</span> <span class="n">df_uniprot</span><span class="p">[</span>
+            <span class="p">[</span>
+                <span class="c1"># &quot;label_entity_id&quot;, &quot;label_comp_id&quot;,</span>
+                <span class="s2">&quot;label_seq_id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pdbx_sifts_xref_db_res&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pdbx_sifts_xref_db_num&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pdbx_sifts_xref_db_acc&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+        <span class="n">df_uniprot</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">df_uniprot</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+                <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+                    <span class="c1"># &quot;label_entity_id&quot;: &quot;entity_id&quot;,</span>
+                    <span class="s2">&quot;label_seq_id&quot;</span><span class="p">:</span> <span class="s2">&quot;resi&quot;</span><span class="p">,</span>
+                    <span class="c1"># &quot;label_comp_id&quot;: &quot;resn&quot;,</span>
+                    <span class="s2">&quot;pdbx_sifts_xref_db_res&quot;</span><span class="p">:</span> <span class="s2">&quot;one_letter_code_uniprot&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pdbx_sifts_xref_db_num&quot;</span><span class="p">:</span> <span class="s2">&quot;resi_uniprot&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pdbx_sifts_xref_db_acc&quot;</span><span class="p">:</span> <span class="s2">&quot;uniprot_acc&quot;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+            <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">df_uniprot</span> <span class="o">=</span> <span class="n">df_uniprot</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">replace_with_nan</span><span class="p">)</span>
+        <span class="n">df_uniprot</span><span class="p">[</span><span class="s2">&quot;resi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_uniprot</span><span class="p">[</span><span class="s2">&quot;resi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">df_uniprot</span><span class="p">[</span><span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_uniprot</span><span class="p">[</span><span class="s2">&quot;resi_uniprot&quot;</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">df_uniprot</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;resi&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;resi&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="get_entities">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.get_entities">[docs]</a>
+<span class="k">def</span> <span class="nf">get_entities</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">:</span> <span class="n">CIFFile</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get entities from a PDBx/mmCIF file.&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">pdbx_file</span>
+    <span class="n">protein_entities</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;entity_poly&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">entity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;polypeptide(L)&quot;</span><span class="p">:</span>
+                <span class="n">protein_entities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;sequence&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_seq_one_letter_code_can&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_seq_one_letter_code_can&quot;</span><span class="p">]),</span>
+                        <span class="s2">&quot;organism&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                        <span class="s2">&quot;tax_id&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">entity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">),</span>
+                        <span class="c1"># &quot;asym_id&quot;: entity[&quot;pdbx_strand_id&quot;],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;error in entity_poly for </span><span class="si">{</span><span class="n">entry_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;entity_src_gen&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">protein_entity</span> <span class="ow">in</span> <span class="n">protein_entities</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]:</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;organism&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_gene_src_scientific_name&quot;</span><span class="p">]</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;tax_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_gene_src_ncbi_taxonomy_id&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="c1"># log.error(f&quot;error in entity_src_gen for {entry_id}&quot;)</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;entity_src_nat&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">protein_entity</span> <span class="ow">in</span> <span class="n">protein_entities</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]:</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;organism&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_organism_scientific&quot;</span><span class="p">]</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;tax_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;pdbx_ncbi_taxonomy_id&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="c1"># log.error(f&quot;error in entity_src_nat for {entry_id}&quot;)</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># either entity_src_gen or entity_src_nat or entity_src_syn should be present</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;pdbx_entity_src_syn&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">protein_entity</span> <span class="ow">in</span> <span class="n">protein_entities</span><span class="p">:</span>
+                <span class="c1"># print(protein_entity)</span>
+                <span class="k">if</span> <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]:</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;organism&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;organism_scientific&quot;</span><span class="p">]</span>
+                    <span class="n">protein_entity</span><span class="p">[</span><span class="s2">&quot;tax_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span><span class="p">[</span><span class="s2">&quot;ncbi_taxonomy_id&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;error in entity_src_nat for </span><span class="si">{</span><span class="n">entry_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">pass</span>
+
+    <span class="n">df_protein_entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">protein_entities</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df_protein_entities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no protein entities for </span><span class="si">{</span><span class="n">entry_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;pdbx_poly_seq_scheme&quot;</span><span class="p">)</span>
+        <span class="n">dict_entities</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;entity_id&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">residue</span> <span class="ow">in</span> <span class="n">cat</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">dict_entities</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">])</span>
+            <span class="n">dict_entities</span><span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;asym_id&quot;</span><span class="p">])</span>
+            <span class="n">dict_entities</span><span class="p">[</span><span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">residue</span><span class="p">[</span><span class="s2">&quot;pdb_strand_id&quot;</span><span class="p">])</span>
+
+        <span class="n">df_entities</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dict_entities</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">df_entities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">df_entities</span> <span class="o">=</span> <span class="n">df_protein_entities</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+            <span class="n">df_entities</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;entity_id&quot;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df_entities</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;entry_id&quot;</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">)</span>
+        <span class="c1"># print(df_entities.to_string())</span>
+        <span class="k">return</span> <span class="n">df_entities</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="get_metadata">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.get_metadata">[docs]</a>
+<span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">:</span> <span class="n">CIFFile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get metadata from a PDBx/mmCIF file.</span>
+
+<span class="sd">    Beware of special cases,</span>
+<span class="sd">    e.g. who would have thought there are entries with multiple methods? https://www.rcsb.org/structure/7a0l</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">pdbx_file</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="n">pdbx_file</span><span class="o">.</span><span class="n">block</span>
+    <span class="n">meta</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">block</span><span class="p">[</span><span class="s2">&quot;pdbx_database_status&quot;</span><span class="p">][</span>
+        <span class="s2">&quot;recvd_initial_deposition_date&quot;</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">as_item</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">revisions</span> <span class="o">=</span> <span class="n">block</span><span class="p">[</span><span class="s2">&quot;pdbx_audit_revision_history&quot;</span><span class="p">][</span><span class="s2">&quot;revision_date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">as_array</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">revisions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="c1"># Take the earliest release date</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">revisions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># There is only one revision date associated with the entry (initial release)</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">revisions</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
+        <span class="c1"># Fallback, there shouldn&#39;t be any entries without the release date.</span>
+        <span class="c1"># It&#39;s 100% according to https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v50.dic/Categories/pdbx_audit_revision_history.html</span>
+        <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;release_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;assembly&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;assembly_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;oligomeric_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;oligomeric_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;biol_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;complex_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;exptl&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;method&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;method&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;refine&quot;</span><span class="p">)</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">resolution</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;ls_d_res_high&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">resolution</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">]:</span>
+            <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;em_3d_reconstruction&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">resolution</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span>
+        <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;resolution&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resolution</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;pdbx_struct_assembly&quot;</span><span class="p">)</span>
+        <span class="c1"># consider the first assembly only</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;assembly&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;assembly_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;details&quot;</span><span class="p">]</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;oligomeric_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;oligomeric_details&quot;</span><span class="p">]</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;oligomeric_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;oligomeric_count&quot;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cat</span> <span class="o">=</span> <span class="n">get_mmcif_category</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;struct_biol&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;biol_details&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;details&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># consider the first experimental method only</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">meta</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="get_structure_chains">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.get_structure_chains">[docs]</a>
+<span class="k">def</span> <span class="nf">get_structure_chains</span><span class="p">(</span>
+    <span class="n">structure</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArrayStack</span> <span class="o">|</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArray</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get all chains in a structure ordered by decreasing size (in residues)</span>
+<span class="sd">    if size is the same, order by chain id alphabetically (1 11 12 2 3 4 ...)</span>
+<span class="sd">    the logic is that we want to assign the largest chains as Receptors and smaller chains as Ligands</span>
+<span class="sd">    such that in a R::L dimer, R is the largest chain and L is the smallest chain</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">chain_sizes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">chain</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">get_residue_count</span><span class="p">(</span><span class="n">structure</span><span class="p">[</span><span class="n">structure</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">chain_id</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chain_sizes</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">chain</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">chains</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="get_interacting_chains">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.get_interacting_chains">[docs]</a>
+<span class="k">def</span> <span class="nf">get_interacting_chains</span><span class="p">(</span>
+    <span class="n">structure</span><span class="p">:</span> <span class="n">struc</span><span class="o">.</span><span class="n">AtomArray</span><span class="p">,</span>
+    <span class="n">entities</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">contact_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
+    <span class="n">backbone_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Identify interacting chains in a structure.</span>
+
+<span class="sd">    `backbone_only`:</span>
+<span class="sd">        The method focuses on protein backbone atoms as defined by DockQ</span>
+<span class="sd">        atom names (C, CA, N, O). Due to the focus on backbone atoms, only</span>
+<span class="sd">        residue-level contact information is returned.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">chains</span> <span class="o">=</span> <span class="n">get_structure_chains</span><span class="p">(</span><span class="n">structure</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chains </span><span class="si">{</span><span class="n">chains</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">interacting_chains</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">structure</span><span class="o">.</span><span class="n">coord</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">interacting_chains</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">chain_1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chains</span><span class="p">):</span>
+        <span class="n">protein_1_mask</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_1</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">chain_2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chains</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">chain_1</span> <span class="o">==</span> <span class="n">chain_2</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">protein_2_mask</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_2</span>
+            <span class="c1"># NOTE! chain_1 is generally bigger receptor chain.</span>
+            <span class="c1"># If chain_1 and chain_2 are the same size, it is alphabetical.</span>
+            <span class="n">res_conts</span> <span class="o">=</span> <span class="n">pairwise_contacts</span><span class="p">(</span>
+                <span class="n">structure</span><span class="p">,</span>
+                <span class="n">radius</span><span class="o">=</span><span class="n">contact_threshold</span><span class="p">,</span>
+                <span class="n">heavy_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">backbone_only</span><span class="o">=</span><span class="n">backbone_only</span><span class="p">,</span>
+                <span class="n">chain1</span><span class="o">=</span><span class="n">chain_1</span><span class="p">,</span>
+                <span class="n">chain2</span><span class="o">=</span><span class="n">chain_2</span><span class="p">,</span>
+                <span class="n">atom_and_residue_level</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res_conts</span><span class="p">):</span>
+                <span class="n">dsasa</span> <span class="o">=</span> <span class="n">get_buried_sasa</span><span class="p">(</span>
+                    <span class="n">structure</span><span class="p">[</span><span class="n">protein_1_mask</span><span class="p">],</span> <span class="n">structure</span><span class="p">[</span><span class="n">protein_2_mask</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">chain1_res</span> <span class="o">=</span> <span class="p">{</span><span class="n">cp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">res_conts</span><span class="p">}</span>
+                <span class="n">chain2_res</span> <span class="o">=</span> <span class="p">{</span><span class="n">cp</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">cp</span> <span class="ow">in</span> <span class="n">res_conts</span><span class="p">}</span>
+
+                <span class="n">interacting_chains</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;entry_id&quot;</span><span class="p">:</span> <span class="n">entities</span><span class="o">.</span><span class="n">entry_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="s2">&quot;chain_1&quot;</span><span class="p">:</span> <span class="n">chain_1</span><span class="p">,</span>
+                        <span class="s2">&quot;asym_id_1&quot;</span><span class="p">:</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain == @chain_1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">asym_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span>
+                            <span class="mi">0</span>
+                        <span class="p">],</span>
+                        <span class="s2">&quot;pdb_strand_id_1&quot;</span><span class="p">:</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                            <span class="s2">&quot;chain == @chain_1&quot;</span>
+                        <span class="p">)</span><span class="o">.</span><span class="n">pdb_strand_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="s2">&quot;chain_2&quot;</span><span class="p">:</span> <span class="n">chain_2</span><span class="p">,</span>
+                        <span class="s2">&quot;asym_id_2&quot;</span><span class="p">:</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain == @chain_2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">asym_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span>
+                            <span class="mi">0</span>
+                        <span class="p">],</span>
+                        <span class="s2">&quot;pdb_strand_id_2&quot;</span><span class="p">:</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+                            <span class="s2">&quot;chain == @chain_2&quot;</span>
+                        <span class="p">)</span><span class="o">.</span><span class="n">pdb_strand_id</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="c1"># &quot;n_atom_pairs&quot;: len(at_conts),</span>
+                        <span class="s2">&quot;n_residue_pairs&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">res_conts</span><span class="p">),</span>
+                        <span class="s2">&quot;n_residues&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">chain1_res</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">chain2_res</span><span class="p">),</span>
+                        <span class="s2">&quot;buried_sasa&quot;</span><span class="p">:</span> <span class="n">dsasa</span><span class="p">,</span>
+                        <span class="s2">&quot;chain_1_residues&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                            <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">chain1_res</span><span class="p">)))</span>
+                        <span class="p">),</span>
+                        <span class="s2">&quot;chain_2_residues&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                            <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">chain2_res</span><span class="p">)))</span>
+                        <span class="p">),</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">interacting_chains</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="save">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.save">[docs]</a>
+<span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">meta</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">meta</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="save_mapping_checkpoint">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.save_mapping_checkpoint">[docs]</a>
+<span class="k">def</span> <span class="nf">save_mapping_checkpoint</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="n">empty_file</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to write </span><span class="si">{</span><span class="n">checkpoint_file</span><span class="si">}</span><span class="s2">, retrying...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">checkpoint_file</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="process_mmcif">
+<a class="viewcode-back" href="../../../source/pinder.data.html#pinder.data.get_data.process_mmcif">[docs]</a>
+<span class="k">def</span> <span class="nf">process_mmcif</span><span class="p">(</span>
+    <span class="n">mmcif_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">PinderDataGenConfig</span> <span class="o">=</span> <span class="n">PinderDataGenConfig</span><span class="p">(),</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process a single mmCIF file from the next generation PDB archive.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        mmcif_file : Path</span>
+<span class="sd">            The mmCIF file to be processed.</span>
+<span class="sd">        config : PinderDataGenConfig</span>
+<span class="sd">            Configuration parameters for dataset generation.</span>
+<span class="sd">        use_cache : bool</span>
+<span class="sd">            Whether to skip processing if the metadata file exists and status is set</span>
+<span class="sd">            to one of the PROCESSED_STATUS_CODES:</span>
+
+<span class="sd">            - complete</span>
+<span class="sd">            - no metadata</span>
+<span class="sd">            - assembly failed</span>
+<span class="sd">            - entities failed</span>
+<span class="sd">            - non-protein assembly</span>
+<span class="sd">            - too many chains</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        - Saves metadata as a text file.</span>
+<span class="sd">        - Saves biological assembly as an mmCIF file.</span>
+<span class="sd">        - Saves interacting chains along with the interface metrics as a text file.</span>
+<span class="sd">        - Saves all pairs of interacting chains as PDB files.</span>
+<span class="sd">        - Saves residue numbers of interacting chains as a text file along with Uniprot IDs and numbering.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+
+    <span class="n">pdbx_file</span> <span class="o">=</span> <span class="n">read_mmcif_file</span><span class="p">(</span><span class="n">mmcif_file</span><span class="p">)</span>
+    <span class="n">pdb_id</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PDB ID </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">mapping_checkpoint</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;checkpoint-mapping.txt&quot;</span>
+    <span class="n">metadata_file</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">-metadata.tsv&quot;</span>
+    <span class="n">interacting_chains_tsv</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">-interacting_chains.tsv&quot;</span>
+    <span class="n">entities_pqt</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">-entities.parquet&quot;</span>
+
+    <span class="c1"># Check cached results</span>
+    <span class="n">PROCESSED_STATUS_CODES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;complete&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;no metadata&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;assembly failed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;entities failed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;non-protein assembly&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;too many chains&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">empty_file</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">):</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipping patching of mapping file, </span><span class="si">{</span><span class="n">mmcif_file</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">, checkpoint exists&quot;</span>
+        <span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">if</span> <span class="n">metadata_file</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="n">use_cache</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">cached_metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to read existing metadata file. Removing...&quot;</span><span class="p">)</span>
+            <span class="n">metadata_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+            <span class="n">cached_metadata</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">cached_metadata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;status&quot;</span> <span class="ow">in</span> <span class="n">cached_metadata</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">meta_status</span> <span class="o">=</span> <span class="n">cached_metadata</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">meta_status</span> <span class="ow">in</span> <span class="n">PROCESSED_STATUS_CODES</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">empty_file</span><span class="p">(</span>
+                <span class="n">mapping_checkpoint</span>
+            <span class="p">):</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Skipping </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">, metadata status is </span><span class="si">{</span><span class="n">meta_status</span><span class="si">}</span><span class="s2">, mapping patch checkpoint exists&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">metadata</span><span class="o">.</span><span class="n">entry_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no metadata for </span><span class="si">{</span><span class="n">mmcif_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pdb_id</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;no metadata&quot;</span>
+            <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+        <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># expect to have metadata data structure in order to proceed</span>
+    <span class="k">if</span> <span class="n">pdb_id</span> <span class="o">!=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">entry_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;entry_id mismatch </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">metadata</span><span class="o">.</span><span class="n">entry_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">metadata</span><span class="o">.</span><span class="n">entry_id</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">entry_id</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;metadata&quot;</span>
+    <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">bio_asm</span><span class="p">,</span> <span class="n">entity_chain_map</span> <span class="o">=</span> <span class="n">generate_bio_assembly</span><span class="p">(</span><span class="n">mmcif_file</span><span class="p">)</span>
+        <span class="c1"># TODO: consume entity_chain_map and fix the flaky logic used the first time</span>
+        <span class="n">all_atom_asm_shape</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># keep only the protein in the assembly. DNA/RNA are gone</span>
+        <span class="c1"># do not use HET as a filter. some non-standard amino acids are marked as HET</span>
+        <span class="n">bio_asm</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="p">[</span><span class="n">struc</span><span class="o">.</span><span class="n">filter_amino_acids</span><span class="p">(</span><span class="n">bio_asm</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">protein_atom_asm_shape</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">protein_atom_asm_shape</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">all_atom_asm_shape</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All-atom bio-assembly had </span><span class="si">{</span><span class="n">all_atom_asm_shape</span><span class="si">}</span><span class="s2"> atoms&quot;</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;There are no protein atoms in the assembly. Skipping...&quot;</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;non-protein assembly&quot;</span>
+            <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+            <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;assembly failed for </span><span class="si">{</span><span class="n">mmcif_file</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;assembly failed&quot;</span>
+        <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+        <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># attn: reading from the original file, not from the assembly file</span>
+    <span class="n">entities</span> <span class="o">=</span> <span class="n">get_entities</span><span class="p">(</span><span class="n">pdbx_file</span><span class="p">,</span> <span class="n">entry_id</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">entities</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;entities failed&quot;</span>
+        <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+        <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">structure_chains</span> <span class="o">=</span> <span class="n">get_structure_chains</span><span class="p">(</span><span class="n">bio_asm</span><span class="p">)</span>
+
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;n_chains&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure_chains</span><span class="p">)</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bio assembly&quot;</span>
+    <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+
+    <span class="n">chain_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">unique_uniprot_acc</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">chains</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">entity_id</span> <span class="ow">in</span> <span class="n">entities</span><span class="o">.</span><span class="n">entity_id</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">entity_mapping</span> <span class="o">=</span> <span class="n">sequence_mapping</span><span class="p">(</span>
+            <span class="n">pdbx_file</span><span class="p">,</span> <span class="n">entry_id</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">,</span> <span class="n">entity_id</span><span class="o">=</span><span class="n">entity_id</span>
+        <span class="p">)</span>
+        <span class="c1"># print(&quot;Entity mapping&quot;, entity_mapping.shape)</span>
+        <span class="c1"># print(&quot;Asyms&quot;, entities.query(&quot;entity_id == @entity_id&quot;).asym_id.unique())</span>
+        <span class="k">for</span> <span class="n">asym_id</span> <span class="ow">in</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;entity_id == @entity_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">asym_id</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+            <span class="c1"># Get the mapping for this asym_id and cast entity to str</span>
+            <span class="c1"># (gemmi makes a note that entity_id is NOT strictly int, though should be)</span>
+            <span class="c1"># They cast to string for safety, but our entity_mapping is int.</span>
+            <span class="n">mapping</span> <span class="o">=</span> <span class="n">entity_mapping</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;asym_id == @asym_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">mapping</span><span class="o">.</span><span class="n">entity_id</span> <span class="o">=</span> <span class="n">mapping</span><span class="o">.</span><span class="n">entity_id</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+            <span class="n">uniprot</span> <span class="o">=</span> <span class="n">infer_uniprot_from_mapping</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
+            <span class="n">unique_uniprot_acc</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">uniprot</span><span class="p">)</span>
+            <span class="c1"># Merge the entity mapping for this asym_id with the entity-asym-chain mapping</span>
+            <span class="c1"># we got from gemmi during chain renumbering</span>
+            <span class="n">mapping</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">entity_chain_map</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">structure_chains</span><span class="p">:</span>
+                <span class="c1"># TODO: this for loop should be revisited,</span>
+                <span class="c1"># we can probably avoid and just do some merges upstream</span>
+                <span class="n">chain_map</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">mapping</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain_id == @chain&quot;</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;chain_id&quot;</span><span class="p">:</span> <span class="s2">&quot;chain&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">chain_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain</span><span class="p">]</span> <span class="o">=</span> <span class="n">chain_map</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">chains</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;asym_id&quot;</span><span class="p">:</span> <span class="n">asym_id</span><span class="p">,</span>
+                        <span class="s2">&quot;chain&quot;</span><span class="p">:</span> <span class="n">chain</span><span class="p">,</span>
+                        <span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="n">uniprot</span><span class="p">,</span>
+                        <span class="s2">&quot;length_resolved&quot;</span><span class="p">:</span> <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain</span><span class="p">]</span><span class="o">.</span><span class="n">resolved</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+    <span class="c1"># Simply add the actual assembly chain that we have in the structure</span>
+    <span class="c1"># This chain has a number added by gemmi to handle duplicate instances</span>
+    <span class="n">entities</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">chains</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;asym_id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Remove any chains that are non-polypeptide that may have been removed in mapping</span>
+    <span class="n">bio_asm</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bio_asm</span><span class="o">.</span><span class="n">chain_id</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">entities</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()))]</span>
+    <span class="n">entities</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">entities_pqt</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">structure_chains</span> <span class="o">=</span> <span class="n">get_structure_chains</span><span class="p">(</span><span class="n">bio_asm</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_uniprot_acc</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;complex_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;heteromer&quot;</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_uniprot_acc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;complex_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;homomer&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;complex_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;entities&quot;</span>
+    <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure_chains</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">config</span><span class="o">.</span><span class="n">max_assembly_chains</span><span class="p">:</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;too many chains&quot;</span>
+        <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipping </span><span class="si">{</span><span class="n">mmcif_file</span><span class="si">}</span><span class="s2">, too many chains: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">structure_chains</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># INTERACTIONS</span>
+    <span class="n">interacting_chains</span> <span class="o">=</span> <span class="n">get_interacting_chains</span><span class="p">(</span>
+        <span class="n">bio_asm</span><span class="p">,</span>
+        <span class="n">entities</span><span class="p">,</span>
+        <span class="n">contact_threshold</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">interacting_chains_radius</span><span class="p">,</span>
+        <span class="n">backbone_only</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">interacting_chains_backbone_only</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">interacting_chains</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+        <span class="n">interacting_chains_tsv</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;interacting chains&quot;</span>
+    <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">interacting_chains</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># show a warning if more than 1 chain but they don&#39;t interact</span>
+        <span class="c1"># save monomer(s) as true monomers</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">structure_chains</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;multiple chains detected but no interacting chains for </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;complex_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;monomer&quot;</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;monomer&quot;</span>
+            <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+
+        <span class="c1"># in case there are multiple non-interacting (apo) chains</span>
+        <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">structure_chains</span><span class="p">:</span>
+            <span class="n">uniprot</span> <span class="o">=</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;chain == &quot;</span><span class="si">{</span><span class="n">chain</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">uniprot</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">protein</span> <span class="o">=</span> <span class="n">Protein</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="n">chain</span><span class="p">,</span> <span class="n">uniprot</span><span class="o">=</span><span class="n">uniprot</span><span class="p">)</span>
+            <span class="n">monomer</span> <span class="o">=</span> <span class="n">Monomer</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">protein</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="n">monomer_pdb_file</span> <span class="o">=</span> <span class="n">PDBFile</span><span class="p">()</span>
+            <span class="n">monomer_structure</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="p">[</span><span class="n">bio_asm</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">monomer_structure</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[:]</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+            <span class="n">monomer_pdb_file</span><span class="o">.</span><span class="n">set_structure</span><span class="p">(</span><span class="n">monomer_structure</span><span class="p">)</span>
+            <span class="n">monomer_filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">monomer</span><span class="si">}</span><span class="s2">.pdb&quot;</span><span class="p">)</span>
+            <span class="n">monomer_pdb_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">monomer_filename</span><span class="p">)</span>
+
+            <span class="c1"># save mapping</span>
+            <span class="n">monomer_mapping_dest</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">monomer</span><span class="si">}</span><span class="s2">.parquet&quot;</span>
+            <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain</span><span class="p">]</span> <span class="o">=</span> <span class="n">set_mapping_column_types</span><span class="p">(</span><span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain</span><span class="p">]</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">monomer_mapping_dest</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># save dimer complexes in the PDB format</span>
+        <span class="k">for</span> <span class="n">chain_1</span><span class="p">,</span> <span class="n">chain_2</span> <span class="ow">in</span> <span class="n">interacting_chains</span><span class="p">[[</span><span class="s2">&quot;chain_1&quot;</span><span class="p">,</span> <span class="s2">&quot;chain_2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="c1"># save two interacting chains in the PDB format</span>
+            <span class="n">dimer_pdb_file</span> <span class="o">=</span> <span class="n">PDBFile</span><span class="p">()</span>
+            <span class="n">two_chains</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bio_asm</span><span class="o">.</span><span class="n">chain_id</span><span class="p">,</span> <span class="p">(</span><span class="n">chain_1</span><span class="p">,</span> <span class="n">chain_2</span><span class="p">))]</span>
+            <span class="n">mask1</span> <span class="o">=</span> <span class="n">two_chains</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_1</span>
+            <span class="n">mask2</span> <span class="o">=</span> <span class="n">two_chains</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_2</span>
+            <span class="n">two_chains</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">mask1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span>
+            <span class="n">two_chains</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">mask2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span>
+            <span class="c1"># Format identifiers for individual interacting chains</span>
+            <span class="n">chain1_uniprot</span> <span class="o">=</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain == @chain_1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">uniprot</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">chain2_uniprot</span> <span class="o">=</span> <span class="n">entities</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;chain == @chain_2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">uniprot</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">protein1</span> <span class="o">=</span> <span class="n">Protein</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="n">chain_1</span><span class="p">,</span> <span class="n">uniprot</span><span class="o">=</span><span class="n">chain1_uniprot</span><span class="p">)</span>
+            <span class="n">protein2</span> <span class="o">=</span> <span class="n">Protein</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="n">chain_2</span><span class="p">,</span> <span class="n">uniprot</span><span class="o">=</span><span class="n">chain2_uniprot</span><span class="p">)</span>
+            <span class="n">dimer</span> <span class="o">=</span> <span class="n">Dimer</span><span class="p">(</span><span class="n">Monomer</span><span class="p">([</span><span class="n">protein1</span><span class="p">]),</span> <span class="n">Monomer</span><span class="p">([</span><span class="n">protein2</span><span class="p">]))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">dimer_pdb_file</span><span class="o">.</span><span class="n">set_structure</span><span class="p">(</span><span class="n">two_chains</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">two_chains</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">99999</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;too many atoms in dimer </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="n">dimer_dest_pdb</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dimer</span><span class="si">}</span><span class="s2">.pdb&quot;</span>
+                <span class="n">dimer_pdb_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dimer_dest_pdb</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;failed to write </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="c1"># don&#39;t write single chains when the dimer failed to write</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># save individual chains as holo monomers in the PDB format</span>
+            <span class="k">for</span> <span class="n">chain_id</span><span class="p">,</span> <span class="n">protein</span><span class="p">,</span> <span class="n">side</span><span class="p">,</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">chain_1</span><span class="p">,</span> <span class="n">protein1</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain_1</span><span class="p">]),</span>
+                <span class="p">(</span><span class="n">chain_2</span><span class="p">,</span> <span class="n">protein2</span><span class="p">,</span> <span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">chain_mapping</span><span class="p">[</span><span class="n">chain_2</span><span class="p">]),</span>
+            <span class="p">):</span>
+                <span class="n">single_chain</span> <span class="o">=</span> <span class="n">bio_asm</span><span class="p">[</span><span class="n">bio_asm</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_id</span><span class="p">]</span>
+                <span class="c1"># always assign chain A to the single chain protein</span>
+                <span class="n">single_chain</span><span class="o">.</span><span class="n">chain_id</span><span class="p">[</span><span class="n">single_chain</span><span class="o">.</span><span class="n">chain_id</span> <span class="o">==</span> <span class="n">chain_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">side</span>
+                <span class="n">monomer</span> <span class="o">=</span> <span class="n">Monomer</span><span class="p">([</span><span class="n">protein</span><span class="p">],</span> <span class="n">side</span><span class="o">=</span><span class="n">side</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">single_chain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">99999</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;too many atoms in monomer </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="n">single_chain</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;no atoms in monomer </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="n">single_chain_file</span> <span class="o">=</span> <span class="n">PDBFile</span><span class="p">()</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">single_chain_file</span><span class="o">.</span><span class="n">set_structure</span><span class="p">(</span><span class="n">single_chain</span><span class="p">,</span> <span class="n">hybrid36</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">monomer_dest_pdb</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">monomer</span><span class="si">}</span><span class="s2">.pdb&quot;</span>
+                    <span class="n">single_chain_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">monomer_dest_pdb</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;failed to write </span><span class="si">{</span><span class="n">pdb_id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">chain_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+                <span class="c1"># save mapping</span>
+                <span class="n">monomer_mapping_dest</span> <span class="o">=</span> <span class="n">mmcif_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">monomer</span><span class="si">}</span><span class="s2">.parquet&quot;</span>
+                <span class="n">mapping</span> <span class="o">=</span> <span class="n">set_mapping_column_types</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">mapping</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">monomer_mapping_dest</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;complete&quot;</span>
+    <span class="n">save</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+    <span class="n">save_mapping_checkpoint</span><span class="p">(</span><span class="n">mapping_checkpoint</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">mmcif_file</span><span class="si">}</span><span class="s2"> processed successfully&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># for each file in /tmp/pinder-debug/*-enrich.cif.gz</span>
+    <span class="c1"># run process_mmcif</span>
+    <span class="k">for</span> <span class="n">mmcif_file</span> <span class="ow">in</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/tmp/pinder-debug&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*-enrich.cif.gz&quot;</span><span class="p">):</span>
+        <span class="n">process_mmcif</span><span class="p">(</span><span class="n">mmcif_file</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

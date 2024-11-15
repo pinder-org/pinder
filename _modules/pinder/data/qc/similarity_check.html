@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.data.qc.similarity_check &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/data/qc/similarity_check';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/data/qc/similarity_check.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.qc.similarity_check</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.data.qc.similarity_check</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.typing</span> <span class="kn">import</span> <span class="n">NDArray</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">repeat</span>
+<span class="kn">import</span> <span class="nn">pickle</span> <span class="k">as</span> <span class="nn">pkl</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">biotite.sequence</span> <span class="kn">import</span> <span class="n">align</span><span class="p">,</span> <span class="n">ProteinSequence</span><span class="p">,</span> <span class="n">AlphabetError</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="kn">from</span> <span class="nn">pinder.core</span> <span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils</span> <span class="kn">import</span> <span class="n">setup_logger</span>
+<span class="kn">from</span> <span class="nn">pinder.core.utils.process</span> <span class="kn">import</span> <span class="n">process_starmap</span>
+<span class="kn">from</span> <span class="nn">pinder.data.config</span> <span class="kn">import</span> <span class="n">ClusterConfig</span><span class="p">,</span> <span class="n">get_config_hash</span>
+<span class="kn">from</span> <span class="nn">pinder.data.qc.utils</span> <span class="kn">import</span> <span class="n">load_index</span><span class="p">,</span> <span class="n">load_metadata</span><span class="p">,</span> <span class="n">load_entity_metadata</span>
+
+<span class="n">MATRIX</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">SubstitutionMatrix</span><span class="o">.</span><span class="n">std_protein_matrix</span><span class="p">()</span>
+
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="load_data">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.load_data">[docs]</a>
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span>
+    <span class="n">index_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading data from </span><span class="si">{</span><span class="n">index_file</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">metadata_file</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="n">pindex</span> <span class="o">=</span> <span class="n">load_index</span><span class="p">(</span><span class="n">index_file</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">load_metadata</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">)</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span></div>
+
+
+
+<div class="viewcode-block" id="process_test_table">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.process_test_table">[docs]</a>
+<span class="k">def</span> <span class="nf">process_test_table</span><span class="p">(</span><span class="n">test_table_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing test table from </span><span class="si">{</span><span class="n">test_table_path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">test_table_path</span><span class="p">)</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">test_table</span><span class="p">[</span><span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;proto-test&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="s2">&quot;depth_2_hits_with_comm&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+        <span class="n">test_table</span><span class="p">,</span> <span class="n">pindex</span><span class="p">[[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;pdb_id&quot;</span><span class="p">,</span> <span class="s2">&quot;chain_R&quot;</span><span class="p">,</span> <span class="s2">&quot;chain_L&quot;</span><span class="p">]],</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_table</span></div>
+
+
+
+<div class="viewcode-block" id="align_sequences">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.align_sequences">[docs]</a>
+<span class="k">def</span> <span class="nf">align_sequences</span><span class="p">(</span>
+    <span class="n">input_data</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">chain_overlap_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]:</span>
+    <span class="n">train_id</span><span class="p">,</span> <span class="n">test_id</span><span class="p">,</span> <span class="n">seq1</span><span class="p">,</span> <span class="n">seq2</span> <span class="o">=</span> <span class="n">input_data</span>
+    <span class="n">align_res</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">align_optimal</span><span class="p">(</span>
+        <span class="n">seq1</span><span class="p">,</span> <span class="n">seq2</span><span class="p">,</span> <span class="n">MATRIX</span><span class="p">,</span> <span class="n">max_number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">terminal_penalty</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">train_pdb</span><span class="p">,</span> <span class="n">train_chain</span> <span class="o">=</span> <span class="n">train_id</span>
+    <span class="n">test_pdb</span><span class="p">,</span> <span class="n">test_chain</span> <span class="o">=</span> <span class="n">test_id</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">train_pdb</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">train_chain</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">test_pdb</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">test_chain</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+    <span class="n">max1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">MATRIX</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">])</span>
+    <span class="n">max2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">MATRIX</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq2</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">])</span>
+    <span class="n">normed_score</span> <span class="o">=</span> <span class="n">align_res</span><span class="o">.</span><span class="n">score</span> <span class="o">/</span> <span class="nb">min</span><span class="p">(</span><span class="n">max1</span><span class="p">,</span> <span class="n">max2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seq2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="n">normed_score</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="n">align_res</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">normed_score</span><span class="p">,</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">align_res</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">normed_score</span><span class="p">,</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="write_alignment">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.write_alignment">[docs]</a>
+<span class="k">def</span> <span class="nf">write_alignment</span><span class="p">(</span>
+    <span class="n">alignment_output</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">alignment</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">valid</span> <span class="o">=</span> <span class="n">alignment_output</span>
+    <span class="k">if</span> <span class="n">valid</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">pkl</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">alignment</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_alignments">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.generate_alignments">[docs]</a>
+<span class="k">def</span> <span class="nf">generate_alignments</span><span class="p">(</span>
+    <span class="n">train_sequences</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">test_sequences</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">num_cpu</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">parallel</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">chain_overlap_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+    <span class="n">n_chunks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Generating/writing alignments...&quot;</span><span class="p">)</span>
+    <span class="n">test_vs_train</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">train_id</span><span class="p">,</span> <span class="n">test_id</span><span class="p">,</span> <span class="n">train_sequences</span><span class="p">[</span><span class="n">train_id</span><span class="p">],</span> <span class="n">test_sequences</span><span class="p">[</span><span class="n">test_id</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">train_id</span> <span class="ow">in</span> <span class="n">train_sequences</span>
+        <span class="k">for</span> <span class="n">test_id</span> <span class="ow">in</span> <span class="n">test_sequences</span>
+    <span class="p">]</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_vs_train</span><span class="p">)</span> <span class="o">//</span> <span class="n">n_chunks</span><span class="p">)</span>
+    <span class="n">filtered_alignments</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># pass the output path</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_chunks</span><span class="p">)):</span>
+        <span class="n">test_vs_train_chunk</span> <span class="o">=</span> <span class="n">test_vs_train</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">chunk_size</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">chunk_size</span><span class="p">]</span>
+        <span class="n">alignments</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="n">process_starmap</span><span class="p">(</span>
+                <span class="n">align_sequences</span><span class="p">,</span>
+                <span class="nb">zip</span><span class="p">(</span>
+                    <span class="n">test_vs_train_chunk</span><span class="p">,</span>
+                    <span class="n">repeat</span><span class="p">(</span><span class="n">output_path</span><span class="p">),</span>
+                    <span class="n">repeat</span><span class="p">(</span><span class="n">chain_overlap_threshold</span><span class="p">),</span>
+                <span class="p">),</span>
+                <span class="n">max_workers</span><span class="o">=</span><span class="n">num_cpu</span><span class="p">,</span>
+                <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">valid_alignments</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">alignments</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span>
+        <span class="p">]</span>
+        <span class="n">filtered_alignments</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">valid_alignments</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">valid_alignments</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_alignments</span><span class="p">)</span><span class="si">}</span><span class="s2"> valid alignments in chunk-id </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">write_alignment</span><span class="p">,</span> <span class="n">valid_alignments</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">filtered_alignments</span></div>
+
+
+
+<div class="viewcode-block" id="get_processed_alignments">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.get_processed_alignments">[docs]</a>
+<span class="k">def</span> <span class="nf">get_processed_alignments</span><span class="p">(</span>
+    <span class="n">alignments_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]]:</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading alignments from </span><span class="si">{</span><span class="n">alignments_path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">SubstitutionMatrix</span><span class="o">.</span><span class="n">std_protein_matrix</span><span class="p">()</span>
+    <span class="n">alignment_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">alignments_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.pkl&quot;</span><span class="p">))</span>
+    <span class="n">alignments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">alignment_file</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">alignment_files</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">alignment_file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">alignment</span> <span class="o">=</span> <span class="n">pkl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">train_id</span><span class="p">,</span> <span class="n">train_chain_id</span><span class="p">,</span> <span class="n">test_id</span><span class="p">,</span> <span class="n">test_chain_id</span> <span class="o">=</span> <span class="n">alignment_file</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">split</span><span class="p">(</span>
+            <span class="s2">&quot;_&quot;</span>
+        <span class="p">)</span>
+        <span class="n">seq1</span><span class="p">,</span> <span class="n">seq2</span> <span class="o">=</span> <span class="n">alignment</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sequences</span>
+        <span class="n">max1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">matrix</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">])</span>
+        <span class="n">max2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">matrix</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">seq2</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">])</span>
+        <span class="n">normed_score</span> <span class="o">=</span> <span class="n">alignment</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">score</span> <span class="o">/</span> <span class="nb">min</span><span class="p">([</span><span class="n">max1</span><span class="p">,</span> <span class="n">max2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">test_id</span><span class="p">,</span> <span class="n">test_chain_id</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">alignments</span><span class="p">:</span>
+            <span class="n">alignments</span><span class="p">[(</span><span class="n">test_id</span><span class="p">,</span> <span class="n">test_chain_id</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">alignment</span><span class="p">,</span> <span class="n">normed_score</span><span class="p">,</span> <span class="p">(</span><span class="n">train_id</span><span class="p">,</span> <span class="n">train_chain_id</span><span class="p">))</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alignments</span><span class="p">[(</span><span class="n">test_id</span><span class="p">,</span> <span class="n">test_chain_id</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">alignment</span><span class="p">,</span> <span class="n">normed_score</span><span class="p">,</span> <span class="p">(</span><span class="n">train_id</span><span class="p">,</span> <span class="n">train_chain_id</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">alignments</span></div>
+
+
+
+<div class="viewcode-block" id="load_train_system_id_mapping">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.load_train_system_id_mapping">[docs]</a>
+<span class="k">def</span> <span class="nf">load_train_system_id_mapping</span><span class="p">(</span>
+    <span class="n">sampled_train</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate mapping of system IDs from training data&quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading train system ID mapping...&quot;</span><span class="p">)</span>
+    <span class="n">train_system_id_mapping</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sampled_train</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">c1</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_R&quot;</span><span class="p">])</span>
+        <span class="n">c2</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_L&quot;</span><span class="p">])</span>
+        <span class="n">c1_c2</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">]))</span>
+        <span class="n">train_system_id_mapping</span><span class="p">[</span><span class="n">c1_c2</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">train_system_id_mapping</span></div>
+
+
+
+<div class="viewcode-block" id="get_pdb_chain_uni">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.get_pdb_chain_uni">[docs]</a>
+<span class="k">def</span> <span class="nf">get_pdb_chain_uni</span><span class="p">(</span><span class="n">monomer_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract pdb_id, chain, and uni from a combined monomer_id string&quot;&quot;&quot;</span>
+    <span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain_uni</span> <span class="o">=</span> <span class="n">monomer_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)</span>
+    <span class="n">chain</span><span class="p">,</span> <span class="n">uni</span> <span class="o">=</span> <span class="n">chain_uni</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pdb_id</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">uni</span></div>
+
+
+
+<div class="viewcode-block" id="system_id_to_alignment">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.system_id_to_alignment">[docs]</a>
+<span class="k">def</span> <span class="nf">system_id_to_alignment</span><span class="p">(</span>
+    <span class="n">sys_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">alignments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span>
+    <span class="p">],</span>
+    <span class="n">train_system_id_mapping</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span>
+    <span class="nb">tuple</span><span class="p">[</span>
+        <span class="nb">str</span><span class="p">,</span>
+        <span class="nb">dict</span><span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span>
+            <span class="nb">tuple</span><span class="p">[</span>
+                <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+                <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="p">],</span>
+        <span class="p">]</span>
+        <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="o">|</span> <span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Map system IDs to alignments if applicable&quot;&quot;&quot;</span>
+    <span class="n">train_systems</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">train_system_id_mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">R</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="n">sys_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+    <span class="n">R_pdb_id</span><span class="p">,</span> <span class="n">R_chain</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_pdb_chain_uni</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+    <span class="n">L_pdb_id</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_pdb_chain_uni</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">R_pdb_id</span><span class="p">,</span> <span class="n">R_chain</span><span class="p">)</span> <span class="ow">in</span> <span class="n">alignments</span> <span class="ow">and</span> <span class="p">(</span><span class="n">L_pdb_id</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">)</span> <span class="ow">in</span> <span class="n">alignments</span><span class="p">:</span>
+        <span class="n">dual</span> <span class="o">=</span> <span class="n">alignments_to_dual_alignment</span><span class="p">(</span>
+            <span class="n">alignments</span><span class="p">[(</span><span class="n">R_pdb_id</span><span class="p">,</span> <span class="n">R_chain</span><span class="p">)],</span>
+            <span class="n">alignments</span><span class="p">[(</span><span class="n">L_pdb_id</span><span class="p">,</span> <span class="n">L_chain</span><span class="p">)],</span>
+            <span class="n">train_systems</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">sys_id</span><span class="p">,</span> <span class="n">dual</span> <span class="k">if</span> <span class="n">dual</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="alignments_to_dual_alignment">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.alignments_to_dual_alignment">[docs]</a>
+<span class="k">def</span> <span class="nf">alignments_to_dual_alignment</span><span class="p">(</span>
+    <span class="n">r_alignments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]],</span>
+    <span class="n">l_alignments</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]],</span>
+    <span class="n">train_systems</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span>
+    <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span>
+        <span class="nb">tuple</span><span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+    <span class="o">|</span> <span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check for dual alignments across systems and return them if valid&quot;&quot;&quot;</span>
+    <span class="n">dual_alignments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span>
+        <span class="nb">tuple</span><span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+        <span class="p">],</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">r_pdbs</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r_alignments</span><span class="p">}</span>
+    <span class="n">l_pdbs</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">l_alignments</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r_pdbs</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">l_pdbs</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">r_alignment</span> <span class="ow">in</span> <span class="n">r_alignments</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">l_alignment</span> <span class="ow">in</span> <span class="n">l_alignments</span><span class="p">:</span>
+            <span class="c1"># If the pdbs are the same</span>
+            <span class="k">if</span> <span class="n">r_alignment</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">l_alignment</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">system</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">r_alignment</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">l_alignment</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]))</span>
+                <span class="k">if</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">train_systems</span><span class="p">:</span>
+                    <span class="n">dual_alignments</span><span class="p">[</span><span class="n">system</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">r_alignment</span><span class="p">,</span> <span class="n">l_alignment</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dual_alignments</span> <span class="k">if</span> <span class="n">dual_alignments</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="get_aligned_indices">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.get_aligned_indices">[docs]</a>
+<span class="k">def</span> <span class="nf">get_aligned_indices</span><span class="p">(</span>
+    <span class="n">alignment_trace</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">],</span> <span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">int_</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract aligned indices from an alignment trace&quot;&quot;&quot;</span>
+    <span class="n">train_indices</span><span class="p">,</span> <span class="n">test_indices</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alignment_trace</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">train_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">test_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_indices</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_indices</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_aligned_interface_indices">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.get_aligned_interface_indices">[docs]</a>
+<span class="k">def</span> <span class="nf">get_aligned_interface_indices</span><span class="p">(</span>
+    <span class="n">alignment</span><span class="p">:</span> <span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span>
+    <span class="n">test_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">train_system</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">test_chain</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">train_chain</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the percentage of interface residues that are aligned&quot;&quot;&quot;</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">alignment</span><span class="o">.</span><span class="n">trace</span>
+    <span class="n">test_interface_residues</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_system</span><span class="p">][</span><span class="s2">&quot;chain_1_residues&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">test_chain</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span>
+        <span class="k">else</span> <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">train_system</span><span class="p">][</span><span class="s2">&quot;chain_2_residues&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">train_interface_residues</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test_system</span><span class="p">][</span><span class="s2">&quot;chain_1_residues&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">train_chain</span> <span class="o">==</span> <span class="s2">&quot;R&quot;</span>
+        <span class="k">else</span> <span class="n">metadata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">test_system</span><span class="p">][</span><span class="s2">&quot;chain_2_residues&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">test_interface_residues</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">test_interface_residues</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)}</span>
+    <span class="n">train_interface_residues</span> <span class="o">=</span> <span class="p">{</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">train_interface_residues</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)}</span>
+    <span class="n">train_aligned_indices</span><span class="p">,</span> <span class="n">test_aligned_indices</span> <span class="o">=</span> <span class="n">get_aligned_indices</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_aligned_indices</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">train_interface_residues</span><span class="p">))</span>
+        <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_interface_residues</span><span class="p">),</span>
+        <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">test_aligned_indices</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">test_interface_residues</span><span class="p">))</span>
+        <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_interface_residues</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="analyze_leakage">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.analyze_leakage">[docs]</a>
+<span class="k">def</span> <span class="nf">analyze_leakage</span><span class="p">(</span>
+    <span class="n">test_table</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">alignments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span>
+    <span class="p">],</span>
+    <span class="n">train_system_id_mapping</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">chain_overlap_threshold</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Analyze leakage across systems based on alignments and mapping&quot;&quot;&quot;</span>
+    <span class="n">test_ids</span> <span class="o">=</span> <span class="n">test_table</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="n">system_map_fn</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span>
+        <span class="n">system_id_to_alignment</span><span class="p">,</span>
+        <span class="n">alignments</span><span class="o">=</span><span class="n">alignments</span><span class="p">,</span>
+        <span class="n">train_system_id_mapping</span><span class="o">=</span><span class="n">train_system_id_mapping</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">all_matched</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span>
+        <span class="nb">str</span><span class="p">,</span>
+        <span class="nb">dict</span><span class="p">[</span>
+            <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">],</span>
+            <span class="nb">tuple</span><span class="p">[</span>
+                <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+                <span class="nb">tuple</span><span class="p">[</span><span class="n">align</span><span class="o">.</span><span class="n">Alignment</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="nb">filter</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="kc">None</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
+            <span class="nb">map</span><span class="p">(</span><span class="n">system_map_fn</span><span class="p">,</span> <span class="n">test_ids</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_matched</span><span class="p">)</span><span class="si">}</span><span class="s2"> matched alignments&quot;</span><span class="p">)</span>
+
+    <span class="n">total_leakage</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">test_id</span><span class="p">,</span> <span class="n">matched</span> <span class="ow">in</span> <span class="n">all_matched</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">test_system</span> <span class="o">=</span> <span class="n">test_id</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">test_chain_r</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_pdb_chain_uni</span><span class="p">(</span><span class="n">test_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">test_chain_l</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_pdb_chain_uni</span><span class="p">(</span><span class="n">test_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">train_id</span><span class="p">,</span> <span class="p">(</span><span class="n">r_al</span><span class="p">,</span> <span class="n">l_al</span><span class="p">)</span> <span class="ow">in</span> <span class="n">matched</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">train_system</span> <span class="o">=</span> <span class="n">train_system_id_mapping</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">train_id</span><span class="p">)))]</span>
+            <span class="n">train_chain_r</span><span class="p">,</span> <span class="n">train_chain_l</span> <span class="o">=</span> <span class="n">train_id</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">train_id</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">chain_r_overlap_train</span><span class="p">,</span> <span class="n">chain_r_overlap_test</span> <span class="o">=</span> <span class="n">get_aligned_interface_indices</span><span class="p">(</span>
+                <span class="n">r_al</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">test_system</span><span class="p">,</span>
+                <span class="n">train_system</span><span class="p">,</span>
+                <span class="n">test_chain_r</span><span class="p">,</span>
+                <span class="n">train_chain_r</span><span class="p">,</span>
+                <span class="n">metadata</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">chain_l_overlap_train</span><span class="p">,</span> <span class="n">chain_l_overlap_test</span> <span class="o">=</span> <span class="n">get_aligned_interface_indices</span><span class="p">(</span>
+                <span class="n">l_al</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">test_system</span><span class="p">,</span>
+                <span class="n">train_system</span><span class="p">,</span>
+                <span class="n">test_chain_l</span><span class="p">,</span>
+                <span class="n">train_chain_l</span><span class="p">,</span>
+                <span class="n">metadata</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">chain_r_overlap_train</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span>
+                <span class="ow">and</span> <span class="n">chain_l_overlap_train</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span>
+                <span class="ow">and</span> <span class="n">chain_r_overlap_test</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span>
+                <span class="ow">and</span> <span class="n">chain_l_overlap_test</span> <span class="o">&gt;</span> <span class="n">chain_overlap_threshold</span>
+            <span class="p">):</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Leakage detected between </span><span class="si">{</span><span class="n">test_system</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">train_system</span><span class="si">}</span><span class="s2">: Chain R and L overlaps are significant.&quot;</span>
+                <span class="p">)</span>
+                <span class="n">total_leakage</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Total leakage ratio: </span><span class="si">{</span><span class="n">total_leakage</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">test_table</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">total_leakage</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_table</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="subsample_train">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.subsample_train">[docs]</a>
+<span class="k">def</span> <span class="nf">subsample_train</span><span class="p">(</span>
+    <span class="n">pindex</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">cluster_size_cutoff</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">num_to_sample</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">cache_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">n_chunks</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">multi_clusters</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pindex</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">cluster_size_cutoff</span><span class="p">)[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="n">subsample</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">pindex</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">multi_clusters</span><span class="p">))</span>
+        <span class="p">]</span>
+        <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">num_to_sample</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">num_train</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_subsample</span> <span class="o">=</span> <span class="n">subsample</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Subsampled </span><span class="si">{</span><span class="n">num_subsample</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">num_train</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">n_chunks</span><span class="o">*</span><span class="n">num_subsample</span><span class="o">/</span><span class="n">num_train</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%) of training set.&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">subsample</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">cache_path</span> <span class="o">/</span> <span class="s2">&quot;subsampled_systems.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">subsample</span></div>
+
+
+
+<div class="viewcode-block" id="sequence_leakage_main">
+<a class="viewcode-back" href="../../../../source/pinder.data.qc.html#pinder.data.qc.similarity_check.sequence_leakage_main">[docs]</a>
+<span class="k">def</span> <span class="nf">sequence_leakage_main</span><span class="p">(</span>
+    <span class="n">index_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">test_table_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">entity_metadata_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cache_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">get_pinder_location</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;data/similarity-cache&quot;</span><span class="p">,</span>
+    <span class="n">cluster_size_cutoff</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">chain_overlap_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+    <span class="n">num_to_sample</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_chunks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span>
+    <span class="n">use_cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">num_cpu</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">pinder_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">config</span><span class="p">:</span> <span class="n">ClusterConfig</span> <span class="o">=</span> <span class="n">ClusterConfig</span><span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract sequence similarity / leakage by subsampling members in train split.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        index_file (str | None): Path to custom/intermediate index file, if not provided will use get_index().</span>
+<span class="sd">        metadata_file (str | None): Path to custom/intermediate metadata file, if not provided will use get_metadata().</span>
+<span class="sd">        test_table_file (str | None): Path to custom/intermediate test systems table, if not provided must provide pinder ingest directory via pinder_dir.</span>
+<span class="sd">        entity_metadata_file (str | None): Path to custom/intermediate entity metadata file, if not provided will use get_supplementary_data().</span>
+<span class="sd">        cache_path (str | Path): Directory to store cached alignments. Defaults to get_pinder_location() / &#39;data/similarity-cache&#39;.</span>
+<span class="sd">        cluster_size_cutoff (int): The minimum size of a train set cluster for sampling. Default is 20.</span>
+<span class="sd">        chain_overlap_threshold (float): Threshold for chain overlap in interface residues. Default is 0.3.</span>
+<span class="sd">        num_to_sample (int): The number of cluster elements to sample. Default is 1.</span>
+<span class="sd">        n_chunks (int): The number of sequence pair chunks to evaluate. Default is 100.</span>
+<span class="sd">        random_state (int): Random state for train set subsampling. Default is 42.</span>
+<span class="sd">        use_cache (bool): Whether to use cached alignments. Default is True.</span>
+<span class="sd">        num_cpu (int | None): Limit number of CPU used in multiprocessing. Default is None (use all).</span>
+<span class="sd">        pinder_dir (Path | None): Directory to pinder dataset generation directory. If not provided, will assume it is being run on local files / post-data gen.</span>
+<span class="sd">        config (ClusterConfig): The config object used to generate the clustering. Used to infer location of test_table_file if pinder_dir is provided.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Load absolutely necessary data</span>
+    <span class="n">pindex</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">)</span>
+
+    <span class="c1"># Make sure that we only keep valid entries</span>
+    <span class="n">pindex_valid</span> <span class="o">=</span> <span class="n">pindex</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]))</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;-1&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">pindex</span><span class="p">[</span><span class="s2">&quot;cluster_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;p_p&quot;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">test_table_file</span> <span class="ow">and</span> <span class="n">pinder_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Must provide one of test_table_file or pinder_dir!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pinder_dir</span> <span class="ow">and</span> <span class="n">test_table_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
+            <span class="n">pinder_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">pinder_dir</span><span class="p">)</span>
+        <span class="n">chk_dir</span> <span class="o">=</span> <span class="n">pinder_dir</span> <span class="o">/</span> <span class="s2">&quot;cluster&quot;</span> <span class="o">/</span> <span class="n">get_config_hash</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">test_table_file</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;test_subset.csv&quot;</span>
+        <span class="n">cache_path</span> <span class="o">=</span> <span class="n">chk_dir</span> <span class="o">/</span> <span class="s2">&quot;data/similarity-cache&quot;</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">test_table_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">),</span> <span class="s2">&quot;test_table_file not provided or could not automatically be located&quot;</span>
+    <span class="n">test_table_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">test_table_file</span><span class="p">)</span>
+
+    <span class="n">test_table</span> <span class="o">=</span> <span class="n">process_test_table</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">test_table_file</span><span class="p">),</span> <span class="n">pindex_valid</span><span class="p">)</span>
+
+    <span class="n">cache_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">cache_path</span><span class="p">)</span>
+    <span class="n">cache_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># subsample the train set</span>
+    <span class="n">sampled_train</span> <span class="o">=</span> <span class="n">subsample_train</span><span class="p">(</span>
+        <span class="n">pindex_valid</span><span class="p">,</span>
+        <span class="n">cluster_size_cutoff</span><span class="p">,</span>
+        <span class="n">num_to_sample</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="p">,</span>
+        <span class="n">cache_path</span><span class="p">,</span>
+        <span class="n">n_chunks</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Try to get alignments</span>
+    <span class="n">alignments_path</span> <span class="o">=</span> <span class="n">cache_path</span> <span class="o">/</span> <span class="s2">&quot;alignments&quot;</span>
+    <span class="n">alignments</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">use_cache</span> <span class="ow">and</span> <span class="n">alignments_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attempting to use cached alignments from </span><span class="si">{</span><span class="n">alignments_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">alignments</span> <span class="o">=</span> <span class="n">get_processed_alignments</span><span class="p">(</span><span class="n">alignments_path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">alignments</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;No cached alignments found. Creating alignments...&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">use_cache</span> <span class="ow">or</span> <span class="n">alignments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating alignments in </span><span class="si">{</span><span class="n">alignments_path</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading entities from </span><span class="si">{</span><span class="n">entity_metadata_file</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">load_entity_metadata</span><span class="p">(</span><span class="n">entity_metadata_file</span><span class="p">)</span>
+
+        <span class="c1"># Prepare sets of PDB chains from the sampled data</span>
+        <span class="n">sampled_train_pdb_chain</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_R&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sampled_train</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">sampled_train_pdb_chain</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_L&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sampled_train</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="n">sampled_test_pdb_chain</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_R&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">test_table</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">sampled_test_pdb_chain</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;pdb_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;chain_L&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">test_table</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Filter entities based on the sampled train and test PDB chains</span>
+        <span class="n">relevant_entry_ids</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sampled_train_pdb_chain</span> <span class="o">|</span> <span class="n">sampled_test_pdb_chain</span>
+        <span class="p">}</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="n">entities</span><span class="p">[</span><span class="n">entities</span><span class="p">[</span><span class="s2">&quot;entry_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">relevant_entry_ids</span><span class="p">)]</span>
+
+        <span class="c1"># Prepare sequences for alignment</span>
+        <span class="n">all_sequences</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span> <span class="n">seq</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s2">&quot;entry_id&quot;</span><span class="p">],</span> <span class="n">entities</span><span class="p">[</span><span class="s2">&quot;chain&quot;</span><span class="p">],</span> <span class="n">entities</span><span class="p">[</span><span class="s2">&quot;sequence&quot;</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">train_sequences</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">train_skipped_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sampled_train_pdb_chain</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">train_sequences</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">ProteinSequence</span><span class="p">(</span><span class="n">all_sequences</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+            <span class="k">except</span> <span class="n">AlphabetError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has a non-standard amino acid! Skipping&quot;</span><span class="p">)</span>
+                <span class="n">train_skipped_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipped </span><span class="si">{</span><span class="n">train_skipped_count</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sampled_train_pdb_chain</span><span class="p">)</span><span class="si">}</span><span class="s2"> train sequences&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">test_sequences</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">test_skipped_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sampled_test_pdb_chain</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">test_sequences</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">ProteinSequence</span><span class="p">(</span><span class="n">all_sequences</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+            <span class="k">except</span> <span class="n">AlphabetError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has a non-standard amino acid! Skipping&quot;</span><span class="p">)</span>
+                <span class="n">test_skipped_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Skipped </span><span class="si">{</span><span class="n">test_skipped_count</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sampled_test_pdb_chain</span><span class="p">)</span><span class="si">}</span><span class="s2"> test sequences&quot;</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Process alignments</span>
+        <span class="n">alignments_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">gen_alignments</span> <span class="o">=</span> <span class="n">generate_alignments</span><span class="p">(</span>
+            <span class="n">train_sequences</span><span class="p">,</span>
+            <span class="n">test_sequences</span><span class="p">,</span>
+            <span class="n">alignments_path</span><span class="p">,</span>
+            <span class="n">num_cpu</span><span class="p">,</span>
+            <span class="n">chain_overlap_threshold</span><span class="o">=</span><span class="n">chain_overlap_threshold</span><span class="p">,</span>
+            <span class="n">n_chunks</span><span class="o">=</span><span class="n">n_chunks</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total valid alignments processed: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">gen_alignments</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Further processing and setup for analysis...</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Processed data for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pindex_valid</span><span class="p">)</span><span class="si">}</span><span class="s2"> indexed entries and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">test_table</span><span class="p">)</span><span class="si">}</span><span class="s2"> test entries.&quot;</span>
+        <span class="p">)</span>
+        <span class="n">alignments</span> <span class="o">=</span> <span class="n">get_processed_alignments</span><span class="p">(</span><span class="n">alignments_path</span><span class="p">)</span>
+
+    <span class="n">train_system_id_mapping</span> <span class="o">=</span> <span class="n">load_train_system_id_mapping</span><span class="p">(</span><span class="n">sampled_train</span><span class="p">)</span>
+    <span class="c1"># train_systems = set(train_system_id_mapping.keys())</span>
+
+    <span class="n">analyze_leakage</span><span class="p">(</span>
+        <span class="n">test_table</span><span class="p">,</span>
+        <span class="n">alignments</span><span class="p">,</span>
+        <span class="n">train_system_id_mapping</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">,</span>
+        <span class="n">chain_overlap_threshold</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

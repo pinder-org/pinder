@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.data.pipeline package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.data.pipeline';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.data.pipeline.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.data.plot package" href="pinder.data.plot.html" />
+    <link rel="prev" title="pinder.data.annotation package" href="pinder.data.annotation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.core.html">pinder.core package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.annotation.html">pinder.data.annotation package</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.qc.html">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.eval.html">pinder.eval package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="pinder.data.html" class="nav-link">pinder.data package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.data.pipeline package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-data-pipeline-package">
+<h1>pinder.data.pipeline package<a class="headerlink" href="#pinder-data-pipeline-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.data.pipeline.cache">
+<span id="pinder-data-pipeline-cache-module"></span><h2>pinder.data.pipeline.cache module<a class="headerlink" href="#module-pinder.data.pipeline.cache" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.skip_step">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">skip_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_specific_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_specific_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L15-L26"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#skip_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.skip_step" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.get_uningested_mmcif">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">get_uningested_mmcif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ingest_cifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L29-L60"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#get_uningested_mmcif"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.get_uningested_mmcif" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.get_pisa_unannotated">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">get_pisa_unannotated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ingest_cifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_checkpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L63-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#get_pisa_unannotated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.get_pisa_unannotated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.complete_rcsb_annotation">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">complete_rcsb_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation_fp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L82-L87"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#complete_rcsb_annotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.complete_rcsb_annotation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.get_rcsb_unannotated">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">get_rcsb_unannotated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L90-L97"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#get_rcsb_unannotated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.get_rcsb_unannotated" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.get_unannotated_dimer_pdbs">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">get_unannotated_dimer_pdbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimer_pdbs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L100-L115"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#get_unannotated_dimer_pdbs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.get_unannotated_dimer_pdbs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.cache.get_dimer_pdbs_missing_foldseek_contacts">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.cache.</span></span><span class="sig-name descname"><span class="pre">get_dimer_pdbs_missing_foldseek_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimer_pdbs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/cache.py#L118-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/cache.html#get_dimer_pdbs_missing_foldseek_contacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.cache.get_dimer_pdbs_missing_foldseek_contacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.pipeline.constants">
+<span id="pinder-data-pipeline-constants-module"></span><h2>pinder.data.pipeline.constants module<a class="headerlink" href="#module-pinder.data.pipeline.constants" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-pinder.data.pipeline.data_pipeline">
+<span id="pinder-data-pipeline-data-pipeline-module"></span><h2>pinder.data.pipeline.data_pipeline module<a class="headerlink" href="#module-pinder.data.pipeline.data_pipeline" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.save_stage_metadata">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.data_pipeline.</span></span><span class="sig-name descname"><span class="pre">save_stage_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinder_mount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/data_pipeline.py#L176-L182"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#save_stage_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.save_stage_metadata" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.year_month">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.data_pipeline.</span></span><span class="sig-name descname"><span class="pre">year_month</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/data_pipeline.py#L185-L187"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#year_month"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.year_month" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.task_step">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.data_pipeline.</span></span><span class="sig-name descname"><span class="pre">task_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/data_pipeline.py#L190-L215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#task_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.task_step" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.scatter_step">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.data_pipeline.</span></span><span class="sig-name descname"><span class="pre">scatter_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">T</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/data_pipeline.py#L218-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#scatter_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.scatter_step" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.data_pipeline.</span></span><span class="sig-name descname"><span class="pre">DataIngestPipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'local'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_mount_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'/home/runner/.local/share/pinder'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_release</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2024-02'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.PinderDataGenConfig" title="pinder.data.config.PinderDataGenConfig"><span class="pre">PinderDataGenConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PinderDataGenConfig(interacting_chains_backbone_only=True,</span> <span class="pre">interacting_chains_radius=10.0,</span> <span class="pre">connected_component_radius=15.0,</span> <span class="pre">max_assembly_chains=500)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.ContactConfig" title="pinder.data.config.ContactConfig"><span class="pre">ContactConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ContactConfig(heavy_only=True,</span> <span class="pre">backbone_only=True,</span> <span class="pre">backbone_definition='dockq',</span> <span class="pre">radius=10.0,</span> <span class="pre">only_unique_resi=True,</span> <span class="pre">min_length=3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transient_interface_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.TransientInterfaceConfig" title="pinder.data.config.TransientInterfaceConfig"><span class="pre">TransientInterfaceConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">TransientInterfaceConfig(radius=2.3,</span> <span class="pre">min_buried_sasa=1000.0,</span> <span class="pre">disulfide_bond_distance=2.05,</span> <span class="pre">disulfide_bond_distance_tol=0.05,</span> <span class="pre">disulfide_bond_dihedral=90.0,</span> <span class="pre">disulfide_bond_dihedral_tol=10.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">foldseek_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.FoldseekConfig" title="pinder.data.config.FoldseekConfig"><span class="pre">FoldseekConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">FoldseekConfig(sensitivity=11.0,</span> <span class="pre">evalue=0.05,</span> <span class="pre">score_type='lddt',</span> <span class="pre">max_seqs=1000,</span> <span class="pre">alignment_type=2,</span> <span class="pre">alignment_filename='alignment.txt')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmseqs_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.MMSeqsConfig" title="pinder.data.config.MMSeqsConfig"><span class="pre">MMSeqsConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">MMSeqsConfig(sensitivity=11.0,</span> <span class="pre">evalue=0.05,</span> <span class="pre">score_type='pident',</span> <span class="pre">min_seq_id=0.2,</span> <span class="pre">max_seqs=1000,</span> <span class="pre">alignment_filename='alignment.txt')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scatter_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.ScatterConfig" title="pinder.data.config.ScatterConfig"><span class="pre">ScatterConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ScatterConfig(two_char_batch_size=2,</span> <span class="pre">mmcif_batch_size=250,</span> <span class="pre">graphql_batch_size=50000,</span> <span class="pre">dimer_batch_size=5000,</span> <span class="pre">predicted_batch_size=20000,</span> <span class="pre">foldseek_db_size=50000,</span> <span class="pre">apo_pairing_id_batch_size=20000)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.GraphConfig" title="pinder.data.config.GraphConfig"><span class="pre">GraphConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">GraphConfig(min_interface_length=7,</span> <span class="pre">min_alignment_length=10,</span> <span class="pre">score_threshold=0.5,</span> <span class="pre">upper_threshold=1.1,</span> <span class="pre">mmseqs_score_threshold=30.0,</span> <span class="pre">mmseqs_upper_threshold=110.0,</span> <span class="pre">coverage_threshold=0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.ClusterConfig" title="pinder.data.config.ClusterConfig"><span class="pre">ClusterConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ClusterConfig(seed=40,</span> <span class="pre">canonical_method='foldseek_community',</span> <span class="pre">edge_weight='weight',</span> <span class="pre">foldseek_cluster_edge_threshold=0.7,</span> <span class="pre">foldseek_edge_threshold=0.55,</span> <span class="pre">foldseek_af2_difficulty_threshold=0.7,</span> <span class="pre">mmseqs_edge_threshold=0.0,</span> <span class="pre">resolution_thr=3.5,</span> <span class="pre">min_chain_length=40,</span> <span class="pre">min_atom_types=3,</span> <span class="pre">max_var_thr=0.98,</span> <span class="pre">oligomeric_count=2,</span> <span class="pre">method='X-RAY</span> <span class="pre">DIFFRACTION',</span> <span class="pre">interface_atom_gaps_4A=0,</span> <span class="pre">prodigy_label='BIO',</span> <span class="pre">number_of_components=1,</span> <span class="pre">alphafold_cutoff_date='2021-10-01',</span> <span class="pre">depth_limit=2,</span> <span class="pre">max_node_degree=1000,</span> <span class="pre">top_n=1,</span> <span class="pre">min_depth_2_hits_with_comm=1,</span> <span class="pre">max_depth_2_hits_with_comm=2000,</span> <span class="pre">max_depth_2_hits=1000)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apo_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.ApoPairingConfig" title="pinder.data.config.ApoPairingConfig"><span class="pre">ApoPairingConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ApoPairingConfig(apo_chain='A',</span> <span class="pre">contact_rad=10.0,</span> <span class="pre">backbone_only=False,</span> <span class="pre">heavy_only=False,</span> <span class="pre">min_atom_types=3,</span> <span class="pre">min_residues=5,</span> <span class="pre">min_holo_resolved_frac=0.3,</span> <span class="pre">align_method='pymol',</span> <span class="pre">max_refine_rmsd=10.0,</span> <span class="pre">min_aligned_apo_res_frac=0.7,</span> <span class="pre">min_seq_identity=0.3,</span> <span class="pre">max_interface_miss_frac=0.3,</span> <span class="pre">max_frac_monomer_dimer_sequence=0.75,</span> <span class="pre">invalid_coverage_upper_bound=2.0,</span> <span class="pre">invalid_coverage_lower_bound=0.5,</span> <span class="pre">scaled_score_metrics=('I-RMSD',</span> <span class="pre">'refine_rmsd',</span> <span class="pre">'sequence_identity',</span> <span class="pre">'Fnat',</span> <span class="pre">'Fnonnat'))</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ialign_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pinder.data.html#pinder.data.config.IalignConfig" title="pinder.data.config.IalignConfig"><span class="pre">IalignConfig</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">IalignConfig(rmsd_threshold=5.0,</span> <span class="pre">log_pvalue_threshold=-9.0,</span> <span class="pre">is_score_threshold=0.3,</span> <span class="pre">alignment_printout=0,</span> <span class="pre">speed_mode=1,</span> <span class="pre">min_residues=5,</span> <span class="pre">min_interface=5,</span> <span class="pre">distance_cutoff=10.0,</span> <span class="pre">output_prefix='output')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_char_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_specific_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_specific_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">google_cloud_project</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'vantai-analysis'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/data_pipeline.py#L245-L967"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_stage">
+<span class="sig-name descname"><span class="pre">run_stage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stage_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specific_method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.run_stage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_stage" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_download_rcsb_files_tasks">
+<span class="sig-name descname"><span class="pre">generate_download_rcsb_files_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_download_rcsb_files_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_download_rcsb_files_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.download_rcsb_files">
+<span class="sig-name descname"><span class="pre">download_rcsb_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.download_rcsb_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.download_rcsb_files" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_cif_ingest_tasks">
+<span class="sig-name descname"><span class="pre">generate_cif_ingest_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_cif_ingest_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_cif_ingest_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.ingest_rcsb_files">
+<span class="sig-name descname"><span class="pre">ingest_rcsb_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmcif_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.ingest_rcsb_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.ingest_rcsb_files" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_pisa_annotation_tasks">
+<span class="sig-name descname"><span class="pre">generate_pisa_annotation_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_pisa_annotation_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_pisa_annotation_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_pisa_annotations">
+<span class="sig-name descname"><span class="pre">get_pisa_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mmcif_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_pisa_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_pisa_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_rcsb_annotation_tasks">
+<span class="sig-name descname"><span class="pre">generate_rcsb_annotation_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_rcsb_annotation_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_rcsb_annotation_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_rcsb_annotations">
+<span class="sig-name descname"><span class="pre">get_rcsb_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_rcsb_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_rcsb_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_rcsb_annotations">
+<span class="sig-name descname"><span class="pre">join_rcsb_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.join_rcsb_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_rcsb_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_dimer_annotation_tasks">
+<span class="sig-name descname"><span class="pre">generate_dimer_annotation_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_dimer_annotation_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_dimer_annotation_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_annotations">
+<span class="sig-name descname"><span class="pre">get_dimer_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimer_pdbs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_dimer_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_dimer_annotations">
+<span class="sig-name descname"><span class="pre">collect_dimer_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.collect_dimer_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_dimer_annotations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_contacts_tasks">
+<span class="sig-name descname"><span class="pre">generate_foldseek_contacts_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_foldseek_contacts_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_contacts_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_contacts">
+<span class="sig-name descname"><span class="pre">get_dimer_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimer_pdbs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_dimer_contacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_contacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_foldseek_contacts">
+<span class="sig-name descname"><span class="pre">collect_foldseek_contacts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.collect_foldseek_contacts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_foldseek_contacts" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_entry_tasks">
+<span class="sig-name descname"><span class="pre">generate_populate_entry_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_populate_entry_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_entry_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_entries">
+<span class="sig-name descname"><span class="pre">populate_entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry_dirs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.populate_entries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_entries" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_predicted_tasks">
+<span class="sig-name descname"><span class="pre">generate_populate_predicted_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_populate_predicted_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_predicted_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_predicted">
+<span class="sig-name descname"><span class="pre">populate_predicted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entry_dirs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.populate_predicted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_predicted" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.index_dimers">
+<span class="sig-name descname"><span class="pre">index_dimers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.index_dimers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.index_dimers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_predicted_monomers">
+<span class="sig-name descname"><span class="pre">add_predicted_monomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.add_predicted_monomers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_predicted_monomers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_valid_apo_monomers">
+<span class="sig-name descname"><span class="pre">get_valid_apo_monomers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_valid_apo_monomers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_valid_apo_monomers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_apo_pairing_metric_tasks">
+<span class="sig-name descname"><span class="pre">generate_apo_pairing_metric_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_apo_pairing_metric_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_apo_pairing_metric_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_apo_pairing_metrics">
+<span class="sig-name descname"><span class="pre">get_apo_pairing_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pairing_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_apo_pairing_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_apo_pairing_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_apo_pairing_metrics">
+<span class="sig-name descname"><span class="pre">join_apo_pairing_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.join_apo_pairing_metrics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_apo_pairing_metrics" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_apo_pairings_to_index">
+<span class="sig-name descname"><span class="pre">add_apo_pairings_to_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.add_apo_pairings_to_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_apo_pairings_to_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_foldseek_dbs">
+<span class="sig-name descname"><span class="pre">create_foldseek_dbs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.create_foldseek_dbs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_foldseek_dbs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_tasks">
+<span class="sig-name descname"><span class="pre">generate_foldseek_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_foldseek_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_foldseek">
+<span class="sig-name descname"><span class="pre">run_foldseek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.run_foldseek"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_foldseek" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_foldseek">
+<span class="sig-name descname"><span class="pre">join_foldseek</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.join_foldseek"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_foldseek" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_mmseqs_dbs">
+<span class="sig-name descname"><span class="pre">create_mmseqs_dbs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.create_mmseqs_dbs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_mmseqs_dbs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_mmseqs_tasks">
+<span class="sig-name descname"><span class="pre">generate_mmseqs_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_mmseqs_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_mmseqs_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_mmseqs">
+<span class="sig-name descname"><span class="pre">run_mmseqs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.run_mmseqs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_mmseqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_mmseqs">
+<span class="sig-name descname"><span class="pre">join_mmseqs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.join_mmseqs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_mmseqs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_interface_graph">
+<span class="sig-name descname"><span class="pre">construct_interface_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.construct_interface_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_interface_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_foldseek_graph">
+<span class="sig-name descname"><span class="pre">construct_foldseek_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.construct_foldseek_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_foldseek_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_mmseqs_graph">
+<span class="sig-name descname"><span class="pre">construct_mmseqs_graph</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.construct_mmseqs_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_mmseqs_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.cluster">
+<span class="sig-name descname"><span class="pre">cluster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.cluster"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.cluster" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_find_leakage_tasks">
+<span class="sig-name descname"><span class="pre">generate_find_leakage_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.generate_find_leakage_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_find_leakage_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.find_leakage">
+<span class="sig-name descname"><span class="pre">find_leakage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.find_leakage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.find_leakage" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_transitive_hits">
+<span class="sig-name descname"><span class="pre">get_transitive_hits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_transitive_hits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_transitive_hits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_af2_hard_difficulty_transitive_hits">
+<span class="sig-name descname"><span class="pre">get_af2_hard_difficulty_transitive_hits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_af2_hard_difficulty_transitive_hits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_af2_hard_difficulty_transitive_hits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_splits">
+<span class="sig-name descname"><span class="pre">get_splits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_splits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_splits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_alignment_similarity">
+<span class="sig-name descname"><span class="pre">get_alignment_similarity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_alignment_similarity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_alignment_similarity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_final_index">
+<span class="sig-name descname"><span class="pre">construct_final_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.construct_final_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_final_index" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_test_set">
+<span class="sig-name descname"><span class="pre">get_test_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/pinder/data/pipeline/data_pipeline.html#DataIngestPipeline.get_test_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_test_set" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pinder.data.pipeline.scatter">
+<span id="pinder-data-pipeline-scatter-module"></span><h2>pinder.data.pipeline.scatter module<a class="headerlink" href="#module-pinder.data.pipeline.scatter" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_collection">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L11-L56"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_collection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_collection" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Simple chunking algorithm with two possible constraints:</dt><dd><ol class="arabic simple">
+<li><p>the maximum number of items within a chunk</p></li>
+<li><p>the maximum total number of chunks</p></li>
+</ol>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Does not guarantee even packing across individual chunks.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – List
+the iterable to be chunked</p></li>
+<li><p><strong>batch_size</strong> – Optional[int], default=None
+the maximum number of items in a given chunk</p></li>
+<li><p><strong>num_batches</strong> – Optional[int], default=None
+the maximum number of chunks to be produced</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Generator[List[Any], List[Any], None]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>chunks</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_dict">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L59-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_dict" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_all_vs_all_indices">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_all_vs_all_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L68-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_all_vs_all_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_all_vs_all_indices" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_dict_with_indices">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_dict_with_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L84-L89"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_dict_with_indices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_dict_with_indices" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_dataframe">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L92-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_dataframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_dataframe" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.scatter.chunk_apo_pairing_ids">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.scatter.</span></span><span class="sig-name descname"><span class="pre">chunk_apo_pairing_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pinder_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/scatter.py#L101-L121"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/scatter.html#chunk_apo_pairing_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.scatter.chunk_apo_pairing_ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.pipeline.tasks">
+<span id="pinder-data-pipeline-tasks-module"></span><h2>pinder.data.pipeline.tasks module<a class="headerlink" href="#module-pinder.data.pipeline.tasks" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.cif_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">cif_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L23-L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#cif_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.cif_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.dimer_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">dimer_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L27-L28"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#dimer_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.dimer_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.entry_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">entry_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L31-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#entry_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.entry_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.two_char_code_rsync">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">two_char_code_rsync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L36-L41"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#two_char_code_rsync"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.two_char_code_rsync" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.pdb_id_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">pdb_id_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L44-L47"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#pdb_id_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.pdb_id_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.foldseek_pdb_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">foldseek_pdb_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L50-L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#foldseek_pdb_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.foldseek_pdb_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.graph_type_glob">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">graph_type_glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L54-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#graph_type_glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.graph_type_glob" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.putative_apo_pairings">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">putative_apo_pairings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L68-L84"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#putative_apo_pairings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.putative_apo_pairings" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.get_stage_inputs">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">get_stage_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L99-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#get_stage_inputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.get_stage_inputs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.get_cache_delta">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">get_cache_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L108-L114"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#get_cache_delta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.get_cache_delta" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.get_stage_tasks">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">get_stage_tasks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data_dir:</span> <span class="pre">~pathlib.Path,</span> <span class="pre">input_type:</span> <span class="pre">str,</span> <span class="pre">batch_size:</span> <span class="pre">int,</span> <span class="pre">cache_func:</span> <span class="pre">~typing.Callable[[...],</span> <span class="pre">list[str]</span> <span class="pre">|</span> <span class="pre">list[~pathlib.Path]]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">cache_kwargs:</span> <span class="pre">dict[str,</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~pathlib.Path</span> <span class="pre">|</span> <span class="pre">bool]</span> <span class="pre">=</span> <span class="pre">{},</span> <span class="pre">scatter_method:</span> <span class="pre">~typing.Callable[[...],</span> <span class="pre">~typing.Generator[~typing.Any,</span> <span class="pre">~typing.Any,</span> <span class="pre">None]]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">chunk_collection&gt;,</span> <span class="pre">scatter_kwargs:</span> <span class="pre">dict[str,</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~pathlib.Path</span> <span class="pre">|</span> <span class="pre">bool]</span> <span class="pre">=</span> <span class="pre">{}</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L117-L138"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#get_stage_tasks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.get_stage_tasks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pinder.data.pipeline.tasks.run_task">
+<span class="sig-prename descclassname"><span class="pre">pinder.data.pipeline.tasks.</span></span><span class="sig-name descname"><span class="pre">run_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task_func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable_kwarg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/pinder-org/pinder/blob/v0.1.dev1+g20487ac/src/pinder/data/pipeline/tasks.py#L141-L181"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="reference internal" href="../_modules/pinder/data/pipeline/tasks.html#run_task"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pinder.data.pipeline.tasks.run_task" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pinder.data.pipeline">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.data.pipeline" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline.cache">pinder.data.pipeline.cache module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.skip_step"><code class="docutils literal notranslate"><span class="pre">skip_step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.get_uningested_mmcif"><code class="docutils literal notranslate"><span class="pre">get_uningested_mmcif()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.get_pisa_unannotated"><code class="docutils literal notranslate"><span class="pre">get_pisa_unannotated()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.complete_rcsb_annotation"><code class="docutils literal notranslate"><span class="pre">complete_rcsb_annotation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.get_rcsb_unannotated"><code class="docutils literal notranslate"><span class="pre">get_rcsb_unannotated()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.get_unannotated_dimer_pdbs"><code class="docutils literal notranslate"><span class="pre">get_unannotated_dimer_pdbs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.cache.get_dimer_pdbs_missing_foldseek_contacts"><code class="docutils literal notranslate"><span class="pre">get_dimer_pdbs_missing_foldseek_contacts()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline.constants">pinder.data.pipeline.constants module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline.data_pipeline">pinder.data.pipeline.data_pipeline module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.save_stage_metadata"><code class="docutils literal notranslate"><span class="pre">save_stage_metadata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.year_month"><code class="docutils literal notranslate"><span class="pre">year_month()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.task_step"><code class="docutils literal notranslate"><span class="pre">task_step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.scatter_step"><code class="docutils literal notranslate"><span class="pre">scatter_step()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.run()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_stage"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.run_stage()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_download_rcsb_files_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_download_rcsb_files_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.download_rcsb_files"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.download_rcsb_files()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_cif_ingest_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_cif_ingest_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.ingest_rcsb_files"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.ingest_rcsb_files()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_pisa_annotation_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_pisa_annotation_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_pisa_annotations"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_pisa_annotations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_rcsb_annotation_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_rcsb_annotation_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_rcsb_annotations"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_rcsb_annotations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_rcsb_annotations"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.join_rcsb_annotations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_dimer_annotation_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_dimer_annotation_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_annotations"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_dimer_annotations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_dimer_annotations"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.collect_dimer_annotations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_contacts_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_foldseek_contacts_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_dimer_contacts"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_dimer_contacts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.collect_foldseek_contacts"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.collect_foldseek_contacts()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_entry_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_populate_entry_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_entries"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.populate_entries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_populate_predicted_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_populate_predicted_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.populate_predicted"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.populate_predicted()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.index_dimers"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.index_dimers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_predicted_monomers"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.add_predicted_monomers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_valid_apo_monomers"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_valid_apo_monomers()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_apo_pairing_metric_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_apo_pairing_metric_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_apo_pairing_metrics"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_apo_pairing_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_apo_pairing_metrics"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.join_apo_pairing_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.add_apo_pairings_to_index"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.add_apo_pairings_to_index()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_foldseek_dbs"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.create_foldseek_dbs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_foldseek_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_foldseek_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_foldseek"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.run_foldseek()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_foldseek"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.join_foldseek()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.create_mmseqs_dbs"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.create_mmseqs_dbs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_mmseqs_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_mmseqs_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.run_mmseqs"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.run_mmseqs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.join_mmseqs"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.join_mmseqs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_interface_graph"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.construct_interface_graph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_foldseek_graph"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.construct_foldseek_graph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_mmseqs_graph"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.construct_mmseqs_graph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.cluster"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.cluster()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.generate_find_leakage_tasks"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.generate_find_leakage_tasks()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.find_leakage"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.find_leakage()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_transitive_hits"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_transitive_hits()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_af2_hard_difficulty_transitive_hits"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_af2_hard_difficulty_transitive_hits()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_splits"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_splits()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_alignment_similarity"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_alignment_similarity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.construct_final_index"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.construct_final_index()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.data_pipeline.DataIngestPipeline.get_test_set"><code class="docutils literal notranslate"><span class="pre">DataIngestPipeline.get_test_set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline.scatter">pinder.data.pipeline.scatter module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_collection"><code class="docutils literal notranslate"><span class="pre">chunk_collection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_dict"><code class="docutils literal notranslate"><span class="pre">chunk_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_all_vs_all_indices"><code class="docutils literal notranslate"><span class="pre">chunk_all_vs_all_indices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_dict_with_indices"><code class="docutils literal notranslate"><span class="pre">chunk_dict_with_indices()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_dataframe"><code class="docutils literal notranslate"><span class="pre">chunk_dataframe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.scatter.chunk_apo_pairing_ids"><code class="docutils literal notranslate"><span class="pre">chunk_apo_pairing_ids()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline.tasks">pinder.data.pipeline.tasks module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.cif_glob"><code class="docutils literal notranslate"><span class="pre">cif_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.dimer_glob"><code class="docutils literal notranslate"><span class="pre">dimer_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.entry_glob"><code class="docutils literal notranslate"><span class="pre">entry_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.two_char_code_rsync"><code class="docutils literal notranslate"><span class="pre">two_char_code_rsync()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.pdb_id_glob"><code class="docutils literal notranslate"><span class="pre">pdb_id_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.foldseek_pdb_glob"><code class="docutils literal notranslate"><span class="pre">foldseek_pdb_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.graph_type_glob"><code class="docutils literal notranslate"><span class="pre">graph_type_glob()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.putative_apo_pairings"><code class="docutils literal notranslate"><span class="pre">putative_apo_pairings()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.get_stage_inputs"><code class="docutils literal notranslate"><span class="pre">get_stage_inputs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.get_cache_delta"><code class="docutils literal notranslate"><span class="pre">get_cache_delta()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.get_stage_tasks"><code class="docutils literal notranslate"><span class="pre">get_stage_tasks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder.data.pipeline.tasks.run_task"><code class="docutils literal notranslate"><span class="pre">run_task()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.data.pipeline">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.data.pipeline.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.data.pipeline.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

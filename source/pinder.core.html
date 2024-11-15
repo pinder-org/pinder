@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pinder.core package &#8212; PINDER 0.1.dev1+g20487ac documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=16cc9b0e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'source/pinder.core';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/source/pinder.core.html" />
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pinder.core.index package" href="pinder.core.index.html" />
+    <link rel="prev" title="API reference" href="pinder.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+g20487ac" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+    <img src="../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+g20487ac documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">pinder.core package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.data.html">pinder.data package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.annotation.html">pinder.data.annotation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.pipeline.html">pinder.data.pipeline package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.plot.html">pinder.data.plot package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.data.qc.html">pinder.data.qc package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.eval.html">pinder.eval package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.clashes.html">pinder.eval.clashes package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.eval.dockq.html">pinder.eval.dockq package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pinder.methods.html">pinder.methods package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.preprocess.html">pinder.methods.preprocess package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="pinder.methods.run.html">pinder.methods.run package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.af2mm.html">pinder.methods.run.af2mm package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.frodock.html">pinder.methods.run.frodock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.hdock.html">pinder.methods.run.hdock package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.methods.run.patchdock.html">pinder.methods.run.patchdock package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.methods.train.html">pinder.methods.train package</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="pinder.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pinder-core-package">
+<h1>pinder.core package<a class="headerlink" href="#pinder-core-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pinder.core.index.html">pinder.core.index package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html#module-pinder.core.index.id">pinder.core.index.id module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein"><code class="docutils literal notranslate"><span class="pre">Protein</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein.source"><code class="docutils literal notranslate"><span class="pre">Protein.source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein.uniprot"><code class="docutils literal notranslate"><span class="pre">Protein.uniprot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein.chain"><code class="docutils literal notranslate"><span class="pre">Protein.chain</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein.from_residue"><code class="docutils literal notranslate"><span class="pre">Protein.from_residue</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Protein.to_residue"><code class="docutils literal notranslate"><span class="pre">Protein.to_residue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Monomer"><code class="docutils literal notranslate"><span class="pre">Monomer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Monomer.proteins"><code class="docutils literal notranslate"><span class="pre">Monomer.proteins</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Monomer.side"><code class="docutils literal notranslate"><span class="pre">Monomer.side</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Monomer.from_string"><code class="docutils literal notranslate"><span class="pre">Monomer.from_string()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Dimer"><code class="docutils literal notranslate"><span class="pre">Dimer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Dimer.monomer1"><code class="docutils literal notranslate"><span class="pre">Dimer.monomer1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Dimer.monomer2"><code class="docutils literal notranslate"><span class="pre">Dimer.monomer2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.id.Dimer.from_string"><code class="docutils literal notranslate"><span class="pre">Dimer.from_string()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html#module-pinder.core.index.system">pinder.core.index.system module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames"><code class="docutils literal notranslate"><span class="pre">FolderNames</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames.apo"><code class="docutils literal notranslate"><span class="pre">FolderNames.apo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames.holo"><code class="docutils literal notranslate"><span class="pre">FolderNames.holo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames.predicted"><code class="docutils literal notranslate"><span class="pre">FolderNames.predicted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames.alphafold"><code class="docutils literal notranslate"><span class="pre">FolderNames.alphafold</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.FolderNames.af2"><code class="docutils literal notranslate"><span class="pre">FolderNames.af2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.unbound_rmsd_with_mask_fallback"><code class="docutils literal notranslate"><span class="pre">unbound_rmsd_with_mask_fallback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem"><code class="docutils literal notranslate"><span class="pre">PinderSystem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.entry"><code class="docutils literal notranslate"><span class="pre">PinderSystem.entry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.pdbs_path"><code class="docutils literal notranslate"><span class="pre">PinderSystem.pdbs_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.mappings_path"><code class="docutils literal notranslate"><span class="pre">PinderSystem.mappings_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.native"><code class="docutils literal notranslate"><span class="pre">PinderSystem.native</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.holo_receptor"><code class="docutils literal notranslate"><span class="pre">PinderSystem.holo_receptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.holo_ligand"><code class="docutils literal notranslate"><span class="pre">PinderSystem.holo_ligand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.aligned_holo_R"><code class="docutils literal notranslate"><span class="pre">PinderSystem.aligned_holo_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.aligned_holo_L"><code class="docutils literal notranslate"><span class="pre">PinderSystem.aligned_holo_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.apo_receptor"><code class="docutils literal notranslate"><span class="pre">PinderSystem.apo_receptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.apo_ligand"><code class="docutils literal notranslate"><span class="pre">PinderSystem.apo_ligand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.pred_receptor"><code class="docutils literal notranslate"><span class="pre">PinderSystem.pred_receptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.pred_ligand"><code class="docutils literal notranslate"><span class="pre">PinderSystem.pred_ligand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.filter_common_uniprot_res"><code class="docutils literal notranslate"><span class="pre">PinderSystem.filter_common_uniprot_res()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.create_masked_bound_unbound_complexes"><code class="docutils literal notranslate"><span class="pre">PinderSystem.create_masked_bound_unbound_complexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.create_complex"><code class="docutils literal notranslate"><span class="pre">PinderSystem.create_complex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.create_apo_complex"><code class="docutils literal notranslate"><span class="pre">PinderSystem.create_apo_complex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.create_pred_complex"><code class="docutils literal notranslate"><span class="pre">PinderSystem.create_pred_complex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.unbound_rmsd"><code class="docutils literal notranslate"><span class="pre">PinderSystem.unbound_rmsd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.unbound_difficulty"><code class="docutils literal notranslate"><span class="pre">PinderSystem.unbound_difficulty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.apo_monomer_difficulty"><code class="docutils literal notranslate"><span class="pre">PinderSystem.apo_monomer_difficulty()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.download_entry"><code class="docutils literal notranslate"><span class="pre">PinderSystem.download_entry()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.filepaths"><code class="docutils literal notranslate"><span class="pre">PinderSystem.filepaths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.metadata"><code class="docutils literal notranslate"><span class="pre">PinderSystem.metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.pymol_script"><code class="docutils literal notranslate"><span class="pre">PinderSystem.pymol_script</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.load_alt_apo_structure"><code class="docutils literal notranslate"><span class="pre">PinderSystem.load_alt_apo_structure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.system.PinderSystem.load_structure"><code class="docutils literal notranslate"><span class="pre">PinderSystem.load_structure()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html#module-pinder.core.index.utils">pinder.core.index.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_pinder_location"><code class="docutils literal notranslate"><span class="pre">get_pinder_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_pinder_bucket_root"><code class="docutils literal notranslate"><span class="pre">get_pinder_bucket_root()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_index_location"><code class="docutils literal notranslate"><span class="pre">get_index_location()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_index"><code class="docutils literal notranslate"><span class="pre">get_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_metadata"><code class="docutils literal notranslate"><span class="pre">get_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_extra_metadata"><code class="docutils literal notranslate"><span class="pre">get_extra_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData"><code class="docutils literal notranslate"><span class="pre">SupplementaryData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.sequence_database"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.sequence_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.supplementary_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.supplementary_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.entity_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.entity_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.chain_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.chain_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.ecod_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.ecod_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.enzyme_classification_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.enzyme_classification_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.interface_annotations"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.interface_annotations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.sabdab_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.sabdab_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.monomer_neff"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.monomer_neff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.paired_neff"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.paired_neff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.transient_interface_metadata"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.transient_interface_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.SupplementaryData.ialign_split_similarity_labels"><code class="docutils literal notranslate"><span class="pre">SupplementaryData.ialign_split_similarity_labels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_supplementary_data"><code class="docutils literal notranslate"><span class="pre">get_supplementary_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_sequence_database"><code class="docutils literal notranslate"><span class="pre">get_sequence_database()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.download_dataset"><code class="docutils literal notranslate"><span class="pre">download_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_arg_parser_args"><code class="docutils literal notranslate"><span class="pre">get_arg_parser_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.download_pinder_cmd"><code class="docutils literal notranslate"><span class="pre">download_pinder_cmd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.update_index_cmd"><code class="docutils literal notranslate"><span class="pre">update_index_cmd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.get_missing_blobs"><code class="docutils literal notranslate"><span class="pre">get_missing_blobs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.sync_pinder_structure_data"><code class="docutils literal notranslate"><span class="pre">sync_pinder_structure_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry"><code class="docutils literal notranslate"><span class="pre">IndexEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.model_config"><code class="docutils literal notranslate"><span class="pre">IndexEntry.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.split"><code class="docutils literal notranslate"><span class="pre">IndexEntry.split</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.id"><code class="docutils literal notranslate"><span class="pre">IndexEntry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pdb_id"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pdb_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.cluster_id"><code class="docutils literal notranslate"><span class="pre">IndexEntry.cluster_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.cluster_id_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.cluster_id_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.cluster_id_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.cluster_id_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pinder_s"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pinder_s</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pinder_xl"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pinder_xl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pinder_af2"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pinder_af2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.uniprot_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.uniprot_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.uniprot_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.uniprot_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.holo_R_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.holo_R_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.holo_L_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.holo_L_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.predicted_R_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.predicted_R_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.predicted_L_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.predicted_L_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_R_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_R_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_L_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_L_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_R_pdbs"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_R_pdbs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_L_pdbs"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_L_pdbs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.holo_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.holo_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.holo_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.holo_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.predicted_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.predicted_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.predicted_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.predicted_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_R_quality"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_R_quality</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_L_quality"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_L_quality</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.chain1_neff"><code class="docutils literal notranslate"><span class="pre">IndexEntry.chain1_neff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.chain2_neff"><code class="docutils literal notranslate"><span class="pre">IndexEntry.chain2_neff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.chain_R"><code class="docutils literal notranslate"><span class="pre">IndexEntry.chain_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.chain_L"><code class="docutils literal notranslate"><span class="pre">IndexEntry.chain_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.contains_antibody"><code class="docutils literal notranslate"><span class="pre">IndexEntry.contains_antibody</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.contains_antigen"><code class="docutils literal notranslate"><span class="pre">IndexEntry.contains_antigen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.contains_enzyme"><code class="docutils literal notranslate"><span class="pre">IndexEntry.contains_enzyme</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pdb_path"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pdb_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.mapping_path"><code class="docutils literal notranslate"><span class="pre">IndexEntry.mapping_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pdb_paths"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pdb_paths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.mapping_paths"><code class="docutils literal notranslate"><span class="pre">IndexEntry.mapping_paths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pinder_id"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pinder_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.pinder_pdb"><code class="docutils literal notranslate"><span class="pre">IndexEntry.pinder_pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_R_alt"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_R_alt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.apo_L_alt"><code class="docutils literal notranslate"><span class="pre">IndexEntry.apo_L_alt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.homodimer"><code class="docutils literal notranslate"><span class="pre">IndexEntry.homodimer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.test_system"><code class="docutils literal notranslate"><span class="pre">IndexEntry.test_system</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">IndexEntry.model_computed_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.IndexEntry.model_fields"><code class="docutils literal notranslate"><span class="pre">IndexEntry.model_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry"><code class="docutils literal notranslate"><span class="pre">MetadataEntry</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.model_config"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.id"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.entry_id"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.entry_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.method"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.method</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.date"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.release_date"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.release_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.resolution"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.resolution</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.label"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.label</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.probability"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.probability</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.chain1_id"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.chain1_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.chain2_id"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.chain2_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.assembly"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.assembly</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.assembly_details"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.assembly_details</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.oligomeric_details"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.oligomeric_details</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.oligomeric_count"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.oligomeric_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.biol_details"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.biol_details</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.complex_type"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.complex_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.chain_1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.chain_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.asym_id_1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.asym_id_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.chain_2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.chain_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.asym_id_2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.asym_id_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.length1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.length1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.length2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.length2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.length_resolved_1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.length_resolved_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.length_resolved_2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.length_resolved_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.number_of_components_1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.number_of_components_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.number_of_components_2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.number_of_components_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.link_density"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.link_density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.planarity"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.planarity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.max_var_1"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.max_var_1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.max_var_2"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.max_var_2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.num_atom_types"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.num_atom_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.n_residue_pairs"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.n_residue_pairs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.n_residues"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.n_residues</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.buried_sasa"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.buried_sasa</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.intermolecular_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.intermolecular_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.charged_charged_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.charged_charged_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.charged_polar_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.charged_polar_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.charged_apolar_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.charged_apolar_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.polar_polar_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.polar_polar_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.apolar_polar_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.apolar_polar_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.apolar_apolar_contacts"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.apolar_apolar_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.interface_atom_gaps_4A"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.interface_atom_gaps_4A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.missing_interface_residues_4A"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.missing_interface_residues_4A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.interface_atom_gaps_8A"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.interface_atom_gaps_8A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.missing_interface_residues_8A"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.missing_interface_residues_8A</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.entity_id_R"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.entity_id_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.entity_id_L"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.entity_id_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.pdb_strand_id_R"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.pdb_strand_id_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.pdb_strand_id_L"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.pdb_strand_id_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.ECOD_names_R"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.ECOD_names_R</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.ECOD_names_L"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.ECOD_names_L</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.pinder_id"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.pinder_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.model_computed_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.MetadataEntry.model_fields"><code class="docutils literal notranslate"><span class="pre">MetadataEntry.model_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.fix_index"><code class="docutils literal notranslate"><span class="pre">fix_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.fix_metadata"><code class="docutils literal notranslate"><span class="pre">fix_metadata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.downcast_dtypes"><code class="docutils literal notranslate"><span class="pre">downcast_dtypes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.index.html#pinder.core.index.utils.set_mapping_column_types"><code class="docutils literal notranslate"><span class="pre">set_mapping_column_types()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.index.html#module-pinder.core.index">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pinder.core.loader.html">pinder.core.loader package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.dataset">pinder.core.loader.dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.structure2tensor_transform"><code class="docutils literal notranslate"><span class="pre">structure2tensor_transform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.pad_to_max_length"><code class="docutils literal notranslate"><span class="pre">pad_to_max_length()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.pad_and_stack"><code class="docutils literal notranslate"><span class="pre">pad_and_stack()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.collate_complex"><code class="docutils literal notranslate"><span class="pre">collate_complex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.collate_batch"><code class="docutils literal notranslate"><span class="pre">collate_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PinderDataset"><code class="docutils literal notranslate"><span class="pre">PinderDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset"><code class="docutils literal notranslate"><span class="pre">PPIDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.raw_file_names"><code class="docutils literal notranslate"><span class="pre">PPIDataset.raw_file_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.processed_file_names"><code class="docutils literal notranslate"><span class="pre">PPIDataset.processed_file_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.process_single_file"><code class="docutils literal notranslate"><span class="pre">PPIDataset.process_single_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.process_single_file_parallel"><code class="docutils literal notranslate"><span class="pre">PPIDataset.process_single_file_parallel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.process_parallel"><code class="docutils literal notranslate"><span class="pre">PPIDataset.process_parallel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.process"><code class="docutils literal notranslate"><span class="pre">PPIDataset.process()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.len"><code class="docutils literal notranslate"><span class="pre">PPIDataset.len()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.get"><code class="docutils literal notranslate"><span class="pre">PPIDataset.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.get_filename"><code class="docutils literal notranslate"><span class="pre">PPIDataset.get_filename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.get_filename_idx"><code class="docutils literal notranslate"><span class="pre">PPIDataset.get_filename_idx()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.PPIDataset.load_filename"><code class="docutils literal notranslate"><span class="pre">PPIDataset.load_filename()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.get_geo_loader"><code class="docutils literal notranslate"><span class="pre">get_geo_loader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.dataset.get_torch_loader"><code class="docutils literal notranslate"><span class="pre">get_torch_loader()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.filters">pinder.core.loader.filters module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.PinderFilterBase"><code class="docutils literal notranslate"><span class="pre">PinderFilterBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.PinderFilterBase.filter"><code class="docutils literal notranslate"><span class="pre">PinderFilterBase.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.StructureFilter"><code class="docutils literal notranslate"><span class="pre">StructureFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.StructureFilter.filter"><code class="docutils literal notranslate"><span class="pre">StructureFilter.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.MinAtomTypesFilter"><code class="docutils literal notranslate"><span class="pre">MinAtomTypesFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.MinAtomTypesFilter.filter"><code class="docutils literal notranslate"><span class="pre">MinAtomTypesFilter.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterMetadataFields"><code class="docutils literal notranslate"><span class="pre">FilterMetadataFields</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterMetadataFields.filter"><code class="docutils literal notranslate"><span class="pre">FilterMetadataFields.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.ChainQuery"><code class="docutils literal notranslate"><span class="pre">ChainQuery</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.ChainQuery.query"><code class="docutils literal notranslate"><span class="pre">ChainQuery.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.DualChainQuery"><code class="docutils literal notranslate"><span class="pre">DualChainQuery</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.DualChainQuery.query"><code class="docutils literal notranslate"><span class="pre">DualChainQuery.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.ResidueCount"><code class="docutils literal notranslate"><span class="pre">ResidueCount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.ResidueCount.check_length"><code class="docutils literal notranslate"><span class="pre">ResidueCount.check_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.ResidueCount.query"><code class="docutils literal notranslate"><span class="pre">ResidueCount.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.AtomTypeCount"><code class="docutils literal notranslate"><span class="pre">AtomTypeCount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.AtomTypeCount.check_length"><code class="docutils literal notranslate"><span class="pre">AtomTypeCount.check_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.AtomTypeCount.query"><code class="docutils literal notranslate"><span class="pre">AtomTypeCount.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CompleteBackBone"><code class="docutils literal notranslate"><span class="pre">CompleteBackBone</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CompleteBackBone.check_backbone"><code class="docutils literal notranslate"><span class="pre">CompleteBackBone.check_backbone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CompleteBackBone.query"><code class="docutils literal notranslate"><span class="pre">CompleteBackBone.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CheckChainElongation"><code class="docutils literal notranslate"><span class="pre">CheckChainElongation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CheckChainElongation.get_max_var"><code class="docutils literal notranslate"><span class="pre">CheckChainElongation.get_max_var()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.DetachedChainQuery"><code class="docutils literal notranslate"><span class="pre">DetachedChainQuery</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.DetachedChainQuery.query"><code class="docutils literal notranslate"><span class="pre">DetachedChainQuery.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CheckContacts"><code class="docutils literal notranslate"><span class="pre">CheckContacts</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.CheckContacts.query"><code class="docutils literal notranslate"><span class="pre">CheckContacts.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByResidueCount"><code class="docutils literal notranslate"><span class="pre">FilterByResidueCount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByResidueCount.filter"><code class="docutils literal notranslate"><span class="pre">FilterByResidueCount.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByMissingHolo"><code class="docutils literal notranslate"><span class="pre">FilterByMissingHolo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByMissingHolo.filter"><code class="docutils literal notranslate"><span class="pre">FilterByMissingHolo.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByContacts"><code class="docutils literal notranslate"><span class="pre">FilterSubByContacts</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByContacts.filter"><code class="docutils literal notranslate"><span class="pre">FilterSubByContacts.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloElongation"><code class="docutils literal notranslate"><span class="pre">FilterByHoloElongation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloElongation.filter"><code class="docutils literal notranslate"><span class="pre">FilterByHoloElongation.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterDetachedHolo"><code class="docutils literal notranslate"><span class="pre">FilterDetachedHolo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterDetachedHolo.filter"><code class="docutils literal notranslate"><span class="pre">FilterDetachedHolo.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.PinderFilterSubBase"><code class="docutils literal notranslate"><span class="pre">PinderFilterSubBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.PinderFilterSubBase.filter"><code class="docutils literal notranslate"><span class="pre">PinderFilterSubBase.filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.PinderFilterSubBase.filter_by_chain_query"><code class="docutils literal notranslate"><span class="pre">PinderFilterSubBase.filter_by_chain_query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubLengths"><code class="docutils literal notranslate"><span class="pre">FilterSubLengths</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubLengths.filter"><code class="docutils literal notranslate"><span class="pre">FilterSubLengths.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubRmsds"><code class="docutils literal notranslate"><span class="pre">FilterSubRmsds</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubRmsds.filter"><code class="docutils literal notranslate"><span class="pre">FilterSubRmsds.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloOverlap"><code class="docutils literal notranslate"><span class="pre">FilterByHoloOverlap</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloOverlap.filter"><code class="docutils literal notranslate"><span class="pre">FilterByHoloOverlap.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloSeqIdentity"><code class="docutils literal notranslate"><span class="pre">FilterByHoloSeqIdentity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByHoloSeqIdentity.filter"><code class="docutils literal notranslate"><span class="pre">FilterByHoloSeqIdentity.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByAtomTypes"><code class="docutils literal notranslate"><span class="pre">FilterSubByAtomTypes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByAtomTypes.filter"><code class="docutils literal notranslate"><span class="pre">FilterSubByAtomTypes.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByChainQuery"><code class="docutils literal notranslate"><span class="pre">FilterSubByChainQuery</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterSubByChainQuery.filter"><code class="docutils literal notranslate"><span class="pre">FilterSubByChainQuery.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByElongation"><code class="docutils literal notranslate"><span class="pre">FilterByElongation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterByElongation.filter"><code class="docutils literal notranslate"><span class="pre">FilterByElongation.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterDetachedSub"><code class="docutils literal notranslate"><span class="pre">FilterDetachedSub</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.filters.FilterDetachedSub.filter"><code class="docutils literal notranslate"><span class="pre">FilterDetachedSub.filter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.geodata">pinder.core.loader.geodata module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.structure2tensor"><code class="docutils literal notranslate"><span class="pre">structure2tensor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.NodeRepresentation"><code class="docutils literal notranslate"><span class="pre">NodeRepresentation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.NodeRepresentation.Surface"><code class="docutils literal notranslate"><span class="pre">NodeRepresentation.Surface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.NodeRepresentation.Atom"><code class="docutils literal notranslate"><span class="pre">NodeRepresentation.Atom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.NodeRepresentation.Residue"><code class="docutils literal notranslate"><span class="pre">NodeRepresentation.Residue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.PairedPDB"><code class="docutils literal notranslate"><span class="pre">PairedPDB</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.PairedPDB.from_pinder_system"><code class="docutils literal notranslate"><span class="pre">PairedPDB.from_pinder_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.geodata.PairedPDB.from_structure_pair"><code class="docutils literal notranslate"><span class="pre">PairedPDB.from_structure_pair()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.loader">pinder.core.loader.loader module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.get_systems"><code class="docutils literal notranslate"><span class="pre">get_systems()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.get_available_monomers"><code class="docutils literal notranslate"><span class="pre">get_available_monomers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.get_alternate_apo_codes"><code class="docutils literal notranslate"><span class="pre">get_alternate_apo_codes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.select_monomer"><code class="docutils literal notranslate"><span class="pre">select_monomer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.PinderLoader"><code class="docutils literal notranslate"><span class="pre">PinderLoader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.PinderLoader.apply_structure_filters"><code class="docutils literal notranslate"><span class="pre">PinderLoader.apply_structure_filters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.loader.PinderLoader.apply_dimer_filters"><code class="docutils literal notranslate"><span class="pre">PinderLoader.apply_dimer_filters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.structure">pinder.core.loader.structure module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.reverse_dict"><code class="docutils literal notranslate"><span class="pre">reverse_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure"><code class="docutils literal notranslate"><span class="pre">Structure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.filepath"><code class="docutils literal notranslate"><span class="pre">Structure.filepath</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.uniprot_map"><code class="docutils literal notranslate"><span class="pre">Structure.uniprot_map</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.pinder_id"><code class="docutils literal notranslate"><span class="pre">Structure.pinder_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.atom_array"><code class="docutils literal notranslate"><span class="pre">Structure.atom_array</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.pdb_engine"><code class="docutils literal notranslate"><span class="pre">Structure.pdb_engine</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.read_pdb"><code class="docutils literal notranslate"><span class="pre">Structure.read_pdb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.to_pdb"><code class="docutils literal notranslate"><span class="pre">Structure.to_pdb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.filter"><code class="docutils literal notranslate"><span class="pre">Structure.filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.set_chain"><code class="docutils literal notranslate"><span class="pre">Structure.set_chain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.get_per_chain_seq_alignments"><code class="docutils literal notranslate"><span class="pre">Structure.get_per_chain_seq_alignments()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.align_common_sequence"><code class="docutils literal notranslate"><span class="pre">Structure.align_common_sequence()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.get_contacts"><code class="docutils literal notranslate"><span class="pre">Structure.get_contacts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.get_interface_mask"><code class="docutils literal notranslate"><span class="pre">Structure.get_interface_mask()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.get_interface_residues"><code class="docutils literal notranslate"><span class="pre">Structure.get_interface_residues()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.superimpose"><code class="docutils literal notranslate"><span class="pre">Structure.superimpose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.uniprot_mapping"><code class="docutils literal notranslate"><span class="pre">Structure.uniprot_mapping</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.resolved_mapping"><code class="docutils literal notranslate"><span class="pre">Structure.resolved_mapping</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.resolved_pdb2uniprot"><code class="docutils literal notranslate"><span class="pre">Structure.resolved_pdb2uniprot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.resolved_uniprot2pdb"><code class="docutils literal notranslate"><span class="pre">Structure.resolved_uniprot2pdb</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.coords"><code class="docutils literal notranslate"><span class="pre">Structure.coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.dataframe"><code class="docutils literal notranslate"><span class="pre">Structure.dataframe</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.backbone_mask"><code class="docutils literal notranslate"><span class="pre">Structure.backbone_mask</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.calpha_mask"><code class="docutils literal notranslate"><span class="pre">Structure.calpha_mask</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.n_atoms"><code class="docutils literal notranslate"><span class="pre">Structure.n_atoms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.chains"><code class="docutils literal notranslate"><span class="pre">Structure.chains</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.chain_sequence"><code class="docutils literal notranslate"><span class="pre">Structure.chain_sequence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.sequence"><code class="docutils literal notranslate"><span class="pre">Structure.sequence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.fasta"><code class="docutils literal notranslate"><span class="pre">Structure.fasta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.tokenized_sequence"><code class="docutils literal notranslate"><span class="pre">Structure.tokenized_sequence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.residue_names"><code class="docutils literal notranslate"><span class="pre">Structure.residue_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.residues"><code class="docutils literal notranslate"><span class="pre">Structure.residues</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.atom_names"><code class="docutils literal notranslate"><span class="pre">Structure.atom_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.Structure.b_factor"><code class="docutils literal notranslate"><span class="pre">Structure.b_factor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.find_potential_interchain_bonded_atoms"><code class="docutils literal notranslate"><span class="pre">find_potential_interchain_bonded_atoms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.mask_common_uniprot"><code class="docutils literal notranslate"><span class="pre">mask_common_uniprot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.canonical_atom_type_mask"><code class="docutils literal notranslate"><span class="pre">canonical_atom_type_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.structure.backbone_atom_tensor"><code class="docutils literal notranslate"><span class="pre">backbone_atom_tensor()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.transforms">pinder.core.loader.transforms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.TransformBase"><code class="docutils literal notranslate"><span class="pre">TransformBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.TransformBase.transform"><code class="docutils literal notranslate"><span class="pre">TransformBase.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.StructureTransform"><code class="docutils literal notranslate"><span class="pre">StructureTransform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.StructureTransform.transform"><code class="docutils literal notranslate"><span class="pre">StructureTransform.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.SelectAtomTypes"><code class="docutils literal notranslate"><span class="pre">SelectAtomTypes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.SelectAtomTypes.transform"><code class="docutils literal notranslate"><span class="pre">SelectAtomTypes.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.SuperposeToReference"><code class="docutils literal notranslate"><span class="pre">SuperposeToReference</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.SuperposeToReference.transform"><code class="docutils literal notranslate"><span class="pre">SuperposeToReference.transform()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.RandomLigandTransform"><code class="docutils literal notranslate"><span class="pre">RandomLigandTransform</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.RandomLigandTransform.transform"><code class="docutils literal notranslate"><span class="pre">RandomLigandTransform.transform()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.transforms.RandomLigandTransform.transform_struct"><code class="docutils literal notranslate"><span class="pre">RandomLigandTransform.transform_struct()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.utils">pinder.core.loader.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.utils.create_nx_radius_graph"><code class="docutils literal notranslate"><span class="pre">create_nx_radius_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader.writer">pinder.core.loader.writer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderWriterBase"><code class="docutils literal notranslate"><span class="pre">PinderWriterBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderWriterBase.write"><code class="docutils literal notranslate"><span class="pre">PinderWriterBase.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderDefaultWriter"><code class="docutils literal notranslate"><span class="pre">PinderDefaultWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderDefaultWriter.write"><code class="docutils literal notranslate"><span class="pre">PinderDefaultWriter.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderClusteredWriter"><code class="docutils literal notranslate"><span class="pre">PinderClusteredWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.loader.html#pinder.core.loader.writer.PinderClusteredWriter.write"><code class="docutils literal notranslate"><span class="pre">PinderClusteredWriter.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.loader.html#module-pinder.core.loader">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pinder.core.structure.html">pinder.core.structure package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure.atoms">pinder.core.structure.atoms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.biotite_pdbxfile"><code class="docutils literal notranslate"><span class="pre">biotite_pdbxfile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.biotite_pdbfile"><code class="docutils literal notranslate"><span class="pre">biotite_pdbfile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.rust_pdbfile"><code class="docutils literal notranslate"><span class="pre">rust_pdbfile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.atom_array_from_pdb_file"><code class="docutils literal notranslate"><span class="pre">atom_array_from_pdb_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.atom_vdw_radius"><code class="docutils literal notranslate"><span class="pre">atom_vdw_radius()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.backbone_mask"><code class="docutils literal notranslate"><span class="pre">backbone_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.mask_from_res_list"><code class="docutils literal notranslate"><span class="pre">mask_from_res_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.apply_mask"><code class="docutils literal notranslate"><span class="pre">apply_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.filter_atoms"><code class="docutils literal notranslate"><span class="pre">filter_atoms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_backbone_atom_masks"><code class="docutils literal notranslate"><span class="pre">get_backbone_atom_masks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.assign_receptor_ligand"><code class="docutils literal notranslate"><span class="pre">assign_receptor_ligand()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.renumber_res_ids"><code class="docutils literal notranslate"><span class="pre">renumber_res_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.standardize_atom_array"><code class="docutils literal notranslate"><span class="pre">standardize_atom_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.stack_filter_intersect"><code class="docutils literal notranslate"><span class="pre">stack_filter_intersect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_seq_alignments"><code class="docutils literal notranslate"><span class="pre">get_seq_alignments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_seq_identity"><code class="docutils literal notranslate"><span class="pre">get_seq_identity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.calc_num_mismatches"><code class="docutils literal notranslate"><span class="pre">calc_num_mismatches()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.align_sequences"><code class="docutils literal notranslate"><span class="pre">align_sequences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.resn2seq"><code class="docutils literal notranslate"><span class="pre">resn2seq()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_seq_aligned_structures"><code class="docutils literal notranslate"><span class="pre">get_seq_aligned_structures()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_per_chain_seq_alignments"><code class="docutils literal notranslate"><span class="pre">get_per_chain_seq_alignments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.invert_chain_seq_map"><code class="docutils literal notranslate"><span class="pre">invert_chain_seq_map()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_buried_sasa"><code class="docutils literal notranslate"><span class="pre">get_buried_sasa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_resolved_resi_from_atom_array"><code class="docutils literal notranslate"><span class="pre">get_resolved_resi_from_atom_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.get_resolved_resi"><code class="docutils literal notranslate"><span class="pre">get_resolved_resi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.write_pdb"><code class="docutils literal notranslate"><span class="pre">write_pdb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.rename_chains"><code class="docutils literal notranslate"><span class="pre">rename_chains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.cif_to_pdb"><code class="docutils literal notranslate"><span class="pre">cif_to_pdb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.atoms.normalize_orientation"><code class="docutils literal notranslate"><span class="pre">normalize_orientation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure.contacts">pinder.core.structure.contacts module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.ContactPairs"><code class="docutils literal notranslate"><span class="pre">ContactPairs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.ContactPairs.residue_contacts"><code class="docutils literal notranslate"><span class="pre">ContactPairs.residue_contacts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.ContactPairs.atom_contacts"><code class="docutils literal notranslate"><span class="pre">ContactPairs.atom_contacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.get_atoms_within_coordinate"><code class="docutils literal notranslate"><span class="pre">get_atoms_within_coordinate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.get_stack_contacts"><code class="docutils literal notranslate"><span class="pre">get_stack_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.get_atom_neighbors"><code class="docutils literal notranslate"><span class="pre">get_atom_neighbors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.pairwise_contacts"><code class="docutils literal notranslate"><span class="pre">pairwise_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.pairwise_chain_contacts"><code class="docutils literal notranslate"><span class="pre">pairwise_chain_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.pairwise_clashes"><code class="docutils literal notranslate"><span class="pre">pairwise_clashes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.contacts.label_structure_gaps"><code class="docutils literal notranslate"><span class="pre">label_structure_gaps()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure.models">pinder.core.structure.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.Base"><code class="docutils literal notranslate"><span class="pre">Base</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.Base.model_config"><code class="docutils literal notranslate"><span class="pre">Base.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.Base.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">Base.model_computed_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.Base.model_fields"><code class="docutils literal notranslate"><span class="pre">Base.model_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig"><code class="docutils literal notranslate"><span class="pre">ChainConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.decoy_receptor"><code class="docutils literal notranslate"><span class="pre">ChainConfig.decoy_receptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.decoy_ligand"><code class="docutils literal notranslate"><span class="pre">ChainConfig.decoy_ligand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.native_receptor"><code class="docutils literal notranslate"><span class="pre">ChainConfig.native_receptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.native_ligand"><code class="docutils literal notranslate"><span class="pre">ChainConfig.native_ligand</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.model_computed_fields"><code class="docutils literal notranslate"><span class="pre">ChainConfig.model_computed_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.model_config"><code class="docutils literal notranslate"><span class="pre">ChainConfig.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.ChainConfig.model_fields"><code class="docutils literal notranslate"><span class="pre">ChainConfig.model_fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition"><code class="docutils literal notranslate"><span class="pre">BackboneDefinition</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition.biotite"><code class="docutils literal notranslate"><span class="pre">BackboneDefinition.biotite</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.BackboneDefinition.dockq"><code class="docutils literal notranslate"><span class="pre">BackboneDefinition.dockq</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.DatasetName"><code class="docutils literal notranslate"><span class="pre">DatasetName</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.DatasetName.pinder_s"><code class="docutils literal notranslate"><span class="pre">DatasetName.pinder_s</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.DatasetName.pinder_xl"><code class="docutils literal notranslate"><span class="pre">DatasetName.pinder_xl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.DatasetName.pinder_af2"><code class="docutils literal notranslate"><span class="pre">DatasetName.pinder_af2</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.MonomerName"><code class="docutils literal notranslate"><span class="pre">MonomerName</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.MonomerName.holo"><code class="docutils literal notranslate"><span class="pre">MonomerName.holo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.MonomerName.apo"><code class="docutils literal notranslate"><span class="pre">MonomerName.apo</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.models.MonomerName.predicted"><code class="docutils literal notranslate"><span class="pre">MonomerName.predicted</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure.superimpose">pinder.core.structure.superimpose module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.superimpose.superimpose_chain"><code class="docutils literal notranslate"><span class="pre">superimpose_chain()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure.surgery">pinder.core.structure.surgery module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.surgery.remove_annotations"><code class="docutils literal notranslate"><span class="pre">remove_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.surgery.fix_annotation_mismatch"><code class="docutils literal notranslate"><span class="pre">fix_annotation_mismatch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.surgery.fix_mismatched_atoms"><code class="docutils literal notranslate"><span class="pre">fix_mismatched_atoms()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.surgery.set_canonical_chain_order"><code class="docutils literal notranslate"><span class="pre">set_canonical_chain_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.structure.html#pinder.core.structure.surgery.remove_duplicate_calpha"><code class="docutils literal notranslate"><span class="pre">remove_duplicate_calpha()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.structure.html#module-pinder.core.structure">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pinder.core.submit.html">pinder.core.submit package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.submit.html#module-pinder.core.submit">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pinder.core.utils.html">pinder.core.utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.cloud">pinder.core.utils.cloud module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Error.title"><code class="docutils literal notranslate"><span class="pre">Error.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Error.code"><code class="docutils literal notranslate"><span class="pre">Error.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Error.message_format"><code class="docutils literal notranslate"><span class="pre">Error.message_format</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPError"><code class="docutils literal notranslate"><span class="pre">GCPError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPError.message_format"><code class="docutils literal notranslate"><span class="pre">GCPError.message_format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPError.code"><code class="docutils literal notranslate"><span class="pre">GCPError.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPError.title"><code class="docutils literal notranslate"><span class="pre">GCPError.title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPTimeOutError"><code class="docutils literal notranslate"><span class="pre">GCPTimeOutError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPTimeOutError.message_format"><code class="docutils literal notranslate"><span class="pre">GCPTimeOutError.message_format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPTimeOutError.code"><code class="docutils literal notranslate"><span class="pre">GCPTimeOutError.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.GCPTimeOutError.title"><code class="docutils literal notranslate"><span class="pre">GCPTimeOutError.title</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.get_cpu_limit"><code class="docutils literal notranslate"><span class="pre">get_cpu_limit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.get_container_cpu_frac"><code class="docutils literal notranslate"><span class="pre">get_container_cpu_frac()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.retry_bucket_method"><code class="docutils literal notranslate"><span class="pre">retry_bucket_method()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.bucket_process_many"><code class="docutils literal notranslate"><span class="pre">bucket_process_many()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.retry_blob_method"><code class="docutils literal notranslate"><span class="pre">retry_blob_method()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.process_many"><code class="docutils literal notranslate"><span class="pre">process_many()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.method_context"><code class="docutils literal notranslate"><span class="pre">method_context()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.make_path_pairs"><code class="docutils literal notranslate"><span class="pre">make_path_pairs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil"><code class="docutils literal notranslate"><span class="pre">Gsutil</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.DOWNLOAD"><code class="docutils literal notranslate"><span class="pre">Gsutil.DOWNLOAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.UPLOAD"><code class="docutils literal notranslate"><span class="pre">Gsutil.UPLOAD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.REMOTE_COPY"><code class="docutils literal notranslate"><span class="pre">Gsutil.REMOTE_COPY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.process_many"><code class="docutils literal notranslate"><span class="pre">Gsutil.process_many()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.bucket_process_many"><code class="docutils literal notranslate"><span class="pre">Gsutil.bucket_process_many()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.get_bucket"><code class="docutils literal notranslate"><span class="pre">Gsutil.get_bucket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_paired_paths"><code class="docutils literal notranslate"><span class="pre">Gsutil.cp_paired_paths()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_paths"><code class="docutils literal notranslate"><span class="pre">Gsutil.cp_paths()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.cp_dir"><code class="docutils literal notranslate"><span class="pre">Gsutil.cp_dir()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.ls"><code class="docutils literal notranslate"><span class="pre">Gsutil.ls()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.ls_blobs"><code class="docutils literal notranslate"><span class="pre">Gsutil.ls_blobs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.Gsutil.remote_cp"><code class="docutils literal notranslate"><span class="pre">Gsutil.remote_cp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.cloud.gcs_read_dataframe"><code class="docutils literal notranslate"><span class="pre">gcs_read_dataframe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.constants">pinder.core.utils.constants module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.constants.update_letters"><code class="docutils literal notranslate"><span class="pre">update_letters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.dataclass">pinder.core.utils.dataclass module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.dataclass.atom_array_summary_markdown_repr"><code class="docutils literal notranslate"><span class="pre">atom_array_summary_markdown_repr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.dataclass.stringify_dataclass"><code class="docutils literal notranslate"><span class="pre">stringify_dataclass()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.log">pinder.core.utils.log module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.log.PinderLoggingError"><code class="docutils literal notranslate"><span class="pre">PinderLoggingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.log.setup_logger"><code class="docutils literal notranslate"><span class="pre">setup_logger()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.log.inject_logger"><code class="docutils literal notranslate"><span class="pre">inject_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.paths">pinder.core.utils.paths module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.is_local_path"><code class="docutils literal notranslate"><span class="pre">is_local_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.remote_key"><code class="docutils literal notranslate"><span class="pre">remote_key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.strip_glob"><code class="docutils literal notranslate"><span class="pre">strip_glob()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.expand_local_path"><code class="docutils literal notranslate"><span class="pre">expand_local_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.rmdir"><code class="docutils literal notranslate"><span class="pre">rmdir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.tree"><code class="docutils literal notranslate"><span class="pre">tree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.blob_tree"><code class="docutils literal notranslate"><span class="pre">blob_tree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.blob_tree_cmd"><code class="docutils literal notranslate"><span class="pre">blob_tree_cmd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.empty_file"><code class="docutils literal notranslate"><span class="pre">empty_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.paths.parallel_copy_files"><code class="docutils literal notranslate"><span class="pre">parallel_copy_files()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.pdb_utils">pinder.core.utils.pdb_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.pdb_utils.three_to_one"><code class="docutils literal notranslate"><span class="pre">three_to_one()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.pdb_utils.load_fasta_file"><code class="docutils literal notranslate"><span class="pre">load_fasta_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.pdb_utils.extract_pdb_seq_from_pdb_file"><code class="docutils literal notranslate"><span class="pre">extract_pdb_seq_from_pdb_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.pdb_utils.safe_load_sequence"><code class="docutils literal notranslate"><span class="pre">safe_load_sequence()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.pdb_utils.is_homodimer"><code class="docutils literal notranslate"><span class="pre">is_homodimer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.process">pinder.core.utils.process module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.process.process_starmap"><code class="docutils literal notranslate"><span class="pre">process_starmap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.process.process_map"><code class="docutils literal notranslate"><span class="pre">process_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.retry">pinder.core.utils.retry module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.retry.exponential_retry"><code class="docutils literal notranslate"><span class="pre">exponential_retry()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.string">pinder.core.utils.string module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.string.natural_sort"><code class="docutils literal notranslate"><span class="pre">natural_sort()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.timer">pinder.core.utils.timer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.timer.timeit"><code class="docutils literal notranslate"><span class="pre">timeit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils.unbound">pinder.core.utils.unbound module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.get_db4_difficulty"><code class="docutils literal notranslate"><span class="pre">get_db4_difficulty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.fnat_unbound_summary"><code class="docutils literal notranslate"><span class="pre">fnat_unbound_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.get_corresponding_residues"><code class="docutils literal notranslate"><span class="pre">get_corresponding_residues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.filter_interface_intersect"><code class="docutils literal notranslate"><span class="pre">filter_interface_intersect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.get_unbound_interface_metrics"><code class="docutils literal notranslate"><span class="pre">get_unbound_interface_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.get_unbound_difficulty"><code class="docutils literal notranslate"><span class="pre">get_unbound_difficulty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pinder.core.utils.html#pinder.core.utils.unbound.get_apo_monomer_difficulty"><code class="docutils literal notranslate"><span class="pre">get_apo_monomer_difficulty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pinder.core.utils.html#module-pinder.core.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-pinder.core">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pinder.core" title="Link to this heading">#</a></h2>
+<p>Namespace package for pinder-core.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pinder.core">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/source/pinder.core.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/source/pinder.core.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

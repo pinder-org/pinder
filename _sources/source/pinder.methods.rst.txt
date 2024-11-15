@@ -1,0 +1,31 @@
+pinder.methods package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 10
+
+   pinder.methods.preprocess
+   pinder.methods.run
+   pinder.methods.train
+
+Submodules
+----------
+
+pinder.methods.main module
+--------------------------
+
+.. automodule:: pinder.methods.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods
+   :members:
+   :undoc-members:
+   :show-inheritance:
