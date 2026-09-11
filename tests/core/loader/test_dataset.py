@@ -225,3 +225,20 @@ def test_torch_loader(split, monomer_priority, batch_size, pinder_temp_dir):
     assert feature_coords.shape[0] == batch_size
     # Ensure coordinates have dim 3
     assert feature_coords.shape[2] == 3
+
+
+def test_load_processed_graph_cache(tmp_path):
+    graph = PairedPDB()
+    graph["receptor"].pos = torch.tensor([[1.0, 2.0, 3.0]])
+    graph["ligand"].pos = torch.tensor([[4.0, 5.0, 6.0]])
+    filename = tmp_path / "graph.pt"
+    torch.save(graph, filename)
+
+    loaded = PPIDataset.load_filename(filename, idx=7)
+
+    assert isinstance(loaded, PairedPDB)
+    assert torch.equal(loaded["receptor"].pos, graph["receptor"].pos)
+    assert torch.equal(loaded["ligand"].pos, graph["ligand"].pos)
+    assert loaded["pdb"].id.tolist() == [7]
+    assert loaded["pdb"].id.dtype == torch.int32
+    assert loaded["pdb"].num_nodes == 1
