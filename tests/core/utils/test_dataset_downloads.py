@@ -412,7 +412,6 @@ def test_default_archive_uses_manifest_checksum(monkeypatch, tmp_path):
 
 @pytest.fixture(autouse=True)
 def forbid_gcs_imports(monkeypatch):
-
     original = builtins.__import__
 
     def guarded(name, *args, **kwargs):
