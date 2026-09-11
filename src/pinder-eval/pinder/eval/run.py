@@ -65,7 +65,7 @@ def main() -> None:
     parser.add_argument(
         "--custom_index",
         "-c",
-        help="Optional local filepath or GCS uri to a custom index with non-pinder splits. Note: must still follow the pinder index schema and define test holdout sets, but does not need to share the same split members.",
+        help="Optional local filepath or R2 URL to a custom index with non-pinder splits. Note: must still follow the pinder index schema and define test holdout sets, but does not need to share the same split members.",
         default="",
         required=False,
         type=str,

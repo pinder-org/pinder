@@ -7,7 +7,7 @@ import numpy as np
 
 from pinder.core.loader.structure import mask_common_uniprot, Structure
 from pinder.core.utils import setup_logger
-from pinder.core.utils.cloud import Gsutil
+from pinder.core.utils import dataset
 from pinder.core.utils.dataclass import stringify_dataclass
 from pinder.core.index.utils import (
     IndexEntry,
@@ -21,7 +21,6 @@ from pinder.core.structure.models import MonomerName
 from pinder.core.utils import unbound
 
 log = setup_logger(__name__)
-gs = Gsutil()
 dataset_root = get_pinder_location()
 log.debug(f"Dataset root: {dataset_root}")
 
@@ -642,7 +641,10 @@ class PinderSystem:
 
         if sources:
             anchor = get_pinder_bucket_root()
-            gs.cp_paths(sources, self.pinder_root, anchor)
+            destinations = [
+                self.pinder_root / source[len(anchor) + 1 :] for source in sources
+            ]
+            dataset.download_files(sources, destinations)
 
     @property
     def filepaths(self) -> dict[str, str | None]:
