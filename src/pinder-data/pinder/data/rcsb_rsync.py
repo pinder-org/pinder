@@ -47,8 +47,8 @@ def download_rscb_files(
         log.warning(f"Directory: {data_dir} does not exist. Creating")
         data_dir.mkdir(parents=True, exist_ok=True)
 
-    SERVER = "rsync-nextgen.wwpdb.org::rsync"
-    PORT = "33444"
+    SERVER = "rsync-nextgen.pdbj.org::ftp_nextgen"
+    PORT = "873"
 
     redirect = "> /dev/null 2>/dev/null" if redirect_stdout else ""
     if two_char_code:
@@ -121,9 +121,9 @@ def download_two_char_codes(
 def get_rsync_directories() -> list[str]:
     cmd = [
         "rsync",
-        "--port=33444",
+        "--port=873",
         "--list-only",
-        "rsync-nextgen.wwpdb.org::rsync/data/entries/divided/",
+        "rsync-nextgen.pdbj.org::ftp_nextgen/data/entries/divided/",
     ]
     output = check_output(cmd).decode("utf-8").split("\n")
     # return output
@@ -138,9 +138,9 @@ def get_rsync_directories() -> list[str]:
 def get_rsync_two_char_pdb_entries(two_char_code: str, retries: int = 3) -> list[str]:
     cmd = [
         "rsync",
-        "--port=33444",
+        "--port=873",
         "--list-only",
-        f"rsync-nextgen.wwpdb.org::rsync/data/entries/divided/{two_char_code}/",
+        f"rsync-nextgen.pdbj.org::ftp_nextgen/data/entries/divided/{two_char_code}/",
     ]
     try:
         output = check_output(cmd).decode("utf-8").split("\n")
