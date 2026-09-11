@@ -616,7 +616,12 @@ class PPIDataset(TorchGeoDataset):  # type: ignore
 
     @staticmethod
     def load_filename(filename: Path, idx: int) -> PairedPDB:
-        data = torch.load(filename)
+        """Load a trusted graph cache created by ``process_single_file``.
+
+        These files contain PairedPDB objects, not just tensor weights. Only
+        load locally generated or otherwise trusted caches: this uses pickle.
+        """
+        data = torch.load(filename, weights_only=False)
         data["pdb"].id = torch.tensor([idx]).type(torch.int32)
         data["pdb"].num_nodes = 1
         return data
