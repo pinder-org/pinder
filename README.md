@@ -15,7 +15,7 @@
 
 **pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is ~500x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
 
-The dataset is large (~700Gb) and hosted on Google Cloud Storage (available at the `gs://pinder` bucket).
+The dataset is large (~700Gb) and hosted on Cloudflare R2 at https://pinderdata.org.
 
 # 👨‍💻 Getting Started
 
@@ -175,24 +175,9 @@ get_pinder_location()/
 * `index.parquet` contains the master index of every dimer in pinder. See [here](examples/pinder-index.ipynb) for more details.
 * `metadata.parquet` contains additional metadata detail for each entry in the index.
 
-It is also possible to download it manually, via
-
-```bash
-export PINDER_RELEASE=2024-02
-export PINDER_ROOT=pinder/$PINDER_RELEASE
-mkdir -p $XDG_DATA_HOME/$PINDER_ROOT/
-gsutil -m cp gs://$PINDER_ROOT/pdbs.zip $XDG_DATA_HOME/$PINDER_ROOT/
-gsutil -m cp gs://$PINDER_ROOT/test_set_pdbs.zip $XDG_DATA_HOME/$PINDER_ROOT/
-gsutil -m cp gs://$PINDER_ROOT/mappings.zip $XDG_DATA_HOME/$PINDER_ROOT/
-gsutil -m cp gs://$PINDER_ROOT/index.parquet $XDG_DATA_HOME/$PINDER_ROOT/
-gsutil -m cp gs://$PINDER_ROOT/metadata.parquet $XDG_DATA_HOME/$PINDER_ROOT/
-cd $XDG_DATA_HOME/$PINDER_ROOT
-unzip pdbs.zip && rm pdbs.zip
-unzip test_set_pdbs.zip && rm test_set_pdbs.zip
-unzip mappings.zip && rm mappings.zip
-```
-
-however, this is discouraged and requires installing gsutil.
+Downloads are served from `https://pinderdata.org/2024-02/`. Use
+`pinder_download` above to download archives with checksum verification and
+resume during automatic retries.
 
 Note: to download the full dataset, you will need ~700Gb of free disk space.
 ```
@@ -319,7 +304,7 @@ options:
                         Optional name for output csv
   --allow_missing, -a   Whether to allow missing systems for a given pinder-set + monomer
   --custom_index CUSTOM_INDEX, -c CUSTOM_INDEX
-                        Optional local filepath or GCS uri to a custom index with non-pinder splits. Note: must still follow the pinder index schema and define test holdout sets, but does not need to share the same
+                        Optional local filepath or R2 URL to a custom index with non-pinder splits. Note: must still follow the pinder index schema and define test holdout sets, but does not need to share the same
                         split members.
   --max_workers MAX_WORKERS, -w MAX_WORKERS
                         Optional maximum number of processes to spawn in multiprocessing. Default is None (all available cores).
