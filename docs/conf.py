@@ -83,6 +83,8 @@ source_suffix = {
 }
 
 nb_custom_formats = {".ipynb": ["jupytext.reads", {"fmt": "ipynb"}]}
+nb_execution_mode = "force"
+nb_execution_raise_on_error = True
 nb_execution_timeout = 720
 nb_kernel_rgx_aliases = {"pinder.*": "python3"}
 
@@ -93,7 +95,15 @@ templates_path = ["_templates", "templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = [
+    "_build",
+    "build",
+    "Thumbs.db",
+    ".DS_Store",
+    "pinder.rst",
+    "source/modules.rst",
+    "methods_readme.md",
+]
 
 master_doc = "index"
 
@@ -128,6 +138,8 @@ myst_enable_extensions = [
     "substitution",
     "tasklist",
 ]
+
+myst_heading_anchors = 6
 
 myst_url_schemes = ("http", "https", "mailto")
 

@@ -141,7 +141,7 @@ get_pinder_location()
 
 The current release version of pinder is `2024-02`.
 
-You can find the list of available dataset releases and the associated changes in the [data changelog](changelog_data.md).
+You can find the list of available dataset releases and the associated changes in the [data changelog](https://github.com/pinder-org/pinder/blob/main/changelog_data.md).
 
 ## To download the complete dataset run the following
 
@@ -172,7 +172,7 @@ get_pinder_location()/
 
 * `pdbs/` contains individual monomer and ground-truth dimer PDB structures
 * `mappings/` contains mapping information for holo and apo monomers for PDB<->uniprot, as well as original PDB assembly information used in some utilities
-* `index.parquet` contains the master index of every dimer in pinder. See [here](examples/pinder-index.ipynb) for more details.
+* `index.parquet` contains the master index of every dimer in pinder. See [here](https://pinder-org.github.io/pinder/pinder-index.html) for more details.
 * `metadata.parquet` contains additional metadata detail for each entry in the index.
 
 Downloads are served from `https://pinderdata.org/2024-02/`. Use
@@ -208,7 +208,7 @@ optional arguments:
                         specify a pinder dataset version
 ```
 
-If any *structure* files have been changed (will be announced in [data changelog](changelog_data.md)), but a major release (PINDER_RELEASE) has not yet been published, to sync your local dataset:
+If any *structure* files have been changed (will be announced in [data changelog](https://github.com/pinder-org/pinder/blob/main/changelog_data.md)), but a major release (PINDER_RELEASE) has not yet been published, to sync your local dataset:
 
 ```
 pinder_sync_data --help
@@ -362,7 +362,7 @@ Each model decoy should have exactly two chains: {R, L} for {Receptor, Ligand}, 
 
 For more details on the implementations of the eval metrics, see the [eval tutorial](https://pinder-org.github.io/pinder/pinder-eval.html), [API docs](https://pinder-org.github.io/pinder/source/pinder.eval.dockq.html#) and [eval FAQ](https://pinder-org.github.io/pinder/faq.html#how-can-i-use-the-evaluation-harness-outside-of-a-pinder-context).
 
-For more details on leaderboard generation, see the [MethodMetrics](src/pinder-eval/pinder/eval/dockq/method.py) implementation.
+For more details on leaderboard generation, see the [MethodMetrics](https://github.com/pinder-org/pinder/blob/main/src/pinder-eval/pinder/eval/dockq/method.py) implementation.
 
 
 ## 4. 🧪 Training set
@@ -396,19 +396,19 @@ We provide the following features:
 
 | Feature                                                                                                                                                                                                                        | Abstraction                                                          | Example                                             |
 |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|:----------------------------------------------------|
-| Get collection of monomers associated with a pinder entry using `PinderSystem`                                                                                                                                                 | [PinderSystem](src/pinder-core/pinder/core/index/system.py)          | [pinder-system.ipynb](examples/pinder-system.ipynb) |
-| Classify system difficulty based on degree of conformational shift in unbound and bound using `PinderSystem`                                                                                                                   | [PinderSystem](src/pinder-core/pinder/core/index/system.py)          | [pinder-system.ipynb](examples/pinder-system.ipynb) |
-| Get various structural features like coordinates, residues, atoms and sequence and structural utilities using the `Structure` abstraction. All of the monomers in the `PinderSystem` object are themselves `Structure` objects | [Structure](src/pinder-core/pinder/core/loader/structure.py)         | [pinder-system.ipynb](examples/pinder-system.ipynb) |
-| Filter pinder systems to construct data mixes using `PinderFilterBase`                                                                                                                                                         | [PinderFilterBase](src/pinder-core/pinder/core/loader/filters.py)    | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Filter pinder systems to construct data mixes with specific monomers or monomers that satisfy specific filter criteria using `PinderFilterSubBase`                                                                             | [PinderFilterSubBase](src/pinder-core/pinder/core/loader/filters.py) | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Filter individual `Structure` objects in a system to construct data mixes with specific monomer properties using `StructureFilter`                                                                                             | [StructureFilter](src/pinder-core/pinder/core/loader/filters.py)     | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Construct iterator for getting specific data mixes and applying collection of filters through `PinderLoader`                                                                                                                   | [PinderLoader](src/pinder-core/pinder/core/loader/loader.py)         | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Load systems as a pytorch dataset using `PinderDataset`                                                                                                                                                                        | [PinderDataset](src/pinder-core/pinder/core/loader/dataset.py)       | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Load datasets as pytorch geometric graph datasets using `PPIDataset`                                                                                                                                                           | [PPIDataset](src/pinder-core/pinder/core/loader/dataset.py)          | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Create standard pytorch dataloaders using `get_torch_loader` with `PinderDataset` as input                                                                                                                                     | [get_torch_loader](src/pinder-core/pinder/core/loader/dataset.py)    | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Create standard torch-geometric dataloaders using `get_geo_loader` with `PPIDataset` as input                                                                                                                                  | [get_geo_loader](src/pinder-core/pinder/core/loader/dataset.py)      | [pinder-loader.ipynb](examples/pinder-loader.ipynb) |
-| Transform structures in a system before use in downstream tasks using `TransformBase`                                                                                                                                          | [TransformBase](src/pinder-core/pinder/core/loader/transforms.py)    | [examples](examples/README.md#transforms)           |
-| Transform individual `Structure` objects before use in downstream tasks using `StructureTransform`                                                                                                                             | [StructureTransform](src/pinder-core/pinder/core/loader/transforms.py)| [examples](examples/README.md#transforms)          |
+| Get collection of monomers associated with a pinder entry using `PinderSystem`                                                                                                                                                 | [PinderSystem](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/index/system.py)          | [pinder-system.ipynb](https://pinder-org.github.io/pinder/pinder-system.html) |
+| Classify system difficulty based on degree of conformational shift in unbound and bound using `PinderSystem`                                                                                                                   | [PinderSystem](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/index/system.py)          | [pinder-system.ipynb](https://pinder-org.github.io/pinder/pinder-system.html) |
+| Get various structural features like coordinates, residues, atoms and sequence and structural utilities using the `Structure` abstraction. All of the monomers in the `PinderSystem` object are themselves `Structure` objects | [Structure](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/structure.py)         | [pinder-system.ipynb](https://pinder-org.github.io/pinder/pinder-system.html) |
+| Filter pinder systems to construct data mixes using `PinderFilterBase`                                                                                                                                                         | [PinderFilterBase](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/filters.py)    | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Filter pinder systems to construct data mixes with specific monomers or monomers that satisfy specific filter criteria using `PinderFilterSubBase`                                                                             | [PinderFilterSubBase](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/filters.py) | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Filter individual `Structure` objects in a system to construct data mixes with specific monomer properties using `StructureFilter`                                                                                             | [StructureFilter](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/filters.py)     | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Construct iterator for getting specific data mixes and applying collection of filters through `PinderLoader`                                                                                                                   | [PinderLoader](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/loader.py)         | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Load systems as a pytorch dataset using `PinderDataset`                                                                                                                                                                        | [PinderDataset](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py)       | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Load datasets as pytorch geometric graph datasets using `PPIDataset`                                                                                                                                                           | [PPIDataset](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py)          | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Create standard pytorch dataloaders using `get_torch_loader` with `PinderDataset` as input                                                                                                                                     | [get_torch_loader](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py)    | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Create standard torch-geometric dataloaders using `get_geo_loader` with `PPIDataset` as input                                                                                                                                  | [get_geo_loader](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py)      | [pinder-loader.ipynb](https://pinder-org.github.io/pinder/pinder-loader.html) |
+| Transform structures in a system before use in downstream tasks using `TransformBase`                                                                                                                                          | [TransformBase](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/transforms.py)    | [examples](https://pinder-org.github.io/pinder/example_readme.html#transforms)           |
+| Transform individual `Structure` objects before use in downstream tasks using `StructureTransform`                                                                                                                             | [StructureTransform](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/transforms.py)| [examples](https://pinder-org.github.io/pinder/example_readme.html#transforms)          |
 
 
 ...
@@ -419,7 +419,7 @@ We are open to feature requests to add further functionality.
 
 A standardized pytorch dataloader to load subsets of the dataset for training and validation is provided.
 
-Pinder provides a [torch.utils.data.Dataset](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html#datasets-dataloaders) sub-class, [PinderDataset](src/pinder-core/pinder/core/loader/dataset.py), which is used to create a tensor dataset.
+Pinder provides a [torch.utils.data.Dataset](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html#datasets-dataloaders) sub-class, [PinderDataset](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py), which is used to create a tensor dataset.
 
 The dataset class provides an interface for processing the `PinderSystem` object into a dictionary object containing the feature/sample complex and the target (ground-truth) complex represented as a dictionary of structural properties encoded as `Tensor` objects.
 
@@ -452,7 +452,7 @@ batch = next(iter(train_dataloader))
 
 A standardized pytorch-geometric dataloader to load subsets of the dataset for training and validation is provided.
 
-Pinder provides a [torch_geometric.data.Dataset](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.Dataset.html#torch_geometric.data.Dataset) sub-class, [PPIDataset](src/pinder-core/pinder/core/loader/dataset.py), which is used to create a graph dataset.
+Pinder provides a [torch_geometric.data.Dataset](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.data.Dataset.html#torch_geometric.data.Dataset) sub-class, [PPIDataset](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/dataset.py), which is used to create a graph dataset.
 
 The dataset class provides an interface for processing the `PinderSystem` object into `HeteroData` objects that are written to disk.
 
@@ -494,9 +494,9 @@ loader = get_geo_loader(train_dataset)
 
 **Note: this is only one example of a featurizer that illustrates how to construct a hetero graph from a `PinderSystem` object.**
 
-We welcome and encourage contributions of additional featurizers. To implement additional featurizers, please see the [PairedPDB](src/pinder-core/pinder/core/loader/geodata.py) implementation. New featurizers should implement a way to convert `Structure` instances belonging to `PinderSystem`'s into the respective pytorch or pytorch-geometric data objects.
+We welcome and encourage contributions of additional featurizers. To implement additional featurizers, please see the [PairedPDB](https://github.com/pinder-org/pinder/blob/main/src/pinder-core/pinder/core/loader/geodata.py) implementation. New featurizers should implement a way to convert `Structure` instances belonging to `PinderSystem`'s into the respective pytorch or pytorch-geometric data objects.
 
-For more detailed usage examples, including how to use the underlying loader without torch-geometric, see the [example notebook](examples/pinder-loader.ipynb).
+For more detailed usage examples, including how to use the underlying loader without torch-geometric, see the [example notebook](https://pinder-org.github.io/pinder/pinder-loader.html).
 
 
 ## 6. ℹ️ Filters & Annonations
