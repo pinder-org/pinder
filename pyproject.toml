@@ -15,8 +15,6 @@ dependencies = [
     "tqdm",
     "plotly",
     "nbformat",
-    "google-cloud-storage",
-    "gcsfs",
     "torch_geometric",
     "tabulate",
     "PyYAML",
@@ -94,6 +92,8 @@ leaderboard = [
 ]
 
 data = [
+    "google-cloud-storage",
+    "gcsfs",
     "fire",
     "gemmi",
     "networkx",
@@ -107,6 +107,8 @@ data = [
 
 # sklearn 1.2.2 doesn't ship wheels for py312. The old sklearn version is only required for PRODIGY-cryst.
 datapy312 = [
+    "google-cloud-storage",
+    "gcsfs",
     "fire",
     "gemmi",
     "networkx",
