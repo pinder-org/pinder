@@ -1,6 +1,5 @@
 from __future__ import annotations
 import re
-import shutil
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -29,8 +28,14 @@ def download_sabdab(
 
     with requests.get(url, stream=True) as r:
         r.raise_for_status()
+        if "text/html" in r.headers.get("Content-Type", "").lower():
+            raise ValueError(
+                f"Expected a SAbDab summary table, but {r.url} returned HTML. "
+                "The legacy endpoint redirects to SAbDab2, which uses a different schema."
+            )
         with open(filepath, "wb") as f:
-            shutil.copyfileobj(r.raw, f)
+            for chunk in r.iter_content(chunk_size=1024 * 1024):
+                f.write(chunk)
     return filepath
 
 

@@ -14,7 +14,7 @@ from pinder.core import (
     get_supplementary_data,
     SupplementaryData,
 )
-from pinder.core.utils import setup_logger
+from pinder.core.utils import dataset, setup_logger
 from pinder.core.utils.cloud import gcs_read_dataframe
 
 
@@ -93,7 +93,9 @@ def load_entity_metadata(
 
 
 def load_pfam_db(pfam_file: Path | str | None = None) -> pd.DataFrame:
-    if pfam_file:
+    if pfam_file and str(pfam_file).startswith(("https://", "http://")):
+        pfam_data = dataset.read_dataframe(pfam_file)
+    elif pfam_file:
         if not str(pfam_file).startswith("gs://"):
             pfam_file = Path(pfam_file)
         if str(pfam_file).endswith(".tsv"):

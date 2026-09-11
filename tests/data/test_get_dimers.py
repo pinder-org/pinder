@@ -8,6 +8,14 @@ from pinder.data.annotation import sabdab
 from pinder.data.csv_utils import read_csv_non_default_na
 
 
+requires_live_sabdab1 = pytest.mark.skip(
+    reason="The legacy SAbDab1 summary endpoint now redirects to SAbDab2 HTML. "
+    "These integration tests require the original SAbDab1 table; "
+    "SAbDab2 annotations must not silently replace it."
+)
+
+
+@requires_live_sabdab1
 @pytest.mark.parametrize(
     "use_cache",
     [
@@ -28,6 +36,7 @@ def test_index_dimers(use_cache, pinder_data_cp):
     )
 
 
+@requires_live_sabdab1
 def test_download_sabdab(pinder_data_cp):
     pinder_dir = pinder_data_cp / "pinder"
     sabdab_tsv = sabdab.download_sabdab(pinder_dir)
@@ -82,6 +91,7 @@ def test_download_sabdab(pinder_data_cp):
     assert set(pdb_chains.antigen_chain) == {"A", "B", "C"}
 
 
+@requires_live_sabdab1
 def test_add_sabdab_annotations(pinder_data_cp):
     pinder_dir = pinder_data_cp / "sabdab"
     start_index = read_csv_non_default_na(
@@ -122,3 +132,74 @@ def test_summarize_putative_apo_pred_counts(pinder_data_cp):
     assert counts.putative_apo_R_count.sum() == 2
     assert counts.pred_R_count.sum() == 7
     assert counts.pred_L_count.sum() == 7
+
+
+def test_explode_sabdab1_chains():
+    # Minimal legacy-format example; no live database is needed for expansion.
+    summary = pd.DataFrame(
+        [
+            {
+                "pdb_id": "8gag",
+                "Hchain": "S",
+                "Lchain": "s",
+                "antigen_chain": "A | B | C",
+                "antigen_het_name": "NA | NA | NA",
+            }
+        ]
+    )
+
+    chains = sabdab.explode_sabdab_per_chain(summary)
+
+    assert list(chains.columns) == list(summary.columns)
+    assert chains.shape[0] == 3
+    assert set(chains.pdb_id) == {"8gag"}
+    assert set(chains.Hchain) == {"S"}
+    assert set(chains.Lchain) == {"s"}
+    assert set(chains.antigen_chain) == {"A", "B", "C"}
+    assert chains.antigen_het_name.isna().all()
+
+
+def test_add_sabdab1_annotations_offline(tmp_path, monkeypatch):
+    # Synthetic SAbDab1 records exercise annotation semantics independently of
+    # the retired service; these are not a replacement for the published data.
+    summary = tmp_path / "legacy_summary.tsv"
+    pd.DataFrame(
+        [{"pdb": "8gag", "Hchain": "S", "Lchain": "s", "antigen_chain": "A | B"}]
+    ).to_csv(summary, sep="\t", index=False)
+    pairs = [("S", "A"), ("S", "s"), ("A", "B"), ("X", "Y")]
+    ids = [f"8gag__{receptor}1_U1--8gag__{ligand}1_U2" for receptor, ligand in pairs]
+    pd.DataFrame({"id": ids, "pdb_id": "8gag"}).to_csv(
+        tmp_path / "index.1.csv.gz", index=False
+    )
+    pd.DataFrame(
+        [
+            {
+                "id": identifier,
+                "asym_id_R": receptor,
+                "asym_id_L": ligand,
+                "pdb_strand_id_R": receptor,
+                "pdb_strand_id_L": ligand,
+            }
+            for identifier, (receptor, ligand) in zip(ids, pairs)
+        ]
+    ).to_parquet(tmp_path / "chain_metadata.parquet", index=False)
+    monkeypatch.setattr(sabdab, "download_sabdab", lambda **kwargs: summary)
+
+    sabdab.add_sabdab_annotations(tmp_path, use_cache=False)
+
+    annotated = pd.read_csv(tmp_path / "index.1.csv.gz").set_index("id").loc[ids]
+    assert annotated.contains_antibody.tolist() == [True, True, False, False]
+    assert annotated.contains_antigen.tolist() == [True, False, True, False]
+    metadata = pd.read_parquet(tmp_path / "sabdab_metadata.parquet")
+    heavy_ids = set(";".join(metadata.pinder_Hchain_ids).split(";")) - {""}
+    assert heavy_ids == {ids[0], ids[1]}
+    light_ids = set(";".join(metadata.pinder_Lchain_ids).split(";")) - {""}
+    assert light_ids == {ids[1]}
+    antigen_ids = set(";".join(metadata.pinder_antigen_chain_ids).split(";")) - {""}
+    assert antigen_ids == {ids[0], ids[2]}
+
+    def unexpected_download(**kwargs):
+        raise AssertionError("Existing annotation cache should be reused")
+
+    monkeypatch.setattr(sabdab, "download_sabdab", unexpected_download)
+    sabdab.add_sabdab_annotations(tmp_path, use_cache=True)
