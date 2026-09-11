@@ -63,7 +63,7 @@ def get_pinder_bucket_root() -> str:
         str: The root bucket path as a string.
     """
     pinder_release = os.environ.get("PINDER_RELEASE", "2024-02")
-    return dataset.release_url(pinder_release)
+    return str(dataset.release_url(pinder_release))
 
 
 def get_index_location(
