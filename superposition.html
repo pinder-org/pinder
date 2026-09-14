@@ -1,0 +1,1508 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FAQ: cropped monomer superposition &#8212; PINDER 0.1.dev1+gebeb28a2f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=829491a3"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'superposition';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/superposition.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MLSB PINDER Challenge" href="pinder-mlsb.html" />
+    <link rel="prev" title="Pinder eval" href="pinder-eval.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+gebeb28a2f" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pinder-index.html">Pinder index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-system.html">Pinder system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-loader.html">Pinder loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-eval.html">Pinder eval</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">FAQ: cropped monomer superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-mlsb.html">MLSB PINDER Challenge</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="examples.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">FAQ: cropped monomer superposition</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="faq-cropped-monomer-superposition">
+<h1>FAQ: cropped monomer superposition<a class="headerlink" href="#faq-cropped-monomer-superposition" title="Link to this heading">#</a></h1>
+<p><strong>For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don’t have the same atoms and/or sequence. How can I align monomer such that all have the same shape?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">PinderSystem</span>
+
+
+<span class="n">pid</span> <span class="o">=</span> <span class="s2">"2gct__C1_P00766--2gct__A1_P00766"</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pid</span><span class="p">)</span>
+<span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        'split',
+        'train',
+    ),
+    (
+        'id',
+        '2gct__C1_P00766--2gct__A1_P00766',
+    ),
+    (
+        'pdb_id',
+        '2gct',
+    ),
+    (
+        'cluster_id',
+        'cluster_20329_p',
+    ),
+    (
+        'cluster_id_R',
+        'cluster_p',
+    ),
+    (
+        'cluster_id_L',
+        'cluster_20329',
+    ),
+    (
+        'pinder_s',
+        False,
+    ),
+    (
+        'pinder_xl',
+        False,
+    ),
+    (
+        'pinder_af2',
+        False,
+    ),
+    (
+        'uniprot_R',
+        'P00766',
+    ),
+    (
+        'uniprot_L',
+        'P00766',
+    ),
+    (
+        'holo_R_pdb',
+        '2gct__C1_P00766-R.pdb',
+    ),
+    (
+        'holo_L_pdb',
+        '2gct__A1_P00766-L.pdb',
+    ),
+    (
+        'predicted_R_pdb',
+        'af__P00766.pdb',
+    ),
+    (
+        'predicted_L_pdb',
+        'af__P00766.pdb',
+    ),
+    (
+        'apo_R_pdb',
+        '1k2i__A1_P00766.pdb',
+    ),
+    (
+        'apo_L_pdb',
+        '1k2i__A1_P00766.pdb',
+    ),
+    (
+        'apo_R_pdbs',
+        '1k2i__A1_P00766.pdb;1ex3__A1_P00766.pdb;1chg__A1_P00766.pdb',
+    ),
+    (
+        'apo_L_pdbs',
+        '1k2i__A1_P00766.pdb;1ex3__A1_P00766.pdb;1chg__A1_P00766.pdb',
+    ),
+    (
+        'holo_R',
+        True,
+    ),
+    (
+        'holo_L',
+        True,
+    ),
+    (
+        'predicted_R',
+        True,
+    ),
+    (
+        'predicted_L',
+        True,
+    ),
+    (
+        'apo_R',
+        True,
+    ),
+    (
+        'apo_L',
+        True,
+    ),
+    (
+        'apo_R_quality',
+        'low',
+    ),
+    (
+        'apo_L_quality',
+        'low',
+    ),
+    (
+        'chain1_neff',
+        902.5,
+    ),
+    (
+        'chain2_neff',
+        902.5,
+    ),
+    (
+        'chain_R',
+        'C1',
+    ),
+    (
+        'chain_L',
+        'A1',
+    ),
+    (
+        'contains_antibody',
+        False,
+    ),
+    (
+        'contains_antigen',
+        False,
+    ),
+    (
+        'contains_enzyme',
+        True,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/2gct__C1_P00766--2gct__A1_P00766.pdb,
+    uniprot_map=None,
+    pinder_id='2gct__C1_P00766--2gct__A1_P00766',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (758,),
+    pdb_engine='fastpdb',
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/2gct__C1_P00766-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/2gct__C1_P00766-R.parquet,
+    pinder_id='2gct__C1_P00766-R',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (689,),
+    pdb_engine='fastpdb',
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/2gct__A1_P00766-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/2gct__A1_P00766-L.parquet,
+    pinder_id='2gct__A1_P00766-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (69,),
+    pdb_engine='fastpdb',
+)
+apo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1k2i__A1_P00766.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1k2i__A1_P00766.parquet,
+    pinder_id='1k2i__A1_P00766',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1735,),
+    pdb_engine='fastpdb',
+)
+apo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1k2i__A1_P00766.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1k2i__A1_P00766.parquet,
+    pinder_id='1k2i__A1_P00766',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1735,),
+    pdb_engine='fastpdb',
+)
+pred_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__P00766.pdb,
+    uniprot_map=None,
+    pinder_id='af__P00766',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1799,),
+    pdb_engine='fastpdb',
+)
+pred_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__P00766.pdb,
+    uniprot_map=None,
+    pinder_id='af__P00766',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1799,),
+    pdb_engine='fastpdb',
+)
+)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="examine-monomer-shapes-prior-to-cropping-or-superposition">
+<h2>Examine monomer shapes prior to cropping or superposition<a class="headerlink" href="#examine-monomer-shapes-prior-to-cropping-or-superposition" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_receptor</span>
+<span class="n">apo_L</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span>
+<span class="n">pred_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">pred_receptor</span>
+<span class="n">pred_L</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">pred_ligand</span>
+<span class="n">holo_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_R</span>
+<span class="n">holo_L</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_L</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="receptor-monomers">
+<h3>Receptor monomers<a class="headerlink" href="#receptor-monomers" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">apo_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">holo_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">pred_R</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1735, 689, 1799)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ligand-monomers">
+<h3>Ligand monomers<a class="headerlink" href="#ligand-monomers" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">holo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">pred_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1735, 69, 1799)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="single-alternative-monomer-use-case-without-cropping">
+<h2>Single alternative monomer use-case without cropping<a class="headerlink" href="#single-alternative-monomer-use-case-without-cropping" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">apo_RL</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span><span class="p">)</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(764, 758)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="with-cropping-such-that-apo-and-holo-have-the-same-shapes">
+<h2>With cropping such that apo and holo have the same shapes<a class="headerlink" href="#with-cropping-such-that-apo-and-holo-have-the-same-shapes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">apo_RL</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span><span class="p">)</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(756, 758)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="why-are-the-shapes-still-off-by-2-atoms">
+<h3>Why are the shapes still off by 2 atoms?<a class="headerlink" href="#why-are-the-shapes-still-off-by-2-atoms" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_atom_spec</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">"atom_id"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"."</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">ch</span><span class="p">,</span> <span class="n">resn</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">resi</span><span class="p">),</span> <span class="n">atom</span><span class="p">])</span> 
+        <span class="k">for</span> <span class="n">ch</span><span class="p">,</span> <span class="n">resn</span><span class="p">,</span> <span class="n">resi</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"chain_id"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"res_name"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"res_id"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"atom_name"</span><span class="p">])</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">df</span>
+    
+<span class="n">holo_RL</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span>
+<span class="n">apo_df</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">dataframe</span>
+<span class="n">holo_df</span> <span class="o">=</span> <span class="n">holo_RL</span><span class="o">.</span><span class="n">dataframe</span>
+
+<span class="n">apo_df</span> <span class="o">=</span> <span class="n">add_atom_spec</span><span class="p">(</span><span class="n">apo_df</span><span class="p">)</span>
+<span class="n">holo_df</span> <span class="o">=</span> <span class="n">add_atom_spec</span><span class="p">(</span><span class="n">holo_df</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">holo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">apo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>690
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-residues-were-not-renumbered-so-the-number-of-differing-atom-specifications-is-larger-than-the-shape-mismatch-of-2">
+<h3>The residues were not renumbered, so the number of differing atom specifications is larger than the shape mismatch of 2<a class="headerlink" href="#the-residues-were-not-renumbered-so-the-number-of-differing-atom-specifications-is-larger-than-the-shape-mismatch-of-2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_RL</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">(</span><span class="n">remove_differing_atoms</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">apo_df</span> <span class="o">=</span> <span class="n">apo_RL</span><span class="o">.</span><span class="n">dataframe</span>
+
+<span class="n">apo_df</span> <span class="o">=</span> <span class="n">add_atom_spec</span><span class="p">(</span><span class="n">apo_df</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">holo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">apo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">holo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">apo_df</span><span class="o">.</span><span class="n">atom_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'L.SER.11.N', 'R.ASN.97.OXT'}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="why-are-these-atoms-missing-in-the-apo-but-present-in-the-holo-structure">
+<h2>Why are these atoms missing in the apo, but present in the holo structure?<a class="headerlink" href="#why-are-these-atoms-missing-in-the-apo-but-present-in-the-holo-structure" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PinderSystem.create_apo_complex</span></code> (which calls <code class="docutils literal notranslate"><span class="pre">PinderSystem.create_complex</span></code>) does not modify the <em>reference</em> structure, only the mobile structure being created.</p>
+<p>In the ground truth holo structure, chain L is a peptide stretch of 11 residues. The apo structure contains a larger segment of the original sequence; however, the apo structure has a residue gap between LEU 10 and ILE 16.</p>
+<p>In this case, the apo structure has been cropped to contain everything that can possibly match to the holo structure, but does not modify the holo structure for atoms that are not mappable to the apo structure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'chain_id == "L" and res_id &lt; 17'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chain_id</th>
+      <th>res_name</th>
+      <th>res_code</th>
+      <th>res_id</th>
+      <th>atom_name</th>
+      <th>b_factor</th>
+      <th>ins_code</th>
+      <th>hetero</th>
+      <th>element</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>N</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>N</td>
+      <td>13.593000</td>
+      <td>19.841999</td>
+      <td>22.816999</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>14.180000</td>
+      <td>18.841000</td>
+      <td>23.763000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>C</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>13.603000</td>
+      <td>19.000999</td>
+      <td>25.167000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>O</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>O</td>
+      <td>12.993000</td>
+      <td>20.021000</td>
+      <td>25.489000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>CB</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>15.704000</td>
+      <td>19.021000</td>
+      <td>23.844000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>L</td>
+      <td>ILE</td>
+      <td>I</td>
+      <td>16</td>
+      <td>O</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>O</td>
+      <td>16.695999</td>
+      <td>1.185000</td>
+      <td>42.984001</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>L</td>
+      <td>ILE</td>
+      <td>I</td>
+      <td>16</td>
+      <td>CB</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>17.202999</td>
+      <td>3.622000</td>
+      <td>41.284000</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>L</td>
+      <td>ILE</td>
+      <td>I</td>
+      <td>16</td>
+      <td>CG1</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>17.778000</td>
+      <td>4.372000</td>
+      <td>40.077000</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>L</td>
+      <td>ILE</td>
+      <td>I</td>
+      <td>16</td>
+      <td>CG2</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>16.841999</td>
+      <td>4.610000</td>
+      <td>42.387001</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>L</td>
+      <td>ILE</td>
+      <td>I</td>
+      <td>16</td>
+      <td>CD1</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>16.794001</td>
+      <td>5.321000</td>
+      <td>39.415001</td>
+    </tr>
+  </tbody>
+</table>
+<p>76 rows × 12 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">holo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'chain_id == "L" and res_id &lt; 17'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chain_id</th>
+      <th>res_name</th>
+      <th>res_code</th>
+      <th>res_id</th>
+      <th>atom_name</th>
+      <th>b_factor</th>
+      <th>ins_code</th>
+      <th>hetero</th>
+      <th>element</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>atom_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>689</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>N</td>
+      <td>11.25</td>
+      <td></td>
+      <td>False</td>
+      <td>N</td>
+      <td>13.447000</td>
+      <td>19.493000</td>
+      <td>23.142000</td>
+      <td>L.CYS.1.N</td>
+    </tr>
+    <tr>
+      <th>690</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>CA</td>
+      <td>20.10</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>14.022000</td>
+      <td>18.531000</td>
+      <td>24.070999</td>
+      <td>L.CYS.1.CA</td>
+    </tr>
+    <tr>
+      <th>691</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>C</td>
+      <td>6.28</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>13.412000</td>
+      <td>18.750999</td>
+      <td>25.443001</td>
+      <td>L.CYS.1.C</td>
+    </tr>
+    <tr>
+      <th>692</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>O</td>
+      <td>11.10</td>
+      <td></td>
+      <td>False</td>
+      <td>O</td>
+      <td>12.859000</td>
+      <td>19.804001</td>
+      <td>25.700001</td>
+      <td>L.CYS.1.O</td>
+    </tr>
+    <tr>
+      <th>693</th>
+      <td>L</td>
+      <td>CYS</td>
+      <td>C</td>
+      <td>1</td>
+      <td>CB</td>
+      <td>14.44</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>15.571001</td>
+      <td>18.733999</td>
+      <td>24.115000</td>
+      <td>L.CYS.1.CB</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>753</th>
+      <td>L</td>
+      <td>LEU</td>
+      <td>L</td>
+      <td>10</td>
+      <td>CB</td>
+      <td>24.54</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>7.542000</td>
+      <td>13.080000</td>
+      <td>40.904999</td>
+      <td>L.LEU.10.CB</td>
+    </tr>
+    <tr>
+      <th>754</th>
+      <td>L</td>
+      <td>LEU</td>
+      <td>L</td>
+      <td>10</td>
+      <td>CG</td>
+      <td>42.07</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>8.798000</td>
+      <td>12.332001</td>
+      <td>40.634998</td>
+      <td>L.LEU.10.CG</td>
+    </tr>
+    <tr>
+      <th>755</th>
+      <td>L</td>
+      <td>LEU</td>
+      <td>L</td>
+      <td>10</td>
+      <td>CD1</td>
+      <td>53.56</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>9.889000</td>
+      <td>13.213000</td>
+      <td>40.133999</td>
+      <td>L.LEU.10.CD1</td>
+    </tr>
+    <tr>
+      <th>756</th>
+      <td>L</td>
+      <td>LEU</td>
+      <td>L</td>
+      <td>10</td>
+      <td>CD2</td>
+      <td>46.74</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>9.232000</td>
+      <td>11.339001</td>
+      <td>41.716000</td>
+      <td>L.LEU.10.CD2</td>
+    </tr>
+    <tr>
+      <th>757</th>
+      <td>L</td>
+      <td>SER</td>
+      <td>S</td>
+      <td>11</td>
+      <td>N</td>
+      <td>44.68</td>
+      <td></td>
+      <td>False</td>
+      <td>N</td>
+      <td>5.034000</td>
+      <td>11.729000</td>
+      <td>42.929001</td>
+      <td>L.SER.11.N</td>
+    </tr>
+  </tbody>
+</table>
+<p>69 rows × 13 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">biotite.sequence</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">seq</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">biotite.sequence.align</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">align</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">biotite.sequence.graphics</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">graphics</span>
+
+
+<span class="n">seq1</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">ProteinSequence</span><span class="p">(</span><span class="n">apo_L</span><span class="o">.</span><span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">seq2</span> <span class="o">=</span> <span class="n">seq</span><span class="o">.</span><span class="n">ProteinSequence</span><span class="p">(</span><span class="n">holo_L</span><span class="o">.</span><span class="n">sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">SubstitutionMatrix</span><span class="o">.</span><span class="n">std_protein_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Local alignment"</span><span class="p">)</span>
+<span class="n">alignments</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">align_optimal</span><span class="p">(</span><span class="n">seq1</span><span class="p">,</span> <span class="n">seq2</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ali</span> <span class="ow">in</span> <span class="n">alignments</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ali</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Global alignment"</span><span class="p">)</span>
+<span class="n">alignments</span> <span class="o">=</span> <span class="n">align</span><span class="o">.</span><span class="n">align_optimal</span><span class="p">(</span><span class="n">seq1</span><span class="p">,</span> <span class="n">seq2</span><span class="p">,</span> <span class="n">matrix</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ali</span> <span class="ow">in</span> <span class="n">alignments</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ali</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Local alignment
+CGVPAIQPVL
+CGVPAIQPVL
+Global alignment
+CGVPAIQPVLIVNGEEAVPG
+CGVPAIQPVL--S-------
+CGVPAIQPVLIVNGEEAVPG
+CGVPAIQPVL------S---
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">))</span>
+<span class="n">graphics</span><span class="o">.</span><span class="n">plot_alignment_similarity_based</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> <span class="n">alignments</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">matrix</span><span class="o">=</span><span class="n">matrix</span><span class="p">,</span> <span class="n">symbols_per_line</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">alignments</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/776a7b3faca267b0c9e95c4bb87f7cfef3027827aa61d81a8e1393e1a6004b7f.png" src="_images/776a7b3faca267b0c9e95c4bb87f7cfef3027827aa61d81a8e1393e1a6004b7f.png" />
+</div>
+</div>
+</section>
+<section id="what-if-we-need-them-to-be-identical-shapes">
+<h2>What if we need them to be identical shapes?<a class="headerlink" href="#what-if-we-need-them-to-be-identical-shapes" title="Link to this heading">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">PinderSystem.create_masked_bound_unbound_complexes</span></code> to create pairwise-cropped structures with identical shapes.</p>
+<p><strong>Note: this can be destructive as illustrated above.</strong></p>
+<p>For instance, if the apo or predicted structures are low quality or contain very different atom annotations than the holo structure, it is very possible that the holo structure will be modified significantly and no longer accurately represent the original structure.</p>
+<p>This can be especially pronounced when using both apo and predicted, as any differences between apo and predicted will then propagate to the holo structure equally.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">holo_cropped</span><span class="p">,</span> <span class="n">apo_cropped</span><span class="p">,</span> <span class="n">pred_cropped</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_masked_bound_unbound_complexes</span><span class="p">(</span><span class="n">monomer_types</span><span class="o">=</span><span class="p">[</span><span class="s2">"apo"</span><span class="p">],</span> <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="p">(</span>
+    <span class="n">holo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">apo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">pred_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(756, 756, 3598)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="we-specified-monomer-types-apo-but-got-a-tuple-of-structures-that-included-the-predicted-complex-why">
+<h2>We specified <code class="docutils literal notranslate"><span class="pre">monomer_types</span></code> apo, but got a tuple of structures that included the predicted complex, why?<a class="headerlink" href="#we-specified-monomer-types-apo-but-got-a-tuple-of-structures-that-included-the-predicted-complex-why" title="Link to this heading">#</a></h2>
+<p>In order to address the concern outlined above, unless explicitly requested via monomer_types (default is <code class="docutils literal notranslate"><span class="pre">[&quot;apo&quot;,</span> <span class="pre">&quot;predicted&quot;]</span></code>), the other monomer type will not be cropped.</p>
+<p>Now we have the apo structure and holo structure with identical shapes. What if we wanted to also include the predicted complex?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">holo_cropped</span><span class="p">,</span> <span class="n">apo_cropped</span><span class="p">,</span> <span class="n">pred_cropped</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_masked_bound_unbound_complexes</span><span class="p">(</span><span class="n">monomer_types</span><span class="o">=</span><span class="p">[</span><span class="s2">"apo"</span><span class="p">,</span> <span class="s2">"predicted"</span><span class="p">],</span> <span class="n">renumber_residues</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="p">(</span>
+    <span class="n">holo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">apo_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+    <span class="n">pred_cropped</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(756, 756, 756)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>In this case, including the predicted monomer did not further mutate the holo or apo structures. In other systems, it may.</strong></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-monomer-shapes-prior-to-cropping-or-superposition">Examine monomer shapes prior to cropping or superposition</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receptor-monomers">Receptor monomers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ligand-monomers">Ligand monomers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-alternative-monomer-use-case-without-cropping">Single alternative monomer use-case without cropping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-cropping-such-that-apo-and-holo-have-the-same-shapes">With cropping such that apo and holo have the same shapes</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-the-shapes-still-off-by-2-atoms">Why are the shapes still off by 2 atoms?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-residues-were-not-renumbered-so-the-number-of-differing-atom-specifications-is-larger-than-the-shape-mismatch-of-2">The residues were not renumbered, so the number of differing atom specifications is larger than the shape mismatch of 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-are-these-atoms-missing-in-the-apo-but-present-in-the-holo-structure">Why are these atoms missing in the apo, but present in the holo structure?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-we-need-them-to-be-identical-shapes">What if we need them to be identical shapes?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-specified-monomer-types-apo-but-got-a-tuple-of-structures-that-included-the-predicted-complex-why">We specified <code class="docutils literal notranslate"><span class="pre">monomer_types</span></code> apo, but got a tuple of structures that included the predicted complex, why?</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/superposition.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/superposition.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

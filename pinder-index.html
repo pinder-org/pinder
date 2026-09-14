@@ -1,0 +1,2710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pinder index &#8212; PINDER 0.1.dev1+gebeb28a2f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=829491a3"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pinder-index';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/pinder-index.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pinder system" href="pinder-system.html" />
+    <link rel="prev" title="Examples" href="examples.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+gebeb28a2f" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pinder index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-system.html">Pinder system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-loader.html">Pinder loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-eval.html">Pinder eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superposition.html">FAQ: cropped monomer superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-mlsb.html">MLSB PINDER Challenge</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="examples.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pinder index</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pinder-index">
+<h1>Pinder index<a class="headerlink" href="#pinder-index" title="Link to this heading">#</a></h1>
+<section id="download-the-dataset">
+<h2>Download the dataset<a class="headerlink" href="#download-the-dataset" title="Link to this heading">#</a></h2>
+<p>NOTE: the default location for the dataset is <code class="docutils literal notranslate"><span class="pre">~/.local/share/pinder/&lt;release</span> <span class="pre">version&gt;</span></code></p>
+<p>If you want to use a different location, you can do so by setting the <code class="docutils literal notranslate"><span class="pre">PINDER_BASE_DIR</span></code> environment variable.</p>
+<p>The base dir refers to a fully qualified path name up until the <code class="docutils literal notranslate"><span class="pre">&lt;release</span> <span class="pre">version&gt;</span></code> (not inclusive).</p>
+<p>For instance, you could:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PINDER_BASE_DIR</span><span class="o">=~/</span><span class="n">my</span><span class="o">-</span><span class="n">custom</span><span class="o">-</span><span class="n">location</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="n">pinder</span><span class="o">/</span><span class="n">pinder</span>
+</pre></div>
+</div>
+<p>You can always check the current location of the dataset like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="n">get_pinder_location</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_pinder_location</span>
+<span class="n">get_pinder_location</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath('/home/runner/.local/share/pinder/2024-02')
+</pre></div>
+</div>
+</div>
+</div>
+<section id="to-download-the-complete-dataset-run-the-following">
+<h3>To download the complete dataset run the following<a class="headerlink" href="#to-download-the-complete-dataset-run-the-following" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">download_dataset</span>
+<span class="c1"># download_dataset()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="alternatively-use-the-cli-script-pinder-download">
+<h3>Alternatively, use the CLI script <code class="docutils literal notranslate"><span class="pre">pinder_download</span></code><a class="headerlink" href="#alternatively-use-the-cli-script-pinder-download" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pinder_download<span class="w"> </span>--help
+
+usage:<span class="w"> </span>Download<span class="w"> </span>latest<span class="w"> </span>pinder<span class="w"> </span>dataset<span class="w"> </span>to<span class="w"> </span>disk<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>--pinder_base_dir<span class="w"> </span>PINDER_BASE_DIR<span class="o">]</span><span class="w"> </span><span class="o">[</span>--pinder_release<span class="w"> </span>PINDER_RELEASE<span class="o">]</span><span class="w"> </span><span class="o">[</span>--skip_inflation<span class="o">]</span>
+
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-h,<span class="w"> </span>--help<span class="w">            </span>show<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span><span class="nb">exit</span>
+<span class="w">  </span>--pinder_base_dir<span class="w"> </span>PINDER_BASE_DIR
+<span class="w">                        </span>specify<span class="w"> </span>a<span class="w"> </span>non-default<span class="w"> </span>pinder<span class="w"> </span>base<span class="w"> </span>directory
+<span class="w">  </span>--pinder_release<span class="w"> </span>PINDER_RELEASE
+<span class="w">                        </span>specify<span class="w"> </span>a<span class="w"> </span>pinder<span class="w"> </span>dataset<span class="w"> </span>version
+<span class="w">  </span>--skip_inflation<span class="w">      </span><span class="k">if</span><span class="w"> </span>passed,<span class="w"> </span>will<span class="w"> </span>only<span class="w"> </span>download<span class="w"> </span>the<span class="w"> </span>compressed<span class="w"> </span>archives<span class="w"> </span>without<span class="w"> </span>unpacking
+</pre></div>
+</div>
+</section>
+<section id="the-full-dataset-should-look-like-this">
+<h3>The full dataset should look like this<a class="headerlink" href="#the-full-dataset-should-look-like-this" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/.local/share/pinder/&lt;release<span class="w"> </span>version&gt;/
+<span class="w">    </span>pdbs/
+<span class="w">    </span>csvs/
+<span class="w">    </span>index.csv.gz
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pinder-metadata-api">
+<h2>Pinder metadata API<a class="headerlink" href="#pinder-metadata-api" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_metadata</span>
+
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">get_metadata</span><span class="p">()</span>
+<span class="n">metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>entry_id</th>
+      <th>method</th>
+      <th>date</th>
+      <th>release_date</th>
+      <th>resolution</th>
+      <th>label</th>
+      <th>probability</th>
+      <th>chain1_id</th>
+      <th>chain2_id</th>
+      <th>...</th>
+      <th>interface_atom_gaps_4A</th>
+      <th>missing_interface_residues_4A</th>
+      <th>interface_atom_gaps_8A</th>
+      <th>missing_interface_residues_8A</th>
+      <th>entity_id_R</th>
+      <th>entity_id_L</th>
+      <th>pdb_strand_id_R</th>
+      <th>pdb_strand_id_L</th>
+      <th>ECOD_names_R</th>
+      <th>ECOD_names_L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7rzb__A1_A0A229LVN5--7rzb__A2_A0A229LVN5</td>
+      <td>7rzb</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2021-08-27</td>
+      <td>2022-04-13</td>
+      <td>1.599609</td>
+      <td>BIO</td>
+      <td>0.576172</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>PF06491</td>
+      <td>PF06491</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3t2l__A1_Q5LE95--3t2l__A2_Q5LE95</td>
+      <td>3t2l</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2011-07-22</td>
+      <td>2011-08-10</td>
+      <td>2.330078</td>
+      <td>BIO</td>
+      <td>0.983887</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>F_UNCLASSIFIED,PF13149</td>
+      <td>F_UNCLASSIFIED,PF13149</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6ikj__A1_Q9I4L6--6ikj__B1_Q9I4L6</td>
+      <td>6ikj</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2018-10-16</td>
+      <td>2019-03-13</td>
+      <td>1.759766</td>
+      <td>BIO</td>
+      <td>0.543945</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>B</td>
+      <td>PF00691</td>
+      <td>PF00691</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8iyi__A1_Q6CVU4--8iyi__B1_Q6CVU4</td>
+      <td>8iyi</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2023-04-05</td>
+      <td>2023-06-28</td>
+      <td>1.900391</td>
+      <td>BIO</td>
+      <td>0.992188</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>B</td>
+      <td>PF17284,PF01564</td>
+      <td>PF17284,PF01564</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3uws__B1_A7A9N3--3uws__A1_A7A9N3</td>
+      <td>3uws</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2011-12-02</td>
+      <td>2012-06-13</td>
+      <td>1.700195</td>
+      <td>BIO</td>
+      <td>0.996094</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>B</td>
+      <td>A</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2319559</th>
+      <td>6hbg__C28_Q8V635--6hbg__C35_Q8V635</td>
+      <td>6hbg</td>
+      <td>ELECTRON MICROSCOPY</td>
+      <td>2018-08-10</td>
+      <td>2019-03-20</td>
+      <td>3.160156</td>
+      <td>BIO</td>
+      <td>0.512207</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>PF00073</td>
+      <td>PF00073</td>
+    </tr>
+    <tr>
+      <th>2319560</th>
+      <td>6hbg__A11_Q8V635--6hbg__A54_Q8V635</td>
+      <td>6hbg</td>
+      <td>ELECTRON MICROSCOPY</td>
+      <td>2018-08-10</td>
+      <td>2019-03-20</td>
+      <td>3.160156</td>
+      <td></td>
+      <td>0.000000</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>PF00073</td>
+      <td>PF00073</td>
+    </tr>
+    <tr>
+      <th>2319561</th>
+      <td>6hbg__C15_Q8V635--6hbg__D4_Q8V635</td>
+      <td>6hbg</td>
+      <td>ELECTRON MICROSCOPY</td>
+      <td>2018-08-10</td>
+      <td>2019-03-20</td>
+      <td>3.160156</td>
+      <td>XTAL</td>
+      <td>0.491943</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+      <td>C</td>
+      <td>D</td>
+      <td>PF00073</td>
+      <td>PF02226</td>
+    </tr>
+    <tr>
+      <th>2319562</th>
+      <td>6hbg__C33_Q8V635--6hbg__D52_Q8V635</td>
+      <td>6hbg</td>
+      <td>ELECTRON MICROSCOPY</td>
+      <td>2018-08-10</td>
+      <td>2019-03-20</td>
+      <td>3.160156</td>
+      <td>XTAL</td>
+      <td>0.491943</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+      <td>C</td>
+      <td>D</td>
+      <td>PF00073</td>
+      <td>PF02226</td>
+    </tr>
+    <tr>
+      <th>2319563</th>
+      <td>6rwh__A1_P31947--6rwh__A2_P31947</td>
+      <td>6rwh</td>
+      <td>X-RAY DIFFRACTION</td>
+      <td>2019-06-05</td>
+      <td>2020-06-17</td>
+      <td>1.679688</td>
+      <td>BIO</td>
+      <td>0.835938</td>
+      <td>R</td>
+      <td>L</td>
+      <td>...</td>
+      <td>4</td>
+      <td>0</td>
+      <td>64</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>PF00244</td>
+      <td>PF00244</td>
+    </tr>
+  </tbody>
+</table>
+<p>2319564 rows × 51 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="pinder-index-api">
+<h2>Pinder index API<a class="headerlink" href="#pinder-index-api" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">PinderSystem</span><span class="p">,</span> <span class="n">get_index</span>
+
+<span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>split</th>
+      <th>id</th>
+      <th>pdb_id</th>
+      <th>cluster_id</th>
+      <th>cluster_id_R</th>
+      <th>cluster_id_L</th>
+      <th>pinder_s</th>
+      <th>pinder_xl</th>
+      <th>pinder_af2</th>
+      <th>uniprot_R</th>
+      <th>...</th>
+      <th>apo_L</th>
+      <th>apo_R_quality</th>
+      <th>apo_L_quality</th>
+      <th>chain1_neff</th>
+      <th>chain2_neff</th>
+      <th>chain_R</th>
+      <th>chain_L</th>
+      <th>contains_antibody</th>
+      <th>contains_antigen</th>
+      <th>contains_enzyme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>test</td>
+      <td>7rzb__A1_A0A229LVN5--7rzb__A2_A0A229LVN5</td>
+      <td>7rzb</td>
+      <td>cluster_16129_16129</td>
+      <td>cluster_16129</td>
+      <td>cluster_16129</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A229LVN5</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>287.000000</td>
+      <td>287.000000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>test</td>
+      <td>3t2l__A1_Q5LE95--3t2l__A2_Q5LE95</td>
+      <td>3t2l</td>
+      <td>cluster_30933_30933</td>
+      <td>cluster_30933</td>
+      <td>cluster_30933</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q5LE95</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>7.175781</td>
+      <td>7.175781</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>test</td>
+      <td>6ikj__A1_Q9I4L6--6ikj__B1_Q9I4L6</td>
+      <td>6ikj</td>
+      <td>cluster_1924_1924</td>
+      <td>cluster_1924</td>
+      <td>cluster_1924</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q9I4L6</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>845.000000</td>
+      <td>845.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>test</td>
+      <td>8iyi__A1_Q6CVU4--8iyi__B1_Q6CVU4</td>
+      <td>8iyi</td>
+      <td>cluster_142_142</td>
+      <td>cluster_142</td>
+      <td>cluster_142</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q6CVU4</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>525.000000</td>
+      <td>525.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>test</td>
+      <td>3uws__B1_A7A9N3--3uws__A1_A7A9N3</td>
+      <td>3uws</td>
+      <td>cluster_21030_21031</td>
+      <td>cluster_21030</td>
+      <td>cluster_21031</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>A7A9N3</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>147.375000</td>
+      <td>147.375000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2319559</th>
+      <td>invalid</td>
+      <td>6hbg__C28_Q8V635--6hbg__C35_Q8V635</td>
+      <td>6hbg</td>
+      <td>cluster_-1_-1</td>
+      <td>cluster_-1</td>
+      <td>cluster_-1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>Q8V635</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>37.656250</td>
+      <td>37.656250</td>
+      <td>C28</td>
+      <td>C35</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2319560</th>
+      <td>invalid</td>
+      <td>6hbg__A11_Q8V635--6hbg__A54_Q8V635</td>
+      <td>6hbg</td>
+      <td>cluster_-1_-1</td>
+      <td>cluster_-1</td>
+      <td>cluster_-1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>Q8V635</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>37.656250</td>
+      <td>37.656250</td>
+      <td>A11</td>
+      <td>A54</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2319561</th>
+      <td>invalid</td>
+      <td>6hbg__C15_Q8V635--6hbg__D4_Q8V635</td>
+      <td>6hbg</td>
+      <td>cluster_-1_p</td>
+      <td>cluster_p</td>
+      <td>cluster_-1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>Q8V635</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>37.656250</td>
+      <td>37.656250</td>
+      <td>C15</td>
+      <td>D4</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2319562</th>
+      <td>invalid</td>
+      <td>6hbg__C33_Q8V635--6hbg__D52_Q8V635</td>
+      <td>6hbg</td>
+      <td>cluster_-1_p</td>
+      <td>cluster_p</td>
+      <td>cluster_-1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>Q8V635</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>37.656250</td>
+      <td>37.656250</td>
+      <td>C33</td>
+      <td>D52</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2319563</th>
+      <td>invalid</td>
+      <td>6rwh__A1_P31947--6rwh__A2_P31947</td>
+      <td>6rwh</td>
+      <td>cluster_2_2</td>
+      <td>cluster_2</td>
+      <td>cluster_2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>P31947</td>
+      <td>...</td>
+      <td>False</td>
+      <td></td>
+      <td></td>
+      <td>457.750000</td>
+      <td>457.750000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>2319564 rows × 34 columns</p>
+</div></div></div>
+</div>
+<section id="how-to-get-subsets-of-data-from-the-index">
+<h3>How to get subsets of data from the index<a class="headerlink" href="#how-to-get-subsets-of-data-from-the-index" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: I want all of pinder_af2 - apo</span>
+
+<span class="n">af2_apo</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s1">'pinder_af2 == True and apo_R and apo_L'</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">af2_apo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>split</th>
+      <th>id</th>
+      <th>pdb_id</th>
+      <th>cluster_id</th>
+      <th>cluster_id_R</th>
+      <th>cluster_id_L</th>
+      <th>pinder_s</th>
+      <th>pinder_xl</th>
+      <th>pinder_af2</th>
+      <th>uniprot_R</th>
+      <th>...</th>
+      <th>apo_L</th>
+      <th>apo_R_quality</th>
+      <th>apo_L_quality</th>
+      <th>chain1_neff</th>
+      <th>chain2_neff</th>
+      <th>chain_R</th>
+      <th>chain_L</th>
+      <th>contains_antibody</th>
+      <th>contains_antigen</th>
+      <th>contains_enzyme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>test</td>
+      <td>7ubk__B1_P03047--7ubk__A1_P03047</td>
+      <td>7ubk</td>
+      <td>cluster_31523_31523</td>
+      <td>cluster_31523</td>
+      <td>cluster_31523</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P03047</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>81.750000</td>
+      <td>81.750000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>test</td>
+      <td>7zj1__B1_P55265--7zj1__A1_P55265</td>
+      <td>7zj1</td>
+      <td>cluster_1209_1209</td>
+      <td>cluster_1209</td>
+      <td>cluster_1209</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P55265</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>174.250000</td>
+      <td>174.250000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>test</td>
+      <td>7zjc__A1_P0DV83--7zjc__A2_P0DV83</td>
+      <td>7zjc</td>
+      <td>cluster_26441_26441</td>
+      <td>cluster_26441</td>
+      <td>cluster_26441</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P0DV83</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>6.925781</td>
+      <td>6.925781</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>test</td>
+      <td>7ztw__A1_Q66578--7ztw__B1_Q66578</td>
+      <td>7ztw</td>
+      <td>cluster_22347_22347</td>
+      <td>cluster_22347</td>
+      <td>cluster_22347</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q66578</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>13.382812</td>
+      <td>13.382812</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>test</td>
+      <td>8ard__A1_Q64331--8ard__A2_Q64331</td>
+      <td>8ard</td>
+      <td>cluster_34280_34280</td>
+      <td>cluster_34280</td>
+      <td>cluster_34280</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q64331</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>444.750000</td>
+      <td>444.750000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>test</td>
+      <td>7wbt__A1_Q288C4--7wbt__B1_Q288C4</td>
+      <td>7wbt</td>
+      <td>cluster_7371_7371</td>
+      <td>cluster_7371</td>
+      <td>cluster_7371</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q288C4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>169.500000</td>
+      <td>169.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>test</td>
+      <td>7z7o__A1_A0A1S4NYF2--7z7o__C1_A0A1S4NYF2</td>
+      <td>7z7o</td>
+      <td>cluster_91_91</td>
+      <td>cluster_91</td>
+      <td>cluster_91</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A1S4NYF2</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>10.632812</td>
+      <td>10.632812</td>
+      <td>A1</td>
+      <td>C1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>test</td>
+      <td>8pte__A1_P00698--8pte__A2_P00698</td>
+      <td>8pte</td>
+      <td>cluster_274_274</td>
+      <td>cluster_274</td>
+      <td>cluster_274</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P00698</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>254.375000</td>
+      <td>254.375000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>test</td>
+      <td>7yka__B1_Q9Y3D6--7yka__A1_Q9Y3D6</td>
+      <td>7yka</td>
+      <td>cluster_13298_13298</td>
+      <td>cluster_13298</td>
+      <td>cluster_13298</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q9Y3D6</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>132.875000</td>
+      <td>132.875000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>test</td>
+      <td>7ykv__B1_Q58241--7ykv__A1_Q58241</td>
+      <td>7ykv</td>
+      <td>cluster_5358_5358</td>
+      <td>cluster_5358</td>
+      <td>cluster_5358</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q58241</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>171.625000</td>
+      <td>171.625000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>test</td>
+      <td>8a60__A1_P06971--8a60__B1_Q38162</td>
+      <td>8a60</td>
+      <td>cluster_12107_26846</td>
+      <td>cluster_12107</td>
+      <td>cluster_26846</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P06971</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>288.000000</td>
+      <td>2.734375</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>test</td>
+      <td>7t5y__A1_P0A7E1--7t5y__B1_P0A7E1</td>
+      <td>7t5y</td>
+      <td>cluster_7939_7939</td>
+      <td>cluster_7939</td>
+      <td>cluster_7939</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P0A7E1</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>735.500000</td>
+      <td>735.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>test</td>
+      <td>8oru__A1_O93732--8oru__B1_O93732</td>
+      <td>8oru</td>
+      <td>cluster_14951_14951</td>
+      <td>cluster_14951</td>
+      <td>cluster_14951</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>O93732</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>103.187500</td>
+      <td>103.187500</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>test</td>
+      <td>7z6m__A1_A0A0H3LM39--7z6m__A2_A0A0H3LM39</td>
+      <td>7z6m</td>
+      <td>cluster_5362_5362</td>
+      <td>cluster_5362</td>
+      <td>cluster_5362</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A0H3LM39</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>533.000000</td>
+      <td>533.000000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>test</td>
+      <td>8cnx__A1_Q68T42--8cnx__B1_Q68T42</td>
+      <td>8cnx</td>
+      <td>cluster_609_609</td>
+      <td>cluster_609</td>
+      <td>cluster_609</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q68T42</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>45.000000</td>
+      <td>45.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>test</td>
+      <td>7wwo__B1_Q5SH57--7wwo__A1_Q5SH57</td>
+      <td>7wwo</td>
+      <td>cluster_5115_5115</td>
+      <td>cluster_5115</td>
+      <td>cluster_5115</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q5SH57</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>2.939453</td>
+      <td>2.939453</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>test</td>
+      <td>8d0m__A1_P28907--8d0m__A2_P28907</td>
+      <td>8d0m</td>
+      <td>cluster_2975_2975</td>
+      <td>cluster_2975</td>
+      <td>cluster_2975</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P28907</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>48.312500</td>
+      <td>48.312500</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>test</td>
+      <td>8avu__A1_Q8GPI4--8avu__A2_Q8GPI4</td>
+      <td>8avu</td>
+      <td>cluster_29712_29712</td>
+      <td>cluster_29712</td>
+      <td>cluster_29712</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q8GPI4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>11.882812</td>
+      <td>11.882812</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>test</td>
+      <td>8i2e__A1_O34841--8i2e__B1_P54421</td>
+      <td>8i2e</td>
+      <td>cluster_11087_12465</td>
+      <td>cluster_12465</td>
+      <td>cluster_11087</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>O34841</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>9.031250</td>
+      <td>865.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>test</td>
+      <td>8aeu__A1_Q00987--8aeu__A2_Q00987</td>
+      <td>8aeu</td>
+      <td>cluster_1537_1537</td>
+      <td>cluster_1537</td>
+      <td>cluster_1537</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q00987</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>350.750000</td>
+      <td>350.750000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>test</td>
+      <td>7vso__A1_P02945--7vso__A2_P02945</td>
+      <td>7vso</td>
+      <td>cluster_1035_1035</td>
+      <td>cluster_1035</td>
+      <td>cluster_1035</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P02945</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>267.250000</td>
+      <td>267.250000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>test</td>
+      <td>7yuj__B1_Q9BYM8--7yuj__A1_Q9BYM8</td>
+      <td>7yuj</td>
+      <td>cluster_19439_19439</td>
+      <td>cluster_19439</td>
+      <td>cluster_19439</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q9BYM8</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>266.750000</td>
+      <td>266.750000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>test</td>
+      <td>8pvm__A1_P29166--8pvm__B1_P29166</td>
+      <td>8pvm</td>
+      <td>cluster_6440_6440</td>
+      <td>cluster_6440</td>
+      <td>cluster_6440</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P29166</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>392.500000</td>
+      <td>392.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>test</td>
+      <td>7yo8__A1_P60520--7yo8__A2_P60520</td>
+      <td>7yo8</td>
+      <td>cluster_1022_1022</td>
+      <td>cluster_1022</td>
+      <td>cluster_1022</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P60520</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>385.500000</td>
+      <td>385.500000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>test</td>
+      <td>7y51__A1_Q8RBF4--7y51__A2_Q8RBF4</td>
+      <td>7y51</td>
+      <td>cluster_711_711</td>
+      <td>cluster_711</td>
+      <td>cluster_711</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q8RBF4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>954.500000</td>
+      <td>954.500000</td>
+      <td>A1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>test</td>
+      <td>7tvh__B1_Q9I2Q1--7tvh__A1_Q9I2Q1</td>
+      <td>7tvh</td>
+      <td>cluster_8106_8106</td>
+      <td>cluster_8106</td>
+      <td>cluster_8106</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>Q9I2Q1</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>209.125000</td>
+      <td>209.125000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>test</td>
+      <td>8bwv__D2_A0A482M8M0--8bwv__A1_A0A482M8M0</td>
+      <td>8bwv</td>
+      <td>cluster_27613_27613</td>
+      <td>cluster_27613</td>
+      <td>cluster_27613</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A482M8M0</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>395.000000</td>
+      <td>395.000000</td>
+      <td>D2</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>test</td>
+      <td>7t91__A1_P08151--7t91__B1_P08151</td>
+      <td>7t91</td>
+      <td>cluster_1801_1801</td>
+      <td>cluster_1801</td>
+      <td>cluster_1801</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P08151</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>321.250000</td>
+      <td>321.250000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>test</td>
+      <td>7zoo__B1_A0A979GQH9--7zoo__A1_A0A979GQH9</td>
+      <td>7zoo</td>
+      <td>cluster_32633_32633</td>
+      <td>cluster_32633</td>
+      <td>cluster_32633</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A979GQH9</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>419.250000</td>
+      <td>419.250000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>test</td>
+      <td>7x4b__A1_A0A2D0TCG3--7x4b__B1_A0A2D0TCG3</td>
+      <td>7x4b</td>
+      <td>cluster_7334_7334</td>
+      <td>cluster_7334</td>
+      <td>cluster_7334</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>A0A2D0TCG3</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>9.453125</td>
+      <td>9.453125</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>30 rows × 34 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="finding-the-existing-local-filepaths-for-systems-without-re-writing-them-per-system">
+<h3>Finding the existing local filepaths for systems (without re-writing them per system)<a class="headerlink" href="#finding-the-existing-local-filepaths-for-systems-without-re-writing-them-per-system" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_systems</span>
+
+
+<span class="n">local_paths</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">get_systems</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">af2_apo</span><span class="o">.</span><span class="n">id</span><span class="p">)):</span>
+    <span class="n">local_paths</span><span class="p">[</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">filepaths</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/30 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|▎         | 1/30 [00:01&lt;00:45,  1.57s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 2/30 [00:02&lt;00:26,  1.07it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|█         | 3/30 [00:02&lt;00:19,  1.40it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 4/30 [00:03&lt;00:21,  1.23it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█▋        | 5/30 [00:04&lt;00:20,  1.23it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 6/30 [00:05&lt;00:20,  1.17it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██▎       | 7/30 [00:06&lt;00:20,  1.10it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██▋       | 8/30 [02:18&lt;15:41, 42.80s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|███       | 9/30 [02:19&lt;10:22, 29.65s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 10/30 [02:20&lt;06:53, 20.69s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|███▋      | 11/30 [02:21&lt;04:40, 14.74s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████      | 12/30 [02:22&lt;03:08, 10.49s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 13/30 [02:22&lt;02:07,  7.50s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 14/30 [02:23&lt;01:27,  5.47s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|█████     | 15/30 [02:36&lt;01:57,  7.82s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 16/30 [02:37&lt;01:20,  5.78s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | 17/30 [02:42&lt;01:12,  5.55s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████    | 18/30 [02:43&lt;00:49,  4.09s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████▎   | 19/30 [02:44&lt;00:33,  3.01s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████▋   | 20/30 [02:52&lt;00:45,  4.54s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████   | 21/30 [02:57&lt;00:42,  4.72s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████▎  | 22/30 [02:57&lt;00:28,  3.50s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████▋  | 23/30 [03:01&lt;00:25,  3.65s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|████████  | 24/30 [03:02&lt;00:16,  2.75s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 83%|████████▎ | 25/30 [03:03&lt;00:10,  2.13s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 26/30 [03:04&lt;00:07,  1.88s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|█████████ | 27/30 [03:05&lt;00:04,  1.49s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 28/30 [03:05&lt;00:02,  1.25s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|█████████▋| 29/30 [03:06&lt;00:01,  1.14s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [03:07&lt;00:00,  1.09it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [03:07&lt;00:00,  6.24s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="it-should-be-cached-no-need-to-download-if-you-re-run">
+<h3>It should be cached, no need to download if you re-run<a class="headerlink" href="#it-should-be-cached-no-need-to-download-if-you-re-run" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">local_paths</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">get_systems</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">af2_apo</span><span class="o">.</span><span class="n">id</span><span class="p">)):</span>
+    <span class="n">local_paths</span><span class="p">[</span><span class="n">system</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">filepaths</span>
+<span class="n">local_paths</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/30 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 2/30 [00:00&lt;00:01, 15.64it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█▎        | 4/30 [00:00&lt;00:01, 17.37it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██        | 6/30 [00:00&lt;00:01, 14.06it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|██▋       | 8/30 [00:00&lt;00:01, 13.12it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|███▎      | 10/30 [00:00&lt;00:01, 13.87it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████      | 12/30 [00:00&lt;00:01, 14.14it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████▋     | 14/30 [00:00&lt;00:01, 13.89it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████▎    | 16/30 [00:01&lt;00:00, 14.74it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████    | 18/30 [00:01&lt;00:00, 15.36it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████▋   | 20/30 [00:01&lt;00:00, 15.66it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████▎  | 22/30 [00:01&lt;00:00, 15.75it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|████████  | 24/30 [00:01&lt;00:00, 14.97it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 26/30 [00:01&lt;00:00, 15.52it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 28/30 [00:01&lt;00:00, 15.73it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [00:01&lt;00:00, 16.58it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 30/30 [00:01&lt;00:00, 15.22it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'7ubk__B1_P03047--7ubk__A1_P03047': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ubk__B1_P03047-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ubk__A1_P03047-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/4mo1__A1_P03047.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/4mo1__A1_P03047.pdb'),
+  'pred_receptor': None,
+  'pred_ligand': None},
+ '7zj1__B1_P55265--7zj1__A1_P55265': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zj1__B1_P55265-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zj1__A1_P55265-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2mdr__A1_P55265.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2mdr__A1_P55265.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P55265.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P55265.pdb')},
+ '7zjc__A1_P0DV83--7zjc__A2_P0DV83': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zjc__A1_P0DV83-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zjc__A2_P0DV83-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7qdv__A1_P0DV83.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7qdv__A1_P0DV83.pdb'),
+  'pred_receptor': None,
+  'pred_ligand': None},
+ '7ztw__A1_Q66578--7ztw__B1_Q66578': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ztw__A1_Q66578-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ztw__B1_Q66578-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7zu3__A1_Q66578.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7zu4__A1_Q66578.pdb'),
+  'pred_receptor': None,
+  'pred_ligand': None},
+ '8ard__A1_Q64331--8ard__A2_Q64331': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8ard__A1_Q64331-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8ard__A2_Q64331-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2ld3__A1_Q64331.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2ld3__A1_Q64331.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q64331.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q64331.pdb')},
+ '7wbt__A1_Q288C4--7wbt__B1_Q288C4': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7wbt__A1_Q288C4-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7wbt__B1_Q288C4-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7wbu__A1_Q288C4.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7wbu__A1_Q288C4.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q288C4.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q288C4.pdb')},
+ '7z7o__A1_A0A1S4NYF2--7z7o__C1_A0A1S4NYF2': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7z7o__A1_A0A1S4NYF2-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7z7o__C1_A0A1S4NYF2-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7z7p__A1_A0A1S4NYF2.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7z7p__A1_A0A1S4NYF2.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A1S4NYF2.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A1S4NYF2.pdb')},
+ '8pte__A1_P00698--8pte__A2_P00698': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8pte__A1_P00698-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8pte__A2_P00698-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2q0m__A1_P00698.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2q0m__A1_P00698.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P00698.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P00698.pdb')},
+ '7yka__B1_Q9Y3D6--7yka__A1_Q9Y3D6': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yka__B1_Q9Y3D6-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yka__A1_Q9Y3D6-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/1nzn__A1_Q9Y3D6.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/1nzn__A1_Q9Y3D6.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9Y3D6.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9Y3D6.pdb')},
+ '7ykv__B1_Q58241--7ykv__A1_Q58241': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ykv__B1_Q58241-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7ykv__A1_Q58241-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/6tvv__A1_Q58241.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/6tvv__A1_Q58241.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q58241.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q58241.pdb')},
+ '8a60__A1_P06971--8a60__B1_Q38162': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8a60__A1_P06971-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8a60__B1_Q38162-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2fcp__A1_P06971.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7qjf__A1_Q38162.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P06971.pdb'),
+  'pred_ligand': None},
+ '7t5y__A1_P0A7E1--7t5y__B1_P0A7E1': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7t5y__A1_P0A7E1-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7t5y__B1_P0A7E1-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/1f76__A1_P0A7E1.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/1f76__A1_P0A7E1.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P0A7E1.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P0A7E1.pdb')},
+ '8oru__A1_O93732--8oru__B1_O93732': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8oru__A1_O93732-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8oru__B1_O93732-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8ork__A1_O93732.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8ork__A1_O93732.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__O93732.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__O93732.pdb')},
+ '7z6m__A1_A0A0H3LM39--7z6m__A2_A0A0H3LM39': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7z6m__A1_A0A0H3LM39-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7z6m__A2_A0A0H3LM39-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/5tsb__A1_A0A0H3LM39.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/5tsb__A1_A0A0H3LM39.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A0H3LM39.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A0H3LM39.pdb')},
+ '8cnx__A1_Q68T42--8cnx__B1_Q68T42': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8cnx__A1_Q68T42-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8cnx__B1_Q68T42-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7goq__A1_Q68T42.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7gqn__A1_Q68T42.pdb'),
+  'pred_receptor': None,
+  'pred_ligand': None},
+ '7wwo__B1_Q5SH57--7wwo__A1_Q5SH57': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7wwo__B1_Q5SH57-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7wwo__A1_Q5SH57-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7wrk__A1_Q5SH57.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7wrk__A1_Q5SH57.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q5SH57.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q5SH57.pdb')},
+ '8d0m__A1_P28907--8d0m__A2_P28907': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8d0m__A1_P28907-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8d0m__A2_P28907-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8p8c__A1_P28907.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8p8c__A1_P28907.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P28907.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P28907.pdb')},
+ '8avu__A1_Q8GPI4--8avu__A2_Q8GPI4': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8avu__A1_Q8GPI4-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8avu__A2_Q8GPI4-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8avs__A1_Q8GPI4.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8avs__A1_Q8GPI4.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8GPI4.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8GPI4.pdb')},
+ '8i2e__A1_O34841--8i2e__B1_P54421': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8i2e__A1_O34841-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8i2e__B1_P54421-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2rsx__A1_O34841.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8i2d__A1_P54421.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__O34841.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P54421.pdb')},
+ '8aeu__A1_Q00987--8aeu__A2_Q00987': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8aeu__A1_Q00987-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8aeu__A2_Q00987-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/6kzu__A1_Q00987.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/6kzu__A1_Q00987.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q00987.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q00987.pdb')},
+ '7vso__A1_P02945--7vso__A2_P02945': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7vso__A1_P02945-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7vso__A2_P02945-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/5b34__A1_P02945.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/5b34__A1_P02945.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P02945.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P02945.pdb')},
+ '7yuj__B1_Q9BYM8--7yuj__A1_Q9BYM8': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yuj__B1_Q9BYM8-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yuj__A1_Q9BYM8-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8bvl__A1_Q9BYM8.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8bvl__A1_Q9BYM8.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9BYM8.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9BYM8.pdb')},
+ '8pvm__A1_P29166--8pvm__B1_P29166': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8pvm__A1_P29166-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8pvm__B1_P29166-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8aio__A1_P29166.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/5byq__A1_P29166.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P29166.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P29166.pdb')},
+ '7yo8__A1_P60520--7yo8__A2_P60520': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yo8__A1_P60520-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7yo8__A2_P60520-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7lk3__A1_P60520.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7lk3__A1_P60520.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P60520.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P60520.pdb')},
+ '7y51__A1_Q8RBF4--7y51__A2_Q8RBF4': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7y51__A1_Q8RBF4-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7y51__A2_Q8RBF4-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7fbw__A1_Q8RBF4.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7fbw__A1_Q8RBF4.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8RBF4.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8RBF4.pdb')},
+ '7tvh__B1_Q9I2Q1--7tvh__A1_Q9I2Q1': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7tvh__B1_Q9I2Q1-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7tvh__A1_Q9I2Q1-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/4fgd__A1_Q9I2Q1.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/4f4m__A1_Q9I2Q1.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9I2Q1.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__Q9I2Q1.pdb')},
+ '8bwv__D2_A0A482M8M0--8bwv__A1_A0A482M8M0': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8bwv__D2_A0A482M8M0-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/8bwv__A1_A0A482M8M0-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8bbz__A1_A0A482M8M0.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/8bhu__A1_A0A482M8M0.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A482M8M0.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A482M8M0.pdb')},
+ '7t91__A1_P08151--7t91__B1_P08151': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7t91__A1_P08151-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7t91__B1_P08151-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2gli__C1_P08151.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/2gli__C1_P08151.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P08151.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__P08151.pdb')},
+ '7zoo__B1_A0A979GQH9--7zoo__A1_A0A979GQH9': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zoo__B1_A0A979GQH9-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7zoo__A1_A0A979GQH9-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7zoh__A1_A0A979GQH9.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7zoh__A1_A0A979GQH9.pdb'),
+  'pred_receptor': None,
+  'pred_ligand': None},
+ '7x4b__A1_A0A2D0TCG3--7x4b__B1_A0A2D0TCG3': {'holo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7x4b__A1_A0A2D0TCG3-R.pdb'),
+  'holo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/test_set_pdbs/7x4b__B1_A0A2D0TCG3-L.pdb'),
+  'apo_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7x31__A1_A0A2D0TCG3.pdb'),
+  'apo_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/7x31__A1_A0A2D0TCG3.pdb'),
+  'pred_receptor': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A2D0TCG3.pdb'),
+  'pred_ligand': PosixPath('/home/runner/.local/share/pinder/2024-02/pdbs/af__A0A2D0TCG3.pdb')}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pinder-filters">
+<h3>Pinder filters<a class="headerlink" href="#pinder-filters" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core.loader</span><span class="w"> </span><span class="kn">import</span> <span class="n">filters</span>
+
+<span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">"1df0__A1_Q07009--1df0__B1_Q64537"</span>
+<span class="n">dimer</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">entry</span><span class="o">=</span><span class="n">pinder_id</span><span class="p">)</span>
+
+<span class="n">base_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByMissingHolo</span><span class="p">(),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByContacts</span><span class="p">(</span><span class="n">min_contacts</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">calpha_only</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedHolo</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">sub_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubByAtomTypes</span><span class="p">(</span><span class="n">min_atom_types</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloOverlap</span><span class="p">(</span><span class="n">min_overlap</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByHoloSeqIdentity</span><span class="p">(</span><span class="n">min_sequence_identity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubLengths</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterSubRmsds</span><span class="p">(</span><span class="n">rmsd_cutoff</span><span class="o">=</span><span class="mf">7.5</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterByElongation</span><span class="p">(</span><span class="n">max_var_contribution</span><span class="o">=</span><span class="mf">0.92</span><span class="p">),</span>
+    <span class="n">filters</span><span class="o">.</span><span class="n">FilterDetachedSub</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">max_components</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">dimers</span> <span class="o">=</span> <span class="p">[</span><span class="n">dimer</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">sub_filter</span> <span class="ow">in</span> <span class="n">sub_filters</span><span class="p">:</span>
+    <span class="n">dimers</span> <span class="o">=</span> <span class="p">(</span><span class="n">sub_filter</span><span class="p">(</span><span class="n">dimer</span><span class="p">)</span> <span class="k">for</span> <span class="n">dimer</span> <span class="ow">in</span> <span class="n">dimers</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">base_filter</span> <span class="ow">in</span> <span class="n">base_filters</span><span class="p">:</span>
+    <span class="n">dimers</span> <span class="o">=</span> <span class="p">(</span><span class="n">dimer</span> <span class="k">for</span> <span class="n">dimer</span> <span class="ow">in</span> <span class="n">dimers</span> <span class="k">if</span> <span class="n">base_filter</span><span class="p">(</span><span class="n">dimer</span><span class="p">))</span>
+
+<span class="n">dimers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x7fb6bd18f530&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">dimers</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        'split',
+        'invalid',
+    ),
+    (
+        'id',
+        '1df0__A1_Q07009--1df0__B1_Q64537',
+    ),
+    (
+        'pdb_id',
+        '1df0',
+    ),
+    (
+        'cluster_id',
+        'cluster_1030_1030',
+    ),
+    (
+        'cluster_id_R',
+        'cluster_1030',
+    ),
+    (
+        'cluster_id_L',
+        'cluster_1030',
+    ),
+    (
+        'pinder_s',
+        False,
+    ),
+    (
+        'pinder_xl',
+        False,
+    ),
+    (
+        'pinder_af2',
+        False,
+    ),
+    (
+        'uniprot_R',
+        'Q07009',
+    ),
+    (
+        'uniprot_L',
+        'Q64537',
+    ),
+    (
+        'holo_R_pdb',
+        '1df0__A1_Q07009-R.pdb',
+    ),
+    (
+        'holo_L_pdb',
+        '1df0__B1_Q64537-L.pdb',
+    ),
+    (
+        'predicted_R_pdb',
+        'af__Q07009.pdb',
+    ),
+    (
+        'predicted_L_pdb',
+        'af__Q64537.pdb',
+    ),
+    (
+        'apo_R_pdb',
+        '',
+    ),
+    (
+        'apo_L_pdb',
+        '',
+    ),
+    (
+        'apo_R_pdbs',
+        '',
+    ),
+    (
+        'apo_L_pdbs',
+        '',
+    ),
+    (
+        'holo_R',
+        True,
+    ),
+    (
+        'holo_L',
+        True,
+    ),
+    (
+        'predicted_R',
+        True,
+    ),
+    (
+        'predicted_L',
+        True,
+    ),
+    (
+        'apo_R',
+        False,
+    ),
+    (
+        'apo_L',
+        False,
+    ),
+    (
+        'apo_R_quality',
+        '',
+    ),
+    (
+        'apo_L_quality',
+        '',
+    ),
+    (
+        'chain1_neff',
+        492.25,
+    ),
+    (
+        'chain2_neff',
+        528.0,
+    ),
+    (
+        'chain_R',
+        'A1',
+    ),
+    (
+        'chain_L',
+        'B1',
+    ),
+    (
+        'contains_antibody',
+        False,
+    ),
+    (
+        'contains_antigen',
+        False,
+    ),
+    (
+        'contains_enzyme',
+        True,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1df0__A1_Q07009--1df0__B1_Q64537.pdb,
+    uniprot_map=None,
+    pinder_id='1df0__A1_Q07009--1df0__B1_Q64537',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (6391,),
+    pdb_engine='fastpdb',
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1df0__A1_Q07009-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1df0__A1_Q07009-R.parquet,
+    pinder_id='1df0__A1_Q07009-R',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (4964,),
+    pdb_engine='fastpdb',
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1df0__B1_Q64537-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1df0__B1_Q64537-L.parquet,
+    pinder_id='1df0__B1_Q64537-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1427,),
+    pdb_engine='fastpdb',
+)
+apo_receptor=None
+apo_ligand=None
+pred_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__Q07009.pdb,
+    uniprot_map=None,
+    pinder_id='af__Q07009',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (5631,),
+    pdb_engine='fastpdb',
+)
+pred_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__Q64537.pdb,
+    uniprot_map=None,
+    pinder_id='af__Q64537',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (2006,),
+    pdb_engine='fastpdb',
+)
+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-dataset">Download the dataset</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-download-the-complete-dataset-run-the-following">To download the complete dataset run the following</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternatively-use-the-cli-script-pinder-download">Alternatively, use the CLI script <code class="docutils literal notranslate"><span class="pre">pinder_download</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-full-dataset-should-look-like-this">The full dataset should look like this</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-metadata-api">Pinder metadata API</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-index-api">Pinder index API</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-get-subsets-of-data-from-the-index">How to get subsets of data from the index</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-existing-local-filepaths-for-systems-without-re-writing-them-per-system">Finding the existing local filepaths for systems (without re-writing them per system)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#it-should-be-cached-no-need-to-download-if-you-re-run">It should be cached, no need to download if you re-run</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pinder-filters">Pinder filters</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/pinder-index.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/pinder-index.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

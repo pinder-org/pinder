@@ -1,0 +1,1589 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinder.core.utils.constants &#8212; PINDER 0.1.dev1+gebeb28a2f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../../../../_static/documentation_options.js?v=829491a3"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/thebelab-helper.js"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/pinder/core/utils/constants';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/_modules/pinder/core/utils/constants.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+gebeb28a2f" />
+  
+    
+    <script src="../../../../_static/searchtools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+    <img src="../../../../_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">pinder.core.utils.constants</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for pinder.core.utils.constants</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="n">PDB_FILE_COUNT</span> <span class="o">=</span> <span class="mi">3826764</span>
+<span class="n">TEST_SET_PDB_FILE_COUNT</span> <span class="o">=</span> <span class="mi">3914</span>
+<span class="n">MAPPING_FILE_COUNT</span> <span class="o">=</span> <span class="mi">1448950</span>
+
+<span class="n">three_to_one_noncanonical_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"004"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"00C"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"00I"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"00S"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"010"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"011"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"01B"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"01W"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"02A"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"02G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"02J"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"02K"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"02V"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"02Y"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"03Y"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"05N"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"0A9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0AF"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"0AH"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"0E5"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"0EA"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"0EH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0HQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0JU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0JY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0LF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0MG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0OB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0QE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0QL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"0UO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"11Q"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"13E"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"143"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"175"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"19W"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1AC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1BO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1C3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1E3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1HB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1HD"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1MH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1OL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1OP"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"1PA"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"1TQ"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"1TX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1TY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"1U8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"1ZN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"200"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"22G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"23F"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"23P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"24M"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"24O"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"28H"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"28J"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"28K"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2A1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2CO"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"2GX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2JH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2JN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2KK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"2KP"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"2L5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2MR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"2N2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2OP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2PP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2RX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2SO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2TL"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"2TY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"2UC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2UE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"2X0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"30F"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"32L"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"36D"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3A0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3A5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3AZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3BY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3CF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"3CN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3CT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3FB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3GL"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"3PA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3PX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3TY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3V7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3V8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3X9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3ZH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"3ZL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"41H"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"45F"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"45W"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"48V"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4AK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4AR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4BA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4BF"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"4CF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"4CG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4CY"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"4DB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4DP"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"4FB"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"4FO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4H0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4HL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4HT"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"4II"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"4IN"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"4KY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4L0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4L8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4LZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4MM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4N7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4N8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4N9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"4WQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"54C"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"562"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"56A"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"56C"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"56J"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5CT"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"5GM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5JP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5OL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5OM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5OW"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"5PG"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"5PV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5R0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5R5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"5XU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"60H"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"66D"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6A0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6CW"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"6D6"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6E4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6F5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6FH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6G4"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"6L3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6L9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6NA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6RK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6VO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"6ZS"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"73C"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"73N"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"73O"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"73P"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"74P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7BB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7GA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7NF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7NW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7NX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"7XC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"81R"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"81S"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"823"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"85G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"85J"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"8BB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"8LJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"8MC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"8SN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"8TQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"92B"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"99Y"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9AT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9BB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9DK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9DQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9DT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9DW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9DZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9E7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9FZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9G2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9KK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9KP"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"9PR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9R1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9R4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9R7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"9WV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"A0A"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"A1G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"A5R"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"A8E"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AA1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AAR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"ABA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ABN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ABU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AC5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ACA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ACB"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ACE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ACY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AEA"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"AEI"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"AG2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AGQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AGT"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"AH0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AHH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AHO"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"AHP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"AIB"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"AJE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AKR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AKZ"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ALA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ALC"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ALN"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ALO"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"ALQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ALT"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ALV"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ALY"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"AME"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AMP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AMU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"APK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"AQ7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AR0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AR7"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"ARG"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"ASA"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ASB"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ASJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ASL"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ASN"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"ASP"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"ASX"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">,</span>
+    <span class="s2">"AY0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AYA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"AYE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"AZK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"B27"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"B2A"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"B2F"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"B2I"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"B2V"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"B3A"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"B3D"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"B3E"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"B3K"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"B3L"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"B3Q"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"B3T"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"B3Y"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"B8R"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BAL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BB6"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"BB7"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"BB8"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"BB9"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"BBC"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"BBS"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BE2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BEZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BF9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BFD"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"BH2"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"BHD"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"BIF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"BIL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BLE"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"BMT"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"BNO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BOC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BOR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"BP4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BP5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BPE"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"BSE"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"BTK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BTN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BVK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BW5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BWV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"BXT"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"C1J"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"C1X"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"C4G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"C67"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"C6D"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CAF"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CAS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CCS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CDE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CE7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CEV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CF0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CFT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CG6"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CGU"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"CGV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CH6"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"CHG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CHS"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CIR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"CKC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CLG"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"CLH"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"CLR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CME"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CMH"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CMT"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CNT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CPI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CR2"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"CRO"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"CS1"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSA"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSD"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CSO"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSP"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSU"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CSX"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CXM"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"CXP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"CY1"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CY3"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CY4"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CYF"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CYG"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CYJ"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"CYQ"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CYR"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"CYS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"D4P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DA2"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"DAB"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"DAH"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"DAL"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"DAM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DAO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DAR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"DAS"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"DBB"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"DBH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DBU"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"DBY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"DC0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DCL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DCY"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"DDE"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"DDZ"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"DFF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DFI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DFO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DGL"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"DGN"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"DHA"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"DHI"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"DHL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DI7"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"DI8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DIL"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"DIP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DIV"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"DIX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DIY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DKA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DLE"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"DLS"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"DLY"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"DMG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DMH"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"DMK"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"DMT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DNP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"DNW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DOA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DPN"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"DPP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"DPQ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"DPR"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"DQK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DSE"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"DSG"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"DSN"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"DTH"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"DTR"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"DTY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"DUG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DVA"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"DYL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"DYS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"DYW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"E2G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ECC"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"ECQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"EFC"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"EJA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ELY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"EOE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ESB"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"ESC"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"ESD"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ETA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"EX8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"EXB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"EYZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"F2F"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"F6N"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"F75"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"F7P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"F7S"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"F7V"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FAK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"FBE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FC0"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"FCL"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"FDL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FE3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FGA"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"FGL"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"FGP"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"FHL"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"FHO"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"FLT"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"FME"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"FMT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FOR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FP9"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"FPA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FPR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FQA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FRD"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"FT6"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"FTR"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"FTY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"FZN"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"G1X"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"G2Z"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"G5G"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GG7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GGL"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GHG"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"GIC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GLJ"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GLK"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GLN"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"GLU"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GLX"</span><span class="p">:</span> <span class="s2">"Z"</span><span class="p">,</span>
+    <span class="s2">"GLY"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"GLZ"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"GMA"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"GME"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GNC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GOA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GPL"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"GRN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GVE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GYS"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"GZB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"GZJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"H14"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"HAO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HCI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HCS"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HIA"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HIC"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HIP"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HIS"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HIX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HMB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HMF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HMR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"HNC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HOA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HOX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HPE"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"HPH"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"HQA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"HR7"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"HRG"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"HS9"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HSE"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"HSL"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"HSV"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"HT7"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"HTI"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"HTR"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"HY1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"HYP"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"HZP"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"IAS"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"IBU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"IIL"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"IL0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ILE"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"IML"</span><span class="p">:</span> <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"IP8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"IPG"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"IPI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"IVA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"IYR"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"IZO"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"JG3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"JJJ"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"JJK"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"JJL"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"JLP"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KCQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"KCR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"KCX"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KFP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"KGC"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KHB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"KI2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"KPF"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KPI"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KPY"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"KYN"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"KYQ"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"L2O"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"L3O"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"L5P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LA2"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LAC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LAV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LAY"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"LCK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LDH"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LET"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LEU"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"LGY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LHE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LHV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LLP"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LNT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LOV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LP6"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LPD"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"LPH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LPL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LRK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LSO"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LTA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LYF"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYK"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYN"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LYR"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYS"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"LYX"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"LYZ"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"M0H"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"M2L"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"M3L"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"M9P"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MAA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"MAZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MBN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MCM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MDO"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ME0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MEA"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"MEN"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"MEQ"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"MET"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"MH6"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"MH8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MHO"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"MHT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MHU"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"MHV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MHW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MIS"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"MK8"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"MKD"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MKE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ML3"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"MLE"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"MLI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MLL"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"MLU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MLY"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"MLZ"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"MME"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"MN1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MN2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MN7"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MN8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MOZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MP8"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"MPQ"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"MPT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MSA"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"MSE"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"MSO"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"MSU"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MUB"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MVA"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"MX3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MX4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MX5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MY0"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MY1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MY2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MY3"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MY5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MYK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"MYR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"N10"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"N2C"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"N7P"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"N80"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"NA8"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"NAK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NAL"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"NCY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NEH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NEP"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"NH2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NIT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NIY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"NLE"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"NLG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NLW"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"NLY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NMC"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"NME"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"NMM"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"NVA"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"NYS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"NZC"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"OAR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"OAS"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"OBF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OBS"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"OCQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OCS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"ODA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OHI"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"OHS"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"OIC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OMH"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OMT"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"ONL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OPR"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"ORN"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ORQ"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"OSL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OTT"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"OTZ"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"P1L"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"P2Q"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"P9S"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"PAQ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"PAT"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"PBE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PBF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PCA"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"PCS"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PDF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PDW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PEA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PF5"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PFF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PGA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PH6"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"PH8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PHA"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PHD"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"PHE"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PHI"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PHL"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PHQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PIA"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"PIV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PJE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PJJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PLF"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PLJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PLW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PM3"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PN2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PPI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PPN"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PR4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PR9"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"PRK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PRO"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"PRQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PRS"</span><span class="p">:</span> <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"PRV"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"PRW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PSA"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"PTM"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"PTR"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"PUK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PVA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PVH"</span><span class="p">:</span> <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"PVO"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PYL"</span><span class="p">:</span> <span class="s2">"O"</span><span class="p">,</span>
+    <span class="s2">"PYR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"PYX"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"Q8X"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"QCS"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"QMM"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"QPA"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"QSC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"R0K"</span><span class="p">:</span> <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"R1A"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"RGL"</span><span class="p">:</span> <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"RNG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"RTY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"RVX"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"S6F"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SAC"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SAR"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"SBG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SC2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SCH"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"SCY"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"SDP"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SE7"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"SEB"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SEC"</span><span class="p">:</span> <span class="s2">"U"</span><span class="p">,</span>
+    <span class="s2">"SEN"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SEP"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SER"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SET"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SGB"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SGR"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SGX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SHV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SIC"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"SIN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SLL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SLZ"</span><span class="p">:</span> <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"SMC"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"SME"</span><span class="p">:</span> <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"SMF"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"SNC"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"SNM"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SNN"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"SRZ"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"STA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SUI"</span><span class="p">:</span> <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"SUJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"SUN"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SVA"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SVV"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SVW"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SVY"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SVZ"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SXE"</span><span class="p">:</span> <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"SYS"</span><span class="p">:</span> <span class="s2">"U"</span><span class="p">,</span>
+    <span class="s2">"TA2"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TBG"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"TCQ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TEE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TH5"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"TH6"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"THC"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"THR"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"TIG"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TIH"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"TIS"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TLX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TLY"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TMD"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"TNQ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TOQ"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TOX"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TOZ"</span><span class="p">:</span> <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"TPO"</span><span class="p">:</span> <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"TPQ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TQQ"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRF"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TRN"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRO"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRP"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRQ"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TRW"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TSY"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"TTQ"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"TTS"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TVA"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TY2"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TY8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TY9"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TYC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"TYI"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYJ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYO"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYQ"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYR"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYS"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYT"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYW"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYY"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"TYZ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"U2X"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"U3X"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"UNK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"URE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"URV"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"USC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"UU4"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"UU5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"V9C"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"VAD"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"VAI"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"VAL"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"VLM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"VME"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"W6Q"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"WFP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"WLU"</span><span class="p">:</span> <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"WPA"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"WRP"</span><span class="p">:</span> <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"WVL"</span><span class="p">:</span> <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"X5H"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XCN"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"XCP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XFW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XOK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XPC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XSN"</span><span class="p">:</span> <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"XW1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XY1"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XY5"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"XYC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"YCM"</span><span class="p">:</span> <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"YCP"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"YNM"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"YOF"</span><span class="p">:</span> <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"YTF"</span><span class="p">:</span> <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"Z3E"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZAE"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZAL"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"ZCL"</span><span class="p">:</span> <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"ZGL"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZS8"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZSC"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZSN"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZXW"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZYJ"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZYK"</span><span class="p">:</span> <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"ZZJ"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">BB_ATOMS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"N"</span><span class="p">,</span> <span class="s2">"CA"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">]</span>
+<span class="n">SC_ATOMS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"CE3"</span><span class="p">,</span>
+    <span class="s2">"CZ"</span><span class="p">,</span>
+    <span class="s2">"SD"</span><span class="p">,</span>
+    <span class="s2">"CD1"</span><span class="p">,</span>
+    <span class="s2">"CB"</span><span class="p">,</span>
+    <span class="s2">"NH1"</span><span class="p">,</span>
+    <span class="s2">"OG1"</span><span class="p">,</span>
+    <span class="s2">"CE1"</span><span class="p">,</span>
+    <span class="s2">"OE1"</span><span class="p">,</span>
+    <span class="s2">"CZ2"</span><span class="p">,</span>
+    <span class="s2">"OH"</span><span class="p">,</span>
+    <span class="s2">"CG"</span><span class="p">,</span>
+    <span class="s2">"CZ3"</span><span class="p">,</span>
+    <span class="s2">"NE"</span><span class="p">,</span>
+    <span class="s2">"CH2"</span><span class="p">,</span>
+    <span class="s2">"OD1"</span><span class="p">,</span>
+    <span class="s2">"NH2"</span><span class="p">,</span>
+    <span class="s2">"ND2"</span><span class="p">,</span>
+    <span class="s2">"OG"</span><span class="p">,</span>
+    <span class="s2">"CG2"</span><span class="p">,</span>
+    <span class="s2">"OE2"</span><span class="p">,</span>
+    <span class="s2">"CD2"</span><span class="p">,</span>
+    <span class="s2">"ND1"</span><span class="p">,</span>
+    <span class="s2">"NE2"</span><span class="p">,</span>
+    <span class="s2">"NZ"</span><span class="p">,</span>
+    <span class="s2">"CD"</span><span class="p">,</span>
+    <span class="s2">"CE2"</span><span class="p">,</span>
+    <span class="s2">"CE"</span><span class="p">,</span>
+    <span class="s2">"OD2"</span><span class="p">,</span>
+    <span class="s2">"SG"</span><span class="p">,</span>
+    <span class="s2">"NE1"</span><span class="p">,</span>
+    <span class="s2">"CG1"</span><span class="p">,</span>
+    <span class="s2">"OXT"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">SC_ATOM_POSNS</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">SC_ATOMS</span><span class="p">)}</span>
+
+<span class="n">AA3LetterCode</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"ALA"</span><span class="p">,</span>
+    <span class="s2">"ARG"</span><span class="p">,</span>
+    <span class="s2">"ASN"</span><span class="p">,</span>
+    <span class="s2">"ASP"</span><span class="p">,</span>
+    <span class="s2">"ASX"</span><span class="p">,</span>
+    <span class="s2">"CYS"</span><span class="p">,</span>
+    <span class="s2">"GLU"</span><span class="p">,</span>
+    <span class="s2">"GLN"</span><span class="p">,</span>
+    <span class="s2">"GLX"</span><span class="p">,</span>
+    <span class="s2">"GLY"</span><span class="p">,</span>
+    <span class="s2">"HIS"</span><span class="p">,</span>
+    <span class="s2">"ILE"</span><span class="p">,</span>
+    <span class="s2">"LEU"</span><span class="p">,</span>
+    <span class="s2">"LYS"</span><span class="p">,</span>
+    <span class="s2">"MET"</span><span class="p">,</span>
+    <span class="s2">"PHE"</span><span class="p">,</span>
+    <span class="s2">"PRO"</span><span class="p">,</span>
+    <span class="s2">"SER"</span><span class="p">,</span>
+    <span class="s2">"THR"</span><span class="p">,</span>
+    <span class="s2">"TRP"</span><span class="p">,</span>
+    <span class="s2">"TYR"</span><span class="p">,</span>
+    <span class="s2">"VAL"</span><span class="p">,</span>
+    <span class="s2">"UNK"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">AA1LetterCode</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"A"</span><span class="p">,</span>
+    <span class="s2">"R"</span><span class="p">,</span>
+    <span class="s2">"N"</span><span class="p">,</span>
+    <span class="s2">"D"</span><span class="p">,</span>
+    <span class="s2">"B"</span><span class="p">,</span>
+    <span class="s2">"C"</span><span class="p">,</span>
+    <span class="s2">"E"</span><span class="p">,</span>
+    <span class="s2">"Q"</span><span class="p">,</span>
+    <span class="s2">"Z"</span><span class="p">,</span>
+    <span class="s2">"G"</span><span class="p">,</span>
+    <span class="s2">"H"</span><span class="p">,</span>
+    <span class="s2">"I"</span><span class="p">,</span>
+    <span class="s2">"L"</span><span class="p">,</span>
+    <span class="s2">"K"</span><span class="p">,</span>
+    <span class="s2">"M"</span><span class="p">,</span>
+    <span class="s2">"F"</span><span class="p">,</span>
+    <span class="s2">"P"</span><span class="p">,</span>
+    <span class="s2">"S"</span><span class="p">,</span>
+    <span class="s2">"T"</span><span class="p">,</span>
+    <span class="s2">"W"</span><span class="p">,</span>
+    <span class="s2">"Y"</span><span class="p">,</span>
+    <span class="s2">"V"</span><span class="p">,</span>
+    <span class="s2">"X"</span><span class="p">,</span>
+    <span class="s2">"-"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">NAT_AA_SET</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">AA1LetterCode</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">VALID_AA_3_LETTER</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">AA3LetterCode</span><span class="p">)</span>
+<span class="n">VALID_AA_1_LETTER</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">AA1LetterCode</span><span class="p">)</span>
+
+<span class="n">ALL_ATOMS</span> <span class="o">=</span> <span class="n">BB_ATOMS</span> <span class="o">+</span> <span class="n">SC_ATOMS</span>
+
+<span class="n">ALL_ATOM_POSNS</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ALL_ATOMS</span><span class="p">)}</span>
+
+<span class="n">THREE_TO_ONE</span> <span class="o">=</span> <span class="p">{</span><span class="n">three</span><span class="p">:</span> <span class="n">one</span> <span class="k">for</span> <span class="n">three</span><span class="p">,</span> <span class="n">one</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">AA3LetterCode</span><span class="p">,</span> <span class="n">AA1LetterCode</span><span class="p">)}</span>
+<span class="n">ONE_TO_THREE</span> <span class="o">=</span> <span class="p">{</span><span class="n">one</span><span class="p">:</span> <span class="n">three</span> <span class="k">for</span> <span class="n">three</span><span class="p">,</span> <span class="n">one</span> <span class="ow">in</span> <span class="n">THREE_TO_ONE</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+
+<span class="n">AA_TO_INDEX</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"ALA"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"ARG"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"ASN"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"ASP"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"CYS"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">"GLN"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">"GLU"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">"GLY"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s2">"HIS"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"ILE"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">"LEU"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"LYS"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">"MET"</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">"PHE"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">"PRO"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">"SER"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">"THR"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"TRP"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s2">"TYR"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s2">"VAL"</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+    <span class="s2">"UNK"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">AA_TO_INDEX</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">THREE_TO_ONE</span><span class="p">[</span><span class="n">aa</span><span class="p">]:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">aa</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">AA_TO_INDEX</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+<span class="n">INDEX_TO_AA_ONE</span> <span class="o">=</span> <span class="p">{</span><span class="n">AA_TO_INDEX</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span> <span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">AA_TO_INDEX</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">INDEX_TO_AA_THREE</span> <span class="o">=</span> <span class="p">{</span><span class="n">AA_TO_INDEX</span><span class="p">[</span><span class="n">a</span><span class="p">]:</span> <span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">AA_TO_INDEX</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">}</span>
+
+
+<span class="n">AA_TO_SC_ATOMS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"MET"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CE"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"SD"</span><span class="p">],</span>
+    <span class="s2">"ILE"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD1"</span><span class="p">,</span> <span class="s2">"CG1"</span><span class="p">,</span> <span class="s2">"CG2"</span><span class="p">],</span>
+    <span class="s2">"LEU"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD1"</span><span class="p">,</span> <span class="s2">"CD2"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">],</span>
+    <span class="s2">"VAL"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CG1"</span><span class="p">,</span> <span class="s2">"CG2"</span><span class="p">],</span>
+    <span class="s2">"THR"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CG2"</span><span class="p">,</span> <span class="s2">"OG1"</span><span class="p">],</span>
+    <span class="s2">"ALA"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">],</span>
+    <span class="s2">"ARG"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"CZ"</span><span class="p">,</span> <span class="s2">"NE"</span><span class="p">,</span> <span class="s2">"NH1"</span><span class="p">,</span> <span class="s2">"NH2"</span><span class="p">],</span>
+    <span class="s2">"SER"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"OG"</span><span class="p">],</span>
+    <span class="s2">"LYS"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD"</span><span class="p">,</span> <span class="s2">"CE"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"NZ"</span><span class="p">],</span>
+    <span class="s2">"HIS"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD2"</span><span class="p">,</span> <span class="s2">"CE1"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"ND1"</span><span class="p">,</span> <span class="s2">"NE2"</span><span class="p">],</span>
+    <span class="s2">"GLU"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"OE1"</span><span class="p">,</span> <span class="s2">"OE2"</span><span class="p">],</span>
+    <span class="s2">"ASP"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"OD1"</span><span class="p">,</span> <span class="s2">"OD2"</span><span class="p">],</span>
+    <span class="s2">"PRO"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">],</span>
+    <span class="s2">"GLN"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"NE2"</span><span class="p">,</span> <span class="s2">"OE1"</span><span class="p">],</span>
+    <span class="s2">"TYR"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD1"</span><span class="p">,</span> <span class="s2">"CD2"</span><span class="p">,</span> <span class="s2">"CE1"</span><span class="p">,</span> <span class="s2">"CE2"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"CZ"</span><span class="p">,</span> <span class="s2">"OH"</span><span class="p">],</span>
+    <span class="s2">"TRP"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD1"</span><span class="p">,</span> <span class="s2">"CD2"</span><span class="p">,</span> <span class="s2">"CE2"</span><span class="p">,</span> <span class="s2">"CE3"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"CH2"</span><span class="p">,</span> <span class="s2">"CZ2"</span><span class="p">,</span> <span class="s2">"CZ3"</span><span class="p">,</span> <span class="s2">"NE1"</span><span class="p">],</span>
+    <span class="s2">"CYS"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"SG"</span><span class="p">],</span>
+    <span class="s2">"ASN"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"ND2"</span><span class="p">,</span> <span class="s2">"OD1"</span><span class="p">],</span>
+    <span class="s2">"PHE"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"CB"</span><span class="p">,</span> <span class="s2">"CD1"</span><span class="p">,</span> <span class="s2">"CD2"</span><span class="p">,</span> <span class="s2">"CE1"</span><span class="p">,</span> <span class="s2">"CE2"</span><span class="p">,</span> <span class="s2">"CG"</span><span class="p">,</span> <span class="s2">"CZ"</span><span class="p">],</span>
+    <span class="s2">"GLY"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">"UNK"</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="update_letters">
+<a class="viewcode-back" href="../../../../source/pinder.core.utils.html#pinder.core.utils.constants.update_letters">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_letters</span><span class="p">(</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">is_three</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="n">mapping</span> <span class="o">=</span> <span class="n">THREE_TO_ONE</span> <span class="k">if</span> <span class="n">is_three</span> <span class="k">else</span> <span class="n">ONE_TO_THREE</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">mapping</span><span class="p">[</span><span class="n">res</span><span class="p">]:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">res</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+    <span class="k">return</span> <span class="n">x</span></div>
+
+
+
+<span class="n">AA_TO_SC_ATOMS</span> <span class="o">=</span> <span class="n">update_letters</span><span class="p">(</span><span class="n">AA_TO_SC_ATOMS</span><span class="p">)</span>
+
+<span class="n">ELE2NUM</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"C"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"C1"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"H"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"O"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"N"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">"S"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">"SE"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s2">"other"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s2">"filler"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s2">"F"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">"CL"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">"BR"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">"P"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">"I"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

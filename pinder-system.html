@@ -1,0 +1,3808 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pinder system &#8212; PINDER 0.1.dev1+gebeb28a2f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=3eb10145" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=829491a3"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pinder-system';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://pinder-org.github.io/pinder/pinder-system.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pinder loader" href="pinder-loader.html" />
+    <link rel="prev" title="Pinder index" href="pinder-index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1+gebeb28a2f" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pinder.png" class="logo__image only-light" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+    <img src="_static/pinder.png" class="logo__image only-dark pst-js-only" alt="PINDER 0.1.dev1+gebeb28a2f documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="readme.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="examples.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="source/pinder.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="example_readme.html">
+    Pinder abstractions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="limitations.html">
+    Limitations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pinder-org/pinder/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4" title="Article" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-file-lines fa-lg" aria-hidden="true"></i><span class="visually-hidden">Article</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar"><svg class="pst-icon svg-inline--fa" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pinder-index.html">Pinder index</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pinder system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-loader.html">Pinder loader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-eval.html">Pinder eval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superposition.html">FAQ: cropped monomer superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pinder-mlsb.html">MLSB PINDER Challenge</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="examples.html" class="nav-link">Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Pinder system</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pinder-system">
+<h1>Pinder system<a class="headerlink" href="#pinder-system" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pinder.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">PinderSystem</span><span class="p">,</span> <span class="n">get_index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example usage of Pinder index API shown below. For more detailed usage examples, check the <code class="docutils literal notranslate"><span class="pre">pinder-index</span></code>notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">()</span>
+<span class="n">hetero_test_apo</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+    <span class="s1">'(uniprot_L != uniprot_R) and split == "test" and (apo_R and apo_L)'</span>
+<span class="p">)</span>
+<span class="n">hetero_test_apo</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">hetero_test_apo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>split</th>
+      <th>id</th>
+      <th>pdb_id</th>
+      <th>cluster_id</th>
+      <th>cluster_id_R</th>
+      <th>cluster_id_L</th>
+      <th>pinder_s</th>
+      <th>pinder_xl</th>
+      <th>pinder_af2</th>
+      <th>uniprot_R</th>
+      <th>...</th>
+      <th>apo_L</th>
+      <th>apo_R_quality</th>
+      <th>apo_L_quality</th>
+      <th>chain1_neff</th>
+      <th>chain2_neff</th>
+      <th>chain_R</th>
+      <th>chain_L</th>
+      <th>contains_antibody</th>
+      <th>contains_antigen</th>
+      <th>contains_enzyme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>test</td>
+      <td>3k1i__D1_O25709--3k1i__A1_O25448</td>
+      <td>3k1i</td>
+      <td>cluster_26031_5179</td>
+      <td>cluster_26031</td>
+      <td>cluster_5179</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>O25709</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>12.351562</td>
+      <td>514.000000</td>
+      <td>D1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>test</td>
+      <td>6qta__A1_G0SHE6--6qta__B1_G0SC29</td>
+      <td>6qta</td>
+      <td>cluster_11327_11328</td>
+      <td>cluster_11327</td>
+      <td>cluster_11328</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>G0SHE6</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>115.750000</td>
+      <td>689.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>test</td>
+      <td>3vf0__B1_Q8IY67--3vf0__A2_P18206</td>
+      <td>3vf0</td>
+      <td>cluster_5612_993</td>
+      <td>cluster_993</td>
+      <td>cluster_5612</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q8IY67</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>251.125000</td>
+      <td>35.531250</td>
+      <td>B1</td>
+      <td>A2</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>test</td>
+      <td>4aye__D1_Q9JXV4--4aye__A1_P08603</td>
+      <td>4aye</td>
+      <td>cluster_3949_4866</td>
+      <td>cluster_3949</td>
+      <td>cluster_4866</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q9JXV4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>14.546875</td>
+      <td>310.000000</td>
+      <td>D1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>test</td>
+      <td>2w8b__A1_P0A855--2w8b__H1_P0A912</td>
+      <td>2w8b</td>
+      <td>cluster_15535_1924</td>
+      <td>cluster_15535</td>
+      <td>cluster_1924</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P0A855</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>308.250000</td>
+      <td>1150.000000</td>
+      <td>A1</td>
+      <td>H1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>test</td>
+      <td>5y4r__A1_O87131--5y4r__B1_Q9HVI1</td>
+      <td>5y4r</td>
+      <td>cluster_8825_8826</td>
+      <td>cluster_8825</td>
+      <td>cluster_8826</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>O87131</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>610.000000</td>
+      <td>144.875000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>test</td>
+      <td>3egv__A1_Q84BQ9--3egv__B1_Q5SLP6</td>
+      <td>3egv</td>
+      <td>cluster_33015_371</td>
+      <td>cluster_33015</td>
+      <td>cluster_371</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q84BQ9</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>806.500000</td>
+      <td>637.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>test</td>
+      <td>6wjc__A1_P11229--6wjc__B1_Q8QGR0</td>
+      <td>6wjc</td>
+      <td>cluster_1057_1356</td>
+      <td>cluster_1057</td>
+      <td>cluster_1356</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P11229</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>462.750000</td>
+      <td>518.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>test</td>
+      <td>6tx3__B1_Q9NWY4--6tx3__A1_Q9UGN5</td>
+      <td>6tx3</td>
+      <td>cluster_11866_335</td>
+      <td>cluster_11866</td>
+      <td>cluster_335</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q9NWY4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>59.468750</td>
+      <td>213.000000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>test</td>
+      <td>2grx__A1_P06971--2grx__C1_P02929</td>
+      <td>2grx</td>
+      <td>cluster_12107_8897</td>
+      <td>cluster_12107</td>
+      <td>cluster_8897</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P06971</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>288.000000</td>
+      <td>562.500000</td>
+      <td>A1</td>
+      <td>C1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>test</td>
+      <td>3kbu__A1_P11277--3kbu__D1_P16157</td>
+      <td>3kbu</td>
+      <td>cluster_16732_8658</td>
+      <td>cluster_8658</td>
+      <td>cluster_16732</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P11277</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>229.625000</td>
+      <td>210.625000</td>
+      <td>A1</td>
+      <td>D1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>test</td>
+      <td>2j0t__A1_P03956--2j0t__D1_P01033</td>
+      <td>2j0t</td>
+      <td>cluster_939_940</td>
+      <td>cluster_939</td>
+      <td>cluster_940</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P03956</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>612.500000</td>
+      <td>68.312500</td>
+      <td>A1</td>
+      <td>D1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>test</td>
+      <td>8a60__A1_P06971--8a60__B1_Q38162</td>
+      <td>8a60</td>
+      <td>cluster_12107_26846</td>
+      <td>cluster_12107</td>
+      <td>cluster_26846</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>P06971</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>288.000000</td>
+      <td>2.734375</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>test</td>
+      <td>4je4__A1_Q06124--4je4__B1_P02751</td>
+      <td>4je4</td>
+      <td>cluster_1465_1605</td>
+      <td>cluster_1465</td>
+      <td>cluster_1605</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q06124</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>611.000000</td>
+      <td>75.062500</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>test</td>
+      <td>4uae__A1_O00629--4uae__B1_P31345</td>
+      <td>4uae</td>
+      <td>cluster_10331_1373</td>
+      <td>cluster_1373</td>
+      <td>cluster_10331</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>O00629</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>240.750000</td>
+      <td>3.058594</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>test</td>
+      <td>3k9m__A1_P07858--3k9m__B1_P01040</td>
+      <td>3k9m</td>
+      <td>cluster_4628_6704</td>
+      <td>cluster_6704</td>
+      <td>cluster_4628</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P07858</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>770.000000</td>
+      <td>429.750000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>test</td>
+      <td>2wo2__A1_P54764--2wo2__B1_P52799</td>
+      <td>2wo2</td>
+      <td>cluster_130_8064</td>
+      <td>cluster_130</td>
+      <td>cluster_8064</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P54764</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>567.500000</td>
+      <td>104.562500</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>test</td>
+      <td>5dob__A1_P16794--5dob__B1_P16791</td>
+      <td>5dob</td>
+      <td>cluster_12247_23692</td>
+      <td>cluster_12247</td>
+      <td>cluster_23692</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P16794</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>3.312500</td>
+      <td>3.855469</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>test</td>
+      <td>8i2e__A1_O34841--8i2e__B1_P54421</td>
+      <td>8i2e</td>
+      <td>cluster_11087_12465</td>
+      <td>cluster_12465</td>
+      <td>cluster_11087</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>O34841</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>9.031250</td>
+      <td>865.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>test</td>
+      <td>1zlh__A1_P00730--1zlh__B1_Q5EPH2</td>
+      <td>1zlh</td>
+      <td>cluster_2416_8594</td>
+      <td>cluster_2416</td>
+      <td>cluster_8594</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P00730</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>541.000000</td>
+      <td>637.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>test</td>
+      <td>6yev__C1_P0A744--6yev__A1_P0AA25</td>
+      <td>6yev</td>
+      <td>cluster_4231_621</td>
+      <td>cluster_4231</td>
+      <td>cluster_621</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P0A744</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>1099.000000</td>
+      <td>1440.000000</td>
+      <td>C1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>test</td>
+      <td>1dtd__A1_P48052--1dtd__B1_P81511</td>
+      <td>1dtd</td>
+      <td>cluster_2416_9476</td>
+      <td>cluster_2416</td>
+      <td>cluster_9476</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P48052</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>581.000000</td>
+      <td>8.781250</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>test</td>
+      <td>7fn1__B1_P32357--7fn1__A1_P33334</td>
+      <td>7fn1</td>
+      <td>cluster_635_7263</td>
+      <td>cluster_7263</td>
+      <td>cluster_635</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P32357</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>8.070312</td>
+      <td>69.062500</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>test</td>
+      <td>1yu6__A1_P00780--1yu6__C1_P68390</td>
+      <td>1yu6</td>
+      <td>cluster_1952_5091</td>
+      <td>cluster_1952</td>
+      <td>cluster_5091</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P00780</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>1000.000000</td>
+      <td>704.000000</td>
+      <td>A1</td>
+      <td>C1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>test</td>
+      <td>6s8v__B1_P08195--6s8v__A1_P80188</td>
+      <td>6s8v</td>
+      <td>cluster_19347_5331</td>
+      <td>cluster_19347</td>
+      <td>cluster_5331</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P08195</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>511.000000</td>
+      <td>34.812500</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>test</td>
+      <td>5ja2__A1_P11454--5ja2__B1_Q9I169</td>
+      <td>5ja2</td>
+      <td>cluster_4489_7234</td>
+      <td>cluster_7234</td>
+      <td>cluster_4489</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P11454</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>641.500000</td>
+      <td>545.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>test</td>
+      <td>6f3z__A1_P0ADC3--6f3z__B1_P61316</td>
+      <td>6f3z</td>
+      <td>cluster_12985_22189</td>
+      <td>cluster_22189</td>
+      <td>cluster_12985</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P0ADC3</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>402.500000</td>
+      <td>368.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>test</td>
+      <td>8gt0__A1_Q8I6U4--8gt0__B1_P01040</td>
+      <td>8gt0</td>
+      <td>cluster_2085_4628</td>
+      <td>cluster_2085</td>
+      <td>cluster_4628</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q8I6U4</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>651.000000</td>
+      <td>429.750000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>test</td>
+      <td>2gkv__A1_P00777--2gkv__B1_P68390</td>
+      <td>2gkv</td>
+      <td>cluster_5091_5268</td>
+      <td>cluster_5268</td>
+      <td>cluster_5091</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P00777</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>409.000000</td>
+      <td>704.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>test</td>
+      <td>6m4v__A1_P0AEX9--6m4v__B1_P62942</td>
+      <td>6m4v</td>
+      <td>cluster_1772_409</td>
+      <td>cluster_409</td>
+      <td>cluster_1772</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P0AEX9</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>171.250000</td>
+      <td>1408.000000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>test</td>
+      <td>4us1__B1_Q07889--4us1__A1_P01112</td>
+      <td>4us1</td>
+      <td>cluster_10806_437</td>
+      <td>cluster_10806</td>
+      <td>cluster_437</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>Q07889</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>183.375000</td>
+      <td>946.500000</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>test</td>
+      <td>1tec__A1_P04072--1tec__B1_P01051</td>
+      <td>1tec</td>
+      <td>cluster_1952_387</td>
+      <td>cluster_1952</td>
+      <td>cluster_387</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P04072</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>1017.500000</td>
+      <td>133.750000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>test</td>
+      <td>1zhh__A1_P54300--1zhh__B1_P54302</td>
+      <td>1zhh</td>
+      <td>cluster_3962_8641</td>
+      <td>cluster_3962</td>
+      <td>cluster_8641</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P54300</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>23.531250</td>
+      <td>524.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>test</td>
+      <td>5n47__B1_P02751--5n47__A1_P80188</td>
+      <td>5n47</td>
+      <td>cluster_1605_5331</td>
+      <td>cluster_1605</td>
+      <td>cluster_5331</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>P02751</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>75.062500</td>
+      <td>34.812500</td>
+      <td>B1</td>
+      <td>A1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>test</td>
+      <td>7b80__A1_G3I8R9--7b80__B1_Q9BVA6</td>
+      <td>7b80</td>
+      <td>cluster_1039_643</td>
+      <td>cluster_643</td>
+      <td>cluster_1039</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
+      <td>G3I8R9</td>
+      <td>...</td>
+      <td>True</td>
+      <td>high</td>
+      <td>high</td>
+      <td>1069.000000</td>
+      <td>526.500000</td>
+      <td>A1</td>
+      <td>B1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>35 rows × 34 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_id</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">hetero_test_apo</span><span class="o">.</span><span class="n">id</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">pinder_id</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'3vf0__B1_Q8IY67--3vf0__A2_P18206'
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pindersystem-api-base-class-representing-structures-in-a-pinder-entry">
+<h2>PinderSystem API - base class representing <code class="docutils literal notranslate"><span class="pre">Structure</span></code>’s in a pinder entry<a class="headerlink" href="#pindersystem-api-base-class-representing-structures-in-a-pinder-entry" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simplest interface - get a single pinder system</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        'split',
+        'test',
+    ),
+    (
+        'id',
+        '3vf0__B1_Q8IY67--3vf0__A2_P18206',
+    ),
+    (
+        'pdb_id',
+        '3vf0',
+    ),
+    (
+        'cluster_id',
+        'cluster_5612_993',
+    ),
+    (
+        'cluster_id_R',
+        'cluster_993',
+    ),
+    (
+        'cluster_id_L',
+        'cluster_5612',
+    ),
+    (
+        'pinder_s',
+        True,
+    ),
+    (
+        'pinder_xl',
+        True,
+    ),
+    (
+        'pinder_af2',
+        False,
+    ),
+    (
+        'uniprot_R',
+        'Q8IY67',
+    ),
+    (
+        'uniprot_L',
+        'P18206',
+    ),
+    (
+        'holo_R_pdb',
+        '3vf0__B1_Q8IY67-R.pdb',
+    ),
+    (
+        'holo_L_pdb',
+        '3vf0__A2_P18206-L.pdb',
+    ),
+    (
+        'predicted_R_pdb',
+        'af__Q8IY67.pdb',
+    ),
+    (
+        'predicted_L_pdb',
+        'af__P18206.pdb',
+    ),
+    (
+        'apo_R_pdb',
+        '3smz__A1_Q8IY67.pdb',
+    ),
+    (
+        'apo_L_pdb',
+        '5l0h__A1_P18206.pdb',
+    ),
+    (
+        'apo_R_pdbs',
+        '3smz__A1_Q8IY67.pdb',
+    ),
+    (
+        'apo_L_pdbs',
+        '5l0h__A1_P18206.pdb;5l0f__A1_P18206.pdb;5l0i__A1_P18206.pdb',
+    ),
+    (
+        'holo_R',
+        True,
+    ),
+    (
+        'holo_L',
+        True,
+    ),
+    (
+        'predicted_R',
+        True,
+    ),
+    (
+        'predicted_L',
+        True,
+    ),
+    (
+        'apo_R',
+        True,
+    ),
+    (
+        'apo_L',
+        True,
+    ),
+    (
+        'apo_R_quality',
+        'high',
+    ),
+    (
+        'apo_L_quality',
+        'high',
+    ),
+    (
+        'chain1_neff',
+        251.125,
+    ),
+    (
+        'chain2_neff',
+        35.53125,
+    ),
+    (
+        'chain_R',
+        'B1',
+    ),
+    (
+        'chain_L',
+        'A2',
+    ),
+    (
+        'contains_antibody',
+        False,
+    ),
+    (
+        'contains_antigen',
+        False,
+    ),
+    (
+        'contains_enzyme',
+        False,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3vf0__B1_Q8IY67--3vf0__A2_P18206.pdb,
+    uniprot_map=None,
+    pinder_id='3vf0__B1_Q8IY67--3vf0__A2_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (3584,),
+    pdb_engine='fastpdb',
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/test_set_pdbs/3vf0__B1_Q8IY67-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3vf0__B1_Q8IY67-R.parquet,
+    pinder_id='3vf0__B1_Q8IY67-R',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (2204,),
+    pdb_engine='fastpdb',
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/test_set_pdbs/3vf0__A2_P18206-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3vf0__A2_P18206-L.parquet,
+    pinder_id='3vf0__A2_P18206-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1380,),
+    pdb_engine='fastpdb',
+)
+apo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3smz__A1_Q8IY67.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3smz__A1_Q8IY67.parquet,
+    pinder_id='3smz__A1_Q8IY67',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (2183,),
+    pdb_engine='fastpdb',
+)
+apo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/5l0h__A1_P18206.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/5l0h__A1_P18206.parquet,
+    pinder_id='5l0h__A1_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1341,),
+    pdb_engine='fastpdb',
+)
+pred_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8IY67.pdb,
+    uniprot_map=None,
+    pinder_id='af__Q8IY67',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (4495,),
+    pdb_engine='fastpdb',
+)
+pred_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__P18206.pdb,
+    uniprot_map=None,
+    pinder_id='af__P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (8664,),
+    pdb_engine='fastpdb',
+)
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">holo_L</span><span class="p">,</span> <span class="n">holo_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">holo_ligand</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">holo_receptor</span>
+<span class="n">pred_L</span><span class="p">,</span> <span class="n">pred_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">pred_ligand</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">pred_receptor</span>
+<span class="n">apo_L</span><span class="p">,</span> <span class="n">apo_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_receptor</span>
+
+<span class="n">holo_L</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/test_set_pdbs/3vf0__A2_P18206-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/3vf0__A2_P18206-L.parquet,
+    pinder_id='3vf0__A2_P18206-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1380,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="classify-system-difficulty-based-on-degree-of-conformational-shift-in-unbound-and-bound">
+<h2>Classify system difficulty based on degree of conformational shift in unbound and bound<a class="headerlink" href="#classify-system-difficulty-based-on-degree-of-conformational-shift-in-unbound-and-bound" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">unbound_difficulty</span><span class="p">(</span><span class="s2">"apo"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Fnat': 0.5421686746987951,
+ 'Fnonnat': 0.3076923076923077,
+ 'common_contacts': 45,
+ 'differing_contacts': 20,
+ 'bound_contacts': 83,
+ 'unbound_contacts': 65,
+ 'fnonnat_R': 0.2857142857142857,
+ 'fnonnat_L': 0.0,
+ 'fnat_R': 0.5882352941176471,
+ 'fnat_L': 0.7692307692307693,
+ 'difficulty': 'Rigid-body',
+ 'I-RMSD': 1.125529,
+ 'matched_interface_chains': 2,
+ 'holo_receptor_interface_res': 34,
+ 'holo_ligand_interface_res': 26,
+ 'apo_receptor_interface_res': 28,
+ 'apo_ligand_interface_res': 20,
+ 'L-RMSD': 0.94191533,
+ 'R-RMSD': 1.4988925,
+ 'unbound_id': '3smz__A1_Q8IY67--5l0h__A1_P18206',
+ 'unbound_body': 'receptor_ligand',
+ 'monomer_name': 'apo'}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">unbound_difficulty</span><span class="p">(</span><span class="s2">"predicted"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Fnat': 0.5662650602409639,
+ 'Fnonnat': 0.9225700164744646,
+ 'common_contacts': 47,
+ 'differing_contacts': 560,
+ 'bound_contacts': 83,
+ 'unbound_contacts': 607,
+ 'fnonnat_R': 0.8435374149659864,
+ 'fnonnat_L': 0.8670520231213873,
+ 'fnat_R': 0.6764705882352942,
+ 'fnat_L': 0.8846153846153846,
+ 'difficulty': 'Difficult',
+ 'I-RMSD': 3.4248848,
+ 'matched_interface_chains': 2,
+ 'holo_receptor_interface_res': 34,
+ 'holo_ligand_interface_res': 26,
+ 'apo_receptor_interface_res': 147,
+ 'apo_ligand_interface_res': 173,
+ 'L-RMSD': 2.1201644,
+ 'R-RMSD': 0.62853533,
+ 'unbound_id': 'af__Q8IY67--af__P18206',
+ 'unbound_body': 'receptor_ligand',
+ 'monomer_name': 'predicted'}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="illustrating-utilities-available-in-structure-instances">
+<h2>Illustrating utilities available in <code class="docutils literal notranslate"><span class="pre">Structure</span></code> instances<a class="headerlink" href="#illustrating-utilities-available-in-structure-instances" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">holo_L</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">"atom_name"</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">"CA"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/test_set_pdbs/3vf0__A2_P18206-L.pdb,
+    uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (283, 14),
+    pinder_id='3vf0__A2_P18206-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (178,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">"atom_name"</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">"CA"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/5l0h__A1_P18206.pdb,
+    uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (176, 14),
+    pinder_id='5l0h__A1_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (173,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="can-also-filter-in-place-rather-than-returning-a-copy-a-la-pandas">
+<h2>Can also filter “in place” rather than returning a copy (a la pandas)<a class="headerlink" href="#can-also-filter-in-place-rather-than-returning-a-copy-a-la-pandas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">"atom_name"</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">"CA"</span><span class="p">],</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">"atom_name"</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">"CA"</span><span class="p">]),</span>
+    <span class="n">ps</span><span class="o">.</span><span class="n">holo_ligand</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">"atom_name"</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s2">"CA"</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/pdbs/5l0h__A1_P18206.pdb,
+     uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (176, 14),
+     pinder_id='5l0h__A1_P18206',
+     atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (173,),
+     pdb_engine='fastpdb',
+ ),
+ Structure(
+     filepath=/home/runner/.local/share/pinder/2024-02/test_set_pdbs/3vf0__A2_P18206-L.pdb,
+     uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (283, 14),
+     pinder_id='3vf0__A2_P18206-L',
+     atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (178,),
+     pdb_engine='fastpdb',
+ ))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-masked-unbound-complex-aligned-to-bound-for-apo">
+<h2>Create masked unbound complex aligned to bound for apo<a class="headerlink" href="#create-masked-unbound-complex-aligned-to-bound-for-apo" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_complex</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_apo_complex</span><span class="p">()</span>
+<span class="n">apo_complex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3smz__A1_Q8IY67--5l0h__A1_P18206.pdb,
+    uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (460, 14),
+    pinder_id='3smz__A1_Q8IY67--5l0h__A1_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (2355,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_complex</span><span class="o">.</span><span class="n">dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>chain_id</th>
+      <th>res_name</th>
+      <th>res_code</th>
+      <th>res_id</th>
+      <th>atom_name</th>
+      <th>b_factor</th>
+      <th>ins_code</th>
+      <th>hetero</th>
+      <th>element</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>R</td>
+      <td>HIS</td>
+      <td>H</td>
+      <td>1</td>
+      <td>N</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>N</td>
+      <td>69.377380</td>
+      <td>105.086411</td>
+      <td>-51.232784</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>R</td>
+      <td>HIS</td>
+      <td>H</td>
+      <td>1</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>69.471100</td>
+      <td>103.738152</td>
+      <td>-50.680832</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>R</td>
+      <td>HIS</td>
+      <td>H</td>
+      <td>1</td>
+      <td>C</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>70.264641</td>
+      <td>103.716263</td>
+      <td>-49.368168</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>R</td>
+      <td>HIS</td>
+      <td>H</td>
+      <td>1</td>
+      <td>O</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>O</td>
+      <td>70.223633</td>
+      <td>102.714134</td>
+      <td>-48.653946</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>R</td>
+      <td>HIS</td>
+      <td>H</td>
+      <td>1</td>
+      <td>CB</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>70.093376</td>
+      <td>102.773239</td>
+      <td>-51.701912</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2350</th>
+      <td>L</td>
+      <td>ARG</td>
+      <td>R</td>
+      <td>170</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>45.438423</td>
+      <td>86.089317</td>
+      <td>-54.533417</td>
+    </tr>
+    <tr>
+      <th>2351</th>
+      <td>L</td>
+      <td>LYS</td>
+      <td>K</td>
+      <td>171</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>44.941048</td>
+      <td>83.492149</td>
+      <td>-57.280712</td>
+    </tr>
+    <tr>
+      <th>2352</th>
+      <td>L</td>
+      <td>THR</td>
+      <td>T</td>
+      <td>172</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>46.387222</td>
+      <td>85.555809</td>
+      <td>-60.138439</td>
+    </tr>
+    <tr>
+      <th>2353</th>
+      <td>L</td>
+      <td>PRO</td>
+      <td>P</td>
+      <td>173</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>49.873409</td>
+      <td>84.154137</td>
+      <td>-59.526482</td>
+    </tr>
+    <tr>
+      <th>2354</th>
+      <td>L</td>
+      <td>TRP</td>
+      <td>W</td>
+      <td>174</td>
+      <td>CA</td>
+      <td>0.0</td>
+      <td></td>
+      <td>False</td>
+      <td>C</td>
+      <td>50.158199</td>
+      <td>80.451759</td>
+      <td>-60.405190</td>
+    </tr>
+  </tbody>
+</table>
+<p>2355 rows × 12 columns</p>
+</div></div></div>
+</div>
+<section id="whats-going-on-under-the-hood">
+<h3>What’s going on under the hood<a class="headerlink" href="#whats-going-on-under-the-hood" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="n">apo_L</span><span class="p">,</span> <span class="n">apo_R</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_ligand</span><span class="p">,</span> <span class="n">ps</span><span class="o">.</span><span class="n">apo_receptor</span>
+
+<span class="c1"># After getting the "in common" masked structures, they can be superimposed</span>
+<span class="n">apo_R</span><span class="p">,</span> <span class="n">holo_R</span> <span class="o">=</span> <span class="n">apo_R</span><span class="o">.</span><span class="n">align_common_sequence</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_R</span><span class="p">)</span>
+<span class="n">apo_L</span><span class="p">,</span> <span class="n">holo_L</span> <span class="o">=</span> <span class="n">apo_L</span><span class="o">.</span><span class="n">align_common_sequence</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">aligned_holo_L</span><span class="p">)</span>
+
+<span class="c1"># Rmsd after superposition (without outlier removal) is stored in `rms`</span>
+<span class="n">R_super</span><span class="p">,</span> <span class="n">rms</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">apo_R</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">holo_R</span><span class="p">)</span>
+<span class="n">L_super</span><span class="p">,</span> <span class="n">rms</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">apo_L</span><span class="o">.</span><span class="n">superimpose</span><span class="p">(</span><span class="n">holo_L</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L_super</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/5l0h__A1_P18206.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/5l0h__A1_P18206.parquet,
+    pinder_id='5l0h__A1_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1327,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we can create the complexes using Structure.__add__ methods</span>
+<span class="n">apo_binary</span> <span class="o">=</span> <span class="n">R_super</span> <span class="o">+</span> <span class="n">L_super</span>
+<span class="n">holo_binary</span> <span class="o">=</span> <span class="n">holo_R</span> <span class="o">+</span> <span class="n">holo_L</span>
+
+<span class="n">apo_binary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/3smz__A1_Q8IY67--5l0h__A1_P18206.pdb,
+    uniprot_map=&lt;class 'pandas.core.frame.DataFrame'&gt; with shape (460, 14),
+    pinder_id='3smz__A1_Q8IY67--5l0h__A1_P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (3510,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Alternatively, there exist utils for creating the masked apo and predicted complex</span>
+<span class="n">pred_complex</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">create_pred_complex</span><span class="p">()</span>
+<span class="n">pred_complex</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__Q8IY67--af__P18206.pdb,
+    uniprot_map=None,
+    pinder_id='af__Q8IY67--af__P18206',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (3566,),
+    pdb_engine='fastpdb',
+)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masked_complex_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"./"</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span> <span class="o">/</span> <span class="s2">"unbound_complexes"</span>
+<span class="n">masked_complex_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">masked_complex_dir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath('/home/runner/work/pinder/pinder/docs/unbound_complexes')
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If the output PDB filepath is omitted, the structure will be written to Structure.filepath, which may overwrite</span>
+<span class="c1"># In this case, it would be a new file composed of the added complex filepaths if we omit</span>
+<span class="n">pred_complex</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">masked_complex_dir</span> <span class="o">/</span> <span class="s2">"pred_complex.pdb"</span><span class="p">)</span>
+<span class="n">apo_complex</span><span class="o">.</span><span class="n">to_pdb</span><span class="p">(</span><span class="n">masked_complex_dir</span> <span class="o">/</span> <span class="s2">"apo_complex.pdb"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">masked_complex_dir</span> <span class="o">/</span> <span class="s2">"pred_complex.pdb"</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+<span class="p">(</span><span class="n">masked_complex_dir</span> <span class="o">/</span> <span class="s2">"apo_complex.pdb"</span><span class="p">)</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="structures-have-resolved-pdb2uniprot-and-resolved-uniprot2pdb-properties">
+<h2>Structures have <code class="docutils literal notranslate"><span class="pre">resolved_pdb2uniprot</span></code> and <code class="docutils literal notranslate"><span class="pre">resolved_uniprot2pdb</span></code> properties<a class="headerlink" href="#structures-have-resolved-pdb2uniprot-and-resolved-uniprot2pdb-properties" title="Link to this heading">#</a></h2>
+<p>They return dicts of resolved residue numbers mapped from pdb numbering to uniprot numbering, and vice versa</p>
+<p>The full mapping is available in <code class="docutils literal notranslate"><span class="pre">Structure.uniprot_mapping</span></code>
+To get only the <em>resolved</em> mapping, access the <code class="docutils literal notranslate"><span class="pre">Structure.resolved_mapping</span></code> attrribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">resolved_pdb2uniprot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 960,
+ 3: 961,
+ 4: 962,
+ 5: 963,
+ 6: 964,
+ 7: 965,
+ 8: 966,
+ 9: 967,
+ 10: 968,
+ 11: 969,
+ 12: 970,
+ 13: 971,
+ 14: 972,
+ 15: 973,
+ 16: 974,
+ 18: 976,
+ 19: 977,
+ 20: 978,
+ 21: 979,
+ 22: 980,
+ 23: 981,
+ 24: 982,
+ 25: 983,
+ 26: 984,
+ 27: 985,
+ 28: 986,
+ 29: 987,
+ 30: 988,
+ 31: 989,
+ 32: 990,
+ 33: 991,
+ 34: 992,
+ 35: 993,
+ 36: 994,
+ 37: 995,
+ 38: 996,
+ 39: 997,
+ 40: 998,
+ 41: 999,
+ 42: 1000,
+ 43: 1001,
+ 44: 1002,
+ 45: 1003,
+ 46: 1004,
+ 47: 1005,
+ 48: 1006,
+ 49: 1007,
+ 50: 1008,
+ 51: 1009,
+ 52: 1010,
+ 53: 1011,
+ 54: 1012,
+ 55: 1013,
+ 56: 1014,
+ 57: 1015,
+ 58: 1016,
+ 59: 1017,
+ 60: 1018,
+ 61: 1019,
+ 62: 1020,
+ 63: 1021,
+ 64: 1022,
+ 65: 1023,
+ 66: 1024,
+ 67: 1025,
+ 68: 1026,
+ 69: 1027,
+ 70: 1028,
+ 71: 1029,
+ 72: 1030,
+ 73: 1031,
+ 74: 1032,
+ 75: 1033,
+ 76: 1034,
+ 77: 1035,
+ 78: 1036,
+ 79: 1037,
+ 80: 1038,
+ 81: 1039,
+ 82: 1040,
+ 83: 1041,
+ 84: 1042,
+ 85: 1043,
+ 86: 1044,
+ 87: 1045,
+ 88: 1046,
+ 89: 1047,
+ 90: 1048,
+ 91: 1049,
+ 92: 1050,
+ 93: 1051,
+ 94: 1052,
+ 95: 1053,
+ 96: 1054,
+ 97: 1055,
+ 98: 1056,
+ 99: 1057,
+ 100: 1058,
+ 101: 1059,
+ 102: 1060,
+ 103: 1061,
+ 104: 1062,
+ 105: 1063,
+ 106: 1064,
+ 107: 1065,
+ 108: 1066,
+ 109: 1067,
+ 110: 1068,
+ 111: 1069,
+ 112: 1070,
+ 113: 1071,
+ 114: 1072,
+ 115: 1073,
+ 116: 1074,
+ 117: 1075,
+ 118: 1076,
+ 119: 1077,
+ 120: 1078,
+ 121: 1079,
+ 122: 1080,
+ 123: 1081,
+ 124: 1082,
+ 125: 1083,
+ 126: 1084,
+ 127: 1085,
+ 128: 1086,
+ 129: 1087,
+ 130: 1088,
+ 131: 1089,
+ 132: 1090,
+ 133: 1091,
+ 134: 1092,
+ 135: 1093,
+ 136: 1094,
+ 137: 1095,
+ 138: 1096,
+ 139: 1097,
+ 140: 1098,
+ 141: 1099,
+ 142: 1100,
+ 143: 1101,
+ 144: 1102,
+ 145: 1103,
+ 146: 1104,
+ 147: 1105,
+ 148: 1106,
+ 149: 1107,
+ 150: 1108,
+ 151: 1109,
+ 152: 1110,
+ 153: 1111,
+ 154: 1112,
+ 155: 1113,
+ 156: 1114,
+ 157: 1115,
+ 158: 1116,
+ 159: 1117,
+ 160: 1118,
+ 161: 1119,
+ 162: 1120,
+ 163: 1121,
+ 164: 1122,
+ 165: 1123,
+ 166: 1124,
+ 167: 1125,
+ 168: 1126,
+ 169: 1127,
+ 170: 1128,
+ 171: 1129,
+ 172: 1130,
+ 173: 1131,
+ 174: 1132}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_complex</span><span class="o">.</span><span class="n">resolved_mapping</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>entry_id</th>
+      <th>entity_id</th>
+      <th>asym_id</th>
+      <th>pdb_strand_id</th>
+      <th>resi</th>
+      <th>resi_pdb</th>
+      <th>resi_auth</th>
+      <th>resn</th>
+      <th>one_letter_code_can</th>
+      <th>resolved</th>
+      <th>one_letter_code_uniprot</th>
+      <th>resi_uniprot</th>
+      <th>uniprot_acc</th>
+      <th>chain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>3</td>
+      <td>39</td>
+      <td>39.0</td>
+      <td>LEU</td>
+      <td>L</td>
+      <td>1</td>
+      <td>L</td>
+      <td>39</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>4</td>
+      <td>40</td>
+      <td>40.0</td>
+      <td>ASP</td>
+      <td>D</td>
+      <td>1</td>
+      <td>D</td>
+      <td>40</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>5</td>
+      <td>41</td>
+      <td>41.0</td>
+      <td>PRO</td>
+      <td>P</td>
+      <td>1</td>
+      <td>P</td>
+      <td>41</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>6</td>
+      <td>42</td>
+      <td>42.0</td>
+      <td>GLU</td>
+      <td>E</td>
+      <td>1</td>
+      <td>E</td>
+      <td>42</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>7</td>
+      <td>43</td>
+      <td>43.0</td>
+      <td>GLU</td>
+      <td>E</td>
+      <td>1</td>
+      <td>E</td>
+      <td>43</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>446</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>170</td>
+      <td>1128</td>
+      <td>1128.0</td>
+      <td>ARG</td>
+      <td>R</td>
+      <td>1</td>
+      <td>R</td>
+      <td>1128</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>447</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>171</td>
+      <td>1129</td>
+      <td>1129.0</td>
+      <td>LYS</td>
+      <td>K</td>
+      <td>1</td>
+      <td>K</td>
+      <td>1129</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>172</td>
+      <td>1130</td>
+      <td>1130.0</td>
+      <td>THR</td>
+      <td>T</td>
+      <td>1</td>
+      <td>T</td>
+      <td>1130</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>173</td>
+      <td>1131</td>
+      <td>1131.0</td>
+      <td>PRO</td>
+      <td>P</td>
+      <td>1</td>
+      <td>P</td>
+      <td>1131</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>174</td>
+      <td>1132</td>
+      <td>1132.0</td>
+      <td>TRP</td>
+      <td>W</td>
+      <td>1</td>
+      <td>W</td>
+      <td>1132</td>
+      <td>NaN</td>
+      <td>A1</td>
+    </tr>
+  </tbody>
+</table>
+<p>451 rows × 14 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="case-with-multiple-available-apo-structures">
+<h2>Case with multiple available apo structures<a class="headerlink" href="#case-with-multiple-available-apo-structures" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pinder_id</span> <span class="o">=</span> <span class="s2">"1ldt__A1_P00761--1ldt__B1_P80424"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps_canon</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">)</span>
+<span class="n">ps_canon</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">apo_R_alt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['1s6f__A1_P00761.pdb',
+ '1s85__A1_P00761.pdb',
+ '1s84__A1_P00761.pdb',
+ '2a32__A1_P00761.pdb',
+ '1s6h__A1_P00761.pdb',
+ '1s5s__A1_P00761.pdb',
+ '1fni__A1_P00761.pdb',
+ '1s81__A1_P00761.pdb',
+ '1fmg__A1_P00761.pdb',
+ '1qqu__A1_P00761.pdb',
+ '2a31__A1_P00761.pdb',
+ '1fn6__A1_P00761.pdb',
+ '1s83__A1_P00761.pdb']
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps_canon</span><span class="o">.</span><span class="n">entry</span><span class="o">.</span><span class="n">apo_L_alt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['2kmq__A1_P80424.pdb', '2kmp__A1_P80424.pdb', '2kmr__A1_P80424.pdb']
+</pre></div>
+</div>
+</div>
+</div>
+<section id="specify-2kmr-as-apo-ligand-and-1fmg-as-apo-receptor">
+<h3>Specify 2kmr as apo ligand and 1fmg as apo receptor<a class="headerlink" href="#specify-2kmr-as-apo-ligand-and-1fmg-as-apo-receptor" title="Link to this heading">#</a></h3>
+<p>Note: the default <code class="docutils literal notranslate"><span class="pre">apo_receptor</span></code> and <code class="docutils literal notranslate"><span class="pre">apo_ligand</span></code> are determined based on the selected canonical apo monomer.</p>
+<p>The canonical monomers were selected based on their sequence overlap and difficulty metrics calculated in <code class="docutils literal notranslate"><span class="pre">pinder.eval.dockq.unbound</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">=</span> <span class="n">PinderSystem</span><span class="p">(</span><span class="n">pinder_id</span><span class="p">,</span> <span class="n">apo_ligand_pdb_code</span><span class="o">=</span><span class="s2">"2kmr"</span><span class="p">,</span> <span class="n">apo_receptor_pdb_code</span><span class="o">=</span><span class="s2">"1fmg"</span><span class="p">)</span>
+<span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PinderSystem(
+entry = IndexEntry(
+    (
+        'split',
+        'train',
+    ),
+    (
+        'id',
+        '1ldt__A1_P00761--1ldt__B1_P80424',
+    ),
+    (
+        'pdb_id',
+        '1ldt',
+    ),
+    (
+        'cluster_id',
+        'cluster_312_5091',
+    ),
+    (
+        'cluster_id_R',
+        'cluster_312',
+    ),
+    (
+        'cluster_id_L',
+        'cluster_5091',
+    ),
+    (
+        'pinder_s',
+        False,
+    ),
+    (
+        'pinder_xl',
+        False,
+    ),
+    (
+        'pinder_af2',
+        False,
+    ),
+    (
+        'uniprot_R',
+        'P00761',
+    ),
+    (
+        'uniprot_L',
+        'P80424',
+    ),
+    (
+        'holo_R_pdb',
+        '1ldt__A1_P00761-R.pdb',
+    ),
+    (
+        'holo_L_pdb',
+        '1ldt__B1_P80424-L.pdb',
+    ),
+    (
+        'predicted_R_pdb',
+        'af__P00761.pdb',
+    ),
+    (
+        'predicted_L_pdb',
+        'af__P80424.pdb',
+    ),
+    (
+        'apo_R_pdb',
+        '1s82__A1_P00761.pdb',
+    ),
+    (
+        'apo_L_pdb',
+        '2kmo__A1_P80424.pdb',
+    ),
+    (
+        'apo_R_pdbs',
+        '1s82__A1_P00761.pdb;1s6f__A1_P00761.pdb;1s85__A1_P00761.pdb;1s84__A1_P00761.pdb;2a32__A1_P00761.pdb;1s6h__A1_P00761.pdb;1s5s__A1_P00761.pdb;1fni__A1_P00761.pdb;1s81__A1_P00761.pdb;1fmg__A1_P00761.pdb;1qqu__A1_P00761.pdb;2a31__A1_P00761.pdb;1fn6__A1_P00761.pdb;1s83__A1_P00761.pdb',
+    ),
+    (
+        'apo_L_pdbs',
+        '2kmo__A1_P80424.pdb;2kmq__A1_P80424.pdb;2kmp__A1_P80424.pdb;2kmr__A1_P80424.pdb',
+    ),
+    (
+        'holo_R',
+        True,
+    ),
+    (
+        'holo_L',
+        True,
+    ),
+    (
+        'predicted_R',
+        True,
+    ),
+    (
+        'predicted_L',
+        True,
+    ),
+    (
+        'apo_R',
+        True,
+    ),
+    (
+        'apo_L',
+        True,
+    ),
+    (
+        'apo_R_quality',
+        'high',
+    ),
+    (
+        'apo_L_quality',
+        'high',
+    ),
+    (
+        'chain1_neff',
+        997.0,
+    ),
+    (
+        'chain2_neff',
+        2220.0,
+    ),
+    (
+        'chain_R',
+        'A1',
+    ),
+    (
+        'chain_L',
+        'B1',
+    ),
+    (
+        'contains_antibody',
+        False,
+    ),
+    (
+        'contains_antigen',
+        False,
+    ),
+    (
+        'contains_enzyme',
+        True,
+    ),
+)
+native=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1ldt__A1_P00761--1ldt__B1_P80424.pdb,
+    uniprot_map=None,
+    pinder_id='1ldt__A1_P00761--1ldt__B1_P80424',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1992,),
+    pdb_engine='fastpdb',
+)
+holo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1ldt__A1_P00761-R.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1ldt__A1_P00761-R.parquet,
+    pinder_id='1ldt__A1_P00761-R',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1666,),
+    pdb_engine='fastpdb',
+)
+holo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1ldt__B1_P80424-L.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1ldt__B1_P80424-L.parquet,
+    pinder_id='1ldt__B1_P80424-L',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (326,),
+    pdb_engine='fastpdb',
+)
+apo_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/1fmg__A1_P00761.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/1fmg__A1_P00761.parquet,
+    pinder_id='1fmg__A1_P00761',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1642,),
+    pdb_engine='fastpdb',
+)
+apo_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/2kmr__A1_P80424.pdb,
+    uniprot_map=/home/runner/.local/share/pinder/2024-02/mappings/2kmr__A1_P80424.parquet,
+    pinder_id='2kmr__A1_P80424',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (630,),
+    pdb_engine='fastpdb',
+)
+pred_receptor=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__P00761.pdb,
+    uniprot_map=None,
+    pinder_id='af__P00761',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (1708,),
+    pdb_engine='fastpdb',
+)
+pred_ligand=Structure(
+    filepath=/home/runner/.local/share/pinder/2024-02/pdbs/af__P80424.pdb,
+    uniprot_map=None,
+    pinder_id='af__P80424',
+    atom_array=&lt;class 'biotite.structure.AtomArray'&gt; with shape (326,),
+    pdb_engine='fastpdb',
+)
+)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>Classify system difficulty based on degree of conformational shift in unbound and bound<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">unbound_difficulty</span><span class="p">(</span><span class="s2">"apo"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Fnat': 0.847457627118644,
+ 'Fnonnat': 0.5,
+ 'common_contacts': 50,
+ 'differing_contacts': 50,
+ 'bound_contacts': 59,
+ 'unbound_contacts': 100,
+ 'fnonnat_R': 0.4318181818181818,
+ 'fnonnat_L': 0.35,
+ 'fnat_R': 0.8620689655172413,
+ 'fnat_L': 1.0,
+ 'difficulty': 'Difficult',
+ 'I-RMSD': 2.3008883,
+ 'matched_interface_chains': 2,
+ 'holo_receptor_interface_res': 29,
+ 'holo_ligand_interface_res': 13,
+ 'apo_receptor_interface_res': 44,
+ 'apo_ligand_interface_res': 20,
+ 'L-RMSD': 9.371291,
+ 'R-RMSD': 0.47199312,
+ 'unbound_id': '1fmg__A1_P00761--2kmr__A1_P80424',
+ 'unbound_body': 'receptor_ligand',
+ 'monomer_name': 'apo'}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">.</span><span class="n">unbound_difficulty</span><span class="p">(</span><span class="s2">"predicted"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'Fnat': 0.847457627118644,
+ 'Fnonnat': 0.05660377358490566,
+ 'common_contacts': 50,
+ 'differing_contacts': 3,
+ 'bound_contacts': 59,
+ 'unbound_contacts': 53,
+ 'fnonnat_R': 0.07692307692307693,
+ 'fnonnat_L': 0.0,
+ 'fnat_R': 0.8275862068965517,
+ 'fnat_L': 0.9230769230769231,
+ 'difficulty': 'Rigid-body',
+ 'I-RMSD': 1.252618,
+ 'matched_interface_chains': 2,
+ 'holo_receptor_interface_res': 29,
+ 'holo_ligand_interface_res': 13,
+ 'apo_receptor_interface_res': 26,
+ 'apo_ligand_interface_res': 12,
+ 'L-RMSD': 3.9255776,
+ 'R-RMSD': 0.40761372,
+ 'unbound_id': 'af__P00761--af__P80424',
+ 'unbound_body': 'receptor_ligand',
+ 'monomer_name': 'predicted'}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-bunch-of-other-features-of-the-structure-class-are-illustrated-below">
+<h2>A bunch of other features of the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> class are illustrated below<a class="headerlink" href="#a-bunch-of-other-features-of-the-structure-class-are-illustrated-below" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([
+	Atom(np.array([36.778, 16.379, 60.821], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="N", element="N", b_factor=0.0),
+	Atom(np.array([37.219, 15.836, 59.542], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([36.18 , 16.079, 58.452], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="C", element="C", b_factor=0.0),
+	Atom(np.array([36.532, 16.338, 57.297], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="O", element="O", b_factor=0.0),
+	Atom(np.array([37.509, 14.339, 59.666], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CB", element="C", b_factor=0.0),
+	Atom(np.array([38.703, 14.01 , 60.548], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CG", element="C", b_factor=0.0),
+	Atom(np.array([38.916, 12.517, 60.706], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CD", element="C", b_factor=0.0),
+	Atom(np.array([37.981, 11.727, 60.572], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="OE1", element="O", b_factor=0.0),
+	Atom(np.array([40.151, 12.123, 60.994], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="NE2", element="N", b_factor=0.0),
+	Atom(np.array([34.852, 15.989, 58.853], dtype=float32), chain_id="L", res_id=3, ins_code="", res_name="PRO", hetero=False, atom_name="N", element="N", b_factor=0.0)
+])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[36.778, 16.379, 60.821],
+       [37.219, 15.836, 59.542],
+       [36.18 , 16.079, 58.452],
+       [36.532, 16.338, 57.297],
+       [37.509, 14.339, 59.666],
+       [38.703, 14.01 , 60.548],
+       [38.916, 12.517, 60.706],
+       [37.981, 11.727, 60.572],
+       [40.151, 12.123, 60.994],
+       [34.852, 15.989, 58.853]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">residue_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>['ALA',
+ 'ARG',
+ 'ASN',
+ 'ASP',
+ 'CYS',
+ 'GLN',
+ 'GLU',
+ 'GLY',
+ 'HIS',
+ 'ILE',
+ 'LEU',
+ 'LYS',
+ 'MET',
+ 'PHE',
+ 'PRO',
+ 'SER',
+ 'THR',
+ 'TRP',
+ 'VAL']
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'QPVNQPILAAAQSLHEATKWSSKGNDIIAAAKRMALLMAEMSRLVRGGSGTKRALIQCAKDIAKASDEVTRLAKEVAKQCTDKRIRTNLLQVCERIPTISTQLKILSTVKATMLGRTNISDEESEQATEMLVHNAQNLMQSVKETVREAEAASIKIRTDAGFTLRWVRKTPW'
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="o">.</span><span class="n">res_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array(['GLN', 'GLN', 'GLN', ..., 'TRP', 'TRP', 'TRP'], dtype='&lt;U5')
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="n">apo_L</span><span class="o">.</span><span class="n">backbone_mask</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([
+	Atom(np.array([36.778, 16.379, 60.821], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="N", element="N", b_factor=0.0),
+	Atom(np.array([37.219, 15.836, 59.542], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([36.18 , 16.079, 58.452], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="C", element="C", b_factor=0.0),
+	Atom(np.array([34.852, 15.989, 58.853], dtype=float32), chain_id="L", res_id=3, ins_code="", res_name="PRO", hetero=False, atom_name="N", element="N", b_factor=0.0),
+	Atom(np.array([33.88 , 16.232, 57.771], dtype=float32), chain_id="L", res_id=3, ins_code="", res_name="PRO", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([33.954, 17.664, 57.252], dtype=float32), chain_id="L", res_id=3, ins_code="", res_name="PRO", hetero=False, atom_name="C", element="C", b_factor=0.0),
+	Atom(np.array([33.798, 17.833, 55.943], dtype=float32), chain_id="L", res_id=4, ins_code="", res_name="VAL", hetero=False, atom_name="N", element="N", b_factor=0.0),
+	Atom(np.array([33.848, 19.155, 55.33 ], dtype=float32), chain_id="L", res_id=4, ins_code="", res_name="VAL", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([32.629, 19.402, 54.448], dtype=float32), chain_id="L", res_id=4, ins_code="", res_name="VAL", hetero=False, atom_name="C", element="C", b_factor=0.0),
+	Atom(np.array([32.136, 20.636, 54.462], dtype=float32), chain_id="L", res_id=5, ins_code="", res_name="ASN", hetero=False, atom_name="N", element="N", b_factor=0.0)
+])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">atom_array</span><span class="p">[</span><span class="n">apo_L</span><span class="o">.</span><span class="n">calpha_mask</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([
+	Atom(np.array([37.219, 15.836, 59.542], dtype=float32), chain_id="L", res_id=2, ins_code="", res_name="GLN", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([33.88 , 16.232, 57.771], dtype=float32), chain_id="L", res_id=3, ins_code="", res_name="PRO", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([33.848, 19.155, 55.33 ], dtype=float32), chain_id="L", res_id=4, ins_code="", res_name="VAL", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([30.979, 21.004, 53.668], dtype=float32), chain_id="L", res_id=5, ins_code="", res_name="ASN", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([31.94 , 20.151, 50.049], dtype=float32), chain_id="L", res_id=6, ins_code="", res_name="GLN", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([30.278, 23.116, 48.249], dtype=float32), chain_id="L", res_id=7, ins_code="", res_name="PRO", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([32.112, 25.664, 50.491], dtype=float32), chain_id="L", res_id=8, ins_code="", res_name="ILE", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([35.441, 23.864, 49.936], dtype=float32), chain_id="L", res_id=9, ins_code="", res_name="LEU", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([34.772, 23.807, 46.168], dtype=float32), chain_id="L", res_id=10, ins_code="", res_name="ALA", hetero=False, atom_name="CA", element="C", b_factor=0.0),
+	Atom(np.array([33.923, 27.56 , 46.154], dtype=float32), chain_id="L", res_id=11, ins_code="", res_name="ALA", hetero=False, atom_name="CA", element="C", b_factor=0.0)
+])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">chain_sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'L': ['Q',
+  'P',
+  'V',
+  'N',
+  'Q',
+  'P',
+  'I',
+  'L',
+  'A',
+  'A',
+  'A',
+  'Q',
+  'S',
+  'L',
+  'H',
+  'E',
+  'A',
+  'T',
+  'K',
+  'W',
+  'S',
+  'S',
+  'K',
+  'G',
+  'N',
+  'D',
+  'I',
+  'I',
+  'A',
+  'A',
+  'A',
+  'K',
+  'R',
+  'M',
+  'A',
+  'L',
+  'L',
+  'M',
+  'A',
+  'E',
+  'M',
+  'S',
+  'R',
+  'L',
+  'V',
+  'R',
+  'G',
+  'G',
+  'S',
+  'G',
+  'T',
+  'K',
+  'R',
+  'A',
+  'L',
+  'I',
+  'Q',
+  'C',
+  'A',
+  'K',
+  'D',
+  'I',
+  'A',
+  'K',
+  'A',
+  'S',
+  'D',
+  'E',
+  'V',
+  'T',
+  'R',
+  'L',
+  'A',
+  'K',
+  'E',
+  'V',
+  'A',
+  'K',
+  'Q',
+  'C',
+  'T',
+  'D',
+  'K',
+  'R',
+  'I',
+  'R',
+  'T',
+  'N',
+  'L',
+  'L',
+  'Q',
+  'V',
+  'C',
+  'E',
+  'R',
+  'I',
+  'P',
+  'T',
+  'I',
+  'S',
+  'T',
+  'Q',
+  'L',
+  'K',
+  'I',
+  'L',
+  'S',
+  'T',
+  'V',
+  'K',
+  'A',
+  'T',
+  'M',
+  'L',
+  'G',
+  'R',
+  'T',
+  'N',
+  'I',
+  'S',
+  'D',
+  'E',
+  'E',
+  'S',
+  'E',
+  'Q',
+  'A',
+  'T',
+  'E',
+  'M',
+  'L',
+  'V',
+  'H',
+  'N',
+  'A',
+  'Q',
+  'N',
+  'L',
+  'M',
+  'Q',
+  'S',
+  'V',
+  'K',
+  'E',
+  'T',
+  'V',
+  'R',
+  'E',
+  'A',
+  'E',
+  'A',
+  'A',
+  'S',
+  'I',
+  'K',
+  'I',
+  'R',
+  'T',
+  'D',
+  'A',
+  'G',
+  'F',
+  'T',
+  'L',
+  'R',
+  'W',
+  'V',
+  'R',
+  'K',
+  'T',
+  'P',
+  'W']}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_complex</span><span class="o">.</span><span class="n">chain_sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'L': ['Q',
+  'P',
+  'V',
+  'N',
+  'Q',
+  'P',
+  'I',
+  'L',
+  'A',
+  'A',
+  'A',
+  'Q',
+  'S',
+  'L',
+  'H',
+  'E',
+  'A',
+  'T',
+  'K',
+  'W',
+  'S',
+  'S',
+  'K',
+  'G',
+  'N',
+  'D',
+  'I',
+  'I',
+  'A',
+  'A',
+  'A',
+  'K',
+  'R',
+  'M',
+  'A',
+  'L',
+  'L',
+  'M',
+  'A',
+  'E',
+  'M',
+  'S',
+  'R',
+  'L',
+  'V',
+  'R',
+  'G',
+  'G',
+  'S',
+  'G',
+  'T',
+  'K',
+  'R',
+  'A',
+  'L',
+  'I',
+  'Q',
+  'C',
+  'A',
+  'K',
+  'D',
+  'I',
+  'A',
+  'K',
+  'A',
+  'S',
+  'D',
+  'E',
+  'V',
+  'T',
+  'R',
+  'L',
+  'A',
+  'K',
+  'E',
+  'V',
+  'A',
+  'K',
+  'Q',
+  'C',
+  'T',
+  'D',
+  'K',
+  'R',
+  'I',
+  'R',
+  'T',
+  'N',
+  'L',
+  'L',
+  'Q',
+  'V',
+  'C',
+  'E',
+  'R',
+  'I',
+  'P',
+  'T',
+  'I',
+  'S',
+  'T',
+  'Q',
+  'L',
+  'K',
+  'I',
+  'L',
+  'S',
+  'T',
+  'V',
+  'K',
+  'A',
+  'T',
+  'M',
+  'L',
+  'G',
+  'R',
+  'T',
+  'N',
+  'I',
+  'S',
+  'D',
+  'E',
+  'E',
+  'S',
+  'E',
+  'Q',
+  'A',
+  'T',
+  'E',
+  'M',
+  'L',
+  'V',
+  'H',
+  'N',
+  'A',
+  'Q',
+  'N',
+  'L',
+  'M',
+  'Q',
+  'S',
+  'V',
+  'K',
+  'E',
+  'T',
+  'V',
+  'R',
+  'E',
+  'A',
+  'E',
+  'A',
+  'A',
+  'S',
+  'I',
+  'K',
+  'I',
+  'R',
+  'T',
+  'D',
+  'A',
+  'G',
+  'F',
+  'T',
+  'L',
+  'R',
+  'W',
+  'V',
+  'R',
+  'K',
+  'T',
+  'P',
+  'W'],
+ 'R': ['H',
+  'M',
+  'L',
+  'D',
+  'P',
+  'E',
+  'E',
+  'I',
+  'R',
+  'K',
+  'R',
+  'L',
+  'E',
+  'H',
+  'T',
+  'E',
+  'R',
+  'Q',
+  'F',
+  'R',
+  'N',
+  'R',
+  'R',
+  'K',
+  'I',
+  'L',
+  'I',
+  'R',
+  'G',
+  'L',
+  'P',
+  'G',
+  'D',
+  'V',
+  'T',
+  'N',
+  'Q',
+  'E',
+  'V',
+  'H',
+  'D',
+  'L',
+  'L',
+  'S',
+  'D',
+  'Y',
+  'E',
+  'L',
+  'K',
+  'Y',
+  'C',
+  'F',
+  'V',
+  'D',
+  'K',
+  'Y',
+  'K',
+  'G',
+  'T',
+  'A',
+  'F',
+  'V',
+  'T',
+  'L',
+  'L',
+  'N',
+  'G',
+  'E',
+  'Q',
+  'A',
+  'E',
+  'A',
+  'A',
+  'I',
+  'N',
+  'A',
+  'F',
+  'H',
+  'Q',
+  'S',
+  'R',
+  'L',
+  'R',
+  'E',
+  'R',
+  'E',
+  'L',
+  'S',
+  'V',
+  'Q',
+  'L',
+  'Q',
+  'P',
+  'T',
+  'D',
+  'A',
+  'L',
+  'L',
+  'C',
+  'V',
+  'A',
+  'N',
+  'L',
+  'P',
+  'P',
+  'S',
+  'L',
+  'T',
+  'Q',
+  'Q',
+  'Q',
+  'F',
+  'E',
+  'E',
+  'L',
+  'V',
+  'R',
+  'P',
+  'F',
+  'G',
+  'S',
+  'L',
+  'E',
+  'R',
+  'C',
+  'F',
+  'L',
+  'V',
+  'Y',
+  'S',
+  'E',
+  'R',
+  'T',
+  'G',
+  'Q',
+  'S',
+  'K',
+  'G',
+  'Y',
+  'G',
+  'F',
+  'A',
+  'E',
+  'Y',
+  'M',
+  'K',
+  'K',
+  'D',
+  'S',
+  'A',
+  'A',
+  'R',
+  'A',
+  'K',
+  'S',
+  'D',
+  'L',
+  'L',
+  'G',
+  'K',
+  'P',
+  'L',
+  'G',
+  'P',
+  'R',
+  'T',
+  'L',
+  'Y',
+  'V',
+  'H',
+  'W',
+  'T',
+  'D',
+  'A',
+  'G',
+  'Q',
+  'L',
+  'T',
+  'P',
+  'A',
+  'L',
+  'L',
+  'H',
+  'S',
+  'R',
+  'C',
+  'L',
+  'C',
+  'V',
+  'D',
+  'R',
+  'L',
+  'P',
+  'P',
+  'G',
+  'F',
+  'N',
+  'D',
+  'V',
+  'D',
+  'A',
+  'L',
+  'C',
+  'R',
+  'A',
+  'L',
+  'S',
+  'A',
+  'V',
+  'H',
+  'S',
+  'P',
+  'T',
+  'F',
+  'C',
+  'Q',
+  'L',
+  'A',
+  'C',
+  'G',
+  'Q',
+  'D',
+  'G',
+  'Q',
+  'L',
+  'K',
+  'G',
+  'F',
+  'A',
+  'V',
+  'L',
+  'E',
+  'Y',
+  'E',
+  'T',
+  'A',
+  'E',
+  'M',
+  'A',
+  'E',
+  'E',
+  'A',
+  'Q',
+  'Q',
+  'Q',
+  'A',
+  'D',
+  'G',
+  'L',
+  'S',
+  'L',
+  'G',
+  'G',
+  'S',
+  'H',
+  'L',
+  'R',
+  'V',
+  'S',
+  'F',
+  'C',
+  'A',
+  'P',
+  'G',
+  'P',
+  'P',
+  'G',
+  'R',
+  'S',
+  'M',
+  'L',
+  'A',
+  'A',
+  'L',
+  'I',
+  'A',
+  'A',
+  'Q',
+  'A',
+  'T']}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apo_L</span><span class="o">.</span><span class="n">sequence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>'QPVNQPILAAAQSLHEATKWSSKGNDIIAAAKRMALLMAEMSRLVRGGSGTKRALIQCAKDIAKASDEVTRLAKEVAKQCTDKRIRTNLLQVCERIPTISTQLKILSTVKATMLGRTNISDEESEQATEMLVHNAQNLMQSVKETVREAEAASIKIRTDAGFTLRWVRKTPW'
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pindersystem-api-base-class-representing-structures-in-a-pinder-entry">PinderSystem API - base class representing <code class="docutils literal notranslate"><span class="pre">Structure</span></code>’s in a pinder entry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-system-difficulty-based-on-degree-of-conformational-shift-in-unbound-and-bound">Classify system difficulty based on degree of conformational shift in unbound and bound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrating-utilities-available-in-structure-instances">Illustrating utilities available in <code class="docutils literal notranslate"><span class="pre">Structure</span></code> instances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#can-also-filter-in-place-rather-than-returning-a-copy-a-la-pandas">Can also filter “in place” rather than returning a copy (a la pandas)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-masked-unbound-complex-aligned-to-bound-for-apo">Create masked unbound complex aligned to bound for apo</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-going-on-under-the-hood">What’s going on under the hood</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structures-have-resolved-pdb2uniprot-and-resolved-uniprot2pdb-properties">Structures have <code class="docutils literal notranslate"><span class="pre">resolved_pdb2uniprot</span></code> and <code class="docutils literal notranslate"><span class="pre">resolved_uniprot2pdb</span></code> properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-with-multiple-available-apo-structures">Case with multiple available apo structures</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-2kmr-as-apo-ligand-and-1fmg-as-apo-receptor">Specify 2kmr as apo ligand and 1fmg as apo receptor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Classify system difficulty based on degree of conformational shift in unbound and bound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-bunch-of-other-features-of-the-structure-class-are-illustrated-below">A bunch of other features of the <code class="docutils literal notranslate"><span class="pre">Structure</span></code> class are illustrated below</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pinder-org/pinder/edit/main/doc/pinder-system.ipynb">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/pinder-system.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, PINDER Development Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

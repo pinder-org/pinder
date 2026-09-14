@@ -1,0 +1,21 @@
+pinder.methods.run.frodock package
+==================================
+
+Submodules
+----------
+
+pinder.methods.run.frodock.predict module
+-----------------------------------------
+
+.. automodule:: pinder.methods.run.frodock.predict
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.methods.run.frodock
+   :members:
+   :undoc-members:
+   :show-inheritance:

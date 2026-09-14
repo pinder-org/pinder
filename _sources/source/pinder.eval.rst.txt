@@ -1,0 +1,38 @@
+pinder.eval package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 10
+
+   pinder.eval.clashes
+   pinder.eval.dockq
+
+Submodules
+----------
+
+pinder.eval.create\_submission module
+-------------------------------------
+
+.. automodule:: pinder.eval.create_submission
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.eval.run module
+----------------------
+
+.. automodule:: pinder.eval.run
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.eval
+   :members:
+   :undoc-members:
+   :show-inheritance:

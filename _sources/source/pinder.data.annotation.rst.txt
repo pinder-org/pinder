@@ -1,0 +1,85 @@
+pinder.data.annotation package
+==============================
+
+Submodules
+----------
+
+pinder.data.annotation.canonical\_apo module
+--------------------------------------------
+
+.. automodule:: pinder.data.annotation.canonical_apo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.constants module
+---------------------------------------
+
+.. automodule:: pinder.data.annotation.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.contact\_classification module
+-----------------------------------------------------
+
+.. automodule:: pinder.data.annotation.contact_classification
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.detached\_components module
+--------------------------------------------------
+
+.. automodule:: pinder.data.annotation.detached_components
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.elongation module
+----------------------------------------
+
+.. automodule:: pinder.data.annotation.elongation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.graphql module
+-------------------------------------
+
+.. automodule:: pinder.data.annotation.graphql
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.interface\_gaps module
+---------------------------------------------
+
+.. automodule:: pinder.data.annotation.interface_gaps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.planarity module
+---------------------------------------
+
+.. automodule:: pinder.data.annotation.planarity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pinder.data.annotation.sabdab module
+------------------------------------
+
+.. automodule:: pinder.data.annotation.sabdab
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pinder.data.annotation
+   :members:
+   :undoc-members:
+   :show-inheritance:
