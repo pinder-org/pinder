@@ -72,7 +72,7 @@ To detect clashes in an arbitrary PDB file, use `pinder.core.structure.contacts`
 
 ## For some protein pairs, when I extract the apo and holo structures and align their sequence, the results don't have the same atoms and/or sequence. How can I align monomers such that all have the same shape?
 
-For a more detailed example, see the [example notebook](examples/superposition.ipynb) (also available in the [documentation](https://pinder-org.github.io/pinder/superposition.html)).
+For a more detailed example, see the [example notebook](https://pinder-org.github.io/pinder/superposition.html) (also available in the [documentation](https://pinder-org.github.io/pinder/superposition.html)).
 
 
 ```python
@@ -125,7 +125,7 @@ print((
 
 ## How can I use the evaluation harness outside of a `pinder` context?
 
-For a more detailed example, see the [example notebook](examples/pinder-eval.ipynb) (also available in the [documentation](https://pinder-org.github.io/pinder/pinder-eval.html#pinder-eval-entrypoint)).
+For a more detailed example, see the [example notebook](https://pinder-org.github.io/pinder/pinder-eval.html) (also available in the [documentation](https://pinder-org.github.io/pinder/pinder-eval.html#pinder-eval-entrypoint)).
 
 In short, the DockQ-related classes provided in pinder roughly follow this hierarchy:
 * `pinder.eval.dockq.method.MethodMetrics`

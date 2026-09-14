@@ -45,16 +45,6 @@ jobs:
             tar xvfz mmseqs-linux-avx2.tar.gz
             echo $(pwd)/mmseqs/bin/ >> $GITHUB_PATH
 
-      - name: install iAlign
-        shell: bash
-        run: |
-            # install iAlign:
-            # https://sites.gatech.edu/cssb/ialign/
-            curl -LO http://cssb2.biology.gatech.edu/skolnick/files/iAlign/ialign_64_v1.1b2.tar.gz
-            tar xvzf ialign_64_v1.1b2.tar.gz
-            # https://www.scivision.dev/github-actions-path-append/
-            echo $(pwd)/ialign/bin/ >> $GITHUB_PATH
-
       - name: Install tox
         run: pip install tox
 

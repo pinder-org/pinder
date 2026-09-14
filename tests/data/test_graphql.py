@@ -1,3 +1,6 @@
+import gzip
+import json
+
 import pytest
 from tempfile import TemporaryDirectory
 from pathlib import Path
@@ -28,8 +31,8 @@ EXPECTED_ANNOTATION_IDS = {
     "3.30.70.330",
     "8051194",
     "8061923",
-    "e6q0rA3",
-    "e6q0rA2",
+    "2.130.10.10",
+    "e6q0rB01",
     "8052530",
     "d6q0rd1",
     "e6q0rA1",
@@ -44,7 +47,12 @@ EXPECTED_ANNOTATION_IDS = {
         "6Q0R",
     ],
 )
-def test_fetch_entry_annotations(pdb_id, tmp_path):
+def test_fetch_entry_annotations(pdb_id, tmp_path, test_dir, monkeypatch):
+    # RCSB response captured 2026-09-11. Exact annotation IDs belong to this
+    # snapshot; the live population tests below still exercise the service.
+    with gzip.open(test_dir / "rcsb_annotations/6Q0R.json.gz", "rt") as stream:
+        response = json.load(stream)
+    monkeypatch.setattr(graphql, "run_graphql_annotation_query", lambda _: response)
     data_json = tmp_path / f"{pdb_id}.json"
     graphql.fetch_entry_annotations(pdb_id, data_json, use_cache=False)
     assert data_json.is_file()

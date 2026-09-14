@@ -71,13 +71,13 @@ def test_read_extra_metadata(pinder_data_copy, pinder_data_dir):
 def test_read_extra_metadata_from_bucket(
     pinder_data_copy, pinder_data_dir, monkeypatch
 ):
-    def local_ls(self, bucket_path: str, *args, **kwargs):
-        """Patch to let the Gsutil class just list the local dir"""
+    def local_ls(bucket_path: str, *args, **kwargs):
+        """Use local fixtures for the remote manifest listing"""
         return list(Path(bucket_path).iterdir())
 
-    from pinder.core.utils.cloud import Gsutil as gs
+    from pinder.core.utils import dataset
 
-    monkeypatch.setattr(gs, "ls", local_ls)
+    monkeypatch.setattr(dataset, "list_files", local_ls)
 
     extra_metadata = get_extra_metadata(
         "/this/path/dne",

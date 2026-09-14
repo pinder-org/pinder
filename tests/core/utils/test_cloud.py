@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import pytest
-import os
+
 from pinder.core.utils import cloud
 
 try:
@@ -373,14 +373,17 @@ def test_gsutil_ls_blobs(client):
 
 
 @pytest.mark.parametrize(
-    "max_cpu_fraction, expected_cpu",
+    "cpu_limit, max_cpu_fraction, expected_cpu",
     [
-        (0.0001, 1),
-        (1.0, os.cpu_count()),
-        (0.9, os.cpu_count() - 1),
+        (18, 0.0001, 1),
+        (18, 1.0, 18),
+        (18, 0.9, 16),
+        (8, 0.9, 7),
+        (1, 0.9, 1),
     ],
 )
-def test_get_container_cpu_frac(max_cpu_fraction, expected_cpu):
+def test_get_container_cpu_frac(monkeypatch, cpu_limit, max_cpu_fraction, expected_cpu):
+    monkeypatch.setattr(cloud, "get_cpu_limit", lambda: cpu_limit)
     n_cpu = cloud.get_container_cpu_frac(max_cpu_fraction)
     assert n_cpu == expected_cpu
 

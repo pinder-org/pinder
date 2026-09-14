@@ -175,7 +175,7 @@ Foldseek and MMseqs2 alignments are used directly to de-leak, therefore looking 
 
 # Pinder 2023-11
 - Initial release
-- `PINDER_RELEASE=2023-11`
+- Dataset version: `2023-11`
 
 ## Total dataset size
 ```
@@ -186,15 +186,4 @@ Foldseek and MMseqs2 alignments are used directly to de-leak, therefore looking 
 # unpacked
 156G    pdbs
 1.6G    csvs
-```
-
-## File manifest
-
-```
-gs://pinder/2023-11/index.csv.gz
-gs://pinder/2023-11/metadata.csv.gz
-gs://pinder/2023-11/csvs.zip
-gs://pinder/2023-11/csvs/
-gs://pinder/2023-11/pdbs.zip
-gs://pinder/2023-11/pdbs/
 ```

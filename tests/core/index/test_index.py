@@ -16,13 +16,12 @@ pindex = get_index()
 metadata = get_metadata()
 
 
-def test_get_pinder_bucket_root():
-    expected = "gs://pinder/2024-02"
+def test_get_pinder_bucket_root(monkeypatch):
+    expected = "https://pinderdata.org/2024-02"
     assert get_pinder_bucket_root() == expected
-    os.environ["PINDER_RELEASE"] = "new-release"
-    expected = "gs://pinder/new-release"
-    assert get_pinder_bucket_root() == expected
-    os.environ["PINDER_RELEASE"] = "2024-02"
+    monkeypatch.setenv("PINDER_RELEASE", "new-release")
+    with pytest.raises(ValueError, match="2024-02"):
+        get_pinder_bucket_root()
 
 
 def test_get_index_location():
@@ -32,7 +31,7 @@ def test_get_index_location():
 
     remote_index_loc = get_index_location(remote=True)
     assert isinstance(remote_index_loc, str)
-    assert remote_index_loc == "gs://pinder/2024-02/index.parquet"
+    assert remote_index_loc == "https://pinderdata.org/2024-02/index.parquet"
 
 
 def test_index_entry():

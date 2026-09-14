@@ -5,17 +5,15 @@ from functools import lru_cache, reduce, partial
 from pathlib import Path
 from zipfile import ZipFile, error as zip_error
 
-import gcsfs
 import numpy as np
 import pandas as pd
-from google.cloud.storage.client import Client
 from pydantic import BaseModel, ConfigDict
 from tqdm import tqdm
 from fnmatch import fnmatch
 
 from pinder.core.utils import setup_logger
-from pinder.core.utils.cloud import Gsutil, gcs_read_dataframe
 from pinder.core.utils import constants as pc
+from pinder.core.utils import dataset
 
 
 log = setup_logger(__name__)
@@ -58,14 +56,14 @@ def get_pinder_location() -> Path:
 
 
 def get_pinder_bucket_root() -> str:
-    """Constructs the root bucket path for the Pinder data in Google Cloud Storage
+    """Constructs the public R2 release URL for the Pinder data
     based on the PINDER_RELEASE environment variable.
 
     Returns:
         str: The root bucket path as a string.
     """
     pinder_release = os.environ.get("PINDER_RELEASE", "2024-02")
-    return f"gs://pinder/{pinder_release}"
+    return str(dataset.release_url(pinder_release))
 
 
 def get_index_location(
@@ -101,8 +99,8 @@ def get_index(csv_name: str = "index.parquet", update: bool = False) -> pd.DataF
     Returns:
         pd.DataFrame: The Pinder index as a DataFrame.
     """
-    if str(csv_name).startswith("gs://") or "/" in str(csv_name):
-        # Its a custom index in local filepath or gcs uri
+    if "/" in str(csv_name):
+        # A custom index at a local path or HTTP URL
         custom_index = True
         local_index = get_pinder_location() / "custom_indices" / Path(csv_name).name
         if not local_index.parent.is_dir():
@@ -130,9 +128,9 @@ def get_index(csv_name: str = "index.parquet", update: bool = False) -> pd.DataF
     else:
         # Given the potential duplicate named indices, we force-update any custom index
         if custom_index:
-            pindex = gcs_read_dataframe(csv_name)
+            pindex = dataset.read_dataframe(csv_name)
         else:
-            pindex = gcs_read_dataframe(get_index_location(csv_name, remote=True))
+            pindex = dataset.read_dataframe(get_index_location(csv_name, remote=True))
         getattr(pindex, writer)(local_index, index=False)
 
     # for backwards compatibility:
@@ -191,7 +189,7 @@ def get_metadata(
     if local_metadata.is_file() and not update:
         metadata = reader(local_metadata)
     else:
-        metadata = gcs_read_dataframe(get_index_location(csv_name, remote=True))
+        metadata = dataset.read_dataframe(get_index_location(csv_name, remote=True))
         getattr(metadata, writer)(local_metadata, index=False)
 
     # Backwards compatibility with old column names
@@ -276,12 +274,10 @@ def get_extra_metadata(
     if local_metadata and not update:
         metadata_dfs = [pd.read_csv(meta) for meta in local_metadata if meta.is_file()]
     else:
-        gs = Gsutil()
-        fs = gcsfs.GCSFileSystem(token="anon")
         metadata_dfs = [
-            gcs_read_dataframe(meta, fs=fs)
-            for meta in gs.ls(remote_location, recursive=False)
-            if fnmatch(meta.name, glob_pattern)
+            dataset.read_dataframe(meta)
+            for meta in dataset.list_files(remote_location)
+            if fnmatch(Path(meta).name, glob_pattern)
         ]
     if extra_data:
         for data in extra_data:
@@ -337,7 +333,7 @@ def get_supplementary_data(
     if local_index.is_file() and not update:
         data = reader(local_index)
     else:
-        data = gcs_read_dataframe(
+        data = dataset.read_dataframe(
             get_index_location(supplementary_data.value, remote=True)
         )
         getattr(data, writer)(local_index, index=False)
@@ -377,15 +373,21 @@ def download_dataset(skip_inflation: bool = False) -> None:
 
         .. code-block:: text
 
-            # compressed
-            144G    pdbs.zip
-            149M    test_set_pdbs.zip
-            6.8G    mappings.zip
+            # compressed archives (decimal GB)
+            168.88 GB    pdbs.zip
+            0.18 GB      test_set_pdbs.zip
+            7.23 GB      mappings.zip
 
-            # unpacked
-            672G    pdbs
-            705M    test_set_pdbs
-            25G     mappings
+            # complete directories after pinder_sync_data (decimal GB)
+            1013.35 GB   pdbs
+            0.73 GB      test_set_pdbs
+            23.83 GB     mappings
+
+        The archives omit files listed in the release manifests. Run
+        ``pinder_sync_data`` after extraction to fetch missing files.
+        Existing files are skipped without checksum verification.
+        Allow at least 1.2 TB of free disk space for the default
+        download-and-sync workflow, including filesystem overhead.
 
     """
     root = get_pinder_location()
@@ -422,8 +424,7 @@ def download_dataset(skip_inflation: bool = False) -> None:
             log.info(f"Skipping inflation, {local_arch} contents are valid...")
 
     if remote_archs:
-        gs = Gsutil()
-        gs.cp_paired_paths(remote_archs, local_paths)
+        dataset.download_files(remote_archs, local_paths)
 
     if skip_inflation:
         return
@@ -500,15 +501,21 @@ def download_pinder_cmd(argv: list[str] | None = None) -> None:
 
         .. code-block:: text
 
-            # compressed
-            144G    pdbs.zip
-            149M    test_set_pdbs.zip
-            6.8G    mappings.zip
+            # compressed archives (decimal GB)
+            168.88 GB    pdbs.zip
+            0.18 GB      test_set_pdbs.zip
+            7.23 GB      mappings.zip
 
-            # unpacked
-            672G    pdbs
-            705M    test_set_pdbs
-            25G     mappings
+            # complete directories after pinder_sync_data (decimal GB)
+            1013.35 GB   pdbs
+            0.73 GB      test_set_pdbs
+            23.83 GB     mappings
+
+        The archives omit files listed in the release manifests. Run
+        ``pinder_sync_data`` after extraction to fetch missing files.
+        Existing files are skipped without checksum verification.
+        Allow at least 1.2 TB of free disk space for the default
+        download-and-sync workflow, including filesystem overhead.
 
     """
     vargs = get_arg_parser_args(argv)
@@ -532,27 +539,18 @@ def update_index_cmd(argv: list[str] | None = None) -> None:
 
 
 def get_missing_blobs(prefix: str) -> tuple[list[str], list[Path]]:
-    client = Client.create_anonymous_client()
-    bucket = client.bucket("pinder")
-    release = get_pinder_bucket_root().split("pinder/")[-1]
-    ext = "." + prefix[0:3]
-
     local_dir = get_pinder_location() / prefix
-    local_names = {f.name for f in local_dir.glob(f"*{ext}")}
-    missing_blobs = [
-        b
-        for b in tqdm(bucket.list_blobs(prefix=f"{release}/{prefix}/"))
-        if ext in b.name and Path(b.name).name not in local_names
+    local_names = (
+        {path.name for path in local_dir.iterdir() if path.is_file()}
+        if local_dir.is_dir()
+        else set()
+    )
+    remote = [
+        uri
+        for uri in dataset.list_files(get_pinder_bucket_root(), prefix)
+        if Path(uri).name not in local_names
     ]
-    remote_paths: list[str] = []
-    local_paths: list[Path] = []
-    for blob in missing_blobs:
-        name = Path(blob.name).name
-        remote = get_pinder_bucket_root() + f"/{prefix}/{name}"
-        local = local_dir / name
-        remote_paths.append(remote)
-        local_paths.append(local)
-    return remote_paths, local_paths
+    return remote, [local_dir / Path(uri).name for uri in remote]
 
 
 def sync_pinder_structure_data(argv: list[str] | None = None) -> None:
@@ -565,23 +563,11 @@ def sync_pinder_structure_data(argv: list[str] | None = None) -> None:
 
     """
 
-    vargs = get_arg_parser_args(
-        argv, "Sync missing pinder structural data files to disk"
-    )
-    remote_paths = []
-    local_paths = []
+    get_arg_parser_args(argv, "Sync missing pinder structural data files to disk")
     for prefix in ["pdbs", "test_set_pdbs", "mappings"]:
-        remote, local = get_missing_blobs(prefix)
-        remote_paths.extend(remote)
-        local_paths.extend(local)
-
-    if remote_paths:
-        log.info(f"Found {len(remote_paths)} outdated files. Starting download...")
-        gs = Gsutil()
-        gs.cp_paired_paths(remote_paths, local_paths)
-    else:
-        log.info("All local files are up to date!")
-    return None
+        dataset.sync_directory(
+            get_pinder_bucket_root(), prefix, get_pinder_location() / prefix
+        )
 
 
 class IndexEntry(BaseModel):
