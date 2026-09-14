@@ -15,7 +15,7 @@
 
 **pinder**, short for **p**rotein **in**teraction **d**ataset and **e**valuation **r**esource, is a dataset and resource for training and evaluation of protein-protein docking algorithms. It is ~500x larger than previous state of the art datasets and is the first dataset to include paired predicted and apo structures to train flexible docking methods.
 
-The dataset is large (~700Gb) and hosted on Cloudflare R2 at https://pinderdata.org.
+The complete dataset contains approximately 1.04 TB of files and is hosted on Cloudflare R2 at https://pinderdata.org.
 
 # 👨‍💻 Getting Started
 
@@ -143,7 +143,21 @@ The current release version of pinder is `2024-02`.
 
 You can find the list of available dataset releases and the associated changes in the [data changelog](https://github.com/pinder-org/pinder/blob/main/changelog_data.md).
 
-## To download the complete dataset run the following
+## Download archives and sync the complete dataset
+
+```bash
+pinder_download
+pinder_sync_data
+```
+
+`pinder_download` downloads and extracts the published archives. The archives
+do not contain every file in the release manifests. Run `pinder_sync_data`
+after extraction to download the missing structure and mapping files and verify
+their checksums. Existing files are skipped without checksum verification and
+are not replaced. The index and metadata are downloaded automatically when
+first accessed through `get_index()` and `get_metadata()`.
+
+To inspect the archive download options:
 
 ```
 pinder_download --help
@@ -179,18 +193,20 @@ Downloads are served from `https://pinderdata.org/2024-02/`. Use
 `pinder_download` above to download archives with checksum verification and
 resume during automatic retries.
 
-Note: to download the full dataset, you will need ~700Gb of free disk space.
-```
-# compressed
-144G    pdbs.zip
-149M    test_set_pdbs.zip
-6.8G    mappings.zip
+For the default archive-download-and-sync workflow, allow at least **1.2 TB of
+free disk space**, including room for filesystem overhead. Sizes below use
+decimal units (1 GB = 1,000,000,000 bytes) and describe the `2024-02` release:
 
-# unpacked
-672G    pdbs
-705M    test_set_pdbs
-25G     mappings
-```
+| Data | Compressed archive | Complete directory from manifest |
+| --- | ---: | ---: |
+| PDB structures | 168.88 GB | 1,013.35 GB |
+| Test-set structures | 0.18 GB | 0.73 GB |
+| Mappings | 7.23 GB | 23.83 GB |
+
+The archives total approximately 176.3 GB; the complete directories total
+approximately 1.04 TB. `pinder_download` removes each archive after extraction.
+Keeping archives with `--skip_inflation` and later retaining them alongside the
+complete dataset requires additional space.
 
 ## Updating the dataset
 In the event that there are patch (non-breaking) changes to the index or metadata, you can sync your local copy of the index using a similar command-line interface:
@@ -208,7 +224,11 @@ optional arguments:
                         specify a pinder dataset version
 ```
 
-If any *structure* files have been changed (will be announced in [data changelog](https://github.com/pinder-org/pinder/blob/main/changelog_data.md)), but a major release (PINDER_RELEASE) has not yet been published, to sync your local dataset:
+To fetch additional structure or mapping files listed in the release manifests,
+run `pinder_sync_data`. It downloads missing files; it does not verify or replace
+existing local files. Dataset changes are announced in the
+[data changelog](https://github.com/pinder-org/pinder/blob/main/changelog_data.md).
+To inspect the sync options:
 
 ```
 pinder_sync_data --help

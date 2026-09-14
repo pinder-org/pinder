@@ -373,15 +373,21 @@ def download_dataset(skip_inflation: bool = False) -> None:
 
         .. code-block:: text
 
-            # compressed
-            144G    pdbs.zip
-            149M    test_set_pdbs.zip
-            6.8G    mappings.zip
+            # compressed archives (decimal GB)
+            168.88 GB    pdbs.zip
+            0.18 GB      test_set_pdbs.zip
+            7.23 GB      mappings.zip
 
-            # unpacked
-            672G    pdbs
-            705M    test_set_pdbs
-            25G     mappings
+            # complete directories after pinder_sync_data (decimal GB)
+            1013.35 GB   pdbs
+            0.73 GB      test_set_pdbs
+            23.83 GB     mappings
+
+        The archives omit files listed in the release manifests. Run
+        ``pinder_sync_data`` after extraction to fetch missing files.
+        Existing files are skipped without checksum verification.
+        Allow at least 1.2 TB of free disk space for the default
+        download-and-sync workflow, including filesystem overhead.
 
     """
     root = get_pinder_location()
@@ -495,15 +501,21 @@ def download_pinder_cmd(argv: list[str] | None = None) -> None:
 
         .. code-block:: text
 
-            # compressed
-            144G    pdbs.zip
-            149M    test_set_pdbs.zip
-            6.8G    mappings.zip
+            # compressed archives (decimal GB)
+            168.88 GB    pdbs.zip
+            0.18 GB      test_set_pdbs.zip
+            7.23 GB      mappings.zip
 
-            # unpacked
-            672G    pdbs
-            705M    test_set_pdbs
-            25G     mappings
+            # complete directories after pinder_sync_data (decimal GB)
+            1013.35 GB   pdbs
+            0.73 GB      test_set_pdbs
+            23.83 GB     mappings
+
+        The archives omit files listed in the release manifests. Run
+        ``pinder_sync_data`` after extraction to fetch missing files.
+        Existing files are skipped without checksum verification.
+        Allow at least 1.2 TB of free disk space for the default
+        download-and-sync workflow, including filesystem overhead.
 
     """
     vargs = get_arg_parser_args(argv)
